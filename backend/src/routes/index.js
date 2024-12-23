@@ -13,6 +13,7 @@ import subscriptionRoutes from "./subscriptionRoutes.js";
 import rolePermissionRoutes from "./rolePermissionRoutes.js";
 import announcementRoutes from "./announcementRoutes.js";
 import eventRoutes from "./eventRoutes.js";
+import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
 const router = express.Router();
 
@@ -31,6 +32,7 @@ router.use('/role-permissions', rolePermissionRoutes);
 router.use('/subscriptions', subscriptionRoutes);
 router.use('/announcements', announcementRoutes);
 router.use('/events', eventRoutes);
+router.use('/projects', projectRoutes);
 router.use('/meetings', meetingRoutes);
 
 export default router;

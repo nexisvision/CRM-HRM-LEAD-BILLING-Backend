@@ -37,14 +37,7 @@ const Leave = sequelize.define('Leave', {
         type: DataTypes.TEXT,
         allowNull: true
     },
-    created_at: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    },
+    
     created_by: {
         type: DataTypes.STRING,
         allowNull: true
