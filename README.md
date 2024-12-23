@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/user-attachments/assets/ae239782-9809-4428-8765-ae2a04f8e222" alt="Nexis Vision Logo" width="200"/>
+<img src="https://github.com/user-attachments/assets/ae239782-9809-4428-8765-ae2a04f8e222" alt="Nexis Vision Logo" width="100"/>
   <h1>🚀 Nexis Vision ERM System</h1>
   <p>Enterprise Resource Management System: CRM | HRM | Lead Management | Billing</p>
 
