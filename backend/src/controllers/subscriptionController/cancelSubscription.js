@@ -1,0 +1,39 @@
+import Joi from "joi";
+import ClientSubscription from "../../models/clientSubscriptionModel.js";
+import validator from "../../utils/validator.js";
+import responseHandler from "../../utils/responseHandler.js";
+
+export default {
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        })
+    }),
+    handler: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const clientId = req.user.clientId;
+
+            const subscription = await ClientSubscription.findOne({
+                where: {
+                    id,
+                    client_id: clientId
+                }
+            });
+
+            if (!subscription) {
+                return responseHandler.notFound(res, "Subscription not found");
+            }
+
+            await subscription.update({
+                status: 'cancelled',
+                end_date: new Date()
+            });
+
+            responseHandler.success(res, "Subscription cancelled successfully");
+        } catch (error) {
+            console.log(error);
+            responseHandler.error(res, error.message);
+        }
+    }
+}; 
