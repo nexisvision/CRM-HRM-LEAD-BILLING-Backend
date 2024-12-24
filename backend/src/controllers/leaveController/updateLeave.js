@@ -9,14 +9,19 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            status: Joi.string().valid('pending', 'approved', 'rejected').required(),
-            admin_remarks: Joi.string().optional()
+            employee_id: Joi.string().optional(),
+            startDate: Joi.date().optional(),
+            endDate: Joi.date().optional(),
+            leaveType: Joi.string().valid('sick', 'casual', 'annual', 'other').optional(),
+            reason: Joi.string().optional(),
+            status: Joi.string().valid('pending', 'approved', 'rejected').default('pending'),
+            remarks: Joi.string().optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { status, admin_remarks } = req.body;
+            const { employee_id, startDate, endDate, leaveType, reason, status, remarks } = req.body;
 
             const leave = await Leave.findByPk(id);
             if (!leave) {
@@ -24,12 +29,17 @@ export default {
             }
 
             await leave.update({
+                employee_id,
+                startDate,
+                endDate,
+                leaveType,
+                reason,
                 status,
-                admin_remarks,
+                remarks,
                 updated_by: req.user?.id
             });
 
-            responseHandler.success(res, "Leave status updated successfully", leave);
+            responseHandler.success(res, "Leave updated successfully", leave);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);

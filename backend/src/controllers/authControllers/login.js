@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from "../../models/userModel.js";
 import Client from "../../models/clientModel.js";
+import Employee from "../../models/employeeModel.js";
 import { JWT_SECRET } from "../../config/config.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -18,61 +19,26 @@ export default {
     handler: async (req, res) => {
         try {
             const { login, password } = req.body;
-
-            // Find user and client simultaneously
-            const [user, client] = await Promise.all([
-                User.findOne({
-                    where: {
-                        [Op.or]: [
-                            { email: login },
-                            { username: login }
-                        ]
-                    }
-                }),
-                Client.findOne({
-                    where: {
-                        [Op.or]: [
-                            { email: login },
-                            { username: login }
-                        ]
-                    }
-                })
+            const entities = await Promise.all([
+                User.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
+                Client.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
+                Employee.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } })
             ]);
+            const foundEntity = entities.find(entity => entity && bcrypt.compareSync(password, entity.password));
 
-            // If neither user nor client found
-            if (!user && !client) {
-                return responseHandler.error(res, "Account not found");
+            if (foundEntity) {
+                const index = entities.indexOf(foundEntity);
+                const type = ['user', 'client', 'employee'][index];
+                const tokenPayload = {
+                    email: foundEntity.email,
+                    [`${type}Id`]: foundEntity.id,
+                    ...(type === 'user' ? { role_id: foundEntity.role_id } : { role: type })
+                };
+                const token = jwt.sign(tokenPayload, JWT_SECRET, { expiresIn: '24h' });
+                return responseHandler.success(res, "Login successful", { token, [type]: foundEntity });
             }
 
-            // Check user credentials if user exists
-            if (user) {
-                const isPasswordCorrect = await bcrypt.compare(password, user.password);
-                if (isPasswordCorrect) {
-                    const token = jwt.sign(
-                        { userId: user.id, email: user.email, role_id: user.role_id },
-                        JWT_SECRET,
-                        { expiresIn: '24h' }
-                    );
-                    return responseHandler.success(res, "Login successful", { token, user });
-                }
-            }
-
-            // Check client credentials if client exists
-            if (client) {
-                const isPasswordCorrect = await bcrypt.compare(password, client.password);
-                if (isPasswordCorrect) {
-                    const token = jwt.sign(
-                        { clientId: client.id, email: client.email, role: 'client' },
-                        JWT_SECRET,
-                        { expiresIn: '24h' }
-                    );
-                    return responseHandler.success(res, "Login successful", { token, client });
-                }
-            }
-
-            // If we reach here, password was incorrect for both accounts
-            return responseHandler.error(res, "Invalid password");
-
+            return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
         } catch (error) {
             return responseHandler.error(res, "An error occurred during login");
         }

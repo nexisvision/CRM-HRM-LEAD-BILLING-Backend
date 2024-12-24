@@ -5,7 +5,7 @@ import generateId from '../middlewares/generatorId.js';
 
 const Meeting = sequelize.define('Meeting', {
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
         defaultValue: () => generateId()

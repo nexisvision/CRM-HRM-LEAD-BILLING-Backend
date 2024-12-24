@@ -33,11 +33,11 @@ const Leave = sequelize.define('Leave', {
         type: DataTypes.ENUM('pending', 'approved', 'rejected'),
         defaultValue: 'pending'
     },
-    admin_remarks: {
+    remarks: {
         type: DataTypes.TEXT,
         allowNull: true
     },
-    
+
     created_by: {
         type: DataTypes.STRING,
         allowNull: true

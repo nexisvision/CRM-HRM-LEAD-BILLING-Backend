@@ -4,10 +4,10 @@ import { createLeave, getAllLeaves, getLeaveById, updateLeave, deleteLeave } fro
 
 const router = express.Router();
 
-router.post('/', authenticateUser, checkUserRole(['client']), createLeave.validator, createLeave.handler);
-router.get('/', authenticateUser, checkUserRole(['client']), getAllLeaves.validator, getAllLeaves.handler);
-router.get('/:id', authenticateUser, checkUserRole(['client']), getLeaveById.validator, getLeaveById.handler);
-router.put('/:id', authenticateUser, checkUserRole(['client']), updateLeave.validator, updateLeave.handler);
-router.delete('/:id', authenticateUser, checkUserRole(['client']), deleteLeave.validator, deleteLeave.handler);
+router.post('/', authenticateUser, checkUserRole(['employee']), createLeave.validator, createLeave.handler);
+router.get('/', authenticateUser, checkUserRole(['employee']), getAllLeaves.validator, getAllLeaves.handler);
+router.get('/:id', authenticateUser, checkUserRole(['employee']), getLeaveById.validator, getLeaveById.handler);
+router.put('/:id', authenticateUser, checkUserRole(['employee']), updateLeave.validator, updateLeave.handler);
+router.delete('/:id', authenticateUser, checkUserRole(['employee']), deleteLeave.validator, deleteLeave.handler);
 
 export default router;
