@@ -28,13 +28,14 @@ export default {
             bankname: Joi.string(),
             ifsc: Joi.string(),
             banklocation: Joi.string(),
-            role: Joi.string()
+            role_id: Joi.string(),
+            updated_by: Joi.string()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const updateData = req.body;
+            const { firstName, lastName, username, email, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, role_id, created_by, updated_by } = req.body;
 
             const employee = await Employee.findByPk(id);
             if (!employee) {
@@ -42,23 +43,42 @@ export default {
             }
 
             // Check if email is being changed and if it already exists
-            if (updateData.email && updateData.email !== employee.email) {
-                const existingEmail = await Employee.findOne({ where: { email: updateData.email } });
+            if (email && email !== employee.email) {
+                const existingEmail = await Employee.findOne({ where: { email } });
                 if (existingEmail) {
                     return responseHandler.conflict(res, "Email already exists");
                 }
             }
 
             // Check if phone is being changed and if it already exists
-            if (updateData.phone && updateData.phone !== employee.phone) {
-                const existingPhone = await Employee.findOne({ where: { phone: updateData.phone } });
+            if (phone && phone !== employee.phone) {
+                const existingPhone = await Employee.findOne({ where: { phone } });
                 if (existingPhone) {
                     return responseHandler.conflict(res, "Phone number already exists");
                 }
             }
 
             // Update employee
-            await employee.update(updateData);
+            await employee.update({
+                firstName,
+                lastName,
+                username,
+                email,
+                phone,
+                address,
+                joiningDate,
+                leaveDate,
+                department,
+                designation,
+                salary,
+                accountholder,
+                accountnumber,
+                bankname,
+                ifsc,
+                banklocation,
+                role_id,
+                updated_by: req.user?.id
+            });
 
             responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {

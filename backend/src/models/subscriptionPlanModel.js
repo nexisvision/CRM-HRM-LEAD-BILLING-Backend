@@ -17,14 +17,6 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     },
-    billing_cycle: {
-        type: DataTypes.ENUM('lifetime', 'yearly'),
-        allowNull: false
-    },
-    trial_days: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0
-    },
     max_users: {
         type: DataTypes.INTEGER,
         allowNull: false

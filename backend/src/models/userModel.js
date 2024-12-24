@@ -27,11 +27,6 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    client_id: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -52,6 +47,14 @@ const User = sequelize.define('User', {
                 if (value === null || value === '') return true;
             }
         }
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 });
 

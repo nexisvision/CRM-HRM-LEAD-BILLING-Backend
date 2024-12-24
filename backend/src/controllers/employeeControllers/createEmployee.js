@@ -3,6 +3,8 @@ import bcrypt from "bcrypt";
 import validator from "../../utils/validator.js";
 import Employee from "../../models/employeeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import Role from "../../models/roleModel.js";
+import generateId from "../../middlewares/generatorId.js";
 
 export default {
     validator: validator({
@@ -42,7 +44,9 @@ export default {
             banklocation: Joi.string().optional(),
             cv_path: Joi.string().optional(),
             photo_path: Joi.string().optional(),
-            role: Joi.string().optional()
+            role_id: Joi.string().optional(),
+            created_by: Joi.string().optional(),
+            updated_by: Joi.string().optional()
         })
     }),
     handler: async (req, res) => {
@@ -51,7 +55,7 @@ export default {
                 username, email, password, firstName, lastName, phone,
                 address, joiningDate, leaveDate, department, designation,
                 salary, accountholder, accountnumber, bankname, ifsc,
-                banklocation, cv_path, photo_path, role
+                banklocation, cv_path, photo_path, role_id, created_by, updated_by, role_name
             } = req.body;
 
             // Check if email already exists
@@ -59,6 +63,10 @@ export default {
             if (existingEmail) {
                 return responseHandler.conflict(res, "Email already exists");
             }
+            const [role, created] = await Role.findOrCreate({
+                where: { role_name: role_name || 'employee' },
+                defaults: { id: generateId() }
+            });
 
             // Hash the password
             const hashedPassword = await bcrypt.hash(password, 10);
@@ -84,7 +92,9 @@ export default {
                 banklocation,
                 cv_path,
                 photo_path,
-                role: role || 'employee' // Default role if not provided
+                role_id: role.id,
+                created_by: req.user?.id,
+                updated_by: req.user?.id
             });
 
             responseHandler.created(res, "Employee created successfully", employee);

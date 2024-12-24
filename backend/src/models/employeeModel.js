@@ -104,10 +104,17 @@ const Employee = sequelize.define('Employee', {
         allowNull: true,
         defaultValue: null
     },
-    role: {
+    role_id: {
         type: DataTypes.STRING,
-        defaultValue: 'employee',
-        allowNull: false
+        allowNull: false,
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 });
 

@@ -10,7 +10,6 @@ export default {
         }),
         body: Joi.object({
             price: Joi.number().optional(),
-            trial_days: Joi.number().min(0).optional(),
             max_users: Joi.number().optional(),
             max_customers: Joi.number().optional(),
             max_vendors: Joi.number().optional(),

@@ -8,8 +8,6 @@ export default {
         body: Joi.object({
             name: Joi.string().valid('platinum', 'gold', 'silver', 'bronze').required(),
             price: Joi.number().required(),
-            billing_cycle: Joi.string().valid('lifetime', 'yearly').required(),
-            trial_days: Joi.number().min(0).required(),
             max_users: Joi.number().required(),
             max_customers: Joi.number().required(),
             max_vendors: Joi.number().required(),
