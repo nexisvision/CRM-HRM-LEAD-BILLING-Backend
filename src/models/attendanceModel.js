@@ -32,6 +32,16 @@ const Attendance = sequelize.define('Attendance', {
     comment: {
         type: DataTypes.TEXT,
         allowNull: true
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

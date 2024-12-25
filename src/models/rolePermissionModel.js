@@ -11,20 +11,20 @@ const RolePermission = sequelize.define('RolePermission', {
     role_id: {
         type: DataTypes.STRING,
         allowNull: false,
-        references: {
-            model: 'roles',
-            key: 'id'
-        },
-
     },
     permission_id: {
         type: DataTypes.STRING,
         allowNull: false,
-
     },
-    status: {
-        type: DataTypes.ENUM('active', 'inactive'),
-        defaultValue: 'active'
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

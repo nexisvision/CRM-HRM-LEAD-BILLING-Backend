@@ -48,6 +48,16 @@ const Client = sequelize.define('Client', {
         allowNull: true,
         defaultValue: null
     },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
 });
 
 Client.beforeCreate(async (client) => {

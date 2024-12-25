@@ -1,8 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
-import User from "./userModel.js";
-import Client from "./clientModel.js";
 
 const Project = sequelize.define("Project", {
     id: {
@@ -29,7 +27,6 @@ const Project = sequelize.define("Project", {
     },
     client: {
         type: DataTypes.STRING,
-        
         allowNull: true
     },
     user: {
@@ -37,28 +34,33 @@ const Project = sequelize.define("Project", {
         allowNull: true
     },
     budget: {
-        type: DataTypes.DECIMAL(10, 2),  // Changed from NUMBER to DECIMAL
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     },
-    estimatedmonths: {  
-        type: DataTypes.INTEGER,  // Changed from NUMBER to INTEGER
+    estimatedmonths: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     project_description: {
-        type: DataTypes.TEXT,  // Changed to TEXT for longer content
+        type: DataTypes.TEXT,
         allowNull: true
     },
     tag: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    status: {
+    created_by: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 
-// nsure unique project_id before creating
 Project.beforeCreate(async (project) => {
     let isUnique = false;
     let newId;

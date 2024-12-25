@@ -38,9 +38,15 @@ const Meeting = sequelize.define('Meeting', {
         type: DataTypes.ENUM('scheduled', 'completed', 'cancelled'),
         defaultValue: 'scheduled'
     },
-    createdBy: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

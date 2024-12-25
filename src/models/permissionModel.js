@@ -13,13 +13,11 @@ const Permission = sequelize.define('Permission', {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        validate: {
-            notEmpty: true
-        }
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     status: {
         type: DataTypes.ENUM('active', 'inactive'),
@@ -28,11 +26,13 @@ const Permission = sequelize.define('Permission', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     }
 });
 
@@ -41,7 +41,6 @@ Permission.beforeCreate(async (permission) => {
     let newId;
     while (!isUnique) {
         newId = generateId();
-        // Check if this ID already exists
         const existingPermission = await Permission.findOne({
             where: { id: newId }
         });

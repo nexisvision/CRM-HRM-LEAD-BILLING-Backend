@@ -64,6 +64,16 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
     status: {
         type: DataTypes.ENUM('active', 'inactive'),
         defaultValue: 'active'
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

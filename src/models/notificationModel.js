@@ -24,6 +24,16 @@ const Notification = sequelize.define('Notification', {
         type: DataTypes.BOOLEAN,
         defaultValue: false
     },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
 });
 
 Notification.beforeCreate(async (notification) => {

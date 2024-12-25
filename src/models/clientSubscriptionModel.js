@@ -40,6 +40,16 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
     last_payment_date: {
         type: DataTypes.DATE,
         allowNull: true
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

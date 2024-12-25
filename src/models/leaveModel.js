@@ -34,17 +34,19 @@ const Leave = sequelize.define('Leave', {
         defaultValue: 'pending'
     },
     remarks: {
-        type: DataTypes.TEXT,
-        allowNull: true
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
-
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     }
 });
 

@@ -15,16 +15,18 @@ const Department = sequelize.define('Department', {
     unique: true
   },
   description: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
     allowNull: true
   },
   created_by: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: null
   },
   updated_by: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: null
   }
 });
 
