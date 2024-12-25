@@ -32,13 +32,12 @@ export default {
 
             if (foundEntity) {
                 const type = ['super-admin', 'user', 'company', 'client', 'employee'][entities.indexOf(foundEntity)];
-                console.log(type)
                 const token = jwt.sign({
                     email: foundEntity.email,
                     id: foundEntity.id,
                     role: type
                 }, JWT_SECRET, { expiresIn: '24h' });
-                return responseHandler.success(res, "Login successful", { token, [type]: foundEntity });
+                return responseHandler.success(res, "Login successful", { token, user: foundEntity });
             }
 
             return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
