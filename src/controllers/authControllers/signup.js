@@ -4,7 +4,6 @@ import User from "../../models/userModel.js";
 import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-import { Op } from 'sequelize';
 import generateId from "../../middlewares/generatorId.js";
 
 export default {
@@ -21,42 +20,48 @@ export default {
                     'string.min': 'Password must be at least 8 characters long',
                     'string.empty': 'Password is required'
                 }),
+            profilePic: Joi.string().optional(),
+            firstName: Joi.string().optional(),
+            lastName: Joi.string().optional(),
+            phone: Joi.string().optional()
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email, role_name } = req.body;
+            const { username, password, email, role_name, profilePic, firstName, lastName, phone } = req.body;
 
-            // Check if the username or email already exists
-            const existingUser = await User.findOne({
-                where: {
-                    [Op.or]: [
-                        { username },
-                        { email }
-                    ]
-                }
+            const existingUsername = await User.findOne({
+                where: { username }
             });
 
-            if (existingUser) {
-                return responseHandler.error(res, "Username or email already exists.");
+            if (existingUsername) {
+                return responseHandler.error(res, "Username already exists.");
             }
 
+            const existingEmail = await User.findOne({
+                where: { email }
+            });
 
-            // Find or create the role
-            const [role, created] = await Role.findOrCreate({
+            if (existingEmail) {
+                return responseHandler.error(res, "Email already exists.");
+            }
+
+            const [role] = await Role.findOrCreate({
                 where: { role_name: role_name || 'user' },
                 defaults: { id: generateId() }
             });
 
-            // Hash the password
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            // Create the user with the found role_id
             const user = await User.create({
                 username,
                 email,
                 password: hashedPassword,
-                role_id: role.id, // Use the role_id from the found or created role
+                role_id: role.id,
+                profilePic,
+                firstName,
+                lastName,
+                phone
             });
 
             responseHandler.created(res, "User created successfully", user);

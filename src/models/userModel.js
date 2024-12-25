@@ -27,6 +27,11 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    profilePic: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -41,20 +46,17 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null,
-        unique: true,
-        validate: {
-            isUnique(value) {
-                if (value === null || value === '') return true;
-            }
-        }
+        unique: true
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     }
 });
 

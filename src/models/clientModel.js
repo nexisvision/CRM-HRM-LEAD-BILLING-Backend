@@ -27,6 +27,12 @@ const Client = sequelize.define('Client', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    profilePic: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
+        unique: true
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -40,14 +46,8 @@ const Client = sequelize.define('Client', {
     phone: {
         type: DataTypes.STRING,
         allowNull: true,
-        defaultValue: null,
-        unique: true,
-        validate: {
-            isUnique(value) {
-                if (value === null || value === '') return true;
-            }
-        }
-    }
+        defaultValue: null
+    },
 });
 
 Client.beforeCreate(async (client) => {

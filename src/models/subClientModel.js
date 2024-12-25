@@ -22,6 +22,27 @@ const SubClient = sequelize.define('SubClient', {
         allowNull: false,
         unique: true,
     },
+    profilePic: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
+        unique: true
+    },
     password: {
         type: DataTypes.STRING,
         allowNull: false

@@ -23,6 +23,11 @@ const Employee = sequelize.define('Employee', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    profilePic: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -95,11 +100,6 @@ const Employee = sequelize.define('Employee', {
         defaultValue: null
     },
     cv_path: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    photo_path: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
