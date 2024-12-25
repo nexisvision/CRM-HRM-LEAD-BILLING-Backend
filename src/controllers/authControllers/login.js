@@ -9,7 +9,7 @@ import { JWT_SECRET } from "../../config/config.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import { Op } from "sequelize";
-import Company from "../../models/companyModel.js";
+import Company from "../../models/subClientModel.js";
 
 export default {
     validator: validator({

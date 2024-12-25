@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Company from "../../models/companyModel.js";
+import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -10,23 +10,20 @@ export default {
         }),
         body: Joi.object({
             username: Joi.string().min(3).max(30),
-            email: Joi.string().email(),
-            phone: Joi.string(),
-            address: Joi.string(),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, email, phone, address } = req.body;
+            const { username } = req.body;
 
-            const company = await Company.findByPk(id);
-            if (!company) {
-                return responseHandler.notFound(res, "Company not found");
+            const subClient = await SubClient.findByPk(id);
+            if (!subClient) {
+                return responseHandler.notFound(res, "subClient not found");
             }
 
-            await company.update({ name, email, phone, address });
-            responseHandler.success(res, "Company updated successfully", company);
+            await subClient.update({ username });
+            responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.errors[0].message);

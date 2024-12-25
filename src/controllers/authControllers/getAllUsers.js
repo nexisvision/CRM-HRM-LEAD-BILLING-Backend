@@ -3,7 +3,7 @@ import User from "../../models/userModel.js";
 import Client from "../../models/clientModel.js";
 import validator from "../../utils/validator.js";
 import Employee from "../../models/employeeModel.js";
-import Company from "../../models/companyModel.js";
+import Company from "../../models/subClientModel.js";
 import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 

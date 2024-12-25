@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-const Company = sequelize.define('Company', {
+const SubClient = sequelize.define('SubClient', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
@@ -21,33 +21,10 @@ const Company = sequelize.define('Company', {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        validate: {
-            isEmail: true
-        }
     },
     password: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    phone: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    address: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    website: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    logo: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    status: {
-        type: DataTypes.ENUM('active', 'inactive'),
-        defaultValue: 'active'
     },
     created_by: {
         type: DataTypes.STRING,
@@ -59,18 +36,18 @@ const Company = sequelize.define('Company', {
     }
 });
 
-Company.beforeCreate(async (company) => {
+SubClient.beforeCreate(async (subClient) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingCompany = await Company.findOne({ where: { id: newId } });
-        if (!existingCompany) {
+        const existingSubClient = await SubClient.findOne({ where: { id: newId } });
+        if (!existingSubClient) {
             isUnique = true;
         }
     }
 
-    company.id = newId;
+    subClient.id = newId;
 });
 
-export default Company;
+export default SubClient;

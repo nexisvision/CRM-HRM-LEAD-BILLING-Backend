@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Company from "../../models/companyModel.js";
+import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -12,8 +12,8 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const companies = await Company.findAll();
-            responseHandler.success(res, "Companies fetched successfully", companies);
+            const subClients = await SubClient.findAll();
+            responseHandler.success(res, "SubClients fetched successfully", subClients);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

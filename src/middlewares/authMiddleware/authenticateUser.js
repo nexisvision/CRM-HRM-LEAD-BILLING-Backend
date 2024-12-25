@@ -5,7 +5,7 @@ import responseHandler from "../../utils/responseHandler.js";
 import Client from "../../models/clientModel.js";
 import Employee from "../../models/employeeModel.js";
 import SuperAdmin from "../../models/superAdminModel.js";
-import Company from "../../models/companyModel.js";
+import Company from "../../models/subClientModel.js";
 
 const authenticateUser = async (req, res, next) => {
     try {
