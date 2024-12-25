@@ -9,7 +9,7 @@ const Designation = sequelize.define('Designation', {
     unique: true,
     defaultValue: () => generateId()
   },
-  name: {
+  designation_name: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -17,14 +17,13 @@ const Designation = sequelize.define('Designation', {
     type: DataTypes.TEXT,
     allowNull: true
   },
-  client_id: {
+  created_by: {
     type: DataTypes.STRING,
-    allowNull: false,
-
+    allowNull: true
   },
-  status: {
-    type: DataTypes.ENUM('active', 'inactive'),
-    defaultValue: 'active'
+  updated_by: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 });
 

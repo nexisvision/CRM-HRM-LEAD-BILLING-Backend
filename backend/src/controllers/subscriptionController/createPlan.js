@@ -8,7 +8,7 @@ export default {
         body: Joi.object({
             name: Joi.string().valid('platinum', 'gold', 'silver', 'bronze').required(),
             price: Joi.number().required(),
-            duration: Joi.string().valid('lifetime', 'monthly', 'yearly').required(),
+            duration: Joi.string().required(),
             description: Joi.string().required(),
             trial_period: Joi.number().required(),
             max_users: Joi.number().required(),
@@ -17,11 +17,13 @@ export default {
             max_clients: Joi.number().required(),
             storage_limit: Joi.number().required(),
             features: Joi.object({
-                account: Joi.boolean().required(),
-                crm: Joi.boolean().required(),
-                hrm: Joi.boolean().required(),
-                project: Joi.boolean().required()
-            }).required()
+                account: Joi.boolean().optional(),
+                crm: Joi.boolean().optional(),
+                hrm: Joi.boolean().optional(),
+                project: Joi.boolean().optional(),
+                pos: Joi.boolean().optional(),
+                chatgpt: Joi.boolean().optional(),
+            }).optional(),
         })
     }),
     handler: async (req, res) => {

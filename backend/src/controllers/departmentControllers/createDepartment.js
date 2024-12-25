@@ -11,12 +11,13 @@ export default {
                 .pattern(/^[a-zA-Z\s]+$/)
                 .min(2)
                 .max(50)
-            .messages({
-                'string.pattern.base': 'Department name must contain only letters and spaces',
-                'string.min': 'Department name must be at least 2 characters long',
-                'string.max': 'Department name cannot exceed 50 characters',
-                'string.empty': 'Department name is required'
-                })
+                .messages({
+                    'string.pattern.base': 'Department name must contain only letters and spaces',
+                    'string.min': 'Department name must be at least 2 characters long',
+                    'string.max': 'Department name cannot exceed 50 characters',
+                    'string.empty': 'Department name is required'
+                }),
+            description: Joi.string().optional()
         }),
     }),
     handler: async (req, res) => {
@@ -24,7 +25,7 @@ export default {
             const { department_name } = req.body;
 
             // Check if designation already exists
-                const existingDepartment = await Department.findOne({
+            const existingDepartment = await Department.findOne({
                 where: { department_name }
             });
 
@@ -32,10 +33,14 @@ export default {
                 return responseHandler.error(res, "Department name already exists");
             }
 
-           const department = await Department.create({ department_name });
-                responseHandler.success(res, "Department created successfully", department);
+            const department = await Department.create({
+                department_name,
+                created_by: req.user?.id,
+                updated_by: req.user?.id
+            });
+            responseHandler.success(res, "Department created successfully", department);
         } catch (error) {
             responseHandler.error(res, error.message);
         }
-}
+    }
 }

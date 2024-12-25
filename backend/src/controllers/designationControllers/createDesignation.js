@@ -15,7 +15,8 @@ export default {
                     'string.min': 'Designation name must be at least 2 characters long',
                     'string.max': 'Designation name cannot exceed 50 characters',
                     'string.empty': 'Designation name is required'
-                })
+                }),
+            description: Joi.string().optional()
         }),
     }),
     handler: async (req, res) => {
@@ -31,7 +32,7 @@ export default {
                 return responseHandler.error(res, "Designation name already exists");
             }
 
-            const designation = await Designation.create({ designation_name });
+            const designation = await Designation.create({ designation_name, created_by: req.user?.id, updated_by: req.user?.id });
             responseHandler.success(res, "Designation created successfully", designation);
         } catch (error) {
             responseHandler.error(res, error.message);

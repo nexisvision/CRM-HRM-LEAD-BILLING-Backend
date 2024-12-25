@@ -9,7 +9,7 @@ const Department = sequelize.define('Department', {
     unique: true,
     defaultValue: () => generateId()
   },
-  name: {
+  department_name: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
@@ -18,13 +18,13 @@ const Department = sequelize.define('Department', {
     type: DataTypes.TEXT,
     allowNull: true
   },
-  client_id: {
+  created_by: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true
   },
-  status: {
-    type: DataTypes.ENUM('active', 'inactive'),
-    defaultValue: 'active'
+  updated_by: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 });
 

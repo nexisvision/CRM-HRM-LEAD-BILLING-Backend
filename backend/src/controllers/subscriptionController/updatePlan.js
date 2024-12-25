@@ -11,7 +11,7 @@ export default {
         body: Joi.object({
             name: Joi.string().optional(),
             price: Joi.number().optional(),
-            duration: Joi.string().valid('lifetime', 'monthly', 'yearly').optional(),
+            duration: Joi.string().optional(),
             description: Joi.string().optional(),
             trial_period: Joi.number().optional(),
             max_users: Joi.number().optional(),

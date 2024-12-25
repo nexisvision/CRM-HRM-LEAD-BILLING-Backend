@@ -6,7 +6,6 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            // department_id: Joi.string().required(),
             department_name: Joi.string()
                 .required()
                 .pattern(/^[a-zA-Z\s]+$/)
@@ -27,7 +26,7 @@ export default {
             if (!department) {
                 return responseHandler.error(res, "Department not found");
             }
-            await department.update({ department_name });
+            await department.update({ department_name, updated_by: req.user?.id });
             responseHandler.success(res, "Department updated successfully", department);
         } catch (error) {
             responseHandler.error(res, error.message);
