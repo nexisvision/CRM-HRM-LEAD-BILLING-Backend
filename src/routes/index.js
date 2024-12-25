@@ -21,12 +21,12 @@ const router = express.Router();
 
 
 router.use('/auth', authRoutes);
+router.use('/roles', roleRoutes);
 router.use('/super-admin', superAdminRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/employees', employeeRoutes);
 router.use('/users', userRoutes);
-router.use('/roles', roleRoutes);
 router.use('/departments', departmentRoutes);
 router.use('/designations', designationRoutes);
 router.use('/attendance', attendanceRoutes);

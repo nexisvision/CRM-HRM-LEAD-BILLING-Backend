@@ -2,6 +2,11 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 import generateId from '../middlewares/generatorId.js';
 
+const generateEmployeeId = () => {
+    const randomNum = Math.floor(1000 + Math.random() * 9000); // Generates a random 4-digit number
+    return `EMP${randomNum}`;
+};
+
 const Attendance = sequelize.define('Attendance', {
     id: {
         type: DataTypes.STRING,
@@ -11,7 +16,8 @@ const Attendance = sequelize.define('Attendance', {
     },
     employee_id: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: () => generateEmployeeId()
     },
     startDate: {
         type: DataTypes.DATEONLY,
@@ -57,6 +63,5 @@ Attendance.beforeCreate(async (attendance) => {
     }
     attendance.id = newId;
 });
-
 
 export default Attendance;

@@ -23,9 +23,7 @@ export default {
                 return responseHandler.notFound(res, "Designation not found");
             }
 
-            await designation.destroy();
-
-            responseHandler.success(res, "Designation deleted successfully", designation);
+            responseHandler.success(res, "Designation fetched successfully", designation);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);
