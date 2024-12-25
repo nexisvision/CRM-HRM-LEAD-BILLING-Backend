@@ -55,7 +55,7 @@ export default {
                 leaveType,
                 reason,
                 status,
-                created_by: req.user?.id
+                created_by: req.user?.username
             });
 
             responseHandler.created(res, "Leave request created successfully", leave);

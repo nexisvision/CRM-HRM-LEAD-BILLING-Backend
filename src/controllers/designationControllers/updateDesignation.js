@@ -26,7 +26,7 @@ export default {
             if (!designation) {
                 return responseHandler.error(res, "Designation not found");
             }
-            await designation.update({ designation_name, updated_by: req.user?.id });
+            await designation.update({ designation_name, updated_by: req.user?.username });
             responseHandler.success(res, "Designation updated successfully", designation);
         } catch (error) {
             responseHandler.error(res, error.message);

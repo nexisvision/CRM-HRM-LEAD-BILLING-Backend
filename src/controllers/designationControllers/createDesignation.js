@@ -32,7 +32,7 @@ export default {
                 return responseHandler.error(res, "Designation name already exists");
             }
 
-            const designation = await Designation.create({ designation_name, created_by: req.user?.id, updated_by: req.user?.id });
+            const designation = await Designation.create({ designation_name, created_by: req.user?.username, updated_by: req.user?.username });
             responseHandler.success(res, "Designation created successfully", designation);
         } catch (error) {
             responseHandler.error(res, error.message);

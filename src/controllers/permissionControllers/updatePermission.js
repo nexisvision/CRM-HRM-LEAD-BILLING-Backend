@@ -44,7 +44,7 @@ export default {
                 name: name || permission.name,
                 description: description || permission.description,
                 status: status || permission.status,
-                updated_by: req.user?.id // If you're tracking who updates
+                updated_by: req.user?.username // If you're tracking who updates
             });
 
             responseHandler.success(res, "Permission updated successfully", permission);

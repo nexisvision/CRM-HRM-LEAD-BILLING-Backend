@@ -93,8 +93,8 @@ export default {
                 cv_path,
                 photo_path,
                 role_id: role.id,
-                created_by: req.user?.id,
-                updated_by: req.user?.id
+                created_by: req.user?.username,
+                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Employee created successfully", employee);

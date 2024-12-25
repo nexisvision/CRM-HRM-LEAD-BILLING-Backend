@@ -28,7 +28,7 @@ export default {
                 endDate,
                 endTime,
                 comment,
-                updated_by: req.user?.id
+                updated_by: req.user?.username
             });
 
             responseHandler.success(res, "Attendance updated successfully", attendance);

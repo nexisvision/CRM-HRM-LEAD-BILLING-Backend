@@ -26,7 +26,7 @@ export default {
             if (!department) {
                 return responseHandler.error(res, "Department not found");
             }
-            await department.update({ department_name, updated_by: req.user?.id });
+            await department.update({ department_name, updated_by: req.user?.username });
             responseHandler.success(res, "Department updated successfully", department);
         } catch (error) {
             responseHandler.error(res, error.message);

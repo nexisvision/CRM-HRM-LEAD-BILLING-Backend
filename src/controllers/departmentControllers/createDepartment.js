@@ -35,8 +35,8 @@ export default {
 
             const department = await Department.create({
                 department_name,
-                created_by: req.user?.id,
-                updated_by: req.user?.id
+                created_by: req.user?.username,
+                updated_by: req.user?.username
             });
             responseHandler.success(res, "Department created successfully", department);
         } catch (error) {

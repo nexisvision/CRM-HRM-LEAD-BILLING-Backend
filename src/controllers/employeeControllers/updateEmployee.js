@@ -77,7 +77,7 @@ export default {
                 ifsc,
                 banklocation,
                 role_id,
-                updated_by: req.user?.id
+                updated_by: req.user?.username
             });
 
             responseHandler.success(res, "Employee updated successfully", employee);

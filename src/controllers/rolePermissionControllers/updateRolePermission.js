@@ -24,7 +24,7 @@ export default {
 
             await rolePermission.update({
                 status,
-                updated_by: req.user?.id
+                updated_by: req.user?.username
             });
 
             responseHandler.success(res, "Role permission updated successfully", rolePermission);

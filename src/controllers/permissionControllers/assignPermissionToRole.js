@@ -46,7 +46,7 @@ export default {
                             permission_id
                         },
                         defaults: {
-                            created_by: req.user?.id
+                            created_by: req.user?.username
                         }
                     });
                     return rolePermission;

@@ -26,51 +26,51 @@ export default {
         })
     }),
     handler: async (req, res) => {
-       
+
         try {
-             const { project_name, startdate,
+            const { project_name, startdate,
                 enddate, projectimage, client,
-                user, budget, estimatedmonths, 
+                user, budget, estimatedmonths,
                 project_description, tag,
-             status } = req.body;
-             const clientExists = await Client.findByPk(client);
-             if (!clientExists) {
-                 return responseHandler.notFound(res, "Client not found");
-             }
-             const existingProject = await Project.findOne({
+                status } = req.body;
+            const clientExists = await Client.findByPk(client);
+            if (!clientExists) {
+                return responseHandler.notFound(res, "Client not found");
+            }
+            const existingProject = await Project.findOne({
                 where: { project_name }
             });
-             if (existingProject) {
+            if (existingProject) {
                 return responseHandler.error(res, "Project with this name already exists");
             }
-        
+
             const { id } = req.params;
             const project = await Project.findByPk(id);
-    
-        if (!project) {
-            return responseHandler.error(res, "Project not found");
+
+            if (!project) {
+                return responseHandler.error(res, "Project not found");
+            }
+            const updatedProject = await project.update({
+                project_name,
+                startdate,
+                enddate,
+                projectimage,
+                client,
+                user,
+                budget,
+                estimatedmonths,
+                project_description,
+                tag,
+                status,
+                // updated_by: req.user?.username
+            });
+            responseHandler.success(res, "Project updated successfully", updatedProject);
+
         }
-        const updatedProject = await project.update({
-            project_name,
-            startdate,
-            enddate,
-            projectimage,
-            client,
-            user,
-            budget,
-            estimatedmonths,
-            project_description,
-            tag,
-            status,
-            // updated_by: req.user?.id
-        });
-        responseHandler.success(res, "Project updated successfully", updatedProject);
-    
-    }
-    
-    catch (error) {
-        responseHandler.error(res, error.message);
-    }
+
+        catch (error) {
+            responseHandler.error(res, error.message);
+        }
     }
 }
 

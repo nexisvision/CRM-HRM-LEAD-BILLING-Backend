@@ -36,7 +36,7 @@ export default {
                 reason,
                 status,
                 remarks,
-                updated_by: req.user?.id
+                updated_by: req.user?.username
             });
 
             responseHandler.success(res, "Leave updated successfully", leave);

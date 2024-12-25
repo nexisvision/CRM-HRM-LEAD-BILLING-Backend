@@ -26,7 +26,7 @@ export default {
                 endTime,
                 location,
                 status,
-                createdBy: req.user?.id
+                createdBy: req.user?.username
             });
 
             return responseHandler.success(res, "Meeting created successfully", meeting);

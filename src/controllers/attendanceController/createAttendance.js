@@ -55,7 +55,7 @@ export default {
                 endDate,
                 endTime,
                 comment,
-                created_by: req.user?.id
+                created_by: req.user?.username
             });
 
             responseHandler.created(res, "Attendance marked successfully", attendance);

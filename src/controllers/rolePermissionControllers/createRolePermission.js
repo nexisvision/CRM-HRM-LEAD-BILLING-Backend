@@ -46,7 +46,7 @@ export default {
             const rolePermission = await RolePermission.create({
                 role_id,
                 permission_id,
-                created_by: req.user?.id
+                created_by: req.user?.username
             });
 
             responseHandler.created(res, "Role permission created successfully", rolePermission);

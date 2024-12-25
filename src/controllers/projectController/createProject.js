@@ -17,7 +17,7 @@ export default {
             client: Joi.string(),
             user: Joi.string(),
             budget: Joi.number().required(),
-            estimatedmonths: Joi.number().required(),   
+            estimatedmonths: Joi.number().required(),
             project_description: Joi.string().allow(''),
             tag: Joi.string().required(),
             status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
@@ -25,18 +25,18 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { 
-                project_name, 
-                startdate, 
-                enddate, 
-                projectimage, 
-                client, 
-                user, 
+            const {
+                project_name,
+                startdate,
+                enddate,
+                projectimage,
+                client,
+                user,
                 budget,
                 estimatedmonths,
                 project_description,
                 tag,
-                status 
+                status
             } = req.body;
 
             // Check if client exists
@@ -56,7 +56,7 @@ export default {
                 where: { project_name }
             });
 
-            
+
             if (existingProject) {
                 return responseHandler.error(res, "Project with this name already exists");
             }
@@ -73,7 +73,7 @@ export default {
                 project_description,
                 tag,
                 status,
-                // created_by: req.user?.id
+                // created_by: req.user?.username
             });
 
             responseHandler.created(res, "Project created successfully", project);
