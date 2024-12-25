@@ -13,8 +13,8 @@ export default {
             username: Joi.string().required(),
             email: Joi.string().email().required(),
             password: Joi.string().required(),
-            phone: Joi.string().required(),
-            address: Joi.string().required(),
+            phone: Joi.string().optional(),
+            address: Joi.string().optional(),
             website: Joi.string().optional(),
         })
     }),
@@ -22,7 +22,6 @@ export default {
         try {
             const { username, email, password, phone, address, website } = req.body;
 
-            // Check if the username or email already exists
             const existingClient = await Company.findOne({
                 where: {
                     [Op.or]: [
@@ -36,16 +35,13 @@ export default {
                 return responseHandler.error(res, "Username or email already exists.");
             }
 
-            // Find or create the client role
             const [role, created] = await Role.findOrCreate({
                 where: { role_name: 'company' },
                 defaults: { id: generateId() }
             });
 
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            // Create client with client role
             const client = await Company.create({
                 username,
                 password: hashedPassword,
@@ -54,7 +50,8 @@ export default {
                 phone,
                 address,
                 website,
-                created_by: req.user?.id
+                created_by: req.user?.id,
+                updated_by: req.user?.id
             });
 
             responseHandler.created(res, "Company created successfully", client);

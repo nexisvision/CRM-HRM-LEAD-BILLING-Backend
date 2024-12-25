@@ -9,24 +9,23 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            name: Joi.string().min(3).max(30),
+            username: Joi.string().min(3).max(30),
             email: Joi.string().email(),
-            phone: Joi.string().min(10).max(15),
-            address: Joi.string().min(3).max(100),
-            role_id: Joi.string()
+            phone: Joi.string(),
+            address: Joi.string(),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, email, phone, address, role_id } = req.body;
+            const { name, email, phone, address } = req.body;
 
             const company = await Company.findByPk(id);
             if (!company) {
                 return responseHandler.notFound(res, "Company not found");
             }
 
-            await company.update({ name, email, phone, address, role_id });
+            await company.update({ name, email, phone, address });
             responseHandler.success(res, "Company updated successfully", company);
         } catch (error) {
             console.log(error);

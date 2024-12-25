@@ -31,11 +31,11 @@ const Company = sequelize.define('Company', {
     },
     phone: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
     },
     address: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: true
     },
     website: {
         type: DataTypes.STRING,

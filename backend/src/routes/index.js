@@ -20,9 +20,9 @@ const router = express.Router();
 
 
 router.use('/auth', authRoutes);
+router.use('/companies', companyRoutes);
 router.use('/users', userRoutes);
 router.use('/roles', roleRoutes);
-router.use('/companies', companyRoutes);
 router.use('/clients', clientRoutes);
 router.use('/employees', employeeRoutes);
 router.use('/departments', departmentRoutes);
