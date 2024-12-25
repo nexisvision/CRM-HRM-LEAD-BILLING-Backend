@@ -19,7 +19,7 @@ export default {
             const client = await Client.findByPk(id);
 
             if (!client) {
-                return responseHandler.error(res, "Client not found", 404);
+                return responseHandler.error(res, "Client not found");
             }
 
             responseHandler.success(res, "Client fetched successfully", client);

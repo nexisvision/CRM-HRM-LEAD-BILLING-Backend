@@ -4,7 +4,6 @@ import validator from "../../utils/validator.js";
 import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
-import { Op } from "sequelize";
 import generateId from "../../middlewares/generatorId.js";
 
 export default {
@@ -12,27 +11,42 @@ export default {
         body: Joi.object({
             username: Joi.string().required(),
             email: Joi.string().email().required(),
-            password: Joi.string().required(),
-        })
+            password: Joi.string()
+                .required()
+                .min(8)
+                .pattern(new RegExp('^[a-zA-Z0-9!@#$%^&*]{8,30}$'))
+                .messages({
+                    'string.pattern.base': 'Create a strong password',
+                    'string.min': 'Password must be at least 8 characters long',
+                    'string.empty': 'Password is required'
+                }),
+            firstName: Joi.string().optional(),
+            lastName: Joi.string().optional(),
+            phone: Joi.string().optional(),
+            profilePic: Joi.string().optional()
+        }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, email, password } = req.body;
+            const { username, email, password, firstName, lastName, phone, profilePic } = req.body;
 
-            const existingClient = await Company.findOne({
-                where: {
-                    [Op.or]: [
-                        { username },
-                        { email }
-                    ]
-                }
+            const existingUsername = await SubClient.findOne({
+                where: { username }
             });
 
-            if (existingClient) {
-                return responseHandler.error(res, "Username or email already exists.");
+            if (existingUsername) {
+                return responseHandler.error(res, "Username already exists.");
             }
 
-            const [role, created] = await Role.findOrCreate({
+            const existingEmail = await SubClient.findOne({
+                where: { email }
+            });
+
+            if (existingEmail) {
+                return responseHandler.error(res, "Email already exists.");
+            }
+
+            const [role] = await Role.findOrCreate({
                 where: { role_name: 'sub-client' },
                 defaults: { id: generateId() }
             });
@@ -44,6 +58,10 @@ export default {
                 password: hashedPassword,
                 email,
                 role_id: role.id,
+                firstName,
+                lastName,
+                phone,
+                profilePic,
                 created_by: req.user?.username,
                 updated_by: req.user?.username
             });

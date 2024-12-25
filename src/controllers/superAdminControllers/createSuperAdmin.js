@@ -41,12 +41,10 @@ export default {
         try {
             const { username, email, password, secret_key } = req.body;
 
-            // Verify secret key (store this in environment variables)
             if (secret_key !== SUPER_ADMIN_SECRET_KEY) {
                 return responseHandler.unauthorized(res, "Invalid secret key");
             }
 
-            // Check if super-admin already exists
             const existingSuperAdmin = await SuperAdmin.findOne({
                 where: {
                     role_id: 'super-admin'
@@ -63,16 +61,13 @@ export default {
                 return responseHandler.error(res, "Email already exists");
             }
 
-            // Find or create super-admin role
             const [role] = await Role.findOrCreate({
                 where: { role_name: 'super-admin' },
                 defaults: { id: generateId() }
             });
 
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            // Create super-admin user
             const superAdmin = await SuperAdmin.create({
                 id: generateId(),
                 username,

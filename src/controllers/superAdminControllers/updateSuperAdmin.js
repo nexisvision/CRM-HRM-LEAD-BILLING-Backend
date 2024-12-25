@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
+import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -10,7 +10,6 @@ export default {
         }),
         body: Joi.object({
             username: Joi.string().min(3).max(30),
-            email: Joi.string().email(),
             firstName: Joi.string().optional(),
             lastName: Joi.string().optional(),
             phone: Joi.string().optional(),
@@ -20,15 +19,15 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username, email, firstName, lastName, phone, profilePic } = req.body;
+            const { username, firstName, lastName, phone, profilePic } = req.body;
 
-            const client = await Client.findByPk(id);
-            if (!client) {
-                return responseHandler.notFound(res, "Client not found");
+            const superAdmin = await SuperAdmin.findByPk(id);
+            if (!superAdmin) {
+                return responseHandler.notFound(res, "Super admin not found");
             }
 
-            await client.update({ username, email, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
-            responseHandler.success(res, "Client updated successfully", client);
+            await superAdmin.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
+            responseHandler.success(res, "Super admin updated successfully", superAdmin);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.errors[0].message);

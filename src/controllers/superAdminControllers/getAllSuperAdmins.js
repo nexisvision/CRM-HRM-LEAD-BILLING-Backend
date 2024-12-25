@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
+import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -12,12 +12,11 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const clients = await Client.findAll();
-            if (clients) {
-                responseHandler.success(res, "Clients fetched successfully", clients);
-            }
+            const superAdmins = await SuperAdmin.findAll();
+            responseHandler.success(res, "Super Admins fetched successfully", superAdmins);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            console.log(error);
+            responseHandler.error(res, error.message);
         }
     }
-}
+};

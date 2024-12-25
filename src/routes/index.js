@@ -16,10 +16,12 @@ import eventRoutes from "./eventRoutes.js";
 import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
 import subClientRoutes from "./subClientRoutes.js";
+import superAdminRoutes from "./superAdminRoutes.js";
 const router = express.Router();
 
 
 router.use('/auth', authRoutes);
+router.use('/super-admin', superAdminRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/users', userRoutes);
