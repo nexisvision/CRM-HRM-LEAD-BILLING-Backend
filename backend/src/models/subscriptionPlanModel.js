@@ -9,6 +9,14 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         unique: true,
         defaultValue: () => generateId()
     },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    duration: {
+        type: DataTypes.ENUM('lifetime', 'monthly', 'yearly'),
+        allowNull: false
+    },
     name: {
         type: DataTypes.ENUM('platinum', 'gold', 'silver', 'bronze'),
         allowNull: false
@@ -39,7 +47,19 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
     },
     features: {
         type: DataTypes.JSON,
-        allowNull: false
+        allowNull: true,
+        defaultValue: {
+            account: false,
+            crm: false,
+            hrm: false,
+            project: false,
+            pos: false,
+            chatgpt: false
+        },
+    },
+    trial_period: {
+        type: DataTypes.INTEGER,
+        allowNull: true
     },
     status: {
         type: DataTypes.ENUM('active', 'inactive'),

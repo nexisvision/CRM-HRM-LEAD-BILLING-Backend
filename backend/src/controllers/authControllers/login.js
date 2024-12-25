@@ -3,11 +3,13 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from "../../models/userModel.js";
 import Client from "../../models/clientModel.js";
+import SuperAdmin from "../../models/superAdminModel.js";
 import Employee from "../../models/employeeModel.js";
 import { JWT_SECRET } from "../../config/config.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import { Op } from "sequelize";
+import Company from "../../models/companyModel.js";
 
 export default {
     validator: validator({
@@ -20,21 +22,22 @@ export default {
         try {
             const { login, password } = req.body;
             const entities = await Promise.all([
+                SuperAdmin.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
                 User.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
+                Company.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
                 Client.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
                 Employee.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } })
             ]);
             const foundEntity = entities.find(entity => entity && bcrypt.compareSync(password, entity.password));
 
             if (foundEntity) {
-                const index = entities.indexOf(foundEntity);
-                const type = ['user', 'client', 'employee'][index];
-                const tokenPayload = {
+                const type = ['super-admin', 'user', 'company', 'client', 'employee'][entities.indexOf(foundEntity)];
+                console.log(type)
+                const token = jwt.sign({
                     email: foundEntity.email,
-                    [`${type}Id`]: foundEntity.id,
-                    ...(type === 'user' ? { role_id: foundEntity.role_id } : { role: type })
-                };
-                const token = jwt.sign(tokenPayload, JWT_SECRET, { expiresIn: '24h' });
+                    id: foundEntity.id,
+                    role: type
+                }, JWT_SECRET, { expiresIn: '24h' });
                 return responseHandler.success(res, "Login successful", { token, [type]: foundEntity });
             }
 

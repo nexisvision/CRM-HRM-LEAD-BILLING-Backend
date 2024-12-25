@@ -9,7 +9,11 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
+            name: Joi.string().optional(),
             price: Joi.number().optional(),
+            duration: Joi.string().valid('lifetime', 'monthly', 'yearly').optional(),
+            description: Joi.string().optional(),
+            trial_period: Joi.number().optional(),
             max_users: Joi.number().optional(),
             max_customers: Joi.number().optional(),
             max_vendors: Joi.number().optional(),
@@ -27,13 +31,14 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
+            const { name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features, status } = req.body;
 
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
                 return responseHandler.notFound(res, "Plan not found");
             }
 
-            await plan.update(req.body);
+            await plan.update({ name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features, status });
 
             responseHandler.success(res, "Plan updated successfully", plan);
         } catch (error) {

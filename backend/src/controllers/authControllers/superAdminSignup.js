@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import Joi from "joi";
-import User from "../../models/userModel.js";
+import SuperAdmin from "../../models/superAdminModel.js";
 import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
@@ -47,7 +47,7 @@ export default {
             }
 
             // Check if super-admin already exists
-            const existingSuperAdmin = await User.findOne({
+            const existingSuperAdmin = await SuperAdmin.findOne({
                 where: {
                     role_id: 'super-admin'
                 }
@@ -58,7 +58,7 @@ export default {
             }
 
             // Check if email already exists
-            const existingUser = await User.findOne({ where: { email } });
+            const existingUser = await SuperAdmin.findOne({ where: { email } });
             if (existingUser) {
                 return responseHandler.error(res, "Email already exists");
             }
@@ -73,7 +73,7 @@ export default {
             const hashedPassword = await bcrypt.hash(password, 10);
 
             // Create super-admin user
-            const superAdmin = await User.create({
+            const superAdmin = await SuperAdmin.create({
                 id: generateId(),
                 username,
                 email,
@@ -81,10 +81,7 @@ export default {
                 role_id: role.id,
             });
 
-            // Remove password from response
-            const { password: _, ...superAdminData } = superAdmin.toJSON();
-
-            responseHandler.created(res, "Super admin created successfully", superAdminData);
+            responseHandler.created(res, "Super admin created successfully", superAdmin);
         } catch (error) {
             console.error(error);
             responseHandler.error(res, error.message);

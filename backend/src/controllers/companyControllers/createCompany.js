@@ -1,10 +1,10 @@
 import Joi from "joi";
 import bcrypt from 'bcrypt';
-import User from "../../models/userModel.js";
-import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
+import Company from "../../models/companyModel.js";
 import responseHandler from "../../utils/responseHandler.js";
-import { Op } from 'sequelize';
+import Role from "../../models/roleModel.js";
+import { Op } from "sequelize";
 import generateId from "../../middlewares/generatorId.js";
 
 export default {
@@ -12,23 +12,18 @@ export default {
         body: Joi.object({
             username: Joi.string().required(),
             email: Joi.string().email().required(),
-            password: Joi.string()
-                .required()
-                .min(8)
-                .pattern(new RegExp('^[a-zA-Z0-9!@#$%^&*]{8,30}$'))
-                .messages({
-                    'string.pattern.base': 'Create a strong password',
-                    'string.min': 'Password must be at least 8 characters long',
-                    'string.empty': 'Password is required'
-                }),
-        }),
+            password: Joi.string().required(),
+            phone: Joi.string().required(),
+            address: Joi.string().required(),
+            website: Joi.string().optional(),
+        })
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email, role_name } = req.body;
+            const { username, email, password, phone, address, website } = req.body;
 
             // Check if the username or email already exists
-            const existingUser = await User.findOne({
+            const existingClient = await Company.findOne({
                 where: {
                     [Op.or]: [
                         { username },
@@ -37,33 +32,36 @@ export default {
                 }
             });
 
-            if (existingUser) {
+            if (existingClient) {
                 return responseHandler.error(res, "Username or email already exists.");
             }
 
-
-            // Find or create the role
+            // Find or create the client role
             const [role, created] = await Role.findOrCreate({
-                where: { role_name: role_name || 'user' },
+                where: { role_name: 'company' },
                 defaults: { id: generateId() }
             });
 
-            // Hash the password
+            // Hash password
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            // Create the user with the found role_id
-            const user = await User.create({
+            // Create client with client role
+            const client = await Company.create({
                 username,
-                email,
                 password: hashedPassword,
-                role_id: role.id, // Use the role_id from the found or created role
+                email,
+                role_id: role.id,
+                phone,
+                address,
+                website,
+                created_by: req.user?.id
             });
 
-            responseHandler.created(res, "User created successfully", user);
+            responseHandler.created(res, "Company created successfully", client);
 
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);
         }
     }
-};
+}

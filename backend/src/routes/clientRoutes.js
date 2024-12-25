@@ -4,11 +4,11 @@ import { authenticateUser, checkUserRole } from "../middlewares/index.js";
 
 const router = express.Router();
 
-router.get('/', authenticateUser, checkUserRole(['super-admin']), getAllClients.validator, getAllClients.handler);
-router.post('/', authenticateUser, checkUserRole(['super-admin']), createClient.validator, createClient.handler);
-router.get('/:id', authenticateUser, checkUserRole(['super-admin']), getClientById.validator, getClientById.handler);
-router.put('/:id', authenticateUser, checkUserRole(['super-admin']), updateClient.validator, updateClient.handler);
-router.delete('/:id', authenticateUser, checkUserRole(['super-admin']), deleteClient.validator, deleteClient.handler);
+router.post('/', authenticateUser, checkUserRole(['company']), createClient.validator, createClient.handler);
+router.get('/', authenticateUser, checkUserRole(['company']), getAllClients.validator, getAllClients.handler);
+router.get('/:id', authenticateUser, checkUserRole(['company']), getClientById.validator, getClientById.handler);
+router.put('/:id', authenticateUser, checkUserRole(['company']), updateClient.validator, updateClient.handler);
+router.delete('/:id', authenticateUser, checkUserRole(['company']), deleteClient.validator, deleteClient.handler);
 
 
 export default router;

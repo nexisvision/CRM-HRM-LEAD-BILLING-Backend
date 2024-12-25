@@ -15,12 +15,14 @@ import announcementRoutes from "./announcementRoutes.js";
 import eventRoutes from "./eventRoutes.js";
 import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
+import companyRoutes from "./companyRoutes.js";
 const router = express.Router();
 
 
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/roles', roleRoutes);
+router.use('/companies', companyRoutes);
 router.use('/clients', clientRoutes);
 router.use('/employees', employeeRoutes);
 router.use('/departments', departmentRoutes);
