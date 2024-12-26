@@ -1,14 +1,14 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import Lead from "../../models/leadModel.js";
 
 export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required().messages({
-                'string.base': 'Client ID must be a string',
-                'string.empty': 'Client ID is required',
+                'string.base': 'Lead ID must be a string',
+                'string.empty': 'Lead ID is required',
             })
         })
     }),
@@ -16,16 +16,16 @@ export default {
         try {
             const { id } = req.params;
 
-            const client = await Client.findByPk(id);
+            const lead = await Lead.findByPk(id);
 
-            if (!client) {
-                return responseHandler.error(res, "Client not found");
+            if (!lead) {
+                return responseHandler.notFound(res, "Lead not found");
             }
 
-            responseHandler.success(res, "Client fetched successfully", client);
+            responseHandler.success(res, "Lead fetched successfully", lead);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
-};
+};   

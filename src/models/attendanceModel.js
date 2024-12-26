@@ -2,16 +2,13 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 import generateId from '../middlewares/generatorId.js';
 
+
 const Attendance = sequelize.define('Attendance', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
         defaultValue: () => generateId()
-    },
-    employee_id: {
-        type: DataTypes.STRING,
-        allowNull: false
     },
     startDate: {
         type: DataTypes.DATEONLY,
@@ -57,6 +54,5 @@ Attendance.beforeCreate(async (attendance) => {
     }
     attendance.id = newId;
 });
-
 
 export default Attendance;

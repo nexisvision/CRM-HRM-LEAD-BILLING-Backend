@@ -20,15 +20,18 @@ import featureRoutes from "./featureRoutes.js";
 import taskCalendarRoutes from "./taskcalendarRoutes.js";
 import currencyRoutes from "./currencyRoutes.js";
 import branchRoutes from "./branchRoutes.js";
+import superAdminRoutes from "./superAdminRoutes.js";
+import leadRoutes from "./leadRoutes.js";
 const router = express.Router();
 
 
 router.use('/auth', authRoutes);
+router.use('/roles', roleRoutes);
+router.use('/super-admin', superAdminRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
-router.use('/users', userRoutes);
-router.use('/roles', roleRoutes);
 router.use('/employees', employeeRoutes);
+router.use('/users', userRoutes);
 router.use('/departments', departmentRoutes);
 router.use('/designations', designationRoutes);
 router.use('/attendance', attendanceRoutes);
@@ -44,5 +47,6 @@ router.use('/features', featureRoutes);
 router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
 router.use('/branches', branchRoutes);
+router.use('/leads', leadRoutes);
 
 export default router;

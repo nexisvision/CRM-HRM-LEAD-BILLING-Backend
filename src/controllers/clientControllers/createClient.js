@@ -4,7 +4,6 @@ import Client from "../../models/clientModel.js";
 import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-import { Op } from 'sequelize';
 import generateId from "../../middlewares/generatorId.js";
 
 export default {
@@ -20,42 +19,51 @@ export default {
                     'string.pattern.base': 'Create a strong password',
                     'string.min': 'Password must be at least 8 characters long',
                     'string.empty': 'Password is required'
-                })
+                }),
+            firstName: Joi.string().optional(),
+            lastName: Joi.string().optional(),
+            phone: Joi.string().optional(),
+            profilePic: Joi.string().optional()
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email } = req.body;
+            const { username, password, email, firstName, lastName, phone, profilePic } = req.body;
 
-            // Check if the username or email already exists
-            const existingClient = await Client.findOne({
-                where: {
-                    [Op.or]: [
-                        { username },
-                        { email }
-                    ]
-                }
+            const existingUsername = await Client.findOne({
+                where: { username }
             });
 
-            if (existingClient) {
-                return responseHandler.error(res, "Username or email already exists.");
+            if (existingUsername) {
+                return responseHandler.error(res, "Username already exists.");
             }
 
-            // Find or create the client role
-            const [role, created] = await Role.findOrCreate({
+            const existingEmail = await Client.findOne({
+                where: { email }
+            });
+
+            if (existingEmail) {
+                return responseHandler.error(res, "Email already exists.");
+            }
+
+            const [role] = await Role.findOrCreate({
                 where: { role_name: 'client' },
                 defaults: { id: generateId() }
             });
 
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            // Create client with client role
             const client = await Client.create({
                 username,
                 password: hashedPassword,
                 email,
-                role_id: role.id
+                role_id: role.id,
+                firstName,
+                lastName,
+                phone,
+                profilePic,
+                created_by: req.user?.username,
+                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Client created successfully", client);

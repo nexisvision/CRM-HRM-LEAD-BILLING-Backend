@@ -44,9 +44,6 @@ export default {
             banklocation: Joi.string().optional(),
             cv_path: Joi.string().optional(),
             photo_path: Joi.string().optional(),
-            role_id: Joi.string().optional(),
-            created_by: Joi.string().optional(),
-            updated_by: Joi.string().optional()
         })
     }),
     handler: async (req, res) => {
@@ -55,15 +52,26 @@ export default {
                 username, email, password, firstName, lastName, phone,
                 address, joiningDate, leaveDate, department, designation,
                 salary, accountholder, accountnumber, bankname, ifsc,
-                banklocation, cv_path, photo_path, role_id, created_by, updated_by, role_name
-            } = req.body;
+                banklocation, cv_path, photo_path, role_name } = req.body;
 
             // Check if email already exists
-            const existingEmail = await Employee.findOne({ where: { email } });
-            if (existingEmail) {
-                return responseHandler.conflict(res, "Email already exists");
+            const existingUsername = await Employee.findOne({
+                where: { username }
+            });
+
+            if (existingUsername) {
+                return responseHandler.error(res, "Username already exists.");
             }
-            const [role, created] = await Role.findOrCreate({
+
+            const existingEmail = await Employee.findOne({
+                where: { email }
+            });
+
+            if (existingEmail) {
+                return responseHandler.error(res, "Email already exists.");
+            }
+
+            const [role] = await Role.findOrCreate({
                 where: { role_name: role_name || 'employee' },
                 defaults: { id: generateId() }
             });

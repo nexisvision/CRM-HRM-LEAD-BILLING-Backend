@@ -1,7 +1,7 @@
 import Joi from "joi";
-import Attendance from "../../models/attendanceModel.js";
-import validator from "../../utils/validator.js";
+import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
@@ -12,9 +12,10 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const attendances = await Attendance.findAll();
-            responseHandler.success(res, "Attendances fetched successfully", attendances);
+            const superAdmins = await SuperAdmin.findAll();
+            responseHandler.success(res, "Super Admins fetched successfully", superAdmins);
         } catch (error) {
+            console.log(error);
             responseHandler.error(res, error.message);
         }
     }

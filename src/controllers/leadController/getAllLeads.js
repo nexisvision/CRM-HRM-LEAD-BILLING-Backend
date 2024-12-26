@@ -1,7 +1,7 @@
 import Joi from "joi";
-import Attendance from "../../models/attendanceModel.js";
-import validator from "../../utils/validator.js";
+import Lead from "../../models/leadModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
@@ -12,10 +12,10 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const attendances = await Attendance.findAll();
-            responseHandler.success(res, "Attendances fetched successfully", attendances);
+            const leads = await Lead.findAll();
+            responseHandler.success(res, "Leads fetched successfully", leads);
         } catch (error) {
             responseHandler.error(res, error.message);
         }
     }
-};
+}

@@ -10,19 +10,23 @@ export default {
         }),
         body: Joi.object({
             username: Joi.string().min(3).max(30),
+            firstName: Joi.string().optional(),
+            lastName: Joi.string().optional(),
+            phone: Joi.string().optional(),
+            profilePic: Joi.string().optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username } = req.body;
+            const { username, firstName, lastName, phone, profilePic } = req.body;
 
             const subClient = await SubClient.findByPk(id);
             if (!subClient) {
                 return responseHandler.notFound(res, "subClient not found");
             }
 
-            await subClient.update({ username });
+            await subClient.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
             responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
             console.log(error);

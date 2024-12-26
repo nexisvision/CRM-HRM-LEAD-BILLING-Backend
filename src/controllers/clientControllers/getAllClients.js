@@ -13,7 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const clients = await Client.findAll();
-            responseHandler.success(res, "Clients fetched successfully", clients);
+            if (clients) {
+                responseHandler.success(res, "Clients fetched successfully", clients);
+            }
         } catch (error) {
             responseHandler.error(res, error.errors[0].message);
         }
