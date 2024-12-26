@@ -2,7 +2,6 @@ import Joi from "joi";
 import Attendance from "../../models/attendanceModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -17,28 +16,6 @@ export default {
     handler: async (req, res) => {
         try {
             const { startDate, startTime, endDate, endTime, comment } = req.body;
-
-            // Check if attendance already exists for this date
-            const existingAttendance = await Attendance.findOne({
-                where: {
-                    [Op.or]: [
-                        {
-                            startDate: {
-                                [Op.between]: [startDate, endDate]
-                            }
-                        },
-                        {
-                            endDate: {
-                                [Op.between]: [startDate, endDate]
-                            }
-                        }
-                    ]
-                }
-            });
-
-            if (existingAttendance) {
-                return responseHandler.error(res, "Attendance already marked for this date");
-            }
 
             const attendance = await Attendance.create({
                 startDate,

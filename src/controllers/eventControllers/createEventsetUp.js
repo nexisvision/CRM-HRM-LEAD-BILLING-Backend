@@ -28,11 +28,11 @@ export default {
     handler: async (req, res) => {
         const { EventTitle, EventManager, EventDate, EventTime } = req.body;
         try {
-            const event = await EventSetup.create({ 
+            const event = await EventSetup.create({
                 EventTitle,
                 EventManager,
                 EventDate,
-                EventTime    
+                EventTime
             });
             responseHandler.success(res, "Event scheduled successfully!", event);
         } catch (error) {

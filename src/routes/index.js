@@ -17,6 +17,7 @@ import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
 import subClientRoutes from "./subClientRoutes.js";
 import superAdminRoutes from "./superAdminRoutes.js";
+import leadRoutes from "./leadRoutes.js";
 const router = express.Router();
 
 
@@ -38,5 +39,6 @@ router.use('/announcements', announcementRoutes);
 router.use('/events', eventRoutes);
 router.use('/projects', projectRoutes);
 router.use('/meetings', meetingRoutes);
+router.use('/leads', leadRoutes);
 
 export default router;
