@@ -1,8 +1,7 @@
 import Joi from "joi";
+import TaskCalendar from "../../models/taskcalendarModel.js";
+import responseHandler from "../../utils/responseHandler.js";   
 import validator from "../../utils/validator.js";
-import responseHandler from "../../utils/responseHandler.js";
-import EventSetup from "../../models/eventsetupModel.js";
-
 export default {
     validator: validator({
         params: Joi.object({
@@ -13,14 +12,15 @@ export default {
         })
     }),
     handler: async (req, res) => {
-        const { id } = req.params;
         try {
-            const event = await EventSetup.findByPk(id);
-            if (!event) {
-                return responseHandler.error(res, "Event not found");
+        const { id } = req.params;
+      
+            const task = await TaskCalendar.findByPk(id);
+            if (!task) {
+                return responseHandler.error(res, "Task not found");
             }
-            await event.destroy();
-            responseHandler.success(res, "Event deleted successfully", event);
+            await task.destroy();
+            responseHandler.success(res, "Task deleted successfully", task);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

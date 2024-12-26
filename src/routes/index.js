@@ -16,6 +16,10 @@ import eventRoutes from "./eventRoutes.js";
 import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
 import subClientRoutes from "./subClientRoutes.js";
+import featureRoutes from "./featureRoutes.js";
+import taskCalendarRoutes from "./taskcalendarRoutes.js";
+import currencyRoutes from "./currencyRoutes.js";
+import branchRoutes from "./branchRoutes.js";
 const router = express.Router();
 
 
@@ -36,5 +40,9 @@ router.use('/announcements', announcementRoutes);
 router.use('/events', eventRoutes);
 router.use('/projects', projectRoutes);
 router.use('/meetings', meetingRoutes);
+router.use('/features', featureRoutes);
+router.use('/taskcalendars', taskCalendarRoutes);
+router.use('/currencies', currencyRoutes);
+router.use('/branches', branchRoutes);
 
 export default router;
