@@ -1,11 +1,8 @@
 import Joi from "joi";
 import Project from "../../models/projectModel.js";
-// import Project from "../../models/projectModel.js";
 import Client from "../../models/clientModel.js";
-import User from "../../models/userModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-// import sequelize from "../../config/db.js";
 
 export default {
     validator: validator({
@@ -19,7 +16,10 @@ export default {
             budget: Joi.number().required(),
             estimatedmonths: Joi.number().required(),
             project_description: Joi.string().allow(''),
-            tag: Joi.string().required(),
+            tags: Joi.alternatives().try(
+                Joi.array().items(Joi.string()).min(1),
+                Joi.string()
+            ).required(),
             status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
         })
     }),
@@ -35,27 +35,30 @@ export default {
                 budget,
                 estimatedmonths,
                 project_description,
-                tag,
+                tags,
                 status
             } = req.body;
 
-            // Check if client exists
-            const clientExists = await Client.findByPk(client);
-            if (!clientExists) {
-                return responseHandler.notFound(res, "Client not found");
-            }
+            // Process tags: Convert string to array if needed
+            let processedTags = Array.isArray(tags)
+                ? tags
+                : tags.split(',').map(tag => tag.trim());
 
-            // Check if user exists
-            // const userExists = await User.findByPk(user);
-            // if (!userExists) {
-            //     return responseHandler.notFound(res, "User not found");
-            // }
+            // Remove duplicates and empty tags
+            processedTags = [...new Set(processedTags)].filter(tag => tag);
+
+            // Check if client exists
+            if (client) {
+                const clientExists = await Client.findByPk(client);
+                if (!clientExists) {
+                    return responseHandler.notFound(res, "Client not found");
+                }
+            }
 
             // Check if project name already exists
             const existingProject = await Project.findOne({
                 where: { project_name }
             });
-
 
             if (existingProject) {
                 return responseHandler.error(res, "Project with this name already exists");
@@ -71,9 +74,9 @@ export default {
                 budget,
                 estimatedmonths,
                 project_description,
-                tag,
+                tags: processedTags,
                 status,
-                // created_by: req.user?.username
+                created_by: req.user?.username
             });
 
             responseHandler.created(res, "Project created successfully", project);

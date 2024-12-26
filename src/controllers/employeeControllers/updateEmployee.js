@@ -24,9 +24,9 @@ export default {
             designation: Joi.string(),
             salary: Joi.number(),
             accountholder: Joi.string(),
-            accountnumber: Joi.string(),
+            accountnumber: Joi.number(),
             bankname: Joi.string(),
-            ifsc: Joi.string(),
+            ifsc: Joi.number(),
             banklocation: Joi.string(),
             role_id: Joi.string(),
             updated_by: Joi.string()

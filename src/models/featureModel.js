@@ -6,9 +6,9 @@ const Feature = sequelize.define('feature', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: () => generateId(),
         unique: true,
-        primaryKey: true
+        primaryKey: true,
+        defaultValue: () => generateId(),
     },
     featureName: {
         type: DataTypes.STRING,

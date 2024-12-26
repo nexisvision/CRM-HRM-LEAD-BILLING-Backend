@@ -45,9 +45,15 @@ const Project = sequelize.define("Project", {
         type: DataTypes.TEXT,
         allowNull: true
     },
-    tag: {
-        type: DataTypes.STRING,
-        allowNull: false
+    tags: {
+        type: DataTypes.JSON,
+        allowNull: false,
+        defaultValue: []
+    },
+    status: {
+        type: DataTypes.ENUM('pending', 'in_progress', 'completed', 'on_hold'),
+        allowNull: false,
+        defaultValue: 'pending'
     },
     created_by: {
         type: DataTypes.STRING,

@@ -21,7 +21,7 @@ import taskCalendarRoutes from "./taskcalendarRoutes.js";
 import currencyRoutes from "./currencyRoutes.js";
 import branchRoutes from "./branchRoutes.js";
 import superAdminRoutes from "./superAdminRoutes.js";
-import leadRoutes from "./leadRoutes.js";
+import leadRoutes from "./leadRoutes.js";;
 const router = express.Router();
 
 
