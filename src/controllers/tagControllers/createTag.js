@@ -7,7 +7,7 @@ export default {
     validator: validator({
         body: Joi.object({
             name: Joi.string().required(),
-            color: Joi.string()
+            color: Joi.string().allow('', null)
         })
     }),
     handler: async (req, res) => {

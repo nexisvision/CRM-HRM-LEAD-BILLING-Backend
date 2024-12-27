@@ -9,9 +9,9 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            endDate: Joi.date().optional(),
-            endTime: Joi.string().optional(),
-            comment: Joi.string().optional()
+            endDate: Joi.date().optional().allow('', null),
+            endTime: Joi.string().optional().allow('', null),
+            comment: Joi.string().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {

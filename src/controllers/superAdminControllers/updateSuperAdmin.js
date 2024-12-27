@@ -9,11 +9,11 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            username: Joi.string().min(3).max(30),
-            firstName: Joi.string().optional(),
-            lastName: Joi.string().optional(),
-            phone: Joi.string().optional(),
-            profilePic: Joi.string().optional()
+            username: Joi.string().min(3).max(30).allow('', null),
+            firstName: Joi.string().optional().allow('', null),
+            lastName: Joi.string().optional().allow('', null),
+            phone: Joi.string().optional().allow('', null),
+            profilePic: Joi.string().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {

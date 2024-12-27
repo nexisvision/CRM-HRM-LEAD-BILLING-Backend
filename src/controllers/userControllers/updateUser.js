@@ -11,20 +11,19 @@ export default {
         body: Joi.object({
             username: Joi.string().min(3).max(30),
             email: Joi.string().email(),
-            role_id: Joi.string()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username, email, role_id } = req.body;
+            const { username, email } = req.body;
 
             const user = await User.findByPk(id);
             if (!user) {
                 return responseHandler.notFound(res, "User not found");
             }
 
-            await user.update({ username, email, role_id });
+            await user.update({ username, email });
             responseHandler.success(res, "User updated successfully", user);
         } catch (error) {
             console.log(error);

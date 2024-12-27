@@ -6,8 +6,9 @@ const Tag = sequelize.define('tag', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
         primaryKey: true,
-        defaultValue: generateId()
+        defaultValue: () => generateId(),
     },
     name: {
         type: DataTypes.STRING,
@@ -19,11 +20,11 @@ const Tag = sequelize.define('tag', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
 });
 

@@ -9,8 +9,8 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            name: Joi.string(),
-            color: Joi.string()
+            name: Joi.string().allow('', null),
+            color: Joi.string().allow('', null)
         })
     }),
     handler: async (req, res) => {

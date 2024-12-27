@@ -12,12 +12,12 @@ export default {
             startdate: Joi.date().required(),
             enddate: Joi.date().required(),
             projectimage: Joi.string().required(),
-            client: Joi.string(),
-            user: Joi.string(),
+            client: Joi.string().allow('', null).optional(),
+            user: Joi.string().allow('', null).optional(),
             budget: Joi.number().required(),
             estimatedmonths: Joi.number().required(),
             estimatedhours: Joi.number().required(),
-            project_description: Joi.string().allow(''),
+            project_description: Joi.string().allow('', null).optional(),
             tag: Joi.string().required(),
             status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
         })

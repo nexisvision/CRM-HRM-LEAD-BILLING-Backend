@@ -7,7 +7,7 @@ export default {
     validator: validator({
         body: Joi.object({
             designation_name: Joi.string()
-                .required()
+                .allow('', null)
                 .pattern(/^[a-zA-Z\s]+$/)
                 .min(2)
                 .max(50)

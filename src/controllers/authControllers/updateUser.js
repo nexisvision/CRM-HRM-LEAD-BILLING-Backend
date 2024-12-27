@@ -16,11 +16,11 @@ export default {
             })
         }),
         body: Joi.object({
-            username: Joi.string(),
-            firstName: Joi.string(),
-            lastName: Joi.string(),
-            email: Joi.string().email(),
-            phone: Joi.string(),
+            username: Joi.string().allow('', null),
+            firstName: Joi.string().allow('', null),
+            lastName: Joi.string().allow('', null),
+            email: Joi.string().email().allow('', null),
+            phone: Joi.string().allow('', null),
         })
     }),
     handler: async (req, res) => {

@@ -9,23 +9,23 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            name: Joi.string().optional(),
-            price: Joi.number().optional(),
-            duration: Joi.string().optional(),
-            description: Joi.string().optional(),
-            trial_period: Joi.number().optional(),
-            max_users: Joi.number().optional(),
-            max_customers: Joi.number().optional(),
-            max_vendors: Joi.number().optional(),
-            max_clients: Joi.number().optional(),
-            storage_limit: Joi.number().optional(),
+            name: Joi.string().allow('', null).optional(),
+            price: Joi.number().allow('', null).optional(),
+            duration: Joi.string().allow('', null).optional(),
+            description: Joi.string().allow('', null).optional(),
+            trial_period: Joi.number().allow('', null).optional(),
+            max_users: Joi.number().allow('', null).optional(),
+            max_customers: Joi.number().allow('', null).optional(),
+            max_vendors: Joi.number().allow('', null).optional(),
+            max_clients: Joi.number().allow('', null).optional(),
+            storage_limit: Joi.number().allow('', null).optional(),
             features: Joi.object({
-                account: Joi.boolean().optional(),
-                crm: Joi.boolean().optional(),
-                hrm: Joi.boolean().optional(),
-                project: Joi.boolean().optional()
+                account: Joi.boolean().allow('', null).optional(),
+                crm: Joi.boolean().allow('', null).optional(),
+                hrm: Joi.boolean().allow('', null).optional(),
+                project: Joi.boolean().allow('', null).optional()
             }).optional(),
-            status: Joi.string().valid('active', 'inactive').optional()
+            status: Joi.string().valid('active', 'inactive').allow('', null).optional()
         })
     }),
     handler: async (req, res) => {

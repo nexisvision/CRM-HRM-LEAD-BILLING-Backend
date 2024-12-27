@@ -11,7 +11,7 @@ export default {
             date: Joi.date().required(),
             startTime: Joi.string().required(),
             endTime: Joi.string().required(),
-            location: Joi.string(),
+            location: Joi.string().allow('', null),
             status: Joi.string().valid('scheduled', 'completed', 'cancelled').default('scheduled')
         })
     }),

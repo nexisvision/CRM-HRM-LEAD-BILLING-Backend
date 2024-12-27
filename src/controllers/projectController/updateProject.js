@@ -10,19 +10,19 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            project_name: Joi.string(),
-            category: Joi.string(),
-            startdate: Joi.date(),
-            enddate: Joi.date(),
-            projectimage: Joi.string(),
-            client: Joi.string(),
-            user: Joi.string(),
-            budget: Joi.number(),
-            estimatedmonths: Joi.number(),
-            estimatedhours: Joi.number(),
-            project_description: Joi.string().allow(''),
-            tag: Joi.string(),
-            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold')
+            project_name: Joi.string().allow('', null),
+            category: Joi.string().allow('', null),
+            startdate: Joi.date().allow('', null),
+            enddate: Joi.date().allow('', null),
+            projectimage: Joi.string().allow('', null),
+            client: Joi.string().allow('', null),
+            user: Joi.string().allow('', null),
+            budget: Joi.number().allow('', null),
+            estimatedmonths: Joi.number().allow('', null),
+            estimatedhours: Joi.number().allow('', null),
+            project_description: Joi.string().allow('', null),
+            tag: Joi.string().allow('', null),
+            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').allow('', null)
         })
     }),
     handler: async (req, res) => {
@@ -95,5 +95,3 @@ export default {
         }
     }
 };
-
-

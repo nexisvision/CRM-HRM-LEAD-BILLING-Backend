@@ -17,4 +17,19 @@ const Feature = sequelize.define('feature', {
     }
 });
 
+Feature.beforeCreate(async (feature) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingFeature = await Feature.findOne({
+            where: { id: newId }
+        });
+        if (!existingFeature) {
+            isUnique = true;
+        }
+    }
+    feature.id = newId;
+});
+
 export default Feature;

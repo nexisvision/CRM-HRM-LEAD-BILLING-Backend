@@ -11,6 +11,7 @@ export default {
                 .pattern(/^[a-zA-Z\s]+$/)
                 .min(2)
                 .max(50)
+                .allow('', null)
                 .messages({
                     'string.pattern.base': 'Department name must contain only letters and spaces',
                     'string.min': 'Department name must be at least 2 characters long',
