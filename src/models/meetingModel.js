@@ -30,7 +30,7 @@ const Meeting = sequelize.define('Meeting', {
         type: DataTypes.TIME,
         allowNull: false
     },
-    location: {
+    meetingLink: {
         type: DataTypes.STRING,
         allowNull: true
     },

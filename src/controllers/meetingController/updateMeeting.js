@@ -10,24 +10,24 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            title: Joi.string().allow('', null).optional(),
-            date: Joi.date().allow('', null).optional(),
-            startTime: Joi.string().allow('', null).optional(),
-            endTime: Joi.string().allow('', null).optional(),
-            description: Joi.string().allow('', null).optional(),
-            location: Joi.string().allow('', null).optional(),
-            status: Joi.string().allow('', null).optional()
+            title: Joi.string().optional(),
+            date: Joi.date().optional(),
+            startTime: Joi.string().optional(),
+            endTime: Joi.string().optional(),
+            description: Joi.string().optional(),
+            meetingLink: Joi.string().optional(),
+            status: Joi.string().optional()
         })
     }),
     handler: async (req, res) => {
         const { id } = req.params;
-        const { title, date, startTime, endTime, description, location, status } = req.body;
+        const { title, date, startTime, endTime, description, meetingLink, status } = req.body;
         try {
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
                 return responseHandler.notFound(res, "Meeting not found");
             }
-            await meeting.update({ title, date, startTime, endTime, description, location, status });
+            await meeting.update({ title, date, startTime, endTime, description, meetingLink, status });
             return responseHandler.success(res, "Meeting updated successfully", meeting);
         } catch (error) {
             return responseHandler.error(res, error);

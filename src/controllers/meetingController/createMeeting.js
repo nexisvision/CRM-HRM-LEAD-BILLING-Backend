@@ -11,20 +11,21 @@ export default {
             date: Joi.date().required(),
             startTime: Joi.string().required(),
             endTime: Joi.string().required(),
-            location: Joi.string().allow('', null),
+            meetingLink: Joi.string(),
+
             status: Joi.string().valid('scheduled', 'completed', 'cancelled').default('scheduled')
         })
     }),
     handler: async (req, res) => {
         try {
-            const { title, date, startTime, endTime, description, location, status } = req.body;
+            const { title, date, startTime, endTime, description, meetingLink, status } = req.body;
             const meeting = await Meeting.create({
                 title,
                 description,
                 date,
                 startTime,
                 endTime,
-                location,
+                meetingLink,
                 status,
                 createdBy: req.user?.username
             });
