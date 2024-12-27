@@ -27,4 +27,18 @@ const Tag = sequelize.define('tag', {
     }
 });
 
+Tag.beforeCreate(async (tag) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingTag = await Tag.findOne({
+            where: { id: newId }
+        });
+        if (!existingTag) {
+            isUnique = true;
+        }
+    }
+    tag.id = newId;
+});
 export default Tag;

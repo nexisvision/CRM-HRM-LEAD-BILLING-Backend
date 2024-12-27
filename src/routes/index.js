@@ -50,6 +50,6 @@ router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
 router.use('/branches', branchRoutes);
 router.use('/leads', leadRoutes);
-router.use('./tags', tagRoutes);
+router.use('/tags', tagRoutes);
 
 export default router;
