@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/database.js";
+import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
 const Tag = sequelize.define('tag', {
@@ -12,6 +12,10 @@ const Tag = sequelize.define('tag', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    color: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     created_by: {
         type: DataTypes.STRING,

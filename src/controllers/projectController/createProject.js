@@ -16,11 +16,9 @@ export default {
             user: Joi.string(),
             budget: Joi.number().required(),
             estimatedmonths: Joi.number().required(),
+            estimatedhours: Joi.number().required(),
             project_description: Joi.string().allow(''),
-            tags: Joi.alternatives().try(
-                Joi.array().items(Joi.string()).min(1),
-                Joi.string()
-            ).required(),
+            tag: Joi.string().required(),
             status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
         })
     }),
@@ -36,18 +34,11 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
+                estimatedhours,
                 project_description,
-                tags,
+                tag,
                 status
             } = req.body;
-
-            // Process tags: Convert string to array if needed
-            let processedTags = Array.isArray(tags)
-                ? tags
-                : tags.split(',').map(tag => tag.trim());
-
-            // Remove duplicates and empty tags
-            processedTags = [...new Set(processedTags)].filter(tag => tag);
 
             // Check if client exists
             if (client) {
@@ -76,8 +67,9 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
+                estimatedhours,
                 project_description,
-                tags: processedTags,
+                tag,
                 status,
                 created_by: req.user?.username
             });

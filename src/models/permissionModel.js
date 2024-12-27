@@ -23,10 +23,6 @@ const Permission = sequelize.define('Permission', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    module: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     action: {
         type: DataTypes.ENUM(
             'view',

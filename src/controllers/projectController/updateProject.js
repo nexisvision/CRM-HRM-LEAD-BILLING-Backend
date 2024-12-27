@@ -19,11 +19,9 @@ export default {
             user: Joi.string(),
             budget: Joi.number(),
             estimatedmonths: Joi.number(),
+            estimatedhours: Joi.number(),
             project_description: Joi.string().allow(''),
-            tags: Joi.alternatives().try(
-                Joi.array().items(Joi.string()).min(1),
-                Joi.string()
-            ),
+            tag: Joi.string(),
             status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold')
         })
     }),
@@ -40,8 +38,9 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
+                estimatedhours,
                 project_description,
-                tags,
+                tag,
                 status
             } = req.body;
 
@@ -51,17 +50,6 @@ export default {
                 return responseHandler.notFound(res, "Project not found");
             }
 
-            // Process tags if provided
-            let processedTags = project.tags; // Keep existing tags by default
-            if (tags) {
-                // Convert string to array if needed
-                processedTags = Array.isArray(tags)
-                    ? tags
-                    : tags.split(',').map(tag => tag.trim());
-
-                // Remove duplicates and empty tags
-                processedTags = [...new Set(processedTags)].filter(tag => tag);
-            }
 
             // Check if client exists if client is being updated
             if (client) {
@@ -93,8 +81,9 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
+                estimatedhours,
                 project_description,
-                tags: tags ? processedTags : project.tags,
+                tag,
                 status,
                 updated_by: req.user?.username
             });
