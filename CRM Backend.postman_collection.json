@@ -1,0 +1,2487 @@
+{
+	"info": {
+		"_postman_id": "d752ffe7-1745-4547-b810-9aab1043b725",
+		"name": "CRM Backend",
+		"description": "Complete API collection for CRM Backend System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37446654"
+	},
+	"item": [
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "All Access",
+					"item": [
+						{
+							"name": "Get All Users (Super-Admin)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Get User By ID (Super-Admin)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/auth/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"auth",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User By ID (Super-Admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/auth/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"auth",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User By ID (Super-Admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/auth/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"auth",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Signup (Super-Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"superadmin\",\n    \"email\": \"superadmin@nexisvision.com\",\n    \"password\": \"SuperAdmin@123\",\n    \"secret_key\": \"jufhuisahfuihuihuyg6trf7676788787ggbguyguNVNVNV\"\n}\n\n// Test Cases with Different Valid Formats\n// {\n//     \"username\": \"john_doe_admin\",\n//     \"email\": \"john.doe@nexisvision.com\",\n//     \"password\": \"JohnDoe@2024\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// {\n//     \"username\": \"admin_alice\",\n//     \"email\": \"alice.admin@nexisvision.tech\",\n//     \"password\": \"AlicePass#123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// Invalid Test Cases\n\n// 1. Username too short\n// {\n//     \"username\": \"ad\",  // Less than 3 characters\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 2. Username too long\n// {\n//     \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 3. Invalid Email Format\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"invalid.email@com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 4. Weak Password (missing uppercase)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 5. Weak Password (missing lowercase)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"ADMIN@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 6. Weak Password (missing number)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"AdminPass@\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 7. Weak Password (missing special character)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"AdminPass123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 8. Password too short\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Ad@1\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 9. Missing Secret Key\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/super-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Login (Super-Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Cases\n\n// 1. Login with Username\n{\n    \"login\": \"superadmin\",\n    \"password\": \"SuperAdmin@123\"\n}\n\n// 2. Login with Email\n// {\n//     \"login\": \"superadmin@nexisvision.com\",\n//     \"password\": \"SuperAdmin@123\"\n// }\n\n// 3. Login with Alternative Users\n// {\n//     \"login\": \"john_doe_admin\",\n//     \"password\": \"JohnDoe@2024\"\n// }\n\n// {\n//     \"login\": \"alice.admin@nexisvision.tech\",\n//     \"password\": \"AlicePass#123\"\n// }\n\n// Invalid Test Cases\n\n// 1. Empty Login\n// {\n//     \"login\": \"\",\n//     \"password\": \"SuperAdmin@123\"\n// }\n\n// 2. Empty Password\n// {\n//     \"login\": \"superadmin\",\n//     \"password\": \"\"\n// }\n\n// 3. Wrong Password\n// {\n//     \"login\": \"superadmin\",\n//     \"password\": \"WrongPassword@123\"\n// }\n\n// 4. Non-existent User\n// {\n//     \"login\": \"nonexistent_user\",\n//     \"password\": \"Password@123\"\n// }\n\n// 5. Wrong Email Format\n// {\n//     \"login\": \"invalid.email@com\",\n//     \"password\": \"Password@123\"\n// }\n\n// 6. Missing Fields\n// {\n//     \"login\": \"superadmin\"\n//     // password missing\n// }\n\n// {\n//     // login missing\n//     \"password\": \"SuperAdmin@123\"\n// }\n\n// 7. Case Sensitivity Test\n// {\n//     \"login\": \"SuperAdmin\",  // Different case from registration\n//     \"password\": \"SuperAdmin@123\"\n// }\n\n// 8. Extra Spaces\n// {\n//     \"login\": \"  superadmin  \",\n//     \"password\": \"SuperAdmin@123\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Super Admin's (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/super-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Super Admin By ID (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/super-admin/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"super-admin",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Super Admin By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\r\n{\r\n    \"username\": \"superadmin_updated\",\r\n    \"firstName\": \"Super\",\r\n    \"lastName\": \"Admin\",\r\n    \"phone\": \"+1234567890\",\r\n    \"profilePic\": \"https://example.com/admin-profile.jpg\"\r\n}\r\n\r\n// Test Cases with Partial Updates\r\n/*\r\n// Update username only\r\n{\r\n    \"username\": \"new_superadmin\"\r\n}\r\n\r\n// Update name fields\r\n{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}\r\n\r\n// Update contact info\r\n{\r\n    \"phone\": \"+9876543210\"\r\n}\r\n\r\n// Update profile picture\r\n{\r\n    \"profilePic\": \"https://example.com/new-admin-pic.jpg\"\r\n}\r\n\r\n// Update multiple fields\r\n{\r\n    \"username\": \"admin_john\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}\r\n*/\r\n\r\n// Invalid Test Cases\r\n/*\r\n// 1. Username too short\r\n{\r\n    \"username\": \"sa\"  // Less than 3 characters\r\n}\r\n\r\n// 2. Username too long\r\n{\r\n    \"username\": \"this_superadmin_username_is_way_too_long_and_exceeds_thirty_chars\"\r\n}\r\n\r\n// 3. Empty Fields\r\n{\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}\r\n\r\n// 4. Invalid Phone Format\r\n{\r\n    \"phone\": \"not-a-valid-phone\"\r\n}\r\n\r\n// 5. Invalid Profile Picture URL\r\n{\r\n    \"profilePic\": \"not-a-valid-url\"\r\n}\r\n\r\n// 6. Multiple Fields with Some Invalid\r\n{\r\n    \"username\": \"ab\",  // too short\r\n    \"firstName\": \"John\",  // valid\r\n    \"phone\": \"invalid-phone\"  // invalid\r\n}\r\n\r\n// 7. Numbers in Name Fields\r\n{\r\n    \"firstName\": \"John123\",\r\n    \"lastName\": \"Doe456\"\r\n}\r\n\r\n// 8. Special Characters in Username\r\n{\r\n    \"username\": \"admin@#$%\"\r\n}\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/super-admin/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"super-admin",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Super Admin By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/super-admin/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"super-admin",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Create Client (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJrYmpscFEwcktsUXRlZzk4UDRqeDhNWCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTI4MDUxNiwiZXhwIjoxNzM1MzY2OTE2fQ.M8whJwEYKw49AF-eWm-2BEuAJFZfzGYjrdCeJvmn-uY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Clients (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client By ID (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub Client",
+			"item": [
+				{
+					"name": "Create Sub Client (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/sub-clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sub Clients (Client)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/sub-clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Client By ID (Client)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/sub-clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"sub-clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sub Client By ID (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/sub-clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"sub-clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sub Client By ID (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/sub-clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"sub-clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Normal User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJvMWhRQlZJRnh4Zjk1TW1jVE9RZzljRSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyODMwNiwiZXhwIjoxNzM1MjE0NzA2fQ.z_I0OJ0BlssHQIipFxJqLZHVUB0xq_NY-2qViylwYFQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID (Super-Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJvMWhRQlZJRnh4Zjk1TW1jVE9RZzljRSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyODMwNiwiZXhwIjoxNzM1MjE0NzA2fQ.z_I0OJ0BlssHQIipFxJqLZHVUB0xq_NY-2qViylwYFQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/auth/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJvMWhRQlZJRnh4Zjk1TW1jVE9RZzljRSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyODMwNiwiZXhwIjoxNzM1MjE0NzA2fQ.z_I0OJ0BlssHQIipFxJqLZHVUB0xq_NY-2qViylwYFQ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\r\n{\r\n    \"username\": \"updated_user\",\r\n    \"email\": \"updated@example.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"phone\": \"+1234567890\",\r\n    \"profilePic\": \"https://example.com/profile.jpg\"\r\n}\r\n\r\n// Test Cases with Partial Updates\r\n/*\r\n// Update username only\r\n{\r\n    \"username\": \"new_username123\"\r\n}\r\n\r\n// Update contact info\r\n{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Smith\",\r\n    \"phone\": \"+9876543210\"\r\n}\r\n\r\n// Update email only\r\n{\r\n    \"email\": \"newemail@example.com\"\r\n}\r\n\r\n// Update profile picture\r\n{\r\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\r\n}\r\n*/\r\n\r\n// Invalid Test Cases\r\n/*\r\n// 1. Username too short\r\n{\r\n    \"username\": \"ab\"  // Less than 3 characters\r\n}\r\n\r\n// 2. Username too long\r\n{\r\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\r\n}\r\n\r\n// 3. Invalid Email Format\r\n{\r\n    \"email\": \"invalid.email@\"\r\n}\r\n\r\n// 4. Invalid Phone Format\r\n{\r\n    \"phone\": \"not-a-phone\"\r\n}\r\n\r\n// 5. Invalid Profile Picture URL\r\n{\r\n    \"profilePic\": \"not-a-valid-url\"\r\n}\r\n\r\n// 6. Empty Fields\r\n{\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}\r\n\r\n// 7. Multiple Field Update with Some Invalid\r\n{\r\n    \"username\": \"ab\",  // too short\r\n    \"email\": \"invalid@\",  // invalid email\r\n    \"firstName\": \"John\",  // valid\r\n    \"phone\": \"+1234567890\"  // valid\r\n}\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/users/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By ID (Super-Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJvMWhRQlZJRnh4Zjk1TW1jVE9RZzljRSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyODMwNiwiZXhwIjoxNzM1MjE0NzA2fQ.z_I0OJ0BlssHQIipFxJqLZHVUB0xq_NY-2qViylwYFQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/auth/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Create Employee (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n// {\n//     \"username\": \"testuser123\",\n//     \"email\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n/*\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/employees"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Login Test Case\n// {\n//     \"login\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n/*\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employees (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/employees"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By ID (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/employees/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/employees/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/employees/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Create Department (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Case\n{\n    \"department_name\": \"Human Resources\",\n    \"description\": \"Manages employee relations and recruitment processes\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"department_name\": \"Information Technology\",\n    \"description\": \"Handles all IT infrastructure and support\"\n}\n\n{\n    \"department_name\": \"Finance\",\n    \"description\": \"Manages company financial operations\"\n}\n\n{\n    \"department_name\": \"Marketing\",\n    \"description\": null\n}\n\n{\n    \"department_name\": \"Sales\"\n    // Description is optional, so it can be omitted\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Department Name Too Short\n{\n    \"department_name\": \"I\",\n    \"description\": \"Invalid department name\"\n}\n\n// 2. Department Name Too Long\n{\n    \"department_name\": \"This Department Name Is Way Too Long And Exceeds Fifty Characters Limit\",\n    \"description\": \"Invalid due to length\"\n}\n\n// 3. Department Name with Numbers\n{\n    \"department_name\": \"Department123\",\n    \"description\": \"Invalid due to numbers\"\n}\n\n// 4. Department Name with Special Characters\n{\n    \"department_name\": \"HR & Admin\",\n    \"description\": \"Invalid due to special characters\"\n}\n\n// 5. Empty Department Name\n{\n    \"department_name\": \"\",\n    \"description\": \"Empty name is not allowed\"\n}\n\n// 6. Missing Department Name\n{\n    \"description\": \"Department name is required\"\n}\n\n// 7. Department Name with Only Spaces\n{\n    \"department_name\": \"   \",\n    \"description\": \"Invalid input\"\n}\n\n// 8. Department Name with Leading/Trailing Spaces\n{\n    \"department_name\": \" Marketing \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 9. Non-String Values\n{\n    \"department_name\": 12345,\n    \"description\": true\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/departments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Departments (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/departments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department By ID (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/departments/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Department (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Case\n{\n    \"department_name\": \"Human Resources Updated\",\n    \"description\": \"Updated: Managing employee relations, recruitment, and development\"\n}\n\n// Test Cases with Different Valid Updates\n/*\n// Full Update\n{\n    \"department_name\": \"Information Technology Services\",\n    \"description\": \"Updated IT services and infrastructure management\"\n}\n\n// Update Name Only\n{\n    \"department_name\": \"Finance and Accounting\"\n}\n\n// Update Description Only\n{\n    \"description\": \"Updated department description and responsibilities\"\n}\n\n// Clear Description\n{\n    \"description\": \"\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Department Name Too Short\n{\n    \"department_name\": \"A\",\n    \"description\": \"Invalid name length\"\n}\n\n// 2. Department Name Too Long\n{\n    \"department_name\": \"This Updated Department Name Is Extremely Long And Definitely Exceeds The Fifty Character Limit\",\n    \"description\": \"Invalid due to name length\"\n}\n\n// 3. Invalid Characters in Name\n{\n    \"department_name\": \"HR & Operations 2024\",\n    \"description\": \"Contains invalid characters\"\n}\n\n// 4. Numbers and Special Characters\n{\n    \"department_name\": \"Department#1\",\n    \"description\": \"Invalid characters in name\"\n}\n\n// 5. Only Spaces in Name\n{\n    \"department_name\": \"    \",\n    \"description\": \"Invalid name format\"\n}\n\n// 6. Empty Name\n{\n    \"department_name\": \"\",\n    \"description\": \"Name cannot be empty\"\n}\n\n// 7. Name with Leading/Trailing Spaces\n{\n    \"department_name\": \" Marketing Department \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 8. Non-String Values\n{\n    \"department_name\": 12345,\n    \"description\": true\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/departments/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department (Client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/departments/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Designations",
+			"item": [
+				{
+					"name": "Create Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Cases\n{\n    \"designation_name\": \"Software Engineer\",\n    \"description\": \"Develops and maintains software applications\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"designation_name\": \"Project Manager\",\n    \"description\": \"Manages project timelines and team coordination\"\n}\n\n{\n    \"designation_name\": \"Senior Developer\",\n    \"description\": \"Leads development initiatives and mentors junior developers\"\n}\n\n{\n    \"designation_name\": \"Team Lead\",\n    \"description\": null\n}\n\n{\n    \"designation_name\": \"Developer\"\n    // Description is optional, so it can be omitted\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Designation Name Too Short\n{\n    \"designation_name\": \"A\",\n    \"description\": \"Invalid designation name\"\n}\n\n// 2. Designation Name Too Long\n{\n    \"designation_name\": \"Senior Principal Software Architecture Development Team Lead Engineer\",\n    \"description\": \"Invalid due to length\"\n}\n\n// 3. Designation Name with Numbers\n{\n    \"designation_name\": \"Developer2\",\n    \"description\": \"Invalid due to numbers\"\n}\n\n// 4. Designation Name with Special Characters\n{\n    \"designation_name\": \"Sr. Developer\",\n    \"description\": \"Invalid due to special characters\"\n}\n\n// 5. Empty Designation Name\n{\n    \"designation_name\": \"\",\n    \"description\": \"Empty name is not allowed\"\n}\n\n// 6. Missing Designation Name\n{\n    \"description\": \"Designation name is required\"\n}\n\n// 7. Designation Name with Only Spaces\n{\n    \"designation_name\": \"   \",\n    \"description\": \"Invalid input\"\n}\n\n// 8. Designation Name with Leading/Trailing Spaces\n{\n    \"designation_name\": \" Developer \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 9. Non-String Values\n{\n    \"designation_name\": 12345,\n    \"description\": true\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/designations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Designations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/designations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Designation By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/designations/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"designations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Cases\n{\n    \"designation_name\": \"Senior Software Engineer\",\n    \"description\": \"Updated role for experienced developers\"\n}\n\n// Test Cases with Different Valid Updates\n/*\n// 1. Update only designation name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Technical Lead\"\n}\n\n// 2. Update only description\n{\n    \"id\": \"65f97a3b12345\",\n    \"description\": \"New role description for technical leadership\"\n}\n\n// 3. Update both fields\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Solutions Architect\",\n    \"description\": \"Designs system architecture and technical solutions\"\n}\n\n// 4. Clear description (set to null)\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Product Manager\",\n    \"description\": null\n}\n*/\n\n// Invalid Update Test Cases\n/*\n// 1. Invalid ID Format\n{\n    \"id\": \"invalid-id\",\n    \"designation_name\": \"Team Lead\"\n}\n\n// 2. Non-existent ID\n{\n    \"id\": \"65f97a3b99999\",\n    \"designation_name\": \"Team Lead\"\n}\n\n// 3. Missing ID\n{\n    \"designation_name\": \"Team Lead\",\n    \"description\": \"Required ID field is missing\"\n}\n\n// 4. Invalid Designation Name Format\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Team Lead 123\"  // Numbers not allowed\n}\n\n// 5. Designation Name Too Short\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"T\"\n}\n\n// 6. Designation Name Too Long\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Senior Principal Software Architecture Development Team Lead Engineer Manager\"\n}\n\n// 7. Special Characters in Name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Team Lead & Manager\"\n}\n\n// 8. Empty Update (No Changes)\n{\n    \"id\": \"65f97a3b12345\"\n}\n\n// 9. Invalid Data Types\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": 12345,\n    \"description\": true\n}\n\n// 10. Duplicate Designation Name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Software Engineer\"  // Assuming this already exists\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/designations/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"designations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/designations/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"designations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Create Leads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhcjF1dFFUZkQ1UkR2MjF2Z2hMOUt3cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUyOTEyODIsImV4cCI6MTczNTM3NzY4Mn0.8RtYLkWxy95-NvGycuy_WOG-tNaVvBFlyQVpQbdZlGo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Lead Creation Test Case\n{\n    \"leadTitle\": \"Website Development Project\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"telephone\": \"+1234567890\",\n    \"email\": \"john.smith@example.com\",\n    \"leadValue\": 50000,\n    \"assigned\": \"agent_id_123\",\n    \"status\": \"New\",\n    \"details\": \"Interested in full website redesign\",\n    \"notes\": \"Initial meeting scheduled for next week\",\n    \"source\": \"Website Contact Form\",\n    \"category\": \"Web Development\",\n    \"tags\": \"web-design\",\n    \"lastContacted\": \"2024-01-15T10:30:00Z\",\n    \"totalBudget\":\"\",\n    \"targetDate\": \"2024-06-30T00:00:00Z\",\n    \"contentType\": \"B2B\",\n    \"brandName\": \"Tech Solutions\",\n    \"companyName\": \"Tech Solutions Inc\",\n    \"street\": \"123 Business Avenue\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zipCode\": \"10001\",\n    \"country\": \"USA\",\n    \"website\": \"https://www.techsolutions.com\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n// Minimal Required Fields\n{\n    \"leadTitle\": \"Basic Lead\",\n    \"firstName\": \"Alice\",\n    \"lastName\": \"Brown\",\n    \"status\": \"New\"\n}\n\n// B2C Lead Example\n{\n    \"leadTitle\": \"Personal Website Project\",\n    \"firstName\": \"Robert\",\n    \"lastName\": \"Johnson\",\n    \"telephone\": \"+1987654321\",\n    \"email\": \"robert@email.com\",\n    \"leadValue\": 5000,\n    \"status\": \"In Progress\",\n    \"source\": \"Referral\",\n    \"category\": \"Personal Website\",\n    \"tags\": [\"personal\", \"portfolio\"]\n}\n\n// Corporate Lead Example\n{\n    \"leadTitle\": \"Enterprise E-commerce Solution\",\n    \"firstName\": \"Sarah\",\n    \"lastName\": \"Wilson\",\n    \"telephone\": \"+1122334455\",\n    \"email\": \"sarah.w@bigcorp.com\",\n    \"leadValue\": 200000,\n    \"assigned\": \"senior_agent_456\",\n    \"status\": \"Qualified\",\n    \"details\": \"Looking for complete e-commerce solution\",\n    \"companyName\": \"BigCorp Retail\",\n    \"website\": \"https://www.bigcorpretail.com\",\n    \"tags\": [\"enterprise\", \"e-commerce\", \"high-value\"]\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Required Fields\n{\n    \"telephone\": \"+1234567890\",\n    \"email\": \"test@example.com\"\n}\n\n// 2. Invalid Email Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"email\": \"invalid.email\"\n}\n\n// 3. Invalid Website URL\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"website\": \"not-a-valid-url\"\n}\n\n// 4. Invalid Date Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"lastContacted\": \"invalid-date\",\n    \"targetDate\": \"2024/13/45\"\n}\n\n// 5. Invalid Number Values\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"leadValue\": \"not-a-number\",\n    \"totalBudget\": \"invalid\"\n}\n\n// 6. Invalid Tags Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"tags\": \"should-be-array\"\n}\n\n// 7. Empty Required Fields\n{\n    \"leadTitle\": \"\",\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"status\": \"\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/leads"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Leads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/leads"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Leads By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/leads/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"leads",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Leads By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Lead Update Test Cases\r\n\r\n// 1. Full Update\r\n{\r\n    \"leadTitle\": \"Updated Website Development Project\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\",\r\n    \"telephone\": \"+1234567890\",\r\n    \"email\": \"john.updated@example.com\",\r\n    \"leadValue\": 75000,\r\n    \"assigned\": \"new_agent_id_456\",\r\n    \"status\": \"In Progress\",\r\n    \"details\": \"Updated project scope - now includes mobile app\",\r\n    \"notes\": \"Budget increased after follow-up meeting\",\r\n    \"source\": \"Direct Referral\",\r\n    \"category\": \"Web & Mobile Development\",\r\n    \"tags\": [\"high-budget\", \"urgent\", \"web-design\", \"mobile-app\"],\r\n    \"lastContacted\": \"2024-01-20T14:30:00Z\",\r\n    \"totalBudget\": 100000,\r\n    \"targetDate\": \"2024-07-30T00:00:00Z\",\r\n    \"contentType\": \"B2B\",\r\n    \"brandName\": \"Tech Solutions Pro\",\r\n    \"companyName\": \"Tech Solutions Inc\",\r\n    \"street\": \"456 Corporate Plaza\",\r\n    \"city\": \"New York\",\r\n    \"state\": \"NY\",\r\n    \"zipCode\": \"10002\",\r\n    \"country\": \"USA\",\r\n    \"website\": \"https://www.techsolutionspro.com\"\r\n}\r\n\r\n// Partial Update Examples\r\n/*\r\n// Update Status and Notes\r\n{\r\n    \"status\": \"Qualified\",\r\n    \"notes\": \"Client confirmed budget increase\",\r\n    \"lastContacted\": \"2024-01-20T14:30:00Z\"\r\n}\r\n\r\n// Update Contact Information\r\n{\r\n    \"telephone\": \"+1987654321\",\r\n    \"email\": \"john.smith.new@example.com\",\r\n    \"street\": \"789 Business Park\",\r\n    \"city\": \"Los Angeles\",\r\n    \"state\": \"CA\",\r\n    \"zipCode\": \"90001\"\r\n}\r\n\r\n// Update Lead Value and Budget\r\n{\r\n    \"leadValue\": 85000,\r\n    \"totalBudget\": 120000,\r\n    \"targetDate\": \"2024-08-15T00:00:00Z\"\r\n}\r\n\r\n// Update Tags and Category\r\n{\r\n    \"tags\": [\"high-priority\", \"enterprise\", \"urgent\"],\r\n    \"category\": \"Enterprise Solution\"\r\n}\r\n\r\n// Update Assignment and Status\r\n{\r\n    \"assigned\": \"senior_agent_789\",\r\n    \"status\": \"Negotiation\",\r\n    \"notes\": \"Transferred to senior sales agent\"\r\n}\r\n*/\r\n\r\n// Invalid Update Test Cases\r\n/*\r\n// 1. Invalid Email Format\r\n{\r\n    \"email\": \"not.valid.email\"\r\n}\r\n\r\n// 2. Invalid Date Format\r\n{\r\n    \"lastContacted\": \"invalid-date\",\r\n    \"targetDate\": \"2024/13/45\"\r\n}\r\n\r\n// 3. Invalid Number Values\r\n{\r\n    \"leadValue\": \"not-a-number\",\r\n    \"totalBudget\": \"invalid\"\r\n}\r\n\r\n// 4. Invalid Website URL\r\n{\r\n    \"website\": \"not-a-valid-url\"\r\n}\r\n\r\n// 5. Invalid Tags Format\r\n{\r\n    \"tags\": \"should-be-array\"\r\n}\r\n\r\n// 6. Empty String Values\r\n{\r\n    \"leadTitle\": \"\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}\r\n\r\n// 7. Invalid Status\r\n{\r\n    \"status\": \"InvalidStatusValue\"\r\n}\r\n\r\n// 8. Mixed Valid and Invalid Updates\r\n{\r\n    \"leadTitle\": \"Valid Title\",\r\n    \"email\": \"invalid.email\",\r\n    \"leadValue\": \"not-a-number\"\r\n}\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/leads/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"leads",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Leads By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/leads/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"leads",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attendance",
+			"item": [
+				{
+					"name": "Create Attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Test Cases\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\",\n    \"comment\": \"Regular working day\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n// 1. Same day different timing\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"08:30\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"17:30\",\n    \"comment\": \"Early shift\"\n}\n\n// 2. Overnight shift\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"22:00\",\n    \"endDate\": \"2024-03-20\",\n    \"endTime\": \"06:00\",\n    \"comment\": \"Night shift\"\n}\n\n// 3. Without optional comment\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 4. Half day\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"13:00\",\n    \"comment\": \"Half day - morning session\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Invalid Date Format\n{\n    \"startDate\": \"19-03-2024\",  // Wrong format\n    \"startTime\": \"09:00\",\n    \"endDate\": \"19-03-2024\",\n    \"endTime\": \"18:00\"\n}\n\n// 2. Invalid Time Format\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"9:00 AM\",  // Wrong format\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"6:00 PM\"\n}\n\n// 3. End Date Before Start Date\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-18\",  // Previous day\n    \"endTime\": \"18:00\"\n}\n\n// 4. End Time Before Start Time (Same Day)\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"14:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"13:00\"  // Before start time\n}\n\n// 5. Missing Required Fields\n{\n    \"startDate\": \"2024-03-19\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n    // Missing startTime\n}\n\n// 6. Invalid Time Values\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"25:00\",  // Invalid hour\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 7. Future Dates\n{\n    \"startDate\": \"2024-12-19\",  // Future date\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-12-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 8. Non-String Comment\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\",\n    \"comment\": 12345  // Should be string\n}\n\n// 9. Weekend Attendance (if not allowed)\n{\n    \"startDate\": \"2024-03-23\",  // Saturday\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-23\",\n    \"endTime\": \"18:00\"\n}\n\n// 10. Invalid Time Range (if you have specific working hours)\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"03:00\",  // Too early\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"04:00\"\n}\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/attendance"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/attendance"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attendance By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/attendance/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"attendance",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attendance By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Valid Update Test Cases\r\n{\r\n    \"id\": \"65f97a3b12345\",  // Attendance record ID\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:30\",    // Changed from 09:00\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:30\",      // Changed from 18:00\r\n    \"comment\": \"Updated timing due to traffic delay\"\r\n}\r\n\r\n// Test Cases with Different Valid Updates\r\n/*\r\n// 1. Update only time\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"10:00\",    // Late arrival\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"19:00\",      // Extended hours\r\n    \"comment\": \"Late arrival compensated with extended hours\"\r\n}\r\n\r\n// 2. Update with half day\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"13:00\",      // Changed to half day\r\n    \"comment\": \"Half day due to doctor's appointment\"\r\n}\r\n\r\n// 3. Update comment only\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\",\r\n    \"comment\": \"Updated comment for attendance record\"\r\n}\r\n\r\n// 4. Update for night shift\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"22:00\",\r\n    \"endDate\": \"2024-03-20\",\r\n    \"endTime\": \"06:00\",\r\n    \"comment\": \"Changed to night shift\"\r\n}\r\n*/\r\n\r\n// Invalid Update Test Cases\r\n/*\r\n// 1. Invalid Attendance ID\r\n{\r\n    \"id\": \"invalid-id\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 2. Update to Invalid Date Format\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"19-03-2024\",  // Wrong format\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"19-03-2024\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 3. Update to Invalid Time Format\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"9:00 AM\",  // Wrong format\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"6:00 PM\"\r\n}\r\n\r\n// 4. End Date Before Start Date\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-18\",  // Previous day\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 5. End Time Before Start Time (Same Day)\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"14:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"13:00\"  // Before start time\r\n}\r\n\r\n// 6. Missing Required Fields\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n    // Missing startTime\r\n}\r\n\r\n// 7. Update to Future Date\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-12-19\",  // Future date\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-12-19\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 8. Update After Time Limit\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-01\",  // Trying to update old record\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-01\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 9. Invalid Working Hours\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"02:00\",  // Outside working hours\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"03:00\"\r\n}\r\n\r\n// 10. Overlapping Attendance\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n    // This time might overlap with another attendance record\r\n}\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/attendance/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"attendance",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Attendance By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/attendance/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"attendance",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leaves",
+			"item": [
+				{
+					"name": "Apply Leave",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"EMPLOYEE_ID_HERE\",\n    \"start_date\": \"2023-12-25\",\n    \"end_date\": \"2023-12-26\",\n    \"type\": \"vacation\",\n    \"reason\": \"Christmas holiday\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/leaves/apply"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Leave Requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/leaves/requests"
+					},
+					"response": []
+				},
+				{
+					"name": "Approve/Reject Leave",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"approved\",\n    \"comments\": \"Approved as requested\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/leaves/:id/status",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"leaves",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Leave Balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/leaves/balance/:employee_id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"leaves",
+								"balance",
+								":employee_id"
+							],
+							"variable": [
+								{
+									"key": "employee_id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles & Permissions",
+			"item": [
+				{
+					"name": "Create Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Team Lead\",\n    \"description\": \"Team leadership role\",\n    \"permissions\": [\"manage_team\", \"approve_leaves\", \"view_reports\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"permissions\": [\"manage_team\", \"approve_leaves\", \"view_reports\", \"edit_team_info\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/roles/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/roles/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Role to Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"EMPLOYEE_ID_HERE\",\n    \"role_id\": \"ROLE_ID_HERE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/roles/assign"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Announcements",
+			"item": [
+				{
+					"name": "Create Announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Company Meeting\",\n    \"content\": \"Annual company meeting next week\",\n    \"priority\": \"high\",\n    \"target_audience\": [\"all_employees\"],\n    \"valid_until\": \"2023-12-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/announcements"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Announcements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/announcements"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Updated announcement content\",\n    \"priority\": \"medium\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/announcements/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"announcements",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/announcements/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"announcements",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Team Building Workshop\",\n    \"description\": \"Annual team building event\",\n    \"date\": \"2023-12-15\",\n    \"time\": \"09:00\",\n    \"location\": \"Conference Room A\",\n    \"participants\": [\"DEPT_ID_1\", \"DEPT_ID_2\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/events"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/events"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"time\": \"10:00\",\n    \"location\": \"Conference Room B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/events/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"events",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/events/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"events",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Get All Plans",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/subscriptions/plans"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Basic Plan\",\n    \"price\": 29.99,\n    \"features\": [\n        \"feature1\",\n        \"feature2\"\n    ],\n    \"duration\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/subscriptions/plans"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Plan\",\n    \"price\": 39.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/subscriptions/plans/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"subscriptions",
+								"plans",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/subscriptions/plans/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"subscriptions",
+								"plans",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe to Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan_id\": \"plan_id_here\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/subscriptions/subscribe"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/subscriptions/:id/cancel",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"subscriptions",
+								":id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subscription Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/subscriptions/status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Usage Stats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/subscriptions/usage"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meetings",
+			"item": [
+				{
+					"name": "Create Meeting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6IlhKY1FvaXJlNTdwY2R5d3h0TnBUZEw5IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM1MDIwMjU2LCJleHAiOjE3MzUxMDY2NTZ9.w7M4bLzES7oLz_QwvyebvA2mmQBhRnPMXHCEKvNg6BE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Project Review\",\n    \"description\": \"Weekly project status review\",\n    \"date\": \"2024-01-20\",\n    \"startTime\": \"14:00\",\n    \"endTime\": \"15:00\",\n    \"location\": \"Conference Room A\",\n    \"status\": \"scheduled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/meetings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Meetings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6IlhKY1FvaXJlNTdwY2R5d3h0TnBUZEw5IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM1MDIwMjU2LCJleHAiOjE3MzUxMDY2NTZ9.w7M4bLzES7oLz_QwvyebvA2mmQBhRnPMXHCEKvNg6BE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/meetings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Meeting By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/meetings/oLQFUeKS5wd0Mstd5H2810T"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Meeting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Project Review\",\n    \"description\": \"Updated weekly project status review\",\n    \"date\": \"2024-01-21\",\n    \"startTime\": \"15:00\",\n    \"endTime\": \"16:00\",\n    \"location\": \"Conference Room B\",\n    \"status\": \"rescheduled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/meetings/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Meeting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/meetings/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Features",
+			"item": [
+				{
+					"name": "Create Features",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6IlhKY1FvaXJlNTdwY2R5d3h0TnBUZEw5IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM1MDIwMjU2LCJleHAiOjE3MzUxMDY2NTZ9.w7M4bLzES7oLz_QwvyebvA2mmQBhRnPMXHCEKvNg6BE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"featureName\": \"crm\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/features"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Meetings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6IlhKY1FvaXJlNTdwY2R5d3h0TnBUZEw5IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM1MDIwMjU2LCJleHAiOjE3MzUxMDY2NTZ9.w7M4bLzES7oLz_QwvyebvA2mmQBhRnPMXHCEKvNg6BE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/meetings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Meeting By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/meetings/oLQFUeKS5wd0Mstd5H2810T"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Meeting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Project Review\",\n    \"description\": \"Updated weekly project status review\",\n    \"date\": \"2024-01-21\",\n    \"startTime\": \"15:00\",\n    \"endTime\": \"16:00\",\n    \"location\": \"Conference Room B\",\n    \"status\": \"rescheduled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/meetings/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Meeting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImlKUURCRTFiNDF1bmxkQ1IzUWh3Zld2IiwiZW1haWwiOiJjbGllbnRAY29tcGFueS5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzM0OTMwNjEwLCJleHAiOjE3MzUwMTcwMTB9.SGt7YLNvdB6Qy3jnD_GSOg6Rqxk9Xeo-x3iOTUZG-So"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/meetings/2"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:5353/api/v1"
+		}
+	]
+}

@@ -12,9 +12,9 @@ export default {
             })
         }),
         body: Joi.object({
-            name: Joi.string().optional(),
-            description: Joi.string().optional(),
-            status: Joi.string().valid('active', 'inactive').optional()
+            name: Joi.string().allow('', null).optional(),
+            description: Joi.string().allow('', null).optional(),
+            status: Joi.string().valid('active', 'inactive').allow('', null).optional()
         })
     }),
     handler: async (req, res) => {

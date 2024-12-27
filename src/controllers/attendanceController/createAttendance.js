@@ -10,7 +10,7 @@ export default {
             startTime: Joi.string().required(),
             endDate: Joi.date().required(),
             endTime: Joi.string().required(),
-            comment: Joi.string().optional()
+            comment: Joi.string().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {

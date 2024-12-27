@@ -24,31 +24,31 @@ export default {
                 .messages({
                     'string.empty': 'Please provide a last name.'
                 }),
-            telephone: Joi.string(),
-            email: Joi.string().email(),
-            leadValue: Joi.number(),
-            assigned: Joi.string(),
+            telephone: Joi.string().allow('', null),
+            email: Joi.string().email().allow('', null),
+            leadValue: Joi.number().allow('', null),
+            assigned: Joi.string().allow('', null),
             status: Joi.string().required()
                 .messages({
                     'string.empty': 'Please select a status.'
                 }),
-            details: Joi.string(),
-            notes: Joi.string(),
-            source: Joi.string(),
-            category: Joi.string(),
-            tags: Joi.array().items(Joi.string()),
-            lastContacted: Joi.date(),
-            totalBudget: Joi.number(),
-            targetDate: Joi.date(),
-            contentType: Joi.string(),
-            brandName: Joi.string(),
-            companyName: Joi.string(),
-            street: Joi.string(),
-            city: Joi.string(),
-            state: Joi.string(),
-            zipCode: Joi.string(),
-            country: Joi.string(),
-            website: Joi.string().uri()
+            details: Joi.string().allow('', null),
+            notes: Joi.string().allow('', null),
+            source: Joi.string().allow('', null),
+            category: Joi.string().allow('', null),
+            tags: Joi.string().allow('', null),
+            lastContacted: Joi.date().allow('', null),
+            totalBudget: Joi.string().allow('', null),
+            targetDate: Joi.date().allow('', null),
+            contentType: Joi.string().allow('', null),
+            brandName: Joi.string().allow('', null),
+            companyName: Joi.string().allow('', null),
+            street: Joi.string().allow('', null),
+            city: Joi.string().allow('', null),
+            state: Joi.string().allow('', null),
+            zipCode: Joi.string().allow('', null),
+            country: Joi.string().allow('', null),
+            website: Joi.string().uri().allow('', null)
         })
     }),
 

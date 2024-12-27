@@ -67,9 +67,8 @@ const Lead = sequelize.define('Lead', {
         defaultValue: null
     },
     tags: {
-        type: DataTypes.JSON,
-        allowNull: true,
-        defaultValue: null
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     lastContacted: {
         type: DataTypes.DATE,
@@ -77,7 +76,7 @@ const Lead = sequelize.define('Lead', {
         defaultValue: null
     },
     totalBudget: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },

@@ -10,41 +10,27 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            project_name: Joi.string().required(),
-            startdate: Joi.date().required(),
-            enddate: Joi.date().required(),
-            projectimage: Joi.string().required(),
-            client: Joi.string().required(),
-            user: Joi.string().required(),
-            budget: Joi.number().required(),
-            estimatedmonths: Joi.number().required(),
-            project_description: Joi.string().allow(''),
-            tag: Joi.string().required(),
-            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
+            project_name: Joi.string().allow('', null),
+            category: Joi.string().allow('', null),
+            startdate: Joi.date().allow('', null),
+            enddate: Joi.date().allow('', null),
+            projectimage: Joi.string().allow('', null),
+            client: Joi.string().allow('', null),
+            user: Joi.string().allow('', null),
+            budget: Joi.number().allow('', null),
+            estimatedmonths: Joi.number().allow('', null),
+            estimatedhours: Joi.number().allow('', null),
+            project_description: Joi.string().allow('', null),
+            tag: Joi.string().allow('', null),
+            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').allow('', null)
         })
     }),
     handler: async (req, res) => {
-
-        
-            const { project_name, startdate,
-                enddate, projectimage, client,
-                user, budget, estimatedmonths,
-                project_description, tag,
-                status } = req.body;
-                try {
-            const clientExists = await Client.findByPk(client);
-            if (!clientExists) {
-                return responseHandler.notFound(res, "Client not found");
-            }
-
+        try {
             const { id } = req.params;
-            const project = await Project.findByPk(id);
-
-            if (!project) {
-                return responseHandler.error(res, "Project not found");
-            }
-            const updatedProject = await project.update({
+            const {
                 project_name,
+                category,
                 startdate,
                 enddate,
                 projectimage,
@@ -52,19 +38,60 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
+                estimatedhours,
+                project_description,
+                tag,
+                status
+            } = req.body;
+
+            // Find existing project
+            const project = await Project.findByPk(id);
+            if (!project) {
+                return responseHandler.notFound(res, "Project not found");
+            }
+
+
+            // Check if client exists if client is being updated
+            if (client) {
+                const clientExists = await Client.findByPk(client);
+                if (!clientExists) {
+                    return responseHandler.notFound(res, "Client not found");
+                }
+            }
+
+            // Check if new project name already exists (if being updated)
+            if (project_name && project_name !== project.project_name) {
+                const existingProject = await Project.findOne({
+                    where: { project_name }
+                });
+
+                if (existingProject) {
+                    return responseHandler.error(res, "Project with this name already exists");
+                }
+            }
+
+            // Update project
+            const updatedProject = await project.update({
+                project_name,
+                category,
+                startdate,
+                enddate,
+                projectimage,
+                client,
+                user,
+                budget,
+                estimatedmonths,
+                estimatedhours,
                 project_description,
                 tag,
                 status,
                 updated_by: req.user?.username
             });
+
             responseHandler.success(res, "Project updated successfully", updatedProject);
-
-        }
-
-        catch (error) {
+        } catch (error) {
+            console.log(error);
             responseHandler.error(res, error.message);
         }
     }
-}
-
-
+};

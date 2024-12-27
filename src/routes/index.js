@@ -25,13 +25,14 @@ import leadRoutes from "./leadRoutes.js";
 import taskRoutes from "./taskRoutes.js";
 import countriesRoutes from "./countriesRoutes.js";
 import dealRoutes from "./dealRoutes.js";
+import tagRoutes from "./tagRoutes.js";
 
 const router = express.Router();
 
 
 router.use('/auth', authRoutes);
-router.use('/roles', roleRoutes);
 router.use('/super-admin', superAdminRoutes);
+router.use('/roles', roleRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/employees', employeeRoutes);
@@ -55,5 +56,6 @@ router.use('/leads', leadRoutes);
 router.use('/tasks', taskRoutes);
 router.use('/countries', countriesRoutes);
 router.use('/deals', dealRoutes);
+router.use('/tags', tagRoutes);
 
 export default router;

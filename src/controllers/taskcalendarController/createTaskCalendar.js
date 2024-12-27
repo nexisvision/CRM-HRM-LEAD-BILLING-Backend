@@ -7,26 +7,26 @@ export default {
     validator: validator({
         body: Joi.object({
             taskName: Joi.string().required()
-            .messages({
-                'string.empty': 'Please provide a task name.'
-            }),
-            
+                .messages({
+                    'string.empty': 'Please provide a task name.'
+                }),
+
             taskDate: Joi.date().required()
-            .messages({
-                'date.base': 'Please select a task date.'
-            }),
+                .messages({
+                    'date.base': 'Please select a task date.'
+                }),
             taskTime: Joi.string().required()
-            .messages({
-                'string.empty': 'Please select a task time.'
-            }),
+                .messages({
+                    'string.empty': 'Please select a task time.'
+                }),
             taskDescription: Joi.string().required()
-            .messages({
-                'string.empty': 'Please provide a task description.'
-            })
+                .messages({
+                    'string.empty': 'Please provide a task description.'
+                })
         }),
     }),
     handler: async (req, res) => {
-        try {   
+        try {
             const { taskName, taskDate, taskTime, taskDescription } = req.body;
             const task = await TaskCalendar.create({ taskName, taskDate, taskTime, taskDescription, created_by: req.user?.username });
             responseHandler.success(res, "Task created successfully", task);

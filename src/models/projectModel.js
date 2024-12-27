@@ -13,6 +13,10 @@ const Project = sequelize.define("Project", {
         allowNull: false,
         unique: true
     },
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     startdate: {
         type: DataTypes.DATE,
         allowNull: false
@@ -41,13 +45,22 @@ const Project = sequelize.define("Project", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    estimatedHours: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     project_description: {
         type: DataTypes.TEXT,
         allowNull: true
     },
     tag: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+    },
+    status: {
+        type: DataTypes.ENUM('pending', 'in_progress', 'completed', 'on_hold'),
+        allowNull: false,
+        defaultValue: 'pending'
     },
     created_by: {
         type: DataTypes.STRING,

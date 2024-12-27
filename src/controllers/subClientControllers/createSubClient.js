@@ -20,10 +20,10 @@ export default {
                     'string.min': 'Password must be at least 8 characters long',
                     'string.empty': 'Password is required'
                 }),
-            firstName: Joi.string().optional(),
-            lastName: Joi.string().optional(),
-            phone: Joi.string().optional(),
-            profilePic: Joi.string().optional()
+            firstName: Joi.string().optional().allow('', null),
+            lastName: Joi.string().optional().allow('', null),
+            phone: Joi.string().optional().allow('', null),
+            profilePic: Joi.string().optional().allow('', null)
         }),
     }),
     handler: async (req, res) => {

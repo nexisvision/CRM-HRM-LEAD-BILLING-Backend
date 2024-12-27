@@ -16,7 +16,7 @@ export default {
                     'string.max': 'Designation name cannot exceed 50 characters',
                     'string.empty': 'Designation name is required'
                 }),
-            description: Joi.string().optional()
+            description: Joi.string().optional().allow('', null)
         }),
     }),
     handler: async (req, res) => {
