@@ -13,6 +13,10 @@ const Project = sequelize.define("Project", {
         allowNull: false,
         unique: true
     },
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     startdate: {
         type: DataTypes.DATE,
         allowNull: false

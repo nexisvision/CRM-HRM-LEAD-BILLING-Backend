@@ -11,6 +11,7 @@ export default {
         }),
         body: Joi.object({
             project_name: Joi.string(),
+            category: Joi.string(),
             startdate: Joi.date(),
             enddate: Joi.date(),
             projectimage: Joi.string(),
@@ -31,6 +32,7 @@ export default {
             const { id } = req.params;
             const {
                 project_name,
+                category,
                 startdate,
                 enddate,
                 projectimage,
@@ -83,6 +85,7 @@ export default {
             // Update project
             const updatedProject = await project.update({
                 project_name,
+                category,
                 startdate,
                 enddate,
                 projectimage,
@@ -90,9 +93,9 @@ export default {
                 user,
                 budget,
                 estimatedmonths,
-                project_description: project_description ?? project.project_description,
+                project_description,
                 tags: tags ? processedTags : project.tags,
-                status: status || project.status,
+                status,
                 updated_by: req.user?.username
             });
 

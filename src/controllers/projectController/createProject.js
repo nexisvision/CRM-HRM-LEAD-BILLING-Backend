@@ -8,6 +8,7 @@ export default {
     validator: validator({
         body: Joi.object({
             project_name: Joi.string().required(),
+            category: Joi.string().required(),
             startdate: Joi.date().required(),
             enddate: Joi.date().required(),
             projectimage: Joi.string().required(),
@@ -27,6 +28,7 @@ export default {
         try {
             const {
                 project_name,
+                category,
                 startdate,
                 enddate,
                 projectimage,
@@ -66,6 +68,7 @@ export default {
 
             const project = await Project.create({
                 project_name,
+                category,
                 startdate,
                 enddate,
                 projectimage,
