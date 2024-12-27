@@ -6,16 +6,22 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            role_name: Joi.string().required()
+            role_name: Joi.string().required(),
+            permissions: Joi.object().allow(null)
         })
     }),
     handler: async (req, res) => {
         try {
-            const { role_name } = req.body;
-            const role = await Role.create({ role_name });
-            responseHandler(res, 201, 'Role created successfully', role);
+            const { role_name, permissions } = req.body;
+            const role = await Role.create({
+                role_name,
+                permissions,
+                created_by: req.user?.username,
+                updated_by: req.user?.username
+            });
+            responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {
-            responseHandler(res, 500, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

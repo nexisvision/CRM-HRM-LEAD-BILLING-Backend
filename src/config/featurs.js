@@ -1,88 +1,136 @@
-const features = {
-    staff: {
-        users: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        roles: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        clients: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        meetings: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        permissions: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        }
+const features = [
+    {
+        name: 'staff',
+        modules: [
+            {
+                name: 'users',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'roles',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'clients',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'meetings',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'permissions',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            }
+        ]
     },
-    crm: {
-        lead: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        deal: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        task: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
+    {
+        name: 'crm',
+        modules: [
+            {
+                name: 'lead',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'deal',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'task',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            }
+        ]
     },
-    hrm: {
-        employee: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        meetings: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        attendance: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        leaves: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        },
-        events: {
-            create: false,
-            view: false,
-            update: false,
-            delete: false,
-        }
+    {
+        name: 'hrm',
+        modules: [
+            {
+                name: 'employee',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'meetings',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'attendance',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'leaves',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            },
+            {
+                name: 'events',
+                permissions: {
+                    create: false,
+                    view: false,
+                    update: false,
+                    delete: false
+                }
+            }
+        ]
     }
-};
+];
 
 export default features;
