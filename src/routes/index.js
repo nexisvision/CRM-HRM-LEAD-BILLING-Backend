@@ -22,6 +22,10 @@ import currencyRoutes from "./currencyRoutes.js";
 import branchRoutes from "./branchRoutes.js";
 import superAdminRoutes from "./superAdminRoutes.js";
 import leadRoutes from "./leadRoutes.js";
+import taskRoutes from "./taskRoutes.js";
+import countriesRoutes from "./countriesRoutes.js";
+import dealRoutes from "./dealRoutes.js";
+
 const router = express.Router();
 
 
@@ -48,5 +52,8 @@ router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
 router.use('/branches', branchRoutes);
 router.use('/leads', leadRoutes);
+router.use('/tasks', taskRoutes);
+router.use('/countries', countriesRoutes);
+router.use('/deals', dealRoutes);
 
 export default router;

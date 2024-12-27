@@ -25,12 +25,13 @@ export default {
     }),
     handler: async (req, res) => {
 
-        try {
+        
             const { project_name, startdate,
                 enddate, projectimage, client,
                 user, budget, estimatedmonths,
                 project_description, tag,
                 status } = req.body;
+                try {
             const clientExists = await Client.findByPk(client);
             if (!clientExists) {
                 return responseHandler.notFound(res, "Client not found");
