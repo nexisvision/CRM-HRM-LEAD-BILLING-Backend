@@ -6,17 +6,16 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            name: Joi.string().required(),
-            description: Joi.string().optional().allow('', null)
+            permissions: Joi.object().allow(null).required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { name, description } = req.body;
+            const { permissions } = req.body;
 
             // Check if permission already exists
             const existingPermission = await Permission.findOne({
-                where: { name }
+                where: { permissions }
             });
 
             if (existingPermission) {
@@ -24,8 +23,8 @@ export default {
             }
 
             const permission = await Permission.create({
-                name,
-                description
+                permissions,
+                created_by: req.user?.username,
             });
 
             responseHandler.created(res, "Permission created successfully", permission);
