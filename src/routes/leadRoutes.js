@@ -1,5 +1,6 @@
 import express from "express";
 import { createLead, getAllLeads, getLeadById, updateLead, deleteLead } from "../controllers/leadController/index.js";
+import { createLeadUser, getAllLeadUser, deleteLeadUser } from "../controllers/leadController/leadUserControllers/index.js";
 import { authenticateUser, checkRole, checkPermission } from "../middlewares/index.js";
 
 
@@ -9,7 +10,7 @@ router.use(authenticateUser, checkRole, checkPermission('lead'))
 
 
 
- // Lead Routes start ==============================
+// Lead Routes start ==============================
 router.post('/', createLead.validator, createLead.handler);
 router.get('/', getAllLeads.validator, getAllLeads.handler);
 router.get('/:id', getLeadById.validator, getLeadById.handler);
