@@ -12,10 +12,10 @@ export default {
             })
         }),
         body: Joi.object({
-            EventTitle: Joi.string().required(),
-            EventManager: Joi.string().required(),
-            EventDate: Joi.date().required(),
-            EventTime: Joi.string().required()
+            EventTitle: Joi.string(),
+            EventManager: Joi.string(),
+            EventDate: Joi.date(),
+            EventTime: Joi.string()
         })
     }),
     handler: async (req, res) => {
