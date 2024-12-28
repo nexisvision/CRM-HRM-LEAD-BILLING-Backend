@@ -8,10 +8,13 @@ const router = express.Router();
 router.post('/signup', signup.validator, signup.handler);
 router.post('/login', login.validator, login.handler);
 
+
 //Super-Admin 
-router.get('/', authenticateUser, checkUserRole(['super-admin']), getAllUsers.validator, getAllUsers.handler);
-router.get('/:id', authenticateUser, checkUserRole(['super-admin']), getUserById.validator, getUserById.handler);
-router.put('/:id', authenticateUser, checkUserRole(['super-admin']), updateUser.validator, updateUser.handler);
-router.delete('/:id', authenticateUser, checkUserRole(['super-admin']), deleteUser.validator, deleteUser.handler);
+router.use(authenticateUser, checkUserRole(['super-admin']));
+
+router.get('/', getAllUsers.validator, getAllUsers.handler);
+router.get('/:id', getUserById.validator, getUserById.handler);
+router.put('/:id', updateUser.validator, updateUser.handler);
+router.delete('/:id', deleteUser.validator, deleteUser.handler);
 
 export default router;
