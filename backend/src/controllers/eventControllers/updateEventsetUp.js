@@ -5,6 +5,12 @@ import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required().messages({
+                'string.base': 'Event ID must be a string',
+                'string.empty': 'Event ID is required',
+            })
+        }),
         body: Joi.object({
             EventTitle: Joi.string().required(),
             EventManager: Joi.string().required(),
