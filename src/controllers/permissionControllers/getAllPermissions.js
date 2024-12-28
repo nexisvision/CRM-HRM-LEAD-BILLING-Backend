@@ -12,11 +12,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { page = 1, limit = 10 } = req.query;
-            const permissions = await Permission.findAll({
-                offset: (page - 1) * limit,
-                limit: parseInt(limit)
-            });
+            const permissions = await Permission.findAll();
             responseHandler.success(res, "Permissions retrieved successfully", permissions);
         } catch (error) {
             console.log(error);

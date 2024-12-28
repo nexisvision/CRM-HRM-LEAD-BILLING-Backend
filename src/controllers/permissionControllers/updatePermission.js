@@ -12,15 +12,13 @@ export default {
             })
         }),
         body: Joi.object({
-            name: Joi.string().allow('', null).optional(),
-            description: Joi.string().allow('', null).optional(),
-            status: Joi.string().valid('active', 'inactive').allow('', null).optional()
+            permissions: Joi.object().allow(null).required()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, description, status } = req.body;
+            const { permissions } = req.body;
 
             const permission = await Permission.findByPk(id);
 
@@ -28,23 +26,9 @@ export default {
                 return responseHandler.notFound(res, "Permission not found");
             }
 
-            // If name is being updated, check for duplicates
-            if (name && name !== permission.name) {
-                const existingPermission = await Permission.findOne({
-                    where: { name }
-                });
-
-                if (existingPermission) {
-                    return responseHandler.error(res, "Permission name already exists");
-                }
-            }
-
-            // Update permission
             await permission.update({
-                name: name || permission.name,
-                description: description || permission.description,
-                status: status || permission.status,
-                updated_by: req.user?.username // If you're tracking who updates
+                permissions: permissions || permission.permissions,
+                updated_by: req.user?.username
             });
 
             responseHandler.success(res, "Permission updated successfully", permission);

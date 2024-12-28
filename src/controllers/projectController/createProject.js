@@ -71,7 +71,8 @@ export default {
                 project_description,
                 tag,
                 status,
-                created_by: req.user?.username
+                created_by: req.user?.username,
+                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Project created successfully", project);

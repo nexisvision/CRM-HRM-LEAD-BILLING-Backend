@@ -22,12 +22,7 @@ export default {
                 return responseHandler.notFound(res, "Permission not found");
             }
 
-            // Option 1: Hard delete
             await permission.destroy();
-
-            // Option 2: Soft delete (if you prefer)
-            // await permission.update({ status: 'inactive' });
-
             responseHandler.success(res, "Permission deleted successfully");
         } catch (error) {
             console.log(error);

@@ -15,20 +15,25 @@ export default {
             role_name: Joi.string().required().messages({
                 'string.base': 'Role name must be a string',
                 'string.empty': 'Role name is required'
-            })
+            }),
+            permissions: Joi.array().items(Joi.string()).allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { role_name } = req.body;
+            const { role_name, permissions } = req.body;
 
             const role = await Role.findByPk(id);
             if (!role) {
                 return responseHandler.notFound(res, 'Role not found');
             }
 
-            await role.update({ role_name });
+            await role.update({
+                role_name,
+                permissions,
+                updated_by: req.user?.username
+            });
             return responseHandler.success(res, 'Role updated successfully', role);
         } catch (error) {
             return responseHandler.error(res, error.message);

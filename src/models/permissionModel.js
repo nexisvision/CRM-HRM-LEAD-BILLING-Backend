@@ -9,34 +9,10 @@ const Permission = sequelize.define('Permission', {
         unique: true,
         defaultValue: () => generateId()
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-    },
-    description: {
-        type: DataTypes.STRING,
+    permissions: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
-    },
-    feature_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    action: {
-        type: DataTypes.ENUM(
-            'view',
-            'create',
-            'edit',
-            'delete',
-        ),
-        allowNull: true,
-        defaultValue: null
-    },
-    is_active: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true
     },
     created_by: {
         type: DataTypes.STRING,
