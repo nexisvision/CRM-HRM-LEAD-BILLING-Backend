@@ -40,13 +40,15 @@ export default {
                 'string.empty': 'Task description is required',
                 'string.base': 'Task description must be a string'
             }),
+            taskDate: Joi.date().required().messages({
+                'date.base': 'Task date must be a date'
+            }),
+
 
         })
     }),
-    handler: async (req, res) => {
-  
-          
-            const { taskTitle, taskStatus, taskPriority, projectClient, projectName, taskDescription } = req.body;
+    handler: async (req, res) => {          
+            const { taskTitle, taskStatus, taskPriority, projectClient, projectName, taskDescription, taskDate } = req.body;
             try { 
                 const { id } = req.params;
             const task = await Task.findByPk(id);
@@ -57,10 +59,10 @@ export default {
             taskTitle,
             taskStatus,
             taskPriority,
-            // projectEmployee,
             projectClient,
             projectName,
             taskDescription,
+            taskDate,
             updated_by: req.user?.username
             });
             responseHandler.success(res, 'Task updated successfully', updatedTask);

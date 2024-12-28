@@ -34,7 +34,11 @@ export default {
             taskDescription: Joi.string().required().messages({
                 'string.empty': 'Task description is required',
                 'string.base': 'Task description must be a string'
-            })
+            }),
+            taskDate: Joi.date().required()
+            .messages({
+                'date.base': 'Please select a task date.'
+            }),
         })
     }),
     handler: async (req, res) => {
@@ -44,9 +48,9 @@ export default {
                 taskTitle,
                 taskStatus,
                 taskPriority,
-                // projectEmployee,
                 projectClient,
-                taskDescription
+                taskDescription,
+                taskDate
             } = req.body;
 
             const task = await Task.create({
@@ -54,9 +58,9 @@ export default {
                 taskTitle,
                 taskStatus,
                 taskPriority,
-                // projectEmployee,
                 projectClient,
                 taskDescription,
+                taskDate,
                 created_by: req.user?.username
             });
 

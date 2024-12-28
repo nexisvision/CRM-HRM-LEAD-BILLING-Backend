@@ -25,7 +25,7 @@ export default {
             status: Joi.string().required()
                 .messages({
                     'string.empty': 'Please select a status.'
-                }),
+                }), 
             details: Joi.string().allow('', null),
             notes: Joi.string().allow('', null),
             source: Joi.string().allow('', null),

@@ -9,6 +9,7 @@ const Lead = sequelize.define('Lead', {
         unique: true,
         defaultValue: () => generateId()
     },
+    
     leadTitle: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -68,7 +69,8 @@ const Lead = sequelize.define('Lead', {
     },
     tags: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue: null
     },
     lastContacted: {
         type: DataTypes.DATE,
