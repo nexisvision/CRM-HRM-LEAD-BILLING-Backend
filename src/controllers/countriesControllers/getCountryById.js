@@ -14,10 +14,9 @@ export default {
         try {
             const { id } = req.params;
             const country = await Country.findByPk(id);
-            await country.destroy();
-            res.status(200).json({ message: "Country deleted successfully" });
+            res.status(200).json({ message: "Country fetched successfully", country });
         } catch (error) {
-            console.error('Error deleting country:', error);
+            console.error('Error fetching country:', error);
             res.status(500).json({ message: "Internal server error" });
         }
     }

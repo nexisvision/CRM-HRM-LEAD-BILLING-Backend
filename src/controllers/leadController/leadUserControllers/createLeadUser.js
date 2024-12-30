@@ -2,7 +2,6 @@ import responseHandler from "../../../utils/responseHandler.js";
 import validator from "../../../utils/validator.js";
 import Joi from "joi";
 import LeadUser from "../../../models/dealandleadUserModel.js";
-import User from "../../../models/userModel.js";
 import Lead from "../../../models/leadModel.js";
 import Employee from "../../../models/employeeModel.js";
 
@@ -19,7 +18,7 @@ export default {
                 'string.base': 'Employee must be a string',
                 'string.empty': 'Employee is required'
             }),
-            
+
         })
     }),
     handler: async (req, res) => {
@@ -34,7 +33,7 @@ export default {
             }
 
             // Check if employee exists
-            const employeeExists = await Employee.findOne({ where: { username: employee }});
+            const employeeExists = await Employee.findOne({ where: { username: employee } });
             if (!employeeExists) {
                 return responseHandler.notFound(res, "Employee not found");
             }

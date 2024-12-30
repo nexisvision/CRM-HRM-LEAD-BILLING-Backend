@@ -1,4 +1,4 @@
-import Country from "../../models/countriesModel.js";
+import Contract from "../../models/contractModel.js";
 import validator from "../../utils/validator.js";
 import Joi from "joi";
 
@@ -13,11 +13,11 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const country = await Country.findByPk(id);
-            await country.destroy();
-            res.status(200).json({ message: "Country deleted successfully" });
+            const contract = await Contract.findByPk(id);
+            await contract.destroy();
+            res.status(200).json({ message: "Contract deleted successfully" });
         } catch (error) {
-            console.error('Error deleting country:', error);
+            console.error('Error deleting contract:', error);
             res.status(500).json({ message: "Internal server error" });
         }
     }

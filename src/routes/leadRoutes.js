@@ -1,14 +1,12 @@
 import express from "express";
 import { createLead, getAllLeads, getLeadById, updateLead, deleteLead } from "../controllers/leadController/index.js";
 import { createLeadUser, getAllLeadUser, deleteLeadUser } from "../controllers/leadController/leadUserControllers/index.js";
-import { authenticateUser, checkRole, checkPermission } from "../middlewares/index.js";
+import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 
 const router = express.Router();
 
-router.use(authenticateUser, checkRole, checkPermission('lead'))
-
-
+router.use(authenticateUser, checkRole)
 
 // Lead Routes start ==============================
 router.post('/', createLead.validator, createLead.handler);
@@ -21,5 +19,5 @@ router.delete('/:id', deleteLead.validator, deleteLead.handler);
 router.post('/:leadId/user', createLeadUser.validator, createLeadUser.handler);
 router.get('/:leadId/user', getAllLeadUser.validator, getAllLeadUser.handler);
 router.delete('/:leadId/user/:employeeId', deleteLeadUser.validator, deleteLeadUser.handler);
-//
+
 export default router;

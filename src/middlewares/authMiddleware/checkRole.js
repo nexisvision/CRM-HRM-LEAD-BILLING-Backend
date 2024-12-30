@@ -14,8 +14,8 @@ export default async function checkRole(req, res, next) {
             return responseHandler.error(res, "Role not found");
         }
 
-        req.role = role; // Assign role to req object for further use
-        next(); // Call next middleware
+        req.role = role;
+        next();
     } catch (error) {
         responseHandler.error(res, error.message);
     }

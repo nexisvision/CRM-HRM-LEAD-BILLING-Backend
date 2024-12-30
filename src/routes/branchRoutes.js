@@ -1,7 +1,10 @@
 import express from "express";
 import { createBranch, getAllBranch, updateBranch, deleteBranch } from "../controllers/branchControllers/index.js";
+import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 const router = express.Router();
+
+router.use(authenticateUser, checkRole);
 
 router.post('/', createBranch.validator, createBranch.handler);
 router.get('/', getAllBranch.validator, getAllBranch.handler);
