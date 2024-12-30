@@ -1,6 +1,5 @@
 import express from "express";
 import { createLead, getAllLeads, getLeadById, updateLead, deleteLead } from "../controllers/leadController/index.js";
-
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 
