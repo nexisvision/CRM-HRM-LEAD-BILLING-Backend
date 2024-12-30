@@ -78,7 +78,7 @@ export default {
             responseHandler.created(res, "Project created successfully", project);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

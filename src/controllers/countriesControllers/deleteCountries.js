@@ -1,4 +1,5 @@
 import Country from "../../models/countriesModel.js";
+import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Joi from "joi";
 
@@ -15,10 +16,10 @@ export default {
             const { id } = req.params;
             const country = await Country.findByPk(id);
             await country.destroy();
-            res.status(200).json({ message: "Country deleted successfully" });
+            responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
             console.error('Error deleting country:', error);
-            res.status(500).json({ message: "Internal server error" });
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -1,4 +1,5 @@
 import Country from "../../models/countriesModel.js";
+import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Joi from "joi";
 
@@ -19,10 +20,10 @@ export default {
             const { countryName, countryCode, phoneCode } = req.body;
             const country = await Country.findByPk(id);
             await country.update({ countryName, countryCode, phoneCode });
-            res.status(200).json({ message: "Country updated successfully" });
+            responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {
             console.error('Error updating country:', error);
-            res.status(500).json({ message: "Internal server error" });
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }   

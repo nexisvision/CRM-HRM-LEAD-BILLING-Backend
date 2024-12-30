@@ -1,10 +1,10 @@
 import express from "express";
 import { getAllContracts, getContractById, updateContract, deleteContract, createContract } from "../controllers/contractControllers/index.js";
-import { authenticateUser, checkUserRole } from "../middlewares/index.js";
+import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 const router = express.Router();
 
-router.use(authenticateUser, checkUserRole(['super-admin']));
+router.use(authenticateUser, checkRole);
 
 router.post('/', createContract.validator, createContract.handler);
 router.get('/', getAllContracts.validator, getAllContracts.handler);

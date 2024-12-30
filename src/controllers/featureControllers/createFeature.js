@@ -20,7 +20,7 @@ export default {
             const feature = await Feature.create({ featureName });
             responseHandler.success(res, "Feature created successfully", feature);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

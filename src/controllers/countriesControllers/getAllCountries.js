@@ -12,12 +12,12 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            
+
             const countries = await Country.findAll();
-            responseHandler.success(res, "Countries fetched successfully", countries);  
+            responseHandler.success(res, "Countries fetched successfully", countries);
         } catch (error) {
             console.error('Error fetching countries:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

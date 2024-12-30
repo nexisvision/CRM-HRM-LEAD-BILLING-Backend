@@ -18,10 +18,11 @@ export default {
             if (!lead) {
                 return responseHandler.notFound(res, "Lead not found");
             }
-            const leadUser = await LeadUser.findOne({ where: {
-                id: employeeId,
-                leadId: leadId
-            }
+            const leadUser = await LeadUser.findOne({
+                where: {
+                    id: employeeId,
+                    leadId: leadId
+                }
             });
             if (!leadUser) {
                 return responseHandler.notFound(res, "Lead user not found");
@@ -30,7 +31,7 @@ export default {
             responseHandler.success(res, "Lead user deleted successfully");
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

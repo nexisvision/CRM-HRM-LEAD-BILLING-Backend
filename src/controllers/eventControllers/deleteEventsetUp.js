@@ -22,7 +22,7 @@ export default {
             await event.destroy();
             responseHandler.success(res, "Event deleted successfully", event);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }   

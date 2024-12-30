@@ -13,7 +13,7 @@ export default {
         })
     }),
     handler: async (req, res) => {
-        try {   
+        try {
             const { id } = req.params;
             const task = await Task.findByPk(id);
             if (!task) {
@@ -23,7 +23,7 @@ export default {
             responseHandler.success(res, "Task deleted successfully");
         } catch (error) {
             console.error('Error deleting task:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

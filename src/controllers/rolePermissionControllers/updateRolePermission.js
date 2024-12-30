@@ -30,7 +30,7 @@ export default {
             responseHandler.success(res, "Role permission updated successfully", rolePermission);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

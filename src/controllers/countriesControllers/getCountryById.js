@@ -1,4 +1,5 @@
 import Country from "../../models/countriesModel.js";
+import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Joi from "joi";
 
@@ -14,10 +15,10 @@ export default {
         try {
             const { id } = req.params;
             const country = await Country.findByPk(id);
-            res.status(200).json({ message: "Country fetched successfully", country });
+            responseHandler.success(res, "Country fetched successfully", country);
         } catch (error) {
             console.error('Error fetching country:', error);
-            res.status(500).json({ message: "Internal server error" });
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

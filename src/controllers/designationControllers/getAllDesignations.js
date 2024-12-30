@@ -15,7 +15,7 @@ export default {
             const designations = await Designation.findAll();
             responseHandler.success(res, "Designations fetched successfully", designations);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 

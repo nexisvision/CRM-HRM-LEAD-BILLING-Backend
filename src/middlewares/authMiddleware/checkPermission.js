@@ -34,7 +34,7 @@ export default function checkPermission(entity) {
 
             next();
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error.errors[0].message);
         }
     };
 }

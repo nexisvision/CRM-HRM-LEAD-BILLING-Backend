@@ -16,7 +16,7 @@ export default {
             responseHandler.success(res, "Branch deleted successfully");
         } catch (error) {
             console.error('Error deleting branch:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

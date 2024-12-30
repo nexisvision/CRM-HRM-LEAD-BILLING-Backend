@@ -17,13 +17,13 @@ export default {
     handler: async (req, res) => {
         try {
             const { leadId } = req.params;
-            const { page, limit }  = req.query;
+            const { page, limit } = req.query;
             const offset = (page - 1) * limit;
             const leads = await LeadUser.findAll({ where: { leadId }, offset, limit });
             responseHandler.success(res, "Lead users fetched successfully", leads);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
-        }
+    }
 }

@@ -3,11 +3,12 @@ import validator from "../../utils/validator.js";
 import Joi from "joi";
 
 export default {
-    validator: validator,
-    params: Joi.object({
-        id: Joi.string().required().messages({
-            'string.base': 'Id must be a string',
-            'string.empty': 'Id is required'
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required().messages({
+                'string.base': 'Id must be a string',
+                'string.empty': 'Id is required'
+            })
         })
     }),
     handler: async (req, res) => {

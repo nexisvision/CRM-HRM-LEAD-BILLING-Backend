@@ -22,7 +22,7 @@ export default {
             await announcement.destroy();
             responseHandler.success(res, "Announcement deleted successfully", announcement);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }   

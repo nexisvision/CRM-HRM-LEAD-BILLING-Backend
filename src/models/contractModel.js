@@ -5,10 +5,9 @@ import generateId from '../middlewares/generatorId.js';
 export const Contract = sequelize.define("Contract", {
     id: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: () => generateId(),
+        primaryKey: true,
         unique: true,
-        primaryKey: true
+        defaultValue: () => generateId()
     },
     subject: {
         type: DataTypes.STRING,

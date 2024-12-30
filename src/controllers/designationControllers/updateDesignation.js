@@ -29,7 +29,7 @@ export default {
             await designation.update({ designation_name, updated_by: req.user?.username });
             responseHandler.success(res, "Designation updated successfully", designation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

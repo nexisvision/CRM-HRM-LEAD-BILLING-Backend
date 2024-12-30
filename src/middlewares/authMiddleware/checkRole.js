@@ -17,6 +17,6 @@ export default async function checkRole(req, res, next) {
         req.role = role;
         next();
     } catch (error) {
-        responseHandler.error(res, error.message);
+        responseHandler.error(res, error.errors[0].message);
     }
 }

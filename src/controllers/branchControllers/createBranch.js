@@ -30,7 +30,7 @@ export default {
             responseHandler.success(res, "Branch created successfully", branch);
         } catch (error) {
             console.error('Error creating branch:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

@@ -20,7 +20,7 @@ export default {
             responseHandler.success(res, "Branch updated successfully", Branch);
         } catch (error) {
             console.error('Error updating branch:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

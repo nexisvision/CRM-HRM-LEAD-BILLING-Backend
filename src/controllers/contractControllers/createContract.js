@@ -18,9 +18,9 @@ export default {
         try {
             const { subject, project, type, value, startDate, endDate } = req.body;
             const contract = await Contract.create({ subject, project, type, value, startDate, endDate, created_by: req.user?.id });
-            return responseHandler(res, "Contract created successfully", contract);
+            return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
-            return responseHandler(res, error.message);
+            return responseHandler.error(res, error.errors[0].message);
         }
     }
 }

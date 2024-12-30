@@ -19,7 +19,7 @@ export default {
             responseHandler.success(res, "Deal deleted successfully");
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

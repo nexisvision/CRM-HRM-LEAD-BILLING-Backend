@@ -18,10 +18,11 @@ export default {
             if (!deal) {
                 return responseHandler.notFound(res, "Deal not found");
             }
-            const dealUser = await DealUser.findOne({ where: {
-                id: employeeId,
-                dealId: dealId
-            }
+            const dealUser = await DealUser.findOne({
+                where: {
+                    id: employeeId,
+                    dealId: dealId
+                }
             });
             if (!dealUser) {
                 return responseHandler.notFound(res, "Deal user not found");
@@ -30,7 +31,7 @@ export default {
             responseHandler.success(res, "Deal user deleted successfully");
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -17,13 +17,13 @@ export default {
     handler: async (req, res) => {
         try {
             const { dealId } = req.params;
-            const { page, limit }  = req.query;
+            const { page, limit } = req.query;
             const offset = (page - 1) * limit;
             const deals = await DealUser.findAll({ where: { dealId }, offset, limit });
             responseHandler.success(res, "Deal users fetched successfully", deals);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
-        }
+    }
 }

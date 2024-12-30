@@ -52,7 +52,7 @@ export default {
             responseHandler.created(res, "Role permission created successfully", rolePermission);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

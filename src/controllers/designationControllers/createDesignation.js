@@ -35,7 +35,7 @@ export default {
             const designation = await Designation.create({ designation_name, created_by: req.user?.username, updated_by: req.user?.username });
             responseHandler.success(res, "Designation created successfully", designation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

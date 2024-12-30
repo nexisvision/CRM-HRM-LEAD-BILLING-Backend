@@ -19,7 +19,7 @@ export default {
                 'string.base': 'Employee must be a string',
                 'string.empty': 'Employee is required'
             }),
-            
+
         })
     }),
     handler: async (req, res) => {
@@ -34,7 +34,7 @@ export default {
             }
 
             // Check if employee exists
-            const employeeExists = await Employee.findOne({ where: { username: employee }});
+            const employeeExists = await Employee.findOne({ where: { username: employee } });
             if (!employeeExists) {
                 return responseHandler.notFound(res, "Employee not found");
             }
@@ -43,7 +43,7 @@ export default {
             responseHandler.success(res, "Deal user created successfully", dealUser);
         } catch (error) {
             console.error('Error creating deal user:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

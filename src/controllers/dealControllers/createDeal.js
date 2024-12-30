@@ -29,10 +29,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { dealName, phoneNumber, price, clients } = req.body;
-            
+
             const deal = await Deal.create({
                 dealName,
-                phoneNumber, 
+                phoneNumber,
                 price,
                 clients
             });
@@ -40,7 +40,7 @@ export default {
             responseHandler.success(res, "Deal created successfully", deal);
         } catch (error) {
             console.error('Error creating deal:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };
