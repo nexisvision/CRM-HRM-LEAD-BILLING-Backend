@@ -14,6 +14,7 @@ const validator = schemas => (req, res, next) => {
             return responseHandler.badRequest(res, error.message);
         }
         req[type] = value;
+
     }
     next();
 };

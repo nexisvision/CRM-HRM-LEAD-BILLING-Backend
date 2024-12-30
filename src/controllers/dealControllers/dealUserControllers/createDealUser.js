@@ -1,8 +1,6 @@
 import responseHandler from "../../../utils/responseHandler.js";
 import validator from "../../../utils/validator.js";
 import Joi from "joi";
-import DealUser from "../../../models/dealandleadUserModel.js";
-import User from "../../../models/userModel.js";
 import Deal from "../../../models/dealModel.js";
 import Employee from "../../../models/employeeModel.js";
 
@@ -19,7 +17,6 @@ export default {
                 'string.base': 'Employee must be a string',
                 'string.empty': 'Employee is required'
             }),
-            
         })
     }),
     handler: async (req, res) => {
@@ -39,10 +36,27 @@ export default {
                 return responseHandler.notFound(res, "Employee not found");
             }
 
-            const dealUser = await DealUser.create({ employee, dealId });
-            responseHandler.success(res, "Deal user created successfully", dealUser);
+            // Initialize dealIds array if it doesn't exist
+            const currentDealIds = employeeExists.dealIds || [];
+
+            // Check if deal is already assigned to employee
+            if (currentDealIds.includes(dealId)) {
+                return responseHandler.badRequest(res, "Deal is already assigned to this employee");
+            }
+
+            // Update employee's dealIds array
+            await Employee.update(
+                { 
+                    dealIds: {...currentDealIds, dealId}
+                },
+                { 
+                    where: { username: employee }
+                }
+            );
+
+            responseHandler.success(res, "Deal assigned to employee successfully");
         } catch (error) {
-            console.error('Error creating deal user:', error);
+            console.error('Error assigning deal to employee:', error);
             responseHandler.error(res, error.message);
         }
     }

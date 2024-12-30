@@ -3,40 +3,32 @@ import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
 
-const Deal = sequelize.define("Deal", {
+const  Sources = sequelize.define("sources", {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
         defaultValue: () => generateId()
     },
-    dealName: {
+    sourceName: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    phoneNumber: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-    },
-    clients: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    sources: {
-        type: DataTypes.JSON,
         allowNull: false,
-        defaultValue: []
+        unique: true
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
+})
 
-});
-
-export default Deal;
+export default Sources;

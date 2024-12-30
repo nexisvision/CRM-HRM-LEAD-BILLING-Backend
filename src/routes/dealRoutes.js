@@ -14,17 +14,7 @@ router.put("/:id", updateDeal.validator, updateDeal.handler);
 
 // Deal routes end ================================
 
-// Deal task routes start ================================
-router.post("/:dealId/task", createDealTask.validator, createDealTask.handler);
-router.delete("/:dealId/task/:taskId", deleteDealTask.validator, deleteDealTask.handler);
-router.get("/:dealId/task", getAllDealTask.validator, getAllDealTask.handler);
-// Deal task routes end ================================
 
 
-// Deal user routes start ================================
-router.post("/:dealId/user", createDealUser.validator, createDealUser.handler);
-router.get("/:dealId/user", getAllDealUser.validator, getAllDealUser.handler);
-router.delete("/:dealId/user/:employeeId", deleteDealUser.validator, deleteDealUser.handler);
-// Deal user routes end ================================
 
 export default router;
