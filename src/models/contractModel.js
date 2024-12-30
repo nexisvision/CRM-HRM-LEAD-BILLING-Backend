@@ -34,6 +34,10 @@ export const Contract = sequelize.define("Contract", {
         type: DataTypes.DATE,
         allowNull: false,
     },
+    description: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

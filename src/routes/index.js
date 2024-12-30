@@ -28,6 +28,7 @@ import dealRoutes from "./dealRoutes.js";
 import tagRoutes from "./tagRoutes.js";
 import contractRoutes from "./contractRoutes.js";
 import projectReportRoutes from "./projectReportRoutes.js";
+import invoiceRoutes from "./invoiceRoutes.js";
 const router = express.Router();
 
 
@@ -60,6 +61,7 @@ router.use('/countries', countriesRoutes);
 router.use('/deals', dealRoutes);
 router.use('/tags', tagRoutes);
 router.use('/contracts', contractRoutes);
+router.use('/invoices', invoiceRoutes);
 
 
 export default router;

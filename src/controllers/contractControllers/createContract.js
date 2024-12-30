@@ -12,12 +12,13 @@ export default {
             value: Joi.string().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
+            description: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { subject, project, type, value, startDate, endDate } = req.body;
-            const contract = await Contract.create({ subject, project, type, value, startDate, endDate, created_by: req.user?.id });
+            const { subject, project, type, value, startDate, endDate, description } = req.body;
+            const contract = await Contract.create({ subject, project, type, value, startDate, endDate, description, created_by: req.user?.id });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error.errors[0].message);

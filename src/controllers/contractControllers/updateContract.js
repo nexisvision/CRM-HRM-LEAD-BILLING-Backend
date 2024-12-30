@@ -15,14 +15,15 @@ export default {
             value: Joi.string().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
+            description: Joi.string().required(),
         }),
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { subject, project, type, value, startDate, endDate } = req.body;
+            const { subject, project, type, value, startDate, endDate, description } = req.body;
             const contract = await Contract.findByPk(id);
-            await contract.update({ subject, project, type, value, startDate, endDate });
+            await contract.update({ subject, project, type, value, startDate, endDate, description });
             return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error.errors[0].message);
