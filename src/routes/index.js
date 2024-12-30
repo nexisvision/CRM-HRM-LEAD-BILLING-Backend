@@ -31,6 +31,9 @@ import sourcesRoutes from "./sourcesRoutes.js";
 import tagRoutes from "./tagRoutes.js";
 import dealSourcesRoutes from "./dealsourcesRoutes.js";
 
+import contractRoutes from "./contractRoutes.js";
+import projectReportRoutes from "./projectReportRoutes.js";
+import invoiceRoutes from "./invoiceRoutes.js";
 const router = express.Router();
 
 
@@ -51,6 +54,7 @@ router.use('/subscriptions', subscriptionRoutes);
 router.use('/announcements', announcementRoutes);
 router.use('/events', eventRoutes);
 router.use('/projects', projectRoutes);
+router.use('/project-reports', projectReportRoutes);
 router.use('/meetings', meetingRoutes);
 router.use('/features', featureRoutes);
 router.use('/taskcalendars', taskCalendarRoutes);
@@ -65,5 +69,8 @@ router.use('/dealusers', dealUserRoutes);
 router.use('/dealsources', dealSourcesRoutes);
 router.use('/tags', tagRoutes);
 router.use('/sources', sourcesRoutes);
+router.use('/contracts', contractRoutes);
+router.use('/invoices', invoiceRoutes);
+
 
 export default router;

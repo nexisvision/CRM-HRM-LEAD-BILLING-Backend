@@ -31,7 +31,7 @@ export default {
             }
 
             // Check if employee exists
-            const employeeExists = await Employee.findOne({ where: { username: employee }});
+            const employeeExists = await Employee.findOne({ where: { username: employee } });
             if (!employeeExists) {
                 return responseHandler.notFound(res, "Employee not found");
             }
@@ -56,8 +56,8 @@ export default {
 
             responseHandler.success(res, "Deal assigned to employee successfully");
         } catch (error) {
-            console.error('Error assigning deal to employee:', error);
-            responseHandler.error(res, error.message);
+            console.error('Error creating deal user:', error);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

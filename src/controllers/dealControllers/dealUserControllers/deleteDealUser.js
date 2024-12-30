@@ -26,16 +26,14 @@ export default {
             if (!deal) {
                 return responseHandler.notFound(res, "Deal not found");
             }
-
-            // Check if employee exists
-            const employeeExists = await Employee.findOne({ where: { username: employee }});
-            if (!employeeExists) {
-                return responseHandler.notFound(res, "Employee not found");
-            }
-
-            // Check if deal is assigned to employee
-            if (!employeeExists.dealIds.includes(dealId)) {
-                return responseHandler.badRequest(res, "Deal is not assigned to this employee");
+            const dealUser = await DealUser.findOne({
+                where: {
+                    id: employeeId,
+                    dealId: dealId
+                }
+            });
+            if (!dealUser) {
+                return responseHandler.notFound(res, "Deal user not found");
             }
 
             // Update employee's dealIds array by removing the dealId
@@ -50,8 +48,8 @@ export default {
 
             responseHandler.success(res, "Deal unassigned from employee successfully");
         } catch (error) {
-            console.error('Error unassigning deal from employee:', error);
-            responseHandler.error(res, error.message);
+            console.log(error);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

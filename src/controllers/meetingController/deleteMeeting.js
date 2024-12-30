@@ -19,7 +19,7 @@ export default {
             await meeting.destroy();
             return responseHandler.success(res, "Meeting deleted successfully", meeting);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -7,20 +7,16 @@ export default {
     validator: validator({
         body: Joi.object({
             featureName: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please provide a feature name.'
-                }),
         })
     }),
 
     handler: async (req, res) => {
         try {
             const { featureName } = req.body;
-            console.log(featureName);
-            const feature = await Feature.create({ featureName });
+            const feature = await Feature.create({ featureName, created_by: req.user.id });
             responseHandler.success(res, "Feature created successfully", feature);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -23,7 +23,7 @@ export default {
 
             return responseHandler.success(res, 'Role retrieved successfully', role);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -8,7 +8,7 @@ export default {
         params: Joi.object({
             id: Joi.string().required().messages({
                 'string.base': 'Deal ID must be a string',
-            'string.empty': 'Deal ID is required'
+                'string.empty': 'Deal ID is required'
             })
         }),
         body: Joi.object({
@@ -43,7 +43,7 @@ export default {
             responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

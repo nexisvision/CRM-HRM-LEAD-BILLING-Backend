@@ -25,7 +25,7 @@ export default {
             status: Joi.string().required()
                 .messages({
                     'string.empty': 'Please select a status.'
-                }), 
+                }),
             details: Joi.string().allow('', null),
             notes: Joi.string().allow('', null),
             source: Joi.string().allow('', null),
@@ -52,7 +52,7 @@ export default {
             const lead = await Lead.create({ leadTitle, firstName, lastName, telephone, email, leadValue, assigned, status, details, notes, source, category, tags, lastContacted, totalBudget, targetDate, contentType, brandName, companyName, street, city, state, zipCode, country, website, created_by: req.user?.username, updated_by: req.user?.username });
             responseHandler.success(res, "Lead created successfully!", lead);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

@@ -15,7 +15,7 @@ export default {
             const departments = await Department.findAll();
             responseHandler.success(res, "Departments fetched successfully", departments);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 

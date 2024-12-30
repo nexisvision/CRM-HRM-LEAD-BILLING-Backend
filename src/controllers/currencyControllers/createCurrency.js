@@ -15,7 +15,7 @@ export default {
                 'string.empty': 'Currency icon is required'
             }),
             currencyCode: Joi.string().required().messages({
-                'string.base': 'Currency code must be a string', 
+                'string.base': 'Currency code must be a string',
                 'string.empty': 'Currency code is required'
             })
         })
@@ -34,7 +34,7 @@ export default {
             responseHandler.success(res, "Currency created successfully", currency);
         } catch (error) {
             console.error('Error creating currency:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

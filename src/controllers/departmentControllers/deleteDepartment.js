@@ -23,7 +23,7 @@ export default {
             await department.destroy();
             responseHandler.success(res, "Department deleted successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }   

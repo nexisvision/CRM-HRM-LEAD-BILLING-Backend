@@ -10,8 +10,8 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         query: Joi.object({
-            page: Joi.number().optional(),
-            limit: Joi.number().optional()
+            page: Joi.number(),
+            limit: Joi.number()
         })
     }),
     handler: async (req, res) => {
@@ -27,7 +27,7 @@ export default {
             responseHandler.success(res, "Users fetched successfully", allUsers);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

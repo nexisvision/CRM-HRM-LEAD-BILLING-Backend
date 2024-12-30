@@ -27,7 +27,7 @@ export const checkSubscriptionStatus = async (req, res, next) => {
         next();
     } catch (error) {
         console.log(error);
-        responseHandler.error(res, error.message);
+        responseHandler.error(res, error.errors[0].message);
     }
 };
 
@@ -59,7 +59,7 @@ export const checkSubscriptionLimits = (limitType) => {
             next();
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     };
 };

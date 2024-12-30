@@ -83,7 +83,7 @@ export default {
             responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {
             console.error('Error updating employee:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

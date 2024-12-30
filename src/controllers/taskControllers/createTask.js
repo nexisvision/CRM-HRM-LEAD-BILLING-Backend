@@ -36,14 +36,14 @@ export default {
                 'string.base': 'Task description must be a string'
             }),
             taskDate: Joi.date().required()
-            .messages({
-                'date.base': 'Please select a task date.'
-            }),
+                .messages({
+                    'date.base': 'Please select a task date.'
+                }),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { 
+            const {
                 projectName,
                 taskTitle,
                 taskStatus,
@@ -67,7 +67,7 @@ export default {
             responseHandler.success(res, "Task created successfully", task);
         } catch (error) {
             console.error('Error creating task:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

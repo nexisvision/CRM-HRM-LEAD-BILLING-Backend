@@ -109,7 +109,7 @@ export default {
 
         } catch (error) {
             console.error('Error creating employee:', error);
-            responseHandler.error(res, error.message);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 };

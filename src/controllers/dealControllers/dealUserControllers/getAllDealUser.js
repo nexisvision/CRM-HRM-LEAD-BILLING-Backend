@@ -16,26 +16,13 @@ export default {
     handler: async (req, res) => {
         try {
             const { dealId } = req.params;
-
-            // Check if deal exists
-            const deal = await Deal.findByPk(dealId);
-            if (!deal) {
-                return responseHandler.notFound(res, "Deal not found");
-            }
-
-            // Get all employees with this dealId
-            const employees = await Employee.findAll({
-                where: {
-                    dealIds: {
-                        [Op.contains]: [dealId]
-                    }
-                }
-            });
-
-            responseHandler.success(res, "Deal users fetched successfully", employees);
+            const { page, limit } = req.query;
+            const offset = (page - 1) * limit;
+            const deals = await DealUser.findAll({ where: { dealId }, offset, limit });
+            responseHandler.success(res, "Deal users fetched successfully", deals);
         } catch (error) {
-            console.error('Error fetching deal users:', error);
-            responseHandler.error(res, error.message);
+            console.log(error);
+            responseHandler.error(res, error.errors[0].message);
         }
     }
 }

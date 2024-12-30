@@ -44,7 +44,7 @@ const authenticateUser = async (req, res, next) => {
 
         next();
     } catch (error) {
-        return responseHandler.error(res, error.message);
+        return responseHandler.error(res, error.errors[0].message);
     }
 };
 
