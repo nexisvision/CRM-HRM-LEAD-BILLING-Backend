@@ -1,7 +1,6 @@
 import Joi from "joi";
 import bcrypt from 'bcrypt';
 import User from "../../models/userModel.js";
-import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import generateId from "../../middlewares/generatorId.js";
@@ -20,6 +19,7 @@ export default {
                     'string.min': 'Password must be at least 8 characters long',
                     'string.empty': 'Password is required'
                 }),
+            role_id: Joi.string().required(),
             profilePic: Joi.string().allow('', null).optional(),
             firstName: Joi.string().allow('', null).optional(),
             lastName: Joi.string().allow('', null).optional(),
@@ -28,7 +28,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email, role_name, profilePic, firstName, lastName, phone } = req.body;
+            const { username, password, email, role_id, profilePic, firstName, lastName, phone } = req.body;
 
             const existingUsername = await User.findOne({
                 where: { username }
@@ -45,19 +45,13 @@ export default {
             if (existingEmail) {
                 return responseHandler.error(res, "Email already exists.");
             }
-
-            const [role] = await Role.findOrCreate({
-                where: { role_name: role_name || 'user' },
-                defaults: { id: generateId() }
-            });
-
             const hashedPassword = await bcrypt.hash(password, 10);
 
             const user = await User.create({
                 username,
                 email,
                 password: hashedPassword,
-                role_id: role.id,
+                role_id,
                 profilePic,
                 firstName,
                 lastName,
