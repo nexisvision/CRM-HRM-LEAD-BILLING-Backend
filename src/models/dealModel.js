@@ -14,6 +14,10 @@ const Deal = sequelize.define("Deal", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    currency: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     phoneNumber: {
         type: DataTypes.STRING,
         allowNull: false
@@ -36,7 +40,11 @@ const Deal = sequelize.define("Deal", {
         allowNull: true,
         defaultValue: null
     },
-
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
 });
 
 export default Deal;

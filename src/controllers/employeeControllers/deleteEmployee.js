@@ -1,5 +1,4 @@
 import Joi from "joi";
-import Employee from "../../models/employeeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import User from "../../models/userModel.js";

@@ -1,7 +1,6 @@
 import Joi from "joi";
 import bcrypt from "bcrypt";
 import validator from "../../utils/validator.js";
-
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";

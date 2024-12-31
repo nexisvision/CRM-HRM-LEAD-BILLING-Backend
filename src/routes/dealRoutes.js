@@ -1,7 +1,5 @@
 import { Router } from "express";
 import { createDeal, deleteDeal, getAllDeal, updateDeal } from "../controllers/dealControllers/index.js";
-import { createDealTask, deleteDealTask, getAllDealTask } from "../controllers/dealControllers/dealTaskControllers/index.js";
-import { createDealUser, getAllDealUser, deleteDealUser } from "../controllers/dealControllers/dealUserControllers/index.js";
 
 const router = Router();
 
