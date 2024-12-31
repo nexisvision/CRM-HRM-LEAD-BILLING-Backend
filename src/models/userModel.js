@@ -48,16 +48,77 @@ const User = sequelize.define('User', {
         defaultValue: null,
         unique: true
     },
+    address: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+        defaultValue: null
+    },
+    joiningDate: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
+    },
+    leaveDate: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
+    },
+    department: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    designation: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    salary: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true,
+        defaultValue: null
+    },
+    accountholder: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    accountnumber: {
+        type: DataTypes.BIGINT,  // Changed from NUMBER to BIGINT
+        allowNull: true,
+        defaultValue: null
+    },
+    bankname: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    ifsc: {
+        type: DataTypes.STRING,  // Changed from NUMBER to STRING since IFSC codes are alphanumeric
+        allowNull: true,
+        defaultValue: null
+    },
+    banklocation: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    cv_path: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    updated_by: {
+     updated_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     }
+        
 });
 
 User.beforeCreate(async (user) => {

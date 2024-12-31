@@ -2,8 +2,11 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from '../middlewares/generatorId.js';
 
+let lastInvoiceNumber = 0;
+    
 function generateInvoiceNumber() {
-    return 'INV-' + Math.floor(1000 + Math.random() * 9000).toString();
+    lastInvoiceNumber++;
+    return `INV#${lastInvoiceNumber}`;
 }
 
 const Invoice = sequelize.define('invoice', {
@@ -24,7 +27,7 @@ const Invoice = sequelize.define('invoice', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    customer: {
+    client: {
         type: DataTypes.STRING,
         allowNull: false
     },

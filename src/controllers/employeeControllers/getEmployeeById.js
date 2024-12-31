@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Employee from "../../models/employeeModel.js";
+import User from "../../models/userModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
@@ -16,7 +16,7 @@ export default {
         try {
             const { id } = req.params;
 
-            const employee = await Employee.findByPk(id);
+            const employee = await User.findByPk(id);
 
             if (!employee) {
                 return responseHandler.error(res, "Employee not found");

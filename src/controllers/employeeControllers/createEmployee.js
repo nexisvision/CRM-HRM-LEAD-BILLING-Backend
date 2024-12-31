@@ -1,10 +1,11 @@
 import Joi from "joi";
 import bcrypt from "bcrypt";
 import validator from "../../utils/validator.js";
-import Employee from "../../models/employeeModel.js";
+
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -55,7 +56,7 @@ export default {
                 banklocation, cv_path, photo_path, role_name } = req.body;
 
             // Check if email already exists
-            const existingUsername = await Employee.findOne({
+            const existingUsername = await User.findOne({
                 where: { username }
             });
 
@@ -63,7 +64,7 @@ export default {
                 return responseHandler.error(res, "Username already exists.");
             }
 
-            const existingEmail = await Employee.findOne({
+            const existingEmail = await User.findOne({
                 where: { email }
             });
 
@@ -80,7 +81,7 @@ export default {
             const hashedPassword = await bcrypt.hash(password, 10);
 
             // Create employee with all fields
-            const employee = await Employee.create({
+            const employee = await User.create({
                 username,
                 email,
                 password: hashedPassword,
