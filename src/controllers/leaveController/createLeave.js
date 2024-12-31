@@ -29,7 +29,7 @@ export default {
             responseHandler.created(res, "Leave request created successfully", leave);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

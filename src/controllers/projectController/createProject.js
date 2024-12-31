@@ -11,15 +11,15 @@ export default {
             category: Joi.string().required(),
             startdate: Joi.date().required(),
             enddate: Joi.date().required(),
-            projectimage: Joi.string().required(),
+            // projectimage: Joi.string().required(),
             client: Joi.string().allow('', null).optional(),
             user: Joi.string().allow('', null).optional(),
             budget: Joi.number().required(),
             estimatedmonths: Joi.number().required(),
             estimatedhours: Joi.number().required(),
             project_description: Joi.string().allow('', null).optional(),
-            tag: Joi.string().required(),
-            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').required()
+            tag: Joi.string().optional(),
+            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').optional()
         })
     }),
     handler: async (req, res) => {
@@ -29,7 +29,7 @@ export default {
                 category,
                 startdate,
                 enddate,
-                projectimage,
+                // projectimage,
                 client,
                 user,
                 budget,
@@ -62,7 +62,7 @@ export default {
                 category,
                 startdate,
                 enddate,
-                projectimage,
+                // projectimage,
                 client,
                 user,
                 budget,
@@ -78,7 +78,7 @@ export default {
             responseHandler.created(res, "Project created successfully", project);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

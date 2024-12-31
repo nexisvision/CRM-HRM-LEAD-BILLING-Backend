@@ -6,11 +6,11 @@ import Joi from "joi";
 export default {
     validator: validator({
         body: Joi.object({
-        sourceName: Joi.string().required(),
-        description: Joi.string().required()
+            sourceName: Joi.string().required(),
+            description: Joi.string().required()
         })
     }),
-    handler: async (req, res) => {  
+    handler: async (req, res) => {
         try {
             const { sourceName, description } = req.body;
 
@@ -23,15 +23,15 @@ export default {
                 return responseHandler.error(res, "Source with this name already exists");
             }
 
-            const source = await Sources.create({ 
-                sourceName, 
-                description, 
-                created_by: req.user?.username 
+            const source = await Sources.create({
+                sourceName,
+                description,
+                created_by: req.user?.username
             });
 
             responseHandler.created(res, "Source created successfully", source);
-        } catch (error) {   
-            responseHandler.error(res, error.errors[0].message);
+        } catch (error) {
+            responseHandler.error(res, error.message);
         }
     }
 }

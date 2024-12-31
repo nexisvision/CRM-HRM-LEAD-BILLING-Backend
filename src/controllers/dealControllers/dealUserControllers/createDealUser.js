@@ -46,10 +46,10 @@ export default {
 
             // Update employee's dealIds array
             await Employee.update(
-                { 
-                    dealIds: {...currentDealIds, dealId}
+                {
+                    dealIds: { ...currentDealIds, dealId }
                 },
-                { 
+                {
                     where: { username: employee }
                 }
             );
@@ -57,7 +57,7 @@ export default {
             responseHandler.success(res, "Deal assigned to employee successfully");
         } catch (error) {
             console.error('Error creating deal user:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

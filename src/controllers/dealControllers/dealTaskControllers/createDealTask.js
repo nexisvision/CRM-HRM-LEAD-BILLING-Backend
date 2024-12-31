@@ -64,7 +64,7 @@ export default {
             responseHandler.success(res, "Deal task created successfully", task);
         } catch (error) {
             console.error('Error creating deal task:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

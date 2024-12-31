@@ -41,7 +41,7 @@ export default {
             });
             responseHandler.success(res, "Department created successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

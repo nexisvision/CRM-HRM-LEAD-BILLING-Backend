@@ -14,7 +14,7 @@ export default {
             category: Joi.string().allow('', null),
             startdate: Joi.date().allow('', null),
             enddate: Joi.date().allow('', null),
-            projectimage: Joi.string().allow('', null),
+            // projectimage: Joi.string().allow('', null),
             client: Joi.string().allow('', null),
             user: Joi.string().allow('', null),
             budget: Joi.number().allow('', null),
@@ -33,7 +33,7 @@ export default {
                 category,
                 startdate,
                 enddate,
-                projectimage,
+                // projectimage,
                 client,
                 user,
                 budget,
@@ -76,7 +76,7 @@ export default {
                 category,
                 startdate,
                 enddate,
-                projectimage,
+                //  projectimage,
                 client,
                 user,
                 budget,
@@ -91,7 +91,7 @@ export default {
             responseHandler.success(res, "Project updated successfully", updatedProject);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

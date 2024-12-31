@@ -27,7 +27,7 @@ const Project = sequelize.define("Project", {
     },
     projectimage: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     client: {
         type: DataTypes.STRING,
@@ -45,7 +45,7 @@ const Project = sequelize.define("Project", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    estimatedHours: {
+    estimatedhours: {
         type: DataTypes.INTEGER,
         allowNull: false
     },

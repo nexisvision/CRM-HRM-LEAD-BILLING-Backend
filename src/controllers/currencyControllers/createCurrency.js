@@ -34,7 +34,7 @@ export default {
             responseHandler.success(res, "Currency created successfully", currency);
         } catch (error) {
             console.error('Error creating currency:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

@@ -24,7 +24,7 @@ export default {
             await superAdmin.destroy();
             return responseHandler.success(res, "superAdmin deleted successfully", superAdmin);
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

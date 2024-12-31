@@ -42,7 +42,7 @@ export default {
 
             return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

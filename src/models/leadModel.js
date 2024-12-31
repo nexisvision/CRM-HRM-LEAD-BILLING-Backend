@@ -9,7 +9,7 @@ const Lead = sequelize.define('Lead', {
         unique: true,
         defaultValue: () => generateId()
     },
-    
+
     leadTitle: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -33,7 +33,7 @@ const Lead = sequelize.define('Lead', {
         defaultValue: null,
     },
     leadValue: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
@@ -101,36 +101,6 @@ const Lead = sequelize.define('Lead', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
-    },
-    street: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    city: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    state: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    zipCode: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    country: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    website: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null,
     },
     created_by: {
         type: DataTypes.STRING,

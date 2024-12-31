@@ -67,7 +67,7 @@ export default {
             responseHandler.success(res, "Task created successfully", task);
         } catch (error) {
             console.error('Error creating task:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

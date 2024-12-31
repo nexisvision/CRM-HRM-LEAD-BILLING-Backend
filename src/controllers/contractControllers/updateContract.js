@@ -26,7 +26,7 @@ export default {
             await contract.update({ subject, project, type, value, startDate, endDate, description });
             return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

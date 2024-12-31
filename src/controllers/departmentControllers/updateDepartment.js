@@ -29,7 +29,7 @@ export default {
             await department.update({ department_name, updated_by: req.user?.username });
             responseHandler.success(res, "Department updated successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

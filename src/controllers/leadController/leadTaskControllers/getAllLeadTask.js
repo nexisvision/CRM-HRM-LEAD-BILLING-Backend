@@ -30,7 +30,7 @@ export default {
             responseHandler.success(res, "Lead tasks fetched successfully", tasks);
         } catch (error) {
             console.error('Error fetching lead tasks:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

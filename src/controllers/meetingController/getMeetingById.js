@@ -21,7 +21,7 @@ export default {
             }
             return responseHandler.success(res, "Meeting retrieved successfully", meeting);
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

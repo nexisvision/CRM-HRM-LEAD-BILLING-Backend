@@ -24,7 +24,7 @@ export default {
             await client.destroy();
             return responseHandler.success(res, "Client deleted successfully", client);
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -15,7 +15,7 @@ export default {
             const attendances = await Attendance.findAll();
             responseHandler.success(res, "Attendances fetched successfully", attendances);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

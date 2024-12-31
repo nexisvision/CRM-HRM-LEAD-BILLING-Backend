@@ -19,7 +19,7 @@ export default {
             responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
             console.error('Error deleting country:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

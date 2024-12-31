@@ -17,7 +17,7 @@ export default {
             responseHandler.success(res, "Currencies fetched successfully", currencies);
         } catch (error) {
             console.error('Error fetching currencies:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

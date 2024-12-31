@@ -15,7 +15,7 @@ export default {
             const subClients = await SubClient.findAll();
             responseHandler.success(res, "SubClients fetched successfully", subClients);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

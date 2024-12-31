@@ -18,12 +18,12 @@ const Employee = sequelize.define('Employee', {
     dealIds: {
         type: DataTypes.JSON,
         allowNull: true,
-        // defaultValue: []
+        defaultValue: null
     },
     leadIds: {
         type: DataTypes.JSON,
         allowNull: true,
-        // defaultValue: []
+        defaultValue: null
     },
     email: {
         type: DataTypes.STRING,
@@ -91,7 +91,7 @@ const Employee = sequelize.define('Employee', {
         defaultValue: null
     },
     accountnumber: {
-        type: DataTypes.STRING,
+        type: DataTypes.NUMBER,
         allowNull: true,
         defaultValue: null
     },
@@ -101,7 +101,7 @@ const Employee = sequelize.define('Employee', {
         defaultValue: null
     },
     ifsc: {
-        type: DataTypes.STRING,
+        type: DataTypes.NUMBER,
         allowNull: true,
         defaultValue: null
     },

@@ -43,7 +43,7 @@ export default {
             responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

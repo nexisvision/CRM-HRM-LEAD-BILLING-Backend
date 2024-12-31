@@ -25,7 +25,7 @@ export default {
             responseHandler.success(res, "subClient fetched successfully", subClient);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

@@ -49,7 +49,7 @@ export default {
             responseHandler.success(res, "Deal unassigned from employee successfully");
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

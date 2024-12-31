@@ -17,7 +17,7 @@ export default {
             responseHandler.success(res, "Contracts fetched successfully", contracts);
         } catch (error) {
             console.error('Error fetching contracts:', error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }

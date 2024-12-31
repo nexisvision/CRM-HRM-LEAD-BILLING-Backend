@@ -27,7 +27,7 @@ export default {
             responseHandler.success(res, "Users fetched successfully", allUsers);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

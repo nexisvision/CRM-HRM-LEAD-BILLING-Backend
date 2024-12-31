@@ -16,7 +16,7 @@ export default {
             responseHandler.success(res, "Permissions retrieved successfully", permissions);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

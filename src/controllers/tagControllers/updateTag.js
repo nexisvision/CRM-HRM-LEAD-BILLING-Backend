@@ -45,7 +45,7 @@ export default {
             responseHandler.success(res, "Tag updated successfully", updatedTag);
         } catch (error) {
             console.log(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 };

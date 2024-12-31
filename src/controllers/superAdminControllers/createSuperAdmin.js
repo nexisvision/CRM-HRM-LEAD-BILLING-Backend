@@ -79,7 +79,7 @@ export default {
             responseHandler.created(res, "Super admin created successfully", superAdmin);
         } catch (error) {
             console.error(error);
-            responseHandler.error(res, error.errors[0].message);
+            responseHandler.error(res, error.message);
         }
     }
 }; 
