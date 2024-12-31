@@ -10,16 +10,20 @@ import responseHandler from "../../utils/responseHandler.js";
 
 const authenticateUser = async (req, res, next) => {
     try {
-        let token;
-        if (req.headers?.authorization?.startsWith('Bearer')) {
-            token = req.headers.authorization.split(' ')[1];
+        let token = req.headers.authorization
+        if (!token || !token.startsWith('Bearer ')) {
+            return responseHandler.error(res, "Invalid authorization header format");
         }
+        token = token.split(' ')[1];
+
+        token = token.replace(/^"|"$/g, '');
 
         if (!token) {
             return responseHandler.error(res, "Authorization token is required");
         }
 
         const decoded = jwt.verify(token, JWT_SECRET);
+
 
         const models = [User, Client, Employee, SuperAdmin, Company];
         const user = await models.reduce(async (promise, Model) => {
@@ -44,7 +48,7 @@ const authenticateUser = async (req, res, next) => {
 
         next();
     } catch (error) {
-        return responseHandler.error(res, error.message);
+        return responseHandler.error(res, error);
     }
 };
 

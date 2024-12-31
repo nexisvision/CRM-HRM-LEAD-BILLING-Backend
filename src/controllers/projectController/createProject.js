@@ -13,7 +13,7 @@ export default {
             enddate: Joi.date().required(),
             // projectimage: Joi.string().required(),
             client: Joi.string().allow('', null).optional(),
-            user: Joi.string().allow('', null).optional(),
+            user: Joi.object().allow(null).optional(),
             budget: Joi.number().required(),
             estimatedmonths: Joi.number().required(),
             estimatedhours: Joi.number().required(),
