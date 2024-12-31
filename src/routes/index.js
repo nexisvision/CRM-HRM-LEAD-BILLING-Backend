@@ -34,6 +34,7 @@ import contractRoutes from "./contractRoutes.js";
 import projectReportRoutes from "./projectReportRoutes.js";
 import invoiceRoutes from "./invoiceRoutes.js";
 import expenseRoutes from "./expenseRoutes.js";
+import paymentRoutes from "./paymentRoutes.js";
 
 const router = express.Router();
 
@@ -73,6 +74,6 @@ router.use('/sources', sourcesRoutes);
 router.use('/contracts', contractRoutes);
 router.use('/invoices', invoiceRoutes);
 router.use('/expenses', expenseRoutes);
-
+router.use('/payments', paymentRoutes);
 
 export default router;

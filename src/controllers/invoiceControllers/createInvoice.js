@@ -20,7 +20,7 @@ export default {
             const invoice = await Invoice.create({ client, project, issueDate, dueDate, status, amount, created_by: req.user?.username });
             return responseHandler.success(res, "Invoice created successfully", invoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

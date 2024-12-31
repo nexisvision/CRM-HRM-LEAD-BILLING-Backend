@@ -4,10 +4,7 @@ import generateId from '../middlewares/generatorId.js';
 
 let lastInvoiceNumber = 0;
     
-function generateInvoiceNumber() {
-    lastInvoiceNumber++;
-    return `INV#${lastInvoiceNumber}`;
-}
+
 
 const Invoice = sequelize.define('invoice', {
     id: {
@@ -19,9 +16,9 @@ const Invoice = sequelize.define('invoice', {
     },
     invoiceNumber: {
         type: DataTypes.STRING,
-        allowNull: false,
+        
         unique: true,
-        defaultValue: () => generateInvoiceNumber()
+     
     },
     project: {
         type: DataTypes.STRING,
@@ -57,6 +54,8 @@ const Invoice = sequelize.define('invoice', {
     }
 });
 
+
+
 Invoice.beforeCreate(async (invoice) => {
     let isUnique = false;
     let newId;
@@ -68,6 +67,20 @@ Invoice.beforeCreate(async (invoice) => {
         }
     }
     invoice.id = newId;
+
+    const lastInvoice = await Invoice.findOne({
+        order: [['invoiceNumber', 'DESC']]
+    });
+    
+    let nextNumber = 1;
+    if (lastInvoice && lastInvoice.invoiceNumber) {
+        // Extract the number from the last invoiceNumber and increment it
+        const lastNumber = parseInt(lastInvoice.invoiceNumber.replace('INV#', ''));
+        nextNumber = lastNumber + 1;
+    }
+
+    invoice.invoiceNumber = `INV#${nextNumber}`;
+    
 });
 
 export default Invoice;
