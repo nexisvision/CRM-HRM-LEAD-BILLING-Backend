@@ -6,6 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
+            project: Joi.string().required(),
             customer: Joi.string().required(),
             issueDate: Joi.date().required(),
             dueDate: Joi.date().required(),
@@ -15,8 +16,8 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { issueDate, dueDate, status, amount, customer } = req.body;
-            const invoice = await Invoice.create({ customer, issueDate, dueDate, status, amount, created_by: req.user?.username });
+            const { issueDate, dueDate, status, amount, customer, project } = req.body;
+            const invoice = await Invoice.create({ customer, project, issueDate, dueDate, status, amount, created_by: req.user?.username });
             return responseHandler.success(res, "Invoice created successfully", invoice);
         } catch (error) {
             return responseHandler.error(res, error.message);

@@ -2,6 +2,10 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from '../middlewares/generatorId.js';
 
+function generateInvoiceNumber() {
+    return 'INV-' + Math.floor(1000 + Math.random() * 9000).toString();
+}
+
 const Invoice = sequelize.define('invoice', {
     id: {
         type: DataTypes.STRING,
@@ -9,6 +13,16 @@ const Invoice = sequelize.define('invoice', {
         unique: true,
         primaryKey: true,
         defaultValue: () => generateId(),
+    },
+    invoiceNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        defaultValue: () => generateInvoiceNumber()
+    },
+    project: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     customer: {
         type: DataTypes.STRING,
