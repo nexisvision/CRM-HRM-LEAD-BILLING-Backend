@@ -43,12 +43,12 @@ const authenticateUser = async (req, res, next) => {
 
         req.user = {
             ...user.toJSON(),
-            permissions // Attach parsed permissions
+            permissions
         };
 
         next();
     } catch (error) {
-        return responseHandler.error(res, error);
+        return responseHandler.error(res, error.message);
     }
 };
 

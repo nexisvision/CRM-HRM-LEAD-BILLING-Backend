@@ -20,8 +20,8 @@ export default {
         })
     }),
     handler: async (req, res) => {
-        const { designation_name } = req.body;
         try {
+            const { designation_name } = req.body;
             const designation = await Designation.findByPk(req.params.id);
             if (!designation) {
                 return responseHandler.error(res, "Designation not found");

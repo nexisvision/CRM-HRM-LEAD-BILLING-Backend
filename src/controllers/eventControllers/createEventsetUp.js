@@ -6,33 +6,22 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            EventTitle: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please provide a title for the event.'
-                }),
-            EventManager: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please select an EventManager.'
-                }),
-            EventDate: Joi.date().required()
-                .messages({
-                    'date.base': 'Please select an event date.'
-                }),
+            EventTitle: Joi.string().required(),
+            EventManager: Joi.string().required(),
+            EventDate: Joi.date().required(),
             EventTime: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please select an event time.'
-                })
         })
     }),
 
     handler: async (req, res) => {
-        const { EventTitle, EventManager, EventDate, EventTime } = req.body;
         try {
+            const { EventTitle, EventManager, EventDate, EventTime } = req.body;
             const event = await EventSetup.create({
                 EventTitle,
                 EventManager,
                 EventDate,
-                EventTime
+                EventTime,
+                created_by: req.user?.username
             });
             responseHandler.success(res, "Event scheduled successfully!", event);
         } catch (error) {
