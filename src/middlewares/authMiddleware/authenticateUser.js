@@ -22,6 +22,8 @@ const authenticateUser = async (req, res, next) => {
             return responseHandler.error(res, "Authorization token is required");
         }
 
+        
+
         const decoded = jwt.verify(token, JWT_SECRET);
 
 
