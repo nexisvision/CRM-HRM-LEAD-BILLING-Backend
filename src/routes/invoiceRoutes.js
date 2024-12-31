@@ -12,4 +12,4 @@ router.get('/:id', getInvoiceById.validator, getInvoiceById.handler);
 router.put('/:id', updateInvoice.validator, updateInvoice.handler);
 router.delete('/:id', deleteInvoice.validator, deleteInvoice.handler);
 
-export default router;
+export default router;  

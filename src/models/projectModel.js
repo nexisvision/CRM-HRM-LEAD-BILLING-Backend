@@ -34,8 +34,9 @@ const Project = sequelize.define("Project", {
         allowNull: true
     },
     user: {
-        type: DataTypes.STRING,
-        allowNull: true
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
     },
     budget: {
         type: DataTypes.DECIMAL(10, 2),

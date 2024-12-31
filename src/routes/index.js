@@ -33,6 +33,7 @@ import dealSourcesRoutes from "./dealsourcesRoutes.js";
 import contractRoutes from "./contractRoutes.js";
 import projectReportRoutes from "./projectReportRoutes.js";
 import invoiceRoutes from "./invoiceRoutes.js";
+import expenseRoutes from "./expenseRoutes.js";
 
 const router = express.Router();
 
@@ -71,6 +72,7 @@ router.use('/tags', tagRoutes);
 router.use('/sources', sourcesRoutes);
 router.use('/contracts', contractRoutes);
 router.use('/invoices', invoiceRoutes);
+router.use('/expenses', expenseRoutes);
 
 
 export default router;
