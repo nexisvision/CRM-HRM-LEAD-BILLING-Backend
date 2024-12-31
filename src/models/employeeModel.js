@@ -14,17 +14,6 @@ const Employee = sequelize.define('Employee', {
         allowNull: false,
         unique: true
     },
-
-    dealIds: {
-        type: DataTypes.JSON,
-        allowNull: true,
-        defaultValue: null
-    },
-    leadIds: {
-        type: DataTypes.JSON,
-        allowNull: true,
-        defaultValue: null
-    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
