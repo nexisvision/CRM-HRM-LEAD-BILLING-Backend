@@ -1,0 +1,126 @@
+import Joi from "joi";
+import Project from "../../models/projectModel.js";
+import validator from "../../utils/validator.js";
+import responseHandler from "../../utils/responseHandler.js";
+
+export default {
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
+        body: Joi.object({
+            project_members: Joi.object({
+                project_members: Joi.array().items(Joi.string()).required()
+            }).required()
+        })
+    }),
+    handler: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const { project_members } = req.body;
+            const newMemberIds = project_members.project_members;
+
+            const project = await Project.findByPk(id);
+
+            if (!project) {
+                return responseHandler.notFound(res, "Project not found");
+            }
+
+            // Parse project_members if it's a string
+            const currentProjectMembers = typeof project.project_members === 'string' 
+                ? JSON.parse(project.project_members) 
+                : project.project_members;
+
+            // Get current members array
+            const currentMembers = currentProjectMembers?.project_members || [];
+
+            // Check for duplicate members
+            const duplicateMembers = newMemberIds.filter(id => currentMembers.includes(id));
+            if (duplicateMembers.length > 0) {
+                return responseHandler.error(res, `These members already exist in project: ${duplicateMembers.join(', ')}`);
+            }
+
+            // Combine existing members with new members
+            const updatedMembers = [...currentMembers, ...newMemberIds];
+
+            // Update the project with the new members list
+            await project.update({
+                project_members: { project_members: updatedMembers },
+                updated_by: req.user?.username
+            });
+
+            responseHandler.success(res, "Project members added successfully", {
+                project_members: { project_members: updatedMembers }
+            });
+        } catch (error) {
+            console.log(error);
+            responseHandler.error(res, error.message);
+        }
+    }
+};
+
+
+
+
+
+
+
+
+
+// import Joi from "joi";
+// import Project from "../../models/projectModel.js";
+// import validator from "../../utils/validator.js";
+// import responseHandler from "../../utils/responseHandler.js";
+
+// export default {
+//     validator: validator({
+//         params: Joi.object({
+//         id: Joi.string().required()
+//         }),
+//         body: Joi.object({
+//             memberIds: Joi.array().items(Joi.string()).required()
+//         })
+//     }),
+//     handler: async (req, res) => {
+//         try {
+//             const { id } = req.params;
+//             const { memberIds } = req.body;
+
+//             const project = await Project.findByPk(id);
+
+//             if (!project) {
+//                 return responseHandler.notFound(res, "Project not found");
+//             }
+
+//             // Parse project_members if it's a string
+//             const projectMembers = typeof project.project_members === 'string' 
+//                 ? JSON.parse(project.project_members) 
+//                 : project.project_members;
+
+//             // Get current members array
+//             const currentMembers = projectMembers?.members || [];
+
+//             // Check for duplicate members
+//             const duplicateMembers = memberIds.filter(id => currentMembers.includes(id));
+//             if (duplicateMembers.length > 0) {
+//                 return responseHandler.error(res, `These members already exist in project: ${duplicateMembers.join(', ')}`);
+//             }
+
+//             // Combine existing members with new members
+//             const updatedMembers = [...currentMembers, ...memberIds];
+
+//             // Update the project with the new members list
+//             await project.update({
+//                 project_members: { members: updatedMembers },
+//                 updated_by: req.user?.username
+//             });
+
+//             responseHandler.success(res, "Project members added successfully", {
+//                 project_members: { members: updatedMembers }
+//             });
+//         } catch (error) {
+//             console.log(error);
+//             responseHandler.error(res, error.message);
+//         }
+//     }
+// };
