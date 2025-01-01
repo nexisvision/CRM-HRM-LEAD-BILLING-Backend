@@ -6,8 +6,8 @@ const router = Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post("/:project_id", createNotes.validator, createNotes.handler);
-router.get("/:project_id", getAllNotes.validator, getAllNotes.handler);
+router.post("/:id", createNotes.validator, createNotes.handler);
+router.get("/:id", getAllNotes.validator, getAllNotes.handler);
 router.put("/:id", updateNotes.validator, updateNotes.handler);
 router.delete("/:id", deleteNotes.validator, deleteNotes.handler);
 

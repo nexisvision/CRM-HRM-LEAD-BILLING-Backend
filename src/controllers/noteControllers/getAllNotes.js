@@ -6,13 +6,13 @@ import Joi from "joi";
 export default {
     validator: validator({
         params: Joi.object({
-            project_id: Joi.string().required(),
+            id: Joi.string().required(),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { project_id } = req.params;
-            const notes = await Note.findAll({ where: { project_id } });
+            const { id } = req.params;
+            const notes = await Note.findAll({ where: { project_id: id } });
             return responseHandler.success(res, "Notes fetched successfully", notes);
         } catch (error) {
             responseHandler.error(res, error.message);

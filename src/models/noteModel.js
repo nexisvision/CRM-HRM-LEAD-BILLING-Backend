@@ -4,14 +4,13 @@ import generateId from "../middlewares/generatorId.js";
 
 const Note = sequelize.define("note", {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.STRING,
         unique: true,
+        primaryKey: true,
         defaultValue: () => generateId(),
-        primaryKey: true
     },
     project_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     note_title: {
@@ -22,7 +21,7 @@ const Note = sequelize.define("note", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    note_employee: {
+    note_employees: {
         type: DataTypes.JSON,
         allowNull: true
     },
