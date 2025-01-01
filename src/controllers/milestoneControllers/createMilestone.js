@@ -6,7 +6,7 @@ import Joi from "joi";
 export default {
     validator: validator({
         params: Joi.object({
-            project_id: Joi.string().required()
+            id: Joi.string().required()
         }),
         body: Joi.object({
             milestone_title: Joi.string().required(),
@@ -21,9 +21,10 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { project_id, milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
+            const { id } = req.params;
+            const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
             const milestone = await Milestone.create({
-                project_id,
+                project_id: id,
                 milestone_title,
                 milestone_status,
                 milestone_cost,

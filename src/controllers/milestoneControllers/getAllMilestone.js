@@ -6,13 +6,13 @@ import Joi from "joi";
 export default {
     validator: validator({
         params: Joi.object({
-            project_id: Joi.string().required()
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { project_id } = req.params;
-            const milestones = await Milestone.findAll({ where: { project_id } });
+            const { id } = req.params;
+            const milestones = await Milestone.findAll({ where: { project_id: id } });
             responseHandler.success(res, "Milestones fetched successfully", milestones);
         } catch (error) {
             console.log(error);
