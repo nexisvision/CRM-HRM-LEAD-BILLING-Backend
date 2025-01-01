@@ -11,8 +11,9 @@ export default {
         body: Joi.object({
             subject: Joi.string().required(),
             project: Joi.string().required(),
+            client: Joi.string().required(),
             type: Joi.string().required(),
-            value: Joi.string().required(),
+            value: Joi.number().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
             description: Joi.string().required(),
@@ -21,9 +22,9 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { subject, project, type, value, startDate, endDate, description } = req.body;
+            const { subject, project, client, type, value, startDate, endDate, description } = req.body;
             const contract = await Contract.findByPk(id);
-            await contract.update({ subject, project, type, value, startDate, endDate, description });
+            await contract.update({ subject, project, client, type, value, startDate, endDate, description, updated_by: req.user.id });
             return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error.message);

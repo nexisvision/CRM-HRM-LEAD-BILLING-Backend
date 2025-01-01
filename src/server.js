@@ -12,10 +12,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    responseHandler.success(res, 200, "Server is running");
+    try {
+        responseHandler.success(res, "Server is running successfully");
+    } catch (error) {
+        responseHandler.error(res, error.message);
+    }
 });
 
 app.use("/api/v1/", routes);
+
+app.get("*", (req, res) => {
+    responseHandler.error(res, "Route not found", 404);
+});
 
 const startServer = async () => {
     try {
@@ -26,7 +34,7 @@ const startServer = async () => {
             console.log(`✅ Server is running on port ${PORT}`);
         });
     } catch (error) {
-        console.error('❌ Error starting server:', error);
+        console.error('❌ Error starting server:', error.message);
     }
 };
 

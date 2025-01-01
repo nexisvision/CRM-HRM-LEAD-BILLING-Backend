@@ -7,9 +7,10 @@ export default {
     validator: validator({
         body: Joi.object({
             subject: Joi.string().required(),
+            client: Joi.string().required(),
             project: Joi.string().required(),
             type: Joi.string().required(),
-            value: Joi.string().required(),
+            value: Joi.number().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
             description: Joi.string().required(),
@@ -17,8 +18,8 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { subject, project, type, value, startDate, endDate, description } = req.body;
-            const contract = await Contract.create({ subject, project, type, value, startDate, endDate, description, created_by: req.user?.id });
+            const { subject, client, project, type, value, startDate, endDate, description } = req.body;
+            const contract = await Contract.create({ subject, client, project, type, value, startDate, endDate, description, created_by: req.user?.id });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error.message);

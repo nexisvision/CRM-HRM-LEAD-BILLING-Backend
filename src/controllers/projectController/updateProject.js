@@ -1,6 +1,5 @@
 import Joi from "joi";
 import Project from "../../models/projectModel.js";
-import Client from "../../models/clientModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
@@ -10,19 +9,20 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            project_name: Joi.string().allow('', null),
-            category: Joi.string().allow('', null),
-            startdate: Joi.date().allow('', null),
-            enddate: Joi.date().allow('', null),
-            // projectimage: Joi.string().allow('', null),
-            client: Joi.string().allow('', null),
-            user: Joi.object().allow(null).optional(),
-            budget: Joi.number().allow('', null),
-            estimatedmonths: Joi.number().allow('', null),
-            estimatedhours: Joi.number().allow('', null),
-            project_description: Joi.string().allow('', null),
-            tag: Joi.string().allow('', null),
-            status: Joi.string().valid('pending', 'in_progress', 'completed', 'on_hold').allow('', null)
+            project_name: Joi.string().required(),
+            startDate: Joi.date().required(),
+            endDate: Joi.date().required(),
+            project_members: Joi.object().required(),
+            project_category: Joi.string().required(),
+            project_description: Joi.string().allow('', null).optional(),
+            department: Joi.object().allow(null).optional(),
+            client: Joi.string().allow('', null).optional(),
+            currency: Joi.string().allow('', null).optional(),
+            budget: Joi.number().required(),
+            estimatedmonths: Joi.number().required(),
+            estimatedhours: Joi.number().required(),
+            files: Joi.array().allow(null).optional(),
+            status: Joi.string().allow('', null).optional(),
         })
     }),
     handler: async (req, res) => {
@@ -30,60 +30,49 @@ export default {
             const { id } = req.params;
             const {
                 project_name,
-                category,
-                startdate,
-                enddate,
-                // projectimage,
+                startDate,
+                endDate,
+                project_members,
+                project_category,
+                project_description,
+                department,
                 client,
-                user,
+                currency,
                 budget,
                 estimatedmonths,
                 estimatedhours,
-                project_description,
-                tag,
+                files,
                 status
             } = req.body;
 
-            // Find existing project
             const project = await Project.findByPk(id);
+
             if (!project) {
                 return responseHandler.notFound(res, "Project not found");
             }
 
+            const existingProject = await Project.findOne({
+                where: { project_name }
+            });
 
-            // Check if client exists if client is being updated
-            if (client) {
-                const clientExists = await Client.findByPk(client);
-                if (!clientExists) {
-                    return responseHandler.notFound(res, "Client not found");
-                }
+            if (existingProject) {
+                return responseHandler.error(res, "Project with this name already exists");
             }
 
-            // Check if new project name already exists (if being updated)
-            if (project_name && project_name !== project.project_name) {
-                const existingProject = await Project.findOne({
-                    where: { project_name }
-                });
-
-                if (existingProject) {
-                    return responseHandler.error(res, "Project with this name already exists");
-                }
-            }
-
-            // Update project
             const updatedProject = await project.update({
                 project_name,
-                category,
-                startdate,
-                enddate,
-                //  projectimage,
+                startDate,
+                endDate,
+                project_members,
+                project_category,
+                project_description,
+                department,
                 client,
-                user,
+                currency,
                 budget,
                 estimatedmonths,
                 estimatedhours,
-                project_description,
-                tag,
+                files,
                 status,
                 updated_by: req.user?.username
             });

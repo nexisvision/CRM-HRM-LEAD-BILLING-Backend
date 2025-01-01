@@ -1,9 +1,8 @@
 import jwt from "jsonwebtoken";
 import User from "../../models/userModel.js";
 import Client from "../../models/clientModel.js";
-import Employee from "../../models/employeeModel.js";
 import SuperAdmin from "../../models/superAdminModel.js";
-import Company from "../../models/subClientModel.js";
+import SubClient from "../../models/subClientModel.js";
 import Role from "../../models/roleModel.js"; // Import Role model
 import { JWT_SECRET } from "../../config/config.js";
 import responseHandler from "../../utils/responseHandler.js";
@@ -22,12 +21,12 @@ const authenticateUser = async (req, res, next) => {
             return responseHandler.error(res, "Authorization token is required");
         }
 
-        
+
 
         const decoded = jwt.verify(token, JWT_SECRET);
 
 
-        const models = [User, Client, Employee, SuperAdmin, Company];
+        const models = [User, Client, SuperAdmin, SubClient];
         const user = await models.reduce(async (promise, Model) => {
             const result = await promise;
             return result || await Model.findByPk(decoded.id);
