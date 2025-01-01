@@ -13,33 +13,43 @@ const Project = sequelize.define("Project", {
         allowNull: false,
         unique: true
     },
-    category: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    startdate: {
+    startDate: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    enddate: {
+    endDate: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    projectimage: {
+    project_members: {
+        type: DataTypes.JSON,
+        allowNull: false,
+    },
+    project_category: {
         type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    project_description: {
+        type: DataTypes.TEXT,
         allowNull: true
+    },
+    department: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
     },
     client: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    user: {
-        type: DataTypes.JSON,
+    currency: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
     budget: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     estimatedmonths: {
@@ -50,18 +60,15 @@ const Project = sequelize.define("Project", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    project_description: {
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
-    tag: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    files: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
     },
     status: {
-        type: DataTypes.ENUM('pending', 'in_progress', 'completed', 'on_hold'),
-        allowNull: false,
-        defaultValue: 'pending'
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,
@@ -80,7 +87,6 @@ Project.beforeCreate(async (project) => {
     let newId;
     while (!isUnique) {
         newId = generateId();
-        // Check if this ID already exists
         const existingProject = await Project.findOne({
             where: { id: newId }
         });

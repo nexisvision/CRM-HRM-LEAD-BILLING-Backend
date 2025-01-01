@@ -2,7 +2,7 @@ import responseHandler from "../../../utils/responseHandler.js";
 import validator from "../../../utils/validator.js";
 import Joi from "joi";
 import Deal from "../../../models/dealModel.js";
-import Employee from "../../../models/employeeModel.js";
+import User from "../../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -31,7 +31,7 @@ export default {
             }
 
             // Check if employee exists
-            const employeeExists = await Employee.findOne({ where: { username: employee } });
+            const employeeExists = await User.findOne({ where: { username: employee } });
             if (!employeeExists) {
                 return responseHandler.notFound(res, "Employee not found");
             }

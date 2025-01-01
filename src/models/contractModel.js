@@ -14,6 +14,10 @@ export const Contract = sequelize.define("Contract", {
         allowNull: false,
         unique: true
     },
+    client: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     project: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -23,7 +27,7 @@ export const Contract = sequelize.define("Contract", {
         allowNull: false,
     },
     value: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     startDate: {
