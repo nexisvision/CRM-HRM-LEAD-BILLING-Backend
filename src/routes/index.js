@@ -29,12 +29,14 @@ import dealTaskRoutes from "./dealtaskRoutes.js";
 import dealUserRoutes from "./dealuserRoutes.js";
 import sourcesRoutes from "./sourcesRoutes.js";
 import tagRoutes from "./tagRoutes.js";
+import categoryRoutes from "./categoryRoutes.js";
 import dealSourcesRoutes from "./dealsourcesRoutes.js";
 import contractRoutes from "./contractRoutes.js";
 import projectReportRoutes from "./projectReportRoutes.js";
 import invoiceRoutes from "./invoiceRoutes.js";
 import expenseRoutes from "./expenseRoutes.js";
 import paymentRoutes from "./paymentRoutes.js";
+import milestoneRoutes from "./milestoneRoutes.js";
 
 const router = express.Router();
 
@@ -75,5 +77,7 @@ router.use('/contracts', contractRoutes);
 router.use('/invoices', invoiceRoutes);
 router.use('/expenses', expenseRoutes);
 router.use('/payments', paymentRoutes);
+router.use('/categories', categoryRoutes);
+router.use('/milestones', milestoneRoutes);
 
 export default router;
