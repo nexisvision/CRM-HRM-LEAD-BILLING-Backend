@@ -10,8 +10,8 @@ export default {
         }),
         body: Joi.object({
             project_members: Joi.object({
-                project_members: Joi.array().items(Joi.string()).required()
-            }).required()
+                project_members: Joi.array().items(Joi.string()).optional()
+            }).optional()
         })
     }),
     handler: async (req, res) => {

@@ -41,7 +41,7 @@ export default {
 
             // Update the project with the new members list
             await project.update({
-                project_members: { project_members: updatedMembers },
+                project_members: updatedMembers ,
                 updated_by: req.user?.username
             });
 
