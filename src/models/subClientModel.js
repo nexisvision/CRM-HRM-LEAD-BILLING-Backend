@@ -9,23 +9,29 @@ const SubClient = sequelize.define('SubClient', {
         unique: true,
         defaultValue: generateId()
     },
-    role_id: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
         type: DataTypes.STRING,
         allowNull: false
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: true
+    },
+    role_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     profilePic: {
         type: DataTypes.STRING,
         allowNull: true,
-        defaultValue: null
+        defaultValue: null,
+        unique: true
     },
     firstName: {
         type: DataTypes.STRING,
@@ -40,12 +46,42 @@ const SubClient = sequelize.define('SubClient', {
     phone: {
         type: DataTypes.STRING,
         allowNull: true,
-        defaultValue: null,
-        unique: true
+        defaultValue: null
     },
-    password: {
+    accountholder: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
+    },
+    accountnumber: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        defaultValue: null
+    },
+    bankname: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    ifsc: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    banklocation: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    gstIn: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    e_signature: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,

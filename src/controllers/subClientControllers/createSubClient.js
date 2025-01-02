@@ -23,12 +23,19 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            profilePic: Joi.string().optional().allow('', null)
+            profilePic: Joi.string().optional().allow('', null),
+            accountholder: Joi.string().optional().allow('', null),
+            accountnumber: Joi.number().optional().allow('', null),
+            bankname: Joi.string().optional().allow('', null),
+            ifsc: Joi.string().optional().allow('', null),
+            banklocation: Joi.string().optional().allow('', null),
+            gstIn: Joi.string().optional().allow('', null),
+            e_signature: Joi.string().optional().allow('', null),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, email, password, firstName, lastName, phone, profilePic } = req.body;
+            const { username, email, password, firstName, lastName, phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, gstIn, e_signature } = req.body;
 
             const existingUsername = await SubClient.findOne({
                 where: { username }
@@ -62,8 +69,14 @@ export default {
                 lastName,
                 phone,
                 profilePic,
+                accountholder,
+                accountnumber,
+                bankname,
+                ifsc,
+                banklocation,
+                gstIn,
+                e_signature,
                 created_by: req.user?.username,
-                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Company created successfully", subClient);

@@ -23,12 +23,19 @@ export default {
             firstName: Joi.string().allow('', null).optional(),
             lastName: Joi.string().allow('', null).optional(),
             phone: Joi.string().allow('', null).optional(),
-            profilePic: Joi.string().allow('', null).optional()
+            profilePic: Joi.string().allow('', null).optional(),
+            accountholder: Joi.string().allow('', null).optional(),
+            accountnumber: Joi.number().allow('', null).optional(),
+            bankname: Joi.string().allow('', null).optional(),
+            gstIn: Joi.string().allow('', null).optional(),
+            ifsc: Joi.string().allow('', null).optional(),
+            banklocation: Joi.string().allow('', null).optional(),
+            e_signature: Joi.string().allow('', null).optional(),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email, firstName, lastName, phone, profilePic } = req.body;
+            const { username, password, email, firstName, lastName, phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, e_signature, gstIn } = req.body;
 
             const existingUsername = await Client.findOne({
                 where: { username }
@@ -62,8 +69,14 @@ export default {
                 lastName,
                 phone,
                 profilePic,
+                accountholder,
+                accountnumber,
+                bankname,
+                ifsc,
+                banklocation,
+                e_signature,
+                gstIn,
                 created_by: req.user?.username,
-                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Client created successfully", client);

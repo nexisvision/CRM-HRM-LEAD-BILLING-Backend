@@ -48,6 +48,41 @@ const Client = sequelize.define('Client', {
         allowNull: true,
         defaultValue: null
     },
+    accountholder: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    accountnumber: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        defaultValue: null
+    },
+    bankname: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    ifsc: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    banklocation: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    gstIn: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    e_signature: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

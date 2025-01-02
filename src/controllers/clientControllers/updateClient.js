@@ -14,20 +14,27 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            profilePic: Joi.string().optional().allow('', null)
+            profilePic: Joi.string().optional().allow('', null),
+            bankname: Joi.string().optional().allow('', null),
+            ifsc: Joi.string().optional().allow('', null),
+            banklocation: Joi.string().optional().allow('', null),
+            accountholder: Joi.string().optional().allow('', null),
+            accountnumber: Joi.number().optional().allow('', null),
+            e_signature: Joi.string().optional().allow('', null),
+            gstIn: Joi.string().optional().allow('', null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username, email, firstName, lastName, phone, profilePic } = req.body;
+            const { username, email, firstName, lastName, phone, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn } = req.body;
 
             const client = await Client.findByPk(id);
             if (!client) {
                 return responseHandler.notFound(res, "Client not found");
             }
 
-            await client.update({ username, email, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
+            await client.update({ username, email, firstName, lastName, phone, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn, updated_by: req.user?.username });
             responseHandler.success(res, "Client updated successfully", client);
         } catch (error) {
             console.log(error);
