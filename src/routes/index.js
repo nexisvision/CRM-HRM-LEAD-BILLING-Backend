@@ -37,10 +37,6 @@ import activityRoutes from "./activityRoutes.js";
 import productsRoutes from "./productsRoutes.js";
 import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
-// import dealRoutes from "./dealRoutes.js";
-// import dealTaskRoutes from "./dealtaskRoutes.js";
-// import dealUserRoutes from "./dealuserRoutes.js";
-// import dealSourcesRoutes from "./dealsourcesRoutes.js";
 
 const router = express.Router();
 
@@ -83,9 +79,5 @@ router.use('/leads', leadRoutes);
 router.use('/products', productsRoutes);
 router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
-// router.use('/deals', dealRoutes);
-// router.use('/dealtasks', dealTaskRoutes);
-// router.use('/dealusers', dealUserRoutes);
-// router.use('/dealsources', dealSourcesRoutes);
 
 export default router;

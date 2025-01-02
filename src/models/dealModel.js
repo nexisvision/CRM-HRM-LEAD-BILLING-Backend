@@ -22,27 +22,23 @@ const Deal = sequelize.define("Deal", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    deal_stage: {
+    stage: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    deal_price: {
-        type: DataTypes.FLOAT,
         allowNull: false
     },
     currency: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    closed_date: {
+    price: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+    },
+    closedDate: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    deal_category: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    deal_agent: {
+    category: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -52,7 +48,8 @@ const Deal = sequelize.define("Deal", {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,

@@ -13,8 +13,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            await Deal.destroy({ where: { id } });
-            responseHandler.success(res, "Deal deleted successfully");
+            const deal = await Deal.findByPk(id);
+            if (!deal) {
+                return responseHandler.error(res, "Deal not found");
+            }
+            await deal.destroy();
+            responseHandler.success(res, "Deal deleted successfully", deal);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);

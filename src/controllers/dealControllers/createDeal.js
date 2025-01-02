@@ -6,33 +6,32 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            leadTitle: Joi.string().required(),            
-            dealName: Joi.string().required(),            
-            pipeline: Joi.string().required(),            
-            deal_stage: Joi.string().required(),            
-            deal_price: Joi.number().required().positive(),            
-            currency: Joi.string().required(),            
-            closed_date: Joi.date().required(),            
-            deal_category: Joi.string().required(),            
-            deal_agent: Joi.string().required(),            
-            project: Joi.string().required(),            
+            leadTitle: Joi.string().required(),
+            dealName: Joi.string().required(),
+            pipeline: Joi.string().required(),
+            stage: Joi.string().required(),
+            price: Joi.number().required(),
+            currency: Joi.string().required(),
+            closedDate: Joi.date().required(),
+            category: Joi.string().required(),
+            project: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { leadTitle, dealName,pipeline,deal_stage,deal_price,currency,closed_date,deal_category,deal_agent,project } = req.body;
+            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project } = req.body;
 
             const deal = await Deal.create({
                 leadTitle,
                 dealName,
                 pipeline,
-                deal_stage,
-                deal_price,
+                stage,
+                price,
                 currency,
-                closed_date,
-                deal_category,
-                deal_agent,
-                project
+                closedDate,
+                category,
+                project,
+                created_by: req.user?.username
             });
 
             responseHandler.success(res, "Deal created successfully", deal);
