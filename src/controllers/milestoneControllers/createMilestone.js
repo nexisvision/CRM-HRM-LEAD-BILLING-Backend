@@ -25,7 +25,7 @@ export default {
             const { id } = req.params;
             const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
             const milestone = await Milestone.create({
-                project_id: id,
+                related_id: id,
                 milestone_title,
                 milestone_status,
                 milestone_cost,

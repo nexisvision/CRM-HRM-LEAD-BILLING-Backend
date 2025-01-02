@@ -36,7 +36,7 @@ export default {
             } = req.body;
 
             const payment = await Payment.create({
-                project_id: id,
+                related_id: id,
                 project,
                 invoice,
                 paidOn,

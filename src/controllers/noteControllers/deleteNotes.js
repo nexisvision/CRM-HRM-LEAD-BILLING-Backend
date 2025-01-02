@@ -19,7 +19,7 @@ export default {
             }
             await note.destroy();
             await Activity.create({
-                related_id: note.project_id,
+                related_id: note.related_id,
                 activity_from: "note",
                 activity_id: note.id,
                 action: "deleted",

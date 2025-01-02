@@ -18,7 +18,7 @@ export default {
         try {
             const { id } = req.params;
            
-            const payments = await Payment.findAll({ where: { project_id: id }});
+            const payments = await Payment.findAll({ where: { related_id: id }});
             responseHandler.success(res, "Payments fetched successfully", payments);
         } catch (error) {
             console.log(error);

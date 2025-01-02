@@ -30,7 +30,7 @@ export default {
             }
             await product.update({ name, category, price, sku, tax, hsn_sac, description, files, updated_by: req.user?.username });
             await Activity.create({
-                related_id: product.project_id,
+                related_id: product.related_id,
                 activity_from: "product",
                 activity_id: product.id,
                 action: "updated",

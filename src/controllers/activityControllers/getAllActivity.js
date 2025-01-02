@@ -12,7 +12,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const activities = await Activity.findAll({ where: { project_id: id } });
+            const activities = await Activity.findAll({ where: { related_id: id } });
             responseHandler.success(res, "Activities fetched successfully", activities);
         } catch (error) {
             console.error(error);

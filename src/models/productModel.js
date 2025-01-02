@@ -9,7 +9,7 @@ const Product = sequelize.define('Product', {
         unique: true,
         defaultValue: () => generateId(),
     },
-    project_id: {
+    related_id: {
         type: DataTypes.STRING,
         allowNull: false
     },

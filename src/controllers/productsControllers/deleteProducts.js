@@ -19,7 +19,7 @@ export default {
             }
             await product.destroy();
             await Activity.create({
-                related_id: product.project_id,
+                related_id: product.related_id,
                 activity_from: "product",
                 activity_id: product.id,
                 action: "deleted",

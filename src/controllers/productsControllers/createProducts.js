@@ -25,7 +25,7 @@ export default {
         try {
             const { name, category, price, sku, tax, hsn_sac, description, files } = req.body;
             const product = await Product.create({
-                project_id: req.params.id,
+                related_id: req.params.id,
                 name,
                 category,
                 price,

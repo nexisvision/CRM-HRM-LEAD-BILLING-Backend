@@ -9,7 +9,7 @@ const Note = sequelize.define("note", {
         primaryKey: true,
         defaultValue: () => generateId(),
     },
-    project_id: {
+    related_id: {
         type: DataTypes.STRING,
         allowNull: false
     },

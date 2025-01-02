@@ -30,7 +30,7 @@ export default {
             }
             await milestone.update({ milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date, updated_by: req.user?.username });
             await Activity.create({
-                related_id: milestone.project_id,
+                related_id: milestone.related_id,
                 activity_from: "milestone",
                 activity_id: milestone.id,
                 action: "updated",

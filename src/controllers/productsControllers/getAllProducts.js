@@ -12,7 +12,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const products = await Product.findAll({ where: { project_id: id } });
+            const products = await Product.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "Products fetched successfully", products);
         } catch (error) {
             responseHandler.error(res, error.message);

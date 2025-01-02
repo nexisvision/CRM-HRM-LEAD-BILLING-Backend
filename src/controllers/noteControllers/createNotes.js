@@ -20,7 +20,7 @@ export default {
         try {
             const { id } = req.params;
             const { note_title, note_type, note_employees, note_description } = req.body;
-            const note = await Note.create({ project_id: id, note_title, note_type, note_employees, note_description, created_by: req.user?.username });
+            const note = await Note.create({ related_id: id, note_title, note_type, note_employees, note_description, created_by: req.user?.username });
             await Activity.create({
                 related_id: id,
                 activity_from: "note",

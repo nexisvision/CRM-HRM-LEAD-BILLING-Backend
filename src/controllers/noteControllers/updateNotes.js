@@ -26,7 +26,7 @@ export default {
             }
             await note.update({ note_title, note_type, note_employees, note_description, updated_by: req.user?.username });
             await Activity.create({
-                related_id: note.project_id,
+                related_id: note.related_id,
                 activity_from: "note",
                 activity_id: note.id,
                 action: "updated",

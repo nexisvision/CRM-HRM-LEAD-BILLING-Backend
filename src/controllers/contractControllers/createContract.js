@@ -15,10 +15,7 @@ export default {
             value: Joi.number().required(),
             currency: Joi.string().required(),
             client: Joi.string().required(),
-           
-            
             phone: Joi.string().required(),
-         
             city: Joi.string().required(),
             state: Joi.string().required(),
             country: Joi.string().required(),

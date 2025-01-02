@@ -18,7 +18,7 @@ export default {
                 return responseHandler.error(res, "Milestone not found");
             }
             await Activity.create({
-                related_id: milestone.project_id,
+                related_id: milestone.related_id,
                 activity_from: "milestone",
                 activity_id: milestone.id,
                 action: "deleted",
