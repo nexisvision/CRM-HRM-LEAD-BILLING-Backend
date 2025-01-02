@@ -5,6 +5,9 @@ import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
             item: Joi.string().required(),
             price: Joi.number().required(),
@@ -18,8 +21,9 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { id } = req.params;
             const { item, price, currency, purchase_date, employee, project, bill, description } = req.body;
-            const expense = await Expense.create({ item, price, currency, purchase_date, employee, project, bill, description, created_by: req.user?.username });
+            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, employee, project, bill, description, created_by: req.user?.username });
             return responseHandler.success(res, "Expense created successfully", expense);
         } catch (error) {
             responseHandler.error(res, error.message);

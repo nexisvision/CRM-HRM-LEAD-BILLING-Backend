@@ -12,12 +12,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const payment = await Payment.findByPk  (id);
+            const payment = await Payment.findByPk(id);
             if (!payment) {
                 return responseHandler.error(res, "Payment not found", 404);
             }
             await payment.destroy();
-            responseHandler.deleted(res, "Payment deleted successfully", payment);
+            responseHandler.success(res, "Payment deleted successfully", payment);
         } catch (error) {
             console.error('Error deleting payment:', error);
             responseHandler.error(res, error.message);

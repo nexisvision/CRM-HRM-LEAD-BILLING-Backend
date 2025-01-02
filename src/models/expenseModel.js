@@ -10,6 +10,10 @@ const Expense = sequelize.define('expense', {
         unique: true,
         defaultValue: () => generateId()
     },
+    related_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     item: {
         type: DataTypes.STRING,
         allowNull: false
