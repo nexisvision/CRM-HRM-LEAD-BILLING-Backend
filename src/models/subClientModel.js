@@ -83,6 +83,31 @@ const SubClient = sequelize.define('SubClient', {
         allowNull: true,
         defaultValue: null
     },
+    city: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    state: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    country: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    zipcode: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

@@ -7,19 +7,32 @@ export default {
     validator: validator({
         body: Joi.object({
             subject: Joi.string().required(),
-            client: Joi.string().required(),
             project: Joi.string().required(),
-            type: Joi.string().required(),
-            value: Joi.number().required(),
+            description: Joi.string().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
-            description: Joi.string().required(),
+            type: Joi.string().required(),
+            value: Joi.number().required(),
+            currency: Joi.string().required(),
+            client: Joi.string().required(),
+           
+            
+            phone: Joi.string().required(),
+         
+            city: Joi.string().required(),
+            state: Joi.string().required(),
+            country: Joi.string().required(),
+            zipcode: Joi.string().required(),
+            address: Joi.string().required(),
+            notes: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { subject, client, project, type, value, startDate, endDate, description } = req.body;
-            const contract = await Contract.create({ subject, client, project, type, value, startDate, endDate, description, created_by: req.user?.id });
+            const { subject, client, project, type, value, startDate, endDate,currency, description,
+                phone, address, city, state, country, zipcode, notes } = req.body;
+            const contract = await Contract.create({ subject, client, project, type, value, startDate, endDate,currency, description,
+                phone, address, city, state, country, zipcode, notes, created_by: req.user?.id });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error.message);

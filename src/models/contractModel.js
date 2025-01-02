@@ -9,6 +9,11 @@ export const Contract = sequelize.define("Contract", {
         unique: true,
         defaultValue: () => generateId()
     },
+    contract_number: {
+        type: DataTypes.STRING,
+         
+        unique: true
+    },
     subject: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -42,6 +47,38 @@ export const Contract = sequelize.define("Contract", {
         type: DataTypes.TEXT,
         allowNull: true,
     },
+    currency: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    city: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    state: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    country: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    zipcode: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    notes: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -64,7 +101,22 @@ Contract.beforeCreate(async (contract) => {
             isUnique = true;
         }
     }
-    Contract.id = newId;
+    contract.id = newId;
+    
+    const lastContract = await Contract.findOne({
+        order: [['contract_number', 'DESC']]
+    });
+
+    let nextNumber = 1;
+    if (lastContract && lastContract.contract_number) {
+        // Extract the number from the last invoiceNumber and increment it
+        const lastNumber = parseInt(lastContract.contract_number.replace('CON#', ''));
+        nextNumber = lastNumber + 1;
+    }
+
+    contract.contract_number = `CON#${nextNumber}`;
+
+
 });
 
 export default Contract;

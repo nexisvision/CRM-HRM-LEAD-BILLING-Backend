@@ -31,11 +31,18 @@ export default {
             banklocation: Joi.string().optional().allow('', null),
             gstIn: Joi.string().optional().allow('', null),
             e_signature: Joi.string().optional().allow('', null),
+            city: Joi.string().optional().allow('', null),
+            state: Joi.string().optional().allow('', null),
+            country: Joi.string().optional().allow('', null),
+            zipcode: Joi.string().optional().allow('', null),
+            address: Joi.string().optional().allow('', null),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, email, password, firstName, lastName, phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, gstIn, e_signature } = req.body;
+            const { username, email, password, firstName, lastName,
+                phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, gstIn, e_signature,
+                city, state, country, zipcode, address } = req.body;
 
             const existingUsername = await SubClient.findOne({
                 where: { username }
@@ -68,6 +75,11 @@ export default {
                 firstName,
                 lastName,
                 phone,
+                city,
+                state,
+                country,
+                zipcode,
+                address,
                 profilePic,
                 accountholder,
                 accountnumber,

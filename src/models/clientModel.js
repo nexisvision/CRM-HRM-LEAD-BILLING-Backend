@@ -64,7 +64,7 @@ const Client = sequelize.define('Client', {
         defaultValue: null
     },
     ifsc: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING, 
         allowNull: true,
         defaultValue: null
     },
@@ -79,6 +79,31 @@ const Client = sequelize.define('Client', {
         defaultValue: null
     },
     e_signature: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    city: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    state: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    country: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    zipcode: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    address: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null

@@ -31,11 +31,18 @@ export default {
             ifsc: Joi.string().allow('', null).optional(),
             banklocation: Joi.string().allow('', null).optional(),
             e_signature: Joi.string().allow('', null).optional(),
+            city: Joi.string().allow('', null).optional(),
+            state: Joi.string().allow('', null).optional(),
+            country: Joi.string().allow('', null).optional(),
+            zipcode: Joi.string().allow('', null).optional(),
+            address: Joi.string().allow('', null).optional(),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, password, email, firstName, lastName, phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, e_signature, gstIn } = req.body;
+            const { username, password, email, firstName, lastName, phone, 
+                profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, e_signature, gstIn,
+                city, state, country, zipcode, address } = req.body;
 
             const existingUsername = await Client.findOne({
                 where: { username }
@@ -76,6 +83,11 @@ export default {
                 banklocation,
                 e_signature,
                 gstIn,
+                city,
+                state,
+                country,
+                zipcode,
+                address,
                 created_by: req.user?.username,
             });
 
