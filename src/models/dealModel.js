@@ -10,41 +10,69 @@ const Deal = sequelize.define("Deal", {
         unique: true,
         defaultValue: () => generateId()
     },
+    leadTitle: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     dealName: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+    pipeline: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    deal_stage: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    deal_price: {
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     currency: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    phoneNumber: {
+    closed_date: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    deal_category: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-    },
-    clients: {
+    deal_agent: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    sources: {
-        type: DataTypes.JSON,
-        allowNull: false,
-        defaultValue: []
+    project: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
+        allowNull: true
     },
     updated_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     }
+});
+
+
+Deal.beforeCreate(async (deal) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingDeal = await Deal.findOne({ where: { id: newId } });
+        if (!existingDeal) {
+            isUnique = true;
+        }
+    }
+    deal.id = newId;
 });
 
 export default Deal;
