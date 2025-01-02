@@ -42,31 +42,23 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
+    lead_category: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     status: {
         type: DataTypes.ENUM('new', 'qualified', 'converted', 'proposal sent'),
         allowNull: false,
         defaultValue: 'new'
     },
-    details: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    notes: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
+   
     source: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    category: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
+    
    
     company_name: {
         type: DataTypes.STRING,
@@ -93,7 +85,7 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    zip: {
+    zipCode: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null

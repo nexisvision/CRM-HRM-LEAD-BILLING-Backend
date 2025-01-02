@@ -23,6 +23,7 @@ export default {
             // leadValue: Joi.string().allow('', null),    
             assigned: Joi.string().allow('', null),
             lead_owner: Joi.string().allow('', null),
+            lead_category: Joi.string().allow('', null),
             status: Joi.string().required()
                 .messages({
                     'string.empty': 'Please select a status.'
@@ -37,7 +38,7 @@ export default {
             country: Joi.string().allow('', null),
             city: Joi.string().allow('', null),
             state: Joi.string().allow('', null),
-            zip: Joi.string().allow('', null),
+            zipCode: Joi.string().allow('', null),
             address: Joi.string().allow('', null),
            
 
@@ -47,10 +48,10 @@ export default {
 
     handler: async (req, res) => {
         try {
-            const { leadTitle, firstName, lastName, telephone, email, leadValue, assigned,lead_owner,
-                     status, source, company_name, website, country, city, state, zip, address } = req.body;
+            const { leadTitle, firstName, lastName, telephone, email, leadValue, assigned,lead_owner,lead_category,
+                     status, source, company_name, website, country, city, state, zipCode, address } = req.body;
             const lead = await Lead.create({ leadTitle, firstName, lastName, telephone, email, leadValue, 
-                assigned, lead_owner, status, source, company_name, website, country, city, state, zip, address, created_by: req.user?.username, updated_by: req.user?.username });
+                assigned, lead_owner, lead_category, status, source, company_name, website, country, city, state, zipCode, address, created_by: req.user?.username, updated_by: req.user?.username });
             responseHandler.success(res, "Lead created successfully!", lead);
         } catch (error) {
             responseHandler.error(res, error.message);
