@@ -20,9 +20,8 @@ export default {
                 return responseHandler.error(res, "Task not found");
             }
             await task.destroy();
-            responseHandler.success(res, "Task deleted successfully");
+            responseHandler.success(res, "Task deleted successfully", task);
         } catch (error) {
-            console.error('Error deleting task:', error);
             responseHandler.error(res, error.message);
         }
     }

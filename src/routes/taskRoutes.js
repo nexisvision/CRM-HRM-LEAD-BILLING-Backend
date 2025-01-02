@@ -6,8 +6,8 @@ const router = Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post('/', createTask.validator, createTask.handler);
-router.delete('/:id', deleteTask.validator, deleteTask.handler);
+router.post('/:id', createTask.validator, createTask.handler);
+router.get('/:id', getAllTask.validator, getAllTask.handler);
 router.put('/:id', updateTask.validator, updateTask.handler);
-router.get('/', getAllTask.validator, getAllTask.handler);
+router.delete('/:id', deleteTask.validator, deleteTask.handler);
 export default router;

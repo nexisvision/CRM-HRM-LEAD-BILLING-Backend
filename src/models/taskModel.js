@@ -9,45 +9,46 @@ const Task = sequelize.define('Task', {
         primaryKey: true,
         defaultValue: () => generateId()
     },
-    dealId: {
+    related_id: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    // leadId: {
-    //     type: DataTypes.STRING,
-    //     allowNull: true
-    // },
-    projectName: {
+    taskName: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    taskTitle: {
+    category: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    taskStatus: {
+    project: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    taskPriority: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    // projectEmployee: {
-    //     type: DataTypes.STRING,
-    //     allowNull: true
-    // },
-    projectClient: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    taskDescription: {
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
-    taskDate: {
+    startDate: {
         type: DataTypes.DATE,
-        allowNull: true
+        allowNull: false
+    },
+    dueDate: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    assignTo: {
+        type: DataTypes.JSON,
+        allowNull: false,
+    },
+    status: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    priority: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,
@@ -59,6 +60,6 @@ const Task = sequelize.define('Task', {
         allowNull: true,
         defaultValue: null
     }
-    
+
 });
 export default Task;

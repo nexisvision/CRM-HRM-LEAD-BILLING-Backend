@@ -37,7 +37,7 @@ import activityRoutes from "./activityRoutes.js";
 import productsRoutes from "./productsRoutes.js";
 import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
-
+import estimateRoutes from "./estimateRoutes.js";
 const router = express.Router();
 
 
@@ -79,5 +79,6 @@ router.use('/leads', leadRoutes);
 router.use('/products', productsRoutes);
 router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
+router.use('/estimates', estimateRoutes);
 
 export default router;

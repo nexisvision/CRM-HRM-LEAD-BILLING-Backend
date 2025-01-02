@@ -14,7 +14,7 @@ export default {
             issueDate: Joi.date().required(),
             dueDate: Joi.date().required(),
             currency: Joi.string().required(),
-            products: Joi.array().required(),
+            items: Joi.array().required(),
             discount: Joi.number().optional(),
             tax: Joi.number().optional(),
             total: Joi.number().required()
@@ -23,8 +23,8 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { issueDate, dueDate, currency, client, project, products, discount, tax, total } = req.body;
-            const invoice = await Invoice.create({ related_id: id, issueDate, dueDate, currency, client, project, products, discount, tax, total, created_by: req.user?.username });
+            const { issueDate, dueDate, currency, client, project, items, discount, tax, total } = req.body;
+            const invoice = await Invoice.create({ related_id: id, issueDate, dueDate, currency, client, project, items, discount, tax, total, created_by: req.user?.username });
             return responseHandler.success(res, "Invoice created successfully", invoice);
         } catch (error) {
             return responseHandler.error(res, error);
