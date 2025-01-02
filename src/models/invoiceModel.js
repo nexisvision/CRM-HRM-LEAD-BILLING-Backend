@@ -39,13 +39,34 @@ const Invoice = sequelize.define('invoice', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    products: {
+        type: DataTypes.JSON,
+        allowNull: false
+    },
+    discount: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: null
+    },
+    tax: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: null
+    },
+    total: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
+
     }
 });
 
