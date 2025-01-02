@@ -6,10 +6,7 @@ import Invoice from "../../models/invoiceModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Invoice ID must be a string',
-                'string.empty': 'Invoice ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {

@@ -5,19 +5,22 @@ import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
             project: Joi.string().required(),
             client: Joi.string().required(),
             issueDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            status: Joi.string().valid('paid', 'unpaid', 'partially paid').required(),
-            amount: Joi.number().required()
+            currency: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { issueDate, dueDate, status, amount, client, project } = req.body;
-            const invoice = await Invoice.create({ client, project, issueDate, dueDate, status, amount, created_by: req.user?.username });
+            const { id } = req.params;
+            const { issueDate, dueDate, currency, client, project } = req.body;
+            const invoice = await Invoice.create({ issueDate, dueDate, currency, client, project, created_by: req.user?.username, related_id: id });
             return responseHandler.success(res, "Invoice created successfully", invoice);
         } catch (error) {
             return responseHandler.error(res, error);

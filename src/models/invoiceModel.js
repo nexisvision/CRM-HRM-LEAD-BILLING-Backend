@@ -2,9 +2,6 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from '../middlewares/generatorId.js';
 
-let lastInvoiceNumber = 0;
-    
-
 
 const Invoice = sequelize.define('invoice', {
     id: {
@@ -16,15 +13,9 @@ const Invoice = sequelize.define('invoice', {
     },
     invoiceNumber: {
         type: DataTypes.STRING,
-        
         unique: true,
-     
     },
-    project: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    client: {
+    related_id: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -36,12 +27,16 @@ const Invoice = sequelize.define('invoice', {
         type: DataTypes.DATE,
         allowNull: false
     },
-    amount: {
-        type: DataTypes.FLOAT,
+    currency: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    status: {
-        type: DataTypes.ENUM('paid', 'unpaid', 'partially paid'),
+    project: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    client: {
+        type: DataTypes.STRING,
         allowNull: false
     },
     created_by: {
@@ -71,7 +66,7 @@ Invoice.beforeCreate(async (invoice) => {
     const lastInvoice = await Invoice.findOne({
         order: [['invoiceNumber', 'DESC']]
     });
-    
+
     let nextNumber = 1;
     if (lastInvoice && lastInvoice.invoiceNumber) {
         // Extract the number from the last invoiceNumber and increment it
@@ -80,7 +75,7 @@ Invoice.beforeCreate(async (invoice) => {
     }
 
     invoice.invoiceNumber = `INV#${nextNumber}`;
-    
+
 });
 
 export default Invoice;
