@@ -10,7 +10,7 @@ export default {
         }),
         body: Joi.object({
             project: Joi.string().allow('', null),
-            invoice: Joi.string().allow('', null), 
+            invoice: Joi.string().allow('', null),
             paidOn: Joi.date().allow('', null),
             amount: Joi.number().allow('', null),
             currency: Joi.string().allow('', null),
@@ -23,26 +23,35 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const updateData = req.body;
+            const {
+                project,
+                invoice,
+                paidOn,
+                amount,
+                currency,
+                transactionId,
+                paymentMethod,
+                receipt,
+                remark
+            } = req.body;
 
             const payment = await Payment.findByPk(id);
             if (!payment) {
                 return responseHandler.notFound(res, "Payment not found");
             }
 
-            // Only update fields that were provided
-            const fieldsToUpdate = {};
-            for (const [key, value] of Object.entries(updateData)) {
-                if (value !== null && value !== '') {
-                    fieldsToUpdate[key] = value;
-                }
-            }
-
-            // Add updated_by field
-            fieldsToUpdate.updated_by = req.user?.username;
-
-            // Update payment with only provided fields
-            await payment.update(fieldsToUpdate);
+            await payment.update({
+                project,
+                invoice,
+                paidOn,
+                amount,
+                currency,
+                transactionId,
+                paymentMethod,
+                receipt,
+                remark,
+                updated_by: req.user?.username
+            });
 
             responseHandler.success(res, "Payment updated successfully", payment);
         } catch (error) {

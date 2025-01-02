@@ -10,6 +10,10 @@ const Category = sequelize.define('category', {
         primaryKey: true,
         defaultValue: () => generateId(),
     },
+    related_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false

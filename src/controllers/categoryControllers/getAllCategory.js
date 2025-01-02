@@ -4,6 +4,9 @@ import validator from "../../utils/validator.js";
 import Joi from "joi";
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         query: Joi.object({
             page: Joi.number().default(1).optional(),
             limit: Joi.number().default(10).optional()
@@ -11,11 +14,8 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const categories = await Category.findAll({
-                offset: (page - 1) * limit,
-            limit: limit
-        });
+            const { id } = req.params;
+            const categories = await Category.findAll({ where: { related_id: id } });
             responseHandler.success(res, "Categories fetched successfully", categories);
         } catch (error) {
             console.log(error);

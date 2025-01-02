@@ -17,7 +17,7 @@ export default {
                 return responseHandler.error(res, "Category not found");
             }
             await category.destroy();
-            responseHandler.success(res, "Category deleted successfully");
+            responseHandler.success(res, "Category deleted successfully", category);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);

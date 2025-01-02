@@ -9,7 +9,6 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-        
             project: Joi.string().required(),
             invoice: Joi.string().required(),
             paidOn: Joi.date().required(),
@@ -24,7 +23,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { 
+            const {
                 project,
                 invoice,
                 paidOn,

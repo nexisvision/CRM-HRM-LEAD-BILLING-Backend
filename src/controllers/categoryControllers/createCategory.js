@@ -5,6 +5,9 @@ import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
             name: Joi.string().required(),
             color: Joi.string().allow('', null)
@@ -12,19 +15,12 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { id } = req.params;
             const { name, color } = req.body;
-
-            // Check if category already exists
-            const existingCategory = await Category.findOne({
-                where: { name }
-            });
-
-            if (existingCategory) {
-                return responseHandler.error(res, "Category with this name already exists");
-            }
 
             // Create new category
             const newCategory = await Category.create({
+                related_id: id,
                 name,
                 color,
                 created_by: req.user?.username
