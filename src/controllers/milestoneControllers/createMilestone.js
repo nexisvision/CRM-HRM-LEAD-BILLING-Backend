@@ -1,3 +1,4 @@
+import Activity from "../../models/activityModel.js";
 import Milestone from "../../models/milestoneModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -35,6 +36,14 @@ export default {
                 milestone_end_date,
                 created_by: req.user?.username,
 
+            });
+            await Activity.create({
+                related_id: id,
+                activity_from: "milestone",
+                activity_id: milestone.id,
+                action: "created",
+                performed_by: req.user?.username,
+                activity_message: `Milestone ${milestone_title} created successfully`
             });
             responseHandler.success(res, "Milestone created successfully", milestone);
         } catch (error) {

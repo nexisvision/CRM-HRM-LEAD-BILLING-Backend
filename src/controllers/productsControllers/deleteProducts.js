@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Note from "../../models/noteModel.js";
+import Product from "../../models/productModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Activity from "../../models/activityModel.js";
@@ -13,20 +13,20 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const note = await Note.findByPk(id);
-            if (!note) {
-                return responseHandler.error(res, "Note not found");
+            const product = await Product.findByPk(id);
+            if (!product) {
+                return responseHandler.error(res, "Product not found");
             }
-            await note.destroy();
+            await product.destroy();
             await Activity.create({
-                related_id: note.project_id,
-                activity_from: "note",
-                activity_id: note.id,
+                related_id: product.project_id,
+                activity_from: "product",
+                activity_id: product.id,
                 action: "deleted",
                 performed_by: req.user?.username,
-                activity_message: `Note ${note.note_title} deleted successfully`
+                activity_message: `Product ${product.name} deleted successfully`
             });
-            return responseHandler.success(res, "Note deleted successfully", note);
+            return responseHandler.success(res, "Product deleted successfully", product);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

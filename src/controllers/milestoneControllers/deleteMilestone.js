@@ -1,3 +1,4 @@
+import Activity from "../../models/activityModel.js";
 import Milestone from "../../models/milestoneModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -16,6 +17,14 @@ export default {
             if (!milestone) {
                 return responseHandler.error(res, "Milestone not found");
             }
+            await Activity.create({
+                related_id: milestone.project_id,
+                activity_from: "milestone",
+                activity_id: milestone.id,
+                action: "deleted",
+                performed_by: req.user?.username,
+                activity_message: `Milestone ${milestone.milestone_title} deleted successfully`
+            });
             await milestone.destroy();
             responseHandler.success(res, "Milestone deleted successfully", milestone);
         } catch (error) {

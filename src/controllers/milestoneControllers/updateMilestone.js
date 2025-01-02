@@ -1,3 +1,4 @@
+import Activity from "../../models/activityModel.js";
 import Milestone from "../../models/milestoneModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -28,6 +29,14 @@ export default {
                 return responseHandler.error(res, "Milestone not found");
             }
             await milestone.update({ milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date, updated_by: req.user?.username });
+            await Activity.create({
+                related_id: milestone.project_id,
+                activity_from: "milestone",
+                activity_id: milestone.id,
+                action: "updated",
+                performed_by: req.user?.username,
+                activity_message: `Milestone ${milestone.milestone_title} updated successfully`
+            });
             responseHandler.success(res, "Milestone updated successfully", milestone);
         } catch (error) {
             console.log(error);

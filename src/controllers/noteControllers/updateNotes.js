@@ -1,5 +1,6 @@
 import Joi from "joi";
 import Note from "../../models/noteModel.js";
+import Activity from "../../models/activityModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -24,6 +25,14 @@ export default {
                 return responseHandler.error(res, "Note not found");
             }
             await note.update({ note_title, note_type, note_employees, note_description, updated_by: req.user?.username });
+            await Activity.create({
+                related_id: note.project_id,
+                activity_from: "note",
+                activity_id: note.id,
+                action: "updated",
+                performed_by: req.user?.username,
+                activity_message: `Note ${note.note_title} updated successfully`
+            });
             return responseHandler.success(res, "Note updated successfully", note);
         } catch (error) {
             responseHandler.error(res, error.message);
