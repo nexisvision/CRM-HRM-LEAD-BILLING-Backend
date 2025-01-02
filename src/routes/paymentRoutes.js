@@ -6,7 +6,7 @@ const router = Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post('/', createPayment.validator, createPayment.handler);
+router.post('/:id', createPayment.validator, createPayment.handler);
 router.get('/:id', getAllPayment.validator, getAllPayment.handler);
 router.put('/:id', updatePayment.validator, updatePayment.handler);
 router.delete('/:id', deletePayment.validator, deletePayment.handler);

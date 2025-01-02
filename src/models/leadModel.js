@@ -32,7 +32,7 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null,
     },
-    leadValue: {
+    lead_owner: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
@@ -67,37 +67,38 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    tags: {
+   
+    company_name: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    lastContacted: {
-        type: DataTypes.DATE,
-        allowNull: true,
-        defaultValue: null
-    },
-    totalBudget: {
+    website: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    targetDate: {
-        type: DataTypes.DATE,
-        allowNull: true,
-        defaultValue: null
-    },
-    contentType: {
+    country: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    brandName: {
+    city: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    companyName: {
+    state: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    zip: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    address: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
@@ -107,7 +108,7 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    updated_by: {
+    updated_by : {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null

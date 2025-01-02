@@ -5,7 +5,11 @@ import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
+        
             project: Joi.string().required(),
             invoice: Joi.string().required(),
             paidOn: Joi.date().required(),
@@ -19,6 +23,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { id } = req.params;
             const { 
                 project,
                 invoice,
@@ -32,6 +37,7 @@ export default {
             } = req.body;
 
             const payment = await Payment.create({
+                project_id: id,
                 project,
                 invoice,
                 paidOn,

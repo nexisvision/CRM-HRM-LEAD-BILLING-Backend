@@ -1,7 +1,8 @@
-import Joi from "joi";
+import { query } from "express";
 import Payment from "../../models/paymentModel.js";
-import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import validator from "../../utils/validator.js";
+import Joi from "joi";
 
 export default {
     validator: validator({
@@ -10,17 +11,18 @@ export default {
         }),
         query: Joi.object({
             page: Joi.number().optional(),
-            limit: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const payments = await Payment.findByPk(id);
+           
+            const payments = await Payment.findAll({ where: { project_id: id }});
             responseHandler.success(res, "Payments fetched successfully", payments);
         } catch (error) {
-            console.error('Error fetching payments:', error);
+            console.log(error);
             responseHandler.error(res, error.message);
         }
     }
-};
+}

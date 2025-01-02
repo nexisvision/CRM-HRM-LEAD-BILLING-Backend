@@ -9,6 +9,10 @@ const Payment = sequelize.define('Payment', {
         unique: true,
         defaultValue: () => generateId()
     },
+    project_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     project: {
         type: DataTypes.STRING,
         allowNull: false,
