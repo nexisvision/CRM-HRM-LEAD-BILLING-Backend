@@ -6,40 +6,30 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Deal ID must be a string',
-                'string.empty': 'Deal ID is required'
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
-            dealName: Joi.string().optional().messages({
-                // 'string.base': 'Deal name must be a string',
-                // 'string.empty': 'Deal name is required'
-            }),
-            phoneNumber: Joi.string().optional().messages({
-                'string.base': 'Phone number must be a number',
-                // 'string.empty': 'Phone number is required'
-            }),
-            price: Joi.number().optional().messages({
-                'number.base': 'Price must be a number',
-                'number.positive': 'Price must be a positive number',
-                // 'number.empty': 'Price is required'
-            }),
-            clients: Joi.string().optional().messages({
-                // 'string.base': 'Clients must be a string',
-                // 'string.empty': 'Clients is required'
-            })
+            leadTitle: Joi.string().required(),            
+            dealName: Joi.string().required(),            
+            pipeline: Joi.string().required(),            
+            deal_stage: Joi.string().required(),            
+            deal_price: Joi.number().required().positive(),            
+            currency: Joi.string().required(),            
+            closed_date: Joi.date().required(),            
+            deal_category: Joi.string().required(),            
+            deal_agent: Joi.string().required(),            
+            project: Joi.string().required(),     
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { dealName, phoneNumber, price, clients } = req.body;
+            const { leadTitle, dealName, pipeline, deal_stage, deal_price, currency, closed_date, deal_category, deal_agent, project } = req.body;
             const deal = await Deal.findByPk(id);
             if (!deal) {
-                return responseHandler.error(res, "Deal not found", 404);
+                return responseHandler.error(res, "Deal not found");
             }
-            await deal.update({ dealName, phoneNumber, price, clients });
+            await deal.update({ leadTitle, dealName, pipeline, deal_stage, deal_price, currency, closed_date, deal_category, deal_agent, project });
             responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
             console.log(error);

@@ -6,35 +6,33 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            dealName: Joi.string().required().messages({
-                'string.base': 'Deal name must be a string',
-                'string.empty': 'Deal name is required'
-            }),
-            phoneNumber: Joi.string().required().pattern(/^[0-9]+$/).messages({
-                'string.base': 'Phone number must be a number',
-                'string.empty': 'Phone number is required',
-                'string.pattern.base': 'Phone number must contain only digits'
-            }),
-            price: Joi.number().required().positive().messages({
-                'number.base': 'Price must be a number',
-                'number.empty': 'Price is required',
-                'number.positive': 'Price must be a positive number'
-            }),
-            clients: Joi.string().required().messages({
-                'string.base': 'Clients must be a string',
-                'string.empty': 'Clients is required'
-            })
+            leadTitle: Joi.string().required(),            
+            dealName: Joi.string().required(),            
+            pipeline: Joi.string().required(),            
+            deal_stage: Joi.string().required(),            
+            deal_price: Joi.number().required().positive(),            
+            currency: Joi.string().required(),            
+            closed_date: Joi.date().required(),            
+            deal_category: Joi.string().required(),            
+            deal_agent: Joi.string().required(),            
+            project: Joi.string().required(),            
         })
     }),
     handler: async (req, res) => {
         try {
-            const { dealName, phoneNumber, price, clients } = req.body;
+            const { leadTitle, dealName,pipeline,deal_stage,deal_price,currency,closed_date,deal_category,deal_agent,project } = req.body;
 
             const deal = await Deal.create({
+                leadTitle,
                 dealName,
-                phoneNumber,
-                price,
-                clients
+                pipeline,
+                deal_stage,
+                deal_price,
+                currency,
+                closed_date,
+                deal_category,
+                deal_agent,
+                project
             });
 
             responseHandler.success(res, "Deal created successfully", deal);

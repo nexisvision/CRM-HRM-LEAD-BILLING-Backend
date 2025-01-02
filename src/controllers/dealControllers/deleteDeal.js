@@ -7,8 +7,6 @@ export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required().messages({
-                'string.base': 'Deal ID must be a string',
-                'string.empty': 'Deal ID is required'
             })
         })
     }),
