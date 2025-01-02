@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Category from "../../models/categoryModel.js";
+import Tag from "../../models/labelModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
@@ -12,15 +12,20 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const category = await Category.findByPk(id);
-            if (!category) {
-                return responseHandler.error(res, "Category not found");
+
+            // Find existing tag
+            const tag = await Tag.findByPk(id);
+            if (!tag) {
+                return responseHandler.notFound(res, "Tag not found");
             }
-            await category.destroy();
-            responseHandler.success(res, "Category deleted successfully", category);
+
+            // Delete tag
+            await tag.destroy();
+
+            responseHandler.success(res, "Tag deleted successfully");
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);
         }
     }
-}
+};

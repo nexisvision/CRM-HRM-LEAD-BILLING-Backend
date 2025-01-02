@@ -1,10 +1,13 @@
 import Joi from "joi";
-import Tag from "../../models/tagModel.js";
+import Tag from "../../models/labelModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
             name: Joi.string().required(),
             color: Joi.string().allow('', null)
@@ -12,11 +15,12 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { id } = req.params;
             const { name, color } = req.body;
 
             // Check if tag already exists
             const existingTag = await Tag.findOne({
-                where: { name }
+                where: { related_id: id, name }
             });
 
             if (existingTag) {
@@ -25,6 +29,7 @@ export default {
 
             // Create new tag
             const newTag = await Tag.create({
+                related_id: id,
                 name,
                 color,
                 created_by: req.user?.username

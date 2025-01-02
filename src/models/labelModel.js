@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-const Category = sequelize.define('category', {
+const Tag = sequelize.define('tag', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -32,18 +32,18 @@ const Category = sequelize.define('category', {
     }
 });
 
-Category.beforeCreate(async (category) => {
+Tag.beforeCreate(async (tag) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingCategory = await Category.findOne({
+        const existingTag = await Tag.findOne({
             where: { id: newId }
         });
-        if (!existingCategory) {
+        if (!existingTag) {
             isUnique = true;
         }
     }
-    category.id = newId;
+    tag.id = newId;
 });
-export default Category;
+export default Tag;

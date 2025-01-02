@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-const Tag = sequelize.define('tag', {
+const Pipeline = sequelize.define('pipeline', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -10,14 +10,11 @@ const Tag = sequelize.define('tag', {
         primaryKey: true,
         defaultValue: () => generateId(),
     },
-    name: {
+    pipeline_name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    color: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
+    
     created_by: {
         type: DataTypes.STRING,
         allowNull: true
@@ -28,18 +25,5 @@ const Tag = sequelize.define('tag', {
     }
 });
 
-Tag.beforeCreate(async (tag) => {
-    let isUnique = false;
-    let newId;
-    while (!isUnique) {
-        newId = generateId();
-        const existingTag = await Tag.findOne({
-            where: { id: newId }
-        });
-        if (!existingTag) {
-            isUnique = true;
-        }
-    }
-    tag.id = newId;
-});
-export default Tag;
+
+export default Pipeline;

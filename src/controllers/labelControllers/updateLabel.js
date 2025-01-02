@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Tag from "../../models/tagModel.js";
+import Tag from "../../models/labelModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
