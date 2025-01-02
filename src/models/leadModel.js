@@ -9,7 +9,6 @@ const Lead = sequelize.define('Lead', {
         unique: true,
         defaultValue: () => generateId()
     },
-
     leadTitle: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -42,24 +41,21 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    lead_category: {
+    category: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
     status: {
-        type: DataTypes.ENUM('new', 'qualified', 'converted', 'proposal sent'),
+        type: DataTypes.STRING,
         allowNull: false,
         defaultValue: 'new'
     },
-   
     source: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
-    
-   
     company_name: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -100,7 +96,7 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    updated_by : {
+    updated_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null

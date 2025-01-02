@@ -75,7 +75,6 @@ router.use('/contracts', contractRoutes);
 router.use('/invoices', invoiceRoutes);
 router.use('/expenses', expenseRoutes);
 router.use('/payments', paymentRoutes);
-
 router.use('/milestones', milestoneRoutes);
 router.use('/notes', notesRoutes);
 router.use('/activities', activityRoutes);

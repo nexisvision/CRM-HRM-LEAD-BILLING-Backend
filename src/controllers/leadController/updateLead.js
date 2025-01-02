@@ -12,44 +12,30 @@ export default {
             })
         }),
         body: Joi.object({
-            leadTitle: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please provide a title for the lead.'
-                }),
-            firstName: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please provide a first name.'
-                }),
-            lastName: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please provide a last name.'
-                }),
+            leadTitle: Joi.string().required(),
+            firstName: Joi.string().required(),
+            lastName: Joi.string().required(),
             telephone: Joi.string().allow('', null),
-            email: Joi.string().email().allow('', null),
-            leadValue: Joi.string().allow('', null),
+            email: Joi.string().email(),
             assigned: Joi.string().allow('', null),
-            status: Joi.string().required()
-                .messages({
-                    'string.empty': 'Please select a status.'
-                }),
-            details: Joi.string().allow('', null),
-            notes: Joi.string().allow('', null),
-            source: Joi.string().allow('', null),
+            lead_owner: Joi.string().allow('', null),
             category: Joi.string().allow('', null),
-            tags: Joi.string().allow('', null),
-            lastContacted: Joi.date().allow('', null),
-            totalBudget: Joi.string().allow('', null),
-            targetDate: Joi.date().allow('', null),
-            contentType: Joi.string().allow('', null),
-            brandName: Joi.string().allow('', null),
-            companyName: Joi.string().allow('', null),
+            status: Joi.string().required(),
+            source: Joi.string().allow('', null),
+            company_name: Joi.string().allow('', null),
+            website: Joi.string().allow('', null),
+            country: Joi.string().allow('', null),
+            city: Joi.string().allow('', null),
+            state: Joi.string().allow('', null),
+            zipCode: Joi.string().allow('', null),
+            address: Joi.string().allow('', null),
         })
     }),
 
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { leadTitle, firstName, lastName, telephone, email, leadValue, assigned, status, details, notes, source, category, tags, lastContacted, totalBudget, targetDate, contentType, brandName, companyName } = req.body;
+            const { leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address } = req.body;
 
             const lead = await Lead.findByPk(id);
 
@@ -63,20 +49,18 @@ export default {
                 lastName,
                 telephone,
                 email,
-                leadValue,
                 assigned,
-                status,
-                details,
-                notes,
-                source,
+                lead_owner,
                 category,
-                tags,
-                lastContacted,
-                totalBudget,
-                targetDate,
-                contentType,
-                brandName,
-                companyName,
+                status,
+                source,
+                company_name,
+                website,
+                country,
+                city,
+                state,
+                zipCode,
+                address,
                 updated_by: req.user?.username
             });
 
