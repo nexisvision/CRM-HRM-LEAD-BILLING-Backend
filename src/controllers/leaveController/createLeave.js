@@ -6,24 +6,35 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
+            employeeId: Joi.string().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
             leaveType: Joi.string().valid('sick', 'casual', 'annual', 'other').required(),
             reason: Joi.string().required(),
-            status: Joi.string().valid('pending', 'approved', 'rejected').default('pending')
+            status: Joi.string().valid('pending', 'approved', 'rejected').default('pending'),
+            isHalfDay: Joi.boolean().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { startDate, endDate, leaveType, reason, status } = req.body;
+            const { employeeId, startDate, endDate, leaveType, reason, status, isHalfDay } = req.body;
+
+            // Validation for half-day leave:
+            if (isHalfDay) {
+                if (startDate.getTime() !== endDate.getTime()) {
+                    throw new Error('Half-day leave must have the same start and end date');
+                }
+            }
 
             const leave = await Leave.create({
+                employeeId,
                 startDate,
                 endDate,
                 leaveType,
                 reason,
                 status,
-                created_by: req.user?.username
+                isHalfDay,
+                created_by: req.user?.username,
             });
 
             responseHandler.created(res, "Leave request created successfully", leave);

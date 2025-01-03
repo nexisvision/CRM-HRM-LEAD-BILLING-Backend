@@ -34,7 +34,6 @@ export default {
                 working_from,
                 comment,
                 created_by: req.user?.username,
-                updated_by: req.user?.username
             });
 
             responseHandler.created(res, "Attendance marked successfully", attendance);
