@@ -7,6 +7,18 @@ export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required()
+        }),
+        body: Joi.object({
+            lead_title: Joi.string().required(),
+            deal_title: Joi.string().required(),
+            valid_till: Joi.date().required(),
+            currency: Joi.string().required(),
+            calculatedTax: Joi.number().required(),
+            description: Joi.string().required(),
+            items: Joi.array().required(),
+            discount: Joi.number().required(),
+            tax: Joi.number().required(),
+            total: Joi.number().required()
         })
     }),
     handler: async (req, res) => {

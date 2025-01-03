@@ -17,7 +17,7 @@ export default {
                 return responseHandler.notFound(res, "Proposal not found");
             }   
             await proposal.destroy();
-            return responseHandler.success(res, "Proposal deleted successfully");
+            return responseHandler.success(res, "Proposal deleted successfully", proposal);
         } catch (error) {
             return responseHandler.error(res, error);
         }
