@@ -1,6 +1,6 @@
-import createTag from "./createLabel.js";
-import getAllTags from "./getAllLabel.js";
-import updateTag from "./updateLabel.js";
-import deleteTag from "./deleteLabel.js";
+import createLabel from "./createLabel.js";
+import getAllLabel from "./getAllLabel.js";
+import updateLabel from "./updateLabel.js";
+import deleteLabel from "./deleteLabel.js";
 
-export { createTag, getAllTags, updateTag, deleteTag };
+export { createLabel, getAllLabel, updateLabel, deleteLabel };

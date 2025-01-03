@@ -10,6 +10,14 @@ const Attendance = sequelize.define('Attendance', {
         unique: true,
         defaultValue: () => generateId()
     },
+    department: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    employee: {
+        type: DataTypes.JSON,
+        allowNull: false
+    },
     startDate: {
         type: DataTypes.DATEONLY,
         allowNull: false
@@ -25,6 +33,18 @@ const Attendance = sequelize.define('Attendance', {
     endTime: {
         type: DataTypes.TIME,
         allowNull: false
+    },
+    late: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    halfDay: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    working_from: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     comment: {
         type: DataTypes.TEXT,
