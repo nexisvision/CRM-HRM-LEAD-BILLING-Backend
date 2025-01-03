@@ -15,7 +15,7 @@ export default {
             purchase_date: Joi.date().required(),
             employee: Joi.string().required(),
             project: Joi.string().required(),
-            bill: Joi.string().required(),
+            bill: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null)
         })
     }),

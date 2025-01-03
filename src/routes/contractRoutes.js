@@ -4,7 +4,7 @@ import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+// router.use(authenticateUser, checkRole);
 
 router.post('/', createContract.validator, createContract.handler);
 router.get('/', getAllContracts.validator, getAllContracts.handler);

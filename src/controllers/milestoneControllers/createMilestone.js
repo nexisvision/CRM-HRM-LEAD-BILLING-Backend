@@ -7,21 +7,23 @@ import Joi from "joi";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional().allow('', null)
         }),
         body: Joi.object({
-            milestone_title: Joi.string().required(),
-            milestone_status: Joi.string().required(),
-            milestone_cost: Joi.number().required(),
-            currency: Joi.string().required(),
-            add_cost_to_project_budget: Joi.boolean().required(),
-            milestone_summary: Joi.string().required(),
-            milestone_start_date: Joi.date().required(),
-            milestone_end_date: Joi.date().required()
+            milestone_title: Joi.string().optional().allow('', null),
+            milestone_status: Joi.string().optional().allow('', null),
+            milestone_cost: Joi.string().optional().allow('', null),
+            // currency: Joi.string().optional(),
+            add_cost_to_project_budget: Joi.string().optional().allow('', null),
+            milestone_summary: Joi.string().optional().allow('', null),
+            milestone_start_date: Joi.date().optional().allow('', null),
+            milestone_end_date: Joi.date().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
+
+            console.log("rrrr",req.body)
             const { id } = req.params;
             const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
             const milestone = await Milestone.create({
@@ -29,7 +31,7 @@ export default {
                 milestone_title,
                 milestone_status,
                 milestone_cost,
-                currency,
+                // currency,
                 add_cost_to_project_budget,
                 milestone_summary,
                 milestone_start_date,

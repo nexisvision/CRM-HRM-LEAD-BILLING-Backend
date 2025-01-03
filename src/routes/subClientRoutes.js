@@ -3,7 +3,7 @@ import { getAllSubClients, getSubClientById, updateSubClient, deleteSubClient, c
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+// router.use(authenticateUser, checkRole);
 
 router.post('/', createSubClient.validator, createSubClient.handler);
 router.get('/', getAllSubClients.validator, getAllSubClients.handler);

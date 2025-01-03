@@ -26,7 +26,7 @@ const Payment = sequelize.define('Payment', {
         allowNull: false,
     },
     amount: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     currency: {
@@ -34,7 +34,7 @@ const Payment = sequelize.define('Payment', {
         allowNull: false,
     },
     transactionId: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     paymentMethod: {

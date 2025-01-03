@@ -27,6 +27,10 @@ export const Contract = sequelize.define("Contract", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    client: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     type: {
         type: DataTypes.STRING,
         allowNull: false,

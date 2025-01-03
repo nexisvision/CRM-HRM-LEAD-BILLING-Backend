@@ -6,21 +6,21 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional()
         }),
         body: Joi.object({
-            project_name: Joi.string().required(),
-            startDate: Joi.date().required(),
-            endDate: Joi.date().required(),
-            project_members: Joi.object().required(),
-            project_category: Joi.string().required(),
+            project_name: Joi.string().optional(),
+            startDate: Joi.date().optional(),
+            endDate: Joi.date().optional(),
+            project_members: Joi.object().allow('', null).optional(),
+            project_category: Joi.string().optional(),
             project_description: Joi.string().allow('', null).optional(),
             department: Joi.object().allow(null).optional(),
             client: Joi.string().allow('', null).optional(),
             currency: Joi.string().allow('', null).optional(),
-            budget: Joi.number().required(),
-            estimatedmonths: Joi.number().required(),
-            estimatedhours: Joi.number().required(),
+            budget: Joi.number().optional(),
+            estimatedmonths: Joi.number().optional(),
+            estimatedhours: Joi.number().optional(),
             files: Joi.array().allow(null).optional(),
             status: Joi.string().allow('', null).optional(),
         })
@@ -55,9 +55,9 @@ export default {
                 where: { project_name }
             });
 
-            if (existingProject) {
-                return responseHandler.error(res, "Project with this name already exists");
-            }
+            // if (existingProject) {
+            //     return responseHandler.error(res, "Project with this name already exists");
+            // }
 
             const updatedProject = await project.update({
                 project_name,

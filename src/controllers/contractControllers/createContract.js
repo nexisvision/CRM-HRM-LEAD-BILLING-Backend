@@ -9,6 +9,9 @@ export default {
             subject: Joi.string().required(),
             project: Joi.string().required(),
             description: Joi.string().required(),
+            client: Joi.string().required(),
+            type: Joi.string().required(),
+            value: Joi.number().required(),
             startDate: Joi.date().required(),
             endDate: Joi.date().required(),
             type: Joi.string().required(),
@@ -32,7 +35,9 @@ export default {
                 phone, address, city, state, country, zipcode, notes, created_by: req.user?.id });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
+            console.error("Error creating contract:", error);
             return responseHandler.error(res, error.message);
         }
     }
+    
 }
