@@ -40,6 +40,7 @@ import dealRoutes from "./dealRoutes.js";
 import estimateRoutes from "./estimateRoutes.js";
 import proposalRoutes from "./proposalRoutes.js";
 import ticketRoutes from "./ticketRoutes.js";
+import jobApplicationRoutes from "./jobapplicationRoutes.js";
 import jobRoutes from "./jobRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 
@@ -86,6 +87,7 @@ router.use('/deals', dealRoutes);
 router.use('/estimates', estimateRoutes);
 router.use('/proposals', proposalRoutes);
 router.use('/tickets', ticketRoutes);
+router.use('/job-applications', jobApplicationRoutes);
 router.use('/meetings', meetingRoutes);
 router.use('/jobs', jobRoutes);
 router.use('/interview-schedules', interviewScheduleRoutes);
