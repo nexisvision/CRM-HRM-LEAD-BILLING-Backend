@@ -39,7 +39,7 @@ const Invoice = sequelize.define('invoice', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    products: {
+    items: {
         type: DataTypes.JSON,
         allowNull: false
     },

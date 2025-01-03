@@ -7,6 +7,7 @@ export default {
     validator: validator({
         body: Joi.object({
             title: Joi.string().required(),
+            category: Joi.string().required(),
             department: Joi.string().required(),
             skills: Joi.object().required(),
             location: Joi.string().required(),
@@ -24,8 +25,8 @@ export default {
         })
     }),
     handler: async (req, res) => {
-        const { title, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description } = req.body;
-        const job = await Job.create({ title, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, created_by: req.user?.username });
+        const { title, category, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description } = req.body;
+        const job = await Job.create({ title, category, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, created_by: req.user?.username });
         return responseHandler.success(res, "Job created successfully", job);
     }
 }

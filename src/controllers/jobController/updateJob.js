@@ -10,6 +10,7 @@ export default {
         }),
         body: Joi.object({
             title: Joi.string().required(),
+            category: Joi.string().required(),
             department: Joi.string().required(),
             skills: Joi.object().required(),
             location: Joi.string().required(),
@@ -28,13 +29,13 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { title, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description } = req.body;
+            const { title, category, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description } = req.body;
             const { id } = req.params;
             const job = await Job.findByPk(id);
             if (!job) {
                 return responseHandler.error(res, "Job not found");
             }
-            await job.update({ title, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, updated_by: req.user?.username });
+            await job.update({ title, category, department, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Job updated successfully", job);
         } catch (error) {
             responseHandler.error(res, error.message);

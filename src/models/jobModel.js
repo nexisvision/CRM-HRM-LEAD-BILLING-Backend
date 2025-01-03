@@ -14,6 +14,10 @@ const Job = sequelize.define('job', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     department: {
         type: DataTypes.STRING,
         allowNull: false
