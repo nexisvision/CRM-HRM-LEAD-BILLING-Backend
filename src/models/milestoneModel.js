@@ -11,35 +11,35 @@ const Milestone = sequelize.define("milestone", {
     },
     related_id: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     milestone_title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     milestone_status: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     milestone_cost: {
-        type: DataTypes.FLOAT,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: true
     },
     currency: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     milestone_summary: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     milestone_start_date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     add_cost_to_project_budget: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
         defaultValue: false
     },
     milestone_end_date: {

@@ -12,11 +12,11 @@ export default {
             project: Joi.string().required(),
             invoice: Joi.string().required(),
             paidOn: Joi.date().required(),
-            amount: Joi.number().required(),
+            amount: Joi.string().required(),
             currency: Joi.string().required(),
-            transactionId: Joi.string().required(),
+            transactionId: Joi.number().required(),
             paymentMethod: Joi.string().required(),
-            receipt: Joi.string().optional(),
+            receipt: Joi.string().optional().allow('', null),
             remark: Joi.string().allow('', null)
         })
     }),

@@ -12,15 +12,38 @@ export default {
             })
         }),
         body: Joi.object({
-            taskName: Joi.string().required(),
-            category: Joi.string().required(),
-            project: Joi.string().required(),
-            startDate: Joi.date().required(),
-            dueDate: Joi.date().required(),
-            assignTo: Joi.object().required(),
-            priority: Joi.string().required(),
-            status: Joi.string().required(),
-            description: Joi.string().optional().allow('', null)
+            taskTitle: Joi.string().required().messages({
+                'string.empty': 'Task title is required',
+                'string.base': 'Task title must be a string'
+            }),
+            taskStatus: Joi.string().required().messages({
+                'string.empty': 'Task status is required',
+                'string.base': 'Task status must be a string'
+            }),
+            taskPriority: Joi.string().required().messages({
+                'string.empty': 'Task priority is required',
+                'string.base': 'Task priority must be a string'
+            }),
+            // projectEmployee: Joi.string().required().messages({
+            //     'string.empty': 'Project employee is required',
+            //     'string.base': 'Project employee must be a string'
+            // }),
+            projectClient: Joi.string().optional().messages({
+                'string.empty': 'Project client is required',
+                'string.base': 'Project client must be a string'
+            }),
+            projectName: Joi.string().required().messages({
+                'string.empty': 'Project name is required',
+                'string.base': 'Project name must be a string'
+            }),
+            taskDescription: Joi.string().required().messages({
+                'string.empty': 'Task description is required',
+                'string.base': 'Task description must be a string'
+            }),
+            taskDate: Joi.date().required().messages({
+                'date.base': 'Task date must be a date'
+            }),
+
 
         })
     }),

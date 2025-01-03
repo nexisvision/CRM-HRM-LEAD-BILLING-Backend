@@ -13,7 +13,7 @@ export default {
         body: Joi.object({
             name: Joi.string().required(),
             category: Joi.string().required(),
-            price: Joi.string().required(),
+            price: Joi.number().required(),
             sku: Joi.string().optional().allow('', null),
             tax: Joi.string().optional().allow('', null),
             hsn_sac: Joi.string().optional().allow('', null),

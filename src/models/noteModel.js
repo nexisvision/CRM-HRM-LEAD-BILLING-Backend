@@ -17,15 +17,15 @@ const Note = sequelize.define("note", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    note_type: {
+    notetype: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    note_employees: {
+    employees: {
         type: DataTypes.JSON,
         allowNull: true
     },
-    note_description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false
     },

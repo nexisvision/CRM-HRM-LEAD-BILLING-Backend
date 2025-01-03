@@ -6,16 +6,16 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional()
         }),
         body: Joi.object({
-            item: Joi.string().required(),
-            price: Joi.number().required(),
-            currency: Joi.string().required(),
-            purchase_date: Joi.date().required(),
-            employee: Joi.string().required(),
-            project: Joi.string().required(),
-            bill: Joi.string().required(),
+            item: Joi.string().optional(),
+            price: Joi.number().optional(),
+            currency: Joi.string().optional(),
+            purchase_date: Joi.date().optional(),
+            employee: Joi.string().optional(),
+            project: Joi.string().optional(),
+            bill: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null)
         })
     }),

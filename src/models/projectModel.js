@@ -10,7 +10,7 @@ const Project = sequelize.define("Project", {
     },
     project_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true
     },
     startDate: {
@@ -23,7 +23,8 @@ const Project = sequelize.define("Project", {
     },
     project_members: {
         type: DataTypes.JSON,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null
     },
     project_category: {
         type: DataTypes.STRING,

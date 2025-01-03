@@ -12,9 +12,9 @@ export default {
         body: Joi.object({
             milestone_title: Joi.string().required(),
             milestone_status: Joi.string().required(),
-            milestone_cost: Joi.number().required(),
-            currency: Joi.string().required(),
-            add_cost_to_project_budget: Joi.boolean().required(),
+            milestone_cost: Joi.string().required(),
+            // currency: Joi.string().optional(),
+            add_cost_to_project_budget: Joi.string().required(),
             milestone_summary: Joi.string().required(),
             milestone_start_date: Joi.date().required(),
             milestone_end_date: Joi.date().required()
