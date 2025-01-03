@@ -42,6 +42,7 @@ import proposalRoutes from "./proposalRoutes.js";
 import ticketRoutes from "./ticketRoutes.js";
 import jobApplicationRoutes from "./jobapplicationRoutes.js";
 import jobRoutes from "./jobRoutes.js";
+import skillRoutes from "./skillRoutes.js";
 
 
 const router = express.Router();
@@ -90,5 +91,6 @@ router.use('/tickets', ticketRoutes);
 router.use('/job-applications', jobApplicationRoutes);
 router.use('/meetings', meetingRoutes);
 router.use('/jobs', jobRoutes);
+router.use('/skills', skillRoutes);
 
 export default router;
