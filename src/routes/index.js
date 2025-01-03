@@ -45,6 +45,7 @@ import jobRoutes from "./jobRoutes.js";
 import skillRoutes from "./skillRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
+import appreciationRoutes from "./appreciationRoutes.js";
 
 const router = express.Router();
 
@@ -95,5 +96,6 @@ router.use('/jobs', jobRoutes);
 router.use('/skills', skillRoutes);
 router.use('/interview-schedules', interviewScheduleRoutes);
 router.use('/messages', messageRoutes);
+router.use('/appreciations', appreciationRoutes);
 
 export default router;
