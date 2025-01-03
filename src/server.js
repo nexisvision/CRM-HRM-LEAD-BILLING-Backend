@@ -2,6 +2,7 @@ import express from "express";
 import { PORT } from "./config/config.js";
 import routes from "./routes/index.js";
 import sequelize from "./config/db.js";
+import fileUpload from 'express-fileupload';
 import responseHandler from "./utils/responseHandler.js";
 import cors from "cors";
 
@@ -20,6 +21,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/", routes);
+
+
+app.use(fileUpload());
 
 app.get("*", (req, res) => {
     responseHandler.error(res, "Route not found", 404);

@@ -38,6 +38,7 @@ import productsRoutes from "./productsRoutes.js";
 import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
 import estimateRoutes from "./estimateRoutes.js";
+import proposalRoutes from "./proposalRoutes.js";
 import ticketRoutes from "./ticketRoutes.js";
 import jobRoutes from "./jobRoutes.js";
 
@@ -83,6 +84,7 @@ router.use('/products', productsRoutes);
 router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
 router.use('/estimates', estimateRoutes);
+router.use('/proposals', proposalRoutes);
 router.use('/tickets', ticketRoutes);
 router.use('/meetings', meetingRoutes);
 router.use('/jobs', jobRoutes);
