@@ -39,6 +39,7 @@ import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
 import estimateRoutes from "./estimateRoutes.js";
 import ticketRoutes from "./ticketRoutes.js";
+import jobRoutes from "./jobRoutes.js";
 
 
 const router = express.Router();
@@ -62,7 +63,6 @@ router.use('/announcements', announcementRoutes);
 router.use('/events', eventRoutes);
 router.use('/projects', projectRoutes);
 router.use('/project-reports', projectReportRoutes);
-router.use('/meetings', meetingRoutes);
 router.use('/features', featureRoutes);
 router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
@@ -84,5 +84,7 @@ router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
 router.use('/estimates', estimateRoutes);
 router.use('/tickets', ticketRoutes);
+router.use('/meetings', meetingRoutes);
+router.use('/jobs', jobRoutes);
 
 export default router;
