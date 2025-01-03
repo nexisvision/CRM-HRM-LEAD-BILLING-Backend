@@ -38,6 +38,7 @@ import productsRoutes from "./productsRoutes.js";
 import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
 import estimateRoutes from "./estimateRoutes.js";
+import proposalRoutes from "./proposalRoutes.js";
 
 
 const router = express.Router();
@@ -82,5 +83,5 @@ router.use('/products', productsRoutes);
 router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
 router.use('/estimates', estimateRoutes);
-
+router.use('/proposals', proposalRoutes);
 export default router;
