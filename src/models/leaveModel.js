@@ -9,13 +9,17 @@ const Leave = sequelize.define('Leave', {
         unique: true,
         defaultValue: () => generateId()
     },
+    employeeId: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     startDate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false
     },
     endDate: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
+        type: DataTypes.DATE,
+        allowNull: false,
     },
     leaveType: {
         type: DataTypes.ENUM('sick', 'casual', 'annual', 'other'),
@@ -34,6 +38,11 @@ const Leave = sequelize.define('Leave', {
         allowNull: true,
         defaultValue: null
     },
+    isHalfDay: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -43,7 +52,7 @@ const Leave = sequelize.define('Leave', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
-    }
+    },
 });
 
 Leave.beforeCreate(async (leave) => {
@@ -57,6 +66,15 @@ Leave.beforeCreate(async (leave) => {
         }
     }
     leave.id = newId;
+});
+
+// Validation for half-day leave:
+Leave.beforeValidate(async (leave) => {
+    if (leave.isHalfDay) {
+        if (leave.startDate.getTime() !== leave.endDate.getTime()) {
+            throw new Error('Half-day leave must have the same start and end date');
+        }
+    }
 });
 
 export default Leave;

@@ -9,10 +9,6 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            startDate: Joi.date().optional(),
-            endDate: Joi.date().optional(),
-            leaveType: Joi.string().valid('sick', 'casual', 'annual', 'other').optional(),
-            reason: Joi.string().optional(),
             status: Joi.string().valid('pending', 'approved', 'rejected').default('pending'),
             remarks: Joi.string().optional()
         })
@@ -20,7 +16,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { startDate, endDate, leaveType, reason, status, remarks } = req.body;
+            const { status, remarks } = req.body;
 
             const leave = await Leave.findByPk(id);
             if (!leave) {
@@ -28,10 +24,6 @@ export default {
             }
 
             await leave.update({
-                startDate,
-                endDate,
-                leaveType,
-                reason,
                 status,
                 remarks,
                 updated_by: req.user?.username

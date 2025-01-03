@@ -38,6 +38,8 @@ import productsRoutes from "./productsRoutes.js";
 import pipelineRoutes from "./pipelineRoutes.js";
 import dealRoutes from "./dealRoutes.js";
 import estimateRoutes from "./estimateRoutes.js";
+
+
 const router = express.Router();
 
 
