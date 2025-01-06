@@ -24,7 +24,6 @@ export default {
             await employee.destroy();
             responseHandler.success(res, "Employee deleted successfully", employee);
         } catch (error) {
-            console.error('Error deleting employee:', error);
             responseHandler.error(res, error.message);
         }
     }

@@ -47,7 +47,7 @@ import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
 import appreciationRoutes from "./appreciationRoutes.js";
 import trainingRoutes from "./trainingRoutes.js";
-// import payrollRoutes from "./payrollRoutes.js";
+import employeeSalaryRoutes from "./employeeSalaryRoutes.js";
 
 const router = express.Router();
 
@@ -99,6 +99,6 @@ router.use('/interview-schedules', interviewScheduleRoutes);
 router.use('/messages', messageRoutes);
 router.use('/appreciations', appreciationRoutes);
 router.use('/trainings', trainingRoutes);
-// router.use('/payroll', payrollRoutes);
+router.use('/employeeSalary', employeeSalaryRoutes);
 
 export default router;
