@@ -24,7 +24,7 @@ const Project = sequelize.define("Project", {
     project_members: {
         type: DataTypes.JSON,
         allowNull: true,
-        defaultValue:null
+        defaultValue: null
     },
     project_category: {
         type: DataTypes.STRING,

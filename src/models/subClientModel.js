@@ -31,7 +31,6 @@ const SubClient = sequelize.define('SubClient', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null,
-        unique: true
     },
     firstName: {
         type: DataTypes.STRING,

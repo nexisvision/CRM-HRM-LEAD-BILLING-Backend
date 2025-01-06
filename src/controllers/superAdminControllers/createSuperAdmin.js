@@ -45,16 +45,6 @@ export default {
                 return responseHandler.unauthorized(res, "Invalid secret key");
             }
 
-            const existingSuperAdmin = await SuperAdmin.findOne({
-                where: {
-                    role_id: 'super-admin'
-                }
-            });
-
-            if (existingSuperAdmin) {
-                return responseHandler.error(res, "Super admin already exists");
-            }
-
             // Check if email already exists
             const existingUser = await SuperAdmin.findOne({ where: { email } });
             if (existingUser) {

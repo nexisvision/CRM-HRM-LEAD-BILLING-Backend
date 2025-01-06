@@ -46,9 +46,10 @@ import skillRoutes from "./skillRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
 import appreciationRoutes from "./appreciationRoutes.js";
+import trainingRoutes from "./trainingRoutes.js";
+// import payrollRoutes from "./payrollRoutes.js";
 
 const router = express.Router();
-
 
 router.use('/auth', authRoutes);
 router.use('/super-admin', superAdminRoutes);
@@ -97,5 +98,7 @@ router.use('/skills', skillRoutes);
 router.use('/interview-schedules', interviewScheduleRoutes);
 router.use('/messages', messageRoutes);
 router.use('/appreciations', appreciationRoutes);
+router.use('/trainings', trainingRoutes);
+// router.use('/payroll', payrollRoutes);
 
 export default router;
