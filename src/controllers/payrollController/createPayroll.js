@@ -1,0 +1,21 @@
+import Joi from "joi";
+import validator from "../../utils/validator.js";
+import responseHandler from "../../utils/responseHandler.js";
+import Payroll from "../../models/payrollModel.js";
+
+export default {
+    validator: validator({
+        body: Joi.object({
+            name: Joi.string().required()
+        })
+    }),
+    handler: async (req, res) => {
+        try {
+            const { name } = req.body;
+            const payroll = await Payroll.create({ name, created_by: req.user?.username });
+            responseHandler.success(res, "Payroll created successfully", payroll);
+        } catch (error) {
+            responseHandler.error(res, error.message);
+        }
+    }
+};

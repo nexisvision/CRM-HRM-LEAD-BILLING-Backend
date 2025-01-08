@@ -10,7 +10,6 @@ const validator = schemas => (req, res, next) => {
             stripUnknown: true
         });
         if (error) {
-            console.error("Validation error:", error.details);
             return responseHandler.badRequest(res, error.message);
         }
         req[type] = value;

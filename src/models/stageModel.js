@@ -1,0 +1,36 @@
+import { DataTypes } from "sequelize";
+import sequelize from "../config/db.js";
+import generateId from "../middlewares/generatorId.js";
+
+const Stage = sequelize.define("stage", {
+    id: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+        unique: true,
+        defaultValue: () => generateId()
+    },
+    stageType: {
+        type: DataTypes.ENUM('lead', 'deal'),
+        allowNull: false,
+    },
+    stageName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    pipeline: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
+})
+
+export default Stage;

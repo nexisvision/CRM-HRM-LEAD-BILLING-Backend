@@ -113,12 +113,12 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
-     updated_by: {
+    updated_by: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     }
-        
+
 });
 
 User.beforeCreate(async (user) => {

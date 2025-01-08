@@ -32,7 +32,7 @@ export default {
                 return responseHandler.error(res, "Ticket not found");
             }
             await ticket.update({ requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
-            return responseHandler.success(res, ticket, "Ticket updated successfully", ticket);
+            return responseHandler.success(res, "Ticket updated successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error);
         }
