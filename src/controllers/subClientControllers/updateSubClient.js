@@ -20,29 +20,32 @@ export default {
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
             gstIn: Joi.string().optional().allow('', null),
-            e_signature: Joi.string().optional().allow('', null),
+            e_signatures: Joi.object().optional().allow(null),
             city: Joi.string().optional().allow('', null),
             state: Joi.string().optional().allow('', null),
             country: Joi.string().optional().allow('', null),
             zipcode: Joi.string().optional().allow('', null),
             address: Joi.string().optional().allow('', null),
+            links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
             const { username, firstName, lastName, phone, profilePic, accountholder,
-                accountnumber, bankname, ifsc, banklocation, gstIn, e_signature,
-                city, state, country, zipcode, address } = req.body;
+                accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
+                city, state, country, zipcode, address, links } = req.body;
 
             const subClient = await SubClient.findByPk(id);
             if (!subClient) {
                 return responseHandler.notFound(res, "subClient not found");
             }
 
-            await subClient.update({ username, firstName, lastName, phone, profilePic, accountholder,
-                accountnumber, bankname, ifsc, banklocation, gstIn, e_signature,
-                city, state, country, zipcode, address, updated_by: req.user?.username });
+            await subClient.update({
+                username, firstName, lastName, phone, profilePic, accountholder,
+                accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
+                city, state, country, zipcode, address, links, updated_by: req.user?.username
+            });
             responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
             console.log(error);

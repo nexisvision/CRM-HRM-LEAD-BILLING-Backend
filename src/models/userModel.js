@@ -94,7 +94,7 @@ const User = sequelize.define('User', {
         defaultValue: null
     },
     ifsc: {
-        type: DataTypes.STRING,  // Changed from NUMBER to STRING since IFSC codes are alphanumeric
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
@@ -105,6 +105,16 @@ const User = sequelize.define('User', {
     },
     cv_path: {
         type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    links: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
+    e_signatures: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
     },

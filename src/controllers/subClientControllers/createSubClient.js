@@ -20,29 +20,11 @@ export default {
                     'string.min': 'Password must be at least 8 characters long',
                     'string.empty': 'Password is required'
                 }),
-            firstName: Joi.string().optional().allow('', null),
-            lastName: Joi.string().optional().allow('', null),
-            phone: Joi.string().optional().allow('', null),
-            profilePic: Joi.string().optional().allow('', null),
-            accountholder: Joi.string().optional().allow('', null),
-            accountnumber: Joi.number().optional().allow('', null),
-            bankname: Joi.string().optional().allow('', null),
-            ifsc: Joi.string().optional().allow('', null),
-            banklocation: Joi.string().optional().allow('', null),
-            gstIn: Joi.string().optional().allow('', null),
-            e_signature: Joi.string().optional().allow('', null),
-            city: Joi.string().optional().allow('', null),
-            state: Joi.string().optional().allow('', null),
-            country: Joi.string().optional().allow('', null),
-            zipcode: Joi.string().optional().allow('', null),
-            address: Joi.string().optional().allow('', null),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { username, email, password, firstName, lastName,
-                phone, profilePic, accountholder, accountnumber, bankname, ifsc, banklocation, gstIn, e_signature,
-                city, state, country, zipcode, address } = req.body;
+            const { username, email, password } = req.body;
 
             const existingUsername = await SubClient.findOne({
                 where: { username }
@@ -72,22 +54,6 @@ export default {
                 password: hashedPassword,
                 email,
                 role_id: role.id,
-                firstName,
-                lastName,
-                phone,
-                city,
-                state,
-                country,
-                zipcode,
-                address,
-                profilePic,
-                accountholder,
-                accountnumber,
-                bankname,
-                ifsc,
-                banklocation,
-                gstIn,
-                e_signature,
                 created_by: req.user?.username,
             });
 

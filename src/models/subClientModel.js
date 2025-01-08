@@ -77,8 +77,8 @@ const SubClient = sequelize.define('SubClient', {
         allowNull: true,
         defaultValue: null
     },
-    e_signature: {
-        type: DataTypes.STRING,
+    e_signatures: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
     },
@@ -104,6 +104,11 @@ const SubClient = sequelize.define('SubClient', {
     },
     address: {
         type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    links: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
     },

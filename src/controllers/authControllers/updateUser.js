@@ -12,17 +12,29 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            username: Joi.string().allow('', null),
             firstName: Joi.string().allow('', null),
             lastName: Joi.string().allow('', null),
-            email: Joi.string().email().allow('', null),
+            username: Joi.string().allow('', null),
             phone: Joi.string().allow('', null),
+            address: Joi.string().allow('', null),
+            joiningDate: Joi.date().allow('', null),
+            leaveDate: Joi.date().allow(null),
+            department: Joi.string().allow('', null),
+            designation: Joi.string().allow('', null),
+            salary: Joi.number().allow('', null),
+            accountholder: Joi.string().allow('', null),
+            accountnumber: Joi.number().allow('', null),
+            bankname: Joi.string().allow('', null),
+            ifsc: Joi.number().allow('', null),
+            banklocation: Joi.string().allow('', null),
+            e_signatures: Joi.object().optional().allow(null),
+            links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, email, phone, username } = req.body;
+            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links } = req.body;
 
             const user = await User.findByPk(id);
             const client = await Client.findByPk(id);
@@ -35,7 +47,7 @@ export default {
                 return responseHandler.notFound(res, "User not found");
             }
 
-            await foundUser.update({ firstName, lastName, email, phone, username });
+            await foundUser.update({ firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, updated_by: req.user?.username });
 
             responseHandler.success(res, "User updated successfully", foundUser);
         } catch (error) {
