@@ -10,4 +10,5 @@ router.post('/:id', createTask.validator, createTask.handler);
 router.get('/:id', getAllTask.validator, getAllTask.handler);
 router.put('/:id', updateTask.validator, updateTask.handler);
 router.delete('/:id', deleteTask.validator, deleteTask.handler);
+
 export default router;

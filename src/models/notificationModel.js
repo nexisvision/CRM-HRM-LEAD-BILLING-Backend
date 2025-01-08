@@ -9,6 +9,10 @@ const Notification = sequelize.define('Notification', {
         unique: true,
         defaultValue: () => generateId()
     },
+    related_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     users: {
         type: DataTypes.JSON,
         allowNull: false
@@ -24,6 +28,15 @@ const Notification = sequelize.define('Notification', {
     description: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    from: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    notification_type: {
+        type: DataTypes.ENUM('normal', 'reminder'),
+        allowNull: false,
+        defaultValue: 'normal'
     },
     isRead: {
         type: DataTypes.BOOLEAN,

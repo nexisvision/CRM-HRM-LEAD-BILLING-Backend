@@ -51,12 +51,43 @@ export default {
                 created_by: req.user?.username
             });
 
+            function getTwoDaysAgoDate(date) {
+                const twoDaysAgo = new Date(date);
+                twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+                return twoDaysAgo;
+            }
+
+            // Example usage:
+            const today = new Date();
+            const twoDaysAgo = getTwoDaysAgoDate(dueDate);
+
+            const notificationType = twoDaysAgo <= today;
+
+            if (notificationType) {
+                try {
+                    await Notification.create({
+                        related_id: id,
+                        users: assignTo,
+                        title: "Task Reminder", // More specific title
+                        notification_type: "reminder",
+                        from: req.user?.id,
+                        message: `${req.user?.username} has assigned you a task due in 2 days. Don't forget to complete it: Task Name: ${taskName}, Due Date: ${dueDate}`,
+                        description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
+                        created_by: req.user?.username,
+                    });
+                } catch (error) {
+                    console.error("Error creating reminder notification:", error);
+                }
+            }
+
 
             await Notification.create({
+                related_id: id,
                 users: assignTo,
-                title: `New Task`,
+                title: "New Task",
+                from: req.user?.id,
                 message: `${req.user?.username} has assigned you a new task`,
-                description: `Task Name: ${taskName}`,
+                description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
                 created_by: req.user?.username
             })
 
