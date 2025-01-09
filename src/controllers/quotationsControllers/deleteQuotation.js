@@ -1,7 +1,7 @@
 import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-import Estimate from "../../models/estimateModel.js";
+import Quotations from "../../models/quotationModel.js";
 
 export default {
     validator: validator({
@@ -13,15 +13,15 @@ export default {
         try {
             const { id } = req.params;
 
-            const estimate = await Estimate.findByPk(id);
+            const quotation = await Quotations.findByPk(id);
 
-            if (!estimate) {
-                return responseHandler.notFound(res, "Estimate not found");
+            if (!quotation) {
+                return responseHandler.notFound(res, "Quotation not found");
             }
 
-            await estimate.destroy();
+            await quotation.destroy();
 
-            responseHandler.success(res, "Estimate deleted successfully", estimate);
+            responseHandler.success(res, "Quotation deleted successfully", quotation);
         } catch (error) {
             console.log(error);
             responseHandler.error(res, error.message);

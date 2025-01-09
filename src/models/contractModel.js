@@ -11,7 +11,6 @@ export const Contract = sequelize.define("Contract", {
     },
     contract_number: {
         type: DataTypes.STRING,
-         
         unique: true
     },
     subject: {
@@ -24,10 +23,6 @@ export const Contract = sequelize.define("Contract", {
         allowNull: false,
     },
     project: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    client: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -106,7 +101,7 @@ Contract.beforeCreate(async (contract) => {
         }
     }
     contract.id = newId;
-    
+
     const lastContract = await Contract.findOne({
         order: [['contract_number', 'DESC']]
     });

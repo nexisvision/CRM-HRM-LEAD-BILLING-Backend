@@ -1,6 +1,6 @@
 import Joi from "joi";
 import validator from "../../utils/validator.js";
-import Estimate from "../../models/estimateModel.js";
+import Quotations from "../../models/quotationModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 
@@ -13,8 +13,8 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const estimates = await Estimate.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, "Estimates fetched successfully", estimates);
+            const quotations = await Quotations.findAll({ where: { related_id: id } });
+            return responseHandler.success(res, "Quotations fetched successfully", quotations);
         } catch (error) {
             return responseHandler.error(res, error);
         }

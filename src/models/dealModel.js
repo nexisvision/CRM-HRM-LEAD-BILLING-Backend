@@ -2,7 +2,6 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-
 const Deal = sequelize.define("Deal", {
     id: {
         type: DataTypes.STRING,
