@@ -33,14 +33,14 @@ const Estimate = sequelize.define('estimate', {
     },
     client: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false                                                            
     },
     calculatedTax: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: true,   
         defaultValue: null
     },
-    items: {
+    items: {    
         type: DataTypes.JSON,
         allowNull: false
     },
