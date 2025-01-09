@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "d752ffe7-1745-4547-b810-9aab1043b725",
+		"_postman_id": "0d427c5f-926d-4da3-bb6a-3f02c26fbdfa",
 		"name": "CRM Backend",
 		"description": "Complete API collection for CRM Backend System",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "37446654"
+		"_exporter_id": "37446654",
+		"_collection_link": "https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37446654-0d427c5f-926d-4da3-bb6a-3f02c26fbdfa?action=share&source=collection_link&creator=37446654"
 	},
 	"item": [
 		{
@@ -163,13 +164,42 @@
 					]
 				},
 				{
+					"name": "permissions",
+					"item": [
+						{
+							"name": "Create Permissions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJBdHV5eGpQSmdyR21GQ21VaGpXTDlaYyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTM3MDEyMSwiZXhwIjoxNzM1NDU2NTIxfQ.eD6xWxqYxsEuIn2hfnGuRBXK2gp7r5yw-iszqE0ruLM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"permissions\": {\r\n    \"staff\": {\r\n      \"users\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"roles\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"sub_clients\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"contacts\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"meetings\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"permissions\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"customer_support\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      }\r\n    },\r\n    \"crm\": {\r\n      \"lead\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"deal\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"task\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"task_calender\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"sales\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"customer\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"invoice\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"billing\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"payment\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"revenue\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"estimate\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"expense\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"credit_note\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"project\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"project_report\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"contract\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"customer_support\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      }\r\n    },\r\n    \"hrm\": {\r\n      \"employee\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"meetings\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"attendance\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"leaves\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"departments\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"payroll\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"performance\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"designation\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"announcement\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"job\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"events\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      },\r\n      \"customer_support\": {\r\n        \"create\": false,\r\n        \"view\": false,\r\n        \"update\": false,\r\n        \"delete\": false\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/permissions"
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Signup (Super-Admin)",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"username\": \"superadmin\",\n    \"email\": \"superadmin@nexisvision.com\",\n    \"password\": \"SuperAdmin@123\",\n    \"secret_key\": \"jufhuisahfuihuihuyg6trf7676788787ggbguyguNVNVNV\"\n}\n\n// Test Cases with Different Valid Formats\n// {\n//     \"username\": \"john_doe_admin\",\n//     \"email\": \"john.doe@nexisvision.com\",\n//     \"password\": \"JohnDoe@2024\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// {\n//     \"username\": \"admin_alice\",\n//     \"email\": \"alice.admin@nexisvision.tech\",\n//     \"password\": \"AlicePass#123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// Invalid Test Cases\n\n// 1. Username too short\n// {\n//     \"username\": \"ad\",  // Less than 3 characters\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 2. Username too long\n// {\n//     \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 3. Invalid Email Format\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"invalid.email@com\",\n//     \"password\": \"Admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 4. Weak Password (missing uppercase)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"admin@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 5. Weak Password (missing lowercase)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"ADMIN@123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 6. Weak Password (missing number)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"AdminPass@\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 7. Weak Password (missing special character)\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"AdminPass123\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 8. Password too short\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Ad@1\",\n//     \"secret_key\": \"your_secret_key\"\n// }\n\n// 9. Missing Secret Key\n// {\n//     \"username\": \"admin_test\",\n//     \"email\": \"admin@test.com\",\n//     \"password\": \"Admin@123\"\n// }",
+							"raw": "// Valid Test Case\r\n{\r\n    \"username\": \"superadmin\",\r\n    \"email\": \"superadmin@nexisvision.com\",\r\n    \"password\": \"SuperAdmin@123\",\r\n    \"secret_key\": \"jufhuisahfuihuihuyg6trf7676788787ggbguyguNVNVNV\"\r\n}\r\n// Test Cases with Different Valid Formats\r\n// {\r\n//     \"username\": \"john_doe_admin\",\r\n//     \"email\": \"john.doe@nexisvision.com\",\r\n//     \"password\": \"JohnDoe@2024\",\r\n//     \"secret_key\": \"jufhuisahfuihuihuyg6trf7676788787ggbguyguNVNVNV\"\r\n// }\r\n// {\r\n//     \"username\": \"admin_alice\",\r\n//     \"email\": \"alice.admin@nexisvision.tech\",\r\n//     \"password\": \"AlicePass#123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// Invalid Test Cases\r\n// 1. Username too short\r\n// {\r\n//     \"username\": \"ad\",  // Less than 3 characters\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"Admin@123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 2. Username too long\r\n// {\r\n//     \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"Admin@123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 3. Invalid Email Format\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"invalid.email@com\",\r\n//     \"password\": \"Admin@123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 4. Weak Password (missing uppercase)\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"admin@123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 5. Weak Password (missing lowercase)\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"ADMIN@123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 6. Weak Password (missing number)\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"AdminPass@\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 7. Weak Password (missing special character)\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"AdminPass123\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 8. Password too short\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"Ad@1\",\r\n//     \"secret_key\": \"your_secret_key\"\r\n// }\r\n// 9. Missing Secret Key\r\n// {\r\n//     \"username\": \"admin_test\",\r\n//     \"email\": \"admin@test.com\",\r\n//     \"password\": \"Admin@123\"\r\n// }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,7 +229,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Super Admin's (Super-Admin)",
+					"name": "Get Super Admin(Super-Admin)",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -207,7 +237,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJSZ3FhVVk5bkFTVHVadkQ3d1IybDlEZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNjQ0MywiZXhwIjoxNzM1MjEyODQzfQ.xeXAZ8kFPs6F-wcrfCgItstu7OKZRFGQHh0X0gIPZYc"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiI3QkNPN21hdU1aU01vazZoMk9CckE0cSIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMDYxMiwiZXhwIjoxNzM1OTg3MDEyfQ.SE2sZUcOQNuQXXIwSsaFvzapPay0PNfMp5fpPC5hKQc"
 							}
 						},
 						"method": "GET",
@@ -222,48 +252,6 @@
 							}
 						},
 						"url": "{{base}}/super-admin"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Super Admin By ID (Super-Admin)",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}/super-admin/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"super-admin",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
 					},
 					"response": []
 				},
@@ -312,7 +300,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiI3QkNPN21hdU1aU01vazZoMk9CckE0cSIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMDYxMiwiZXhwIjoxNzM1OTg3MDEyfQ.SE2sZUcOQNuQXXIwSsaFvzapPay0PNfMp5fpPC5hKQc"
 							}
 						},
 						"method": "DELETE",
@@ -326,22 +314,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/super-admin/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"super-admin",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/super-admin/7BCO7mauMZSMok6h2OBrA4q"
 					},
 					"response": []
 				}
@@ -356,14 +329,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJrYmpscFEwcktsUXRlZzk4UDRqeDhNWCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTI4MDUxNiwiZXhwIjoxNzM1MzY2OTE2fQ.M8whJwEYKw49AF-eWm-2BEuAJFZfzGYjrdCeJvmn-uY"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"MyStrongP@ssw0rd!\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -381,7 +354,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"raw": "\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -401,7 +374,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJaV2dpZVBWNksxaEdCRmk5ck90NWRtZCIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMTI3NSwiZXhwIjoxNzM1OTg3Njc1fQ.Y-spzhiCv9We1Pz5sVsoFO6JsZK21hK_jEE4DSY6yJY"
 							}
 						},
 						"method": "GET",
@@ -428,7 +401,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJaV2dpZVBWNksxaEdCRmk5ck90NWRtZCIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMTI3NSwiZXhwIjoxNzM1OTg3Njc1fQ.Y-spzhiCv9We1Pz5sVsoFO6JsZK21hK_jEE4DSY6yJY"
 							}
 						},
 						"method": "GET",
@@ -442,22 +415,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/clients/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
 					},
 					"response": []
 				},
@@ -467,36 +425,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJaV2dpZVBWNksxaEdCRmk5ck90NWRtZCIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMTI3NSwiZXhwIjoxNzM1OTg3Njc1fQ.Y-spzhiCv9We1Pz5sVsoFO6JsZK21hK_jEE4DSY6yJY"
 							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
+							"raw": "{\n  \"username\": \"johndoe updates\",\n  \"email\": \"john.doe@example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/clients/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
 					},
 					"response": []
 				},
@@ -506,7 +449,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJqcVdJemtoRGZkRWtsMUpjOXR4SENiZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTExOTYwMywiZXhwIjoxNzM1MjA2MDAzfQ.lIXgg1x0VPn80cDuxTbqMPnrD6JjX6XDtrAJmH7w-fU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJaV2dpZVBWNksxaEdCRmk5ck90NWRtZCIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMTI3NSwiZXhwIjoxNzM1OTg3Njc1fQ.Y-spzhiCv9We1Pz5sVsoFO6JsZK21hK_jEE4DSY6yJY"
 							}
 						},
 						"method": "DELETE",
@@ -520,22 +463,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/clients/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
 					},
 					"response": []
 				}
@@ -550,14 +478,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJSWkxzYk1JdXh1OUYyVG9uRHZXU1hqViIsInJvbGUiOiJ0WHYwcERId0RTb1JERDZtalB2a0NXSSIsImlhdCI6MTczNjQxOTA3MiwiZXhwIjoxNzM2NTA1NDcyfQ.6BQg5DFg_oBkMW8D0UfX2_yoPGgJc40ABqJx3i-hotg"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"raw": "// {\n//   \"username\": \"johndoenabhidu\",\n//   \"email\": \"john.doenobhidu@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu1\",\n//   \"email\": \"john.doenobhidu1@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu2\",\n//   \"email\": \"john.doenobhidu2@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu3\",\n//   \"email\": \"john.doenobhidu3@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu4\",\n//   \"email\": \"john.doenobhidu4@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu6\",\n//   \"email\": \"john.doenobhidu6@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu7\",\n//   \"email\": \"john.doenobhidu7@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n\n// {\n//   \"username\": \"johndoenabhidu8\",\n//   \"email\": \"john.doenobhidu8@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -575,7 +503,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"raw": "\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -595,7 +523,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "GET",
@@ -622,7 +550,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "GET",
@@ -636,22 +564,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/sub-clients/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"sub-clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/sub-clients/KgzB6DXo5Y7egUNn9RpQEl4"
 					},
 					"response": []
 				},
@@ -661,36 +574,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
+							"raw": "{\n  \"username\": \"johndoe UP\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"MyStrongP@ssw0rd!\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/sub-clients/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"sub-clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/sub-clients/KgzB6DXo5Y7egUNn9RpQEl4"
 					},
 					"response": []
 				},
@@ -700,7 +598,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIxSFBKczZFWmhUekgzSFlFcDhRbEpqdyIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjE2MDAsImV4cCI6MTczNTIwODAwMH0.ykxV8szANtC6TRVfBV5TR3g4TkCmWRJhWO1jMaMnBLM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "DELETE",
@@ -714,19 +612,109 @@
 								}
 							}
 						},
+						"url": "{{base}}/sub-clients/KgzB6DXo5Y7egUNn9RpQEl4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"role_name\": \"HR\",\n  \"permissions\": {\n    \"staff\": {\n      \"customer_support\": {\n        \"create\": true,\n        \"view\": true,\n        \"update\": true,\n        \"delete\": true\n      }\n    }\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"permissions\": [\"manage_team\", \"approve_leaves\", \"view_reports\", \"edit_team_info\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{base}}/sub-clients/:id",
+							"raw": "{{base}}/roles/:id",
 							"host": [
 								"{{base}}"
 							],
 							"path": [
-								"sub-clients",
+								"roles",
 								":id"
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": ""
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/roles/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
 								}
 							]
 						}
@@ -743,13 +731,15 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJSWkxzYk1JdXh1OUYyVG9uRHZXU1hqViIsInJvbGUiOiJ0WHYwcERId0RTb1JERDZtalB2a0NXSSIsImlhdCI6MTczNjQxODAyNSwiZXhwIjoxNzM2NTA0NDI1fQ.8Lg50PWHaUUA1-gUkXg03Vf7S8w-7eNHOjZ77Ej_vvU"
+							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"raw": "// {\n//     \"username\": \"alice_smith\",\n//     \"email\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith2\",\n//     \"email\": \"alice.smith2@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith3\",\n//     \"email\": \"alice.smith3@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith4\",\n//     \"email\": \"alice.smith4@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith5\",\n//     \"email\": \"alice.smith5@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith6\",\n//     \"email\": \"alice.smith6@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -940,14 +930,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n// {\n//     \"username\": \"testuser123\",\n//     \"email\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n/*\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"raw": "// Valid Test Case\n// {\n//     \"username\": \"testuser123\",\n//     \"email\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n// {\n//     \"username\": \"alice_smith\",\n//     \"email\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\"\n// }\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -965,7 +955,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Login Test Case\n// {\n//     \"login\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n/*\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"raw": "// Valid Login Test Case\n// {\n//     \"login\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n\n\n// {\n//     \"login\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\"\n// }\n\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -982,7 +972,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
 							}
 						},
 						"method": "GET",
@@ -1387,14 +1377,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhcjF1dFFUZkQ1UkR2MjF2Z2hMOUt3cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUyOTEyODIsImV4cCI6MTczNTM3NzY4Mn0.8RtYLkWxy95-NvGycuy_WOG-tNaVvBFlyQVpQbdZlGo"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Lead Creation Test Case\n{\n    \"leadTitle\": \"Website Development Project\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"telephone\": \"+1234567890\",\n    \"email\": \"john.smith@example.com\",\n    \"leadValue\": 50000,\n    \"assigned\": \"agent_id_123\",\n    \"status\": \"New\",\n    \"details\": \"Interested in full website redesign\",\n    \"notes\": \"Initial meeting scheduled for next week\",\n    \"source\": \"Website Contact Form\",\n    \"category\": \"Web Development\",\n    \"tags\": \"web-design\",\n    \"lastContacted\": \"2024-01-15T10:30:00Z\",\n    \"totalBudget\":\"\",\n    \"targetDate\": \"2024-06-30T00:00:00Z\",\n    \"contentType\": \"B2B\",\n    \"brandName\": \"Tech Solutions\",\n    \"companyName\": \"Tech Solutions Inc\",\n    \"street\": \"123 Business Avenue\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zipCode\": \"10001\",\n    \"country\": \"USA\",\n    \"website\": \"https://www.techsolutions.com\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n// Minimal Required Fields\n{\n    \"leadTitle\": \"Basic Lead\",\n    \"firstName\": \"Alice\",\n    \"lastName\": \"Brown\",\n    \"status\": \"New\"\n}\n\n// B2C Lead Example\n{\n    \"leadTitle\": \"Personal Website Project\",\n    \"firstName\": \"Robert\",\n    \"lastName\": \"Johnson\",\n    \"telephone\": \"+1987654321\",\n    \"email\": \"robert@email.com\",\n    \"leadValue\": 5000,\n    \"status\": \"In Progress\",\n    \"source\": \"Referral\",\n    \"category\": \"Personal Website\",\n    \"tags\": [\"personal\", \"portfolio\"]\n}\n\n// Corporate Lead Example\n{\n    \"leadTitle\": \"Enterprise E-commerce Solution\",\n    \"firstName\": \"Sarah\",\n    \"lastName\": \"Wilson\",\n    \"telephone\": \"+1122334455\",\n    \"email\": \"sarah.w@bigcorp.com\",\n    \"leadValue\": 200000,\n    \"assigned\": \"senior_agent_456\",\n    \"status\": \"Qualified\",\n    \"details\": \"Looking for complete e-commerce solution\",\n    \"companyName\": \"BigCorp Retail\",\n    \"website\": \"https://www.bigcorpretail.com\",\n    \"tags\": [\"enterprise\", \"e-commerce\", \"high-value\"]\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Required Fields\n{\n    \"telephone\": \"+1234567890\",\n    \"email\": \"test@example.com\"\n}\n\n// 2. Invalid Email Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"email\": \"invalid.email\"\n}\n\n// 3. Invalid Website URL\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"website\": \"not-a-valid-url\"\n}\n\n// 4. Invalid Date Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"lastContacted\": \"invalid-date\",\n    \"targetDate\": \"2024/13/45\"\n}\n\n// 5. Invalid Number Values\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"leadValue\": \"not-a-number\",\n    \"totalBudget\": \"invalid\"\n}\n\n// 6. Invalid Tags Format\n{\n    \"leadTitle\": \"Test Lead\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"status\": \"New\",\n    \"tags\": \"should-be-array\"\n}\n\n// 7. Empty Required Fields\n{\n    \"leadTitle\": \"\",\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"status\": \"\"\n}\n*/",
+							"raw": "{\n  \"leadTitle\": \"New Project Inquiry\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"telephone\": \"+1234567890\", \n  \"email\": \"john.doe@example.com\",\n  \"assigned\": \"Sales Team\",\n  \"lead_owner\": \"John Smith\",\n  \"category\": \"Marketing\", \n  \"status\": \"New\", \n  \"source\": \"Website\",\n  \"company_name\": \"Acme Corp\",\n  \"website\": \"www.acmecorp.com\",\n  \"country\": \"USA\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zipCode\": \"10001\",\n  \"address\": \"123 Main St, New York, NY 10001\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1411,7 +1401,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "GET",
@@ -1426,27 +1416,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{base}}/leads/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"leads",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/leads/SJF6IB20dFfh47fQl15OZf3"
 					},
 					"response": []
 				},
@@ -1456,36 +1431,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Lead Update Test Cases\r\n\r\n// 1. Full Update\r\n{\r\n    \"leadTitle\": \"Updated Website Development Project\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\",\r\n    \"telephone\": \"+1234567890\",\r\n    \"email\": \"john.updated@example.com\",\r\n    \"leadValue\": 75000,\r\n    \"assigned\": \"new_agent_id_456\",\r\n    \"status\": \"In Progress\",\r\n    \"details\": \"Updated project scope - now includes mobile app\",\r\n    \"notes\": \"Budget increased after follow-up meeting\",\r\n    \"source\": \"Direct Referral\",\r\n    \"category\": \"Web & Mobile Development\",\r\n    \"tags\": [\"high-budget\", \"urgent\", \"web-design\", \"mobile-app\"],\r\n    \"lastContacted\": \"2024-01-20T14:30:00Z\",\r\n    \"totalBudget\": 100000,\r\n    \"targetDate\": \"2024-07-30T00:00:00Z\",\r\n    \"contentType\": \"B2B\",\r\n    \"brandName\": \"Tech Solutions Pro\",\r\n    \"companyName\": \"Tech Solutions Inc\",\r\n    \"street\": \"456 Corporate Plaza\",\r\n    \"city\": \"New York\",\r\n    \"state\": \"NY\",\r\n    \"zipCode\": \"10002\",\r\n    \"country\": \"USA\",\r\n    \"website\": \"https://www.techsolutionspro.com\"\r\n}\r\n\r\n// Partial Update Examples\r\n/*\r\n// Update Status and Notes\r\n{\r\n    \"status\": \"Qualified\",\r\n    \"notes\": \"Client confirmed budget increase\",\r\n    \"lastContacted\": \"2024-01-20T14:30:00Z\"\r\n}\r\n\r\n// Update Contact Information\r\n{\r\n    \"telephone\": \"+1987654321\",\r\n    \"email\": \"john.smith.new@example.com\",\r\n    \"street\": \"789 Business Park\",\r\n    \"city\": \"Los Angeles\",\r\n    \"state\": \"CA\",\r\n    \"zipCode\": \"90001\"\r\n}\r\n\r\n// Update Lead Value and Budget\r\n{\r\n    \"leadValue\": 85000,\r\n    \"totalBudget\": 120000,\r\n    \"targetDate\": \"2024-08-15T00:00:00Z\"\r\n}\r\n\r\n// Update Tags and Category\r\n{\r\n    \"tags\": [\"high-priority\", \"enterprise\", \"urgent\"],\r\n    \"category\": \"Enterprise Solution\"\r\n}\r\n\r\n// Update Assignment and Status\r\n{\r\n    \"assigned\": \"senior_agent_789\",\r\n    \"status\": \"Negotiation\",\r\n    \"notes\": \"Transferred to senior sales agent\"\r\n}\r\n*/\r\n\r\n// Invalid Update Test Cases\r\n/*\r\n// 1. Invalid Email Format\r\n{\r\n    \"email\": \"not.valid.email\"\r\n}\r\n\r\n// 2. Invalid Date Format\r\n{\r\n    \"lastContacted\": \"invalid-date\",\r\n    \"targetDate\": \"2024/13/45\"\r\n}\r\n\r\n// 3. Invalid Number Values\r\n{\r\n    \"leadValue\": \"not-a-number\",\r\n    \"totalBudget\": \"invalid\"\r\n}\r\n\r\n// 4. Invalid Website URL\r\n{\r\n    \"website\": \"not-a-valid-url\"\r\n}\r\n\r\n// 5. Invalid Tags Format\r\n{\r\n    \"tags\": \"should-be-array\"\r\n}\r\n\r\n// 6. Empty String Values\r\n{\r\n    \"leadTitle\": \"\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}\r\n\r\n// 7. Invalid Status\r\n{\r\n    \"status\": \"InvalidStatusValue\"\r\n}\r\n\r\n// 8. Mixed Valid and Invalid Updates\r\n{\r\n    \"leadTitle\": \"Valid Title\",\r\n    \"email\": \"invalid.email\",\r\n    \"leadValue\": \"not-a-number\"\r\n}\r\n*/",
+							"raw": "{\r\n  \"leadTitle\": \"New Project Inquiry updated\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"telephone\": \"+1234567890\", \r\n  \"email\": \"john.doe@example.com\",\r\n  \"assigned\": \"Sales Team\",\r\n  \"lead_owner\": \"John Smith\",\r\n  \"category\": \"Marketing\", \r\n  \"status\": \"New\", \r\n  \"source\": \"Website\",\r\n  \"company_name\": \"Acme Corp\",\r\n  \"website\": \"www.acmecorp.com\",\r\n  \"country\": \"USA\",\r\n  \"city\": \"New York\",\r\n  \"state\": \"NY\",\r\n  \"zipCode\": \"10001\",\r\n  \"address\": \"123 Main St, New York, NY 10001\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/leads/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"leads",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/leads/SJF6IB20dFfh47fQl15OZf3"
 					},
 					"response": []
 				},
@@ -1495,27 +1455,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiIyZ0g0UnFjUGloaExJVW5TaHR5bHBiZiIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxOTY3MTYsImV4cCI6MTczNTI4MzExNn0.PD0UZMPNvQJWU7pjWXA4bu0WYWYFcn60RaTCrWZqMV8"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{base}}/leads/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"leads",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
-						}
+							}
+						},
+						"url": "{{base}}/leads/SJF6IB20dFfh47fQl15OZf3"
 					},
 					"response": []
 				}
@@ -1530,14 +1484,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Cases\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\",\n    \"comment\": \"Regular working day\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n// 1. Same day different timing\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"08:30\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"17:30\",\n    \"comment\": \"Early shift\"\n}\n\n// 2. Overnight shift\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"22:00\",\n    \"endDate\": \"2024-03-20\",\n    \"endTime\": \"06:00\",\n    \"comment\": \"Night shift\"\n}\n\n// 3. Without optional comment\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 4. Half day\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"13:00\",\n    \"comment\": \"Half day - morning session\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Invalid Date Format\n{\n    \"startDate\": \"19-03-2024\",  // Wrong format\n    \"startTime\": \"09:00\",\n    \"endDate\": \"19-03-2024\",\n    \"endTime\": \"18:00\"\n}\n\n// 2. Invalid Time Format\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"9:00 AM\",  // Wrong format\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"6:00 PM\"\n}\n\n// 3. End Date Before Start Date\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-18\",  // Previous day\n    \"endTime\": \"18:00\"\n}\n\n// 4. End Time Before Start Time (Same Day)\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"14:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"13:00\"  // Before start time\n}\n\n// 5. Missing Required Fields\n{\n    \"startDate\": \"2024-03-19\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n    // Missing startTime\n}\n\n// 6. Invalid Time Values\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"25:00\",  // Invalid hour\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 7. Future Dates\n{\n    \"startDate\": \"2024-12-19\",  // Future date\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-12-19\",\n    \"endTime\": \"18:00\"\n}\n\n// 8. Non-String Comment\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"18:00\",\n    \"comment\": 12345  // Should be string\n}\n\n// 9. Weekend Attendance (if not allowed)\n{\n    \"startDate\": \"2024-03-23\",  // Saturday\n    \"startTime\": \"09:00\",\n    \"endDate\": \"2024-03-23\",\n    \"endTime\": \"18:00\"\n}\n\n// 10. Invalid Time Range (if you have specific working hours)\n{\n    \"startDate\": \"2024-03-19\",\n    \"startTime\": \"03:00\",  // Too early\n    \"endDate\": \"2024-03-19\",\n    \"endTime\": \"04:00\"\n}\n*/",
+							"raw": "{\n  \"department\": \"Engineering\",\n  \"employee\": [\"EMP123\", \"EMP456\"],\n  \"startDate\": \"2025-01-10\",\n  \"startTime\": \"09:00:00\",\n  \"endDate\": \"2025-01-10\",\n  \"endTime\": \"17:00:00\",\n  \"late\": \"\",  // Not late\n  \"halfDay\": \"No\",  // Full day\n  \"working_from\": \"Office\",\n  \"comment\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1554,7 +1508,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
 							}
 						},
 						"method": "GET",
@@ -1569,27 +1523,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{base}}/attendance/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"attendance",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
 					},
 					"response": []
 				},
@@ -1599,7 +1538,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
 							}
 						},
 						"method": "PUT",
@@ -1613,22 +1552,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/attendance/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"attendance",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
 					},
 					"response": []
 				},
@@ -1638,27 +1562,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJzTGRKUnlkRU8wRW1yWHNTWGVIZXhlYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTczNTE0NDE2MSwiZXhwIjoxNzM1MjMwNTYxfQ.oPBFsXDnN7pC6mpJRUtQPHFRLOtFomN4gz0RIyeUhCE"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{base}}/attendance/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"attendance",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
 					},
 					"response": []
 				}
@@ -1672,33 +1581,52 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"employee_id\": \"EMPLOYEE_ID_HERE\",\n    \"start_date\": \"2023-12-25\",\n    \"end_date\": \"2023-12-26\",\n    \"type\": \"vacation\",\n    \"reason\": \"Christmas holiday\"\n}",
+							"raw": "{\n  \"employeeId\": \"EMP123\",\n  \"startDate\": \"2025-01-10\",\n  \"endDate\": \"2025-01-10\",\n  \"leaveType\": \"sick\",\n  \"reason\": \"Feeling unwell\",\n  \"status\": \"pending\",\n  \"isHalfDay\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base}}/leaves/apply"
+						"url": "{{base}}/leaves"
 					},
 					"response": []
 				},
 				{
-					"name": "Get Leave Requests",
+					"name": "Get All Leave",
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{base}}/leaves/requests"
+						"url": "{{base}}/leaves"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Leave By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/leaves/LtupGG2mhpeTvPbCtUJiUug"
 					},
 					"response": []
 				},
@@ -1707,188 +1635,46 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"status\": \"approved\",\n    \"comments\": \"Approved as requested\"\n}",
+							"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/leaves/:id/status",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"leaves",
-								":id",
-								"status"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
+						"url": "{{base}}/leaves/UyEVlX6VuOt2L9zRILpYE9V"
 					},
 					"response": []
 				},
 				{
-					"name": "Get Leave Balance",
+					"name": "Delete Leave",
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/leaves/balance/:employee_id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"leaves",
-								"balance",
-								":employee_id"
-							],
-							"variable": [
-								{
-									"key": "employee_id"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Roles & Permissions",
-			"item": [
-				{
-					"name": "Create Role",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Team Lead\",\n    \"description\": \"Team leadership role\",\n    \"permissions\": [\"manage_team\", \"approve_leaves\", \"view_reports\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
 							}
-						},
-						"url": "{{base}}/roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Roles",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Role",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"permissions\": [\"manage_team\", \"approve_leaves\", \"view_reports\", \"edit_team_info\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}/roles/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"roles",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Role",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{base}}/roles/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"roles",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Assign Role to Employee",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "POST",
-						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"employee_id\": \"EMPLOYEE_ID_HERE\",\n    \"role_id\": \"ROLE_ID_HERE\"\n}",
+							"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base}}/roles/assign"
+						"url": "{{base}}/leaves/UyEVlX6VuOt2L9zRILpYE9V"
 					},
 					"response": []
 				}
@@ -2104,178 +1890,50 @@
 			"name": "Subscriptions",
 			"item": [
 				{
-					"name": "Get All Plans",
+					"name": "Create SubscriptionPlan",
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/subscriptions/plans"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Plan",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Basic Plan\",\n    \"price\": 29.99,\n    \"features\": [\n        \"feature1\",\n        \"feature2\"\n    ],\n    \"duration\": 30\n}",
+							"raw": "{\r\n  \"name\": \"Basic\",\r\n  \"price\": 9.99,\r\n  \"duration\": \"Per Month\", \r\n  \"trial_period\": 7,\r\n  \"max_users\": 5,\r\n  \"max_clients\": 10,\r\n  \"storage_limit\": 10, \r\n  \"features\": { \r\n    \"feature1\": true, \r\n    \"feature2\": false \r\n  },\r\n  \"status\": \"active\",\r\n  \"currency\": \"USD\" \r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base}}/subscriptions/plans"
+						"url": "{{base}}/subscriptions"
 					},
 					"response": []
 				},
 				{
-					"name": "Update Plan",
+					"name": "Assign SubscriptionPlan",
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Updated Plan\",\n    \"price\": 39.99\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
 							}
-						},
-						"url": {
-							"raw": "{{base}}/subscriptions/plans/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"subscriptions",
-								"plans",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Plan",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/subscriptions/plans/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"subscriptions",
-								"plans",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Subscribe to Plan",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"plan_id\": \"plan_id_here\"\n}",
+							"raw": "{\r\n  \"client_id\": \"RZLsbMIuxu9F2TonDvWSXjV\",\r\n  \"plan_id\": \"63Zi6FXxS7OuygTtwPctQfD\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base}}/subscriptions/subscribe"
-					},
-					"response": []
-				},
-				{
-					"name": "Cancel Subscription",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/subscriptions/:id/cancel",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"subscriptions",
-								":id",
-								"cancel"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Subscription Status",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/subscriptions/status"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Usage Stats",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/subscriptions/usage"
+						"url": "{{base}}/subscriptions/assign"
 					},
 					"response": []
 				}
@@ -2472,6 +2130,2702 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base}}/meetings/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task-Calendar",
+			"item": [
+				{
+					"name": "Create Task Calendar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskName\":\"dfdfg\",\r\n    // \"employee\":\"padfgl\",\r\n    \"taskDate\":\"1/12/2025\",\r\n    \"taskTime\":\"2:10\",\r\n    \"taskDescription\":\"dfewdfgfdgfxdsdfsdrwwrt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/taskcalendars"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Task Calendar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/taskcalendars"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task Calenadar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/taskcalendars/Lky9LQ6jyUMspnMcrl0cbmZ"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task Calendar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskName\":\"dg\",\r\n    // \"employee\":\"padfgl\",\r\n    \"taskDate\":\"2/12/2025\",\r\n    \"taskTime\":\"2:15\",\r\n    \"taskDescription\":\"ddsdfsdrwwrt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/taskcalendars/WGEY6AkE29I01SknbntIORn"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"taskName\": \"jami lejo\",\r\n  \"category\": \"Development\",\r\n  \"project\": \"Acme Corp Website\",\r\n  \"startDate\": \"2025-01-01\",\r\n  \"dueDate\": \"2025-01-15\",\r\n  \"assignTo\": {\r\n  \"users\": [\"od8dVnmhAw2mafAizr3Yloa\", \"QMrQFuHu0u5LZf0msrUvoUV\"] \r\n  },\r\n  \"priority\": \"High\",\r\n  \"status\": \"In Progress\",\r\n  \"description\": \"Design and develop the homepage for the Acme Corp website according to the mockups provided.\",\r\n    \"reminder_date\":\"2025-01-08\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/tasks/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgxMjAzMiwiZXhwIjoxNzM1ODk4NDMyfQ.cx3O1BjEdjBnB7ZSTNmMcuXSoOIdzCOT7eWzRKo9NuM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/tasks/1wEMyoeEHO1dpRi4GTpOolU"
+					},
+					"response": []
+				},
+				{
+					"name": "Update task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"taskName\": \"jami lejo\",\r\n  \"category\": \"Development\",\r\n  \"project\": \"Acme Corp Website\",\r\n  \"startDate\": \"2025-01-01\",\r\n  \"dueDate\": \"2025-01-15\",\r\n  \"assignTo\": {\r\n  \"users\": [\"od8dVnmhAw2mafAizr3Yloa\", \"QMrQFuHu0u5LZf0msrUvoUV\"] \r\n  },\r\n  \"priority\": \"High\",\r\n  \"status\": \"In Progress\",\r\n  \"description\": \"Design and develop the homepage for the Acme Corp website according to the mockups provided.\",\r\n    \"reminder_date\":\"2025-01-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/tasks/1wEMyoeEHO1dpRi4GTpOolU"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgxMjAzMiwiZXhwIjoxNzM1ODk4NDMyfQ.cx3O1BjEdjBnB7ZSTNmMcuXSoOIdzCOT7eWzRKo9NuM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/tasks/0T4GDo0PF5tfBIPb7bIDwzF"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currency",
+			"item": [
+				{
+					"name": "Create Currency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n// 1\r\n// {\r\n//     \"currencyName\":\"USD US Dollar\",\r\n//     \"currencyIcon\":\"$\",\r\n//     \"currencyCode\":\"USD\"\r\n\r\n// }\r\n\r\n\r\n// 2\r\n    // {\r\n    //     \"currencyName\": \"Ethiopia Birr\",\r\n    //     \"currencyIcon\": \"ብር\",\r\n    //     \"currencyCode\": \"ETB\"\r\n    // }\r\n    // {\r\n    //     \"currencyName\": \"Belize Dollar\",\r\n    //     \"currencyIcon\": \"BZ$\",\r\n    //     \"currencyCode\": \"BZD\"\r\n    // }\r\n\r\n\r\n\r\n    // {\r\n    //     \"currencyName\": \"Congo Congolese franc\",\r\n    //     \"currencyIcon\": \"FC\",\r\n    //     \"currencyCode\": \"CDF\"\r\n    // },\r\n\r\n    \r\n    // {\r\n    //     \"currencyName\": \"Switzerland Franc\",\r\n    //     \"currencyIcon\": \"CHF\",\r\n    //     \"currencyCode\": \"CHF\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"China Yuan Renminbi\",\r\n    //     \"currencyIcon\": \"¥\",\r\n    //     \"currencyCode\": \"CNY\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Colombia Peso\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"COP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Costa Rica Colon\",\r\n    //     \"currencyIcon\": \"₡\",\r\n    //     \"currencyCode\": \"CRC\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Cape Verde Escudo\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"CVE\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Czech Republic Koruna\",\r\n    //     \"currencyIcon\": \"Kč\",\r\n    //     \"currencyCode\": \"CZK\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Denmark Krone\",\r\n    //     \"currencyIcon\": \"kr\",\r\n    //     \"currencyCode\": \"DKK\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Dominican Republic Peso\",\r\n    //     \"currencyIcon\": \"RD$\",\r\n    //     \"currencyCode\": \"DOP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Algeria Dinar\",\r\n    //     \"currencyIcon\": \"دج\",\r\n    //     \"currencyCode\": \"DZD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Egypt Pound\",\r\n    //     \"currencyIcon\": \"£\",\r\n    //     \"currencyCode\": \"EGP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Botswana Pula\",\r\n    //     \"currencyIcon\": \"P\",\r\n    //     \"currencyCode\": \"BWP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Fiji Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"FJD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Falkland Islands Pound\",\r\n    //     \"currencyIcon\": \"£\",\r\n    //     \"currencyCode\": \"FKP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"United Kingdom Pound\",\r\n    //     \"currencyIcon\": \"£\",\r\n    //     \"currencyCode\": \"GBP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Georgia Lari\",\r\n    //     \"currencyIcon\": \"₾\",\r\n    //     \"currencyCode\": \"GEL\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Gibraltar Pound\",\r\n    //     \"currencyIcon\": \"£\",\r\n    //     \"currencyCode\": \"GIP\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Gambia Dalasi\",\r\n    //     \"currencyIcon\": \"D\",\r\n    //     \"currencyCode\": \"GMD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Guatemala Quetzal\",\r\n    //     \"currencyIcon\": \"Q\",\r\n    //     \"currencyCode\": \"GTQ\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Guyana Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"GYD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Honduras Lempira\",\r\n    //     \"currencyIcon\": \"L\",\r\n    //     \"currencyCode\": \"HNL\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Croatia Kuna\",\r\n    //     \"currencyIcon\": \"kn\",\r\n    //     \"currencyCode\": \"HRK\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Haiti Gourde\",\r\n    //     \"currencyIcon\": \"G\",\r\n    //     \"currencyCode\": \"HTG\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"France Franc\",\r\n    //     \"currencyIcon\": \"₣\",\r\n    //     \"currencyCode\": \"XPF\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Argentina Peso\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"ARS\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Euro\",\r\n    //     \"currencyIcon\": \"€\",\r\n    //     \"currencyCode\": \"EUR\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Hong Kong Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"HKD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Indian Rupee\",\r\n    //     \"currencyIcon\": \"₹\",\r\n    //     \"currencyCode\": \"INR\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Australian Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"AUD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Jamaican Dollar\",\r\n    //     \"currencyIcon\": \"J$\",\r\n    //     \"currencyCode\": \"JMD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Canadian Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"CAD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"United Arab Emirates Dirham\",\r\n    //     \"currencyIcon\": \"د.إ\",\r\n    //     \"currencyCode\": \"AED\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Afghanistan Afghani\",\r\n    //     \"currencyIcon\": \"؋\",\r\n    //     \"currencyCode\": \"AFN\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Albania Lek\",\r\n    //     \"currencyIcon\": \"Lek\",\r\n    //     \"currencyCode\": \"ALL\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Armenian Dram\",\r\n    //     \"currencyIcon\": \"֏\",\r\n    //     \"currencyCode\": \"AMD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Netherlands Antilles Guilder\",\r\n    //     \"currencyIcon\": \"ƒ\",\r\n    //     \"currencyCode\": \"ANG\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Angola kwanza\",\r\n    //     \"currencyIcon\": \"Kz\",\r\n    //     \"currencyCode\": \"AOA\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"US Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"USD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Aruba Guilder\",\r\n    //     \"currencyIcon\": \"ƒ\",\r\n    //     \"currencyCode\": \"AWG\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Azerbaijan Manat\",\r\n    //     \"currencyIcon\": \"₼\",\r\n    //     \"currencyCode\": \"AZN\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Bosnia and Herzegovina Convertible Marka\",\r\n    //     \"currencyIcon\": \"KM\",\r\n    //     \"currencyCode\": \"BAM\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Barbados Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"BBD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Bangladesh Taka\",\r\n    //     \"currencyIcon\": \"৳\",\r\n    //     \"currencyCode\": \"BDT\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Bulgaria Lev\",\r\n    //     \"currencyIcon\": \"лв\",\r\n    //     \"currencyCode\": \"BGN\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Bermuda Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"BMD\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Brunei Darussalam Dollar\",\r\n    //     \"currencyIcon\": \"$\",\r\n    //     \"currencyCode\": \"BND\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Bolivia Boliviano\",\r\n    //     \"currencyIcon\": \"$b\",\r\n    //     \"currencyCode\": \"BOB\"\r\n    // },\r\n    // {\r\n    //     \"currencyName\": \"Brazil Real\",\r\n    //     \"currencyIcon\": \"R$\",\r\n    //     \"currencyCode\": \"BRL\"\r\n    // }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/currencies"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Currency",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Branch",
+			"item": [
+				{
+					"name": "create-Branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchName\":\"Surat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/branches"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Branch",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/branches/LoF0VqwqqxyqHpBDV9gCm0E"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Branch",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "Create Countries",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"countryName\":\"Afghanistan\",\r\n    \"countryCode\":\"AF\",\r\n    \"phoneCode\":\"93\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/countries"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Countries",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deal",
+			"item": [
+				{
+					"name": "Create Deal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"leadTitle\": \"Sales Opportunity for New Project\",\r\n  \"dealName\": \"Acme Corp Website Redesign\",\r\n  \"pipeline\": \"Sales\",\r\n  \"stage\": \"Proposal\",\r\n  \"price\": 10000,\r\n  \"currency\": \"USD\",\r\n  \"closedDate\": \"2025-01-31\",\r\n  \"category\": \"Website Development\",\r\n  \"project\": \"Acme Corp Website\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/deals"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Deal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/deals"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Deal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"leadTitle\": \"Sales Opportunity for New Project UP\",\r\n  \"dealName\": \"Acme Corp Website Redesign\",\r\n  \"pipeline\": \"Sales\",\r\n  \"stage\": \"Proposal\",\r\n  \"price\": 10000,\r\n  \"currency\": \"USD\",\r\n  \"closedDate\": \"2025-01-31\",\r\n  \"category\": \"Website Development\",\r\n  \"project\": \"Acme Corp Website\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/deals/rFCEpO9bkR6XVPy5mRHLwb7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/deals/rFCEpO9bkR6XVPy5mRHLwb7"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contract",
+			"item": [
+				{
+					"name": "Create Contract",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJCRE1FbjhnekdYWVhxMFd5NEdXMU9GZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU2MTM0NywiZXhwIjoxNzM1NjQ3NzQ3fQ.bLNhaaz1uIjw6MDvczd3fPbnZ-WUTV7tgR_rwz0-zBc"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Project Mileston\",\r\n    \"project\": \"New Website Development\",\r\n    \"type\": \"Task\",\r\n    \"value\": \"High Priority\",\r\n    \"startDate\": \"2024-01-01T09:00:00Z\",\r\n    \"endDate\": \"2024-01-15T18:00:00Z\",\r\n    \"description\": \"This task involves key milestones for the New Website Development project.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/contracts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contract",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJCRE1FbjhnekdYWVhxMFd5NEdXMU9GZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU2MTM0NywiZXhwIjoxNzM1NjQ3NzQ3fQ.bLNhaaz1uIjw6MDvczd3fPbnZ-WUTV7tgR_rwz0-zBc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/contracts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contract By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/contracts/q00OP4vtR5nJIW7quiMlRaZ"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contract By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJCRE1FbjhnekdYWVhxMFd5NEdXMU9GZCIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU2MTM0NywiZXhwIjoxNzM1NjQ3NzQ3fQ.bLNhaaz1uIjw6MDvczd3fPbnZ-WUTV7tgR_rwz0-zBc"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"min go\",\r\n    \"project\": \"New Website Development\",\r\n    \"type\": \"Task\",\r\n    \"value\": \"High Priority\",\r\n    \"startDate\": \"2024-01-01T09:00:00Z\",\r\n    \"endDate\": \"2024-01-15T18:00:00Z\",\r\n      \"description\": \"This task involves key milestones for the New Website Development project.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/contracts/HCbgA47PJlnRixdt5DnK8N5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contract By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/contracts/q00OP4vtR5nJIW7quiMlRaZ"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project Report",
+			"item": [
+				{
+					"name": "Create  Project Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"Website Redesign\",\r\n    \"startdate\": \"2024-01-01\",\r\n    \"enddate\": \"2024-03-01\",\r\n    \"projectMembers\": {\r\n        \"lead\": \"John Doe\",\r\n        \"developers\": [\"Jane Smith\", \"Mark Lee\"]\r\n    },\r\n    \"completion\": \"75%\",\r\n    \"status\": \"In Progress\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/project-reports"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Project Report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/project-reports"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project Report By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/project-reports/wDmfdxcvAefX2ovd5lXZMmz"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project Report By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"bapuji\",\r\n    \"startdate\": \"2024-01-01\",\r\n    \"enddate\": \"2024-03-01\",\r\n    \"projectMembers\": {\r\n        \"lead\": \"John Doe\",\r\n        \"developers\": [\"Jane Smith\", \"Mark Lee\"]\r\n    },\r\n    \"completion\": \"75%\",\r\n    \"status\": \"In Progress\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/project-reports/wDmfdxcvAefX2ovd5lXZMmz"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project Report By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ1QTM3dTYyUlRCMnRaRFJRdDZWTDBydSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTU1MDAzMCwiZXhwIjoxNzM1NjM2NDMwfQ.HNLY3pZfC5-sYwm6llx-Zf8I_cO0WFn3iPuMpH0cyKA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"bapuji\",\r\n    \"startdate\": \"2024-01-01\",\r\n    \"enddate\": \"2024-03-01\",\r\n    \"projectMembers\": {\r\n        \"lead\": \"John Doe\",\r\n        \"developers\": [\"Jane Smith\", \"Mark Lee\"]\r\n    },\r\n    \"completion\": \"75%\",\r\n    \"status\": \"In Progress\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/project-reports/wDmfdxcvAefX2ovd5lXZMmz"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Create Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"project\": \"Acme Corp Website Redesign\",\r\n  \"client\": \"Acme Corp\",\r\n  \"issueDate\": \"2024-12-31\",\r\n  \"dueDate\": \"2025-02-28\",\r\n  \"currency\": \"USD\",\r\n  \"items\": [\r\n    {\r\n      \"name\": \"Website Design\",\r\n      \"description\": \"Design and development of a new website\",\r\n      \"price\": 5000,\r\n      \"quantity\": 1,\r\n      \"gst\": 18, \r\n      \"hsnCode\": \"99851900\",\r\n      \"files\": [\r\n        \"website_design_proposal.pdf\",\r\n        \"website_design_mockups.zip\" \r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"Content Management System\",\r\n      \"description\": \"Setup and configuration of a CMS\",\r\n      \"price\": 2000,\r\n      \"quantity\": 1,\r\n      \"gst\": 18, \r\n      \"hsnCode\": \"99851900\",\r\n      \"files\": [\r\n        \"cms_installation_guide.docx\" \r\n      ]\r\n    }\r\n  ],\r\n  \"discount\": 10, \r\n  \"tax\": 7, \r\n  \"total\": 6300,\r\n  \"notes\": \"Please review and approve the invoice within 7 days.\", \r\n  \"attachments\": [\r\n    \"invoice_attachment1.pdf\", \r\n    \"invoice_attachment2.jpg\"\r\n  ],\r\n  \"clientGSTIN\": \"ABC1234567890ABCDEF\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/invoices/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Invoice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/invoices/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Invoice By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"project\": \"Acme Corp Website Redesign UP\",\r\n  \"client\": \"Acme Corp\",\r\n  \"issueDate\": \"2024-12-31\",\r\n  \"dueDate\": \"2025-02-28\",\r\n  \"currency\": \"USD\",\r\n  \"items\": [\r\n    {\r\n      \"name\": \"Website Design\",\r\n      \"description\": \"Design and development of a new website\",\r\n      \"price\": 5000,\r\n      \"quantity\": 1,\r\n      \"gst\": 18, \r\n      \"hsnCode\": \"99851900\",\r\n      \"files\": [\r\n        \"website_design_proposal.pdf\",\r\n        \"website_design_mockups.zip\" \r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"Content Management System\",\r\n      \"description\": \"Setup and configuration of a CMS\",\r\n      \"price\": 2000,\r\n      \"quantity\": 1,\r\n      \"gst\": 18, \r\n      \"hsnCode\": \"99851900\",\r\n      \"files\": [\r\n        \"cms_installation_guide.docx\" \r\n      ]\r\n    }\r\n  ],\r\n  \"discount\": 10, \r\n  \"tax\": 7, \r\n  \"total\": 6300,\r\n  \"notes\": \"Please review and approve the invoice within 7 days.\", \r\n  \"attachments\": [\r\n    \"invoice_attachment1.pdf\", \r\n    \"invoice_attachment2.jpg\"\r\n  ],\r\n  \"clientGSTIN\": \"ABC1234567890ABCDEF\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/invoices/nlEuHr5XKqdZnxraHaoG7vR"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Invoice By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\": \"morgan\",\r\n    \"issueDate\": \"2024-01-01\",\r\n    \"dueDate\": \"2024-01-15\",\r\n    \"status\": \"paid\",\r\n    \"amount\": 1500.75\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/invoices/nlEuHr5XKqdZnxraHaoG7vR"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Create Expense",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTYzNTk1MSwiZXhwIjoxNzM1NzIyMzUxfQ.YEaRbIPtc9ywXbkSP-Ty8DhDoZlJBQb_RxS4bOVeXuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"item\": \"Laptop\",\r\n    \"price\": 1200.50,\r\n    \"currency\": \"USD\",\r\n    \"purchase_date\": \"2024-12-01\",\r\n    \"employee\": \"John Doe\",\r\n    \"project\": \"Project Alpha\",\r\n    \"bill\": \"INV12345\",\r\n    \"description\": \"Purchased for project use\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/expenses"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTYzNTk1MSwiZXhwIjoxNzM1NzIyMzUxfQ.YEaRbIPtc9ywXbkSP-Ty8DhDoZlJBQb_RxS4bOVeXuI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/expenses"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTYzNTk1MSwiZXhwIjoxNzM1NzIyMzUxfQ.YEaRbIPtc9ywXbkSP-Ty8DhDoZlJBQb_RxS4bOVeXuI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/expenses/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"expenses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expense By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTYzNTk1MSwiZXhwIjoxNzM1NzIyMzUxfQ.YEaRbIPtc9ywXbkSP-Ty8DhDoZlJBQb_RxS4bOVeXuI"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"item\": \"Navu Laptop\",\r\n    \"price\": 1200.50,\r\n    \"currency\": \"USD\",\r\n    \"purchase_date\": \"2024-12-01\",\r\n    \"employee\": \"John Doe\",\r\n    \"project\": \"Project Alpha\",\r\n    \"bill\": \"INV12345\",\r\n    \"description\": \"Purchased for project use\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/expenses/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"expenses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTYzNTk1MSwiZXhwIjoxNzM1NzIyMzUxfQ.YEaRbIPtc9ywXbkSP-Ty8DhDoZlJBQb_RxS4bOVeXuI"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/expenses/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"expenses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sources",
+			"item": [
+				{
+					"name": "Create Sources",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceName\":\"Facebook\",\r\n    \"description\":\"fgkjfghdsfsd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/sources"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/sources"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "Create payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"Project-12345\",\r\n    \"invoice\": \"INV-2025-001\",\r\n    \"paidOn\": \"2025-01-01\",\r\n    \"amount\": \"1500.75\",\r\n    \"currency\": \"USD\",\r\n    \"transactionId\": 45456456454564,\r\n    \"paymentMethod\": \"Credit Card\",\r\n    \"receipt\": \"https://example.com/receipt.pdf\",\r\n    \"remark\": \"Payment for milestone 1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/payments/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Payments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/payments/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"Project-12345 UP\",\r\n    \"invoice\": \"INV-2025-001\",\r\n    \"paidOn\": \"2025-01-01\",\r\n    \"amount\": 1500.75,\r\n    \"currency\": \"USD\",\r\n    \"transactionId\": \"TXN-987654321\",\r\n    \"paymentMethod\": \"Credit Card\",\r\n    \"receipt\": \"https://example.com/receipt.pdf\",\r\n    \"remark\": \"Payment for milestone 1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/payments/6h2Ufyx8mB3dJGjLM3al8gH"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/payments/6h2Ufyx8mB3dJGjLM3al8gH"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTk3NDYyMywiZXhwIjoxNzM2MDYxMDIzfQ.MDqV8yuTSmei9CpnaiipQ2R-DJnEbKPL6fKk31qZYX4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_name\": \"Project Alpha2\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-06-01\",\r\n    \"project_members\": {\r\n        \"members\": [\"67890\", \"54321\"]\r\n    },\r\n    \"project_category\": \"Software Development\",\r\n    \"project_description\": \"A sample project description\",\r\n    \"department\": {\r\n        \"id\": \"001\",\r\n        \"name\": \"IT\"\r\n    },\r\n    \"client\": \"1ZT4ns3Gt8hWRjJspHb9XOl\",\r\n    \"currency\": \"USD\",\r\n    \"budget\": 50000,\r\n    \"estimatedmonths\": 6,\r\n    \"estimatedhours\": 1200,\r\n    \"files\": [\"specs.pdf\", \"design.png\"],\r\n    \"status\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/projects"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sub-Clients Project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTk3NDYyMywiZXhwIjoxNzM2MDYxMDIzfQ.MDqV8yuTSmei9CpnaiipQ2R-DJnEbKPL6fKk31qZYX4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects/clients/1ZT4ns3Gt8hWRjJspHb9XOl"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/projects/8Tl9ngvsLsyfrF00GD2srVk"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_name\": \"Project Alpha Updated\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-06-01\",\r\n    \"project_members\": {\r\n        \"members\": [\"67890\", \"54321\"]\r\n    },\r\n    \"project_category\": \"Software Development\",\r\n    \"project_description\": \"A sample project description\",\r\n    \"department\": {\r\n        \"id\": \"001\",\r\n        \"name\": \"IT\"\r\n    },\r\n    \"client\": \"ABC Corp\",\r\n    \"currency\": \"USD\",\r\n    \"budget\": 50000,\r\n    \"estimatedmonths\": 6,\r\n    \"estimatedhours\": 1200,\r\n    \"files\": [\"specs.pdf\", \"design.png\"],\r\n    \"status\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects/8Tl9ngvsLsyfrF00GD2srVk"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_name\": \"Project Alpha Updated\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2025-06-01\",\r\n    \"project_members\": {\r\n        \"members\": [\"67890\", \"54321\"]\r\n    },\r\n    \"project_category\": \"Software Development\",\r\n    \"project_description\": \"A sample project description\",\r\n    \"department\": {\r\n        \"id\": \"001\",\r\n        \"name\": \"IT\"\r\n    },\r\n    \"client\": \"ABC Corp\",\r\n    \"currency\": \"USD\",\r\n    \"budget\": 50000,\r\n    \"estimatedmonths\": 6,\r\n    \"estimatedhours\": 1200,\r\n    \"files\": [\"specs.pdf\", \"design.png\"],\r\n    \"status\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects/8Tl9ngvsLsyfrF00GD2srVk"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJZak15eENMNFJqaXUyYWFlZG8wUmxMUiIsInJvbGUiOiJwc3N0OFRsWlFkQ1hYMjhRbHlhdGt1NyIsImlhdCI6MTczNTcxMjkzNCwiZXhwIjoxNzM1Nzk5MzM0fQ.m2SOkePCy6dXWWOgR1OdBixc68mNuMSedzoExeF2X90"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"memberIds\":[\"68490\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects/members/soTAlyDuANL1IYJfJbTmqmN"
+					},
+					"response": []
+				},
+				{
+					"name": "Add ProjectMembers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJZak15eENMNFJqaXUyYWFlZG8wUmxMUiIsInJvbGUiOiJwc3N0OFRsWlFkQ1hYMjhRbHlhdGt1NyIsImlhdCI6MTczNTcxNDk5NywiZXhwIjoxNzM1ODAxMzk3fQ.PAicCsjEQNZHmip_mCi7_wRjic-3HAudpOlKx11gqQs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_members\": {\r\n        \"project_members\": [\"68470\", \"453345\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/projects/members/soTAlyDuANL1IYJfJbTmqmN"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Milestone",
+			"item": [
+				{
+					"name": "Create Milestone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"milestone_title\": \"Design Phase\",\r\n  \"milestone_status\": \"In Progress\",\r\n  \"milestone_cost\": 15000,\r\n  \"currency\": \"USD\",\r\n  \"add_cost_to_project_budget\": true,\r\n  \"milestone_summary\": \"This milestone covers the initial design phase of the project.\",\r\n  \"milestone_start_date\": \"2025-01-01\",\r\n  \"milestone_end_date\": \"2025-01-15\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/milestones/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Milestone",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/milestones/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Milestone By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"milestone_title\": \"Design Phase Updated\",\r\n  \"milestone_status\": \"In Progress\",\r\n  \"milestone_cost\": 15000,\r\n  \"currency\": \"USD\",\r\n  \"add_cost_to_project_budget\": true,\r\n  \"milestone_summary\": \"This milestone covers the initial design phase of the project.\",\r\n  \"milestone_start_date\": \"2025-01-01\",\r\n  \"milestone_end_date\": \"2025-01-15\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/milestones/O0gPSzRR1H88g4lGktVZXly"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Milestone By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/milestones/O0gPSzRR1H88g4lGktVZXly"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes",
+			"item": [
+				{
+					"name": "Create Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"note_title\": \"Team Updates\",\r\n  \"note_type\": \"General\",\r\n  \"note_employees\": {\r\n      \"employee\": [\"bhhnjh\", \"uhyhgh\"]\r\n  },\r\n  \"note_description\": \"This note includes updates shared by the team.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/notes/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/notes/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"note_title\": \"Team Updates up\",\r\n  \"note_type\": \"General\",\r\n  \"note_employees\": {\r\n    \"employees\": {\r\n      \"employee\": [\"bhhnjh\", \"uhyhgh\"]\r\n    }\r\n  },\r\n  \"note_description\": \"This note includes updates shared by the team.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/notes/BjRKMVRAtr60nnj7S4GR1mr"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/notes/BjRKMVRAtr60nnj7S4GR1mr"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Get All activities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTcwNzM5NCwiZXhwIjoxNzM1NzkzNzk0fQ.Bx2qnPE83Nd_Opu9BBGGLffGbe2Abl7HmI0y5Ei8WPQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/activities/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sample Product\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": \"999.99\",\r\n    \"sku\": \"SP-001\",\r\n    \"tax\": \"18\",\r\n    \"hsn_sac\": \"85437099\",\r\n    \"description\": \"This is a sample product description.\",\r\n    \"files\": [\r\n        {\r\n            \"fileName\": \"product_image1.jpg\",\r\n            \"url\": \"https://example.com/product_image1.jpg\"\r\n        },\r\n        {\r\n            \"fileName\": \"product_image2.jpg\",\r\n            \"url\": \"https://example.com/product_image2.jpg\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/products/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/products/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sample Product\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": \"999.99\",\r\n    \"sku\": \"SP-001\",\r\n    \"tax\": \"18\",\r\n    \"hsn_sac\": \"85437099\",\r\n    \"description\": \"This is a sample product description.\",\r\n    \"files\": [\r\n        {\r\n            \"fileName\": \"product_image1.jpg\",\r\n            \"url\": \"https://example.com/product_image1.jpg\"\r\n        },\r\n        {\r\n            \"fileName\": \"product_image2.jpg\",\r\n            \"url\": \"https://example.com/product_image2.jpg\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/products/kCAEtQ6es7W85LnEf5py0kF"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJnczB1NE4yVFVGRVQ3ekNic1U2RkxlTSIsInJvbGUiOiJUU0JyNGNISjd0aFZLV0hqUWpVR0lEVCIsImlhdCI6MTczNTc4OTgwNSwiZXhwIjoxNzM1ODc2MjA1fQ.XWYjZOiDAGJMUqiwcRR3-b1F-KSFXmUDKj3pZcwXtxs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/products/kCAEtQ6es7W85LnEf5py0kF"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Create Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJCNVlwSENvZm1jT0owc1RLMUdMSHBPTyIsInJvbGUiOiI1TVJzTGVrZmlndFVjUlVvWkg0ampiOCIsImlhdCI6MTczNjQwNTM4MiwiZXhwIjoxNzM2NDkxNzgyfQ.ynI8s12PpsH0ettQbg7VRDOM5gvxjpYFTZNfe4Ocz2k"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"dsfsfssdfsdffsd\",\r\n    \"lableType\":\"source\",\r\n    \"color\":\"blue\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/labels/jhbhjbjkbnjk"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tags",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJZak15eENMNFJqaXUyYWFlZG8wUmxMUiIsInJvbGUiOiJwc3N0OFRsWlFkQ1hYMjhRbHlhdGt1NyIsImlhdCI6MTczNTc4OTQ1OSwiZXhwIjoxNzM1ODc1ODU5fQ.4WowRH5XyaNjt5JrsNF6MBBNong6ouoXFktxeWkKDi8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/tags/JYP6V69JjRZQo20a0MuIbK6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pipeline",
+			"item": [
+				{
+					"name": "Create Pipeline",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pipeline_name\":\"asjkdbjasbd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/pipelines"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pipeline",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJZak15eENMNFJqaXUyYWFlZG8wUmxMUiIsInJvbGUiOiJwc3N0OFRsWlFkQ1hYMjhRbHlhdGt1NyIsImlhdCI6MTczNTc5Nzc4NCwiZXhwIjoxNzM1ODg0MTg0fQ.Bt-qw3WGaOjc1Vd9tH8FPcaq81S_wxLfysd183ntaWo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pipeline_name\":\"markieting\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/pipelines/5eGxpqEnndD52rMawfTpiuL"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJZak15eENMNFJqaXUyYWFlZG8wUmxMUiIsInJvbGUiOiJwc3N0OFRsWlFkQ1hYMjhRbHlhdGt1NyIsImlhdCI6MTczNTc5Nzc4NCwiZXhwIjoxNzM1ODg0MTg0fQ.Bt-qw3WGaOjc1Vd9tH8FPcaq81S_wxLfysd183ntaWo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/pipelines/wcun2OHA87ru6V8QZe9Vr9r"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotations",
+			"item": [
+				{
+					"name": "Create Quotations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJSWkxzYk1JdXh1OUYyVG9uRHZXU1hqViIsInJvbGUiOiJ0WHYwcERId0RTb1JERDZtalB2a0NXSSIsImlhdCI6MTczNjQxOTA3MiwiZXhwIjoxNzM2NTA1NDcyfQ.6BQg5DFg_oBkMW8D0UfX2_yoPGgJc40ABqJx3i-hotg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"valid_till\": \"2025-01-31\", // Invoice expiry date\r\n  \"currency\": \"USD\",\r\n  \"lead\": \"lead123\", // Lead ID\r\n  \"client\": \"client456\", // Client ID\r\n  \"calculatedTax\": 10.99, // Calculated tax amount\r\n  \"items\": {\r\n    \"item1\": {\r\n      \"name\": \"Product A\",\r\n      \"description\": \"Description of Product A\",\r\n      \"price\": 19.99,\r\n      \"quantity\": 2,\r\n      \"total\": 39.98 // Price * Quantity\r\n    },\r\n    \"item2\": {\r\n      \"name\": \"Service B\",\r\n      \"description\": \"Description of Service B\",\r\n      \"price\": 49.99,\r\n      \"quantity\": 1,\r\n      \"total\": 49.99\r\n    }\r\n  },\r\n  \"discount\": 5, // Applied discount amount\r\n  \"tax\": 10, // Total tax amount (may differ from calculatedTax)\r\n  \"total\": 85 // Sum of item totals, discount, and tax\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/quotations/jhjhnj"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Estimate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgxMjAzMiwiZXhwIjoxNzM1ODk4NDMyfQ.cx3O1BjEdjBnB7ZSTNmMcuXSoOIdzCOT7eWzRKo9NuM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/estimates/EFdfN60unjUbWVIrrTptpeE"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Estimate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgxMjAzMiwiZXhwIjoxNzM1ODk4NDMyfQ.cx3O1BjEdjBnB7ZSTNmMcuXSoOIdzCOT7eWzRKo9NuM"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"valid_till\": \"2025-02-28\", // Required date for invoice validity\r\n  \"currency\": \"USD\",\r\n  \"project\": \"Acme Corp Website Redesign UP\",\r\n  \"client\": \"Acme Corp\",\r\n  \"calculatedTax\": 441, // System-calculated tax amount\r\n  \"items\": [\r\n    {\r\n      \"name\": \"Website Design\",\r\n      \"description\": \"Design and development of a new website\",\r\n      \"price\": 5000,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"name\": \"Content Management System\",\r\n      \"description\": \"Setup and configuration of a CMS\",\r\n      \"price\": 2000,\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"discount\": 10, // Percentage discount\r\n  \"tax\": 7, // User-entered tax rate (may differ from calculated tax)\r\n  \"total\": 6341 // Total including discount, tax (might differ from calculatedTax)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/estimates/uti85D7AFB9Q6SVEQhbi7Tm"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Estimate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgxMjAzMiwiZXhwIjoxNzM1ODk4NDMyfQ.cx3O1BjEdjBnB7ZSTNmMcuXSoOIdzCOT7eWzRKo9NuM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/estimates/uti85D7AFB9Q6SVEQhbi7Tm"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Create Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestor\": \"user123\", \r\n  \"requestorName\": \"John Doe\", \r\n  \"assignGroup\": \"Support Team\", \r\n  \"agent\": null, \r\n  \"project\": null, \r\n  \"type\": null, \r\n  \"ticketSubject\": \"Website Down\", \r\n  \"description\": \"Unable to access company website. Please investigate.\", \r\n  \"files\": null, \r\n  \"priority\": \"High\", \r\n  \"channelName\": \"Email\", \r\n  \"tag\": \"Website Issue\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestor\": \"user123\", \r\n  \"requestorName\": \"John Doe\", \r\n  \"assignGroup\": \"bug\", \r\n  \"agent\": null, \r\n  \"project\": null, \r\n  \"type\": null, \r\n  \"ticketSubject\": \"Website Down\", \r\n  \"description\": \"Unable to access company website. Please investigate.\", \r\n  \"files\": null, \r\n  \"priority\": \"High\", \r\n  \"channelName\": \"Email\", \r\n  \"tag\": \"Website Issue\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/tickets/qUKiffXLcvoOkyYBUDE5scJ"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ticket By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/tickets/qUKiffXLcvoOkyYBUDE5scJ"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal",
+			"item": [
+				{
+					"name": "Create Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"lead_title\":\"sdfdsfsd\",\r\n  \"deal_title\":\"dfsdfdsfsd\",\r\n  \"valid_till\": \"2025-02-28\", // Required date for invoice validity\r\n  \"currency\": \"USD\",\r\n  \"description\":\"sdfsdfsdfs\",\r\n  \"calculatedTax\": 441, // System-calculated tax amount\r\n  \"items\": [\r\n    {\r\n      \"name\": \"Website Design\",\r\n      \"description\": \"Design and development of a new website\",\r\n      \"price\": 5000,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"name\": \"Content Management System\",\r\n      \"description\": \"Setup and configuration of a CMS\",\r\n      \"price\": 2000,\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"discount\": 10, // Percentage discount\r\n  \"tax\": 7, // User-entered tax rate (may differ from calculated tax)\r\n  \"total\": 6341 // Total including discount, tax (might differ from calculatedTax)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Proposal",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proposal",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/proposals/zsbxuemxtkgiGPLWnLL9ebE"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Create Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"123\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Job By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"123\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"NATHI KEVU\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Application",
+			"item": [
+				{
+					"name": "Create Job-application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"job\": \"web\",\r\n            \"name\": \"sdfsd\",\r\n            \"email\": \"fsdfsd@gmail.com\",\r\n            \"phone\":\"32423423423\" ,\r\n            \"location\": \"fsdfdsfsdfs\",\r\n            \"total_experience\": \"10 years\",\r\n            \"current_location\": \"sdfgsdfsf\",\r\n            \"notice_period\":\"10 days\",\r\n            \"status\": \"sdfsdfsdf\",\r\n            \"applied_source\": \"dsfdfsdfsdf\",\r\n            \"cover_letter\": \"dsfsdfsdg\"\r\n            \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/job-applications"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Job-application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/job-applications"
+					},
+					"response": []
+				},
+				{
+					"name": "Update job-application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"job\": \"sdfsdfsdf\",\r\n            \"name\": \"dsfsdfsdf\",\r\n            \"email\": \"SDasASa@gmail.com\",\r\n            \"phone\":\"324dsfsdf23erter423423\" ,\r\n            \"location\": \"dsf\",\r\n            \"total_experience\": \"101 years\",\r\n            \"current_location\": \"dsa\",\r\n            \"notice_period\":\"110 days\",\r\n            \"status\": \"asd\",\r\n            \"applied_source\": \"sadasdsa\",\r\n            \"cover_letter\": \"asds\"\r\n            \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/job-applications/tCfLw9CMPpAvnjojJD4k3XR"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job-Application",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interview Schedule",
+			"item": [
+				{
+					"name": "Create Interview Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"job\": \"Software Engineer\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/interview-schedules"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Interview Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/interview-schedules"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Interview Schedule By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Interview Schedule By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"job\": \"Software Engineerrr\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Interview Schedule By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skill",
+			"item": [
+				{
+					"name": "Create Skill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skillName\":\"dsfsdfsdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/skills"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Skill",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/skills"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Skill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skillName\":\"dssdfsdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/skills/ptFBxpLPPl81usQOtpYXmru"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete  Skill",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Create Message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"chooseMember\": \"user123\", \r\n  \"message\": \"Hello, how are you?\",\r\n  \"file\": null, \r\n  \"isRead\": false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/messages"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/messages?chooseMember=user123",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "chooseMember",
+									"value": "user123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Messages By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/messages/fgk9xKfJmWJjFe8FjE5izX1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Messages By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"message\": \"Hello, how are you kem chho?\",\r\n  \"file\": null, \r\n  \"isRead\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/messages/fgk9xKfJmWJjFe8FjE5izX1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Messages By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/messages/a9PqXOHILzHA91ggl1xqmyH"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appreciation",
+			"item": [
+				{
+					"name": "Create Appreciation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"award\": \"Employee of the Month\",\r\n  \"givenTo\": \"EMP123\",\r\n  \"date\": \"2025-01-15\",\r\n  \"summary\": \"John Doe consistently exceeded sales targets in December.\",\r\n  \"photo\": \"https://example.com/employee_of_month_dec2024.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/appreciations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Appreciation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/appreciations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appreciation By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/appreciations/TbdTbD9CP0jDAqTgZDyjcHF"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Appreciation By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "{{base}}/appreciations/TbdTbD9CP0jDAqTgZDyjcHF"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appreciation By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/appreciations/TbdTbD9CP0jDAqTgZDyjcHF"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Training",
+			"item": [
+				{
+					"name": "Create Training",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"Technology\",\r\n  \"links\": {\r\n    \"urls\": [\r\n      \"https://www.example.com/article1\",\r\n      \"https://www.example.com/article2\"\r\n    ],\r\n    \"titles\": [\r\n      \"New AI Breakthrough\",\r\n      \"The Future of Robotics\"\r\n    ],\r\n    \"descriptions\": [\r\n      \"A groundbreaking development in artificial intelligence...\",\r\n      \"Exploring the potential of robots in various industries...\"\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/trainings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Training",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/trainings"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Training By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"Technology UP\",\r\n  \"links\": {\r\n    \"urls\": [\r\n      \"https://www.example.com/article1\",\r\n      \"https://www.example.com/article2\"\r\n    ],\r\n    \"titles\": [\r\n      \"New AI Breakthrough\",\r\n      \"The Future of Robotics\"\r\n    ],\r\n    \"descriptions\": [\r\n      \"A groundbreaking development in artificial intelligence...\",\r\n      \"Exploring the potential of robots in various industries...\"\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/trainings/LSmGTkhfkwNJV2MI7r9aXIX"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Training By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/trainings/LSmGTkhfkwNJV2MI7r9aXIX"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EmployeeSalary",
+			"item": [
+				{
+					"name": "Create EmployeeSalary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"employee_id\": \"EMP123\", \r\n  \"currency\": \"USD\", \r\n  \"annual_CTC\": 100000 \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/employeeSalary"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All EmployeeSalary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/employeeSalary"
+					},
+					"response": []
+				},
+				{
+					"name": "Update EmployeeSalary By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"employee_id\": \"EMP123456\", \r\n  \"currency\": \"USD\", \r\n  \"annual_CTC\": 100000 \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/employeeSalary/VtNRLdqZEHFl7pbBifFzpd4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EmployeeSalary By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJ6STFKWFhVV3NYZHptVnBwVWNvdGZmciIsInJvbGUiOiJQczZCbTBSMjg4cnJQQUY1STc1VG5sYyIsImlhdCI6MTczNjE0MjgyOSwiZXhwIjoxNzM2MjI5MjI5fQ.nukaFi5Wwoo3ziA-P9vvLNkvdIj1FqCpT4FHdQy1ujY"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/employeeSalary/VtNRLdqZEHFl7pbBifFzpd4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Get Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJvZDhkVm5taEF3Mm1hZkFpenIzWWxvYSIsInJvbGUiOiJZb1NGM3B2dDlxaE56Tmlrd1BHNm5LcCIsImlhdCI6MTczNjM5Njk4NSwiZXhwIjoxNzM2NDgzMzg1fQ.Ur5QV2R3lRnFMSrwqiuneEl-r4Am2D5s0v9e1B8KZyo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/notifications"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stage",
+			"item": [
+				{
+					"name": "Create Stage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI1aVliZzVpeUVDYTRtTmlKVGVNZUdXUCIsInJvbGUiOiJhdUt3cnV3OGJhZVBRSkJpM3g2bFBLbSIsImlhdCI6MTczNjMwOTg5MiwiZXhwIjoxNzM2Mzk2MjkyfQ.6_VzpT_8KnQJ_xMIait53Hsxs_ctybUCrIKd8Eu-Xsg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"stageType\": \"lead\",\r\n//   \"stageName\": \"Qualified Lead\",\r\n//   \"pipeline\": \"Sales\"\r\n// }\r\n\r\n{\r\n  \"stageType\": \"deal\",\r\n  \"stageName\": \"Negotiation\",\r\n  \"pipeline\": \"Marketing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/stages"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Stage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI1aVliZzVpeUVDYTRtTmlKVGVNZUdXUCIsInJvbGUiOiJhdUt3cnV3OGJhZVBRSkJpM3g2bFBLbSIsImlhdCI6MTczNjMwOTg5MiwiZXhwIjoxNzM2Mzk2MjkyfQ.6_VzpT_8KnQJ_xMIait53Hsxs_ctybUCrIKd8Eu-Xsg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/stages"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stage By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI1aVliZzVpeUVDYTRtTmlKVGVNZUdXUCIsInJvbGUiOiJhdUt3cnV3OGJhZVBRSkJpM3g2bFBLbSIsImlhdCI6MTczNjMwOTg5MiwiZXhwIjoxNzM2Mzk2MjkyfQ.6_VzpT_8KnQJ_xMIait53Hsxs_ctybUCrIKd8Eu-Xsg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"stageType\": \"deal\",\r\n//   \"stageName\": \"Negotiation\",\r\n//   \"pipeline\": \"Marketing\"\r\n// }\r\n\r\n{\r\n  \"stageType\": \"lead\",\r\n  \"stageName\": \"Qualified Lead\",\r\n  \"pipeline\": \"Sales UPdaftgv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/stages/Qi1c8KqbHOE1BOPPQjIRhmz"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Stage By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI1aVliZzVpeUVDYTRtTmlKVGVNZUdXUCIsInJvbGUiOiJhdUt3cnV3OGJhZVBRSkJpM3g2bFBLbSIsImlhdCI6MTczNjMwOTg5MiwiZXhwIjoxNzM2Mzk2MjkyfQ.6_VzpT_8KnQJ_xMIait53Hsxs_ctybUCrIKd8Eu-Xsg"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/stages/Qi1c8KqbHOE1BOPPQjIRhmz"
 					},
 					"response": []
 				}
