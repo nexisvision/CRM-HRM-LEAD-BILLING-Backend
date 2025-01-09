@@ -10,7 +10,7 @@ export default {
         }),
         body: Joi.object({
             name: Joi.string().required(),
-            color: Joi.string().allow('', null)
+            color: Joi.string().allow('', null),
         })
     }),
     handler: async (req, res) => {

@@ -53,7 +53,7 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: +'employee' },
+                where: { role_name: 'employee' },
                 defaults: { id: generateId() }
             });
 
@@ -69,11 +69,11 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Employee created successfully", employee);
+            return responseHandler.created(res, "Employee created successfully", employee);
 
         } catch (error) {
             console.error('Error creating employee:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error.message);
         }
     }
 };

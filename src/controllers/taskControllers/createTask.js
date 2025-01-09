@@ -3,11 +3,12 @@ import Task from "../../models/taskModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Notification from "../../models/notificationModel.js";
+import isSameDay from "../../utils/isSameDay.js"
 
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().required(),
         }),
         body: Joi.object({
             taskName: Joi.string().required(),
@@ -19,7 +20,8 @@ export default {
             description: Joi.string().required(),
             priority: Joi.string().required(),
             status: Joi.string().required(),
-        })
+            reminder_date: Joi.date().optional().allow('', null),
+        }),
     }),
     handler: async (req, res) => {
         try {
@@ -33,9 +35,9 @@ export default {
                 assignTo,
                 description,
                 priority,
-                status
+                status,
+                reminder_date,
             } = req.body;
-
 
             const task = await Task.create({
                 related_id: id,
@@ -48,52 +50,45 @@ export default {
                 description,
                 priority,
                 status,
-                created_by: req.user?.username
+                reminder_date,
+                created_by: req.user?.username,
             });
 
-            function getTwoDaysAgoDate(date) {
-                const twoDaysAgo = new Date(date);
-                twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
-                return twoDaysAgo;
-            }
+            if (reminder_date) {
+                const reminderDate = new Date(reminder_date);
+                const today = new Date();
 
-            // Example usage:
-            const today = new Date();
-            const twoDaysAgo = getTwoDaysAgoDate(dueDate);
-
-            const notificationType = twoDaysAgo <= today;
-
-            if (notificationType) {
-                try {
+                if (isSameDay(reminderDate, today)) {
+                    const dueDateDiff = Math.ceil(
+                        (new Date(dueDate) - reminderDate) / (1000 * 60 * 60 * 24)
+                    );
                     await Notification.create({
                         related_id: id,
                         users: assignTo,
-                        title: "Task Reminder", // More specific title
+                        title: "Task Reminder",
                         notification_type: "reminder",
                         from: req.user?.id,
-                        message: `${req.user?.username} has assigned you a task due in 2 days. Don't forget to complete it: Task Name: ${taskName}, Due Date: ${dueDate}`,
+                        message: `Task due: ${dueDateDiff} days. Don't forget: ${taskName}`,
                         description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
                         created_by: req.user?.username,
                     });
-                } catch (error) {
-                    console.error("Error creating reminder notification:", error);
                 }
             }
-
 
             await Notification.create({
                 related_id: id,
                 users: assignTo,
                 title: "New Task",
                 from: req.user?.id,
-                message: `${req.user?.username} has assigned you a new task`,
+                message: `${req.user?.username} assigned you a task: ${taskName}`,
                 description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
-                created_by: req.user?.username
-            })
+                created_by: req.user?.username,
+            });
 
             responseHandler.success(res, "Task created successfully", task);
         } catch (error) {
             responseHandler.error(res, error.message);
         }
-    }
+    },
 };
+
