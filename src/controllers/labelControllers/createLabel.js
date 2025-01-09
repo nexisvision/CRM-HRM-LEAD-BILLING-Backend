@@ -2,7 +2,6 @@ import Joi from "joi";
 import Tag from "../../models/labelModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-
 export default {
     validator: validator({
         params: Joi.object({
@@ -23,11 +22,9 @@ export default {
             const existingTag = await Tag.findOne({
                 where: { related_id: id, name }
             });
-
             if (existingTag) {
                 return responseHandler.error(res, "Tag with this name already exists");
             }
-
             // Create new tag
             const newTag = await Tag.create({
                 related_id: id,
@@ -36,7 +33,6 @@ export default {
                 lableType,
                 created_by: req.user?.username
             });
-
             responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
             console.log(error);

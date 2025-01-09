@@ -10,8 +10,7 @@ export default {
         }),
         body: Joi.object({
             requestor: Joi.string().required(),
-            requestorName: Joi.string().required(),
-            assignGroup: Joi.string().required(),
+            assignGroup: Joi.string().optional(),
             agent: Joi.string().allow(null),
             project: Joi.string().allow(null),
             type: Joi.string().allow(null),
@@ -19,6 +18,7 @@ export default {
             description: Joi.string().required(),
             files: Joi.object().allow(null),
             priority: Joi.string().allow(null),
+            status: Joi.string().allow(null),
             channelName: Joi.string().allow(null),
             tag: Joi.string().allow(null),
         })
@@ -26,12 +26,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
+            const { requestor, assignGroup, agent,status, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
             const ticket = await Ticket.findByPk(id);
             if (!ticket) {
                 return responseHandler.error(res, "Ticket not found");
             }
-            await ticket.update({ requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
+            await ticket.update({ requestor, assignGroup,status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
             return responseHandler.success(res, "Ticket updated successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error);

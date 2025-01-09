@@ -16,7 +16,7 @@ export default {
             if (!tickets) {
                 return responseHandler.error(res, "No tickets found");
             }
-            return responseHandler.success(res, tickets, "Tickets fetched successfully", tickets);
+            return responseHandler.success(res, "Tickets fetched successfully", tickets);
         } catch (error) {
             return responseHandler.error(res, error);
         }

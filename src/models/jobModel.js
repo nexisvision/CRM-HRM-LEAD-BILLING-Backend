@@ -18,15 +18,12 @@ const Job = sequelize.define('job', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    department: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+
     skills: {
         type: DataTypes.JSON,
         allowNull: false
     },
-    location: {
+    location: { 
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -44,7 +41,7 @@ const Job = sequelize.define('job', {
     },
     totalOpenings: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     status: {
         type: DataTypes.STRING,
@@ -56,18 +53,18 @@ const Job = sequelize.define('job', {
     },
     jobType: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     workExperience: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     currency: {
         type: DataTypes.STRING,
         allowNull: false
     },
     expectedSalary: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true
     },
     description: {

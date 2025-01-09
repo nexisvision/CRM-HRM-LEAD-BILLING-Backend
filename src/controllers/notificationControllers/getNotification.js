@@ -14,16 +14,11 @@ export default {
         try {
             const userId = req.user.id;
 
-            const notification = await Notification.findAll({ where: { isRead: false } });
+            const notification = await Notification.findAll();
 
             const filteredNotifications = notification.filter(a => a.users.includes(userId));
             if (filteredNotifications.length === 0) {
                 return responseHandler.success(res, "No notifications found", []);
-            }
-
-            for (const notification of filteredNotifications) {
-                notification.isRead = true;
-                await notification.save();
             }
 
             return responseHandler.success(res, "Notifications fetched successfully", filteredNotifications);

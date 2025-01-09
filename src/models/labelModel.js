@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
-
 const Tag = sequelize.define('tag', {
     id: {
         type: DataTypes.STRING,
@@ -35,7 +34,6 @@ const Tag = sequelize.define('tag', {
         allowNull: true
     }
 });
-
 Tag.beforeCreate(async (tag) => {
     let isUnique = false;
     let newId;

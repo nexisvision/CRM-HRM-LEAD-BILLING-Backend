@@ -6,7 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            stageType: Joi.string().valid('lead', 'deal').required(),
+            stageType: Joi.string().valid('lead', 'deal','lable').required(),
             stageName: Joi.string().required(),
             pipeline: Joi.string().required(),
         })

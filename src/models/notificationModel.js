@@ -38,11 +38,6 @@ const Notification = sequelize.define('Notification', {
         allowNull: false,
         defaultValue: 'normal'
     },
-    isRead: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false
-    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

@@ -35,7 +35,7 @@ const Task = sequelize.define('Task', {
     },
     assignTo: {
         type: DataTypes.JSON,
-        allowNull: false,
+        allowNull: true,
     },
     status: {
         type: DataTypes.STRING,

@@ -16,12 +16,12 @@ export default {
             project: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            assignTo: Joi.object().required(),
-            description: Joi.string().required(),
+            assignTo: Joi.any().optional(),
             priority: Joi.string().required(),
             status: Joi.string().required(),
             reminder_date: Joi.date().optional().allow('', null),
-        }),
+            description: Joi.string().optional().allow('', null)
+        })
     }),
     handler: async (req, res) => {
         try {

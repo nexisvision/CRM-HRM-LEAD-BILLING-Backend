@@ -16,11 +16,11 @@ const Ticket = sequelize.define('ticket', {
     },
     requestorName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     assignGroup: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     agent: {
         type: DataTypes.STRING,
@@ -59,6 +59,11 @@ const Ticket = sequelize.define('ticket', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
+    },
+
+    status: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     tag: {
         type: DataTypes.STRING,

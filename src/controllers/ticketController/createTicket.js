@@ -7,8 +7,7 @@ export default {
     validator: validator({
         body: Joi.object({
             requestor: Joi.string().required(),
-            requestorName: Joi.string().required(),
-            assignGroup: Joi.string().required(),
+            assignGroup: Joi.string().optional(),
             agent: Joi.string().allow(null),
             project: Joi.string().allow(null),
             type: Joi.string().allow(null),
@@ -16,14 +15,15 @@ export default {
             description: Joi.string().required(),
             files: Joi.object().allow(null),
             priority: Joi.string().allow(null),
+            status: Joi.string().allow(null),
             channelName: Joi.string().allow(null),
             tag: Joi.string().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
-            const ticket = await Ticket.create({ requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
+            const { requestor, assignGroup, agent, status,project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
+            const ticket = await Ticket.create({ requestor, assignGroup, status,agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
             return responseHandler.success(res, "Ticket created successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error);

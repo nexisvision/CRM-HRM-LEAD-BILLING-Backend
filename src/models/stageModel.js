@@ -10,7 +10,7 @@ const Stage = sequelize.define("stage", {
         defaultValue: () => generateId()
     },
     stageType: {
-        type: DataTypes.ENUM('lead', 'deal'),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     stageName: {

@@ -13,7 +13,7 @@ export default {
         try {
             const { page, limit } = req.query;
             const pipelines = await Pipeline.findAll();
-            responseHandler.success(res, pipelines, 'Pipelines fetched successfully', pipelines);
+            responseHandler.success(res, 'Pipelines fetched successfully', pipelines);
         } catch (error) {
             responseHandler.error(res, error.message);
         }
