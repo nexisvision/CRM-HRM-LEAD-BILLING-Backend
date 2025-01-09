@@ -16,7 +16,7 @@ const Tag = sequelize.define('tag', {
     },
     lableType: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     name: {
         type: DataTypes.STRING,

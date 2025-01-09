@@ -33,6 +33,14 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    current_users_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    current_clients_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
     payment_status: {
         type: DataTypes.ENUM('pending', 'completed', 'failed'),
         defaultValue: 'pending'

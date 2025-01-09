@@ -3,6 +3,7 @@ import getAllPlans from "./getAllPlans.js";
 import getPlanById from "./getPlanById.js";
 import updatePlan from "./updatePlan.js";
 import deletePlan from "./deletePlan.js";
+import assignPlanToClient from "./assignPlanToClient.js";
 
 export {
     createPlan,
@@ -10,4 +11,5 @@ export {
     getPlanById,
     updatePlan,
     deletePlan,
+    assignPlanToClient,
 };

@@ -5,6 +5,7 @@ import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";
+import ClientSubscription from "../../models/clientSubscriptionModel.js";
 
 export default {
     validator: validator({
@@ -24,6 +25,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { subscription } = req;
             const { username, email, password } = req.body;
 
             const existingUsername = await SubClient.findOne({
@@ -57,11 +59,13 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Company created successfully", subClient);
+            const clientSubscription = await ClientSubscription.findByPk(subscription.id);
+            await clientSubscription.increment('current_clients_count');
+
+            return responseHandler.created(res, "subClient created successfully", subClient);
 
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error.message);
         }
     }
 }

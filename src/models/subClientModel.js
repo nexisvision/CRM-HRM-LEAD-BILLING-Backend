@@ -7,7 +7,7 @@ const SubClient = sequelize.define('SubClient', {
         type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId()
+        defaultValue: () => generateId()
     },
     username: {
         type: DataTypes.STRING,

@@ -6,36 +6,25 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            name: Joi.string().valid('platinum', 'gold', 'silver', 'bronze').required(),
+            name: Joi.string().required(),
+            currency: Joi.string().required(),
             price: Joi.number().required(),
-            duration: Joi.string().required(),
-            description: Joi.string().required(),
+            duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').required(),
             trial_period: Joi.number().required(),
             max_users: Joi.number().required(),
-            max_customers: Joi.number().required(),
-            max_vendors: Joi.number().required(),
             max_clients: Joi.number().required(),
             storage_limit: Joi.number().required(),
-            features: Joi.object({
-                account: Joi.boolean().optional(),
-                crm: Joi.boolean().optional(),
-                hrm: Joi.boolean().optional(),
-                project: Joi.boolean().optional(),
-                pos: Joi.boolean().optional(),
-                chatgpt: Joi.boolean().optional(),
-            }).optional(),
+            features: Joi.object().optional().allow(null),
+            status: Joi.string().valid('active', 'inactive').required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features } = req.body;
-            const plan = await SubscriptionPlan.create({ name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features });
-            if (!plan) {
-                return responseHandler.error(res, "Failed to create plan");
-            }
+            const { name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status } = req.body;
+            const plan = await SubscriptionPlan.create({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, created_by: req.user?.username });
             responseHandler.created(res, "Plan created successfully", plan);
         } catch (error) {
             responseHandler.error(res, error.message);
         }
     }
-}; 
+};

@@ -9,36 +9,28 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            name: Joi.string().allow('', null).optional(),
-            price: Joi.number().allow('', null).optional(),
-            duration: Joi.string().allow('', null).optional(),
-            description: Joi.string().allow('', null).optional(),
-            trial_period: Joi.number().allow('', null).optional(),
-            max_users: Joi.number().allow('', null).optional(),
-            max_customers: Joi.number().allow('', null).optional(),
-            max_vendors: Joi.number().allow('', null).optional(),
-            max_clients: Joi.number().allow('', null).optional(),
-            storage_limit: Joi.number().allow('', null).optional(),
-            features: Joi.object({
-                account: Joi.boolean().allow('', null).optional(),
-                crm: Joi.boolean().allow('', null).optional(),
-                hrm: Joi.boolean().allow('', null).optional(),
-                project: Joi.boolean().allow('', null).optional()
-            }).optional(),
-            status: Joi.string().valid('active', 'inactive').allow('', null).optional()
+            name: Joi.string().required(),
+            currency: Joi.string().required(),
+            price: Joi.number().required(),
+            duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').required(),
+            trial_period: Joi.number().required(),
+            max_users: Joi.number().required(),
+            max_clients: Joi.number().required(),
+            storage_limit: Joi.number().required(),
+            features: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features, status } = req.body;
+            const { name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status } = req.body;
 
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
                 return responseHandler.notFound(res, "Plan not found");
             }
 
-            await plan.update({ name, price, duration, description, trial_period, max_users, max_customers, max_vendors, max_clients, storage_limit, features, status });
+            await plan.update({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, updated_by: req.user?.username });
 
             responseHandler.success(res, "Plan updated successfully", plan);
         } catch (error) {
