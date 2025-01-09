@@ -46,9 +46,12 @@ import skillRoutes from "./skillRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
 import appreciationRoutes from "./appreciationRoutes.js";
+import trainingRoutes from "./trainingRoutes.js";
+import employeeSalaryRoutes from "./employeeSalaryRoutes.js";
+import stageRoutes from "./stageRoutes.js";
+import notificationRoutes from "./notificationRoutes.js";
 
 const router = express.Router();
-
 
 router.use('/auth', authRoutes);
 router.use('/super-admin', superAdminRoutes);
@@ -83,10 +86,11 @@ router.use('/payments', paymentRoutes);
 router.use('/milestones', milestoneRoutes);
 router.use('/notes', notesRoutes);
 router.use('/activities', activityRoutes);
-router.use('/leads', leadRoutes);
-router.use('/products', productsRoutes);
-router.use('/pipelines', pipelineRoutes);
 router.use('/deals', dealRoutes);
+router.use('/leads', leadRoutes);
+router.use('/pipelines', pipelineRoutes);
+router.use('/stages', stageRoutes);
+router.use('/products', productsRoutes);
 router.use('/estimates', estimateRoutes);
 router.use('/proposals', proposalRoutes);
 router.use('/tickets', ticketRoutes);
@@ -97,5 +101,8 @@ router.use('/skills', skillRoutes);
 router.use('/interview-schedules', interviewScheduleRoutes);
 router.use('/messages', messageRoutes);
 router.use('/appreciations', appreciationRoutes);
+router.use('/trainings', trainingRoutes);
+router.use('/employeeSalary', employeeSalaryRoutes);
+router.use('/notifications', notificationRoutes);
 
 export default router;

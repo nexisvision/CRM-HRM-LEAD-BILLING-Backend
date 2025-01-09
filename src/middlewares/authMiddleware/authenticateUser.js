@@ -46,7 +46,6 @@ const authenticateUser = async (req, res, next) => {
             ...user.toJSON(),
             permissions
         };
-
         next();
     } catch (error) {
         return responseHandler.error(res, error.message);

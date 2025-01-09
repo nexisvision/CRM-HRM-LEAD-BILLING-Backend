@@ -7,7 +7,7 @@ const SubClient = sequelize.define('SubClient', {
         type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId()
+        defaultValue: () => generateId()
     },
     username: {
         type: DataTypes.STRING,
@@ -31,7 +31,6 @@ const SubClient = sequelize.define('SubClient', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null,
-        unique: true
     },
     firstName: {
         type: DataTypes.STRING,
@@ -78,8 +77,8 @@ const SubClient = sequelize.define('SubClient', {
         allowNull: true,
         defaultValue: null
     },
-    e_signature: {
-        type: DataTypes.STRING,
+    e_signatures: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
     },
@@ -105,6 +104,11 @@ const SubClient = sequelize.define('SubClient', {
     },
     address: {
         type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    links: {
+        type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null
     },

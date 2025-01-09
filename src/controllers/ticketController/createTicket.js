@@ -24,7 +24,7 @@ export default {
         try {
             const { requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
             const ticket = await Ticket.create({ requestor, requestorName, assignGroup, agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
-            return responseHandler.success(res, ticket, "Ticket created successfully", ticket);
+            return responseHandler.success(res, "Ticket created successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error);
         }

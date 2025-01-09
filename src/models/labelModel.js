@@ -14,6 +14,10 @@ const Tag = sequelize.define('tag', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    lableType: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false

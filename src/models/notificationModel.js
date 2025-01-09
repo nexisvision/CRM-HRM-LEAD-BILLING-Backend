@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
+import sequelize from '../config/db.js';
+import generateId from '../middlewares/generatorId.js';
 
 const Notification = sequelize.define('Notification', {
     id: {
@@ -8,20 +9,38 @@ const Notification = sequelize.define('Notification', {
         unique: true,
         defaultValue: () => generateId()
     },
-    userId: {
+    related_id: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
+    },
+    users: {
+        type: DataTypes.JSON,
+        allowNull: false
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     message: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    type: {
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    from: {
         type: DataTypes.STRING,
         allowNull: false
     },
+    notification_type: {
+        type: DataTypes.ENUM('normal', 'reminder'),
+        allowNull: false,
+        defaultValue: 'normal'
+    },
     isRead: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
         defaultValue: false
     },
     created_by: {

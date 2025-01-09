@@ -1,13 +1,13 @@
 import express from "express";
-import { getAllSubClients, getSubClientById, updateSubClient, deleteSubClient, createSubClient } from "../controllers/subClientControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
+import { createSubClient, getAllSubClients, updateSubClient, deleteSubClient } from "../controllers/subClientControllers/index.js";
+import { checkClientLimit, checkSubscriptionExpiry } from "../middlewares/checkSubscriptionLimits.js";
 const router = express.Router();
 
-// router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole);
 
-router.post('/', createSubClient.validator, createSubClient.handler);
+router.post('/', checkSubscriptionExpiry, checkClientLimit, createSubClient.validator, createSubClient.handler);
 router.get('/', getAllSubClients.validator, getAllSubClients.handler);
-router.get('/:id', getSubClientById.validator, getSubClientById.handler);
 router.put('/:id', updateSubClient.validator, updateSubClient.handler);
 router.delete('/:id', deleteSubClient.validator, deleteSubClient.handler);
 

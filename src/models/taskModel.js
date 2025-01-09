@@ -50,6 +50,11 @@ const Task = sequelize.define('Task', {
         allowNull: true,
         defaultValue: null
     },
+    reminder_date: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

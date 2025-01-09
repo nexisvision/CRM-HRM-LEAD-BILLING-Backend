@@ -10,13 +10,14 @@ export default {
         }),
         body: Joi.object({
             name: Joi.string().required(),
-            color: Joi.string().allow('', null)
+            color: Joi.string().allow('', null),
+            lableType: Joi.string().allow('', null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, color } = req.body;
+            const { name, color, lableType } = req.body;
 
             // Check if tag already exists
             const existingTag = await Tag.findOne({
@@ -32,6 +33,7 @@ export default {
                 related_id: id,
                 name,
                 color,
+                lableType,
                 created_by: req.user?.username
             });
 

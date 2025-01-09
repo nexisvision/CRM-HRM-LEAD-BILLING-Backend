@@ -1,13 +1,12 @@
 import express from "express";
 import { signup, login, getAllUsers, getUserById, updateUser, deleteUser } from "../controllers/authControllers/index.js";
-import { authenticateUser, checkUserRole } from "../middlewares/index.js";
+import { authenticateUser, checkUserRole, checkRole } from "../middlewares/index.js";
+import { checkSubscriptionExpiry, checkUserLimit } from "../middlewares/checkSubscriptionLimits.js";
 
 const router = express.Router();
 
-
-router.post('/signup', signup.validator, signup.handler);
+router.post('/signup', authenticateUser, checkRole, checkSubscriptionExpiry, checkUserLimit, signup.validator, signup.handler);
 router.post('/login', login.validator, login.handler);
-
 
 //Super-Admin 
 router.use(authenticateUser, checkUserRole(['super-admin']));

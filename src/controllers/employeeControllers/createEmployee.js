@@ -28,31 +28,12 @@ export default {
                     'string.min': 'Password must be at least 8 characters',
                     'string.pattern.base': 'Password must contain only letters, numbers and special characters'
                 }),
-            firstName: Joi.string().optional().allow('', null),
-            lastName: Joi.string().optional().allow('', null),
-            phone: Joi.string().optional().allow('', null),
-            address: Joi.string().optional().allow('', null),
-            joiningDate: Joi.date().optional().allow('', null),
-            leaveDate: Joi.date().optional().allow('', null),
-            department: Joi.string().optional().allow('', null),
-            designation: Joi.string().optional().allow('', null),
-            salary: Joi.number().optional().allow('', null),
-            accountholder: Joi.string().optional().allow('', null),
-            accountnumber: Joi.number().optional().allow('', null),
-            bankname: Joi.string().optional().allow('', null),
-            ifsc: Joi.number().optional().allow('', null),
-            banklocation: Joi.string().optional().allow('', null),
-            cv_path: Joi.string().optional().allow('', null),
-            photo_path: Joi.string().optional().allow('', null),
         })
     }),
     handler: async (req, res) => {
         try {
             const {
-                username, email, password, firstName, lastName, phone,
-                address, joiningDate, leaveDate, department, designation,
-                salary, accountholder, accountnumber, bankname, ifsc,
-                banklocation, cv_path, photo_path, role_name } = req.body;
+                username, email, password } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -72,7 +53,7 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: role_name || 'employee' },
+                where: { role_name: 'employee' },
                 defaults: { id: generateId() }
             });
 
@@ -84,32 +65,15 @@ export default {
                 username,
                 email,
                 password: hashedPassword,
-                firstName,
-                lastName,
-                phone,
-                address,
-                joiningDate,
-                leaveDate,
-                department,
-                designation,
-                salary,
-                accountholder,
-                accountnumber,
-                bankname,
-                ifsc,
-                banklocation,
-                cv_path,
-                photo_path,
                 role_id: role.id,
                 created_by: req.user?.username,
-                updated_by: req.user?.username
             });
 
-            responseHandler.created(res, "Employee created successfully", employee);
+            return responseHandler.created(res, "Employee created successfully", employee);
 
         } catch (error) {
             console.error('Error creating employee:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error.message);
         }
     }
 };
