@@ -6,9 +6,9 @@ export const Countries = sequelize.define("Countries", {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        primaryKey: true,
         defaultValue: () => generateId(),
-        unique: true, 
-        primaryKey: true
     },
     countryName: {
         type: DataTypes.STRING,
@@ -30,6 +30,6 @@ export const Countries = sequelize.define("Countries", {
         allowNull: true,
         defaultValue: null
     }
-}); 
+});
 
 export default Countries;

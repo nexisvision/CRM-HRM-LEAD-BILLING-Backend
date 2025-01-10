@@ -29,15 +29,16 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { subject, client, project, type, value, startDate, endDate,currency, description,
+            const { subject, client, project, type, value, startDate, endDate, currency, description,
                 phone, address, city, state, country, zipcode, notes } = req.body;
-            const contract = await Contract.create({ subject, client, project, type, value, startDate, endDate,currency, description,
-                phone, address, city, state, country, zipcode, notes, created_by: req.user?.id });
+            const contract = await Contract.create({
+                subject, client, project, type, value, startDate, endDate, currency, description,
+                phone, address, city, state, country, zipcode, notes, created_by: req.user?.id
+            });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
-            console.error("Error creating contract:", error);
             return responseHandler.error(res, error.message);
         }
     }
-    
+
 }

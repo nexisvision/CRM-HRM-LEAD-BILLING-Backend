@@ -1,7 +1,7 @@
 import Joi from "joi";
-import validator from "../../utils/validator.js";
-import Quotations from "../../models/quotationModel.js";
+import Customer from "../../models/customersModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import validator from "../../utils/validator.js";
 
 
 export default {
@@ -13,8 +13,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const quotations = await Quotations.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, "Quotations fetched successfully", quotations);
+            const customer = await Customer.findByPk(id);
+            if (!customer) {
+                return responseHandler.error(res, "customer not found");
+            }
+            await customer.destroy();
+            return responseHandler.success(res, "customer deleted successfully", customer);
         } catch (error) {
             return responseHandler.error(res, error.message);
         }

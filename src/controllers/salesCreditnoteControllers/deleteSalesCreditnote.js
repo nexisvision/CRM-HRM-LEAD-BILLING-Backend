@@ -1,8 +1,7 @@
 import Joi from "joi";
+import SalesCreditnotes from "../../models/salesCreditnoteModel.js";
 import validator from "../../utils/validator.js";
-import Quotations from "../../models/quotationModel.js";
 import responseHandler from "../../utils/responseHandler.js";
-
 
 export default {
     validator: validator({
@@ -13,10 +12,14 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const quotations = await Quotations.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, "Quotations fetched successfully", quotations);
+            const salesCreditnote = await SalesCreditnotes.findByPk(id);
+            if (!salesCreditnote) {
+                return responseHandler.error(res, "SalesCreditnote not found");
+            }
+            await salesCreditnote.destroy();
+            return responseHandler.success(res, "SalesCreditnote deleted successfully", salesCreditnote);
         } catch (error) {
             return responseHandler.error(res, error.message);
         }
     }
-}
+}   

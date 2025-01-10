@@ -24,7 +24,7 @@ export default {
             if (!appreciation) {
                 return responseHandler.error(res, "Appreciation not found");
             }
-            await appreciation.update({ award, givenTo, date, summary, photo });
+            await appreciation.update({ award, givenTo, date, summary, photo, updated_by: req.user?.username });
             return responseHandler.success(res, "Appreciation updated successfully", appreciation);
         } catch (error) {
             return responseHandler.error(res, error.message);

@@ -50,7 +50,11 @@ import trainingRoutes from "./trainingRoutes.js";
 import employeeSalaryRoutes from "./employeeSalaryRoutes.js";
 import stageRoutes from "./stageRoutes.js";
 import notificationRoutes from "./notificationRoutes.js";
-
+import customerRoutes from "./customerRoutes.js";
+import salesQuotations from "./salesQuotations.js";
+import salesInvoiceRoutes from "./salesInvoiceRoutes.js";
+import salesRevenueRoutes from "./salesRevenueRoutes.js";
+import salesCreditnoteRoutes from "./salesCreditnoteRoutes.js";
 const router = express.Router();
 
 router.use('/auth', authRoutes);
@@ -104,5 +108,10 @@ router.use('/appreciations', appreciationRoutes);
 router.use('/trainings', trainingRoutes);
 router.use('/employeeSalary', employeeSalaryRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/customers', customerRoutes);
+router.use('/sales-quotations', salesQuotations);
+router.use('/sales-invoices', salesInvoiceRoutes);
+router.use('/sales-revenue', salesRevenueRoutes);
+router.use('/sales-creditnote', salesCreditnoteRoutes);
 
 export default router;

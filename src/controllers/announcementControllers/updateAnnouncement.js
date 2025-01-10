@@ -23,7 +23,7 @@ export default {
             if (!announcement) {
                 return responseHandler.error(res, "Announcement not found");
             }
-            await announcement.update({ title, description });
+            await announcement.update({ title, description, updated_by: req.user?.username });
             responseHandler.success(res, "Announcement updated successfully", announcement);
         } catch (error) {
             responseHandler.error(res, error.message);
