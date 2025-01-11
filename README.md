@@ -1,8 +1,3 @@
-
-Sure! Here's your CRM Project Backend documentation formatted in a markdown-friendly README format:
-
-markdown
-Copy code
 # **CRM Project Backend Documentation** ✨
 
 ## 📚 **Table of Contents**
