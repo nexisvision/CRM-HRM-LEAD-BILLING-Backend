@@ -44,7 +44,6 @@ const authenticateUser = async (req, res, next) => {
             ...user.toJSON(),
             permissions
         };
-        console.log("hr");
         next();
     } catch (error) {
         return responseHandler.error(res, error.message);

@@ -43,5 +43,3 @@ const startServer = async () => {
 };
 
 startServer();
-
-// hello this is captain yash👨‍⚖️👨‍💻
