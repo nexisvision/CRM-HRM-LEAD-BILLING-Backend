@@ -1,41 +1,26 @@
-<div align="center">
+# **CRM Project Backend Documentation** ✨
 
-<!-- Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,2,2,2,2&height=200&section=header&text=CRM%20Backend&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35"/>
-
-<!-- Typing Animation -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=3DDCFF&center=true&vCenter=true&random=false&width=435&lines=Backend+API+for+CRM+System;JWT+Authentication;Seamless+Database+Management;Role+Based+Access"/>
-</p>
-
-<!-- Animated Emojis -->
-<p align="center" style="display: flex; justify-content: space-between; max-width: 960px;">
-    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="100" height="100"/>
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Smiling%20Face%20With%20Sunglasses.webp" alt="Smiling Face With Sunglasses" width="100" height="100" />
-</p>
-
-<!-- Hacker Style Badges -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-OK-00ff00?style=for-the-badge&logo=matrix&logoColor=white"/>
-  <img src="https://img.shields.io/badge/System-Online-00ff00?style=for-the-badge&logo=matrix&logoColor=white"/>
-</p>
-
-<!-- GitHub Stats -->
-<p align="center">
-  <a href="https://github.com/yash-babariya">
-    <img height="160em" src="https://github-readme-stats.vercel.app/api?username=yash-babariya&show_icons=true&theme=react&bg_color=0D1117&title_color=3DDCFF&icon_color=3DDCFF&hide_border=true&count_private=true"/>
-    <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yash-babariya&layout=compact&theme=react&bg_color=0D1117&title_color=3DDCFF&hide_border=true"/>
-  </a>
-</p>
+## 📚 **Table of Contents**
+- [API Documentation](#api-documentation)
+- [Project Flow Documentation](#project-flow-documentation)
+  - [Architecture Overview](#architecture-overview)
+  - [Core Components Flow](#core-components-flow)
+  - [API Routes Structure](#api-routes-structure)
+  - [Database Flow](#database-flow)
+  - [Security Implementation](#security-implementation)
+  - [Error Handling Flow](#error-handling-flow)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation Steps](#installation-steps)
+  - [Environment Configuration](#environment-configuration)
 
 ---
 
-## 📚 **API Documentation**
+## 📑 **API Documentation**
 - Postman Collection URL:  
 [CRM Backend API Collection](https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37446654-0d427c5f-926d-4da3-bb6a-3f02c26fbdfa?action=share&creator=39667115)
 
 ---
-
 
 ## 🧑‍💻 **Project Flow Documentation**
 
