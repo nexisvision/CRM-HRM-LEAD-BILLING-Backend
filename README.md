@@ -62,7 +62,8 @@ This project follows a modular architecture, including the following components:
 
 ### API Routes Structure
 ```
-/api/v1/
+http://localhost:5353/api/v1/
+
 # API Routes Structure
 #
 # ├── auth/                  # Authentication endpoints
