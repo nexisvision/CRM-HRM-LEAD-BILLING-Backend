@@ -2012,7 +2012,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Basic\",\r\n  \"price\": 9.99,\r\n  \"duration\": \"Per Month\", \r\n  \"trial_period\": 7,\r\n  \"max_users\": 5,\r\n  \"max_clients\": 10,\r\n  \"storage_limit\": 10, \r\n  \"features\": { \r\n    \"feature1\": true, \r\n    \"feature2\": false \r\n  },\r\n  \"status\": \"active\",\r\n  \"currency\": \"USD\" \r\n}\r\n\r\n",
+							"raw": "// {\r\n//   \"name\": \"Basic\",\r\n//   \"price\": 9.99,\r\n//   \"duration\": \"Per Month\", \r\n//   \"trial_period\": 7,\r\n//   \"max_users\": 5,\r\n//   \"max_clients\": 10,\r\n//   \"storage_limit\": 10, \r\n//   \"features\": { \r\n//     \"feature1\": true, \r\n//     \"feature2\": false \r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\" \r\n// }\r\n\r\n// {\r\n//   \"name\": \"Standard\",\r\n//   \"price\": 19.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 14,\r\n//   \"max_users\": 15,\r\n//   \"max_clients\": 30,\r\n//   \"storage_limit\": 50,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"name\": \"Premium\",\r\n//   \"price\": 49.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 50,\r\n//   \"max_clients\": 100,\r\n//   \"storage_limit\": 200,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n// {\r\n//   \"name\": \"Enterprise\",\r\n//   \"price\": 99.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 200,\r\n//   \"max_clients\": 500,\r\n//   \"storage_limit\": 1000,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true,\r\n//     \"feature6\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2246,7 +2246,7 @@
 			]
 		},
 		{
-			"name": "Task-Calendar",
+			"name": "Task Calendar",
 			"item": [
 				{
 					"name": "Create Task Calendar",
@@ -4857,7 +4857,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJvZDhkVm5taEF3Mm1hZkFpenIzWWxvYSIsInJvbGUiOiJZb1NGM3B2dDlxaE56Tmlrd1BHNm5LcCIsImlhdCI6MTczNjM5Njk4NSwiZXhwIjoxNzM2NDgzMzg1fQ.Ur5QV2R3lRnFMSrwqiuneEl-r4Am2D5s0v9e1B8KZyo"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY3Njk3NjcsImV4cCI6MTczNjg1NjE2N30.JovCrIBjSjC3QyU7ItIyhy5LzC4pEYQSbK2Yl1yNMyo"
 							}
 						},
 						"method": "GET",

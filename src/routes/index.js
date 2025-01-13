@@ -56,6 +56,7 @@ import salesInvoiceRoutes from "./salesInvoiceRoutes.js";
 import salesRevenueRoutes from "./salesRevenueRoutes.js";
 import salesCreditnoteRoutes from "./salesCreditnoteRoutes.js";
 import inquiryRoutes from "./inquiryRoutes.js";
+
 const router = express.Router();
 
 router.use('/auth', authRoutes);

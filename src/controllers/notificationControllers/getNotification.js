@@ -16,6 +16,8 @@ export default {
 
             const notification = await Notification.findAll();
 
+            console.log(notification)
+
             const filteredNotifications = notification.filter(a => a.users.includes(userId));
             if (filteredNotifications.length === 0) {
                 return responseHandler.success(res, "No notifications found", []);
