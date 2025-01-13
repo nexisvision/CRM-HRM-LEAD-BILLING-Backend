@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post("/", createSuperAdmin.validator, createSuperAdmin.handler);
 
+
 router.use(authenticateUser, checkUserRole(['super-admin']));
 router.get('/', getAllSuperAdmins.validator, getAllSuperAdmins.handler);
 router.put('/:id', updateSuperAdmin.validator, updateSuperAdmin.handler);

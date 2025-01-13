@@ -1,13 +1,13 @@
 import express from "express";
 import { getAllEmployees, createEmployee, updateEmployee, deleteEmployee } from "../controllers/employeeControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-import { checkClientLimit } from "../middlewares/checkSubscriptionLimits.js";
+import { getActiveSubscription } from "../middlewares/checkSubscriptionLimits.js";
 
 const router = express.Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post('/', checkClientLimit, createEmployee.validator, createEmployee.handler);
+router.post('/', getActiveSubscription, createEmployee.validator, createEmployee.handler);
 router.get('/', getAllEmployees.validator, getAllEmployees.handler);
 router.put('/:id', updateEmployee.validator, updateEmployee.handler);
 router.delete('/:id', deleteEmployee.validator, deleteEmployee.handler);

@@ -1,7 +1,7 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -16,7 +16,7 @@ export default {
         try {
             const { id } = req.params;
 
-            const client = await Client.findByPk(id);
+            const client = await User.findByPk(id);
             if (!client) {
                 return responseHandler.error(res, "Client not found");
             }

@@ -9,7 +9,7 @@ export default async function checkRole(req, res, next) {
 
         const user = req.user;
 
-        const role = await Role.findByPk(user.role_id);
+        const role = await Role.findByPk(user.role);
         if (!role) {
             return responseHandler.error(res, "Role not found");
         }

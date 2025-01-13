@@ -2,6 +2,7 @@ import Role from "../../models/roleModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 const checkUserRole = (allowedRoles) => {
+
     return async (req, res, next) => {
         try {
             if (!req.user || !req.user.id) {
@@ -11,7 +12,7 @@ const checkUserRole = (allowedRoles) => {
             if (!user) {
                 return responseHandler.error(res, "User not found");
             }
-            const role = await Role.findByPk(user.role_id);
+            const role = await Role.findByPk(user.role);
             if (!role) {
                 return responseHandler.error(res, "Role not found");
             }
@@ -19,7 +20,7 @@ const checkUserRole = (allowedRoles) => {
             if (!allowedRoles.includes(role.role_name)) {
                 return responseHandler.error(res, "Unauthorized access");
             }
-
+            req.role = role;
             next();
         } catch (error) {
             responseHandler.error(res, error.message);
