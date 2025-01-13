@@ -25,7 +25,7 @@ export default {
             await permission.destroy();
             responseHandler.success(res, "Permission deleted successfully");
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

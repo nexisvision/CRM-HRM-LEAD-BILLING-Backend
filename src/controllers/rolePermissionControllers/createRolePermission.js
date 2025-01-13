@@ -51,7 +51,7 @@ export default {
 
             responseHandler.created(res, "Role permission created successfully", rolePermission);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

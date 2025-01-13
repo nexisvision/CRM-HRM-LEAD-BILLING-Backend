@@ -17,7 +17,7 @@ export default {
             const deals = await Deal.findAll();
             responseHandler.success(res, "Deals fetched successfully", deals);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

@@ -48,7 +48,7 @@ export default {
             });
             responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

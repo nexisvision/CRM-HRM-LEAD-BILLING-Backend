@@ -21,7 +21,7 @@ export default {
 
             responseHandler.success(res, "Attendance fetched successfully", attendance);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

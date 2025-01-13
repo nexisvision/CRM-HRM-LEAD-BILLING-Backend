@@ -39,7 +39,7 @@ export default {
             });
             responseHandler.success(res, "Milestone updated successfully", milestone);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

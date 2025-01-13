@@ -31,7 +31,7 @@ export default {
             const task = await TaskCalendar.create({ taskName, taskDate, taskTime, taskDescription, created_by: req.user?.username });
             responseHandler.success(res, "Task created successfully", task);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

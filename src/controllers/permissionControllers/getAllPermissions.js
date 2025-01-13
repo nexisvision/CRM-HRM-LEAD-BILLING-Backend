@@ -15,7 +15,7 @@ export default {
             const permissions = await Permission.findAll();
             responseHandler.success(res, "Permissions retrieved successfully", permissions);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

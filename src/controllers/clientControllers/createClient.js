@@ -30,6 +30,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { subscription } = req;
             const { username, email, password } = req.body;
 
             const existingUsername = await User.findOne({
@@ -74,6 +75,7 @@ export default {
             const sessionToken = jwt.sign(
                 {
                     ...tempUser,
+                    ...subscription,
                     type: 'signup_verification'
                 },
                 JWT_SECRET,
@@ -91,7 +93,7 @@ export default {
             return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            console.log(error);
+
             return responseHandler.error(res, error.message);
         }
     }

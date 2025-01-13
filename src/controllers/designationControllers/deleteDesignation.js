@@ -27,7 +27,7 @@ export default {
 
             responseHandler.success(res, "Designation deleted successfully", designation);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

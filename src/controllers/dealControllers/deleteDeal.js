@@ -20,7 +20,7 @@ export default {
             await deal.destroy();
             responseHandler.success(res, "Deal deleted successfully", deal);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

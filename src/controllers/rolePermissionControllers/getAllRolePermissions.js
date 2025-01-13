@@ -32,7 +32,7 @@ export default {
 
             responseHandler.success(res, "Role permissions fetched successfully", rolePermissions);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

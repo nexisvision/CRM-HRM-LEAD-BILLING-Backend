@@ -48,7 +48,7 @@ export default {
             });
             responseHandler.success(res, "Client updated successfully", client);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

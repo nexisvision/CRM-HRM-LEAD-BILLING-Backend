@@ -17,11 +17,11 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-           
-            const milestones = await Milestone.findAll({ where: { related_id: id }});
+
+            const milestones = await Milestone.findAll({ where: { related_id: id } });
             responseHandler.success(res, "Milestones fetched successfully", milestones);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

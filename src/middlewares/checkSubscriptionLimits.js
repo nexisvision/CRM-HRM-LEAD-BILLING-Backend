@@ -11,14 +11,14 @@ export const getActiveSubscription = async (req, res, next) => {
     if (clientSubscription.status === 'expired') responseHandler.error(res, 'Subscription expired');
     const plan = await SubscriptionPlan.findByPk(clientSubscription.plan_id);
     if (!plan) throw new Error('Subscription plan not found');
-    req.subscription = { clientSubscription, plan }
-    return;
+    req.subscription = { clientSubscription, plan };
+    return next();
 };
 
 export const checkSubscriptionLimits = async (req, res, next) => {
     try {
         const { user } = req;
-        const { clientSubscription, plan } = req.subscription;
+        const { clientSubscription, plan } = req.user;
         const role = await Role.findByPk(user?.role_id);
         if (!role) return responseHandler.error(res, 'Role not found');
         if (['super-admin', 'client'].includes(role.role_name)) {

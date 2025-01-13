@@ -22,8 +22,6 @@ export default {
             // Safely access project_members array from the payload
             const newMemberIds = project_members?.project_members || [];
 
-            console.log("Received project members:", newMemberIds);
-
             const project = await Project.findByPk(id);
 
             if (!project) {
@@ -57,7 +55,7 @@ export default {
                 project_members: { project_members: updatedMembers }
             });
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

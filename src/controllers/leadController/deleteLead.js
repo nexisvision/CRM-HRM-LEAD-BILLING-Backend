@@ -26,7 +26,7 @@ export default {
 
             responseHandler.success(res, "Lead deleted successfully", lead);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

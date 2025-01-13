@@ -22,7 +22,7 @@ export default {
 
             responseHandler.success(res, "Plan deleted successfully", plan);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

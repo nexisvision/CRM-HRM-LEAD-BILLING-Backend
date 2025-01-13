@@ -23,7 +23,7 @@ export default {
 
             responseHandler.success(res, "Quotation deleted successfully", quotation);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

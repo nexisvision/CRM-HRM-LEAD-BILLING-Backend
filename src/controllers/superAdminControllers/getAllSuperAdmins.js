@@ -15,7 +15,7 @@ export default {
             const superAdmins = await SuperAdmin.findAll();
             responseHandler.success(res, "Super Admins fetched successfully", superAdmins);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

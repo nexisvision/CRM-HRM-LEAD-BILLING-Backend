@@ -28,7 +28,7 @@ export default {
             await milestone.destroy();
             responseHandler.success(res, "Milestone deleted successfully", milestone);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

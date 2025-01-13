@@ -52,7 +52,7 @@ export default {
             });
 
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, "Error processing bulk attendance: " + error.message);
         }
     }

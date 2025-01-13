@@ -20,7 +20,7 @@ export default {
 
             responseHandler.success(res, "Tags retrieved successfully", tags);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

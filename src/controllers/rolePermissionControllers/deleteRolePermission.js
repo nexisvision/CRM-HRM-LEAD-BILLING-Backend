@@ -25,7 +25,7 @@ export default {
 
             responseHandler.success(res, "Role permission deleted successfully");
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

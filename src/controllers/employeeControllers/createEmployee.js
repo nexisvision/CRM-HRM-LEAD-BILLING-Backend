@@ -39,6 +39,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+            const { subscription } = req;
             const { username, email, password } = req.body;
 
             // Check if email already exists
@@ -84,6 +85,7 @@ export default {
             const sessionToken = jwt.sign(
                 {
                     ...tempUser,
+                    ...subscription,
                     type: 'signup_verification'
                 },
                 JWT_SECRET,

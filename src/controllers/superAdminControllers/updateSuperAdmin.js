@@ -29,7 +29,7 @@ export default {
             await superAdmin.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
             responseHandler.success(res, "Super admin updated successfully", superAdmin);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

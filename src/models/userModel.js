@@ -118,6 +118,16 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
+    resetPasswordOTP: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    resetPasswordOTPExpiry: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

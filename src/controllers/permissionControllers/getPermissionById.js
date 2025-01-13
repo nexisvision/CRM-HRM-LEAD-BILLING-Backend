@@ -24,7 +24,7 @@ export default {
 
             responseHandler.success(res, "Permission fetched successfully", permission);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

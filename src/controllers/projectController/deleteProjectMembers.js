@@ -26,8 +26,8 @@ export default {
             }
 
             // Parse project_members if it's a string
-            const currentProjectMembers = typeof project.project_members === 'string' 
-                ? JSON.parse(project.project_members) 
+            const currentProjectMembers = typeof project.project_members === 'string'
+                ? JSON.parse(project.project_members)
                 : project.project_members;
 
             // Get current members array
@@ -54,7 +54,7 @@ export default {
                 project_members: { project_members: updatedMembers }
             });
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }
@@ -92,8 +92,8 @@ export default {
 //             }
 
 //             // Parse project_members if it's a string
-//             const projectMembers = typeof project.project_members === 'string' 
-//                 ? JSON.parse(project.project_members) 
+//             const projectMembers = typeof project.project_members === 'string'
+//                 ? JSON.parse(project.project_members)
 //                 : project.project_members;
 
 //             // Ensure we have an array to work with
@@ -123,7 +123,7 @@ export default {
 //                 project_members: { members: updatedMembers }
 //             });
 //         } catch (error) {
-//             console.log(error);
+//
 //             responseHandler.error(res, error.message);
 //         }
 //     }

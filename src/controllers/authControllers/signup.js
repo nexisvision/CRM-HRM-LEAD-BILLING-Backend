@@ -31,6 +31,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { username, password, email, role_id } = req.body;
+            const { subscription } = req;
 
             const existingUsername = await User.findOne({
                 where: { username }
@@ -62,13 +63,14 @@ export default {
                 role_id,
                 password: hashedPassword,
                 verificationOTP: otp,
-                verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT
+                verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
             };
 
             // Store in session
             const sessionToken = jwt.sign(
                 {
                     ...tempUser,
+                    ...subscription,
                     type: 'signup_verification'
                 },
                 JWT_SECRET,

@@ -24,7 +24,7 @@ export default {
 
             responseHandler.success(res, "Role permission fetched successfully", rolePermission);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

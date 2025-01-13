@@ -19,7 +19,7 @@ export default {
             }
             responseHandler.success(res, "Leave fetched successfully", leave);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

@@ -79,7 +79,7 @@ export default {
 
             responseHandler.success(res, "Project updated successfully", updatedProject);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

@@ -39,7 +39,7 @@ export default {
 
             responseHandler.created(res, "Leave request created successfully", leave);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

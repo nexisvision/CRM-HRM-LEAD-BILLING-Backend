@@ -20,7 +20,7 @@ export default {
 
             responseHandler.success(res, "Plan retrieved successfully", plan);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

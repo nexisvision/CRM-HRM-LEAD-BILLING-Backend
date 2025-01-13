@@ -20,7 +20,7 @@ export default {
             responseHandler.success(res, "Project deleted successfully", project);
         }
         catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }

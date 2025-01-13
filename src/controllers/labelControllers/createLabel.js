@@ -35,7 +35,7 @@ export default {
             });
             responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
-            console.log(error);
+
             responseHandler.error(res, error.message);
         }
     }
