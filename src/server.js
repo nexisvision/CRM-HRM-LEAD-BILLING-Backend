@@ -26,7 +26,7 @@ app.use("/api/v1/", routes);
 app.use(fileUpload());
 
 app.get("*", (req, res) => {
-    responseHandler.error(res, "Route not found", 404);
+    responseHandler.error(res, "Route not found");
 });
 
 const startServer = async () => {
