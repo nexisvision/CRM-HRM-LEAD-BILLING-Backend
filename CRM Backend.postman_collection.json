@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "0d427c5f-926d-4da3-bb6a-3f02c26fbdfa",
+		"_postman_id": "6f950507-859c-4e15-9a6a-139261ee3ebb",
 		"name": "CRM Backend",
 		"description": "Complete API collection for CRM Backend System",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "37446654",
-		"_collection_link": "https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37446654-0d427c5f-926d-4da3-bb6a-3f02c26fbdfa?action=share&source=collection_link&creator=37446654"
+		"_collection_link": "https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37725096-6f950507-859c-4e15-9a6a-139261ee3ebb?action=share&source=collection_link&creator=37446654"
 	},
 	"item": [
 		{
@@ -321,6 +321,116 @@
 			]
 		},
 		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Verify Signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkxYTkNRZjV1S3RQZDFhUVhrakp1WE5zIiwidXNlcm5hbWUiOiJncmV3b3gxMTMiLCJlbWFpbCI6ImdyZXdveDExM0B5b3BtYWlsLmNvbSIsInJvbGVfaWQiOiJwY29mZUlCcFhtaWlsSGVla1F3U2tsUiIsInBhc3N3b3JkIjoiJDJiJDEyJHg3MGRDanVMRTU4Z1dObi9VT2FybmV4aE5TSnRtU1hiVTgveG9TS1BjNjdaWFBpWnNFbnRxIiwidmVyaWZpY2F0aW9uT1RQIjoiMTY2NTIxIiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM2NzYyNjY1MjI3LCJjbGllbnRTdWJzY3JpcHRpb24iOnsiaWQiOiJJbzdGM0NVelFNVGY2bzFBZ1ZoV2d5dSIsImNsaWVudF9pZCI6IkxYTkNRZjV1S3RQZDFhUVhrakp1WE5zIiwicGxhbl9pZCI6Im51RDh5UnByOURLRGE3djE0MGRMTmhCIiwic3RhcnRfZGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImVuZF9kYXRlIjoiMjAyNS0wMS0zMFQwMDowMDowMC4wMDBaIiwic3RhdHVzIjoiYWN0aXZlIiwiY3VycmVudF9zdG9yYWdlX3VzZWQiOjAsImN1cnJlbnRfdXNlcnNfY291bnQiOjAsImN1cnJlbnRfY2xpZW50c19jb3VudCI6MCwicGF5bWVudF9zdGF0dXMiOiJwZW5kaW5nIiwibGFzdF9wYXltZW50X2RhdGUiOm51bGwsImNyZWF0ZWRfYnkiOm51bGwsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTNUMDk6NTg6MjIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTNUMDk6NTg6MjIuMDAwWiJ9LCJwbGFuIjp7ImlkIjoibnVEOHlScHI5REtEYTd2MTQwZExOaEIiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5IjpudWxsLCJ1cGRhdGVkX2J5IjpudWxsLCJjcmVhdGVkQXQiOiIyMDI1LTAxLTEzVDA5OjU2OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTAxLTEzVDA5OjU2OjIwLjAwMFoifSwidHlwZSI6InNpZ251cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MzY3NjIzNjUsImV4cCI6MTczNjc2MzI2NX0.RTEdPxOefUVU_WYMeEXoz9oCqiFXRO9sn7vhp-7zB2o"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"otp\":\"166521\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/verify-signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Verify Signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikc2ZmJYR1FlVmRBUEhGOFV5VEFYdk1sIiwidXNlcm5hbWUiOiJncmV3b3gxMTMiLCJlbWFpbCI6ImdyZXdveDExM0B5b3BtYWlsLmNvbSIsInJvbGVfaWQiOiJtMG8wcGtqMDFCeXRQSEVYMXRiSndyaSIsInBhc3N3b3JkIjoiJDJiJDEyJGdORnlNYkZiOXpQbC5xWG9kRWVjMU9Hejdwc0lXRm5iRVRVRWpvaG9Bd1RPLmtrM045b0tXIiwidmVyaWZpY2F0aW9uT1RQIjoiNTYzODg4IiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM2NzYxMDI4MTIzLCJjbGllbnRTdWJzY3JpcHRpb24iOnsiaWQiOiJlZFFVNDQxcW1EV0VGRG5jQ2JvbVdkbyIsImNsaWVudF9pZCI6Ikc2ZmJYR1FlVmRBUEhGOFV5VEFYdk1sIiwicGxhbl9pZCI6IjNGYVdldTFCdjJqRmlxcHk0enNZeklzIiwic3RhcnRfZGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImVuZF9kYXRlIjoiMjAyNS0wMS0zMFQwMDowMDowMC4wMDBaIiwic3RhdHVzIjoiYWN0aXZlIiwiY3VycmVudF9zdG9yYWdlX3VzZWQiOjAsImN1cnJlbnRfdXNlcnNfY291bnQiOjIsImN1cnJlbnRfY2xpZW50c19jb3VudCI6MSwicGF5bWVudF9zdGF0dXMiOiJwZW5kaW5nIiwibGFzdF9wYXltZW50X2RhdGUiOm51bGwsImNyZWF0ZWRfYnkiOm51bGwsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTNUMDU6MjA6MTAuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTNUMDY6NDE6NTcuMDAwWiJ9LCJwbGFuIjp7ImlkIjoiM0ZhV2V1MUJ2MmpGaXFweTR6c1l6SXMiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5IjpudWxsLCJ1cGRhdGVkX2J5IjpudWxsLCJjcmVhdGVkQXQiOiIyMDI1LTAxLTExVDA3OjI4OjU2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTAxLTExVDA3OjI4OjU2LjAwMFoifSwidHlwZSI6InNpZ251cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MzY3NjA3MjgsImV4cCI6MTczNjc2MTYyOH0._CvK6RM6hUHDIunEu7VqTDXBC3IOi5Z5SWlRX8blPjY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{base}}/auth/resend-signup-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"grewox113@yopmail.com\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveDExM0B5b3BtYWlsLmNvbSIsImlhdCI6MTczNjc2MjY2OCwiZXhwIjoxNzM2NzYzNTY4fQ.IwPHv6eEqKfdJpB9c4T_pyXIVz9grGLBFLjAbCh3XDU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"601419\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/verify-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveDExM0B5b3BtYWlsLmNvbSIsImlhdCI6MTczNjc2MjczNCwiZXhwIjoxNzM2NzYzNjM0fQ._6ysXfXElw7JYQgc-rSY_JDipRr_cu0TVXkjyiq8Ktc"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"Yash@2525\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/auth/reset-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Client",
 			"item": [
 				{
@@ -329,14 +439,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"MyStrongP@ssw0rd!\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
+							"raw": "{\n  \"username\": \"grewox\",\n  \"email\": \"grewox@yopmail.com\",\n  \"password\": \"MyStrongP@ssw0rd!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -354,7 +464,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
+							"raw": "\n{\n    \"login\": \"grewox@yopmail.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -478,14 +588,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJSWkxzYk1JdXh1OUYyVG9uRHZXU1hqViIsInJvbGUiOiJ0WHYwcERId0RTb1JERDZtalB2a0NXSSIsImlhdCI6MTczNjQxOTA3MiwiZXhwIjoxNzM2NTA1NDcyfQ.6BQg5DFg_oBkMW8D0UfX2_yoPGgJc40ABqJx3i-hotg"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiRzZmYlhHUWVWZEFQSEY4VXlUQVh2TWwiLCJyb2xlIjoiN0REaTF2TXFaYXk0Q29BN0RVWFpRWGUiLCJpYXQiOjE3MzY3NDU2NDMsImV4cCI6MTczNjgzMjA0M30.dY7GKU9SpsWI43QiTLlIFo8gAmiXF6HGrtFWlubfB6w"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// {\n//   \"username\": \"johndoenabhidu\",\n//   \"email\": \"john.doenobhidu@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu1\",\n//   \"email\": \"john.doenobhidu1@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu2\",\n//   \"email\": \"john.doenobhidu2@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu3\",\n//   \"email\": \"john.doenobhidu3@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu4\",\n//   \"email\": \"john.doenobhidu4@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu6\",\n//   \"email\": \"john.doenobhidu6@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n// {\n//   \"username\": \"johndoenabhidu7\",\n//   \"email\": \"john.doenobhidu7@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n\n// {\n//   \"username\": \"johndoenabhidu8\",\n//   \"email\": \"john.doenobhidu8@example.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }",
+							"raw": "{\n  \"username\": \"grewox1\",\n  \"email\": \"grewox1@yopmail.com\",\n  \"password\": \"MyStrongP@ssw0rd!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -503,7 +613,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
+							"raw": "\n{\n    \"login\": \"grewox1@yopmail.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -627,14 +737,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJyY3dSSFRGNGNGOEF1TURmUUJ5ODNsWiIsInJvbGUiOiI2TkprMWk3YndMTGtvQ1MxblJqbWZweSIsImlhdCI6MTczNjc0NTMwMiwiZXhwIjoxNzM2ODMxNzAyfQ.bLjdLi1vN0-nkZiV76nKKip-CgTiLGS4oMSp-7Cu9Oc"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"role_name\": \"HR\",\n  \"permissions\": {\n    \"staff\": {\n      \"customer_support\": {\n        \"create\": true,\n        \"view\": true,\n        \"update\": true,\n        \"delete\": true\n      }\n    }\n  }\n}\n",
+							"raw": "{\n  \"role_name\": \"MMR\",\n  \"permissions\": {\n    \"staff\": {\n      \"customer_support\": {\n        \"create\": true,\n        \"view\": true,\n        \"update\": true,\n        \"delete\": true\n      }\n    }\n  }\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -732,14 +842,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJSWkxzYk1JdXh1OUYyVG9uRHZXU1hqViIsInJvbGUiOiJ0WHYwcERId0RTb1JERDZtalB2a0NXSSIsImlhdCI6MTczNjQxODAyNSwiZXhwIjoxNzM2NTA0NDI1fQ.8Lg50PWHaUUA1-gUkXg03Vf7S8w-7eNHOjZ77Ej_vvU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiRzZmYlhHUWVWZEFQSEY4VXlUQVh2TWwiLCJyb2xlIjoiN0REaTF2TXFaYXk0Q29BN0RVWFpRWGUiLCJpYXQiOjE3MzY3NDU2NDMsImV4cCI6MTczNjgzMjA0M30.dY7GKU9SpsWI43QiTLlIFo8gAmiXF6HGrtFWlubfB6w"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// {\n//     \"username\": \"alice_smith\",\n//     \"email\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith2\",\n//     \"email\": \"alice.smith2@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith3\",\n//     \"email\": \"alice.smith3@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith4\",\n//     \"email\": \"alice.smith4@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith5\",\n//     \"email\": \"alice.smith5@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n// {\n//     \"username\": \"alice_smith6\",\n//     \"email\": \"alice.smith6@example.com\",\n//     \"password\": \"Alice#123456\",\n//     \"role_id\":\"Voi27y9BfdhOLsE10RnKYgk\"\n// }\n\n",
+							"raw": "{\n    \"username\": \"grewox11\",\n    \"email\": \"grewox11@yopmail.com\",\n    \"password\": \"Alice#123456\",\n    \"role_id\":\"nnIvSj247RDtsW8gr8eghbP\"\n}\n\n\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -761,7 +871,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Login Test Case\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"login\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"raw": "\n{\n    \"login\": \"grewox11@yopmail.com\",\n    \"password\": \"Alice#123456\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -930,14 +1040,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY3NjIzMTQsImV4cCI6MTczNjg0ODcxNH0.E1NuqztXR9Iyt5k4Deb2Z7c15W3_q73K5P629OVKiUg"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Test Case\n// {\n//     \"username\": \"testuser123\",\n//     \"email\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n// {\n//     \"username\": \"alice_smith\",\n//     \"email\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\"\n// }\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
+							"raw": "{\n    \"username\": \"grewox113\",\n    \"email\": \"grewox113@yopmail.com\",\n    \"password\": \"Alice#123456\"\n}\n\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -955,7 +1065,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// Valid Login Test Case\n// {\n//     \"login\": \"testuser@example.com\",\n//     \"password\": \"SecurePass123!\"\n// }\n\n// Test Cases with Different Valid Formats\n{\n    \"login\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n\n\n// {\n//     \"login\": \"alice.smith@example.com\",\n//     \"password\": \"Alice#123456\"\n// }\n\n\n// Invalid Test Cases\n/*\n// 1. Missing Login Field\n{\n    \"password\": \"SecurePass123!\"\n}\n\n// 2. Missing Password\n{\n    \"login\": \"testuser@example.com\"\n}\n\n// 3. Invalid Email Format in Login\n{\n    \"login\": \"testuser.example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 4. Wrong Password\n{\n    \"login\": \"testuser@example.com\",\n    \"password\": \"WrongPassword123!\"\n}\n\n// 5. Unregistered Email\n{\n    \"login\": \"nonexistent@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 6. Empty Fields\n{\n    \"login\": \"\",\n    \"password\": \"\"\n}\n\n// 7. Case Sensitivity Test\n{\n    \"login\": \"TESTUSER@EXAMPLE.COM\",\n    \"password\": \"SecurePass123!\"\n}\n\n// 8. Extra Whitespace\n{\n    \"login\": \" testuser@example.com \",\n    \"password\": \" SecurePass123! \"\n}\n*/",
+							"raw": "\n{\n    \"login\": \"grewox113@yopmail.com\",\n    \"password\": \"Yash@2525\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1895,7 +2005,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
 							}
 						},
 						"method": "POST",
@@ -1919,14 +2029,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJETWdLS01hRFpkQUlab1l4NG5Rb1NsdiIsInJvbGUiOiJQMkgwOE9sd3YwcFF6aktQbDZhWllDUCIsImlhdCI6MTczNjQxNzM1OCwiZXhwIjoxNzM2NTAzNzU4fQ.jvrSd0KdeQtuXUGGylNjrB7XqaNtkAVdCO_k519DtUQ"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"client_id\": \"RZLsbMIuxu9F2TonDvWSXjV\",\r\n  \"plan_id\": \"63Zi6FXxS7OuygTtwPctQfD\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
+							"raw": "{\r\n  \"client_id\": \"LXNCQf5uKtPd1aQXkjJuXNs\",\r\n  \"plan_id\": \"nuD8yRpr9DKDa7v140dLNhB\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2302,7 +2412,8 @@
 					"name": "Get All Currency",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
@@ -2333,7 +2444,8 @@
 					"name": "Get All Branch",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				},
@@ -2350,7 +2462,8 @@
 					"name": "Update Branch",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
@@ -2381,7 +2494,8 @@
 					"name": "Get All Countries",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
@@ -3639,7 +3753,8 @@
 					"name": "Get All Tags",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				},
@@ -3685,7 +3800,8 @@
 					"name": "Get All Pipeline",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				},
@@ -3927,7 +4043,8 @@
 					"name": "Get All Proposal",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				},
@@ -3935,7 +4052,8 @@
 					"name": "Update Proposal",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				},
@@ -4136,7 +4254,8 @@
 					"name": "Delete Job-Application",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
@@ -4331,7 +4450,8 @@
 					"name": "Delete  Skill",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
@@ -4826,6 +4946,418 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base}}/stages/Qi1c8KqbHOE1BOPPQjIRhmz"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "Credit Note",
+					"item": [
+						{
+							"name": "Create Sales-CreditNote",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc1ODczOCwiZXhwIjoxNzM2ODQ1MTM4fQ.B3aNg6KzWUaA-jpADwcUz8bnf8rpaUwnTEjvLD62pbc"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoice\":\"zUZ8kEZ46sGeaBvCQHiIM2k\",\r\n    \"date\":\"10-12-25\",\r\n    \"currency\":\"USD\",\r\n    \"amount\":\"654\",\r\n    \"description\":\"dsfjpfjspdjf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-creditnote/"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sales-Credit Notes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc1ODczOCwiZXhwIjoxNzM2ODQ1MTM4fQ.B3aNg6KzWUaA-jpADwcUz8bnf8rpaUwnTEjvLD62pbc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/sales-creditnote/"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Sales-CreditNote",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoice\":\"J4iL7YE6AghpdhSBsaEy0jG\",\r\n    \"date\":\"10-12-25\",\r\n    \"currency\":\"dsf\",\r\n    \"amount\":\"653243243424\",\r\n    \"description\":\"dasdfsdfdasd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-creditnote/kEaAlhTrw5X7J0lHUf6cvg5"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Sales-Credit Notes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base}}/sales-creditnote/kEaAlhTrw5X7J0lHUf6cvg5"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoice",
+					"item": [
+						{
+							"name": "Sales Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer\": \"hb0MQLiXV0f9hxEE0GHUKFT\",  // MongoDB ObjectId\r\n    \"issueDate\": \"2024-03-20\",\r\n    \"dueDate\": \"2024-04-20\",\r\n    \"category\": \"some-category\",\r\n    \"items\": {},\r\n    \"discount\": 0,\r\n    \"tax\": 0,\r\n    \"total\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-invoices"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sales-Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/sales-invoices"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Sales-Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer\": \"xmOdZD4dnli0wBSuzVV22xq\",  // MongoDB ObjectId\r\n    \"issueDate\": \"2025-03-20\",\r\n    \"dueDate\": \"2024-04-20\",\r\n    \"category\": \"some-asddsds\",\r\n    \"items\": {},\r\n    \"discount\": 3420,\r\n    \"tax\": 23,\r\n    \"total\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-invoices/0UJfxX4AYXeH7BuHXvZaStt"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Sales",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Create Customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\r\n//     \"name\": \"John Doe\",\r\n//     \"contact\": \"+1234567890\",\r\n//     \"email\": \"john.doe@example.com\",\r\n//     \"tax_number\": \"TAX123456\",        // optional\r\n//     \"alternate_number\": \"+0987654321\", // optional\r\n//     \"billing_address\": {              // optional\r\n//         \"street\": \"123 Main St\",\r\n//         \"city\": \"New York\",\r\n//         \"state\": \"NY\",\r\n//         \"zip\": \"10001\",\r\n//         \"country\": \"USA\"\r\n//     },\r\n//     \"shipping_address\": {             // optional\r\n//         \"street\": \"456 Park Ave\",\r\n//         \"city\": \"New York\",\r\n//         \"state\": \"NY\",\r\n//         \"zip\": \"10002\",\r\n//         \"country\": \"USA\"\r\n//     }\r\n// }\r\n\r\n\r\n// {\r\n//     \"name\": \"Acme Corporation\",\r\n//     \"contact\": \"+1-555-123-4567\",\r\n//     \"email\": \"contact@acmecorp.com\",\r\n//     \"tax_number\": \"ACM98765432\",\r\n//     \"alternate_number\": \"+1-555-987-6543\",\r\n//     \"billing_address\": {\r\n//         \"street\": \"100 Business Plaza\",\r\n//         \"suite\": \"Floor 15\",\r\n//         \"city\": \"Chicago\",\r\n//         \"state\": \"IL\",\r\n//         \"zip\": \"60601\",\r\n//         \"country\": \"USA\"\r\n//     },\r\n//     \"shipping_address\": {\r\n//         \"street\": \"200 Warehouse Drive\",\r\n//         \"unit\": \"Building B\",\r\n//         \"city\": \"Chicago\",\r\n//         \"state\": \"IL\",\r\n//         \"zip\": \"60642\",\r\n//         \"country\": \"USA\"\r\n//     }\r\n// }\r\n\r\n\r\n\r\n\r\n    ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/customers"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/customers"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"asdsad\",\r\n    \"contact\": \"+1-555-123-4567\",\r\n    \"email\": \"contact@acmecorp.com\",\r\n    \"tax_number\": \"ACM98765432\",\r\n    \"alternate_number\": \"+1-555-987-6543\",\r\n    \"billing_address\": {\r\n        \"street\": \"100 asdsadsadsad Plaza\",\r\n        \"suite\": \"Floor 15\",\r\n        \"city\": \"Chicago\",\r\n        \"state\": \"IL\",\r\n        \"zip\": \"60601\",\r\n        \"country\": \"USA\"\r\n    },\r\n    \"shipping_address\": {\r\n        \"street\": \"200 Warehouse Drive\",\r\n        \"unit\": \"Building B\",\r\n        \"city\": \"Chicago\",\r\n        \"state\": \"IL\",\r\n        \"zip\": \"60642\",\r\n        \"country\": \"USA\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/customers/OT0P9iCkRdML9u79BX0w4r5"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Customer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2MTk1NiwiZXhwIjoxNzM2ODQ4MzU2fQ.dV_zIgOsYMHz0SFRNVgOlYXqOU2lmv-9NO6vmQ0qyrc"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base}}/customers/OT0P9iCkRdML9u79BX0w4r5"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Quotations",
+					"item": [
+						{
+							"name": "Create Quotations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2NDU1MiwiZXhwIjoxNzM2ODUwOTUyfQ.7WzI9yBN2hWt-Y8lacsxUYjo7687pJiXFY4D24d_JQM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer\": \"xmOdZD4dnli0wBSuzVV22xq\",  // MongoDB ObjectId\r\n    \"issueDate\": \"2024-02-20\",\r\n    \"dueDate\": \"2024-06-20\",\r\n    \"category\": \"some-category\",\r\n    \"items\": {},\r\n    \"discount\": 0,\r\n    \"tax\": 0,\r\n    \"total\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-quotations"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Quotations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2NDU1MiwiZXhwIjoxNzM2ODUwOTUyfQ.7WzI9yBN2hWt-Y8lacsxUYjo7687pJiXFY4D24d_JQM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/sales-quotations"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Quotations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxZ2NaaTVNQjRGNHVmd0NnZ05SOVpYQyIsInJvbGUiOiJoeWRBb1hoOTgzdmZzNjZpbHlmNkhvayIsImlhdCI6MTczNjc2NDU1MiwiZXhwIjoxNzM2ODUwOTUyfQ.7WzI9yBN2hWt-Y8lacsxUYjo7687pJiXFY4D24d_JQM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer\": \"xmOdZD4dnli0wBSuzVV22xq\",  // MongoDB ObjectId\r\n    \"issueDate\": \"2025-02-20\",\r\n    \"dueDate\": \"2025-06-20\",\r\n    \"category\": \"some-category\",\r\n    \"items\": {},\r\n    \"discount\": 0,\r\n    \"tax\": 0,\r\n    \"total\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/sales-quotations/PAIZhn80Aj2YvQbpTB11iJm"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Quotations",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Inquiry",
+			"item": [
+				{
+					"name": "Create Inquiry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"subject\": \"Inquiry\",\r\n    \"message\": \"I have a question about your service.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/inquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inquiry",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2NzA1MSwiZXhwIjoxNzM2ODUzNDUxfQ.rUNpigomzy8dMuc0OdLWI-85WQxPMkhS7oKKsPNNwDU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/inquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Inquiry By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2NzA1MSwiZXhwIjoxNzM2ODUzNDUxfQ.rUNpigomzy8dMuc0OdLWI-85WQxPMkhS7oKKsPNNwDU"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe 123456789\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"subject\": \"Inquiry\",\r\n    \"message\": \"I have a question about your service.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/inquiry/2Q425TCfsXu8mCjxIhvZkFN"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inquiry By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2NzA1MSwiZXhwIjoxNzM2ODUzNDUxfQ.rUNpigomzy8dMuc0OdLWI-85WQxPMkhS7oKKsPNNwDU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/inquiry/2Q425TCfsXu8mCjxIhvZkFN"
 					},
 					"response": []
 				}
