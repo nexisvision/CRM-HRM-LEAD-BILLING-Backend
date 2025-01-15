@@ -88,11 +88,12 @@ const getCommonEmailTemplate = (content) => {
                 <a href="#" class="social-link">Twitter</a>
                 <a href="#" class="social-link">Instagram</a>
             </div>
-            <p>© ${new Date().getFullYear()} CRM. All rights reserved.</p>
+            <p> ${new Date().getFullYear()} CRM. All rights reserved.</p>
         </div>
     </div>
 </body>
-</html>`;
+</html>
+`;
 };
 
 export const getWelcomeEmailTemplate = (username) => {
@@ -133,6 +134,37 @@ export const getVerificationEmailTemplate = (username, otp) => {
             <span style="font-size: 32px; font-weight: bold; color: #744bcb; letter-spacing: 5px; padding: 10px 20px; background: #f8f9fa; border-radius: 8px;">${otp}</span>
         </div>
         <p style="text-align: center; color: #666;">This OTP will expire in 5 minutes.</p>
+    `;
+    return getCommonEmailTemplate(content);
+};
+
+export const getPlanBuyEmailTemplate = (username, plan, billUrl) => {
+    const content = `
+        <div class="title">Plan Buy Confirmation</div>
+        <p>Hello ${username}!</p>
+        <p>Congratulations! You have successfully purchased the "${plan.name}" plan.</p>
+        <p>Here are the details of your plan:</p>
+        <ul style="list-style: none; margin: 20px 0; padding: 0;">
+            <li style="margin-bottom: 10px;">• Plan Name: ${plan.name}</li>
+            <li style="margin-bottom: 10px;">• Plan Duration: ${plan.duration}</li>
+            <li style="margin-bottom: 10px;">• Plan Trial Period: ${plan.trial_period}</li>
+            <li style="margin-bottom: 10px;">• Plan Price: ${plan.price}</li>
+            <li style="margin-bottom: 10px;">• Number of Users: ${plan.max_users}</li>
+            <li style="margin-bottom: 10px;">• Number of Clients: ${plan.max_clients}</li>
+            <li style="margin-bottom: 10px;">• Storage Limit: ${plan.storage_limit}</li>
+        </ul>
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="${billUrl}" 
+               style="background-color: #4CAF50; 
+                      color: white; 
+                      padding: 12px 24px; 
+                      text-decoration: none; 
+                      border-radius: 4px;
+                      display: inline-block;">
+                Download Invoice
+            </a>
+        </div>
+        <p style="text-align: center; color: #666;">If you have any questions or need any help, please don't hesitate to contact us.</p>
     `;
     return getCommonEmailTemplate(content);
 };
