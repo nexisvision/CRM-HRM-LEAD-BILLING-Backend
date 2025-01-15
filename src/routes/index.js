@@ -56,6 +56,7 @@ import salesInvoiceRoutes from "./salesInvoiceRoutes.js";
 import salesRevenueRoutes from "./salesRevenueRoutes.js";
 import salesCreditnoteRoutes from "./salesCreditnoteRoutes.js";
 import inquiryRoutes from "./inquiryRoutes.js";
+import orderRoutes from "./orderRoutes.js";
 
 const router = express.Router();
 
@@ -116,5 +117,6 @@ router.use('/sales-invoices', salesInvoiceRoutes);
 router.use('/sales-revenue', salesRevenueRoutes);
 router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
+router.use('/orders', orderRoutes);
 
 export default router;
