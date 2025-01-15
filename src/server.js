@@ -4,6 +4,7 @@ import routes from "./routes/index.js";
 import sequelize from "./config/db.js";
 import fileUpload from 'express-fileupload';
 import responseHandler from "./utils/responseHandler.js";
+import logAuditTrails from "./middlewares/logAuditTrails.js";
 import cors from "cors";
 
 const app = express();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
         responseHandler.error(res, error.message);
     }
 });
+app.use(logAuditTrails);
 
 app.use("/api/v1/", routes);
 
