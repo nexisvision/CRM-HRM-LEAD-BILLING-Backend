@@ -14,7 +14,7 @@ export default {
             const { id } = req.params;
             const project = await Project.findByPk(id);
             if (!project) {
-                return responseHandler.notFound(res, "Project not found");
+                responseHandler.notFound(res, "Project not found");
             }
             await project.destroy();
             responseHandler.success(res, "Project deleted successfully", project);

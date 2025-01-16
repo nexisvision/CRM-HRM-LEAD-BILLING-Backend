@@ -29,7 +29,7 @@ export default {
             });
 
             if (existingDesignation) {
-                return responseHandler.error(res, "Designation name already exists");
+                responseHandler.error(res, "Designation name already exists");
             }
 
             const designation = await Designation.create({ designation_name, created_by: req.user?.username, updated_by: req.user?.username });

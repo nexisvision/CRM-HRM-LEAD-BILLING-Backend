@@ -38,7 +38,7 @@ export default {
 
             const client = await User.findByPk(id);
             if (!client) {
-                return responseHandler.notFound(res, "Client not found");
+                responseHandler.notFound(res, "Client not found");
             }
 
             await client.update({

@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const appreciations = await Appreciation.findAll();
-            return responseHandler.success(res, "Appreciations fetched successfully", appreciations);
+            responseHandler.success(res, "Appreciations fetched successfully", appreciations);
         } catch (error) {
-            return responseHandler.error(res, error.message)
+            responseHandler.error(res, error.message)
         }
     }
 }

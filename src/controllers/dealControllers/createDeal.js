@@ -36,7 +36,6 @@ export default {
 
             responseHandler.success(res, "Deal created successfully", deal);
         } catch (error) {
-            console.error('Error creating deal:', error);
             responseHandler.error(res, error.message);
         }
     }

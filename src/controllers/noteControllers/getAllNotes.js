@@ -13,7 +13,7 @@ export default {
         try {
             const { id } = req.params;
             const notes = await Note.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, "Notes fetched successfully", notes);
+            responseHandler.success(res, "Notes fetched successfully", notes);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

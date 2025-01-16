@@ -17,7 +17,7 @@ export default {
         try {
             const { id } = req.params;
             const expenses = await Expense.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, "Expenses fetched successfully", expenses);
+            responseHandler.success(res, "Expenses fetched successfully", expenses);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

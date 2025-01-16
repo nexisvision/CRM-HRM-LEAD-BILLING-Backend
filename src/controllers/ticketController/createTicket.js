@@ -22,11 +22,11 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { requestor, assignGroup, agent, status,project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
-            const ticket = await Ticket.create({ requestor, assignGroup, status,agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
-            return responseHandler.success(res, "Ticket created successfully", ticket);
+            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
+            const ticket = await Ticket.create({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
+            responseHandler.success(res, "Ticket created successfully", ticket);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

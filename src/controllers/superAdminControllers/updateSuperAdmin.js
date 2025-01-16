@@ -23,7 +23,7 @@ export default {
 
             const superAdmin = await SuperAdmin.findByPk(id);
             if (!superAdmin) {
-                return responseHandler.notFound(res, "Super admin not found");
+                responseHandler.notFound(res, "Super admin not found");
             }
 
             await superAdmin.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });

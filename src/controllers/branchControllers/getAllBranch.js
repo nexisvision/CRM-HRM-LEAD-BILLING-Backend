@@ -12,11 +12,9 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const branches = await Branch.findAll({ limit: limit, offset: page });
+            const branches = await Branch.findAll();
             responseHandler.success(res, "Branches fetched successfully", branches);
         } catch (error) {
-            console.error('Error fetching branches:', error);
             responseHandler.error(res, error.message);
         }
     }

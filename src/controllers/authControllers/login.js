@@ -30,12 +30,12 @@ export default {
                     id: foundEntity.id,
                     role: foundEntity.role_id
                 }, JWT_SECRET, { expiresIn: '24h' });
-                return responseHandler.success(res, "Login successful", { token, user: foundEntity });
+                responseHandler.success(res, "Login successful", { token, user: foundEntity });
             }
 
-            return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
+            responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

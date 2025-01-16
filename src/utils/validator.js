@@ -10,7 +10,7 @@ const validator = schemas => (req, res, next) => {
             stripUnknown: true
         });
         if (error) {
-            return responseHandler.badRequest(res, error.message);
+            responseHandler.badRequest(res, error.message);
         }
         req[type] = value;
 

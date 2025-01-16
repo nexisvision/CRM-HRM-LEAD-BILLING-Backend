@@ -16,7 +16,7 @@ export default {
             const quotation = await Quotations.findByPk(id);
 
             if (!quotation) {
-                return responseHandler.notFound(res, "Quotation not found");
+                responseHandler.notFound(res, "Quotation not found");
             }
 
             await quotation.destroy();

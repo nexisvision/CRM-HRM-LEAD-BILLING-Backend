@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const salesRevenue = await SalesRevenues.findByPk(id);
             if (!salesRevenue) {
-                return responseHandler.error(res, "SalesRevenue not found");
+                responseHandler.error(res, "SalesRevenue not found");
             }
             await salesRevenue.destroy();
-            return responseHandler.success(res, "SalesRevenue deleted successfully", salesRevenue);
+            responseHandler.success(res, "SalesRevenue deleted successfully", salesRevenue);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

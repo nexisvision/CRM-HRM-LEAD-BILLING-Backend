@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const stage = await Stage.findByPk(id);
             if (!stage) {
-                return responseHandler.notFound(res, "Stage not found");
+                responseHandler.notFound(res, "Stage not found");
             }
             await stage.destroy();
-            return responseHandler.success(res, "Stage deleted successfully", stage);
+            responseHandler.success(res, "Stage deleted successfully", stage);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

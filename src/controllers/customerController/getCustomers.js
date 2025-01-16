@@ -15,11 +15,11 @@ export default {
 
             const customers = await Customer.findAll();
             if (!customers) {
-                return responseHandler.error(res, "No customers found");
+                responseHandler.error(res, "No customers found");
             }
-            return responseHandler.success(res, "Customers fetched successfully", customers);
+            responseHandler.success(res, "Customers fetched successfully", customers);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

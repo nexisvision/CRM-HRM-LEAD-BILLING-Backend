@@ -19,7 +19,7 @@ export default {
 
             const rolePermission = await RolePermission.findByPk(id);
             if (!rolePermission) {
-                return responseHandler.notFound(res, "Role permission not found");
+                responseHandler.notFound(res, "Role permission not found");
             }
 
             await rolePermission.update({

@@ -44,7 +44,7 @@ export default {
             });
 
             if (existingProject) {
-                return responseHandler.error(res, "Project with this name already exists");
+                responseHandler.error(res, "Project with this name already exists");
             }
 
             const project = await Project.create({

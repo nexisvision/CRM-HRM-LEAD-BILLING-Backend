@@ -1,17 +1,26 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
-import generateId  from "../middlewares/generatorId.js";
+import generateId from "../middlewares/generatorId.js";
 
 const Branch = sequelize.define('branch', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
+        primaryKey: true,
+        unique: true,
         defaultValue: generateId(),
-        primaryKey: true
     },
     branchName: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    department: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     created_by: {
         type: DataTypes.STRING,
@@ -22,5 +31,7 @@ const Branch = sequelize.define('branch', {
         allowNull: true
     }
 });
+
+
 
 export default Branch;

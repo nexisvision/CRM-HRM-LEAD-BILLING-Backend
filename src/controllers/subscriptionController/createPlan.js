@@ -28,7 +28,6 @@ export default {
 
             const clientsIds = clients.map(client => client.client_id);
 
-            console.log(clientsIds);
             await Notification.create({
                 related_id: req.user?.id,
                 users: clientsIds,

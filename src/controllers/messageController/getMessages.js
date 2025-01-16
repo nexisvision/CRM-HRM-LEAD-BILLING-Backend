@@ -16,12 +16,12 @@ export default {
                 where: { chooseMember }
             });
             if (!messages) {
-                return responseHandler(res, "No messages found");
+                responseHandler(res, "No messages found");
             }
-            return responseHandler.success(res, "Messages fetched successfully", messages);
+            responseHandler.success(res, "Messages fetched successfully", messages);
         }
         catch (error) {
-            return responseHandler.error(res, "Internal server error");
+            responseHandler.error(res, "Internal server error");
         }
     }
 }

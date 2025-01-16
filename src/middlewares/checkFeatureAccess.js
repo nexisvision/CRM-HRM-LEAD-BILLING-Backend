@@ -5,7 +5,7 @@ export const checkFeatureAccess = (feature) => {
             const plan = subscription.SubscriptionPlan;
 
             if (!plan.features[feature]) {
-                return responseHandler.forbidden(res,
+                responseHandler.forbidden(res,
                     `Your subscription plan doesn't include ${feature} feature`
                 );
             }

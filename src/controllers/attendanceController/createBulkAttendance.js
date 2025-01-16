@@ -19,7 +19,7 @@ export default {
     handler: async (req, res) => {
         try {
             if (!req.files || !req.files.file) {
-                return responseHandler.badRequest(res, "Please upload an Excel file");
+                responseHandler.badRequest(res, "Please upload an Excel file");
             }
 
             const workbook = XLSX.read(req.files.file.data);
@@ -27,7 +27,7 @@ export default {
             const data = XLSX.utils.sheet_to_json(worksheet);
 
             if (data.length === 0) {
-                return responseHandler.badRequest(res, "Excel file is empty");
+                responseHandler.badRequest(res, "Excel file is empty");
             }
 
             const attendanceRecords = data.map(row => ({

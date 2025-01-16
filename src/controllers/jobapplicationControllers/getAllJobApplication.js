@@ -6,19 +6,16 @@ import JobApplication from "../../models/jobapplicationModel.js";
 export default {
     validator: validator({
         query: Joi.object({
-            page: Joi.number().default(1),
-            limit: Joi.number().default(10)
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const jobApplications = await JobApplication.findAll({
-                
-            });
-            return responseHandler.success(res, "Job applications fetched successfully", jobApplications);
+            const jobApplications = await JobApplication.findAll();
+            responseHandler.success(res, "Job applications fetched successfully", jobApplications);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

@@ -25,9 +25,9 @@ export default {
             const { id } = req.params;
             const { valid_till, currency, lead, client, calculatedTax, items, discount, tax, total } = req.body;
             const quotation = await Quotations.create({ related_id: id, valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, created_by: req.user?.username });
-            return responseHandler.success(res, "Quotation created successfully", quotation);
+            responseHandler.success(res, "Quotation created successfully", quotation);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

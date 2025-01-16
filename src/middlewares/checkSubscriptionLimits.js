@@ -20,7 +20,7 @@ export const checkSubscriptionLimits = async (req, res, next) => {
         const { user } = req;
         const { clientSubscription, plan } = req.user;
         const role = await Role.findByPk(user?.role_id);
-        if (!role) return responseHandler.error(res, 'Role not found');
+        if (!role) responseHandler.error(res, 'Role not found');
         if (['super-admin', 'client'].includes(role.role_name)) {
             req.subscription = { clientSubscription, plan };
             return next();
@@ -32,16 +32,16 @@ export const checkSubscriptionLimits = async (req, res, next) => {
 
         if (role.role_name === 'sub-client') {
             if (clientSubscription[limits[role.role_name].field] >= limits[role.role_name].max) {
-                return responseHandler.error(res, limits[role.role_name].message);
+                responseHandler.error(res, limits[role.role_name].message);
             }
         } else {
             if (clientSubscription[limits['user'].field] >= limits['user'].max) {
-                return responseHandler.error(res, limits['user'].message);
+                responseHandler.error(res, limits['user'].message);
             }
         }
         req.subscription = clientSubscription;
         return next();
     } catch (error) {
-        return responseHandler.error(res, error.message);
+        responseHandler.error(res, error.message);
     }
 };

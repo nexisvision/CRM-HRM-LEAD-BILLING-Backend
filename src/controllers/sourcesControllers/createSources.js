@@ -20,7 +20,7 @@ export default {
             });
 
             if (existingSource) {
-                return responseHandler.error(res, "Source with this name already exists");
+                responseHandler.error(res, "Source with this name already exists");
             }
 
             const source = await Sources.create({

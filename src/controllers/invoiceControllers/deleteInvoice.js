@@ -16,7 +16,7 @@ export default {
             const invoice = await Invoice.findByPk(id);
 
             if (!invoice) {
-                return responseHandler.notFound(res, "Invoice not found");
+                responseHandler.notFound(res, "Invoice not found");
             }
 
             await invoice.destroy();

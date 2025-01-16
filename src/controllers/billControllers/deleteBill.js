@@ -15,7 +15,7 @@ export default {
 
             const newBill = await Bill.findByPk(id);
             if (!newBill) {
-                return responseHandler.error(res, "Bill not found");
+                responseHandler.error(res, "Bill not found");
             }
             await newBill.destroy();
             responseHandler.success(res, "Bill deleted successfully", newBill);

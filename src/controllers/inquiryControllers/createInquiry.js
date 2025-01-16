@@ -17,9 +17,9 @@ export default {
         try {
             const { name, email, phone, subject, message } = req.body;
             const inquiry = await Inquiry.create({ name, email, phone, subject, message });
-            return responseHandler.success(res, "Inquiry created successfully", inquiry);
+            responseHandler.success(res, "Inquiry created successfully", inquiry);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

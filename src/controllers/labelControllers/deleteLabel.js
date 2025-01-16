@@ -16,7 +16,7 @@ export default {
             // Find existing tag
             const tag = await Tag.findByPk(id);
             if (!tag) {
-                return responseHandler.notFound(res, "Tag not found");
+                responseHandler.notFound(res, "Tag not found");
             }
 
             // Delete tag

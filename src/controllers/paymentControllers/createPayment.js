@@ -52,7 +52,6 @@ export default {
 
             responseHandler.created(res, "Payment created successfully", payment);
         } catch (error) {
-            console.error('Error creating payment:', error);
             responseHandler.error(res, error.message);
         }
     }

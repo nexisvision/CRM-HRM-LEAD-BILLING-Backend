@@ -48,7 +48,7 @@ export default {
             });
 
             if (existingUsername) {
-                return responseHandler.error(res, "Username already exists.");
+                responseHandler.error(res, "Username already exists.");
             }
 
             const existingEmail = await User.findOne({
@@ -56,7 +56,7 @@ export default {
             });
 
             if (existingEmail) {
-                return responseHandler.error(res, "Email already exists.");
+                responseHandler.error(res, "Email already exists.");
             }
 
             const [role] = await Role.findOrCreate({
@@ -100,11 +100,10 @@ export default {
                 emailTemplate
             );
 
-            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
+            responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            console.error('Error creating employee:', error);
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 };

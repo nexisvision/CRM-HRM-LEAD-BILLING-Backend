@@ -18,12 +18,12 @@ export default {
 
             const filteredNotifications = notification.filter(a => a.users.includes(userId));
             if (filteredNotifications.length === 0) {
-                return responseHandler.success(res, "No notifications found", []);
+                responseHandler.success(res, "No notifications found", []);
             }
 
-            return responseHandler.success(res, "Notifications fetched successfully", filteredNotifications);
+            responseHandler.success(res, "Notifications fetched successfully", filteredNotifications);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     },
 };

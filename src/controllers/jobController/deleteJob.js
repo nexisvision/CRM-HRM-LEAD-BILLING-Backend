@@ -14,7 +14,7 @@ export default {
             const { id } = req.params;
             const job = await Job.findOne({ where: { id } });
             if (!job) {
-                return responseHandler.error(res, "Job not found");
+                responseHandler.error(res, "Job not found");
             }
             await job.destroy();
             responseHandler.success(res, "Job deleted successfully", job);

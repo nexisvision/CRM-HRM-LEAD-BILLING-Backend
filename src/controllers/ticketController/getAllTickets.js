@@ -14,11 +14,11 @@ export default {
         try {
             const tickets = await Ticket.findAll();
             if (!tickets) {
-                return responseHandler.error(res, "No tickets found");
+                responseHandler.error(res, "No tickets found");
             }
-            return responseHandler.success(res, "Tickets fetched successfully", tickets);
+            responseHandler.success(res, "Tickets fetched successfully", tickets);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

@@ -21,9 +21,9 @@ export default {
             const { id } = req.user;
             const { customer, issueDate, dueDate, category, items, discount, tax, total } = req.body;
             const salesInvoice = await SalesInvoice.create({ related_id: id, customer, issueDate, dueDate, category, items, discount, tax, total, created_by: req.user?.username });
-            return responseHandler.success(res, "SalesInvoice created successfully", salesInvoice);
+            responseHandler.success(res, "SalesInvoice created successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

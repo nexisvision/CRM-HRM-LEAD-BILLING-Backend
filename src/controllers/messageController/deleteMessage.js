@@ -14,13 +14,13 @@ export default {
             const { id } = req.params;
             const messageData = await Message.findByPk(id);
             if (!messageData) {
-                return responseHandler.error(res, "Message not found");
+                responseHandler.error(res, "Message not found");
             }
             await messageData.destroy();
-            return responseHandler.success(res, "Message deleted successfully", messageData);
+            responseHandler.success(res, "Message deleted successfully", messageData);
         }
         catch (error) {
-            return responseHandler.error(res, "Internal server error");
+            responseHandler.error(res, "Internal server error");
         }
     }
 }   

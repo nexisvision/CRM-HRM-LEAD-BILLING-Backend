@@ -44,9 +44,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Product ${product.name} created successfully`
             });
-            return responseHandler.success(res, "Product created successfully", product);
+            responseHandler.success(res, "Product created successfully", product);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

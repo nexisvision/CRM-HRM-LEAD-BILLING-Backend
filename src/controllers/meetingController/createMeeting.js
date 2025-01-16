@@ -30,9 +30,9 @@ export default {
                 createdBy: req.user?.username
             });
 
-            return responseHandler.success(res, "Meeting created successfully", meeting);
+            responseHandler.success(res, "Meeting created successfully", meeting);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

@@ -15,7 +15,7 @@ export default {
             const { id } = req.params;
             const milestone = await Milestone.findByPk(id);
             if (!milestone) {
-                return responseHandler.error(res, "Milestone not found");
+                responseHandler.error(res, "Milestone not found");
             }
             await Activity.create({
                 related_id: milestone.related_id,

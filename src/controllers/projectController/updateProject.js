@@ -48,16 +48,16 @@ export default {
             const project = await Project.findByPk(id);
 
             if (!project) {
-                return responseHandler.notFound(res, "Project not found");
+                responseHandler.notFound(res, "Project not found");
             }
 
             const existingProject = await Project.findOne({
                 where: { project_name }
             });
 
-            // if (existingProject) {
-            //     return responseHandler.error(res, "Project with this name already exists");
-            // }
+            if (existingProject) {
+                responseHandler.error(res, "Project with this name already exists");
+            }
 
             const updatedProject = await project.update({
                 project_name,

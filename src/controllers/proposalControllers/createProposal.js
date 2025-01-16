@@ -21,11 +21,13 @@ export default {
     handler: async (req, res) => {
         try {
             const { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } = req.body;
-            const proposal = await Proposal.create({ lead_title, deal_title, valid_till, currency, calculatedTax, description,
-                 items, discount, tax, total, created_by: req.user?.username });
-            return responseHandler.success(res, "Proposal created successfully", proposal);
+            const proposal = await Proposal.create({
+                lead_title, deal_title, valid_till, currency, calculatedTax, description,
+                items, discount, tax, total, created_by: req.user?.username
+            });
+            responseHandler.success(res, "Proposal created successfully", proposal);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

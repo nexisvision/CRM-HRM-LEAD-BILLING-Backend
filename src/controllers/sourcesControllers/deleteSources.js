@@ -13,9 +13,9 @@ export default {
         const { id } = req.params;
         try {
             await Sources.destroy({ where: { id } });
-            return responseHandler.success(res, 200, "Source deleted successfully");
+            responseHandler.success(res, 200, "Source deleted successfully");
         } catch (error) {
-            return responseHandler.error(res, 500, "Internal server error");
+            responseHandler.error(res, 500, "Internal server error");
         }
     }
 }

@@ -14,9 +14,9 @@ export default {
             const { id } = req.params
             const training = await Training.findByPk(id)
             await training.destroy()
-            return responseHandler.success(res, "Training deleted successfully", training)
+            responseHandler.success(res, "Training deleted successfully", training)
         } catch (error) {
-            return responseHandler.error(res, error.message)
+            responseHandler.error(res, error.message)
         }
     }
 }

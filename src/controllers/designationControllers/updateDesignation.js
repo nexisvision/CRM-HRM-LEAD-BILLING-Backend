@@ -24,7 +24,7 @@ export default {
             const { designation_name } = req.body;
             const designation = await Designation.findByPk(req.params.id);
             if (!designation) {
-                return responseHandler.error(res, "Designation not found");
+                responseHandler.error(res, "Designation not found");
             }
             await designation.update({ designation_name, updated_by: req.user?.username });
             responseHandler.success(res, "Designation updated successfully", designation);

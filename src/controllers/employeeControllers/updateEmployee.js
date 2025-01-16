@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Employee ID must be a string',
-                'string.empty': 'Employee ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             firstName: Joi.string().allow('', null),
@@ -38,15 +35,14 @@ export default {
 
             const employee = await User.findByPk(id);
             if (!employee) {
-                return responseHandler.notFound(res, "Employee not found");
+                responseHandler.notFound(res, "Employee not found");
             }
 
             const existingPhone = await User.findOne({ where: { phone } });
             if (existingPhone) {
-                return responseHandler.conflict(res, "Phone number already exists");
+                responseHandler.conflict(res, "Phone number already exists");
             }
 
-            // Update employee
             await employee.update({
                 firstName,
                 lastName,

@@ -24,7 +24,7 @@ export default {
             const { id } = req.params;
             const { item, price, currency, purchase_date, employee, project, bill, description } = req.body;
             const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, employee, project, bill, description, created_by: req.user?.username });
-            return responseHandler.success(res, "Expense created successfully", expense);
+            responseHandler.success(res, "Expense created successfully", expense);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

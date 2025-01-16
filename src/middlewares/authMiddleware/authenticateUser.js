@@ -6,14 +6,14 @@ const authenticateUser = async (req, res, next) => {
     try {
         let token = req.headers.authorization
         if (!token || !token.startsWith('Bearer ')) {
-            return responseHandler.error(res, "Invalid authorization header format");
+            responseHandler.error(res, "Invalid authorization header format");
         }
         token = token.split(' ')[1];
 
         token = token.replace(/^"|"$/g, '');
 
         if (!token) {
-            return responseHandler.error(res, "Authorization token is required");
+            responseHandler.error(res, "Authorization token is required");
         }
 
         const decoded = jwt.verify(token, JWT_SECRET);
@@ -21,7 +21,7 @@ const authenticateUser = async (req, res, next) => {
         req.user = decoded;
         next();
     } catch (error) {
-        return responseHandler.error(res, error.message);
+        responseHandler.error(res, error.message);
     }
 };
 

@@ -14,7 +14,6 @@ export default {
             const leaves = await Leave.findAll();
             responseHandler.success(res, "Leaves fetched successfully", leaves);
         } catch (error) {
-            console.error('Error fetching leaves:', error);
             responseHandler.error(res, error.message);
         }
     }

@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const proposal = await Proposal.findByPk(id);
             if (!proposal) {
-                return responseHandler.notFound(res, "Proposal not found");
-            }   
+                responseHandler.notFound(res, "Proposal not found");
+            }
             await proposal.destroy();
-            return responseHandler.success(res, "Proposal deleted successfully", proposal);
+            responseHandler.success(res, "Proposal deleted successfully", proposal);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

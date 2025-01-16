@@ -29,19 +29,19 @@ export default {
                 total_experience, current_location, notice_period, status, applied_source, cover_letter } = req.body;
 
             const jobApplication = await JobApplication.findByPk(id);
-        
+
             if (!jobApplication) {
-            return responseHandler.error(res, "Job application not found");
-        }
-        
-        await jobApplication.update({
-            job, name, email, phone, location, total_experience, 
-            current_location, notice_period, status, applied_source, cover_letter, 
-            updated_by: req.user?.username
-        });
-        return responseHandler.success(res, "Job application updated successfully", jobApplication);
+                responseHandler.error(res, "Job application not found");
+            }
+
+            await jobApplication.update({
+                job, name, email, phone, location, total_experience,
+                current_location, notice_period, status, applied_source, cover_letter,
+                updated_by: req.user?.username
+            });
+            responseHandler.success(res, "Job application updated successfully", jobApplication);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

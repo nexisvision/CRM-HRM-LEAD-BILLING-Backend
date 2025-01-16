@@ -12,11 +12,9 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            // const { page, limit } = req.query;
             const currencies = await Currency.findAll();
             responseHandler.success(res, "Currencies fetched successfully", currencies);
         } catch (error) {
-            console.error('Error fetching currencies:', error);
             responseHandler.error(res, error.message);
         }
     }

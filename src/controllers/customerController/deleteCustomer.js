@@ -15,12 +15,12 @@ export default {
             const { id } = req.params;
             const customer = await Customer.findByPk(id);
             if (!customer) {
-                return responseHandler.error(res, "customer not found");
+                responseHandler.error(res, "customer not found");
             }
             await customer.destroy();
-            return responseHandler.success(res, "customer deleted successfully", customer);
+            responseHandler.success(res, "customer deleted successfully", customer);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

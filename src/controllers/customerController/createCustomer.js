@@ -19,22 +19,22 @@ export default {
         try {
             const { name, contact, email, tax_number, alternate_number, billing_address, shipping_address } = req.body;
 
-            const customer = await Customer.create({ 
-                related_id: req.user?.id, 
-                name, 
-                contact, 
-                email, 
-                tax_number, 
-                alternate_number, 
-                billing_address, 
-                shipping_address, 
-                created_by: req.user?.username 
+            const customer = await Customer.create({
+                related_id: req.user?.id,
+                name,
+                contact,
+                email,
+                tax_number,
+                alternate_number,
+                billing_address,
+                shipping_address,
+                created_by: req.user?.username
             });
 
-            return responseHandler.success(res, "Customer created successfully", customer);
+            responseHandler.success(res, "Customer created successfully", customer);
 
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

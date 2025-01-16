@@ -6,30 +6,19 @@ import validator from "../../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            leadId: Joi.string().required().messages({
-                'string.base': 'Lead ID must be a string',
-                'string.empty': 'Lead ID is required'
-            })
+            leadId: Joi.string().required()
         }),
         query: Joi.object({
-            page: Joi.number().optional().default(1),
-            limit: Joi.number().optional().default(10)
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const offset = (page - 1) * limit;
-            const tasks = await Task.findAll({
-                where: {
-                    leadId: req.params.leadId
-                },
-                offset,
-                limit
-            });
+            const { leadId } = req.params;
+            const tasks = await Task.findAll({ where: { leadId } });
             responseHandler.success(res, "Lead tasks fetched successfully", tasks);
         } catch (error) {
-            console.error('Error fetching lead tasks:', error);
             responseHandler.error(res, error.message);
         }
     }

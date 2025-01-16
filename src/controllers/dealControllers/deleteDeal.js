@@ -15,7 +15,7 @@ export default {
             const { id } = req.params;
             const deal = await Deal.findByPk(id);
             if (!deal) {
-                return responseHandler.error(res, "Deal not found");
+                responseHandler.error(res, "Deal not found");
             }
             await deal.destroy();
             responseHandler.success(res, "Deal deleted successfully", deal);

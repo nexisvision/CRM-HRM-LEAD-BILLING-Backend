@@ -6,19 +6,16 @@ import Joi from "joi";
 export default {
     validator: validator({
         query: Joi.object({
-            page: Joi.number().optional().default(1),
-            limit: Joi.number().optional().default(10)
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const skills = await Skill.findAll({
-               
-            });
-            return responseHandler.success(res, "Skills fetched successfully", skills);
+            const skills = await Skill.findAll();
+            responseHandler.success(res, "Skills fetched successfully", skills);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 

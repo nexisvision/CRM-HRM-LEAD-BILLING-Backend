@@ -22,21 +22,21 @@ export default {
             const { subscription } = req;
 
             if (user.type !== 'signup_verification') {
-                return responseHandler.unauthorized(res, "Invalid verification token");
+                responseHandler.unauthorized(res, "Invalid verification token");
             }
 
             if (String(user.verificationOTP) !== String(otp)) {
-                return responseHandler.unauthorized(res, "Invalid OTP");
+                responseHandler.unauthorized(res, "Invalid OTP");
             }
 
             if (Date.now() > user.verificationOTPExpiry) {
-                return responseHandler.unauthorized(res, "OTP has expired");
+                responseHandler.unauthorized(res, "OTP has expired");
             }
 
             //check Role
             const role = await Role.findOne({ where: { id: user.role_id } });
             if (!role) {
-                return responseHandler.error(res, "Role not found");
+                responseHandler.error(res, "Role not found");
             }
 
 
@@ -77,13 +77,13 @@ export default {
                 welcomeTemplate
             );
 
-            return responseHandler.success(res, "Registration completed successfully", {
+            responseHandler.success(res, "Registration completed successfully", {
                 success: true,
                 token,
                 user: newUser
             });
         } catch (error) {
-            return responseHandler.internalServerError(res, error.message);
+            responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

@@ -6,10 +6,7 @@ import EventSetup from "../../models/eventsetupModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Event ID must be a string',
-                'string.empty': 'Event ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -17,7 +14,7 @@ export default {
         try {
             const event = await EventSetup.findByPk(id);
             if (!event) {
-                return responseHandler.error(res, "Event not found");
+                responseHandler.error(res, "Event not found");
             }
             await event.destroy();
             responseHandler.success(res, "Event deleted successfully", event);

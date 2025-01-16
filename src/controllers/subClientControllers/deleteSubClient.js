@@ -7,7 +7,7 @@ export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required().messages({
-                'string.base': 'subClient ID must be a string',
+                'string.base': 'subClient ',
                 'string.empty': 'subClient ID is required',
             })
         })
@@ -18,13 +18,13 @@ export default {
 
             const subClient = await User.findByPk(id);
             if (!subClient) {
-                return responseHandler.error(res, "subClient not found");
+                responseHandler.error(res, "subClient not found");
             }
 
             await subClient.destroy();
-            return responseHandler.success(res, "subClient deleted successfully", subClient);
+            responseHandler.success(res, "subClient deleted successfully", subClient);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

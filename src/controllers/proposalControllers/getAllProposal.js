@@ -6,17 +6,16 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         query: Joi.object({
-            page: Joi.number().required(),
-            limit: Joi.number().required()
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
             const proposals = await Proposal.findAll();
-            return responseHandler.success(res, "Proposals fetched successfully", proposals);
+            responseHandler.success(res, "Proposals fetched successfully", proposals);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

@@ -25,7 +25,6 @@ export default {
 
             responseHandler.success(res, "Country created successfully", country);
         } catch (error) {
-            console.error('Error creating country:', error);
             responseHandler.error(res, error.message);
         }
     }

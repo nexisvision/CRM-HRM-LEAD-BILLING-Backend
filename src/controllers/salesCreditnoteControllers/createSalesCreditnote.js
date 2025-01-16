@@ -18,9 +18,9 @@ export default {
             const { id } = req.user;
             const { invoice, date, currency, amount, description } = req.body;
             const salesCreditnote = await SalesCreditnote.create({ related_id: id, invoice, date, currency, amount, description, created_by: req.user?.username });
-            return responseHandler.success(res, "SalesCreditnote created successfully", salesCreditnote);
+            responseHandler.success(res, "SalesCreditnote created successfully", salesCreditnote);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

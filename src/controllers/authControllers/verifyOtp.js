@@ -26,7 +26,7 @@ export default {
             });
 
             if (!findUser) {
-                return responseHandler.unauthorized(res, "Invalid or expired OTP");
+                responseHandler.unauthorized(res, "Invalid or expired OTP");
             }
 
             const resetToken = jwt.sign(
@@ -35,10 +35,9 @@ export default {
                 { expiresIn: '15m' }
             );
 
-            return responseHandler.success(res, "OTP verified successfully", { token: resetToken });
+            responseHandler.success(res, "OTP verified successfully", { token: resetToken });
         } catch (error) {
-            console.error('OTP Verification Error:', error);
-            return responseHandler.internalServerError(res, "Failed to verify OTP");
+            responseHandler.internalServerError(res, "Failed to verify OTP");
         }
     }
 };

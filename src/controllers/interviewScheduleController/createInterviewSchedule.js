@@ -21,9 +21,9 @@ export default {
         try {
             const { job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate } = req.body;
             const interviewSchedule = await InterviewSchedule.create({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
-            return responseHandler.success(res, "Interview schedule created successfully", interviewSchedule);
+            responseHandler.success(res, "Interview schedule created successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

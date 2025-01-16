@@ -6,10 +6,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Lead ID must be a string',
-                'string.empty': 'Lead ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             leadTitle: Joi.string().required(),
@@ -40,7 +37,7 @@ export default {
             const lead = await Lead.findByPk(id);
 
             if (!lead) {
-                return responseHandler.notFound(res, "Lead not found");
+                responseHandler.notFound(res, "Lead not found");
             }
 
             await lead.update({

@@ -16,7 +16,7 @@ export default {
             const attendance = await Attendance.findByPk(id);
 
             if (!attendance) {
-                return responseHandler.notFound(res, "Attendance record not found");
+                responseHandler.notFound(res, "Attendance record not found");
             }
 
             responseHandler.success(res, "Attendance fetched successfully", attendance);

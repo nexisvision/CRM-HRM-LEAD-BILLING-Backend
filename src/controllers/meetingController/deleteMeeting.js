@@ -14,12 +14,12 @@ export default {
         try {
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
-                return responseHandler.notFound(res, "Meeting not found");
+                responseHandler.notFound(res, "Meeting not found");
             }
             await meeting.destroy();
-            return responseHandler.success(res, "Meeting deleted successfully", meeting);
+            responseHandler.success(res, "Meeting deleted successfully", meeting);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

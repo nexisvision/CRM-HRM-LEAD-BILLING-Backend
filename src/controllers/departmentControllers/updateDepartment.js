@@ -24,7 +24,7 @@ export default {
         try {
             const department = await Department.findByPk(req.params.id);
             if (!department) {
-                return responseHandler.error(res, "Department not found");
+                responseHandler.error(res, "Department not found");
             }
             await department.update({ department_name, updated_by: req.user?.username });
             responseHandler.success(res, "Department updated successfully", department);

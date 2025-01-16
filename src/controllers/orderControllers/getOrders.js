@@ -17,9 +17,9 @@ export default {
         try {
             const { id } = req.params;
             const orders = await Order.findAll({ where: { related_id: id } });
-            return responseHandler.success(res, orders);
+            responseHandler.success(res, orders);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

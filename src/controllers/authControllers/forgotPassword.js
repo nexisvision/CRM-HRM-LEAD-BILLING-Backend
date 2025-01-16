@@ -21,7 +21,7 @@ export default {
             const user = await User.findOne({ where: { email: email } });
 
             if (!user) {
-                return responseHandler.notFound(res, "User not found");
+                responseHandler.notFound(res, "User not found");
             }
 
             const otp = generateOTP(OTP_CONFIG.LENGTH);
@@ -29,19 +29,16 @@ export default {
             user.resetPasswordOTPExpiry = Date.now() + OTP_CONFIG.EXPIRY.RESET_PASSWORD;
             await user.save();
 
-            // Generate session token with email
             const sessionToken = jwt.sign(
                 { email: user.email },
                 JWT_SECRET,
                 { expiresIn: '15m' }
             );
-            // Send email with OTP
             const emailTemplate = getPasswordResetEmailTemplate(user.username, otp);
             await sendEmail(email, 'Password Reset Request', emailTemplate);
-            return responseHandler.success(res, "Password reset OTP sent to your email", { sessionToken });
+            responseHandler.success(res, "Password reset OTP sent to your email", { sessionToken });
         } catch (error) {
-            console.error('Forgot Password Error:', error);
-            return responseHandler.internalServerError(res, error.message);
+            responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

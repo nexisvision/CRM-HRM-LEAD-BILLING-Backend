@@ -26,12 +26,12 @@ export default {
             const { valid_till, currency, lead, client, calculatedTax, items, discount, tax, total } = req.body;
             const quotations = await Quotations.findByPk(id);
             if (!quotations) {
-                return responseHandler.error(res, "Quotation not found");
+                responseHandler.error(res, "Quotation not found");
             }
             await quotations.update({ valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, updated_by: req.user?.username });
-            return responseHandler.success(res, "Quotation updated successfully", quotations);
+            responseHandler.success(res, "Quotation updated successfully", quotations);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }   

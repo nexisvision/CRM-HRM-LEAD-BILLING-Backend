@@ -14,11 +14,11 @@ export default {
         try {
             const inquiries = await Inquiry.findAll();
             if (!inquiries) {
-                return responseHandler.error(res, "No inquiries found");
+                responseHandler.error(res, "No inquiries found");
             }
-            return responseHandler.success(res, "Inquiry fetched successfully", inquiries);
+            responseHandler.success(res, "Inquiry fetched successfully", inquiries);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

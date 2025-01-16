@@ -37,7 +37,7 @@ export default {
 
             const payment = await Payment.findByPk(id);
             if (!payment) {
-                return responseHandler.notFound(res, "Payment not found");
+                responseHandler.notFound(res, "Payment not found");
             }
 
             await payment.update({
@@ -55,7 +55,6 @@ export default {
 
             responseHandler.success(res, "Payment updated successfully", payment);
         } catch (error) {
-            console.error('Error updating payment:', error);
             responseHandler.error(res, error.message);
         }
     }

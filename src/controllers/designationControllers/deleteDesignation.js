@@ -7,10 +7,7 @@ import Designation from "../../models/designationModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Designation ID must be a string',
-                'string.empty': 'Designation ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -20,7 +17,7 @@ export default {
             const designation = await Designation.findByPk(id);
 
             if (!designation) {
-                return responseHandler.notFound(res, "Designation not found");
+                responseHandler.notFound(res, "Designation not found");
             }
 
             await designation.destroy();

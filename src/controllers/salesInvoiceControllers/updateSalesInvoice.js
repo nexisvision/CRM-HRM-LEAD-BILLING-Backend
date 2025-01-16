@@ -25,12 +25,12 @@ export default {
             const { customer, issueDate, dueDate, category, items, discount, tax, total } = req.body;
             const salesInvoice = await SalesInvoice.findByPk(id);
             if (!salesInvoice) {
-                return responseHandler.error(res, "SalesInvoice not found");
+                responseHandler.error(res, "SalesInvoice not found");
             }
             await salesInvoice.update({ customer, issueDate, dueDate, category, items, discount, tax, total, updated_by: req.user?.username });
-            return responseHandler.success(res, "SalesInvoice updated successfully", salesInvoice);
+            responseHandler.success(res, "SalesInvoice updated successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

@@ -31,7 +31,7 @@ export default {
             });
 
             if (existingDepartment) {
-                return responseHandler.error(res, "Department name already exists");
+                responseHandler.error(res, "Department name already exists");
             }
 
             const department = await Department.create({

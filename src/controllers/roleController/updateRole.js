@@ -6,16 +6,10 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Role ID must be a string',
-                'string.empty': 'Role ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
-            role_name: Joi.string().required().messages({
-                'string.base': 'Role name must be a string',
-                'string.empty': 'Role name is required'
-            }),
+            role_name: Joi.string().required(),
             permissions: Joi.array().items(Joi.string()).allow(null),
         })
     }),
@@ -26,7 +20,7 @@ export default {
 
             const role = await Role.findByPk(id);
             if (!role) {
-                return responseHandler.notFound(res, 'Role not found');
+                responseHandler.notFound(res, 'Role not found');
             }
 
             await role.update({
@@ -34,9 +28,9 @@ export default {
                 permissions,
                 updated_by: req.user?.username
             });
-            return responseHandler.success(res, 'Role updated successfully', role);
+            responseHandler.success(res, 'Role updated successfully', role);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

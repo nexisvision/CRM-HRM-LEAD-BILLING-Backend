@@ -21,9 +21,9 @@ export default {
             const { id } = req.user;
             const { date, currency, amount, account, customer, description, category, paymentReceipt } = req.body;
             const salesRevenue = await SalesRevenue.create({ related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt, created_by: req.user?.username });
-            return responseHandler.success(res, "SalesRevenue created successfully", salesRevenue);
+            responseHandler.success(res, "SalesRevenue created successfully", salesRevenue);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

@@ -14,7 +14,7 @@ export default {
         try {
             const jobs = await Job.findAll();
             if (!jobs) {
-                return responseHandler.error(res, "No jobs found");
+                responseHandler.error(res, "No jobs found");
             }
             responseHandler.success(res, "Jobs fetched successfully", jobs);
         } catch (error) {

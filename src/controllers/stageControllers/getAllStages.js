@@ -14,11 +14,11 @@ export default {
         try {
             const stages = await Stage.findAll();
             if (!stages) {
-                return responseHandler.notFound(res, "Stages not found");
+                responseHandler.notFound(res, "Stages not found");
             }
-            return responseHandler.success(res, "Stages fetched successfully", stages);
+            responseHandler.success(res, "Stages fetched successfully", stages);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

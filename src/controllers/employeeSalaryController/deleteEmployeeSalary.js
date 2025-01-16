@@ -15,7 +15,7 @@ export default {
 
             const employeeSalary = await EmployeeSalary.findByPk(id);
             if (!employeeSalary) {
-                return responseHandler.notFound(res, "EmployeeSalary not found");
+                responseHandler.notFound(res, "EmployeeSalary not found");
             }
 
             await employeeSalary.destroy();

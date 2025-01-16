@@ -26,7 +26,7 @@ export default {
             const { name, category, price, sku, tax, hsn_sac, description, files } = req.body;
             const product = await Product.findByPk(id);
             if (!product) {
-                return responseHandler.error(res, "Product not found");
+                responseHandler.error(res, "Product not found");
             }
             await product.update({ name, category, price, sku, tax, hsn_sac, description, files, updated_by: req.user?.username });
             await Activity.create({
@@ -37,7 +37,7 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Product ${product.name} updated successfully`
             });
-            return responseHandler.success(res, "Product updated successfully", product);
+            responseHandler.success(res, "Product updated successfully", product);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

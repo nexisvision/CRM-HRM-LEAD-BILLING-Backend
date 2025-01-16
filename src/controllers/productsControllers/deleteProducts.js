@@ -15,7 +15,7 @@ export default {
             const { id } = req.params;
             const product = await Product.findByPk(id);
             if (!product) {
-                return responseHandler.error(res, "Product not found");
+                responseHandler.error(res, "Product not found");
             }
             await product.destroy();
             await Activity.create({
@@ -26,7 +26,7 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Product ${product.name} deleted successfully`
             });
-            return responseHandler.success(res, "Product deleted successfully", product);
+            responseHandler.success(res, "Product deleted successfully", product);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

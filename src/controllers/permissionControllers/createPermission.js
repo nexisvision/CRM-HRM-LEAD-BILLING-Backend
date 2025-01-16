@@ -19,7 +19,7 @@ export default {
             });
 
             if (existingPermission) {
-                return responseHandler.error(res, "Permission already exists");
+                responseHandler.error(res, "Permission already exists");
             }
 
             const permission = await Permission.create({

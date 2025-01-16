@@ -6,10 +6,7 @@ import User from "../../models/userModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Employee ID must be a string',
-                'string.empty': 'Employee ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -18,7 +15,7 @@ export default {
 
             const employee = await User.findByPk(id);
             if (!employee) {
-                return responseHandler.notFound(res, "Employee not found");
+                responseHandler.notFound(res, "Employee not found");
             }
 
             await employee.destroy();

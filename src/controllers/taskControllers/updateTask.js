@@ -40,7 +40,7 @@ export default {
             } = req.body;
             const task = await Task.findByPk(id);
             if (!task) {
-                return responseHandler.error(res, 'Task not found');
+                responseHandler.error(res, 'Task not found');
             }
             const updatedTask = await task.update({
                 taskName,

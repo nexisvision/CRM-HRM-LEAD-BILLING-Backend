@@ -38,7 +38,7 @@ export default {
 
             const subClient = await User.findByPk(id);
             if (!subClient) {
-                return responseHandler.notFound(res, "subClient not found");
+                responseHandler.notFound(res, "subClient not found");
             }
 
             await subClient.update({

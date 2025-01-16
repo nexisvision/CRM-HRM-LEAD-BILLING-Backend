@@ -22,7 +22,6 @@ export default {
             await country.update({ countryName, countryCode, phoneCode });
             responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {
-            console.error('Error updating country:', error);
             responseHandler.error(res, error.message);
         }
     }

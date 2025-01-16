@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Permission ID must be a string',
-                'string.empty': 'Permission ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -19,7 +16,7 @@ export default {
             const permission = await Permission.findByPk(id);
 
             if (!permission) {
-                return responseHandler.notFound(res, "Permission not found");
+                responseHandler.notFound(res, "Permission not found");
             }
 
             responseHandler.success(res, "Permission fetched successfully", permission);

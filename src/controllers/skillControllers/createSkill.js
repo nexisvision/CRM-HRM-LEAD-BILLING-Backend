@@ -13,9 +13,9 @@ export default {
         try {
             const { skillName } = req.body;
             const skill = await Skill.create({ skillName, created_by: req.user?.username });
-            return responseHandler.success(res, "Skill created successfully", skill);
+            responseHandler.success(res, "Skill created successfully", skill);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

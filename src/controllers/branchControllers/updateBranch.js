@@ -19,7 +19,6 @@ export default {
             await Branch.update({ branchName, updated_by: req.user?.username }, { where: { id } });
             responseHandler.success(res, "Branch updated successfully", Branch);
         } catch (error) {
-            console.error('Error updating branch:', error);
             responseHandler.error(res, error.message);
         }
     }

@@ -82,7 +82,6 @@ router.use('/project-reports', projectReportRoutes);
 router.use('/features', featureRoutes);
 router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
-router.use('/branches', branchRoutes);
 router.use('/tasks', taskRoutes);
 router.use('/countries', countriesRoutes);
 router.use('/labels', labelRoutes);
@@ -120,5 +119,9 @@ router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
 router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
+
+
+//HRM
+router.use('/branches', branchRoutes);
 
 export default router;

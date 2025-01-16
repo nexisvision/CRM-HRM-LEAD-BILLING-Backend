@@ -11,7 +11,7 @@ export default {
             const { user } = req;
 
             if (user.type !== 'signup_verification') {
-                return responseHandler.unauthorized(res, "Invalid verification token");
+                responseHandler.unauthorized(res, "Invalid verification token");
             }
 
             const newOTP = generateOTP(OTP_CONFIG.LENGTH);

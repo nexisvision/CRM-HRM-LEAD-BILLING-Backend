@@ -14,9 +14,9 @@ export default {
             const { id } = req.params;
             const interviewSchedule = await InterviewSchedule.findByPk(id);
             await interviewSchedule.destroy();
-            return responseHandler.success(res, "Interview schedule deleted successfully", interviewSchedule);
+            responseHandler.success(res, "Interview schedule deleted successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error);
+            responseHandler.error(res, error);
         }
     }
 }

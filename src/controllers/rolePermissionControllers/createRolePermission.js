@@ -8,14 +8,8 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            role_id: Joi.string().required().messages({
-                'string.base': 'Role ID must be a string',
-                'string.empty': 'Role ID is required'
-            }),
-            permission_id: Joi.string().required().messages({
-                'string.base': 'Permission ID must be a string',
-                'string.empty': 'Permission ID is required'
-            })
+            role_id: Joi.string().required(),
+            permission_id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -25,13 +19,13 @@ export default {
             // Check if role exists
             const role = await Role.findByPk(role_id);
             if (!role) {
-                return responseHandler.notFound(res, "Role not found");
+                responseHandler.notFound(res, "Role not found");
             }
 
             // Check if permission exists
             const permission = await Permission.findByPk(permission_id);
             if (!permission) {
-                return responseHandler.notFound(res, "Permission not found");
+                responseHandler.notFound(res, "Permission not found");
             }
 
             // Check if association already exists
@@ -40,7 +34,7 @@ export default {
             });
 
             if (existingAssociation) {
-                return responseHandler.error(res, "This permission is already assigned to the role");
+                responseHandler.error(res, "This permission is already assigned to the role");
             }
 
             const rolePermission = await RolePermission.create({

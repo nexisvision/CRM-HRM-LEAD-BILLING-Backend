@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const jobApplication = await JobApplication.findByPk(id);
             if (!jobApplication) {
-                return responseHandler.error(res, "Job application not found");
+                responseHandler.error(res, "Job application not found");
             }
             await jobApplication.destroy();
-            return responseHandler.success(res, "Job application deleted successfully", jobApplication);
+            responseHandler.success(res, "Job application deleted successfully", jobApplication);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

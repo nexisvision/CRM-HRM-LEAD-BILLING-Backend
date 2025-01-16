@@ -15,7 +15,7 @@ export default {
 
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
-                return responseHandler.notFound(res, "Plan not found");
+                responseHandler.notFound(res, "Plan not found");
             }
 
             responseHandler.success(res, "Plan retrieved successfully", plan);

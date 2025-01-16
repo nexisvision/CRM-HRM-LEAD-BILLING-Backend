@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'User ID must be a string',
-                'string.empty': 'User ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -18,7 +15,7 @@ export default {
 
             const user = await User.findByPk(id);
             if (!user) {
-                return responseHandler.error(res, "User not found");
+                responseHandler.error(res, "User not found");
             }
 
             await user.destroy();

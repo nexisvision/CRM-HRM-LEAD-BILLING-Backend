@@ -6,10 +6,7 @@ import User from "../../models/userModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Client ID must be a string',
-                'string.empty': 'Client ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -18,13 +15,13 @@ export default {
 
             const client = await User.findByPk(id);
             if (!client) {
-                return responseHandler.error(res, "Client not found");
+                responseHandler.error(res, "Client not found");
             }
 
             await client.destroy();
-            return responseHandler.success(res, "Client deleted successfully", client);
+            responseHandler.success(res, "Client deleted successfully", client);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }

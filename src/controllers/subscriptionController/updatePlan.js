@@ -27,7 +27,7 @@ export default {
 
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
-                return responseHandler.notFound(res, "Plan not found");
+                responseHandler.notFound(res, "Plan not found");
             }
 
             await plan.update({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, updated_by: req.user?.username });

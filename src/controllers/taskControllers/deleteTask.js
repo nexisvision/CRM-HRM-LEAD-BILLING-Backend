@@ -6,10 +6,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.empty': 'Task ID is required',
-                'string.base': 'Task ID must be a string'
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -17,7 +14,7 @@ export default {
             const { id } = req.params;
             const task = await Task.findByPk(id);
             if (!task) {
-                return responseHandler.error(res, "Task not found");
+                responseHandler.error(res, "Task not found");
             }
             await task.destroy();
             responseHandler.success(res, "Task deleted successfully", task);

@@ -13,7 +13,7 @@ export default {
             const { id } = req.params;
             const pipeline = await Pipeline.findByPk(id);
             if (!pipeline) {
-                return responseHandler.notFound(res, "Pipeline not found");
+                responseHandler.notFound(res, "Pipeline not found");
             }
             await pipeline.destroy();
             responseHandler.success(res, 'Pipeline deleted successfully', pipeline);

@@ -21,7 +21,7 @@ export default {
         try {
             const announcement = await Announcement.findByPk(req.params.id);
             if (!announcement) {
-                return responseHandler.error(res, "Announcement not found");
+                responseHandler.error(res, "Announcement not found");
             }
             await announcement.update({ title, description, updated_by: req.user?.username });
             responseHandler.success(res, "Announcement updated successfully", announcement);

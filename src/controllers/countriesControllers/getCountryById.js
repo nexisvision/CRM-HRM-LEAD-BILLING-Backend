@@ -6,10 +6,7 @@ import Joi from "joi";
 export default {
     validator: validator,
     params: Joi.object({
-        id: Joi.string().required().messages({
-            'string.base': 'Id must be a string',
-            'string.empty': 'Id is required'
-        })
+        id: Joi.string().required()
     }),
     handler: async (req, res) => {
         try {
@@ -17,7 +14,6 @@ export default {
             const country = await Country.findByPk(id);
             responseHandler.success(res, "Country fetched successfully", country);
         } catch (error) {
-            console.error('Error fetching country:', error);
             responseHandler.error(res, error.message);
         }
     }

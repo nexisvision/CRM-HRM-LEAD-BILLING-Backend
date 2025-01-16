@@ -23,7 +23,7 @@ export default {
                 where: { related_id: id, name }
             });
             if (existingTag) {
-                return responseHandler.error(res, "Tag with this name already exists");
+                responseHandler.error(res, "Tag with this name already exists");
             }
             // Create new tag
             const newTag = await Tag.create({

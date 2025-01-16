@@ -15,7 +15,6 @@ export const generateBillPDF = async (client, plan, subscription, bill, res) => 
 
         // Handle stream errors
         doc.on('error', (err) => {
-            console.error('PDF Generation Error:', err);
             reject(err);
         });
 
@@ -126,7 +125,6 @@ export const generateBillPDF = async (client, plan, subscription, bill, res) => 
         });
 
         stream.on('error', (err) => {
-            console.error('Stream Error:', err);
             reject(err);
         });
 

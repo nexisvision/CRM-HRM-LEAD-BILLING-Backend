@@ -27,7 +27,7 @@ export default {
             // Check if plan exists
             const plan = await SubscriptionPlan.findByPk(plan_id);
             if (!plan) {
-                return responseHandler.notFound(res, "Subscription plan not found");
+                responseHandler.notFound(res, "Subscription plan not found");
             }
 
             // Check if client already has an active subscription
@@ -39,7 +39,7 @@ export default {
             });
 
             if (existingSubscription) {
-                return responseHandler.error(res, "Client already has an active subscription");
+                responseHandler.error(res, "Client already has an active subscription");
             }
 
             // Create new subscription

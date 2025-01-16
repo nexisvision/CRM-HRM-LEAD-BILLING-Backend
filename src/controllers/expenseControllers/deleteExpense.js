@@ -14,10 +14,10 @@ export default {
             const { id } = req.params;
             const expense = await Expense.findByPk(id);
             if (!expense) {
-                return responseHandler.error(res, "Expense not found");
+                responseHandler.error(res, "Expense not found");
             }
             await expense.destroy();
-            return responseHandler.success(res, "Expense deleted successfully", expense);
+            responseHandler.success(res, "Expense deleted successfully", expense);
         } catch (error) {
             responseHandler.error(res, error.message);
         }

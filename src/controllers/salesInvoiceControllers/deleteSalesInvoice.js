@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const salesInvoice = await SalesInvoices.findByPk(id);
             if (!salesInvoice) {
-                return responseHandler.error(res, "SalesInvoice not found");
+                responseHandler.error(res, "SalesInvoice not found");
             }
             await salesInvoice.destroy();
-            return responseHandler.success(res, "SalesInvoice deleted successfully", salesInvoice);
+            responseHandler.success(res, "SalesInvoice deleted successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            responseHandler.error(res, error.message);
         }
     }
 }   

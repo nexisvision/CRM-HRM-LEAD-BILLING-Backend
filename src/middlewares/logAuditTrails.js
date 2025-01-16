@@ -13,9 +13,8 @@ export default async function logAuditTrails(req, res, next) {
         const originalJson = res.json;
         res.json = async function (body) {
             const endTime = Date.now();
-            const duration = (endTime - startTime) / 1000; // Convert to seconds
+            const duration = (endTime - startTime) / 1000;
 
-            // Extract path starting from 'api'
             const fullPath = req.originalUrl;
             const apiIndex = fullPath.indexOf('api');
             const pathFromApi = apiIndex !== -1 ? fullPath.substring(apiIndex) : fullPath;
@@ -33,8 +32,6 @@ export default async function logAuditTrails(req, res, next) {
         }
         next();
     } catch (error) {
-        console.log("🛑>>>>> an error occurred logging audit trail >>>>>>>>🛑");
-        console.log(error.message);
         next();
     }
 }
