@@ -22,6 +22,10 @@ export default {
             if (!leaveTypeToUpdate) {
                 return responseHandler.error(res, "Leave type not found");
             }
+            const existingLeaveType = await LeaveType.findOne({ where: { name } });
+            if (existingLeaveType) {
+                return responseHandler.error(res, "Leave type already exists");
+            }
             await leaveTypeToUpdate.update({ leaveType, daysPerYear, updated_by: req.user?.username });
             return responseHandler.success(res, "Leave type updated successfully", leaveTypeToUpdate);
         } catch (error) {

@@ -1,15 +1,15 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-import { createLoanOption, getAllLoanOption, getLoanOption, updateLoanOption, deleteLoanOption } from "../controllers/LoanOptionControllers/index.js";
+import { createDeductionOption, getAllDeductionOption, getDeductionOption, updateDeductionOption, deleteDeductionOption } from "../controllers/DeductionOptionControllers/index.js";
 
 const router = express.Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post("/", createLoanOption.validator, createLoanOption.handler);
-router.get("/", getAllLoanOption.validator, getAllLoanOption.handler);
-router.get("/:id", getLoanOption.validator, getLoanOption.handler);
-router.put("/:id", updateLoanOption.validator, updateLoanOption.handler);
-router.delete("/:id", deleteLoanOption.validator, deleteLoanOption.handler);
+router.post("/", createDeductionOption.validator, createDeductionOption.handler);
+router.get("/", getAllDeductionOption.validator, getAllDeductionOption.handler);
+router.get("/:id", getDeductionOption.validator, getDeductionOption.handler);
+router.put("/:id", updateDeductionOption.validator, updateDeductionOption.handler);
+router.delete("/:id", deleteDeductionOption.validator, deleteDeductionOption.handler);
 
 export default router;
