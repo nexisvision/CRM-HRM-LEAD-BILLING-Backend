@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const proposals = await Proposal.findAll();
-            responseHandler.success(res, "Proposals fetched successfully", proposals);
+            return responseHandler.success(res, "Proposals fetched successfully", proposals);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

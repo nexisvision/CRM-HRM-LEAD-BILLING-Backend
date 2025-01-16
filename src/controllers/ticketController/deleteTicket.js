@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const ticket = await Ticket.findByPk(id);
             if (!ticket) {
-                responseHandler.error(res, "Ticket not found");
+                return responseHandler.error(res, "Ticket not found");
             }
             await ticket.destroy();
-            responseHandler.success(res, "Ticket deleted successfully", ticket);
+            return responseHandler.success(res, "Ticket deleted successfully", ticket);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

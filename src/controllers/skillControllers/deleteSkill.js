@@ -16,12 +16,12 @@ export default {
 
             const skill = await Skill.findByPk(id);
             if (!skill) {
-                responseHandler.notFound(res, "Skill not found");
+                return responseHandler.notFound(res, "Skill not found");
             }
             await skill.destroy();
-            responseHandler.success(res, "Skill deleted successfully", skill);
+            return responseHandler.success(res, "Skill deleted successfully", skill);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

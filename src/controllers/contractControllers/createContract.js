@@ -35,9 +35,9 @@ export default {
                 subject, client, project, type, value, startDate, endDate, currency, description,
                 phone, address, city, state, country, zipcode, notes, created_by: req.user?.id
             });
-            responseHandler.success(res, "Contract created successfully", contract);
+            return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 

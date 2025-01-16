@@ -24,12 +24,12 @@ export default {
             const { client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note } = req.body;
             const order = await Order.findByPk(req.params.id);
             if (!order) {
-                responseHandler.error(res, "Order not found");
+                return responseHandler.error(res, "Order not found");
             }
             order.update({ client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note, updated_by: req.user?.username, });
-            responseHandler.success(res, "Order updated successfully", order);
+            return responseHandler.success(res, "Order updated successfully", order);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -19,12 +19,12 @@ export default {
             const { stageName, pipeline } = req.body;
             const stage = await Stage.findByPk(id)
             if (!stage) {
-                responseHandler.notFound(res, "Stage not found");
+                return responseHandler.notFound(res, "Stage not found");
             }
             await stage.update({ stageName, pipeline, updated_by: req.user.id });
-            responseHandler.success(res, "Stage updated successfully", stage);
+            return responseHandler.success(res, "Stage updated successfully", stage);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const job = await Job.findOne({ where: { id } });
             if (!job) {
-                responseHandler.error(res, "Job not found");
+                return responseHandler.error(res, "Job not found");
             }
             await job.destroy();
-            responseHandler.success(res, "Job deleted successfully", job);
+            return responseHandler.success(res, "Job deleted successfully", job);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

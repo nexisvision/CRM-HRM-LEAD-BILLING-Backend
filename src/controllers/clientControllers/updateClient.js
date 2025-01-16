@@ -38,7 +38,7 @@ export default {
 
             const client = await User.findByPk(id);
             if (!client) {
-                responseHandler.notFound(res, "Client not found");
+                return responseHandler.notFound(res, "Client not found");
             }
 
             await client.update({
@@ -46,10 +46,10 @@ export default {
                 phone, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
-            responseHandler.success(res, "Client updated successfully", client);
+            return responseHandler.success(res, "Client updated successfully", client);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

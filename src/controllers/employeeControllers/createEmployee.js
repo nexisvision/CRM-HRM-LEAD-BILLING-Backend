@@ -11,20 +11,12 @@ import { OTP_CONFIG } from "../../config/config.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../config/config.js";
 import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
-import { getActiveSubscription } from "../../middlewares/checkSubscriptionLimits.js";
 
 export default {
     validator: validator({
         body: Joi.object({
-            username: Joi.string().required().messages({
-                'string.base': 'Username must be a string',
-                'string.empty': 'Username is required'
-            }),
-            email: Joi.string().email().required().messages({
-                'string.base': 'Email must be a string',
-                'string.empty': 'Email is required',
-                'string.email': 'Invalid email format'
-            }),
+            username: Joi.string().required(),
+            email: Joi.string().email().required(),
             password: Joi.string()
                 .required()
                 .min(8)
@@ -35,12 +27,29 @@ export default {
                     'string.min': 'Password must be at least 8 characters',
                     'string.pattern.base': 'Password must contain only letters, numbers and special characters'
                 }),
+            firstName: Joi.string().allow('', null),
+            lastName: Joi.string().allow('', null),
+            phone: Joi.string().allow('', null),
+            address: Joi.string().allow('', null),
+            joiningDate: Joi.date().allow('', null),
+            leaveDate: Joi.date().allow(null),
+            department: Joi.string().allow('', null),
+            designation: Joi.string().allow('', null),
+            salary: Joi.number().allow('', null),
+            accountholder: Joi.string().allow('', null),
+            accountnumber: Joi.number().allow('', null),
+            bankname: Joi.string().allow('', null),
+            ifsc: Joi.number().allow('', null),
+            banklocation: Joi.string().allow('', null),
+            e_signatures: Joi.object().optional().allow(null),
+            documents: Joi.object().optional().allow(null),
+            links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { subscription } = req;
-            const { username, email, password } = req.body;
+            const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -48,7 +57,7 @@ export default {
             });
 
             if (existingUsername) {
-                responseHandler.error(res, "Username already exists.");
+                return responseHandler.error(res, "Username already exists.");
             }
 
             const existingEmail = await User.findOne({
@@ -56,7 +65,7 @@ export default {
             });
 
             if (existingEmail) {
-                responseHandler.error(res, "Email already exists.");
+                return responseHandler.error(res, "Email already exists.");
             }
 
             const [role] = await Role.findOrCreate({
@@ -77,6 +86,23 @@ export default {
                 email,
                 role_id: role.id,
                 password: hashedPassword,
+                firstName,
+                lastName,
+                phone,
+                address,
+                joiningDate,
+                leaveDate,
+                department,
+                designation,
+                salary,
+                accountholder,
+                accountnumber,
+                bankname,
+                ifsc,
+                banklocation,
+                e_signatures,
+                documents,
+                links,
                 verificationOTP: otp,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT
             };
@@ -100,10 +126,10 @@ export default {
                 emailTemplate
             );
 
-            responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
+            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

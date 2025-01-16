@@ -22,7 +22,7 @@ export default {
             const project = await Project.findByPk(id);
 
             if (!project) {
-                responseHandler.notFound(res, "Project not found");
+                return responseHandler.notFound(res, "Project not found");
             }
 
             // Parse project_members if it's a string
@@ -36,7 +36,7 @@ export default {
             // Check if all memberIds to delete exist in the project
             const nonExistingMembers = memberIdsToDelete.filter(id => !currentMembers.includes(id));
             if (nonExistingMembers.length > 0) {
-                responseHandler.error(res, `Some members not found in project: ${nonExistingMembers.join(', ')}`);
+                return responseHandler.error(res, `Some members not found in project: ${nonExistingMembers.join(', ')}`);
             }
 
             // Create new array without the specified members
@@ -50,12 +50,12 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Project members deleted successfully", {
+            return responseHandler.success(res, "Project members deleted successfully", {
                 project_members: { project_members: updatedMembers }
             });
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

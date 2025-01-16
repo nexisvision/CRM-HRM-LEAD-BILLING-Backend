@@ -20,13 +20,13 @@ export default {
             });
 
             if (!leadTask) {
-                responseHandler.notFound(res, "Lead task not found");
+                return responseHandler.notFound(res, "Lead task not found");
             }
 
             await leadTask.destroy();
-            responseHandler.success(res, "Lead task deleted successfully");
+            return responseHandler.success(res, "Lead task deleted successfully");
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

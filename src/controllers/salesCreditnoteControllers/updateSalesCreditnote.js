@@ -22,12 +22,12 @@ export default {
             const { invoice, date, currency, amount, description } = req.body;
             const salesCreditnote = await SalesCreditnote.findByPk(id);
             if (!salesCreditnote) {
-                responseHandler.error(res, "SalesCreditnote not found");
+                return responseHandler.error(res, "SalesCreditnote not found");
             }
             await salesCreditnote.update({ invoice, date, currency, amount, description, updated_by: req.user?.username });
-            responseHandler.success(res, "SalesCreditnote updated successfully", salesCreditnote);
+            return responseHandler.success(res, "SalesCreditnote updated successfully", salesCreditnote);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

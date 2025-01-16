@@ -15,12 +15,12 @@ export default {
             const user = await User.findByPk(id);
 
             if (!user) {
-                responseHandler.error(res, "User not found");
+                return responseHandler.error(res, "User not found");
             }
 
-            responseHandler.success(res, "User fetched successfully", user);
+            return responseHandler.success(res, "User fetched successfully", user);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -84,7 +84,7 @@ const User = sequelize.define('User', {
         defaultValue: null
     },
     accountnumber: {
-        type: DataTypes.BIGINT,  // Changed from NUMBER to BIGINT
+        type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: null
     },
@@ -114,6 +114,11 @@ const User = sequelize.define('User', {
         defaultValue: null
     },
     e_signatures: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
+    documents: {
         type: DataTypes.JSON,
         allowNull: true,
         defaultValue: null

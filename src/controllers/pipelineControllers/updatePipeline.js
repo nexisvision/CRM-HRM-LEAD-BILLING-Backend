@@ -19,7 +19,7 @@ export default {
 
             const pipeline = await Pipeline.findByPk(id);
             if (!pipeline) {
-                responseHandler.notFound(res, "Pipeline not found");
+                return responseHandler.notFound(res, "Pipeline not found");
             }
 
             // Check if new tag name already exists (if being updated)
@@ -29,13 +29,13 @@ export default {
                 });
 
                 if (existingPipeline) {
-                    responseHandler.error(res, "Pipeline with this name already exists");
+                    return responseHandler.error(res, "Pipeline with this name already exists");
                 }
             }
             const updatedPipeline = await pipeline.update({ pipeline_name, updated_by: req.user?.username });
-            responseHandler.success(res, "Pipeline updated successfully", updatedPipeline);
+            return responseHandler.success(res, "Pipeline updated successfully", updatedPipeline);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

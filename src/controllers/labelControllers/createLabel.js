@@ -23,7 +23,7 @@ export default {
                 where: { related_id: id, name }
             });
             if (existingTag) {
-                responseHandler.error(res, "Tag with this name already exists");
+                return responseHandler.error(res, "Tag with this name already exists");
             }
             // Create new tag
             const newTag = await Tag.create({
@@ -33,10 +33,10 @@ export default {
                 lableType,
                 created_by: req.user?.username
             });
-            responseHandler.success(res, "Tag created successfully", newTag);
+            return responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

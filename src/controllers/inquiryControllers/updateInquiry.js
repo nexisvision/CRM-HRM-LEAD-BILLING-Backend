@@ -21,12 +21,12 @@ export default {
             const { name, email, phone, message } = req.body;
             const inquiry = await Inquiry.findByPk(id);
             if (!inquiry) {
-                responseHandler.error(res, "Inquiry not found");
+                return responseHandler.error(res, "Inquiry not found");
             }
             await inquiry.update({ name, email, phone, message });
-            responseHandler.success(res, "Inquiry updated successfully", inquiry);
+            return responseHandler.success(res, "Inquiry updated successfully", inquiry);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

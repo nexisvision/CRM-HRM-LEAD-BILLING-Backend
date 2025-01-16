@@ -27,9 +27,9 @@ export default {
                 job, name, email, phone, location, total_experience, current_location,
                 notice_period, status, applied_source, cover_letter, created_by: req.user?.username
             });
-            responseHandler.success(res, "Job application created successfully", jobApplication);
+            return responseHandler.success(res, "Job application created successfully", jobApplication);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -25,22 +25,23 @@ export default {
             ifsc: Joi.number().allow('', null),
             banklocation: Joi.string().allow('', null),
             e_signatures: Joi.object().optional().allow(null),
+            documents: Joi.object().optional().allow(null),
             links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links } = req.body;
+            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
-                responseHandler.notFound(res, "Employee not found");
+                return responseHandler.notFound(res, "Employee not found");
             }
 
             const existingPhone = await User.findOne({ where: { phone } });
             if (existingPhone) {
-                responseHandler.conflict(res, "Phone number already exists");
+                return responseHandler.conflict(res, "Phone number already exists");
             }
 
             await employee.update({
@@ -60,13 +61,14 @@ export default {
                 ifsc,
                 banklocation,
                 e_signatures,
+                documents,
                 links,
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Employee updated successfully", employee);
+            return responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

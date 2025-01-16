@@ -5,31 +5,33 @@ import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
-            department_name: Joi.string()
-                .allow('', null)
-                .pattern(/^[a-zA-Z\s]+$/)
-                .min(2)
-                .max(50)
-                .messages({
-                    'string.pattern.base': 'Department name must contain only letters and spaces',
-                    'string.min': 'Department name must be at least 2 characters long',
-                    'string.max': 'Department name cannot exceed 50 characters',
-                    'string.empty': 'Department name is required'
-                })
+            branch: Joi.string().required(),
+            department_name: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
-        const { department_name } = req.body;
         try {
-            const department = await Department.findByPk(req.params.id);
+            const { id } = req.params;
+            const { branch, department_name } = req.body;
+            const department = await Department.findByPk(id);
             if (!department) {
-                responseHandler.error(res, "Department not found");
+                return responseHandler.error(res, "Department not found");
             }
-            await department.update({ department_name, updated_by: req.user?.username });
-            responseHandler.success(res, "Department updated successfully", department);
+            const existingDepartment = await Department.findOne({
+                where: { department_name, branch }
+            });
+
+            if (existingDepartment) {
+                return responseHandler.error(res, "Department name already exists in the same branch");
+            }
+            await department.update({ branch, department_name, updated_by: req.user?.username });
+            return responseHandler.success(res, "Department updated successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

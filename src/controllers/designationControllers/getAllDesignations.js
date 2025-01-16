@@ -13,9 +13,12 @@ export default {
     handler: async (req, res) => {
         try {
             const designations = await Designation.findAll();
-            responseHandler.success(res, "Designations fetched successfully", designations);
+            if (!designations) {
+                return responseHandler.error(res, "Designations not found");
+            }
+            return responseHandler.success(res, "Designations fetched successfully", designations);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 

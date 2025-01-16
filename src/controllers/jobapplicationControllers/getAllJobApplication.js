@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const jobApplications = await JobApplication.findAll();
-            responseHandler.success(res, "Job applications fetched successfully", jobApplications);
+            return responseHandler.success(res, "Job applications fetched successfully", jobApplications);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

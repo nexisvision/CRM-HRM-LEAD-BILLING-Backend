@@ -14,11 +14,11 @@ export default {
         try {
             const meetings = await Meeting.findAll();
             if (!meetings) {
-                responseHandler.notFound(res, "Meetings not found");
+                return responseHandler.notFound(res, "Meetings not found");
             }
-            responseHandler.success(res, "Meetings retrieved successfully", meetings);
+            return responseHandler.success(res, "Meetings retrieved successfully", meetings);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

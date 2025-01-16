@@ -15,13 +15,13 @@ export default {
 
             const superAdmin = await SuperAdmin.findByPk(id);
             if (!superAdmin) {
-                responseHandler.error(res, "superAdmin not found");
+                return responseHandler.error(res, "superAdmin not found");
             }
 
             await superAdmin.destroy();
-            responseHandler.success(res, "superAdmin deleted successfully", superAdmin);
+            return responseHandler.success(res, "superAdmin deleted successfully", superAdmin);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

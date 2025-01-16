@@ -19,7 +19,7 @@ export default {
 
             const rolePermission = await RolePermission.findByPk(id);
             if (!rolePermission) {
-                responseHandler.notFound(res, "Role permission not found");
+                return responseHandler.notFound(res, "Role permission not found");
             }
 
             await rolePermission.update({
@@ -27,10 +27,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Role permission updated successfully", rolePermission);
+            return responseHandler.success(res, "Role permission updated successfully", rolePermission);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

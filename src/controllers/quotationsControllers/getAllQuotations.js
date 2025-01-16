@@ -14,9 +14,9 @@ export default {
         try {
             const { id } = req.params;
             const quotations = await Quotations.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Quotations fetched successfully", quotations);
+            return responseHandler.success(res, "Quotations fetched successfully", quotations);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -13,9 +13,9 @@ export default {
         try {
             const { id } = req.params;
             const appreciation = await Appreciation.findByPk(id);
-            responseHandler.success(res, "Appreciation fetched successfully", appreciation);
+            return responseHandler.success(res, "Appreciation fetched successfully", appreciation);
         } catch (error) {
-            responseHandler.error(res, error.message)
+            return responseHandler.error(res, error.message)
         }
     }
 }

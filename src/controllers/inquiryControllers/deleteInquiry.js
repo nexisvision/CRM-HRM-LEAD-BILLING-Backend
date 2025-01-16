@@ -15,12 +15,12 @@ export default {
             const { id } = req.params;
             const inquiry = await Inquiry.findByPk(id);
             if (!inquiry) {
-                responseHandler.error(res, "Inquiry not found");
+                return responseHandler.error(res, "Inquiry not found");
             }
             await inquiry.destroy();
-            responseHandler.success(res, "Inquiry deleted successfully", inquiry);
+            return responseHandler.success(res, "Inquiry deleted successfully", inquiry);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

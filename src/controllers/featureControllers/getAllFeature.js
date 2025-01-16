@@ -13,10 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const features = await Feature.findAll();
-            responseHandler.success(res, "Features fetched successfully", features);
+            return responseHandler.success(res, "Features fetched successfully", features);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

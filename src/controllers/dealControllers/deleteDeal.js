@@ -15,13 +15,13 @@ export default {
             const { id } = req.params;
             const deal = await Deal.findByPk(id);
             if (!deal) {
-                responseHandler.error(res, "Deal not found");
+                return responseHandler.error(res, "Deal not found");
             }
             await deal.destroy();
-            responseHandler.success(res, "Deal deleted successfully", deal);
+            return responseHandler.success(res, "Deal deleted successfully", deal);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

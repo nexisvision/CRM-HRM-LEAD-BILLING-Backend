@@ -21,10 +21,10 @@ export default {
                 file,
                 isRead
             });
-            responseHandler.success(res, "Message sent successfully", messageData);
+            return responseHandler.success(res, "Message sent successfully", messageData);
         }
         catch (error) {
-            responseHandler.error(res, "Internal server error");
+            return responseHandler.error(res, "Internal server error");
         }
     }
 }

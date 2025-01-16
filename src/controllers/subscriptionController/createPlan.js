@@ -37,9 +37,9 @@ export default {
                 description: `Plan Name: ${name}`,
                 created_by: req.user?.username,
             });
-            responseHandler.created(res, "Plan created successfully", plan);
+            return responseHandler.created(res, "Plan created successfully", plan);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

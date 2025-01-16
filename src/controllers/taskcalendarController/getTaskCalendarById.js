@@ -14,11 +14,11 @@ export default {
 
             const task = await TaskCalendar.findByPk(id);
             if (!task) {
-                responseHandler.error(res, "Task not found");
+                return responseHandler.error(res, "Task not found");
             }
-            responseHandler.success(res, "Task fetched successfully", task);
+            return responseHandler.success(res, "Task fetched successfully", task);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

@@ -14,10 +14,10 @@ export default {
         try {
             const users = await User.findAll();
 
-            responseHandler.success(res, "Users fetched successfully", users);
+            return responseHandler.success(res, "Users fetched successfully", users);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

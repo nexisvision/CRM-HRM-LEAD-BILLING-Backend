@@ -12,9 +12,9 @@ export default {
         try {
             const { id } = req.params;
             const country = await Country.findByPk(id);
-            responseHandler.success(res, "Country fetched successfully", country);
+            return responseHandler.success(res, "Country fetched successfully", country);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

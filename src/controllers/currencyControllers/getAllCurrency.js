@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const currencies = await Currency.findAll();
-            responseHandler.success(res, "Currencies fetched successfully", currencies);
+            return responseHandler.success(res, "Currencies fetched successfully", currencies);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

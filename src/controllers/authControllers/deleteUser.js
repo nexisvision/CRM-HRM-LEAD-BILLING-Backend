@@ -16,15 +16,15 @@ export default {
             const user = await User.findByPk(id);
 
             if (!user) {
-                responseHandler.notFound(res, "User not found");
+                return responseHandler.notFound(res, "User not found");
             }
 
             await user.destroy();
 
-            responseHandler.success(res, "User deleted successfully", foundUser);
+            return responseHandler.success(res, "User deleted successfully", foundUser);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

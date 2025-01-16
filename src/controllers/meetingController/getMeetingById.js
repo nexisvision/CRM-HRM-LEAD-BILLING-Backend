@@ -14,11 +14,11 @@ export default {
             const { id } = req.params;
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
-                responseHandler.notFound(res, "Meeting not found");
+                return responseHandler.notFound(res, "Meeting not found");
             }
-            responseHandler.success(res, "Meeting retrieved successfully", meeting);
+            return responseHandler.success(res, "Meeting retrieved successfully", meeting);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

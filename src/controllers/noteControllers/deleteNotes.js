@@ -15,7 +15,7 @@ export default {
             const { id } = req.params;
             const note = await Note.findByPk(id);
             if (!note) {
-                responseHandler.error(res, "Note not found");
+                return responseHandler.error(res, "Note not found");
             }
             await note.destroy();
             await Activity.create({
@@ -26,9 +26,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Note ${note.note_title} deleted successfully`
             });
-            responseHandler.success(res, "Note deleted successfully", note);
+            return responseHandler.success(res, "Note deleted successfully", note);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

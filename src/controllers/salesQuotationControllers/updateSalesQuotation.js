@@ -24,12 +24,12 @@ export default {
             const { customer, issueDate, category, items, discount, tax, total } = req.body;
             const salesQuotation = await SalesQuotations.findByPk(id);
             if (!salesQuotation) {
-                responseHandler.error(res, "SalesQuotation not found");
+                return responseHandler.error(res, "SalesQuotation not found");
             }
             await salesQuotation.update({ customer, issueDate, category, items, discount, tax, total, updated_by: req.user?.username });
-            responseHandler.success(res, "SalesQuotation updated successfully", salesQuotation);
+            return responseHandler.success(res, "SalesQuotation updated successfully", salesQuotation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

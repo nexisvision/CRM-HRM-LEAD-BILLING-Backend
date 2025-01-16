@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const salesCreditnote = await SalesCreditnotes.findByPk(id);
             if (!salesCreditnote) {
-                responseHandler.error(res, "SalesCreditnote not found");
+                return responseHandler.error(res, "SalesCreditnote not found");
             }
             await salesCreditnote.destroy();
-            responseHandler.success(res, "SalesCreditnote deleted successfully", salesCreditnote);
+            return responseHandler.success(res, "SalesCreditnote deleted successfully", salesCreditnote);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

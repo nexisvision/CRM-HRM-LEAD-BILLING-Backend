@@ -19,9 +19,9 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.success(res, 'Role created successfully', role);
+            return responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {
-            responseHandler.error(res, error.errors[0].message);
+            return responseHandler.error(res, error.errors[0].message);
         }
     }
 }

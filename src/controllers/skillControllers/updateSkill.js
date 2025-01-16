@@ -17,12 +17,12 @@ export default {
             const { skillName } = req.body;
             const skill = await Skill.findByPk(id);
             if (!skill) {
-                responseHandler.notFound(res, "Skill not found");
+                return responseHandler.notFound(res, "Skill not found");
             }
             await skill.update({ skillName, updated_by: req.user?.username });
-            responseHandler.success(res, "Skill updated successfully", skill);
+            return responseHandler.success(res, "Skill updated successfully", skill);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

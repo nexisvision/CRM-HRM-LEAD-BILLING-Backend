@@ -20,15 +20,15 @@ export default {
             const { message, file, isRead } = req.body;
             const messageData = await Message.findByPk(id);
             if (!messageData) {
-                responseHandler(res, "Message not found");
+                return responseHandler(res, "Message not found");
             }
 
             await messageData.update({ message, file, isRead });
 
-            responseHandler.success(res, "Message updated successfully", messageData);
+            return responseHandler.success(res, "Message updated successfully", messageData);
         }
         catch (error) {
-            responseHandler.error(res, "Internal server error");
+            return responseHandler.error(res, "Internal server error");
         }
     }
 }

@@ -19,10 +19,10 @@ export default {
                 order: [['price', 'ASC']]
             });
 
-            responseHandler.success(res, "Plans retrieved successfully", plans);
+            return responseHandler.success(res, "Plans retrieved successfully", plans);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }; 

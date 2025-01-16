@@ -36,15 +36,15 @@ export default {
             const user = await User.findByPk(id);
 
             if (!user) {
-                responseHandler.notFound(res, "User not found");
+                return responseHandler.notFound(res, "User not found");
             }
 
             await user.update({ firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, updated_by: req.user?.username });
 
-            responseHandler.success(res, "User updated successfully", foundUser);
+            return responseHandler.success(res, "User updated successfully", foundUser);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

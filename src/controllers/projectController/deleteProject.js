@@ -14,14 +14,14 @@ export default {
             const { id } = req.params;
             const project = await Project.findByPk(id);
             if (!project) {
-                responseHandler.notFound(res, "Project not found");
+                return responseHandler.notFound(res, "Project not found");
             }
             await project.destroy();
-            responseHandler.success(res, "Project deleted successfully", project);
+            return responseHandler.success(res, "Project deleted successfully", project);
         }
         catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

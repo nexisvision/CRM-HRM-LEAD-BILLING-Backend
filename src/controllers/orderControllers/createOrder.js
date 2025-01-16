@@ -27,9 +27,9 @@ export default {
             const { id } = req.params;
             const { client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note } = req.body;
             const order = await Order.create({ related_id: id, client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note, created_by: req.user?.username, });
-            responseHandler.success(res, "Order created successfully", order);
+            return responseHandler.success(res, "Order created successfully", order);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

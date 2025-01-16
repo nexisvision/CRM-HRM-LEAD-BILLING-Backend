@@ -27,12 +27,12 @@ export default {
             const { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } = req.body;
             const proposal = await Proposal.findByPk(id);
             if (!proposal) {
-                responseHandler.notFound(res, "Proposal not found");
+                return responseHandler.notFound(res, "Proposal not found");
             }
             await proposal.update({ lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, updated_by: req.user?.username });
-            responseHandler.success(res, "Proposal updated successfully", proposal);
+            return responseHandler.success(res, "Proposal updated successfully", proposal);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

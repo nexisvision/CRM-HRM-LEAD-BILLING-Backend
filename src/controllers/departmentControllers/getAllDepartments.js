@@ -13,9 +13,12 @@ export default {
     handler: async (req, res) => {
         try {
             const departments = await Department.findAll();
-            responseHandler.success(res, "Departments fetched successfully", departments);
+            if (!departments) {
+                return responseHandler.notFound(res, "Departments not found");
+            }
+            return responseHandler.success(res, "Departments fetched successfully", departments);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 

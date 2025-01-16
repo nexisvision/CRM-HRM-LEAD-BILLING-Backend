@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
-import  generateId  from "../middlewares/generatorId.js";
+import generateId from "../middlewares/generatorId.js";
 
 const JobApplication = sequelize.define('job_application', {
     id: {
@@ -56,11 +56,14 @@ const JobApplication = sequelize.define('job_application', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
+
     }
 });
 

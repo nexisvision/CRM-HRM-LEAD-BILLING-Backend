@@ -24,7 +24,7 @@ export default {
 
             const projectReport = await ProjectReport.findByPk(id);
             if (!projectReport) {
-                responseHandler.notFound(res, "Project report not found");
+                return responseHandler.notFound(res, "Project report not found");
             }
 
             const updatedProjectReport = await projectReport.update({
@@ -38,10 +38,10 @@ export default {
             });
 
 
-            responseHandler.success(res, "Project report updated successfully", updatedProjectReport);
+            return responseHandler.success(res, "Project report updated successfully", updatedProjectReport);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

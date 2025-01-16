@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     try {
-        responseHandler.success(res, "Server is running successfully");
+        return responseHandler.success(res, "Server is running successfully");
     } catch (error) {
-        responseHandler.error(res, error.message);
+        return responseHandler.error(res, error);
     }
 });
 app.use(logAuditTrails);
@@ -28,7 +28,7 @@ app.use("/api/v1/", routes);
 app.use(fileUpload());
 
 app.get("*", (req, res) => {
-    responseHandler.error(res, "Route not found");
+    return responseHandler.error(res, "Route not found");
 });
 
 const startServer = async () => {

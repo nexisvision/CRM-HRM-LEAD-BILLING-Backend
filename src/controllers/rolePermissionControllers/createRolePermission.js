@@ -19,13 +19,13 @@ export default {
             // Check if role exists
             const role = await Role.findByPk(role_id);
             if (!role) {
-                responseHandler.notFound(res, "Role not found");
+                return responseHandler.notFound(res, "Role not found");
             }
 
             // Check if permission exists
             const permission = await Permission.findByPk(permission_id);
             if (!permission) {
-                responseHandler.notFound(res, "Permission not found");
+                return responseHandler.notFound(res, "Permission not found");
             }
 
             // Check if association already exists
@@ -34,7 +34,7 @@ export default {
             });
 
             if (existingAssociation) {
-                responseHandler.error(res, "This permission is already assigned to the role");
+                return responseHandler.error(res, "This permission is already assigned to the role");
             }
 
             const rolePermission = await RolePermission.create({
@@ -43,10 +43,10 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.created(res, "Role permission created successfully", rolePermission);
+            return responseHandler.created(res, "Role permission created successfully", rolePermission);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

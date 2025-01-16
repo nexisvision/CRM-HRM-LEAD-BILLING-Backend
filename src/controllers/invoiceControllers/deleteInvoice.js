@@ -16,15 +16,15 @@ export default {
             const invoice = await Invoice.findByPk(id);
 
             if (!invoice) {
-                responseHandler.notFound(res, "Invoice not found");
+                return responseHandler.notFound(res, "Invoice not found");
             }
 
             await invoice.destroy();
 
-            responseHandler.success(res, "Invoice deleted successfully", invoice);
+            return responseHandler.success(res, "Invoice deleted successfully", invoice);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };   

@@ -13,10 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const deals = await Deal.findAll();
-            responseHandler.success(res, "Deals fetched successfully", deals);
+            return responseHandler.success(res, "Deals fetched successfully", deals);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

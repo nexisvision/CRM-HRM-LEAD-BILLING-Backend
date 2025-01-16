@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const sources = await Sources.findAll();
-            responseHandler.success(res, "Sources fetched successfully", sources);
+            return responseHandler.success(res, "Sources fetched successfully", sources);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     },
 

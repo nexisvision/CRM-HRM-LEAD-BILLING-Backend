@@ -18,10 +18,10 @@ export default {
             const { id } = req.params;
             const tags = await Tag.findAll({ where: { related_id: id } });
 
-            responseHandler.success(res, "Tags retrieved successfully", tags);
+            return responseHandler.success(res, "Tags retrieved successfully", tags);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

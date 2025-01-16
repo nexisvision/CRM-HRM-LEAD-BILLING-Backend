@@ -14,12 +14,12 @@ export default {
         try {
             const event = await EventSetup.findByPk(id);
             if (!event) {
-                responseHandler.error(res, "Event not found");
+                return responseHandler.error(res, "Event not found");
             }
             await event.destroy();
-            responseHandler.success(res, "Event deleted successfully", event);
+            return responseHandler.success(res, "Event deleted successfully", event);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

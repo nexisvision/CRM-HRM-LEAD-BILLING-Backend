@@ -16,13 +16,13 @@ export default {
             const permission = await Permission.findByPk(id);
 
             if (!permission) {
-                responseHandler.notFound(res, "Permission not found");
+                return responseHandler.notFound(res, "Permission not found");
             }
 
-            responseHandler.success(res, "Permission fetched successfully", permission);
+            return responseHandler.success(res, "Permission fetched successfully", permission);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

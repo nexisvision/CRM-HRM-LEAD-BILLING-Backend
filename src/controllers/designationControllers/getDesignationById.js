@@ -17,13 +17,13 @@ export default {
             const designation = await Designation.findByPk(id);
 
             if (!designation) {
-                responseHandler.notFound(res, "Designation not found");
+                return responseHandler.notFound(res, "Designation not found");
             }
 
-            responseHandler.success(res, "Designation fetched successfully", designation);
+            return responseHandler.success(res, "Designation fetched successfully", designation);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };   

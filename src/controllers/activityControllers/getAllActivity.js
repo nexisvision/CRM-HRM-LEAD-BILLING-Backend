@@ -14,11 +14,11 @@ export default {
             const { id } = req.params;
             const activities = await Activity.findAll({ where: { related_id: id } });
             if (!activities) {
-                responseHandler.error(res, "Activities Not Found");
+                return responseHandler.error(res, "Activities Not Found");
             }
-            responseHandler.success(res, "Activities fetched successfully", activities);
+            return responseHandler.success(res, "Activities fetched successfully", activities);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

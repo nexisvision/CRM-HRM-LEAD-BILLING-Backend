@@ -34,12 +34,12 @@ export default {
             const { taskName, taskDate, taskTime, taskDescription } = req.body;
             const task = await TaskCalendar.findByPk(id);
             if (!task) {
-                responseHandler.error(res, "Task not found");
+                return responseHandler.error(res, "Task not found");
             }
             await task.update({ taskName, taskDate, taskTime, taskDescription, updated_by: req.user?.username });
-            responseHandler.success(res, "Task updated successfully", task);
+            return responseHandler.success(res, "Task updated successfully", task);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

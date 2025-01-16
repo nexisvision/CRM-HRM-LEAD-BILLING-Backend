@@ -37,7 +37,7 @@ export default {
             const lead = await Lead.findByPk(id);
 
             if (!lead) {
-                responseHandler.notFound(res, "Lead not found");
+                return responseHandler.notFound(res, "Lead not found");
             }
 
             await lead.update({
@@ -61,9 +61,9 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Lead updated successfully!", lead);
+            return responseHandler.success(res, "Lead updated successfully!", lead);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

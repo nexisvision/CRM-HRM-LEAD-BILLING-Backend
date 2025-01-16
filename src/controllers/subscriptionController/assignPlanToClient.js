@@ -27,7 +27,7 @@ export default {
             // Check if plan exists
             const plan = await SubscriptionPlan.findByPk(plan_id);
             if (!plan) {
-                responseHandler.notFound(res, "Subscription plan not found");
+                return responseHandler.notFound(res, "Subscription plan not found");
             }
 
             // Check if client already has an active subscription
@@ -39,7 +39,7 @@ export default {
             });
 
             if (existingSubscription) {
-                responseHandler.error(res, "Client already has an active subscription");
+                return responseHandler.error(res, "Client already has an active subscription");
             }
 
             // Create new subscription
@@ -86,9 +86,9 @@ export default {
                 emailTemplate
             );
 
-            responseHandler.created(res, "Subscription plan assigned successfully", subscription);
+            return responseHandler.created(res, "Subscription plan assigned successfully", subscription);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

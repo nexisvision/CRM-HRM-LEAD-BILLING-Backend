@@ -16,12 +16,12 @@ export default {
             const { employee_id, currency, annual_CTC } = req.body;
             const existingEmployeeSalary = await EmployeeSalary.findOne({ where: { employee_id } });
             if (existingEmployeeSalary) {
-                responseHandler.error(res, "Employee salary already exists.");
+                return responseHandler.error(res, "Employee salary already exists.");
             }
             const employeeSalary = await EmployeeSalary.create({ employee_id, currency, annual_CTC, created_by: req.user?.username, });
-            responseHandler.success(res, "Employee salary created successfully.", employeeSalary);
+            return responseHandler.success(res, "Employee salary created successfully.", employeeSalary);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

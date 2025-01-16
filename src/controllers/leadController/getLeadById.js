@@ -16,13 +16,13 @@ export default {
             const lead = await Lead.findByPk(id);
 
             if (!lead) {
-                responseHandler.notFound(res, "Lead not found");
+                return responseHandler.notFound(res, "Lead not found");
             }
 
-            responseHandler.success(res, "Lead fetched successfully", lead);
+            return responseHandler.success(res, "Lead fetched successfully", lead);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };   

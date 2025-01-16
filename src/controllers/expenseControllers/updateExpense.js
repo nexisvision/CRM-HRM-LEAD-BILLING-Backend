@@ -25,12 +25,12 @@ export default {
             const { item, price, currency, purchase_date, employee, project, bill, description } = req.body;
             const expense = await Expense.findByPk(id);
             if (!expense) {
-                responseHandler.error(res, "Expense not found");
+                return responseHandler.error(res, "Expense not found");
             }
             await expense.update({ item, price, currency, purchase_date, employee, project, bill, description, updated_by: req.user?.username });
-            responseHandler.success(res, "Expense updated successfully", expense);
+            return responseHandler.success(res, "Expense updated successfully", expense);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

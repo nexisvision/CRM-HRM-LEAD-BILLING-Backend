@@ -15,9 +15,9 @@ export default {
         try {
             const { id } = req.user;
             const salesCreditnote = await SalesCreditnote.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "salesCreditnote fetched successfully", salesCreditnote);
+            return responseHandler.success(res, "salesCreditnote fetched successfully", salesCreditnote);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

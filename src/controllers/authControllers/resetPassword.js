@@ -27,7 +27,7 @@ export default {
             });
 
             if (!findUser) {
-                responseHandler.unauthorized(res, "Invalid reset token");
+                return responseHandler.unauthorized(res, "Invalid reset token");
             }
 
             // Hash new password
@@ -37,9 +37,9 @@ export default {
             findUser.resetPasswordOTPExpiry = undefined;
             await findUser.save();
 
-            responseHandler.success(res, "Password reset successful", findUser);
+            return responseHandler.success(res, "Password reset successful", findUser);
         } catch (error) {
-            responseHandler.internalServerError(res, error.message);
+            return responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

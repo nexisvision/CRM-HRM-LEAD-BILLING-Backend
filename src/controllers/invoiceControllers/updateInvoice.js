@@ -27,12 +27,12 @@ export default {
 
             const invoice = await Invoice.findByPk(id);
             if (!invoice) {
-                responseHandler.error(res, "Invoice not found");
+                return responseHandler.error(res, "Invoice not found");
             }
             await invoice.update({ issueDate, dueDate, currency, client, project, items, discount, tax, total, updated_by: req.user?.username });
-            responseHandler.success(res, "Invoice updated successfully", invoice);
+            return responseHandler.success(res, "Invoice updated successfully", invoice);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

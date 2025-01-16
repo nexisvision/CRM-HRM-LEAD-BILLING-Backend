@@ -14,11 +14,11 @@ export default {
         try {
             const jobs = await Job.findAll();
             if (!jobs) {
-                responseHandler.error(res, "No jobs found");
+                return responseHandler.error(res, "No jobs found");
             }
-            responseHandler.success(res, "Jobs fetched successfully", jobs);
+            return responseHandler.success(res, "Jobs fetched successfully", jobs);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

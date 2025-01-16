@@ -18,9 +18,9 @@ export default {
         try {
             const { award, givenTo, date, summary, photo } = req.body;
             const appreciation = await Appreciation.create({ award, givenTo, date, summary, photo });
-            responseHandler.success(res, "Appreciation created successfully", appreciation);
+            return responseHandler.success(res, "Appreciation created successfully", appreciation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

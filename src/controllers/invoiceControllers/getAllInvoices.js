@@ -17,10 +17,10 @@ export default {
         try {
             const { id } = req.params;
             const invoices = await Invoice.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Invoices fetched successfully", invoices);
+            return responseHandler.success(res, "Invoices fetched successfully", invoices);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

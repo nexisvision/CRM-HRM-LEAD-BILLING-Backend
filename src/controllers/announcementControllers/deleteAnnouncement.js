@@ -14,12 +14,12 @@ export default {
         try {
             const announcement = await Announcement.findByPk(id);
             if (!announcement) {
-                responseHandler.error(res, "Announcement not found");
+                return responseHandler.error(res, "Announcement not found");
             }
             await announcement.destroy();
-            responseHandler.success(res, "Announcement deleted successfully", announcement);
+            return responseHandler.success(res, "Announcement deleted successfully", announcement);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

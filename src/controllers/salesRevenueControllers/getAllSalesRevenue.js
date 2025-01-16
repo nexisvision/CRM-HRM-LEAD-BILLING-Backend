@@ -15,9 +15,9 @@ export default {
         try {
             const { id } = req.user;
             const salesRevenue = await SalesRevenue.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "salesRevenue fetched successfully", salesRevenue);
+            return responseHandler.success(res, "salesRevenue fetched successfully", salesRevenue);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

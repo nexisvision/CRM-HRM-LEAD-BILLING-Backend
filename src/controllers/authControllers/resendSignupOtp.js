@@ -11,7 +11,7 @@ export default {
             const { user } = req;
 
             if (user.type !== 'signup_verification') {
-                responseHandler.unauthorized(res, "Invalid verification token");
+                return responseHandler.unauthorized(res, "Invalid verification token");
             }
 
             const newOTP = generateOTP(OTP_CONFIG.LENGTH);
@@ -33,9 +33,9 @@ export default {
                 emailTemplate
             );
 
-            responseHandler.success(res, "New OTP sent successfully", { sessionToken: newSessionToken });
+            return responseHandler.success(res, "New OTP sent successfully", { sessionToken: newSessionToken });
         } catch (error) {
-            responseHandler.internalServerError(res, error.message);
+            return responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

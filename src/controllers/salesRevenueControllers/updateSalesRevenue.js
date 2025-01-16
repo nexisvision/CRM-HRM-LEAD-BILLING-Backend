@@ -25,12 +25,12 @@ export default {
             const { date, currency, amount, account, customer, description, category, paymentReceipt } = req.body;
             const salesRevenue = await SalesRevenue.findByPk(id);
             if (!salesRevenue) {
-                responseHandler.error(res, "SalesRevenue not found");
+                return responseHandler.error(res, "SalesRevenue not found");
             }
             await salesRevenue.update({ date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
-            responseHandler.success(res, "SalesRevenue updated successfully", salesRevenue);
+            return responseHandler.success(res, "SalesRevenue updated successfully", salesRevenue);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

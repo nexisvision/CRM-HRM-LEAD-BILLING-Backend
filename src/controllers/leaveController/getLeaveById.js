@@ -15,12 +15,12 @@ export default {
 
             const leave = await Leave.findByPk(id);
             if (!leave) {
-                responseHandler.notFound(res, "Leave record not found");
+                return responseHandler.notFound(res, "Leave record not found");
             }
-            responseHandler.success(res, "Leave fetched successfully", leave);
+            return responseHandler.success(res, "Leave fetched successfully", leave);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

@@ -20,12 +20,12 @@ export default {
         try {
             const event = await EventSetup.findByPk(req.params.id);
             if (!event) {
-                responseHandler.error(res, "Event not found");
+                return responseHandler.error(res, "Event not found");
             }
             await event.update({ EventTitle, EventManager, EventDate, EventTime });
-            responseHandler.success(res, "Event updated successfully", event);
+            return responseHandler.success(res, "Event updated successfully", event);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

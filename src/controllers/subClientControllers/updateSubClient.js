@@ -38,7 +38,7 @@ export default {
 
             const subClient = await User.findByPk(id);
             if (!subClient) {
-                responseHandler.notFound(res, "subClient not found");
+                return responseHandler.notFound(res, "subClient not found");
             }
 
             await subClient.update({
@@ -46,10 +46,10 @@ export default {
                 accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
                 city, state, country, zipcode, address, links, updated_by: req.user?.username
             });
-            responseHandler.success(res, "Company updated successfully", subClient);
+            return responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

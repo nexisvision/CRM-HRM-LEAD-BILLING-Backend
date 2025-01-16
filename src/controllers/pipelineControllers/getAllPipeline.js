@@ -12,9 +12,9 @@ export default {
     handler: async (req, res) => {
         try {
             const pipelines = await Pipeline.findAll();
-            responseHandler.success(res, 'Pipelines fetched successfully', pipelines);
+            return responseHandler.success(res, 'Pipelines fetched successfully', pipelines);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const events = await EventSetup.findAll();
-            responseHandler.success(res, "Events fetched successfully", events);
+            return responseHandler.success(res, "Events fetched successfully", events);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -20,10 +20,10 @@ export default {
             });
             const clients = await User.findAll({ where: { role_id: ClientRoleID.id } });
             if (clients) {
-                responseHandler.success(res, "Clients fetched successfully", clients);
+                return responseHandler.success(res, "Clients fetched successfully", clients);
             }
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

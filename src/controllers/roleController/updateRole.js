@@ -20,7 +20,7 @@ export default {
 
             const role = await Role.findByPk(id);
             if (!role) {
-                responseHandler.notFound(res, 'Role not found');
+                return responseHandler.notFound(res, 'Role not found');
             }
 
             await role.update({
@@ -28,9 +28,9 @@ export default {
                 permissions,
                 updated_by: req.user?.username
             });
-            responseHandler.success(res, 'Role updated successfully', role);
+            return responseHandler.success(res, 'Role updated successfully', role);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

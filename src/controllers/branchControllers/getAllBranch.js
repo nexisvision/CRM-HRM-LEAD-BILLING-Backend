@@ -13,9 +13,12 @@ export default {
     handler: async (req, res) => {
         try {
             const branches = await Branch.findAll();
-            responseHandler.success(res, "Branches fetched successfully", branches);
+            if (!branches) {
+                return responseHandler.error(res, "Branches not found");
+            }
+            return responseHandler.success(res, "Branches fetched successfully", branches);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

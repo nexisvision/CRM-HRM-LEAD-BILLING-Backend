@@ -24,13 +24,13 @@ export default {
             const { name, contact, email, tax_number, alternate_contact, billing_address, shipping_address } = req.body;
             const customer = await Customer.findByPk(id);
             if (!customer) {
-                responseHandler.error(res, "Customer not found");
+                return responseHandler.error(res, "Customer not found");
             }
 
             await customer.update({ name, contact, email, tax_number, alternate_contact, billing_address, shipping_address, updated_by: req.user?.username });
-            responseHandler.success(res, "Customer updated successfully", customer);
+            return responseHandler.success(res, "Customer updated successfully", customer);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

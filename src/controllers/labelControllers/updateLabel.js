@@ -21,7 +21,7 @@ export default {
             // Find existing tag
             const tag = await Tag.findByPk(id);
             if (!tag) {
-                responseHandler.notFound(res, "Tag not found");
+                return responseHandler.notFound(res, "Tag not found");
             }
 
             // Check if new tag name already exists (if being updated)
@@ -31,7 +31,7 @@ export default {
                 });
 
                 if (existingTag) {
-                    responseHandler.error(res, "Tag with this name already exists");
+                    return responseHandler.error(res, "Tag with this name already exists");
                 }
             }
 
@@ -42,10 +42,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Tag updated successfully", updatedTag);
+            return responseHandler.success(res, "Tag updated successfully", updatedTag);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

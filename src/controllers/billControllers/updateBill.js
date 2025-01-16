@@ -26,12 +26,12 @@ export default {
 
             const newBill = await Bill.findByPk(id);
             if (!newBill) {
-                responseHandler.error(res, "Bill not found");
+                return responseHandler.error(res, "Bill not found");
             }
             await newBill.update({ vendor, billDate, discription, status, discount, tax, total, note, updated_by: req.user?.username });
-            responseHandler.success(res, "Bill updated successfully", newBill);
+            return responseHandler.success(res, "Bill updated successfully", newBill);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

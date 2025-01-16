@@ -15,15 +15,15 @@ export default {
 
             const rolePermission = await RolePermission.findByPk(id);
             if (!rolePermission) {
-                responseHandler.notFound(res, "Role permission not found");
+                return responseHandler.notFound(res, "Role permission not found");
             }
 
             await rolePermission.destroy();
 
-            responseHandler.success(res, "Role permission deleted successfully");
+            return responseHandler.success(res, "Role permission deleted successfully");
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

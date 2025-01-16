@@ -22,27 +22,51 @@ export default {
             const { subscription } = req;
 
             if (user.type !== 'signup_verification') {
-                responseHandler.unauthorized(res, "Invalid verification token");
+                return responseHandler.unauthorized(res, "Invalid verification token");
             }
 
             if (String(user.verificationOTP) !== String(otp)) {
-                responseHandler.unauthorized(res, "Invalid OTP");
+                return responseHandler.unauthorized(res, "Invalid OTP");
             }
 
             if (Date.now() > user.verificationOTPExpiry) {
-                responseHandler.unauthorized(res, "OTP has expired");
+                return responseHandler.unauthorized(res, "OTP has expired");
             }
 
             //check Role
             const role = await Role.findOne({ where: { id: user.role_id } });
             if (!role) {
-                responseHandler.error(res, "Role not found");
+                return responseHandler.error(res, "Role not found");
             }
 
 
 
             // Create verified user
-            const newUser = await User.create({
+            const newUser = role.role_name === 'employee' ? await User.create({
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                role_id: role.id,
+                isEmailVerified: true,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                phone: user.phone,
+                address: user.address,
+                joiningDate: user.joiningDate,
+                leaveDate: user.leaveDate,
+                department: user.department,
+                designation: user.designation,
+                salary: user.salary,
+                accountholder: user.accountholder,
+                accountnumber: user.accountnumber,
+                bankname: user.bankname,
+                ifsc: user.ifsc,
+                banklocation: user.banklocation,
+                e_signatures: user.e_signatures,
+                documents: user.documents,
+                links: user.links,
+
+            }) : await User.create({
                 username: user.username,
                 email: user.email,
                 password: user.password,
@@ -77,13 +101,13 @@ export default {
                 welcomeTemplate
             );
 
-            responseHandler.success(res, "Registration completed successfully", {
+            return responseHandler.success(res, "Registration completed successfully", {
                 success: true,
                 token,
                 user: newUser
             });
         } catch (error) {
-            responseHandler.internalServerError(res, error.message);
+            return responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

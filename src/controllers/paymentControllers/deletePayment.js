@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const payment = await Payment.findByPk(id);
             if (!payment) {
-                responseHandler.error(res, "Payment not found", 404);
+                return responseHandler.error(res, "Payment not found", 404);
             }
             await payment.destroy();
-            responseHandler.success(res, "Payment deleted successfully", payment);
+            return responseHandler.success(res, "Payment deleted successfully", payment);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

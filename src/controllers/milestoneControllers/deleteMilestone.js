@@ -15,7 +15,7 @@ export default {
             const { id } = req.params;
             const milestone = await Milestone.findByPk(id);
             if (!milestone) {
-                responseHandler.error(res, "Milestone not found");
+                return responseHandler.error(res, "Milestone not found");
             }
             await Activity.create({
                 related_id: milestone.related_id,
@@ -26,10 +26,10 @@ export default {
                 activity_message: `Milestone ${milestone.milestone_title} deleted successfully`
             });
             await milestone.destroy();
-            responseHandler.success(res, "Milestone deleted successfully", milestone);
+            return responseHandler.success(res, "Milestone deleted successfully", milestone);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

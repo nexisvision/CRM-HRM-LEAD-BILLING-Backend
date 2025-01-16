@@ -13,9 +13,9 @@ export default {
             const { id } = req.params;
             const country = await Country.findByPk(id);
             await country.destroy();
-            responseHandler.success(res, "Country deleted successfully", country);
+            return responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const salesQuotation = await SalesQuotations.findByPk(id);
             if (!salesQuotation) {
-                responseHandler.error(res, "SalesQuotation not found");
+                return responseHandler.error(res, "SalesQuotation not found");
             }
             await salesQuotation.destroy();
-            responseHandler.success(res, "SalesQuotation deleted successfully", salesQuotation);
+            return responseHandler.success(res, "SalesQuotation deleted successfully", salesQuotation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

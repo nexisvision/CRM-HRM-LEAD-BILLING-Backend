@@ -5,37 +5,27 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            designation_name: Joi.string()
-                .required()
-                .pattern(/^[a-zA-Z\s]+$/)
-                .min(2)
-                .max(50)
-                .messages({
-                    'string.pattern.base': 'Designation name must contain only letters and spaces',
-                    'string.min': 'Designation name must be at least 2 characters long',
-                    'string.max': 'Designation name cannot exceed 50 characters',
-                    'string.empty': 'Designation name is required'
-                }),
-            description: Joi.string().optional().allow('', null)
+            branch: Joi.string().required(),
+            department: Joi.string().required(),
+            designation_name: Joi.string().required(),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { designation_name } = req.body;
+            const { branch, department, designation_name } = req.body;
 
-            // Check if designation already exists
             const existingDesignation = await Designation.findOne({
-                where: { designation_name }
+                where: { designation_name, branch, department }
             });
 
             if (existingDesignation) {
-                responseHandler.error(res, "Designation name already exists");
+                return responseHandler.error(res, "Designation name already exists for the given branch and department");
             }
 
-            const designation = await Designation.create({ designation_name, created_by: req.user?.username, updated_by: req.user?.username });
-            responseHandler.success(res, "Designation created successfully", designation);
+            const designation = await Designation.create({ branch, department, designation_name, created_by: req.user?.username });
+            return responseHandler.success(res, "Designation created successfully", designation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

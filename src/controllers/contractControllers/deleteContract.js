@@ -15,12 +15,12 @@ export default {
             const { id } = req.params;
             const contract = await Contract.findByPk(id);
             if (!contract) {
-                responseHandler.error(res, "Contract not found");
+                return responseHandler.error(res, "Contract not found");
             }
             await contract.destroy();
-            responseHandler.success(res, "Contract deleted successfully", contract);
+            return responseHandler.success(res, "Contract deleted successfully", contract);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

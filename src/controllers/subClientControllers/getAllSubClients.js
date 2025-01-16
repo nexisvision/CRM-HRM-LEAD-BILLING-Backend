@@ -22,9 +22,9 @@ export default {
                     role_id: SubClientRoleID.id
                 }
             });
-            responseHandler.success(res, "SubClients fetched successfully", subClients);
+            return responseHandler.success(res, "SubClients fetched successfully", subClients);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

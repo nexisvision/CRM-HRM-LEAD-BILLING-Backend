@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const branch = await Branch.findByPk(id);
             if (!branch) {
-                responseHandler.error(res, "Branch not found");
+                return responseHandler.error(res, "Branch not found");
             }
             await branch.destroy();
-            responseHandler.success(res, "Branch deleted successfully");
+            return responseHandler.success(res, "Branch deleted successfully", branch);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

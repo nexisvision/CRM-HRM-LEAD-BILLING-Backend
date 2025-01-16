@@ -25,9 +25,9 @@ export default {
                 lead_title, deal_title, valid_till, currency, calculatedTax, description,
                 items, discount, tax, total, created_by: req.user?.username
             });
-            responseHandler.success(res, "Proposal created successfully", proposal);
+            return responseHandler.success(res, "Proposal created successfully", proposal);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

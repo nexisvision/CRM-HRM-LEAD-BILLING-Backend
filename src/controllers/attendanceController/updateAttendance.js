@@ -28,7 +28,7 @@ export default {
 
             const attendance = await Attendance.findByPk(id);
             if (!attendance) {
-                responseHandler.notFound(res, "Attendance record not found");
+                return responseHandler.notFound(res, "Attendance record not found");
             }
 
             await attendance.update({
@@ -45,10 +45,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Attendance updated successfully", attendance);
+            return responseHandler.success(res, "Attendance updated successfully", attendance);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

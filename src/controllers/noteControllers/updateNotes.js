@@ -22,7 +22,7 @@ export default {
             const { note_title, notetype, employees, description } = req.body;
             const note = await Note.findByPk(id);
             if (!note) {
-                responseHandler.error(res, "Note not found");
+                return responseHandler.error(res, "Note not found");
             }
             await note.update({ note_title, notetype, employees, description, updated_by: req.user?.username });
             await Activity.create({
@@ -33,9 +33,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Note ${note.note_title} updated successfully`
             });
-            responseHandler.success(res, "Note updated successfully", note);
+            return responseHandler.success(res, "Note updated successfully", note);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

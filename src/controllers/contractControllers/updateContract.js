@@ -25,9 +25,9 @@ export default {
             const { subject, project, client, type, value, startDate, endDate, description } = req.body;
             const contract = await Contract.findByPk(id);
             await contract.update({ subject, project, client, type, value, startDate, endDate, description, updated_by: req.user.id });
-            responseHandler.success(res, "Contract updated successfully", contract);
+            return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

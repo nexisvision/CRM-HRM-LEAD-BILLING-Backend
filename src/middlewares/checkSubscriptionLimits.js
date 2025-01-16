@@ -7,8 +7,8 @@ export const getActiveSubscription = async (req, res, next) => {
     const clientSubscription = await ClientSubscription.findOne({
         where: { client_id: req?.user?.id, status: ['active', 'trial', 'expired'] }
     });
-    if (!clientSubscription) responseHandler.error(res, 'Subscription is not found')
-    if (clientSubscription.status === 'expired') responseHandler.error(res, 'Subscription expired');
+    if (!clientSubscription) return responseHandler.error(res, 'Subscription is not found')
+    if (clientSubscription.status === 'expired') return responseHandler.error(res, 'Subscription expired');
     const plan = await SubscriptionPlan.findByPk(clientSubscription.plan_id);
     if (!plan) throw new Error('Subscription plan not found');
     req.subscription = { clientSubscription, plan };
@@ -20,7 +20,7 @@ export const checkSubscriptionLimits = async (req, res, next) => {
         const { user } = req;
         const { clientSubscription, plan } = req.user;
         const role = await Role.findByPk(user?.role_id);
-        if (!role) responseHandler.error(res, 'Role not found');
+        if (!role) return responseHandler.error(res, 'Role not found');
         if (['super-admin', 'client'].includes(role.role_name)) {
             req.subscription = { clientSubscription, plan };
             return next();
@@ -32,16 +32,16 @@ export const checkSubscriptionLimits = async (req, res, next) => {
 
         if (role.role_name === 'sub-client') {
             if (clientSubscription[limits[role.role_name].field] >= limits[role.role_name].max) {
-                responseHandler.error(res, limits[role.role_name].message);
+                return responseHandler.error(res, limits[role.role_name].message);
             }
         } else {
             if (clientSubscription[limits['user'].field] >= limits['user'].max) {
-                responseHandler.error(res, limits['user'].message);
+                return responseHandler.error(res, limits['user'].message);
             }
         }
         req.subscription = clientSubscription;
         return next();
     } catch (error) {
-        responseHandler.error(res, error.message);
+        return responseHandler.error(res, error);
     }
 };

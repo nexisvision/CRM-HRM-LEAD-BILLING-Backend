@@ -6,42 +6,30 @@ import Department from "../../models/departmentModel.js";
 export default {
     validator: validator({
         body: Joi.object({
-            department_name: Joi.string()
-                .required()
-                .pattern(/^[a-zA-Z\s]+$/)
-                .min(2)
-                .max(50)
-                .allow('', null)
-                .messages({
-                    'string.pattern.base': 'Department name must contain only letters and spaces',
-                    'string.min': 'Department name must be at least 2 characters long',
-                    'string.max': 'Department name cannot exceed 50 characters',
-                    'string.empty': 'Department name is required'
-                }),
-            description: Joi.string().optional()
+            branch: Joi.string().required(),
+            department_name: Joi.string().required(),
         }),
     }),
     handler: async (req, res) => {
         try {
-            const { department_name } = req.body;
+            const { branch, department_name } = req.body;
 
-            // Check if designation already exists
             const existingDepartment = await Department.findOne({
-                where: { department_name }
+                where: { department_name, branch }
             });
 
             if (existingDepartment) {
-                responseHandler.error(res, "Department name already exists");
+                return responseHandler.error(res, "Department name already exists in the same branch");
             }
 
             const department = await Department.create({
+                branch,
                 department_name,
                 created_by: req.user?.username,
-                updated_by: req.user?.username
             });
-            responseHandler.success(res, "Department created successfully", department);
+            return responseHandler.success(res, "Department created successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -17,9 +17,9 @@ export default {
                     created_by: req.user?.username
                 }
             })
-            responseHandler.success(res, "Training fetched successfully", training)
+            return responseHandler.success(res, "Training fetched successfully", training)
         } catch (error) {
-            responseHandler.error(res, error.message)
+            return responseHandler.error(res, error.message)
         }
     }
 }

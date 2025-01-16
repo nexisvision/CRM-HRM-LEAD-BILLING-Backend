@@ -5,17 +5,22 @@ import generateId from '../middlewares/generatorId.js';
 const Designation = sequelize.define('Designation', {
   id: {
     type: DataTypes.STRING,
+    allowNull: false,
     primaryKey: true,
     unique: true,
     defaultValue: () => generateId()
   },
-  designation_name: {
+  branch: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  description: {
-    type: DataTypes.TEXT,
-    allowNull: true
+  department: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  designation_name: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   created_by: {
     type: DataTypes.STRING,

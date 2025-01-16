@@ -16,16 +16,16 @@ export default {
             // Find existing tag
             const tag = await Tag.findByPk(id);
             if (!tag) {
-                responseHandler.notFound(res, "Tag not found");
+                return responseHandler.notFound(res, "Tag not found");
             }
 
             // Delete tag
             await tag.destroy();
 
-            responseHandler.success(res, "Tag deleted successfully");
+            return responseHandler.success(res, "Tag deleted successfully");
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

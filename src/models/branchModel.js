@@ -24,14 +24,28 @@ const Branch = sequelize.define('branch', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
+
     }
 });
 
-
+Branch.beforeCreate(async (branch) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingBranch = await Branch.findOne({ where: { id: newId } });
+        if (!existingBranch) {
+            isUnique = true;
+        }
+    }
+    branch.id = newId;
+})
 
 export default Branch;

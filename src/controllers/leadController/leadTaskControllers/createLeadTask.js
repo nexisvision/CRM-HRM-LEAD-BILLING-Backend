@@ -36,7 +36,7 @@ export default {
             // Check if lead exists
             const lead = await Lead.findByPk(leadId);
             if (!lead) {
-                responseHandler.notFound(res, "Lead not found");
+                return responseHandler.notFound(res, "Lead not found");
             }
 
             const task = await Task.create({
@@ -49,9 +49,9 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.success(res, "Lead task created successfully", task);
+            return responseHandler.success(res, "Lead task created successfully", task);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

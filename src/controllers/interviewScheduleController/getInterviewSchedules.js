@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const interviewSchedules = await InterviewSchedule.findAll();
-            responseHandler.success(res, "Interview schedules fetched successfully", interviewSchedules);
+            return responseHandler.success(res, "Interview schedules fetched successfully", interviewSchedules);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -45,9 +45,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Milestone ${milestone_title} created successfully`
             });
-            responseHandler.success(res, "Milestone created successfully", milestone);
+            return responseHandler.success(res, "Milestone created successfully", milestone);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

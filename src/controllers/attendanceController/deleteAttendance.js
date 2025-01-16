@@ -15,15 +15,15 @@ export default {
 
             const attendance = await Attendance.findByPk(id);
             if (!attendance) {
-                responseHandler.notFound(res, "Attendance record not found");
+                return responseHandler.notFound(res, "Attendance record not found");
             }
 
             await attendance.destroy();
 
-            responseHandler.success(res, "Attendance deleted successfully", attendance);
+            return responseHandler.success(res, "Attendance deleted successfully", attendance);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

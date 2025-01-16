@@ -50,9 +50,9 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.created(res, "Payment created successfully", payment);
+            return responseHandler.created(res, "Payment created successfully", payment);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

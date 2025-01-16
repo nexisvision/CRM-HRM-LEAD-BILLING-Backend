@@ -25,12 +25,12 @@ export default {
         try {
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
-                responseHandler.notFound(res, "Meeting not found");
+                return responseHandler.notFound(res, "Meeting not found");
             }
             await meeting.update({ title, date, startTime, endTime, description, meetingLink, status });
-            responseHandler.success(res, "Meeting updated successfully", meeting);
+            return responseHandler.success(res, "Meeting updated successfully", meeting);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

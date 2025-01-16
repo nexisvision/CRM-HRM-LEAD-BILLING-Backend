@@ -29,9 +29,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Note ${note.note_title} created successfully`
             });
-            responseHandler.success(res, "Note created successfully", note);
+            return responseHandler.success(res, "Note created successfully", note);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

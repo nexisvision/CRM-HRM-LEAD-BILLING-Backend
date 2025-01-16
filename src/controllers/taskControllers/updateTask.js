@@ -40,7 +40,7 @@ export default {
             } = req.body;
             const task = await Task.findByPk(id);
             if (!task) {
-                responseHandler.error(res, 'Task not found');
+                return responseHandler.error(res, 'Task not found');
             }
             const updatedTask = await task.update({
                 taskName,
@@ -74,9 +74,9 @@ export default {
                 }
             }
 
-            responseHandler.success(res, 'Task updated successfully', updatedTask);
+            return responseHandler.success(res, 'Task updated successfully', updatedTask);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const message = await Message.findByPk(id);
             if (!message) {
-                responseHandler(res, "Message not found");
+                return responseHandler(res, "Message not found");
             }
-            responseHandler.success(res, "Message fetched successfully", message);
+            return responseHandler.success(res, "Message fetched successfully", message);
         }
         catch (error) {
-            responseHandler.error(res, "Internal server error");
+            return responseHandler.error(res, "Internal server error");
         }
     }
 }

@@ -24,18 +24,20 @@ export default {
             ]);
             const foundEntity = entities.find(entity => entity && bcrypt.compareSync(password, entity.password));
 
-            if (foundEntity) {
-                const token = jwt.sign({
-                    email: foundEntity.email,
-                    id: foundEntity.id,
-                    role: foundEntity.role_id
-                }, JWT_SECRET, { expiresIn: '24h' });
-                responseHandler.success(res, "Login successful", { token, user: foundEntity });
+            if (!foundEntity) {
+                return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
             }
 
-            responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
+            const token = jwt.sign({
+                username: foundEntity.username,
+                email: foundEntity.email,
+                id: foundEntity.id,
+                role: foundEntity.role_id
+            }, JWT_SECRET, { expiresIn: '24h' });
+            return responseHandler.success(res, "Login successful", { token, user: foundEntity });
+
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

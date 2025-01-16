@@ -17,9 +17,9 @@ export default {
         try {
             const { id } = req.params;
             const bills = await Bill.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Bills fetched successfully", bills);
+            return responseHandler.success(res, "Bills fetched successfully", bills);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

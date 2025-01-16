@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const employeeSalary = await EmployeeSalary.findAll();
-            responseHandler.success(res, "Employee salary fetched successfully.", employeeSalary);
+            return responseHandler.success(res, "Employee salary fetched successfully.", employeeSalary);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

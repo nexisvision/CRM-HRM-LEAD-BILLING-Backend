@@ -48,7 +48,7 @@ export default {
             const project = await Project.findByPk(id);
 
             if (!project) {
-                responseHandler.notFound(res, "Project not found");
+                return responseHandler.notFound(res, "Project not found");
             }
 
             const existingProject = await Project.findOne({
@@ -56,7 +56,7 @@ export default {
             });
 
             if (existingProject) {
-                responseHandler.error(res, "Project with this name already exists");
+                return responseHandler.error(res, "Project with this name already exists");
             }
 
             const updatedProject = await project.update({
@@ -77,10 +77,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Project updated successfully", updatedProject);
+            return responseHandler.success(res, "Project updated successfully", updatedProject);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

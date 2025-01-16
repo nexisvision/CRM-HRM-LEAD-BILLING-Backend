@@ -16,14 +16,14 @@ export default {
             const permission = await Permission.findByPk(id);
 
             if (!permission) {
-                responseHandler.notFound(res, "Permission not found");
+                return responseHandler.notFound(res, "Permission not found");
             }
 
             await permission.destroy();
-            responseHandler.success(res, "Permission deleted successfully");
+            return responseHandler.success(res, "Permission deleted successfully");
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

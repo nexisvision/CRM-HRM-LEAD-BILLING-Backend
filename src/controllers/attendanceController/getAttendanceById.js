@@ -16,13 +16,13 @@ export default {
             const attendance = await Attendance.findByPk(id);
 
             if (!attendance) {
-                responseHandler.notFound(res, "Attendance record not found");
+                return responseHandler.notFound(res, "Attendance record not found");
             }
 
-            responseHandler.success(res, "Attendance fetched successfully", attendance);
+            return responseHandler.success(res, "Attendance fetched successfully", attendance);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

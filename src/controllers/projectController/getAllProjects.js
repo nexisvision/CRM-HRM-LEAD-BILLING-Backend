@@ -13,10 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const projects = await Project.findAll();
-            responseHandler.success(res, "Projects fetched successfully", projects);
+            return responseHandler.success(res, "Projects fetched successfully", projects);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

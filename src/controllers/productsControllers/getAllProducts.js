@@ -13,9 +13,9 @@ export default {
         try {
             const { id } = req.params;
             const products = await Product.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Products fetched successfully", products);
+            return responseHandler.success(res, "Products fetched successfully", products);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

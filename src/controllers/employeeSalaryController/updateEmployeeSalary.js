@@ -20,7 +20,7 @@ export default {
             const { employee_id, currency, annual_CTC } = req.body;
             const existingEmployeeSalary = await EmployeeSalary.findByPk(id);
             if (!existingEmployeeSalary) {
-                responseHandler.error(res, "Employee salary record not found.");
+                return responseHandler.error(res, "Employee salary record not found.");
             }
 
             // Update the record
@@ -28,9 +28,9 @@ export default {
                 { employee_id, currency, annual_CTC, updated_by: req.user?.username },
                 { where: { id } } // Include the where clause
             );
-            responseHandler.success(res, "Employee salary created successfully.", existingEmployeeSalary);
+            return responseHandler.success(res, "Employee salary created successfully.", existingEmployeeSalary);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

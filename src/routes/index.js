@@ -58,6 +58,12 @@ import salesCreditnoteRoutes from "./salesCreditnoteRoutes.js";
 import inquiryRoutes from "./inquiryRoutes.js";
 import orderRoutes from "./orderRoutes.js";
 import billRoutes from "./billRoutes.js";
+import leaveTypeRoutes from "./leaveTypeRoutes.js";
+import documentTypeRoutes from "./documentTypeRoutes.js";
+import payslipTypeRoutes from "./payslipTypeRoutes.js";
+import allowanceOptionRoutes from "./allowanceOptionRoutes.js";
+import loanOptionRoutes from "./loanOptionRoutes.js";
+// import deductionOptionRoutes from "./deductionOptionRoutes.js";
 
 const router = express.Router();
 
@@ -68,8 +74,6 @@ router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/employees', employeeRoutes);
 router.use('/users', userRoutes);
-router.use('/departments', departmentRoutes);
-router.use('/designations', designationRoutes);
 router.use('/attendance', attendanceRoutes);
 router.use('/leaves', leaveRoutes);
 router.use('/permissions', permissionRoutes);
@@ -123,5 +127,13 @@ router.use('/bills', billRoutes);
 
 //HRM
 router.use('/branches', branchRoutes);
+router.use('/departments', departmentRoutes);
+router.use('/designations', designationRoutes);
+router.use('/leave-types', leaveTypeRoutes);
+router.use('/document-types', documentTypeRoutes);
+router.use('/payslip-types', payslipTypeRoutes);
+router.use('/allowance-options', allowanceOptionRoutes);
+router.use('/loan-options', loanOptionRoutes);
+// router.use('/deduction-options', deductionOptionRoutes);
 
 export default router;

@@ -23,14 +23,14 @@ export default {
 
             const superAdmin = await SuperAdmin.findByPk(id);
             if (!superAdmin) {
-                responseHandler.notFound(res, "Super admin not found");
+                return responseHandler.notFound(res, "Super admin not found");
             }
 
             await superAdmin.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });
-            responseHandler.success(res, "Super admin updated successfully", superAdmin);
+            return responseHandler.success(res, "Super admin updated successfully", superAdmin);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

@@ -15,9 +15,9 @@ export default {
         try {
             const { id } = req.user;
             const salesQuotations = await SalesQuotations.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "salesQuotations fetched successfully", salesQuotations);
+            return responseHandler.success(res, "salesQuotations fetched successfully", salesQuotations);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

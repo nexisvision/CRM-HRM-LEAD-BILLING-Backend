@@ -19,10 +19,10 @@ export default {
             const { id } = req.params;
 
             const milestones = await Milestone.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Milestones fetched successfully", milestones);
+            return responseHandler.success(res, "Milestones fetched successfully", milestones);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -18,9 +18,9 @@ export default {
                 links,
                 created_by: req.user?.username
             })
-            responseHandler.success(res, "Training created successfully", training)
+            return responseHandler.success(res, "Training created successfully", training)
         } catch (error) {
-            responseHandler.error(res, error.message)
+            return responseHandler.error(res, error.message)
         }
     }
 }

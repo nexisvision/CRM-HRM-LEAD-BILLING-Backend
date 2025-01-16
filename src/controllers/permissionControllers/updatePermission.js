@@ -20,7 +20,7 @@ export default {
             const permission = await Permission.findByPk(id);
 
             if (!permission) {
-                responseHandler.notFound(res, "Permission not found");
+                return responseHandler.notFound(res, "Permission not found");
             }
 
             await permission.update({
@@ -28,10 +28,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Permission updated successfully", permission);
+            return responseHandler.success(res, "Permission updated successfully", permission);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

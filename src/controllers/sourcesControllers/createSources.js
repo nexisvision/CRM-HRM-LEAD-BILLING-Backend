@@ -20,7 +20,7 @@ export default {
             });
 
             if (existingSource) {
-                responseHandler.error(res, "Source with this name already exists");
+                return responseHandler.error(res, "Source with this name already exists");
             }
 
             const source = await Sources.create({
@@ -29,9 +29,9 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.created(res, "Source created successfully", source);
+            return responseHandler.created(res, "Source created successfully", source);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

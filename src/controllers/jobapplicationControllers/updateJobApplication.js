@@ -31,7 +31,7 @@ export default {
             const jobApplication = await JobApplication.findByPk(id);
 
             if (!jobApplication) {
-                responseHandler.error(res, "Job application not found");
+                return responseHandler.error(res, "Job application not found");
             }
 
             await jobApplication.update({
@@ -39,9 +39,9 @@ export default {
                 current_location, notice_period, status, applied_source, cover_letter,
                 updated_by: req.user?.username
             });
-            responseHandler.success(res, "Job application updated successfully", jobApplication);
+            return responseHandler.success(res, "Job application updated successfully", jobApplication);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

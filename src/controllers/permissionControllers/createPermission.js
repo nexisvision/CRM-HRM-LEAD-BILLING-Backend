@@ -19,7 +19,7 @@ export default {
             });
 
             if (existingPermission) {
-                responseHandler.error(res, "Permission already exists");
+                return responseHandler.error(res, "Permission already exists");
             }
 
             const permission = await Permission.create({
@@ -27,10 +27,10 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Permission created successfully", permission);
+            return responseHandler.created(res, "Permission created successfully", permission);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }; 

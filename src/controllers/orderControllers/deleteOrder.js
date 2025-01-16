@@ -13,12 +13,12 @@ export default {
         try {
             const order = await Order.findByPk(req.params.id);
             if (!order) {
-                responseHandler.error(res, "Order not found");
+                return responseHandler.error(res, "Order not found");
             }
             await order.destroy();
-            responseHandler.success(res, "Order deleted successfully", order);
+            return responseHandler.success(res, "Order deleted successfully", order);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

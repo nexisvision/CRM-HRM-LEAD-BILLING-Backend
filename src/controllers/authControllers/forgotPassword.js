@@ -21,7 +21,7 @@ export default {
             const user = await User.findOne({ where: { email: email } });
 
             if (!user) {
-                responseHandler.notFound(res, "User not found");
+                return responseHandler.notFound(res, "User not found");
             }
 
             const otp = generateOTP(OTP_CONFIG.LENGTH);
@@ -36,9 +36,9 @@ export default {
             );
             const emailTemplate = getPasswordResetEmailTemplate(user.username, otp);
             await sendEmail(email, 'Password Reset Request', emailTemplate);
-            responseHandler.success(res, "Password reset OTP sent to your email", { sessionToken });
+            return responseHandler.success(res, "Password reset OTP sent to your email", { sessionToken });
         } catch (error) {
-            responseHandler.internalServerError(res, error.message);
+            return responseHandler.internalServerError(res, error.message);
         }
     }
 }; 

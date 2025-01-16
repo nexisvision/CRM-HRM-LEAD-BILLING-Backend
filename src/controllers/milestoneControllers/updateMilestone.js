@@ -26,7 +26,7 @@ export default {
             const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
             const milestone = await Milestone.findByPk(id);
             if (!milestone) {
-                responseHandler.error(res, "Milestone not found");
+                return responseHandler.error(res, "Milestone not found");
             }
             await milestone.update({ milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date, updated_by: req.user?.username });
             await Activity.create({
@@ -37,10 +37,10 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Milestone ${milestone.milestone_title} updated successfully`
             });
-            responseHandler.success(res, "Milestone updated successfully", milestone);
+            return responseHandler.success(res, "Milestone updated successfully", milestone);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

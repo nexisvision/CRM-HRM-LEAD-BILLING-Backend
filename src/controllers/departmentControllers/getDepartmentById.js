@@ -15,11 +15,11 @@ export default {
             const { id } = req.params;
             const department = await Department.findByPk(id);
             if (!department) {
-                responseHandler.error(res, "Department not found");
+                return responseHandler.error(res, "Department not found");
             }
-            responseHandler.success(res, "Department fetched successfully", department);
+            return responseHandler.success(res, "Department fetched successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

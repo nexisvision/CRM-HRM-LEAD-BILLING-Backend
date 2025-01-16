@@ -5,14 +5,14 @@ export const checkFeatureAccess = (feature) => {
             const plan = subscription.SubscriptionPlan;
 
             if (!plan.features[feature]) {
-                responseHandler.forbidden(res,
+                return responseHandler.forbidden(res,
                     `Your subscription plan doesn't include ${feature} feature`
                 );
             }
 
             next();
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     };
 };

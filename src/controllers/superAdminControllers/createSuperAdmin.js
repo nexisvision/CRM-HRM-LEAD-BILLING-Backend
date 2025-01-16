@@ -42,13 +42,13 @@ export default {
             const { username, email, password, secret_key } = req.body;
 
             if (secret_key !== SUPER_ADMIN_SECRET_KEY) {
-                responseHandler.unauthorized(res, "Invalid secret key");
+                return responseHandler.unauthorized(res, "Invalid secret key");
             }
 
             // Check if email already exists
             const existingUser = await SuperAdmin.findOne({ where: { email } });
             if (existingUser) {
-                responseHandler.error(res, "Email already exists");
+                return responseHandler.error(res, "Email already exists");
             }
 
             const [role] = await Role.findOrCreate({
@@ -66,9 +66,9 @@ export default {
                 role_id: role.id,
             });
 
-            responseHandler.created(res, "Super admin created successfully", superAdmin);
+            return responseHandler.created(res, "Super admin created successfully", superAdmin);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }; 

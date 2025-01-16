@@ -18,12 +18,12 @@ export default {
         try {
             const feature = await Feature.findByPk(id);
             if (!feature) {
-                responseHandler.error(res, "Feature not found");
+                return responseHandler.error(res, "Feature not found");
             }
             await feature.update({ featureName });
-            responseHandler.success(res, "Feature updated successfully", feature);
+            return responseHandler.success(res, "Feature updated successfully", feature);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

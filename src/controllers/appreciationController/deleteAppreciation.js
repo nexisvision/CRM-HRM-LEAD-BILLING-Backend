@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const appreciation = await Appreciation.findByPk(id);
             if (!appreciation) {
-                responseHandler.error(res, "Appreciation not found");
+                return responseHandler.error(res, "Appreciation not found");
             }
             await appreciation.destroy();
-            responseHandler.success(res, "Appreciation deleted successfully", appreciation);
+            return responseHandler.success(res, "Appreciation deleted successfully", appreciation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

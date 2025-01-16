@@ -15,12 +15,12 @@ export default {
 
             const newBill = await Bill.findByPk(id);
             if (!newBill) {
-                responseHandler.error(res, "Bill not found");
+                return responseHandler.error(res, "Bill not found");
             }
             await newBill.destroy();
-            responseHandler.success(res, "Bill deleted successfully", newBill);
+            return responseHandler.success(res, "Bill deleted successfully", newBill);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

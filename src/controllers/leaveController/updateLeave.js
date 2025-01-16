@@ -20,7 +20,7 @@ export default {
 
             const leave = await Leave.findByPk(id);
             if (!leave) {
-                responseHandler.notFound(res, "Leave record not found");
+                return responseHandler.notFound(res, "Leave record not found");
             }
 
             await leave.update({
@@ -29,10 +29,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Leave updated successfully", leave);
+            return responseHandler.success(res, "Leave updated successfully", leave);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

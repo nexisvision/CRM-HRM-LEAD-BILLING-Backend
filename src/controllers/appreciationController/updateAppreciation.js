@@ -22,12 +22,12 @@ export default {
             const { award, givenTo, date, summary, photo } = req.body;
             const appreciation = await Appreciation.findByPk(id);
             if (!appreciation) {
-                responseHandler.error(res, "Appreciation not found");
+                return responseHandler.error(res, "Appreciation not found");
             }
             await appreciation.update({ award, givenTo, date, summary, photo, updated_by: req.user?.username });
-            responseHandler.success(res, "Appreciation updated successfully", appreciation);
+            return responseHandler.success(res, "Appreciation updated successfully", appreciation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

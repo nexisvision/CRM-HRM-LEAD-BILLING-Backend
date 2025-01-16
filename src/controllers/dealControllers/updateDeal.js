@@ -26,13 +26,13 @@ export default {
             const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project } = req.body;
             const deal = await Deal.findByPk(id);
             if (!deal) {
-                responseHandler.error(res, "Deal not found");
+                return responseHandler.error(res, "Deal not found");
             }
             await deal.update({ leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project, updated_by: req.user?.username });
-            responseHandler.success(res, "Deal updated successfully", deal);
+            return responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

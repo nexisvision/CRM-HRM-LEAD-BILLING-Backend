@@ -13,9 +13,9 @@ export default {
         try {
             const { id } = req.params;
             const interviewSchedule = await InterviewSchedule.findByPk(id);
-            responseHandler.success(res, "Interview schedule fetched successfully", interviewSchedule);
+            return responseHandler.success(res, "Interview schedule fetched successfully", interviewSchedule);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

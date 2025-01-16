@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const leads = await Lead.findAll();
-            responseHandler.success(res, "Leads fetched successfully", leads);
+            return responseHandler.success(res, "Leads fetched successfully", leads);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

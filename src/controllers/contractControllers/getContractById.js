@@ -13,9 +13,9 @@ export default {
         try {
             const { id } = req.params;
             const contract = await Contract.findByPk(id);
-            responseHandler.success(res, "Contract fetched successfully", contract);
+            return responseHandler.success(res, "Contract fetched successfully", contract);
         } catch (error) {
-            responseHandler.error(res, "Internal server error");
+            return responseHandler.error(res, "Internal server error");
         }
     }
 }

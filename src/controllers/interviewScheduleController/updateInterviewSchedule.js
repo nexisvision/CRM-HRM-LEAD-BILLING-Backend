@@ -22,9 +22,9 @@ export default {
             const { job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate } = req.body;
             const interviewSchedule = await InterviewSchedule.findByPk(req.params.id);
             await interviewSchedule.update({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
-            responseHandler.success(res, "Interview schedule updated successfully", interviewSchedule);
+            return responseHandler.success(res, "Interview schedule updated successfully", interviewSchedule);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -19,7 +19,7 @@ export default {
     handler: async (req, res) => {
         try {
             if (!req.files || !req.files.file) {
-                responseHandler.badRequest(res, "Please upload an Excel file");
+                return responseHandler.badRequest(res, "Please upload an Excel file");
             }
 
             const workbook = XLSX.read(req.files.file.data);
@@ -27,7 +27,7 @@ export default {
             const data = XLSX.utils.sheet_to_json(worksheet);
 
             if (data.length === 0) {
-                responseHandler.badRequest(res, "Excel file is empty");
+                return responseHandler.badRequest(res, "Excel file is empty");
             }
 
             const attendanceRecords = data.map(row => ({
@@ -46,14 +46,14 @@ export default {
 
             const attendance = await Attendance.insertMany(attendanceRecords);
 
-            responseHandler.created(res, "Bulk attendance marked successfully", {
+            return responseHandler.created(res, "Bulk attendance marked successfully", {
                 totalRecords: attendance.length,
                 attendance
             });
 
         } catch (error) {
 
-            responseHandler.error(res, "Error processing bulk attendance: " + error.message);
+            return responseHandler.error(res, "Error processing bulk attendance: " + error.message);
         }
     }
 };

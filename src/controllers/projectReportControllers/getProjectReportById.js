@@ -14,12 +14,12 @@ export default {
             const { id } = req.params;
             const projectReport = await ProjectReport.findByPk(id);
             if (!projectReport) {
-                responseHandler.notFound(res, "Project report not found");
+                return responseHandler.notFound(res, "Project report not found");
             }
-            responseHandler.success(res, "Project report fetched successfully", projectReport);
+            return responseHandler.success(res, "Project report fetched successfully", projectReport);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

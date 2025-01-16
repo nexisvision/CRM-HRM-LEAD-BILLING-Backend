@@ -15,13 +15,13 @@ export default {
 
             const role = await Role.findByPk(id);
             if (!role) {
-                responseHandler.notFound(res, 'Role not found');
+                return responseHandler.notFound(res, 'Role not found');
             }
 
             await role.destroy();
-            responseHandler.success(res, 'Role deleted successfully');
+            return responseHandler.success(res, 'Role deleted successfully');
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

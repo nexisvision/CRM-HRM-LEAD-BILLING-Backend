@@ -31,10 +31,10 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.success(res, "Customer created successfully", customer);
+            return responseHandler.success(res, "Customer created successfully", customer);
 
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

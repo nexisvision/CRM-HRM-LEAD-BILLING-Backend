@@ -14,9 +14,9 @@ export default {
         try {
 
             const contracts = await Contract.findAll();
-            responseHandler.success(res, "Contracts fetched successfully", contracts);
+            return responseHandler.success(res, "Contracts fetched successfully", contracts);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

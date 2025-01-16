@@ -15,13 +15,13 @@ export default {
 
             const client = await User.findByPk(id);
             if (!client) {
-                responseHandler.error(res, "Client not found");
+                return responseHandler.error(res, "Client not found");
             }
 
             await client.destroy();
-            responseHandler.success(res, "Client deleted successfully", client);
+            return responseHandler.success(res, "Client deleted successfully", client);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -15,15 +15,15 @@ export default {
 
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
-                responseHandler.notFound(res, "Plan not found");
+                return responseHandler.notFound(res, "Plan not found");
             }
 
             await plan.destroy();
 
-            responseHandler.success(res, "Plan deleted successfully", plan);
+            return responseHandler.success(res, "Plan deleted successfully", plan);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }; 

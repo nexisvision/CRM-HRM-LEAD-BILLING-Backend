@@ -37,10 +37,10 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Leave request created successfully", leave);
+            return responseHandler.created(res, "Leave request created successfully", leave);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

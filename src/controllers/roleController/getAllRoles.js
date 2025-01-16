@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const roles = await Role.findAll();
-            responseHandler.success(res, 'Roles fetched successfully', roles);
+            return responseHandler.success(res, 'Roles fetched successfully', roles);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

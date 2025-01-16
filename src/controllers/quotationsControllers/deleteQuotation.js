@@ -16,15 +16,15 @@ export default {
             const quotation = await Quotations.findByPk(id);
 
             if (!quotation) {
-                responseHandler.notFound(res, "Quotation not found");
+                return responseHandler.notFound(res, "Quotation not found");
             }
 
             await quotation.destroy();
 
-            responseHandler.success(res, "Quotation deleted successfully", quotation);
+            return responseHandler.success(res, "Quotation deleted successfully", quotation);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };   

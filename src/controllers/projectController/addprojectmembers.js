@@ -25,7 +25,7 @@ export default {
             const project = await Project.findByPk(id);
 
             if (!project) {
-                responseHandler.notFound(res, "Project not found");
+                return responseHandler.notFound(res, "Project not found");
             }
 
             // Parse project_members if it's a string
@@ -39,7 +39,7 @@ export default {
             // Check for duplicate members
             const duplicateMembers = newMemberIds.filter(id => currentMembers.includes(id));
             if (duplicateMembers.length > 0) {
-                responseHandler.error(res, `These members already exist in project: ${duplicateMembers.join(', ')}`);
+                return responseHandler.error(res, `These members already exist in project: ${duplicateMembers.join(', ')}`);
             }
 
             // Combine existing members with new members
@@ -51,12 +51,12 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Project members added successfully", {
+            return responseHandler.success(res, "Project members added successfully", {
                 project_members: { project_members: updatedMembers }
             });
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

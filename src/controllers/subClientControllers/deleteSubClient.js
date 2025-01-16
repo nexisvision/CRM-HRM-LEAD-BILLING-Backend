@@ -18,13 +18,13 @@ export default {
 
             const subClient = await User.findByPk(id);
             if (!subClient) {
-                responseHandler.error(res, "subClient not found");
+                return responseHandler.error(res, "subClient not found");
             }
 
             await subClient.destroy();
-            responseHandler.success(res, "subClient deleted successfully", subClient);
+            return responseHandler.success(res, "subClient deleted successfully", subClient);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

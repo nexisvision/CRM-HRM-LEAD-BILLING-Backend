@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const skills = await Skill.findAll();
-            responseHandler.success(res, "Skills fetched successfully", skills);
+            return responseHandler.success(res, "Skills fetched successfully", skills);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 

@@ -17,9 +17,9 @@ export default {
         const { sourceName, description } = req.body;
         try {
             await Sources.update({ sourceName, description, updated_by: req.user.username }, { where: { id } });
-            responseHandler.success(res, 200, "Source updated successfully");
+            return responseHandler.success(res, 200, "Source updated successfully");
         } catch (error) {
-            responseHandler.error(res, 500, "Internal server error");
+            return responseHandler.error(res, 500, "Internal server error");
         }
     }
 }

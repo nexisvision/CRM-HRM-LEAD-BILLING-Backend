@@ -20,9 +20,9 @@ export default {
             const { countryName, countryCode, phoneCode } = req.body;
             const country = await Country.findByPk(id);
             await country.update({ countryName, countryCode, phoneCode });
-            responseHandler.success(res, "Country updated successfully", country);
+            return responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

@@ -17,9 +17,9 @@ export default {
         try {
             const { leadId } = req.params;
             const tasks = await Task.findAll({ where: { leadId } });
-            responseHandler.success(res, "Lead tasks fetched successfully", tasks);
+            return responseHandler.success(res, "Lead tasks fetched successfully", tasks);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

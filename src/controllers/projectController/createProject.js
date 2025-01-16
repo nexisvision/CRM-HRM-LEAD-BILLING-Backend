@@ -44,7 +44,7 @@ export default {
             });
 
             if (existingProject) {
-                responseHandler.error(res, "Project with this name already exists");
+                return responseHandler.error(res, "Project with this name already exists");
             }
 
             const project = await Project.create({
@@ -63,10 +63,10 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Project created successfully", project);
+            return responseHandler.created(res, "Project created successfully", project);
         } catch (error) {
 
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };
