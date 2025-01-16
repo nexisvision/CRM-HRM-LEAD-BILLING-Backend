@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "6f950507-859c-4e15-9a6a-139261ee3ebb",
+		"_postman_id": "325f5ce5-17d4-434b-9f8d-c6838be9202a",
 		"name": "CRM Backend",
 		"description": "Complete API collection for CRM Backend System",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "37446654",
-		"_collection_link": "https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37725096-6f950507-859c-4e15-9a6a-139261ee3ebb?action=share&source=collection_link&creator=37446654"
+		"_collection_link": "https://crm-backend-new.postman.co/workspace/CRM-BACKEND-NEW-Workspace~5bafd9b7-8696-4a95-9fd8-e9e6ad6ad944/collection/37725096-325f5ce5-17d4-434b-9f8d-c6838be9202a?action=share&source=collection_link&creator=37446654"
 	},
 	"item": [
 		{
@@ -237,7 +237,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiI3QkNPN21hdU1aU01vazZoMk9CckE0cSIsInJvbGUiOiJvdUU3YzMzQ2M4ZXRTbmhZZjlET2xlUyIsImlhdCI6MTczNTkwMDYxMiwiZXhwIjoxNzM1OTg3MDEyfQ.SE2sZUcOQNuQXXIwSsaFvzapPay0PNfMp5fpPC5hKQc"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxbk1pOW5YSGdWTkFLVlp5U0lXNFJwZSIsInJvbGUiOiJCZUR2RTc5Wm9VQ3daUndCRVV1VmZsNyIsImlhdCI6MTczNjkzMTk5OCwiZXhwIjoxNzM3MDE4Mzk4fQ.egMwbtRjnlsyxuG_1T2dXS9QZjJP2XDEVJEMjXX6BX0"
 							}
 						},
 						"method": "GET",
@@ -261,7 +261,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJwTnlTcXA2MXNMSzVsNGR1R29xdm0ySyIsInJvbGUiOiJzdXBlci1hZG1pbiIsImlhdCI6MTczNTEyNTQwMSwiZXhwIjoxNzM1MjExODAxfQ.peJahV0h8aBfcvN4JCFPutt2ZRu69PFhPxptcvownL0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJxbk1pOW5YSGdWTkFLVlp5U0lXNFJwZSIsInJvbGUiOiJCZUR2RTc5Wm9VQ3daUndCRVV1VmZsNyIsImlhdCI6MTczNjkzMTk5OCwiZXhwIjoxNzM3MDE4Mzk4fQ.egMwbtRjnlsyxuG_1T2dXS9QZjJP2XDEVJEMjXX6BX0"
 							}
 						},
 						"method": "PUT",
@@ -275,22 +275,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base}}/super-admin/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"super-admin",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{base}}/super-admin/qnMi9nXHgVNAKVZySIW4Rpe"
 					},
 					"response": []
 				},
@@ -329,14 +314,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkxYTkNRZjV1S3RQZDFhUVhrakp1WE5zIiwidXNlcm5hbWUiOiJncmV3b3gxMTMiLCJlbWFpbCI6ImdyZXdveDExM0B5b3BtYWlsLmNvbSIsInJvbGVfaWQiOiJwY29mZUlCcFhtaWlsSGVla1F3U2tsUiIsInBhc3N3b3JkIjoiJDJiJDEyJHg3MGRDanVMRTU4Z1dObi9VT2FybmV4aE5TSnRtU1hiVTgveG9TS1BjNjdaWFBpWnNFbnRxIiwidmVyaWZpY2F0aW9uT1RQIjoiMTY2NTIxIiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM2NzYyNjY1MjI3LCJjbGllbnRTdWJzY3JpcHRpb24iOnsiaWQiOiJJbzdGM0NVelFNVGY2bzFBZ1ZoV2d5dSIsImNsaWVudF9pZCI6IkxYTkNRZjV1S3RQZDFhUVhrakp1WE5zIiwicGxhbl9pZCI6Im51RDh5UnByOURLRGE3djE0MGRMTmhCIiwic3RhcnRfZGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImVuZF9kYXRlIjoiMjAyNS0wMS0zMFQwMDowMDowMC4wMDBaIiwic3RhdHVzIjoiYWN0aXZlIiwiY3VycmVudF9zdG9yYWdlX3VzZWQiOjAsImN1cnJlbnRfdXNlcnNfY291bnQiOjAsImN1cnJlbnRfY2xpZW50c19jb3VudCI6MCwicGF5bWVudF9zdGF0dXMiOiJwZW5kaW5nIiwibGFzdF9wYXltZW50X2RhdGUiOm51bGwsImNyZWF0ZWRfYnkiOm51bGwsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTNUMDk6NTg6MjIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTNUMDk6NTg6MjIuMDAwWiJ9LCJwbGFuIjp7ImlkIjoibnVEOHlScHI5REtEYTd2MTQwZExOaEIiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5IjpudWxsLCJ1cGRhdGVkX2J5IjpudWxsLCJjcmVhdGVkQXQiOiIyMDI1LTAxLTEzVDA5OjU2OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTAxLTEzVDA5OjU2OjIwLjAwMFoifSwidHlwZSI6InNpZ251cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MzY3NjIzNjUsImV4cCI6MTczNjc2MzI2NX0.RTEdPxOefUVU_WYMeEXoz9oCqiFXRO9sn7vhp-7zB2o"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkxucDI2QnNUODhsYlBiQkFubzB5YkdEIiwidXNlcm5hbWUiOiJncmV3b3gxMDAxIiwiZW1haWwiOiJncmV3b3gxMDAxQHlvcG1haWwuY29tIiwicm9sZV9pZCI6IllRU2swTFBRR3lzU0M1bWpIQjFOYjFDIiwicGFzc3dvcmQiOiIkMmIkMTIkSXRraFhZZkVBNTdnN1VQZFZkZXh4T0JRZWdzRFJNY3AyM1RBcWp2SFMvWlUveFNMUUdMdEsiLCJ2ZXJpZmljYXRpb25PVFAiOiIyNTI1MzciLCJ2ZXJpZmljYXRpb25PVFBFeHBpcnkiOjE3MzY5MjE2NDQ4MzEsInR5cGUiOiJzaWdudXBfdmVyaWZpY2F0aW9uIiwiaWF0IjoxNzM2OTIxMzQ0LCJleHAiOjE3MzY5MjIyNDR9.tcX7Hl02CaLihNDxQ--P2KigC6z60JJrHO5pEm5h9oo"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"otp\":\"166521\"\r\n}",
+							"raw": "{\r\n        \"otp\":\"252537\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -439,14 +424,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjkyMTMzMSwiZXhwIjoxNzM3MDA3NzMxfQ.ozYKTOuS_QxfBlhfvIZGiqX8PO9sx2TnqayywZY5PdI"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"grewox\",\n  \"email\": \"grewox@yopmail.com\",\n  \"password\": \"MyStrongP@ssw0rd!\"\n}",
+							"raw": "// {\n//   \"username\": \"grewox\",\n//   \"email\": \"grewox@yopmail.com\",\n//   \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n{\n  \"username\": \"grewox1001\",\n  \"email\": \"grewox1001@yopmail.com\",\n  \"password\": \"MyStrongP@ssw0rd!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -464,7 +449,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"login\": \"grewox@yopmail.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
+							"raw": "\n// {\n//     \"login\": \"grewox@yopmail.com\",\n//     \"password\": \"MyStrongP@ssw0rd!\"\n// }\n\n\n{\n    \"login\": \"grewox1001@yopmail.com\",\n    \"password\": \"MyStrongP@ssw0rd!\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2029,14 +2014,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjkyMTMzMSwiZXhwIjoxNzM3MDA3NzMxfQ.ozYKTOuS_QxfBlhfvIZGiqX8PO9sx2TnqayywZY5PdI"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"client_id\": \"LXNCQf5uKtPd1aQXkjJuXNs\",\r\n  \"plan_id\": \"nuD8yRpr9DKDa7v140dLNhB\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
+							"raw": "{\r\n  \"client_id\": \"WpaoVmPjIv8DgPIWeq4NBoN\",\r\n  \"plan_id\": \"nuD8yRpr9DKDa7v140dLNhB\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5107,7 +5092,8 @@
 							"name": "Delete Sales",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": ""
 							},
 							"response": []
 						}
@@ -5266,7 +5252,8 @@
 							"name": "Delete Quotations",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": ""
 							},
 							"response": []
 						}
@@ -5358,6 +5345,172 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base}}/inquiry/2Q425TCfsXu8mCjxIhvZkFN"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": \"John Doe\",\r\n  \"billing_address\": \"123 Main St, City, Country\",\r\n  \"shipping_address\": \"456 Oak St, City, Country\",\r\n  \"project\": \"Website Redesign\",\r\n  \"genratedBy\": \"Admin\",\r\n  \"status\": \"pending\",\r\n  \"items\": {\r\n    \"item1\": {\r\n      \"item_name\": \"Item 1\",\r\n      \"quantity\": 2,\r\n      \"price\": 100\r\n    },\r\n    \"item2\": {\r\n      \"item_name\": \"Item 2\",\r\n      \"quantity\": 1,\r\n      \"price\": 150\r\n    }\r\n  },\r\n  \"discount\": 10,\r\n  \"tax\": 30,\r\n  \"total\": 370,\r\n  \"client_Note\": \"Please deliver by next week\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/orders/abc1234$$"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/orders/abc1234$$"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": \"maintael\",\r\n  \"billing_address\": \"123 Main St, City, Country\",\r\n  \"shipping_address\": \"456 Oak St, City, Country\",\r\n  \"project\": \"Website Redesign\",\r\n  \"genratedBy\": \"Admin\",\r\n  \"status\": \"pending\",\r\n  \"items\": {\r\n    \"item1\": {\r\n      \"item_name\": \"Item 1\",\r\n      \"quantity\": 2,\r\n      \"price\": 100\r\n    },\r\n    \"item2\": {\r\n      \"item_name\": \"Item 2\",\r\n      \"quantity\": 1,\r\n      \"price\": 150\r\n    }\r\n  },\r\n  \"discount\": 10,\r\n  \"tax\": 30,\r\n  \"total\": 370,\r\n  \"client_Note\": \"Please deliver by next week\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/orders/tt1UdCiEwYi9zb13Xwdrdgb"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/orders/tt1UdCiEwYi9zb13Xwdrdgb"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "Create Bill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n  \"vendor\": \"XYZ Corp.\",\r\n  \"billDate\": \"2025-01-15\",\r\n  \"discription\": {\r\n    \"product\": \"Website Hosting\",\r\n    \"service\": \"Maintenance for January\"\r\n  },\r\n  \"status\": \"pending\",\r\n  \"discount\": 20,\r\n  \"tax\": 15,\r\n  \"total\": 195,\r\n  \"note\": \"Payment due within 30 days\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/bills/abc124$$"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bills",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base}}/bills/abc124$$"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bill By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n  \"vendor\": \"XYZ Corp. Updated\",\r\n  \"billDate\": \"2025-01-15\",\r\n  \"discription\": {\r\n    \"product\": \"Website Hosting\",\r\n    \"service\": \"Maintenance for January\"\r\n  },\r\n  \"status\": \"pending\",\r\n  \"discount\": 20,\r\n  \"tax\": 15,\r\n  \"total\": 195,\r\n  \"note\": \"Payment due within 30 days\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base}}/bills/d3W2NMVXB2cps96ZM3SnN79"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bill By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base}}/bills/d3W2NMVXB2cps96ZM3SnN79"
 					},
 					"response": []
 				}
