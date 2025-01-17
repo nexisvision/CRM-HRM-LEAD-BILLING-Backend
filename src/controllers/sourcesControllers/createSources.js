@@ -31,7 +31,7 @@ export default {
 
             return responseHandler.created(res, "Source created successfully", source);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -37,7 +37,7 @@ export default {
             // Generate and stream PDF
             await generateBillPDF(client, plan, subscription, bill, res);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

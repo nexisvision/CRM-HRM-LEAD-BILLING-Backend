@@ -15,7 +15,7 @@ export default {
             const interviewSchedule = await InterviewSchedule.findByPk(id);
             return responseHandler.success(res, "Interview schedule fetched successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

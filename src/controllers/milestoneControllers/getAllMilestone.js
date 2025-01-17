@@ -22,7 +22,7 @@ export default {
             return responseHandler.success(res, "Milestones fetched successfully", milestones);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

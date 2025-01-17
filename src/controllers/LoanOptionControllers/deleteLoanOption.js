@@ -19,7 +19,7 @@ export default {
             await loanOption.destroy();
             return responseHandler.success(res, "Loan option deleted successfully", loanOption);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

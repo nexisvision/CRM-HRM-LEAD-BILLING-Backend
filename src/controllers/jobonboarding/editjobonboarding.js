@@ -49,7 +49,7 @@ export default {
             // Return success response with the updated record
             return responseHandler.success(res, "Job onboarding record updated successfully", jobOnboarding);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

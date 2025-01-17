@@ -22,7 +22,7 @@ export default {
             await country.update({ countryName, countryCode, phoneCode });
             return responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

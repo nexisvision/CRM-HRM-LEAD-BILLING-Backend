@@ -19,7 +19,7 @@ export default {
             await terminationType.destroy();
             return responseHandler.success(res, "Termination type deleted successfully", terminationType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

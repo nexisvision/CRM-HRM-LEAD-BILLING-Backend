@@ -23,7 +23,7 @@ const checkUserRole = (allowedRoles) => {
             req.role = role;
             next();
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     };
 };

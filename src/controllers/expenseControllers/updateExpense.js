@@ -30,7 +30,7 @@ export default {
             await expense.update({ item, price, currency, purchase_date, employee, project, bill, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Expense updated successfully", expense);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

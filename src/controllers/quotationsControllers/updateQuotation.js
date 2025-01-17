@@ -31,7 +31,7 @@ export default {
             await quotations.update({ valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "Quotation updated successfully", quotations);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

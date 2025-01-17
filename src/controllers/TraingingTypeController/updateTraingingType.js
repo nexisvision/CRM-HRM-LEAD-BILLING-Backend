@@ -28,7 +28,7 @@ export default {
             await traingingTypeToUpdate.update({ name, updated_by: req.user?.username });
             return responseHandler.success(res, "Trainging type updated successfully", traingingTypeToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

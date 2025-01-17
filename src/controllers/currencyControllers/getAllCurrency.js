@@ -15,7 +15,7 @@ export default {
             const currencies = await Currency.findAll();
             return responseHandler.success(res, "Currencies fetched successfully", currencies);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

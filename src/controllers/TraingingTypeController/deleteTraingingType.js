@@ -19,7 +19,7 @@ export default {
             await traingingType.destroy();
             return responseHandler.success(res, "Trainging type deleted successfully", traingingType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

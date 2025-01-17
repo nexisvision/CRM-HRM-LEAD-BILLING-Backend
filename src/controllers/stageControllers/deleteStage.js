@@ -19,7 +19,7 @@ export default {
             await stage.destroy();
             return responseHandler.success(res, "Stage deleted successfully", stage);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

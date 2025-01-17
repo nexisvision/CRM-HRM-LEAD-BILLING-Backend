@@ -29,7 +29,7 @@ export default {
             order.update({ client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note, updated_by: req.user?.username, });
             return responseHandler.success(res, "Order updated successfully", order);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

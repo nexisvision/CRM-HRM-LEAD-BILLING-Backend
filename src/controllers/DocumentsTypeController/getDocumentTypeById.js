@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, 'Document type fetched successfully', documentType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

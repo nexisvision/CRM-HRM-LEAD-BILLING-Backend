@@ -21,7 +21,7 @@ const authenticateUser = async (req, res, next) => {
         req.user = decoded;
         next();
     } catch (error) {
-        return responseHandler.error(res, error.message);
+        return responseHandler.error(res, error?.message);
     }
 };
 

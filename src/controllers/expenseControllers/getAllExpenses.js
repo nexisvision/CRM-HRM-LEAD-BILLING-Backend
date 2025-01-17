@@ -19,7 +19,7 @@ export default {
             const expenses = await Expense.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "Expenses fetched successfully", expenses);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

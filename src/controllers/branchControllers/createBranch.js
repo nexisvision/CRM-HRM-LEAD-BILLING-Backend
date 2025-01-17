@@ -7,23 +7,19 @@ export default {
     validator: validator({
         body: Joi.object({
             branchName: Joi.string().required(),
-            department: Joi.string().required(),
-            address: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { branchName, department, address } = req.body;
+            const { branchName } = req.body;
             const branch = await Branch.create({
                 branchName,
-                department,
-                address,
                 created_by: req.user?.username
             });
 
             return responseHandler.success(res, "Branch created successfully", branch);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

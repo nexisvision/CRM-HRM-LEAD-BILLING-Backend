@@ -21,7 +21,7 @@ export default {
         }
         catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

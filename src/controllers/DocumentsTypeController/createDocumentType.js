@@ -24,7 +24,7 @@ export default {
             });
             return responseHandler.success(res, 'Document type created successfully', documentType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

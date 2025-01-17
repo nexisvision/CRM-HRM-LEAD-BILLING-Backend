@@ -19,7 +19,7 @@ export default {
             }
             return responseHandler.success(res, "Job category faetched successfully", jobCategoryToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

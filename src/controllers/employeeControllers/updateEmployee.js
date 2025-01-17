@@ -67,7 +67,7 @@ export default {
 
             return responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

@@ -39,7 +39,7 @@ export default {
             return responseHandler.created(res, "Attendance marked successfully", attendance);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

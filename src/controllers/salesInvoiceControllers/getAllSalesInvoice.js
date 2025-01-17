@@ -17,7 +17,7 @@ export default {
             const salesInvoice = await SalesInvoice.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "salesInvoice fetched successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

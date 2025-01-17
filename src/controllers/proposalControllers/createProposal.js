@@ -27,7 +27,7 @@ export default {
             });
             return responseHandler.success(res, "Proposal created successfully", proposal);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

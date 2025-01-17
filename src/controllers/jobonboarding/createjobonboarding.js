@@ -35,7 +35,7 @@ export default {
 
             return responseHandler.success(res, "Job onboarding created successfully", jobOnboarding);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

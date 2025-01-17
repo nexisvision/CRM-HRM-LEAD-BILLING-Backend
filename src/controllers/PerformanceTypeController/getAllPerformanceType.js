@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Performance types fetched successfully", performanceType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

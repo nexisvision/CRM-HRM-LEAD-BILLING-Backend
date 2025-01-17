@@ -19,7 +19,7 @@ export default {
             await event.destroy();
             return responseHandler.success(res, "Event deleted successfully", event);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

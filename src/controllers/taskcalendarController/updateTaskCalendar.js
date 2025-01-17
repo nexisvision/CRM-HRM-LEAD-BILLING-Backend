@@ -39,7 +39,7 @@ export default {
             await task.update({ taskName, taskDate, taskTime, taskDescription, updated_by: req.user?.username });
             return responseHandler.success(res, "Task updated successfully", task);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

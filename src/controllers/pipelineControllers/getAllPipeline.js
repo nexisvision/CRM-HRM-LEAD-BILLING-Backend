@@ -14,7 +14,7 @@ export default {
             const pipelines = await Pipeline.findAll();
             return responseHandler.success(res, 'Pipelines fetched successfully', pipelines);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

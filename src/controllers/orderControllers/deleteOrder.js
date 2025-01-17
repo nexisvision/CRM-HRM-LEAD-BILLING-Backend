@@ -18,7 +18,7 @@ export default {
             await order.destroy();
             return responseHandler.success(res, "Order deleted successfully", order);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

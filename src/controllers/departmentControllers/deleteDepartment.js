@@ -20,7 +20,7 @@ export default {
             await department.destroy();
             return responseHandler.success(res, "Department deleted successfully", department);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

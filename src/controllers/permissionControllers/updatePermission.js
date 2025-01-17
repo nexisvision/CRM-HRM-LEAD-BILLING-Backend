@@ -31,7 +31,7 @@ export default {
             return responseHandler.success(res, "Permission updated successfully", permission);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

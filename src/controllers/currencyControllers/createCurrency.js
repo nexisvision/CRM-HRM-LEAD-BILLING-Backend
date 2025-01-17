@@ -33,7 +33,7 @@ export default {
 
             return responseHandler.success(res, "Currency created successfully", currency);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

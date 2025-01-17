@@ -21,7 +21,7 @@ export default {
             const employeeSalary = await EmployeeSalary.create({ employee_id, currency, annual_CTC, created_by: req.user?.username, });
             return responseHandler.success(res, "Employee salary created successfully.", employeeSalary);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

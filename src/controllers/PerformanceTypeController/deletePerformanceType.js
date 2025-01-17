@@ -19,7 +19,7 @@ export default {
             await performanceType.destroy();
             return responseHandler.success(res, "Performance type deleted successfully", performanceType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

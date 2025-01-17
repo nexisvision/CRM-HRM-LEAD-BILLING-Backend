@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Stages fetched successfully", stages);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

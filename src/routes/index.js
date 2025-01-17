@@ -7,7 +7,6 @@ import employeeRoutes from "./employeeRoutes.js";
 import departmentRoutes from "./departmentRoutes.js";
 import designationRoutes from "./designationRoutes.js";
 import attendanceRoutes from "./attendanceRoutes.js";
-import leaveRoutes from "./leaveRoutes.js";
 import permissionRoutes from "./permissionRoutes.js";
 import subscriptionRoutes from "./subscriptionRoutes.js";
 import rolePermissionRoutes from "./rolePermissionRoutes.js";
@@ -73,6 +72,14 @@ import jobStageRoutes from "./jobStageRoutes.js";
 import performanceTypeRoutes from "./performanceTypeRoutes.js";
 import competenciesRoutes from "./competenciesRoutes.js";
 import jobonboardingrouter from "./jobonboardingrouter.js";
+import salaryRoutes from "./salaryRoutes.js";
+import allowanceRoutes from "./allowanceRoutes.js";
+import commissionRoutes from "./commissionRoutes.js";
+import loanRoutes from "./loanRoutes.js";
+import deductionRoutes from "./deductionRoutes.js";
+import otherPaymentRoutes from "./otherPaymentRoutes.js";
+import overtimeRoutes from "./overtimeRoutes.js";
+import leaveRoutes from "./leaveRoutes.js";
 
 const router = express.Router();
 
@@ -130,7 +137,7 @@ router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
 router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
-router.use('/job-onboarding', jobonboardingrouter)
+router.use('/job-onboarding', jobonboardingrouter);
 
 
 //HRM System
@@ -152,7 +159,15 @@ router.use('/job-stages', jobStageRoutes);
 router.use('/performance-types', performanceTypeRoutes);
 router.use('/competencies', competenciesRoutes);
 router.use('/employees', employeeRoutes);
+router.use('/salary', salaryRoutes);
+router.use('/allowance', allowanceRoutes);
+router.use('/commission', commissionRoutes);
+router.use('/loan', loanRoutes);
+router.use('/deduction', deductionRoutes);
+router.use('/other-payments', otherPaymentRoutes);
+router.use('/overtime', overtimeRoutes);
 router.use('/leaves', leaveRoutes);
+
 
 
 export default router;

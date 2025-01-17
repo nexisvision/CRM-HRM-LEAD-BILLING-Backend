@@ -22,7 +22,7 @@ export default {
             return responseHandler.success(res, "Role permission fetched successfully", rolePermission);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

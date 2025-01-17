@@ -23,7 +23,7 @@ export default {
             await feature.update({ featureName });
             return responseHandler.success(res, "Feature updated successfully", feature);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

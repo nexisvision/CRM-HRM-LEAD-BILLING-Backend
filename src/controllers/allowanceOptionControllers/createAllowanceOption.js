@@ -22,7 +22,7 @@ export default {
             });
             return responseHandler.success(res, "Allowance option created successfully", allowanceOption);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -29,7 +29,7 @@ export default {
             await leaveTypeToUpdate.update({ leaveType, daysPerYear, updated_by: req.user?.username });
             return responseHandler.success(res, "Leave type updated successfully", leaveTypeToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

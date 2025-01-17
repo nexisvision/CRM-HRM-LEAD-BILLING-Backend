@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Termination fetched successfully", terminationType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -15,7 +15,7 @@ export default {
             const tasks = await TaskCalendar.findAll();
             return responseHandler.success(res, "Tasks fetched successfully", tasks);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

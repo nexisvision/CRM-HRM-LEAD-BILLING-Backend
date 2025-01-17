@@ -10,22 +10,20 @@ export default {
         }),
         body: Joi.object({
             branchName: Joi.string().required(),
-            department: Joi.string().required(),
-            address: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { branchName, department, address } = req.body;
+            const { branchName } = req.body;
             const branch = await Branch.findByPk(id);
             if (!branch) {
                 return responseHandler.error(res, "Branch not found");
             }
-            await branch.update({ branchName, department, address, updated_by: req.user?.username });
+            await branch.update({ branchName, updated_by: req.user?.username });
             return responseHandler.success(res, "Branch updated successfully", branch);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

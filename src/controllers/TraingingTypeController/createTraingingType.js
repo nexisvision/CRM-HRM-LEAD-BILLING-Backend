@@ -22,7 +22,7 @@ export default {
             }
             return responseHandler.success(res, "Trainging type created successfully", traingingtype);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

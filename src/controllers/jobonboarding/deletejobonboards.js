@@ -25,7 +25,7 @@ export default {
 
             return responseHandler.success(res, "Job onboarding record deleted successfully");
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

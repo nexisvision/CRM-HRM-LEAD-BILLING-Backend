@@ -15,7 +15,7 @@ export default {
             const interviewSchedules = await InterviewSchedule.findAll();
             return responseHandler.success(res, "Interview schedules fetched successfully", interviewSchedules);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

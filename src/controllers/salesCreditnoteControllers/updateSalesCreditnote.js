@@ -27,7 +27,7 @@ export default {
             await salesCreditnote.update({ invoice, date, currency, amount, description, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesCreditnote updated successfully", salesCreditnote);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -19,7 +19,7 @@ export default {
             await job.destroy();
             return responseHandler.success(res, "Job deleted successfully", job);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -30,7 +30,7 @@ export default {
             await customer.update({ name, contact, email, tax_number, alternate_contact, billing_address, shipping_address, updated_by: req.user?.username });
             return responseHandler.success(res, "Customer updated successfully", customer);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

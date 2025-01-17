@@ -68,7 +68,7 @@ export default {
 
             return responseHandler.created(res, "Super admin created successfully", superAdmin);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }; 

@@ -41,7 +41,7 @@ export default {
             return responseHandler.success(res, "Project report updated successfully", updatedProjectReport);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

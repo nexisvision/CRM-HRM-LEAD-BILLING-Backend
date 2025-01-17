@@ -24,7 +24,7 @@ export default {
             await stage.update({ stageName, pipeline, updated_by: req.user.id });
             return responseHandler.success(res, "Stage updated successfully", stage);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

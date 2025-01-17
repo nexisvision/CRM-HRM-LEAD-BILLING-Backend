@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Departments fetched successfully", departments);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 

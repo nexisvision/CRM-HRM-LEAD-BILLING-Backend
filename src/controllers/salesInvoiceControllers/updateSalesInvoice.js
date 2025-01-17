@@ -30,7 +30,7 @@ export default {
             await salesInvoice.update({ customer, issueDate, dueDate, category, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesInvoice updated successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

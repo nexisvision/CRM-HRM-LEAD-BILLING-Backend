@@ -19,7 +19,7 @@ export default {
             await expense.destroy();
             return responseHandler.success(res, "Expense deleted successfully", expense);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

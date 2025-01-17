@@ -49,7 +49,7 @@ export default {
             return responseHandler.success(res, "Client updated successfully", client);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

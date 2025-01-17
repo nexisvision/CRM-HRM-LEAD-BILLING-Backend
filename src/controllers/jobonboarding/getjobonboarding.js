@@ -24,7 +24,7 @@ export default {
             // Return success with all records
             return responseHandler.success(res, "Fetched all job onboarding records successfully", jobOnboardings);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

@@ -88,7 +88,7 @@ export default {
 
             return responseHandler.created(res, "Subscription plan assigned successfully", subscription);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

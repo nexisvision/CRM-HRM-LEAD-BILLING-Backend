@@ -80,7 +80,7 @@ export default {
             return responseHandler.success(res, "Project updated successfully", updatedProject);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

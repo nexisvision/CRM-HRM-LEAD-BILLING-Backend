@@ -19,7 +19,7 @@ export default {
             await leaveType.destroy();
             return responseHandler.success(res, "Leave deleted successfully", leaveType);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

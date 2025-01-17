@@ -24,7 +24,7 @@ export default {
             await interviewSchedule.update({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
             return responseHandler.success(res, "Interview schedule updated successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

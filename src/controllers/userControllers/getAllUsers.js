@@ -15,7 +15,7 @@ export default {
             const users = await User.findAll();
             return responseHandler.success(res, "Users fetched successfully", users);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

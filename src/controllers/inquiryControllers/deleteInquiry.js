@@ -20,7 +20,7 @@ export default {
             await inquiry.destroy();
             return responseHandler.success(res, "Inquiry deleted successfully", inquiry);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

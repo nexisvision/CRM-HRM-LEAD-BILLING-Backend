@@ -32,7 +32,7 @@ export default {
             await proposal.update({ lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "Proposal updated successfully", proposal);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

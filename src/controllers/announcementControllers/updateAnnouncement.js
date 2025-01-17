@@ -26,7 +26,7 @@ export default {
             await announcement.update({ title, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Announcement updated successfully", announcement);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

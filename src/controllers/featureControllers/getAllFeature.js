@@ -16,7 +16,7 @@ export default {
             return responseHandler.success(res, "Features fetched successfully", features);
         }
         catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

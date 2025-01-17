@@ -16,7 +16,7 @@ export default {
             await interviewSchedule.destroy();
             return responseHandler.success(res, "Interview schedule deleted successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

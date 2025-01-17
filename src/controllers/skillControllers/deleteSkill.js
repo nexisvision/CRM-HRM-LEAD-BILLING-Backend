@@ -21,7 +21,7 @@ export default {
             await skill.destroy();
             return responseHandler.success(res, "Skill deleted successfully", skill);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

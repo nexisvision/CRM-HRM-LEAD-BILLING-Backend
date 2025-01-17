@@ -19,7 +19,7 @@ export default {
             }
             return responseHandler.success(res, "Customers fetched successfully", customers);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

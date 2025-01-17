@@ -30,7 +30,7 @@ export default {
             );
             return responseHandler.success(res, "Employee salary created successfully.", existingEmployeeSalary);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

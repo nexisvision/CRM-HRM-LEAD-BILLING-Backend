@@ -89,7 +89,7 @@ export default {
             return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

@@ -21,7 +21,7 @@ export default {
             return responseHandler.success(res, "Plan retrieved successfully", plan);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }; 

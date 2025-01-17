@@ -15,7 +15,7 @@ export default {
             const roles = await Role.findAll();
             return responseHandler.success(res, 'Roles fetched successfully', roles);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

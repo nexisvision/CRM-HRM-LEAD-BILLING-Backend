@@ -20,7 +20,7 @@ export default {
             const jobStages = await JobStages.create({ title, created_by: req.user?.username });
             return responseHandler.success(res, "Job stages created successfully", jobStages);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

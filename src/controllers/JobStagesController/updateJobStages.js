@@ -28,7 +28,7 @@ export default {
             await jobStagesToUpdate.update({ title, created_by: req.user?.username });
             return responseHandler.success(res, "Job category updated successfully", jobStagesToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

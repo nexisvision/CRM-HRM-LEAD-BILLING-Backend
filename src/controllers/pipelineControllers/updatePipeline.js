@@ -35,7 +35,7 @@ export default {
             const updatedPipeline = await pipeline.update({ pipeline_name, updated_by: req.user?.username });
             return responseHandler.success(res, "Pipeline updated successfully", updatedPipeline);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

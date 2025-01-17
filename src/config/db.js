@@ -16,7 +16,7 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
         await sequelize.authenticate();
         console.log('✅ Database connected successfully!');
     } catch (error) {
-        console.error('❌ Database connection failed:', error);
+        console.error('❌ Database connection failed:', error.message);
     }
 })();
 

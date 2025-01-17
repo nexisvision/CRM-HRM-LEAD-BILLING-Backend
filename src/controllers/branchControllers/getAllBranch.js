@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Branches fetched successfully", branches);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

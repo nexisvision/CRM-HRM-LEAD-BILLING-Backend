@@ -19,7 +19,7 @@ export default {
             await branch.destroy();
             return responseHandler.success(res, "Branch deleted successfully", branch);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

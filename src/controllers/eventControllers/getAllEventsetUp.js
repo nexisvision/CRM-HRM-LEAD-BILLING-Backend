@@ -15,7 +15,7 @@ export default {
             const events = await EventSetup.findAll();
             return responseHandler.success(res, "Events fetched successfully", events);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

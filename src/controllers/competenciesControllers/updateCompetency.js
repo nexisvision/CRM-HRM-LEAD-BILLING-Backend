@@ -29,7 +29,7 @@ export default {
             await competencyToUpdate.update({ name, type, updated_by: req.user?.username });
             return responseHandler.success(res, "Competency updated successfully", competencyToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

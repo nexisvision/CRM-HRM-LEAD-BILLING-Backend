@@ -15,7 +15,7 @@ export default {
             const pipeline = await Pipeline.create({ pipeline_name, created_by: req.user?.username, updated_by: req.user?.username });
             return responseHandler.success(res, "Pipeline created successfully", pipeline);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

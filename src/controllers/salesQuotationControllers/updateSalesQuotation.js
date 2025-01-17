@@ -29,7 +29,7 @@ export default {
             await salesQuotation.update({ customer, issueDate, category, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesQuotation updated successfully", salesQuotation);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

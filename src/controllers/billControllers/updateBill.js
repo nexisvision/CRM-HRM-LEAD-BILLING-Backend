@@ -31,7 +31,7 @@ export default {
             await newBill.update({ vendor, billDate, discription, status, discount, tax, total, note, updated_by: req.user?.username });
             return responseHandler.success(res, "Bill updated successfully", newBill);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

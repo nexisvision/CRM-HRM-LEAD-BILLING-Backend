@@ -14,7 +14,7 @@ export default {
             const country = await Country.findByPk(id);
             return responseHandler.success(res, "Country fetched successfully", country);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

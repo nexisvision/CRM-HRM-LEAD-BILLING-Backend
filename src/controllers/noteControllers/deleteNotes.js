@@ -28,7 +28,7 @@ export default {
             });
             return responseHandler.success(res, "Note deleted successfully", note);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

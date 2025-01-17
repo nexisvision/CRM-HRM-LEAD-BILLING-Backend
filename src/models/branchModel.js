@@ -14,14 +14,6 @@ const Branch = sequelize.define('branch', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    department: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    address: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

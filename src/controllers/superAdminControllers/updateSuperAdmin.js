@@ -30,7 +30,7 @@ export default {
             return responseHandler.success(res, "Super admin updated successfully", superAdmin);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

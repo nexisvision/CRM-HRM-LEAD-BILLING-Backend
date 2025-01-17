@@ -21,7 +21,7 @@ export default {
             return responseHandler.success(res, "Tags retrieved successfully", tags);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

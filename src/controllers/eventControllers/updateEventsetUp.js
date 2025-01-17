@@ -25,7 +25,7 @@ export default {
             await event.update({ EventTitle, EventManager, EventDate, EventTime });
             return responseHandler.success(res, "Event updated successfully", event);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }   

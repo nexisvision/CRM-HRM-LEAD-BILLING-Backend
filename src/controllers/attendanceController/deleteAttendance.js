@@ -23,7 +23,7 @@ export default {
             return responseHandler.success(res, "Attendance deleted successfully", attendance);
         } catch (error) {
 
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 };

@@ -19,7 +19,7 @@ export default {
             await ticket.destroy();
             return responseHandler.success(res, "Ticket deleted successfully", ticket);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

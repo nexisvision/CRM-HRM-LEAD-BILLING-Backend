@@ -16,7 +16,7 @@ export default {
             const announcement = await Announcement.create({ title, description, });
             return responseHandler.success(res, "Announcement created successfully", announcement);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
 
     }

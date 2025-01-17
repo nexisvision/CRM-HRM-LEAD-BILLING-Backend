@@ -26,7 +26,7 @@ export default {
             await inquiry.update({ name, email, phone, message });
             return responseHandler.success(res, "Inquiry updated successfully", inquiry);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }
