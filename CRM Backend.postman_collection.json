@@ -314,14 +314,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkxucDI2QnNUODhsYlBiQkFubzB5YkdEIiwidXNlcm5hbWUiOiJncmV3b3gxMDAxIiwiZW1haWwiOiJncmV3b3gxMDAxQHlvcG1haWwuY29tIiwicm9sZV9pZCI6IllRU2swTFBRR3lzU0M1bWpIQjFOYjFDIiwicGFzc3dvcmQiOiIkMmIkMTIkSXRraFhZZkVBNTdnN1VQZFZkZXh4T0JRZWdzRFJNY3AyM1RBcWp2SFMvWlUveFNMUUdMdEsiLCJ2ZXJpZmljYXRpb25PVFAiOiIyNTI1MzciLCJ2ZXJpZmljYXRpb25PVFBFeHBpcnkiOjE3MzY5MjE2NDQ4MzEsInR5cGUiOiJzaWdudXBfdmVyaWZpY2F0aW9uIiwiaWF0IjoxNzM2OTIxMzQ0LCJleHAiOjE3MzY5MjIyNDR9.tcX7Hl02CaLihNDxQ--P2KigC6z60JJrHO5pEm5h9oo"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5IiwidXNlcm5hbWUiOiJncmV3b3hlbXAxIiwiZW1haWwiOiJncmV3b3hlbXAxQHlvcG1haWwuY29tIiwicm9sZV9pZCI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwicGFzc3dvcmQiOiIkMmIkMTIkS2lEa3R2MFFwaURJeFNOTEswVGVPZTAuUUtvTHllRU5rOEthTXhha3M3V25MclM5eVJYQ1MiLCJmaXJzdE5hbWUiOiJKb2huIiwibGFzdE5hbWUiOiJEb2UiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJhZGRyZXNzIjoiMTIzIE1haW4gU3QiLCJqb2luaW5nRGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImxlYXZlRGF0ZSI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImJyYW5jaCI6Ik5ldyBZb3JrIiwiZGVwYXJ0bWVudCI6IkVuZ2luZWVyaW5nIiwiZGVzaWduYXRpb24iOiJTb2Z0d2FyZSBFbmdpbmVlciIsInNhbGFyeSI6NzUwMDAsImFjY291bnRob2xkZXIiOiJKb2huIERvZSIsImFjY291bnRudW1iZXIiOjEyMzQ1Njc4OTAsImJhbmtuYW1lIjoiQUJDIEJhbmsiLCJpZnNjIjoxMjM0NTYsImJhbmtsb2NhdGlvbiI6Ik5ldyBZb3JrIiwiZV9zaWduYXR1cmVzIjp7InNpZ25hdHVyZUZpbGUiOiJwYXRoL3RvL3NpZ25hdHVyZS9maWxlIiwiZGF0ZVNpZ25lZCI6IjIwMjUtMDEtMDFUMDA6MDA6MDBaIn0sImRvY3VtZW50cyI6eyJkb2N1bWVudFR5cGUiOiJJRCBQcm9vZiIsImRvY3VtZW50RmlsZSI6InBhdGgvdG8vaWQvcHJvb2YifSwibGlua3MiOnsicG9ydGZvbGlvIjoiaHR0cDovL2pvaG5zcG9ydGZvbGlvLmNvbSIsImxpbmtlZGluIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2pvaG5kb2UifSwidmVyaWZpY2F0aW9uT1RQIjoiMDA4Mzk5IiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM3MDk0NzM2NjcwLCJjcmVhdGVkX2J5IjoiZ3Jld294MTAwMSIsImNsaWVudFN1YnNjcmlwdGlvbiI6eyJpZCI6InROM1NCV25OeG9oMTZUTmVoYVhXOUlBIiwiY2xpZW50X2lkIjoiZzZBSmhidUYxNDJ6Sm8zR2ZQb0dIVTkiLCJwbGFuX2lkIjoiMHlYcUM0d2RxMUtQRHVsdjV4TmNxWEoiLCJzdGFydF9kYXRlIjoiMjAyNS0wMS0wMVQwMDowMDowMC4wMDBaIiwiZW5kX2RhdGUiOiIyMDI1LTAxLTMwVDAwOjAwOjAwLjAwMFoiLCJzdGF0dXMiOiJhY3RpdmUiLCJjdXJyZW50X3N0b3JhZ2VfdXNlZCI6MCwiY3VycmVudF91c2Vyc19jb3VudCI6MCwiY3VycmVudF9jbGllbnRzX2NvdW50IjowLCJwYXltZW50X3N0YXR1cyI6InVucGFpZCIsImxhc3RfcGF5bWVudF9kYXRlIjpudWxsLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTdUMDY6MDc6NDcuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTdUMDY6MDc6NDcuMDAwWiJ9LCJwbGFuIjp7ImlkIjoiMHlYcUM0d2RxMUtQRHVsdjV4TmNxWEoiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTdUMDQ6NTY6MjQuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTdUMDQ6NTY6MjQuMDAwWiJ9LCJ0eXBlIjoic2lnbnVwX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTczNzA5NDQzNiwiZXhwIjoxNzM3MDk1MzM2fQ.0K-ZYR13yG38ydHUscVHHEBcO0gPEVOj_uAVtIqvwNs"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"otp\":\"252537\"\r\n}",
+							"raw": "{\r\n        \"otp\":\"008399\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -424,7 +424,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjkyMTMzMSwiZXhwIjoxNzM3MDA3NzMxfQ.ozYKTOuS_QxfBlhfvIZGiqX8PO9sx2TnqayywZY5PdI"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
 							}
 						},
 						"method": "POST",
@@ -573,7 +573,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiRzZmYlhHUWVWZEFQSEY4VXlUQVh2TWwiLCJyb2xlIjoiN0REaTF2TXFaYXk0Q29BN0RVWFpRWGUiLCJpYXQiOjE3MzY3NDU2NDMsImV4cCI6MTczNjgzMjA0M30.dY7GKU9SpsWI43QiTLlIFo8gAmiXF6HGrtFWlubfB6w"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6InU3RU94RlhuYXhyZ2pXYmN4QzdobEQxIiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDkwMDYzLCJleHAiOjE3MzcxNzY0NjN9.vDN8LbU9XnxlNbciukLe6Ne_yqACnarLbg-r11UA9iM"
 							}
 						},
 						"method": "POST",
@@ -611,27 +611,15 @@
 				},
 				{
 					"name": "Get All Sub Clients (Client)",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6InU3RU94RlhuYXhyZ2pXYmN4QzdobEQxIiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDkwMDYzLCJleHAiOjE3MzcxNzY0NjN9.vDN8LbU9XnxlNbciukLe6Ne_yqACnarLbg-r11UA9iM"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"username\": \"testuser123\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"SecurePass123!\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"username\": \"john_doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"JohnDoe@123\"\n}\n\n{\n    \"username\": \"alice_smith\",\n    \"email\": \"alice.smith@example.com\",\n    \"password\": \"Alice#123456\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Missing Username\n{\n    \"email\": \"test@example.com\",\n    \"password\": \"Password123!\"\n}\n\n// 2. Invalid Email Format\n{\n    \"username\": \"testuser\",\n    \"email\": \"invalid.email\",\n    \"password\": \"Password123!\"\n}\n\n// 3. Password Too Short (less than 8 characters)\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass123\"\n}\n\n// 4. Password With Invalid Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"Pass{}[]123\"\n}\n\n// 5. Missing Password\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}\n\n// 6. Password Exceeding 30 Characters\n{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"ThisPasswordIsWayTooLongAndExceeds30Characters123!\"\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": "{{base}}/sub-clients"
 					},
 					"response": []
@@ -693,7 +681,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJTMTBLZmFXRTI5UjB4b0g1Q3ZndEtneCIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTc5OTIyNywiZXhwIjoxNzM1ODg1NjI3fQ.R8Z85ZYgJvGE1ee9EPBLMECWwnrIoLCkmDJYybGBbAA"
+								"token": ""
 							}
 						},
 						"method": "DELETE",
@@ -707,7 +695,22 @@
 								}
 							}
 						},
-						"url": "{{base}}/sub-clients/KgzB6DXo5Y7egUNn9RpQEl4"
+						"url": {
+							"raw": "{{base}}/deduction/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"deduction",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -1017,449 +1020,3731 @@
 			]
 		},
 		{
-			"name": "Employees",
+			"name": "HRM system",
 			"item": [
 				{
-					"name": "Create Employee (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY3NjIzMTQsImV4cCI6MTczNjg0ODcxNH0.E1NuqztXR9Iyt5k4Deb2Z7c15W3_q73K5P629OVKiUg"
-							}
+					"name": "Branch",
+					"item": [
+						{
+							"name": "create-Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNDQxOSwiZXhwIjoxNzM3MDkwODE5fQ.tf1-tzc_3HCeSKu7qJOYZsTNWRxW9zLN8VCjZ4KWXWk"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"branchName\": \"Main Branch\",\r\n  \"department\": \"Sales\",\r\n  \"address\": \"123 Main Street, City, Country\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/branches"
+							},
+							"response": []
 						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"grewox113\",\n    \"email\": \"grewox113@yopmail.com\",\n    \"password\": \"Alice#123456\"\n}\n\n",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "Get All Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNDQxOSwiZXhwIjoxNzM3MDkwODE5fQ.tf1-tzc_3HCeSKu7qJOYZsTNWRxW9zLN8VCjZ4KWXWk"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/branches"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNDQxOSwiZXhwIjoxNzM3MDkwODE5fQ.tf1-tzc_3HCeSKu7qJOYZsTNWRxW9zLN8VCjZ4KWXWk"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/branches/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"branches",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": "{{base}}/employees"
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\n{\n    \"login\": \"grewox113@yopmail.com\",\n    \"password\": \"Yash@2525\"\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "Update Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNDQxOSwiZXhwIjoxNzM3MDkwODE5fQ.tf1-tzc_3HCeSKu7qJOYZsTNWRxW9zLN8VCjZ4KWXWk"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"branchName\": \"Main\",\r\n  \"department\": \"Sales\",\r\n  \"address\": \"123 Main Street, City, Country\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/branches/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"branches",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							}
-						},
-						"url": "{{base}}/auth/login"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Employees (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/employees"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Employee By ID (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/employees/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"employees",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Update Employee (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+					"name": "Departments",
+					"item": [
+						{
+							"name": "Create Department",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branch\": \"UK\",  // Example: branch as a country (could also be 'Canada', 'India', etc.)\n  \"department_name\": \"Sales\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/departments"
+							},
+							"response": []
 						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Update Test Case\n{\n    \"username\": \"updated_user\",\n    \"email\": \"updated@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"+1234567890\",\n    \"profilePic\": \"https://example.com/profile.jpg\"\n}\n\n// Test Cases with Partial Updates\n/*\n// Update username only\n{\n    \"username\": \"new_username123\"\n}\n\n// Update contact info\n{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"+9876543210\"\n}\n\n// Update email only\n{\n    \"email\": \"newemail@example.com\"\n}\n\n// Update profile picture\n{\n    \"profilePic\": \"https://example.com/new-avatar.jpg\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Username too short\n{\n    \"username\": \"ab\"  // Less than 3 characters\n}\n\n// 2. Username too long\n{\n    \"username\": \"thisusernameiswaytoolongandexceedsthirtychars\"\n}\n\n// 3. Invalid Email Format\n{\n    \"email\": \"invalid.email@\"\n}\n\n// 4. Invalid Phone Format\n{\n    \"phone\": \"not-a-phone\"\n}\n\n// 5. Invalid Profile Picture URL\n{\n    \"profilePic\": \"not-a-valid-url\"\n}\n\n// 6. Empty Fields\n{\n    \"firstName\": \"\",\n    \"lastName\": \"\"\n}\n\n// 7. Multiple Field Update with Some Invalid\n{\n    \"username\": \"ab\",  // too short\n    \"email\": \"invalid@\",  // invalid email\n    \"firstName\": \"John\",  // valid\n    \"phone\": \"+1234567890\"  // valid\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+						{
+							"name": "Get All Departments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/departments"
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{base}}/employees/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"employees",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get Department By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/departments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"departments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Department By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branch\": \"Spain\",  // Example: branch as a country (could also be 'Canada', 'India', etc.)\n  \"department_name\": \"Sales\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/departments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"departments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Department By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/departments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"departments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete Employee (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+					"name": "Designation",
+					"item": [
+						{
+							"name": "Create Designation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branch\": \"USA\",  // Example: branch name\n  \"department\": \"Sales\",    // Example: department name\n  \"designation_name\": \"Manager\"  // Example: designation name\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/designations"
+							},
+							"response": []
 						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/employees/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"employees",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get All Designation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/designations"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Designation By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/designations/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"designations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Designation By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branch\": \"IND\",  // Example: branch name\n  \"department\": \"Sales\",    // Example: department name\n  \"designation_name\": \"Manager\"  // Example: designation name\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/designations/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"designations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Designation By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/designations/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"designations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Departments",
-			"item": [
-				{
-					"name": "Create Department (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Test Case\n{\n    \"department_name\": \"Human Resources\",\n    \"description\": \"Manages employee relations and recruitment processes\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"department_name\": \"Information Technology\",\n    \"description\": \"Handles all IT infrastructure and support\"\n}\n\n{\n    \"department_name\": \"Finance\",\n    \"description\": \"Manages company financial operations\"\n}\n\n{\n    \"department_name\": \"Marketing\",\n    \"description\": null\n}\n\n{\n    \"department_name\": \"Sales\"\n    // Description is optional, so it can be omitted\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Department Name Too Short\n{\n    \"department_name\": \"I\",\n    \"description\": \"Invalid department name\"\n}\n\n// 2. Department Name Too Long\n{\n    \"department_name\": \"This Department Name Is Way Too Long And Exceeds Fifty Characters Limit\",\n    \"description\": \"Invalid due to length\"\n}\n\n// 3. Department Name with Numbers\n{\n    \"department_name\": \"Department123\",\n    \"description\": \"Invalid due to numbers\"\n}\n\n// 4. Department Name with Special Characters\n{\n    \"department_name\": \"HR & Admin\",\n    \"description\": \"Invalid due to special characters\"\n}\n\n// 5. Empty Department Name\n{\n    \"department_name\": \"\",\n    \"description\": \"Empty name is not allowed\"\n}\n\n// 6. Missing Department Name\n{\n    \"description\": \"Department name is required\"\n}\n\n// 7. Department Name with Only Spaces\n{\n    \"department_name\": \"   \",\n    \"description\": \"Invalid input\"\n}\n\n// 8. Department Name with Leading/Trailing Spaces\n{\n    \"department_name\": \" Marketing \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 9. Non-String Values\n{\n    \"department_name\": 12345,\n    \"description\": true\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/departments"
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get All Departments (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+					"name": "Leave Type",
+					"item": [
+						{
+							"name": "Create Leave Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"leaveType\": \"Casual\",  // A valid leave type (string)\r\n  \"daysPerYear\": 12           // A valid number for days per year (number)\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/leave-types"
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/departments"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Department By ID (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+						{
+							"name": "Get All Leave Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/leave-types"
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/departments/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"departments",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get Leave Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/leave-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leave-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Leave Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"leaveType\": \"Sick\",  // A valid leave type (string)\r\n  \"daysPerYear\": 12           // A valid number for days per year (number)\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/leave-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leave-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Leave Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/leave-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leave-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Update Department (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+					"name": "Document Type",
+					"item": [
+						{
+							"name": "Create Document Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Certificate\",  // A valid name (string)\r\n  \"isRequired\": true    // A valid boolean (true)\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/document-types"
+							},
+							"response": []
 						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Update Test Case\n{\n    \"department_name\": \"Human Resources Updated\",\n    \"description\": \"Updated: Managing employee relations, recruitment, and development\"\n}\n\n// Test Cases with Different Valid Updates\n/*\n// Full Update\n{\n    \"department_name\": \"Information Technology Services\",\n    \"description\": \"Updated IT services and infrastructure management\"\n}\n\n// Update Name Only\n{\n    \"department_name\": \"Finance and Accounting\"\n}\n\n// Update Description Only\n{\n    \"description\": \"Updated department description and responsibilities\"\n}\n\n// Clear Description\n{\n    \"description\": \"\"\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Department Name Too Short\n{\n    \"department_name\": \"A\",\n    \"description\": \"Invalid name length\"\n}\n\n// 2. Department Name Too Long\n{\n    \"department_name\": \"This Updated Department Name Is Extremely Long And Definitely Exceeds The Fifty Character Limit\",\n    \"description\": \"Invalid due to name length\"\n}\n\n// 3. Invalid Characters in Name\n{\n    \"department_name\": \"HR & Operations 2024\",\n    \"description\": \"Contains invalid characters\"\n}\n\n// 4. Numbers and Special Characters\n{\n    \"department_name\": \"Department#1\",\n    \"description\": \"Invalid characters in name\"\n}\n\n// 5. Only Spaces in Name\n{\n    \"department_name\": \"    \",\n    \"description\": \"Invalid name format\"\n}\n\n// 6. Empty Name\n{\n    \"department_name\": \"\",\n    \"description\": \"Name cannot be empty\"\n}\n\n// 7. Name with Leading/Trailing Spaces\n{\n    \"department_name\": \" Marketing Department \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 8. Non-String Values\n{\n    \"department_name\": 12345,\n    \"description\": true\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+						{
+							"name": "Get All Document Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/document-types"
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{base}}/departments/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"departments",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get Document Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/document-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"document-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Document Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Image\",  // A valid name (string)\r\n  \"isRequired\": true    // A valid boolean (true)\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/document-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"document-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Document Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/document-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"document-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete Department (Client)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
-							}
+					"name": "Payslip Type",
+					"item": [
+						{
+							"name": "Create Payslip Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Monthly\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/payslip-types"
+							},
+							"response": []
 						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/departments/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"departments",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get All Payslip Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/payslip-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payslip Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/payslip-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"payslip-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Payslip Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Monthly\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/payslip-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"payslip-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Payslip Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/payslip-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"payslip-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Designations",
-			"item": [
-				{
-					"name": "Create Designation",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Test Cases\n{\n    \"designation_name\": \"Software Engineer\",\n    \"description\": \"Develops and maintains software applications\"\n}\n\n// Test Cases with Different Valid Formats\n/*\n{\n    \"designation_name\": \"Project Manager\",\n    \"description\": \"Manages project timelines and team coordination\"\n}\n\n{\n    \"designation_name\": \"Senior Developer\",\n    \"description\": \"Leads development initiatives and mentors junior developers\"\n}\n\n{\n    \"designation_name\": \"Team Lead\",\n    \"description\": null\n}\n\n{\n    \"designation_name\": \"Developer\"\n    // Description is optional, so it can be omitted\n}\n*/\n\n// Invalid Test Cases\n/*\n// 1. Designation Name Too Short\n{\n    \"designation_name\": \"A\",\n    \"description\": \"Invalid designation name\"\n}\n\n// 2. Designation Name Too Long\n{\n    \"designation_name\": \"Senior Principal Software Architecture Development Team Lead Engineer\",\n    \"description\": \"Invalid due to length\"\n}\n\n// 3. Designation Name with Numbers\n{\n    \"designation_name\": \"Developer2\",\n    \"description\": \"Invalid due to numbers\"\n}\n\n// 4. Designation Name with Special Characters\n{\n    \"designation_name\": \"Sr. Developer\",\n    \"description\": \"Invalid due to special characters\"\n}\n\n// 5. Empty Designation Name\n{\n    \"designation_name\": \"\",\n    \"description\": \"Empty name is not allowed\"\n}\n\n// 6. Missing Designation Name\n{\n    \"description\": \"Designation name is required\"\n}\n\n// 7. Designation Name with Only Spaces\n{\n    \"designation_name\": \"   \",\n    \"description\": \"Invalid input\"\n}\n\n// 8. Designation Name with Leading/Trailing Spaces\n{\n    \"designation_name\": \" Developer \",\n    \"description\": \"Should be trimmed\"\n}\n\n// 9. Non-String Values\n{\n    \"designation_name\": 12345,\n    \"description\": true\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/designations"
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get All Designations",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
-							}
+					"name": "Allowance Option",
+					"item": [
+						{
+							"name": "Create Allowance Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Non Taxable\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/allowance-options"
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/designations"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Designation By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
-							}
+						{
+							"name": "Get All Allowance Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/allowance-options"
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/designations/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"designations",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get Allowance Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/allowance-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"allowance-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Allowance Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Non Taxable\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/allowance-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"allowance-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Allowance Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base}}/allowance-options/16zESk1ds9VMiSqkFWkYfnT"
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Update Designation",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
-							}
+					"name": "Loan Option",
+					"item": [
+						{
+							"name": "Create Loan Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Personal Loan\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/loan-options"
+							},
+							"response": []
 						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Update Test Cases\n{\n    \"designation_name\": \"Senior Software Engineer\",\n    \"description\": \"Updated role for experienced developers\"\n}\n\n// Test Cases with Different Valid Updates\n/*\n// 1. Update only designation name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Technical Lead\"\n}\n\n// 2. Update only description\n{\n    \"id\": \"65f97a3b12345\",\n    \"description\": \"New role description for technical leadership\"\n}\n\n// 3. Update both fields\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Solutions Architect\",\n    \"description\": \"Designs system architecture and technical solutions\"\n}\n\n// 4. Clear description (set to null)\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Product Manager\",\n    \"description\": null\n}\n*/\n\n// Invalid Update Test Cases\n/*\n// 1. Invalid ID Format\n{\n    \"id\": \"invalid-id\",\n    \"designation_name\": \"Team Lead\"\n}\n\n// 2. Non-existent ID\n{\n    \"id\": \"65f97a3b99999\",\n    \"designation_name\": \"Team Lead\"\n}\n\n// 3. Missing ID\n{\n    \"designation_name\": \"Team Lead\",\n    \"description\": \"Required ID field is missing\"\n}\n\n// 4. Invalid Designation Name Format\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Team Lead 123\"  // Numbers not allowed\n}\n\n// 5. Designation Name Too Short\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"T\"\n}\n\n// 6. Designation Name Too Long\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Senior Principal Software Architecture Development Team Lead Engineer Manager\"\n}\n\n// 7. Special Characters in Name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Team Lead & Manager\"\n}\n\n// 8. Empty Update (No Changes)\n{\n    \"id\": \"65f97a3b12345\"\n}\n\n// 9. Invalid Data Types\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": 12345,\n    \"description\": true\n}\n\n// 10. Duplicate Designation Name\n{\n    \"id\": \"65f97a3b12345\",\n    \"designation_name\": \"Software Engineer\"  // Assuming this already exists\n}\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+						{
+							"name": "Get All Loan Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/loan-options"
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{base}}/designations/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"designations",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get Loan Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/loan-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Loan Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Personal Loan\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/loan-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Loan Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/loan-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete Designation",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJ5MmdLRDNUeHJ3OU1Xdk1xZE1MWlMzTSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxNDA4MzUsImV4cCI6MTczNTIyNzIzNX0.Qew9ewpTroFf4wWl1j--DtyGiJQ-FIXqSv2MRMp4It0"
-							}
+					"name": "Deducation Option",
+					"item": [
+						{
+							"name": "Create Deducation Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Mutual Fund\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/deduction-options"
+							},
+							"response": []
 						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/designations/:id",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"designations",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+						{
+							"name": "Get All Deducation Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/deduction-options"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Deducation Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/deduction-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Update Deducation Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Mutual\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/deduction-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Deducation Option By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/deduction-options/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction-options",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "Goal Type",
+					"item": [
+						{
+							"name": "Create Goal Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"MV\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/goal-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Goal Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/goal-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Goal Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/goal-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"goal-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Goal Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/goal-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"goal-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Goal Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/goal-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"goal-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Trainging Type",
+					"item": [
+						{
+							"name": "Create Trainging Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"emop Training\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/training-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Trainging Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/training-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Trainging Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/training-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"training-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Trainging Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/training-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"training-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Trainging Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/training-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"training-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Award Type",
+					"item": [
+						{
+							"name": "Create Award Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"best No 1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/award-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Award Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/award-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Award Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/award-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"award-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Award Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/award-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"award-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Award Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/award-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"award-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Termination Type",
+					"item": [
+						{
+							"name": "Create Termination Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/termination-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Termination Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/termination-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Termination Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/termination-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"termination-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Termination Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/termination-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"termination-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Termination Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/termination-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"termination-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Category",
+					"item": [
+						{
+							"name": "Create Job Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/job-categories"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Job Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/job-categories"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Category By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-categories/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Job Category By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/job-categories/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Job Category By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-categories/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Stages",
+					"item": [
+						{
+							"name": "Create Job Stages",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/job-stages"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Job Stages",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/job-stages"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Stages By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-stages/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-stages",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Job Stages By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/job-stages/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-stages",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Job Stages  By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-stages/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-stages",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Performance Type",
+					"item": [
+						{
+							"name": "Create Performance Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/performance-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Performance Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/performance-types"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Performance Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/performance-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"performance-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Performance Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/performance-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"performance-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Performance Type By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/performance-types/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"performance-types",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Competency",
+					"item": [
+						{
+							"name": "Create Competency",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test11\",\r\n    \"type\":\"abcd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/competencies"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Competency",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/competencies"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Competency By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/competencies/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"competencies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Competency By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test TT\",\r\n    \"type\":\"test TT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/competencies/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"competencies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Competency By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJOVFhWNnROOTdZVzFHcjhPQ1R3SjRtMCIsInJvbGUiOiIzazlrZExiOTJZUTlJWmVnNzRqTVhqTSIsImlhdCI6MTczNzAwNTI5MywiZXhwIjoxNzM3MDkxNjkzfQ.iSxHYQvcJuN76ImskZGtWEE_WTJu8o8o7RDRfkzYNrM"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/competencies/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"competencies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employees",
+					"item": [
+						{
+							"name": "Create Employee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDk0MTIxLCJleHAiOjE3MzcxODA1MjF9.1Qz1oH0aB5UsvJxNAHtjPGXAkO_E0MEZ6jXIBQt4sL8"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"grewoxemp1\",\n    \"email\": \"grewoxemp1@yopmail.com\",\n    \"password\": \"Password123!\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"1234567890\",\n    \"address\": \"123 Main St\",\n    \"joiningDate\": \"2025-01-01T00:00:00Z\",\n    \"leaveDate\": \"2026-01-01T00:00:00Z\",\n    \"branch\": \"New York\",\n    \"department\": \"Engineering\",\n    \"designation\": \"Software Engineer\",\n    \"salary\": 75000,\n    \"accountholder\": \"John Doe\",\n    \"accountnumber\": 1234567890,\n    \"bankname\": \"ABC Bank\",\n    \"ifsc\": 123456,\n    \"banklocation\": \"New York\",\n    \"e_signatures\": {\n        \"signatureFile\": \"path/to/signature/file\",\n        \"dateSigned\": \"2025-01-01T00:00:00Z\"\n    },\n    \"documents\": {\n        \"documentType\": \"ID Proof\",\n        \"documentFile\": \"path/to/id/proof\"\n    },\n    \"links\": {\n        \"portfolio\": \"http://johnsportfolio.com\",\n        \"linkedin\": \"https://www.linkedin.com/in/johndoe\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n    \"login\": \"grewoxemp1@yopmail.com\",\n    \"password\": \"Password123!\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Employees",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJBNnoxVGIydEp0dTU4MHV4b3o0cnhEaCIsInJvbGUiOiJjYzlqR3poVUZqSW5xOFEwU2h3aUpjZyIsImlhdCI6MTczNjM5NjgxMiwiZXhwIjoxNzM2NDgzMjEyfQ.7pan25b-1bPtCzmjG6NnUX7v8xAjAKxqVP1h0k0RLD4"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employee By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/employees/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDk0MTIxLCJleHAiOjE3MzcxODA1MjF9.1Qz1oH0aB5UsvJxNAHtjPGXAkO_E0MEZ6jXIBQt4sL8"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"grewoxemp1\",\n    \"email\": \"grewoxemp1@yopmail.com\",\n    \"password\": \"Password123!\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"1234567890\",\n    \"address\": \"123 Main St\",\n    \"gender\":\"male\",\n    \"joiningDate\": \"2025-01-01T00:00:00Z\",\n    \"leaveDate\": \"2026-01-01T00:00:00Z\",\n    \"branch\": \"New York\",\n    \"department\": \"Engineering\",\n    \"designation\": \"Software Engineer\",\n    \"salary\": 75000,\n    \"accountholder\": \"John Doe\",\n    \"accountnumber\": 1234567890,\n    \"bankname\": \"ABC Bank\",\n    \"ifsc\": 123456,\n    \"banklocation\": \"New York\",\n    \"e_signatures\": {\n        \"signatureFile\": \"path/to/signature/file\",\n        \"dateSigned\": \"2025-01-01T00:00:00Z\"\n    },\n    \"documents\": {\n        \"documentType\": \"ID Proof\",\n        \"documentFile\": \"path/to/id/proof\"\n    },\n    \"links\": {\n        \"portfolio\": \"http://johnsportfolio.com\",\n        \"linkedin\": \"https://www.linkedin.com/in/johndoe\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/employees/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Employee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOiJhdDhSUGJGbzM3MWJra2ZiaFFQQnl1cSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3MzUxMjk3NzcsImV4cCI6MTczNTIxNjE3N30.2gaDlaQw5UztaUETixNSGwStxeca25NqSQLmkyA2hIU"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/employees/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Leaves",
+					"item": [
+						{
+							"name": "Apply Leave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MDk0NTczLCJleHAiOjE3MzcxODA5NzN9.No7TP7ELhF2szlNadnqL48CzSs7AVBMxGY45rLdBAis"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": \"EMP123\",\n  \"startDate\": \"2025-01-10\",\n  \"endDate\": \"2025-01-10\",\n  \"leaveType\": \"sick\",\n  \"reason\": \"Feeling unwell\",\n  \"isHalfDay\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/leaves"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Leave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/leaves"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Leave By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/leaves/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leaves",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Leave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MDk0NTczLCJleHAiOjE3MzcxODA5NzN9.No7TP7ELhF2szlNadnqL48CzSs7AVBMxGY45rLdBAis"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": \"EMP123\",\n  \"startDate\": \"2025-01-10\",\n  \"endDate\": \"2025-01-10\",\n  \"leaveType\": \"sick\",\n  \"reason\": \"Feeling unwell\",\n  \"isHalfDay\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/leaves/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leaves",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Leave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/leaves/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"leaves",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve/Reject Leave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDk0MTIxLCJleHAiOjE3MzcxODA1MjF9.1Qz1oH0aB5UsvJxNAHtjPGXAkO_E0MEZ6jXIBQt4sL8"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/leaves/approve/a04GwtXtals99iO5TgoPHic"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Salary",
+					"item": [
+						{
+							"name": "Create Salary",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"payslipType\": \"Monthly\",\r\n  \"currency\":\"USD\",\r\n  \"salary\": \"5000\",\r\n  \"netSalary\":\"600000\",\r\n  \"bankAccount\": \"1234567890\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/salary"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Salary",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/salary"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Salary By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/salary/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"salary",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Salary By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"paid\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/salary/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"salary",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Salary By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/salary/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"salary",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Allowance",
+					"item": [
+						{
+							"name": "Create Allowance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"allowanceOption\": \"Non Taxable\",\r\n  \"title\": \"Salary Payment\",\r\n  \"type\": \"Credit\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/allowance"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Allowance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/allowance"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Allowance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/allowance/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"allowance",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Allowance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"allowanceOption\": \"Taxable\",\r\n  \"type\": \"Credit\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 50000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/allowance/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"allowance",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Allowance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/allowance/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"allowance",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Commission",
+					"item": [
+						{
+							"name": "Create Commission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Base Salary Plus Commission\",\r\n  \"type\": \"Fixed\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/commission"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Commission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/commission"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Commission By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/commission/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"commission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Commission By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Base Commission\",\r\n  \"type\": \"Credit\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 50000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/commission/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"commission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Commission By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/commission/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"commission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Loan",
+					"item": [
+						{
+							"name": "Create Loan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"loanOption\": \"Non Taxable\",\r\n  \"title\": \"Emergency Loan\",\r\n  \"type\": \"Percentage\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000,\r\n  \"reason\":\"Just ese HIIII\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/loan"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Loan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/loan"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Loan By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/loan/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Loan By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"loanOption\": \"Taxable\",\r\n  \"title\": \"Emergency Loan\",\r\n  \"type\": \"Percentage\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000,\r\n  \"reason\":\"Just ese HIIII\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/loan/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Loan By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/loan/:Id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"loan",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deduction",
+					"item": [
+						{
+							"name": "Create Deduction",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"deductionOption\": \"Social Security System\",\r\n  \"title\": \"Emergency Loan\",\r\n  \"type\": \"Percentage\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/deduction"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Deduction",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/deduction"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Deduction By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/deduction/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Deduction By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"deductionOption\": \"Security System\",\r\n  \"title\": \"Emergency Loan\",\r\n  \"type\": \"Percentage\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/deduction/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Deduction By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/deduction/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"deduction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Other Payment",
+					"item": [
+						{
+							"name": "Create Other Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Other Payment\",\r\n  \"type\": \"Fixed\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 5000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/other-payments"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Other Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/other-payments"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Other Payment By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/other-payments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"other-payments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Other Payment By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Eating Payment\",\r\n  \"type\": \"Fixed\",\r\n  \"currency\": \"USD\",\r\n  \"amount\": 50\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/other-payments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"other-payments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Other Payment By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/other-payments/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"other-payments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Over Time",
+					"item": [
+						{
+							"name": "Create Over Time",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Consulting Work\",\r\n  \"days\": 10,\r\n  \"Hours\": 8,\r\n  \"rate\": 50\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/overtime"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Over Time",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/overtime"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Over Time By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/overtime/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"overtime",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Over Time By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Consulting\",\r\n  \"days\": 10,\r\n  \"Hours\": 8,\r\n  \"rate\": 50\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/overtime/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"overtime",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Over Time By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/overtime/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"overtime",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -1663,113 +4948,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Leaves",
-			"item": [
-				{
-					"name": "Apply Leave",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"employeeId\": \"EMP123\",\n  \"startDate\": \"2025-01-10\",\n  \"endDate\": \"2025-01-10\",\n  \"leaveType\": \"sick\",\n  \"reason\": \"Feeling unwell\",\n  \"status\": \"pending\",\n  \"isHalfDay\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/leaves"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Leave",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/leaves"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Leave By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/leaves/LtupGG2mhpeTvPbCtUJiUug"
-					},
-					"response": []
-				},
-				{
-					"name": "Approve/Reject Leave",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/leaves/UyEVlX6VuOt2L9zRILpYE9V"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Leave",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTgyMDQwMiwiZXhwIjoxNzM1OTA2ODAyfQ.xW1qhv43A3tC0Ji1mSfMeMKEe2hF8o_bsqI1qxvcPjo"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\"status\": \"approved\", \n  \"remarks\": \"Leave approved.\" \n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/leaves/UyEVlX6VuOt2L9zRILpYE9V"
 					},
 					"response": []
 				}
@@ -1990,14 +5168,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjc2MjE2MCwiZXhwIjoxNzM2ODQ4NTYwfQ.FzJqr0SXW_vWkOBCUbGpCcSTLP7Eow91IsG5eujWEvU"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// {\r\n//   \"name\": \"Basic\",\r\n//   \"price\": 9.99,\r\n//   \"duration\": \"Per Month\", \r\n//   \"trial_period\": 7,\r\n//   \"max_users\": 5,\r\n//   \"max_clients\": 10,\r\n//   \"storage_limit\": 10, \r\n//   \"features\": { \r\n//     \"feature1\": true, \r\n//     \"feature2\": false \r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\" \r\n// }\r\n\r\n// {\r\n//   \"name\": \"Standard\",\r\n//   \"price\": 19.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 14,\r\n//   \"max_users\": 15,\r\n//   \"max_clients\": 30,\r\n//   \"storage_limit\": 50,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"name\": \"Premium\",\r\n//   \"price\": 49.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 50,\r\n//   \"max_clients\": 100,\r\n//   \"storage_limit\": 200,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n// {\r\n//   \"name\": \"Enterprise\",\r\n//   \"price\": 99.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 200,\r\n//   \"max_clients\": 500,\r\n//   \"storage_limit\": 1000,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true,\r\n//     \"feature6\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n",
+							"raw": "{\r\n  \"name\": \"Basic\",\r\n  \"price\": 9.99,\r\n  \"duration\": \"Per Month\", \r\n  \"trial_period\": 7,\r\n  \"max_users\": 5,\r\n  \"max_clients\": 10,\r\n  \"storage_limit\": 10, \r\n  \"features\": { \r\n    \"feature1\": true, \r\n    \"feature2\": false \r\n  },\r\n  \"status\": \"active\",\r\n  \"currency\": \"USD\" \r\n}\r\n\r\n// {\r\n//   \"name\": \"Standard\",\r\n//   \"price\": 19.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 14,\r\n//   \"max_users\": 15,\r\n//   \"max_clients\": 30,\r\n//   \"storage_limit\": 50,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"name\": \"Premium\",\r\n//   \"price\": 49.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 50,\r\n//   \"max_clients\": 100,\r\n//   \"storage_limit\": 200,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n// {\r\n//   \"name\": \"Enterprise\",\r\n//   \"price\": 99.99,\r\n//   \"duration\": \"Per Month\",\r\n//   \"trial_period\": 30,\r\n//   \"max_users\": 200,\r\n//   \"max_clients\": 500,\r\n//   \"storage_limit\": 1000,\r\n//   \"features\": {\r\n//     \"feature1\": true,\r\n//     \"feature2\": true,\r\n//     \"feature3\": true,\r\n//     \"feature4\": true,\r\n//     \"feature5\": true,\r\n//     \"feature6\": true\r\n//   },\r\n//   \"status\": \"active\",\r\n//   \"currency\": \"USD\"\r\n// }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2014,14 +5192,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJMbnAyNkJzVDg4bGJQYkJBbm8weWJHRCIsInJvbGUiOiJRTUN5dXB3ekJXMkhJWUVxTVI5bW5YQyIsImlhdCI6MTczNjkyMTMzMSwiZXhwIjoxNzM3MDA3NzMxfQ.ozYKTOuS_QxfBlhfvIZGiqX8PO9sx2TnqayywZY5PdI"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"client_id\": \"WpaoVmPjIv8DgPIWeq4NBoN\",\r\n  \"plan_id\": \"nuD8yRpr9DKDa7v140dLNhB\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
+							"raw": "{\r\n  \"client_id\": \"g6AJhbuF142zJo3GfPoGHU9\",\r\n  \"plan_id\": \"0yXqC4wdq1KPDulv5xNcqXJ\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2395,56 +5573,6 @@
 				},
 				{
 					"name": "Get All Currency",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Branch",
-			"item": [
-				{
-					"name": "create-Branch",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"branchName\":\"Surat\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/branches"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Branch",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Branch",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{base}}/branches/LoF0VqwqqxyqHpBDV9gCm0E"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Branch",
 					"request": {
 						"method": "GET",
 						"header": [],
