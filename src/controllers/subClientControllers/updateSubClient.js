@@ -49,7 +49,7 @@ export default {
             return responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

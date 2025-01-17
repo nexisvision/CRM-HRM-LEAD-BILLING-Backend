@@ -16,7 +16,7 @@ export default {
             const countries = await Country.findAll();
             return responseHandler.success(res, "Countries fetched successfully", countries);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

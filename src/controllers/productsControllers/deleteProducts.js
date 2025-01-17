@@ -28,7 +28,7 @@ export default {
             });
             return responseHandler.success(res, "Product deleted successfully", product);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

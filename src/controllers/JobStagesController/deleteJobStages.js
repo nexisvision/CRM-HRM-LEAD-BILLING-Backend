@@ -20,7 +20,7 @@ export default {
             await jobStagesToUpdate.destroy();
             return responseHandler.success(res, "Job category deleted successfully", jobStagesToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

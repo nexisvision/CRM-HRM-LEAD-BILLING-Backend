@@ -19,7 +19,7 @@ export default {
             await payment.destroy();
             return responseHandler.success(res, "Payment deleted successfully", payment);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

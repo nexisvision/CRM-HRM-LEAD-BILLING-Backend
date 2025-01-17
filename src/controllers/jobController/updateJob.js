@@ -36,7 +36,7 @@ export default {
             await job.update({ title, category, skills, location, interviewRounds, startDate, endDate, status, recruiter, jobType, workExperience, currency, expectedSalary, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Job updated successfully", job);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

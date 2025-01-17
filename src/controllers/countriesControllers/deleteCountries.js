@@ -15,7 +15,7 @@ export default {
             await country.destroy();
             return responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

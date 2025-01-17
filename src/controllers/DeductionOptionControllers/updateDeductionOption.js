@@ -26,7 +26,7 @@ export default {
             });
             return responseHandler.success(res, "Deduction option updated successfully", deductionOption);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -26,7 +26,7 @@ export default {
             });
             return responseHandler.success(res, "Allowance option updated successfully", allowanceOption);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

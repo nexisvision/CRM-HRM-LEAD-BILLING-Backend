@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Activities fetched successfully", activities);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

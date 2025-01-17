@@ -22,7 +22,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const {  Interviewer, JoiningDate, DaysOfWeek, Salary, 
+            const { Interviewer, JoiningDate, DaysOfWeek, Salary,
                 SalaryType, SalaryDuration, JobType, Status } = req.body;
 
             // Find the job onboarding record by primary key (id)
@@ -49,7 +49,7 @@ export default {
             // Return success response with the updated record
             return responseHandler.success(res, "Job onboarding record updated successfully", jobOnboarding);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

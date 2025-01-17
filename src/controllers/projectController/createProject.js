@@ -66,7 +66,7 @@ export default {
             return responseHandler.created(res, "Project created successfully", project);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

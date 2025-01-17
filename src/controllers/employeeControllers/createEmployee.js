@@ -31,6 +31,7 @@ export default {
             lastName: Joi.string().allow('', null),
             phone: Joi.string().allow('', null),
             address: Joi.string().allow('', null),
+            gender: Joi.string().allow('', null),
             joiningDate: Joi.date().allow('', null),
             leaveDate: Joi.date().allow(null),
             branch: Joi.string().allow('', null),
@@ -51,7 +52,7 @@ export default {
         try {
 
             const { subscription } = req;
-            const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { username, email, password, firstName, lastName, phone, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -92,6 +93,7 @@ export default {
                 lastName,
                 phone,
                 address,
+                gender,
                 joiningDate,
                 leaveDate,
                 branch,
@@ -132,7 +134,7 @@ export default {
             return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

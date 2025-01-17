@@ -34,7 +34,7 @@ export default {
             await ticket.update({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
             return responseHandler.success(res, "Ticket updated successfully", ticket);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -59,6 +59,11 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
+    gender: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     joiningDate: {
         type: DataTypes.DATE,
         allowNull: true,

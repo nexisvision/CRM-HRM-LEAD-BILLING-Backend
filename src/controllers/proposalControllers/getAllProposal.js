@@ -15,7 +15,7 @@ export default {
             const proposals = await Proposal.findAll();
             return responseHandler.success(res, "Proposals fetched successfully", proposals);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

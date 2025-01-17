@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Leave fetched successfully", leaveType);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

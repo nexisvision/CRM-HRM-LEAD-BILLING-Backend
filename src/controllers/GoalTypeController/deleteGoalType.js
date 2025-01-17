@@ -19,7 +19,7 @@ export default {
             await goalType.destroy();
             return responseHandler.success(res, "Goal type deleted successfully", goalType);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

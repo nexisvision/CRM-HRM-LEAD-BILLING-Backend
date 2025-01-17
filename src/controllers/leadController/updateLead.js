@@ -63,7 +63,7 @@ export default {
 
             return responseHandler.success(res, "Lead updated successfully!", lead);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

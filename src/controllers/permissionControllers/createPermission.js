@@ -30,7 +30,7 @@ export default {
             return responseHandler.created(res, "Permission created successfully", permission);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }; 

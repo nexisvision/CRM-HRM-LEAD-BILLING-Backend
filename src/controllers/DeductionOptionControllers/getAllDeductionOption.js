@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Deduction option fetched successfully", deductionOption);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

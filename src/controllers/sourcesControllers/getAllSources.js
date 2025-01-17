@@ -15,7 +15,7 @@ export default {
             const sources = await Sources.findAll();
             return responseHandler.success(res, "Sources fetched successfully", sources);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     },
 

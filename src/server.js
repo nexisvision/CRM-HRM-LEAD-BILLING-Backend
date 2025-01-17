@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     try {
         return responseHandler.success(res, "Server is running successfully");
     } catch (error) {
-        return responseHandler.error(res, error);
+        return responseHandler.error(res, error.message);
     }
 });
 app.use(logAuditTrails);

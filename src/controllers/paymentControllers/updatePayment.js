@@ -55,7 +55,7 @@ export default {
 
             return responseHandler.success(res, "Payment updated successfully", payment);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Loan option fetched successfully", loanOption);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -22,7 +22,7 @@ export default {
             await skill.update({ skillName, updated_by: req.user?.username });
             return responseHandler.success(res, "Skill updated successfully", skill);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

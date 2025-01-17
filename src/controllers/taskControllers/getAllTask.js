@@ -19,7 +19,7 @@ export default {
             const tasks = await Task.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "Tasks fetched successfully", tasks);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

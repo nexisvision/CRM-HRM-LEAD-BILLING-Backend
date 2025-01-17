@@ -21,7 +21,7 @@ export default {
             await role.destroy();
             return responseHandler.success(res, 'Role deleted successfully');
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

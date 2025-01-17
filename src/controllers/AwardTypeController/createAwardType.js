@@ -22,7 +22,7 @@ export default {
             }
             return responseHandler.success(res, "Award type created successfully", awardtype);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

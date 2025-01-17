@@ -31,7 +31,7 @@ export default {
             await department.update({ branch, department_name, updated_by: req.user?.username });
             return responseHandler.success(res, "Department updated successfully", department);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

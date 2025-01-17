@@ -18,7 +18,7 @@ export default {
             const { id } = req.params;
             const { name, color, lableType } = req.body;
 
-            console.log("sdfdfsdf",req.body);
+            console.log("sdfdfsdf", req.body);
 
             // Check if tag already exists
             const existingTag = await Tag.findOne({
@@ -38,7 +38,7 @@ export default {
             return responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

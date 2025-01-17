@@ -19,7 +19,7 @@ export default {
             const inquiry = await Inquiry.create({ name, email, phone, subject, message });
             return responseHandler.success(res, "Inquiry created successfully", inquiry);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

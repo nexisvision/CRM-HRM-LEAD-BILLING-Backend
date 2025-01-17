@@ -16,7 +16,7 @@ export default {
             alternate_contact: Joi.string().optional().allow('', null),
             billing_address: Joi.object().optional().allow(null),
             shipping_address: Joi.object().optional().allow(null),
-        })          
+        })
     }),
     handler: async (req, res) => {
         try {
@@ -30,7 +30,7 @@ export default {
             await customer.update({ name, contact, email, tax_number, alternate_contact, billing_address, shipping_address, updated_by: req.user?.username });
             return responseHandler.success(res, "Customer updated successfully", customer);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -21,7 +21,7 @@ export default {
             await user.destroy();
             return responseHandler.success(res, "User deleted successfully", user);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

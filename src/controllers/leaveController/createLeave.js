@@ -40,7 +40,7 @@ export default {
             return responseHandler.created(res, "Leave request created successfully", leave);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

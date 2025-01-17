@@ -19,7 +19,7 @@ export default {
             await competency.destroy();
             return responseHandler.success(res, "Competency deleted successfully", competency);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

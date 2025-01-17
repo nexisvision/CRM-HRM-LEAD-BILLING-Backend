@@ -15,7 +15,7 @@ export default {
             const skills = await Skill.findAll();
             return responseHandler.success(res, "Skills fetched successfully", skills);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 

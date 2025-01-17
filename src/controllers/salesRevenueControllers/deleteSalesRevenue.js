@@ -19,7 +19,7 @@ export default {
             await salesRevenue.destroy();
             return responseHandler.success(res, "SalesRevenue deleted successfully", salesRevenue);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }   

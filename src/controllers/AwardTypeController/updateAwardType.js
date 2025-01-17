@@ -28,7 +28,7 @@ export default {
             await awardTypeToUpdate.update({ name, updated_by: req.user?.username });
             return responseHandler.success(res, "Award type updated successfully", awardTypeToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -23,7 +23,7 @@ export default {
 
             return responseHandler.success(res, "Branch created successfully", branch);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

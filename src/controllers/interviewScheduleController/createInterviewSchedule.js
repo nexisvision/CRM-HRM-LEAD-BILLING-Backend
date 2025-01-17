@@ -23,7 +23,7 @@ export default {
             const interviewSchedule = await InterviewSchedule.create({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
             return responseHandler.success(res, "Interview schedule created successfully", interviewSchedule);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

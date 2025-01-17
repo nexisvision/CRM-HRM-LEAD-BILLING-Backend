@@ -20,7 +20,7 @@ export default {
             return responseHandler.success(res, "Invoices fetched successfully", invoices);
         }
         catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -15,7 +15,7 @@ export default {
             const leads = await Lead.findAll();
             return responseHandler.success(res, "Leads fetched successfully", leads);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

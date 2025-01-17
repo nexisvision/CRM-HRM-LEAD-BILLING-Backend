@@ -44,7 +44,7 @@ export default {
             return responseHandler.success(res, "User updated successfully", foundUser);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

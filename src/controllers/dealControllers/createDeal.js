@@ -9,7 +9,7 @@ export default {
             leadTitle: Joi.string().required(),
             dealName: Joi.string().required(),
             pipeline: Joi.string().required(),
-            stage: Joi.string().required(), 
+            stage: Joi.string().required(),
             price: Joi.number().required(),
             currency: Joi.string().required(),
             closedDate: Joi.date().required(),
@@ -36,7 +36,7 @@ export default {
 
             return responseHandler.success(res, "Deal created successfully", deal);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

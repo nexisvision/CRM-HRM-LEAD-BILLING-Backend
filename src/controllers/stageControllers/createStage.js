@@ -17,7 +17,7 @@ export default {
             const stage = await Stage.create({ stageType, stageName, pipeline, created_by: req.user.id });
             return responseHandler.success(res, "Stage created successfully", stage);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

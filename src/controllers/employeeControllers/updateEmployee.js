@@ -14,8 +14,10 @@ export default {
             username: Joi.string().allow('', null),
             phone: Joi.string().allow('', null),
             address: Joi.string().allow('', null),
+            gender: Joi.string().allow('', null),
             joiningDate: Joi.date().allow('', null),
             leaveDate: Joi.date().allow(null),
+            branch: Joi.string().allow('', null),
             department: Joi.string().allow('', null),
             designation: Joi.string().allow('', null),
             salary: Joi.number().allow('', null),
@@ -32,16 +34,11 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { firstName, lastName, username, phone, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
                 return responseHandler.notFound(res, "Employee not found");
-            }
-
-            const existingPhone = await User.findOne({ where: { phone } });
-            if (existingPhone) {
-                return responseHandler.conflict(res, "Phone number already exists");
             }
 
             await employee.update({
@@ -50,8 +47,10 @@ export default {
                 username,
                 phone,
                 address,
+                gender,
                 joiningDate,
                 leaveDate,
+                branch,
                 department,
                 designation,
                 salary,
@@ -68,7 +67,7 @@ export default {
 
             return responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

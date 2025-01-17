@@ -29,7 +29,7 @@ export default {
             const order = await Order.create({ related_id: id, client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note, created_by: req.user?.username, });
             return responseHandler.success(res, "Order created successfully", order);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

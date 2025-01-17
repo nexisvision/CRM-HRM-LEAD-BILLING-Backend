@@ -64,7 +64,7 @@ export default {
                 password: hashedPassword,
                 verificationOTP: otp,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
-                created_by:req.user?.username
+                created_by: req.user?.username
             };
 
             // Store in session
@@ -89,7 +89,7 @@ export default {
             return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

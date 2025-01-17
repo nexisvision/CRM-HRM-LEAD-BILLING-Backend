@@ -15,7 +15,7 @@ export default {
             const announcements = await Announcement.findAll();
             return responseHandler.success(res, "Announcements fetched successfully", announcements);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -41,7 +41,7 @@ export default {
             });
             return responseHandler.success(res, "Job application updated successfully", jobApplication);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

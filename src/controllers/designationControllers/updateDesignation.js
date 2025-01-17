@@ -34,7 +34,7 @@ export default {
             await designation.update({ designation_name, branch, department, updated_by: req.user?.username });
             return responseHandler.success(res, "Designation updated successfully", designation);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

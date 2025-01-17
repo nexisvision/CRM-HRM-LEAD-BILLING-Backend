@@ -27,10 +27,10 @@ export default {
             if (!salesRevenue) {
                 return responseHandler.error(res, "SalesRevenue not found");
             }
-            await salesRevenue.update({  date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
+            await salesRevenue.update({ date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesRevenue updated successfully", salesRevenue);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -28,7 +28,7 @@ export default {
             await performanceTypeToUpdate.update({ name, updated_by: req.user?.username });
             return responseHandler.success(res, "Performance type updated successfully", performanceTypeToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

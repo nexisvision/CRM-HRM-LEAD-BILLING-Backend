@@ -52,7 +52,7 @@ export default {
 
             return responseHandler.created(res, "Payment created successfully", payment);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

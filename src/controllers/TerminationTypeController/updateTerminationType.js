@@ -28,7 +28,7 @@ export default {
             await terminationTypeToUpdate.update({ name, updated_by: req.user?.username });
             return responseHandler.success(res, "Termination type updated successfully", terminationTypeToUpdate);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

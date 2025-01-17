@@ -37,7 +37,7 @@ export default {
             return responseHandler.success(res, "Login successful", { token, user: foundEntity });
 
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

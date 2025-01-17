@@ -39,7 +39,7 @@ export default {
             });
             return responseHandler.success(res, "Product updated successfully", product);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

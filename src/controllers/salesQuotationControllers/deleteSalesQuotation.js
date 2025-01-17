@@ -19,7 +19,7 @@ export default {
             await salesQuotation.destroy();
             return responseHandler.success(res, "SalesQuotation deleted successfully", salesQuotation);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }   

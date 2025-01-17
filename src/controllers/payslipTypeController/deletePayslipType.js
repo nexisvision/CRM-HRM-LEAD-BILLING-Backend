@@ -19,7 +19,7 @@ export default {
             await payslipType.destroy();
             return responseHandler.success(res, "Payslip type deleted successfully", payslipType);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -26,7 +26,7 @@ export default {
             await leadTask.destroy();
             return responseHandler.success(res, "Lead task deleted successfully");
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

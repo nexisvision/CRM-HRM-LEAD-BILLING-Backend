@@ -18,7 +18,7 @@ export default {
             }
             return responseHandler.success(res, "Award fetched successfully", awardType);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

@@ -30,7 +30,7 @@ export default {
             return responseHandler.success(res, "Role permission updated successfully", rolePermission);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

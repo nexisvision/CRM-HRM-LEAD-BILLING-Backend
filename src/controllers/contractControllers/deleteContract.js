@@ -20,7 +20,7 @@ export default {
             await contract.destroy();
             return responseHandler.success(res, "Contract deleted successfully", contract);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

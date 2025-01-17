@@ -6,10 +6,10 @@ import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
-         query: Joi.object({
-                   page: Joi.number().optional(),
-                   limit: Joi.number().optional()
-               })
+        query: Joi.object({
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
+        })
     }),
     handler: async (req, res) => {
         try {
@@ -24,7 +24,7 @@ export default {
             // Return success with all records
             return responseHandler.success(res, "Fetched all job onboarding records successfully", jobOnboardings);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

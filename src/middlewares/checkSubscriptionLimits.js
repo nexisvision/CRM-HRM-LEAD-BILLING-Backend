@@ -42,6 +42,6 @@ export const checkSubscriptionLimits = async (req, res, next) => {
         req.subscription = clientSubscription;
         return next();
     } catch (error) {
-        return responseHandler.error(res, error);
+        return responseHandler.error(res, error.message);
     }
 };

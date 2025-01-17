@@ -35,7 +35,7 @@ export default {
             return responseHandler.success(res, "Plan updated successfully", plan);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }; 

@@ -29,7 +29,7 @@ export default {
             return responseHandler.created(res, "Project report created successfully", projectReport);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

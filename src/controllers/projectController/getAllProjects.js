@@ -16,7 +16,7 @@ export default {
             return responseHandler.success(res, "Projects fetched successfully", projects);
         }
         catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

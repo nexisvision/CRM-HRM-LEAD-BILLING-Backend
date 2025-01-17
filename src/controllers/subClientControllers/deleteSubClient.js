@@ -24,7 +24,7 @@ export default {
             await subClient.destroy();
             return responseHandler.success(res, "subClient deleted successfully", subClient);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

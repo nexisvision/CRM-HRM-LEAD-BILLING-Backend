@@ -19,7 +19,7 @@ export default {
             await allowanceOption.destroy();
             return responseHandler.success(res, "Allowance option deleted successfully", allowanceOption);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

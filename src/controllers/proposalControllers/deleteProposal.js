@@ -19,7 +19,7 @@ export default {
             await proposal.destroy();
             return responseHandler.success(res, "Proposal deleted successfully", proposal);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

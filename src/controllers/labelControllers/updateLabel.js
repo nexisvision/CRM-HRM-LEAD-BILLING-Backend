@@ -45,7 +45,7 @@ export default {
             return responseHandler.success(res, "Tag updated successfully", updatedTag);
         } catch (error) {
 
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 };

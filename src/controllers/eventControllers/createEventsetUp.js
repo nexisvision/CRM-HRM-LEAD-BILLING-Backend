@@ -25,7 +25,7 @@ export default {
             });
             return responseHandler.success(res, "Event scheduled successfully!", event);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }

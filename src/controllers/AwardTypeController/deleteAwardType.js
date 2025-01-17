@@ -19,7 +19,7 @@ export default {
             await awardType.destroy();
             return responseHandler.success(res, "Award type deleted successfully", awardType);
         } catch (error) {
-            return responseHandler.error(res, error);
+            return responseHandler.error(res, error.message);
         }
     }
 }
