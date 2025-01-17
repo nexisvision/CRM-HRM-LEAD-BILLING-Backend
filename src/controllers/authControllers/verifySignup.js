@@ -66,13 +66,15 @@ export default {
                 e_signatures: user.e_signatures,
                 documents: user.documents,
                 links: user.links,
+                created_by:user.created_by
 
             }) : await User.create({
                 username: user.username,
                 email: user.email,
                 password: user.password,
                 role_id: role.id,
-                isEmailVerified: true
+                isEmailVerified: true,
+                created_by:user.created_by
             });
             //increment user/client count
             const clientSubscription = await ClientSubscription.findByPk(subscription?.id);

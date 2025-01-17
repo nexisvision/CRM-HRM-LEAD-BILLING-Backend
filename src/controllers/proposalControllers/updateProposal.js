@@ -16,8 +16,8 @@ export default {
             calculatedTax: Joi.number().required(),
             description: Joi.string().required(),
             items: Joi.array().required(),
-            discount: Joi.number().required(),
-            tax: Joi.number().required(),
+            discount: Joi.number().optional(),
+            tax: Joi.number().optional(),
             total: Joi.number().required()
         })
     }),

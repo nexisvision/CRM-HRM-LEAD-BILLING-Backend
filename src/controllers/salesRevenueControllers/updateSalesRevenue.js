@@ -10,7 +10,7 @@ export default {
         }),
         body: Joi.object({
             date: Joi.date().required(),
-            currency: Joi.string().required(),
+            currency: Joi.string().optional(),
             amount: Joi.number().required(),
             account: Joi.string().required(),
             customer: Joi.string().required(),
@@ -27,7 +27,7 @@ export default {
             if (!salesRevenue) {
                 return responseHandler.error(res, "SalesRevenue not found");
             }
-            await salesRevenue.update({ date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
+            await salesRevenue.update({  date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesRevenue updated successfully", salesRevenue);
         } catch (error) {
             return responseHandler.error(res, error);

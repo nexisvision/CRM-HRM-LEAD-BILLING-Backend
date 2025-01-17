@@ -85,18 +85,21 @@ Invoice.beforeCreate(async (invoice) => {
     invoice.id = newId;
 
     const lastInvoice = await Invoice.findOne({
-        order: [['invoiceNumber', 'DESC']]
+        order: [['createdAt', 'DESC']], // Sort by creation date to get the latest invoice
     });
 
     let nextNumber = 1;
     if (lastInvoice && lastInvoice.invoiceNumber) {
-        // Extract the number from the last invoiceNumber and increment it
-        const lastNumber = parseInt(lastInvoice.invoiceNumber.replace('INV#', ''));
-        nextNumber = lastNumber + 1;
+        // Extract the number part from the last invoiceNumber
+        const match = lastInvoice.invoiceNumber.match(/^INV#(\d+)$/);
+        if (match) {
+            const lastNumber = parseInt(match[1], 10); // Extract and parse the number
+            nextNumber = lastNumber + 1;
+        }
     }
 
+    // Set the new invoice number
     invoice.invoiceNumber = `INV#${nextNumber}`;
-
 });
 
 export default Invoice;

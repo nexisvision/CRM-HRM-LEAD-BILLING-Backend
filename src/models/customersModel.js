@@ -37,7 +37,6 @@ const Customers = sequelize.define("customers", {
     alternate_number: {
         type: DataTypes.STRING,
         allowNull: true,
-        defaultValue: null
     },
     billing_address: {
         type: DataTypes.JSON,

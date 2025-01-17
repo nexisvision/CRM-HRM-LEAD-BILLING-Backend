@@ -1,9 +1,8 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
-import generateId from '../middlewares/generatorId.js';
+import generateId from "../middlewares/generatorId.js";
 
-
-const SalesCreditnote = sequelize.define('sales_Creditnote', {
+const JobOnboarding = sequelize.define('JobOnboarding', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -11,30 +10,37 @@ const SalesCreditnote = sequelize.define('sales_Creditnote', {
         primaryKey: true,
         defaultValue: () => generateId(),
     },
-    related_id: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    invoice: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    currency: {
+    Interviewer: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    amount: {
+    JoiningDate: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    date: {
-        type: DataTypes.DATE,
+    DaysOfWeek: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    Salary: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    SalaryType: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    description: {
+    SalaryDuration: {
         type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
+        allowNull: true
+    },
+    JobType: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    Status: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     created_by: {
         type: DataTypes.STRING,
@@ -45,22 +51,21 @@ const SalesCreditnote = sequelize.define('sales_Creditnote', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
+
     }
 });
-
-SalesCreditnote.beforeCreate(async (salesCreditnote) => {
+JobOnboarding.beforeCreate(async (jobOnboarding) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingSalesCreditnote = await SalesCreditnote.findOne({ where: { id: newId } });
-        if (!existingSalesCreditnote) {
+        const existingTag = await JobOnboarding.findOne({
+            where: { id: newId }
+        });
+        if (!existingTag) {
             isUnique = true;
         }
     }
-    salesCreditnote.id = newId;
-
+    jobOnboarding.id = newId;
 });
-
-
-export default SalesCreditnote;
+export default JobOnboarding;

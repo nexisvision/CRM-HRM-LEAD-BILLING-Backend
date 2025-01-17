@@ -16,7 +16,7 @@ export default {
             alternate_contact: Joi.string().optional().allow('', null),
             billing_address: Joi.object().optional().allow(null),
             shipping_address: Joi.object().optional().allow(null),
-        })
+        })          
     }),
     handler: async (req, res) => {
         try {
