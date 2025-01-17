@@ -29,7 +29,8 @@ const Quotations = sequelize.define('quotations', {
     },
     lead: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue:null,
     },
     client: {
         type: DataTypes.STRING,

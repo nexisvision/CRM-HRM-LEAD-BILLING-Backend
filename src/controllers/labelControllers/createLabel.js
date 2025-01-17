@@ -18,6 +18,8 @@ export default {
             const { id } = req.params;
             const { name, color, lableType } = req.body;
 
+            console.log("sdfdfsdf",req.body);
+
             // Check if tag already exists
             const existingTag = await Tag.findOne({
                 where: { related_id: id, name }
@@ -33,6 +35,8 @@ export default {
                 lableType,
                 created_by: req.user?.username
             });
+
+            console.log("sdfsdfdfs",newTag);
             responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
             console.log(error);

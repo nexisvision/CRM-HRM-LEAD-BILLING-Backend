@@ -11,7 +11,7 @@ export default {
         body: Joi.object({
             valid_till: Joi.date().required(),
             currency: Joi.string().required(),
-            lead: Joi.string().required(),
+            // lead: Joi.string().required(),
             client: Joi.string().required(),
             calculatedTax: Joi.number().required(),
             items: Joi.object().required(),
