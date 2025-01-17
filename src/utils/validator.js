@@ -16,6 +16,7 @@ const validator = schemas => (req, res, next) => {
 
     }
     next();
+
 };
 
 export default validator;

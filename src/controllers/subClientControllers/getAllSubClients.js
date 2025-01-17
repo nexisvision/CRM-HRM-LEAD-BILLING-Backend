@@ -2,6 +2,7 @@ import Joi from "joi";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import User from "../../models/userModel.js";
+import Role from "../../models/roleModel.js";
 
 export default {
     validator: validator({

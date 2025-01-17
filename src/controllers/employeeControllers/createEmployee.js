@@ -49,6 +49,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+
             const { subscription } = req;
             const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
@@ -107,9 +108,8 @@ export default {
                 links,
                 verificationOTP: otp,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
-                created_by:req.user?.username
+                created_by: req.user?.username
             };
-
             // Store in session
             const sessionToken = jwt.sign(
                 {

@@ -1,6 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 import generateId from '../middlewares/generatorId.js';
+import Role from './roleModel.js';
 
 const User = sequelize.define('User', {
     id: {
@@ -156,6 +157,7 @@ const User = sequelize.define('User', {
 
 });
 
+
 User.beforeCreate(async (user) => {
     let isUnique = false;
     let newId;
@@ -169,8 +171,11 @@ User.beforeCreate(async (user) => {
         }
     }
     user.id = newId;
-
-    if (user.role_id === 'employee') {
+    const Rolname = await Role.findOne({ where: { id: user.role_id } });
+    if (!Rolname) {
+        console.log("role not found")
+    }
+    if (Rolname === 'employee') {
         const lastUser = await User.findOne({
             order: [['employeeId', 'DESC']]
         });
