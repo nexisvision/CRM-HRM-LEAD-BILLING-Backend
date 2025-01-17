@@ -9,6 +9,11 @@ const User = sequelize.define('User', {
         unique: true,
         defaultValue: () => generateId()
     },
+    employeeId: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -60,6 +65,11 @@ const User = sequelize.define('User', {
     },
     leaveDate: {
         type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
+    },
+    branch: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
@@ -159,6 +169,21 @@ User.beforeCreate(async (user) => {
         }
     }
     user.id = newId;
+
+    if (user.role_id === 'employee') {
+        const lastUser = await User.findOne({
+            order: [['employeeId', 'DESC']]
+        });
+
+        let nextNumber = 1;
+        if (lastUser && lastUser.employeeId) {
+            const lastNumber = parseInt(lastUser.employeeId.replace('EMP#', ''));
+            nextNumber = lastNumber + 1;
+        }
+
+        user.employeeId = `EMP#${nextNumber}`;
+    }
+
 });
 
 export default User;

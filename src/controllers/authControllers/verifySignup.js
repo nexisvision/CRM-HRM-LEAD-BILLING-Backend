@@ -54,6 +54,7 @@ export default {
                 address: user.address,
                 joiningDate: user.joiningDate,
                 leaveDate: user.leaveDate,
+                branch: user.branch,
                 department: user.department,
                 designation: user.designation,
                 salary: user.salary,

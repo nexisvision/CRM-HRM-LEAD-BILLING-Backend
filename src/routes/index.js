@@ -80,7 +80,6 @@ router.use('/super-admin', superAdminRoutes);
 router.use('/roles', roleRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
-router.use('/employees', employeeRoutes);
 router.use('/users', userRoutes);
 router.use('/attendance', attendanceRoutes);
 router.use('/leaves', leaveRoutes);
@@ -133,7 +132,7 @@ router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
 
 
-//HRM
+//HRM System
 router.use('/branches', branchRoutes);
 router.use('/departments', departmentRoutes);
 router.use('/designations', designationRoutes);
@@ -151,6 +150,7 @@ router.use('/job-categories', jobCategoryRoutes);
 router.use('/job-stages', jobStageRoutes);
 router.use('/performance-types', performanceTypeRoutes);
 router.use('/competencies', competenciesRoutes);
+router.use('/employees', employeeRoutes);
 
 
 export default router;

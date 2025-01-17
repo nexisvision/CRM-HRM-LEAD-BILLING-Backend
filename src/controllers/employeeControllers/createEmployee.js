@@ -33,6 +33,7 @@ export default {
             address: Joi.string().allow('', null),
             joiningDate: Joi.date().allow('', null),
             leaveDate: Joi.date().allow(null),
+            branch: Joi.string().allow('', null),
             department: Joi.string().allow('', null),
             designation: Joi.string().allow('', null),
             salary: Joi.number().allow('', null),
@@ -49,7 +50,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { subscription } = req;
-            const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -92,6 +93,7 @@ export default {
                 address,
                 joiningDate,
                 leaveDate,
+                branch,
                 department,
                 designation,
                 salary,
