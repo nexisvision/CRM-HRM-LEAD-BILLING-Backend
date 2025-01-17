@@ -11,13 +11,12 @@ export default {
             endDate: Joi.date().required(),
             leaveType: Joi.string().valid('sick', 'casual', 'annual', 'other').required(),
             reason: Joi.string().required(),
-            status: Joi.string().valid('pending', 'approved', 'rejected').default('pending'),
             isHalfDay: Joi.boolean().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { employeeId, startDate, endDate, leaveType, reason, status, isHalfDay } = req.body;
+            const { employeeId, startDate, endDate, leaveType, reason, isHalfDay } = req.body;
 
             // Validation for half-day leave:
             if (isHalfDay) {
@@ -32,7 +31,6 @@ export default {
                 endDate,
                 leaveType,
                 reason,
-                status,
                 isHalfDay,
                 created_by: req.user?.username,
             });

@@ -1,8 +1,11 @@
 import express from 'express';
-import { authenticateUser, checkRole } from '../middlewares/index.js';
-import { createLeave, getAllLeaves, getLeaveById, updateLeave, deleteLeave } from '../controllers/leaveController/index.js';
+import { authenticateUser, checkRole, checkUserRole } from '../middlewares/index.js';
+import { createLeave, getAllLeaves, getLeaveById, updateLeave, deleteLeave, approveLeave } from '../controllers/leaveController/index.js';
 
 const router = express.Router();
+
+router.put('/approve/:id', authenticateUser, checkUserRole(['client']), approveLeave.validator, approveLeave.handler);
+
 
 router.use(authenticateUser, checkRole);
 

@@ -83,7 +83,6 @@ router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/users', userRoutes);
 router.use('/attendance', attendanceRoutes);
-router.use('/leaves', leaveRoutes);
 router.use('/permissions', permissionRoutes);
 router.use('/role-permissions', rolePermissionRoutes);
 router.use('/subscriptions', subscriptionRoutes);
@@ -153,6 +152,7 @@ router.use('/job-stages', jobStageRoutes);
 router.use('/performance-types', performanceTypeRoutes);
 router.use('/competencies', competenciesRoutes);
 router.use('/employees', employeeRoutes);
+router.use('/leaves', leaveRoutes);
 
 
 export default router;
