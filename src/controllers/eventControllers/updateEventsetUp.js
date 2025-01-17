@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Event ID must be a string',
-                'string.empty': 'Event ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             EventTitle: Joi.string(),
@@ -26,9 +23,9 @@ export default {
                 return responseHandler.error(res, "Event not found");
             }
             await event.update({ EventTitle, EventManager, EventDate, EventTime });
-            responseHandler.success(res, "Event updated successfully", event);
+            return responseHandler.success(res, "Event updated successfully", event);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

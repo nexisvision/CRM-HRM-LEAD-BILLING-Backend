@@ -21,10 +21,10 @@ export default {
 
             await invoice.destroy();
 
-            responseHandler.success(res, "Invoice deleted successfully", invoice);
+            return responseHandler.success(res, "Invoice deleted successfully", invoice);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };   

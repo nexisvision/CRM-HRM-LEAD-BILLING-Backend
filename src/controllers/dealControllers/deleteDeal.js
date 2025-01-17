@@ -18,10 +18,10 @@ export default {
                 return responseHandler.error(res, "Deal not found");
             }
             await deal.destroy();
-            responseHandler.success(res, "Deal deleted successfully", deal);
+            return responseHandler.success(res, "Deal deleted successfully", deal);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

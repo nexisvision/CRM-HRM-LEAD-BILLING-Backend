@@ -17,9 +17,9 @@ export default {
                 return responseHandler.error(res, "Job not found");
             }
             await job.destroy();
-            responseHandler.success(res, "Job deleted successfully", job);
+            return responseHandler.success(res, "Job deleted successfully", job);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

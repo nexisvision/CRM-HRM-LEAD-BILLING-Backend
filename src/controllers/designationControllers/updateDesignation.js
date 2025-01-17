@@ -5,31 +5,36 @@ import Designation from "../../models/designationModel.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
-            designation_name: Joi.string()
-                .allow('', null)
-                .pattern(/^[a-zA-Z\s]+$/)
-                .min(2)
-                .max(50)
-                .messages({
-                    'string.pattern.base': 'Designation name must contain only letters and spaces',
-                    'string.min': 'Designation name must be at least 2 characters long',
-                    'string.max': 'Designation name cannot exceed 50 characters',
-                    'string.empty': 'Designation name is required'
-                }),
+            branch: Joi.string().required(),
+            department: Joi.string().required(),
+            designation_name: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { designation_name } = req.body;
-            const designation = await Designation.findByPk(req.params.id);
+            const { id } = req.params;
+            const { designation_name, branch, department } = req.body;
+            const designation = await Designation.findByPk(id);
+
             if (!designation) {
                 return responseHandler.error(res, "Designation not found");
             }
-            await designation.update({ designation_name, updated_by: req.user?.username });
-            responseHandler.success(res, "Designation updated successfully", designation);
+
+            const existingDesignation = await Designation.findOne({
+                where: { designation_name, branch, department }
+            });
+
+            if (existingDesignation) {
+                return responseHandler.error(res, "Designation name already exists for the given branch and department");
+            }
+            await designation.update({ designation_name, branch, department, updated_by: req.user?.username });
+            return responseHandler.success(res, "Designation updated successfully", designation);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

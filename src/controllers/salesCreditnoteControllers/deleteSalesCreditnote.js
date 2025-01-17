@@ -19,7 +19,7 @@ export default {
             await salesCreditnote.destroy();
             return responseHandler.success(res, "SalesCreditnote deleted successfully", salesCreditnote);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

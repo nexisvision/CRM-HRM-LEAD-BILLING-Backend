@@ -6,10 +6,7 @@ import User from "../../models/userModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Employee ID must be a string',
-                'string.empty': 'Employee ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -22,9 +19,9 @@ export default {
             }
 
             await employee.destroy();
-            responseHandler.success(res, "Employee deleted successfully", employee);
+            return responseHandler.success(res, "Employee deleted successfully", employee);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

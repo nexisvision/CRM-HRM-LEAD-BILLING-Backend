@@ -29,9 +29,9 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.created(res, "Source created successfully", source);
+            return responseHandler.created(res, "Source created successfully", source);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

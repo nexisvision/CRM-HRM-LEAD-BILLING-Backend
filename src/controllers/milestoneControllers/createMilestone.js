@@ -22,8 +22,6 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-
-            console.log("rrrr",req.body)
             const { id } = req.params;
             const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
             const milestone = await Milestone.create({
@@ -47,9 +45,9 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Milestone ${milestone_title} created successfully`
             });
-            responseHandler.success(res, "Milestone created successfully", milestone);
+            return responseHandler.success(res, "Milestone created successfully", milestone);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

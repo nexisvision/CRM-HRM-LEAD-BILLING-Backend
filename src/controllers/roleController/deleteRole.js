@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Role ID must be a string',
-                'string.empty': 'Role ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -24,7 +21,7 @@ export default {
             await role.destroy();
             return responseHandler.success(res, 'Role deleted successfully');
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

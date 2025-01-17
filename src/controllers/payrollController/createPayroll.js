@@ -13,9 +13,9 @@ export default {
         try {
             const { name } = req.body;
             const payroll = await Payroll.create({ name, created_by: req.user?.username });
-            responseHandler.success(res, "Payroll created successfully", payroll);
+            return responseHandler.success(res, "Payroll created successfully", payroll);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

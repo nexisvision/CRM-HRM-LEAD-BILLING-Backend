@@ -5,14 +5,8 @@ import Joi from "joi";
 export default {
     validator: validator({
         params: Joi.object({
-            leadId: Joi.string().required().messages({
-                'string.base': 'Lead ID must be a string',
-                'string.empty': 'Lead ID is required'
-            }),
-            taskId: Joi.string().required().messages({
-                'string.base': 'Task ID must be a string',
-                'string.empty': 'Task ID is required'
-            })
+            leadId: Joi.string().required(),
+            taskId: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -30,10 +24,9 @@ export default {
             }
 
             await leadTask.destroy();
-            responseHandler.success(res, "Lead task deleted successfully");
+            return responseHandler.success(res, "Lead task deleted successfully");
         } catch (error) {
-            console.error('Error deleting lead task:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

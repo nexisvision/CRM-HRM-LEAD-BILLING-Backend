@@ -13,10 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const permissions = await Permission.findAll();
-            responseHandler.success(res, "Permissions retrieved successfully", permissions);
+            return responseHandler.success(res, "Permissions retrieved successfully", permissions);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

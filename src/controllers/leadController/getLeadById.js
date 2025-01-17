@@ -6,10 +6,7 @@ import Lead from "../../models/leadModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Lead ID must be a string',
-                'string.empty': 'Lead ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -22,10 +19,10 @@ export default {
                 return responseHandler.notFound(res, "Lead not found");
             }
 
-            responseHandler.success(res, "Lead fetched successfully", lead);
+            return responseHandler.success(res, "Lead fetched successfully", lead);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };   

@@ -26,10 +26,10 @@ export default {
                 status,
                 created_by: req.user?.username
             });
-            responseHandler.created(res, "Project report created successfully", projectReport);
+            return responseHandler.created(res, "Project report created successfully", projectReport);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

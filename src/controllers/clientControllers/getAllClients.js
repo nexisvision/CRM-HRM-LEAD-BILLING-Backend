@@ -1,7 +1,8 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
+import User from "../../models/userModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import Role from "../../models/roleModel.js";
 
 export default {
     validator: validator({
@@ -12,12 +13,17 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const clients = await Client.findAll();
+            const ClientRoleID = await Role.findOne({
+                where: {
+                    role_name: "client"
+                }
+            });
+            const clients = await User.findAll({ where: { role_id: ClientRoleID.id } });
             if (clients) {
-                responseHandler.success(res, "Clients fetched successfully", clients);
+                return responseHandler.success(res, "Clients fetched successfully", clients);
             }
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

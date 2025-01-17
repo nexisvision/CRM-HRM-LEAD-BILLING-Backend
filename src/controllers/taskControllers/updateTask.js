@@ -74,9 +74,9 @@ export default {
                 }
             }
 
-            responseHandler.success(res, 'Task updated successfully', updatedTask);
+            return responseHandler.success(res, 'Task updated successfully', updatedTask);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

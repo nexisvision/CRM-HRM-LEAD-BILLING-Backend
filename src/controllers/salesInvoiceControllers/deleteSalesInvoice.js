@@ -19,7 +19,7 @@ export default {
             await salesInvoice.destroy();
             return responseHandler.success(res, "SalesInvoice deleted successfully", salesInvoice);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

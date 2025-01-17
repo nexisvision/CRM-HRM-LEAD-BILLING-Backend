@@ -20,10 +20,10 @@ export default {
 
             await leave.destroy();
 
-            responseHandler.success(res, "Leave record deleted successfully", leave);
+            return responseHandler.success(res, "Leave record deleted successfully", leave);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

@@ -7,10 +7,7 @@ import Designation from "../../models/designationModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Designation ID must be a string',
-                'string.empty': 'Designation ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -25,10 +22,10 @@ export default {
 
             await designation.destroy();
 
-            responseHandler.success(res, "Designation deleted successfully", designation);
+            return responseHandler.success(res, "Designation deleted successfully", designation);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };   

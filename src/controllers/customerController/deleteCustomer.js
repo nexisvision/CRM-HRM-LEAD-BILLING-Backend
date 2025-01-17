@@ -20,7 +20,7 @@ export default {
             await customer.destroy();
             return responseHandler.success(res, "customer deleted successfully", customer);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

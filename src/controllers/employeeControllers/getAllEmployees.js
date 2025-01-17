@@ -13,10 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const employees = await User.findAll();
-            responseHandler.success(res, 'Employees retrieved successfully', employees);
+            return responseHandler.success(res, 'Employees retrieved successfully', employees);
         } catch (error) {
-            console.error('Error fetching employees:', error);
-            responseHandler.error(res, 'Error fetching employees');
+            return responseHandler.error(res, 'Error fetching employees');
         }
     }
 };

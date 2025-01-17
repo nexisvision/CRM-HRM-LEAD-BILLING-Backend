@@ -12,11 +12,14 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            await Branch.destroy({ where: { id } });
-            responseHandler.success(res, "Branch deleted successfully");
+            const branch = await Branch.findByPk(id);
+            if (!branch) {
+                return responseHandler.error(res, "Branch not found");
+            }
+            await branch.destroy();
+            return responseHandler.success(res, "Branch deleted successfully", branch);
         } catch (error) {
-            console.error('Error deleting branch:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

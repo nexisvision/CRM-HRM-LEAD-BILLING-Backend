@@ -16,9 +16,9 @@ export default {
             if (!job) {
                 return responseHandler.error(res, "Job not found");
             }
-            responseHandler.success(res, "Job fetched successfully", job);
+            return responseHandler.success(res, "Job fetched successfully", job);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

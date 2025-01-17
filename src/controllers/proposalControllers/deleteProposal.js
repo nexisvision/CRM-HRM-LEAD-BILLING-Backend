@@ -15,7 +15,7 @@ export default {
             const proposal = await Proposal.findByPk(id);
             if (!proposal) {
                 return responseHandler.notFound(res, "Proposal not found");
-            }   
+            }
             await proposal.destroy();
             return responseHandler.success(res, "Proposal deleted successfully", proposal);
         } catch (error) {

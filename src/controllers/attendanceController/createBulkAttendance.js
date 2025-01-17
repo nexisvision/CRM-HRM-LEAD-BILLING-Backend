@@ -46,14 +46,14 @@ export default {
 
             const attendance = await Attendance.insertMany(attendanceRecords);
 
-            responseHandler.created(res, "Bulk attendance marked successfully", {
+            return responseHandler.created(res, "Bulk attendance marked successfully", {
                 totalRecords: attendance.length,
                 attendance
             });
 
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, "Error processing bulk attendance: " + error.message);
+
+            return responseHandler.error(res, "Error processing bulk attendance: " + error.message);
         }
     }
 };

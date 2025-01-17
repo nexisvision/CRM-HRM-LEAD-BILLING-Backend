@@ -53,10 +53,9 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Payment updated successfully", payment);
+            return responseHandler.success(res, "Payment updated successfully", payment);
         } catch (error) {
-            console.error('Error updating payment:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

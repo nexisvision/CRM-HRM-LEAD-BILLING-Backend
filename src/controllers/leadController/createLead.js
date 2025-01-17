@@ -34,9 +34,9 @@ export default {
                 leadTitle, firstName, lastName, telephone, email,
                 assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address, created_by: req.user?.username
             });
-            responseHandler.success(res, "Lead created successfully!", lead);
+            return responseHandler.success(res, "Lead created successfully!", lead);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

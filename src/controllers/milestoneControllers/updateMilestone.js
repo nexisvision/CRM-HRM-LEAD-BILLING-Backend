@@ -37,10 +37,10 @@ export default {
                 performed_by: req.user?.username,
                 activity_message: `Milestone ${milestone.milestone_title} updated successfully`
             });
-            responseHandler.success(res, "Milestone updated successfully", milestone);
+            return responseHandler.success(res, "Milestone updated successfully", milestone);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

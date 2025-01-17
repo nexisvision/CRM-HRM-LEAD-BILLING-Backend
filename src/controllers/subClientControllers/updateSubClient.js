@@ -1,7 +1,7 @@
 import Joi from "joi";
-import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -36,7 +36,7 @@ export default {
                 accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
                 city, state, country, zipcode, address, links } = req.body;
 
-            const subClient = await SubClient.findByPk(id);
+            const subClient = await User.findByPk(id);
             if (!subClient) {
                 return responseHandler.notFound(res, "subClient not found");
             }
@@ -46,10 +46,10 @@ export default {
                 accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
                 city, state, country, zipcode, address, links, updated_by: req.user?.username
             });
-            responseHandler.success(res, "Company updated successfully", subClient);
+            return responseHandler.success(res, "Company updated successfully", subClient);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

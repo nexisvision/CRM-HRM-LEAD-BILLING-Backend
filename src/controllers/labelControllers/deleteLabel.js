@@ -22,10 +22,10 @@ export default {
             // Delete tag
             await tag.destroy();
 
-            responseHandler.success(res, "Tag deleted successfully");
+            return responseHandler.success(res, "Tag deleted successfully");
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

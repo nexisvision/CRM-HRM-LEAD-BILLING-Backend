@@ -34,10 +34,9 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.success(res, "Deal created successfully", deal);
+            return responseHandler.success(res, "Deal created successfully", deal);
         } catch (error) {
-            console.error('Error creating deal:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

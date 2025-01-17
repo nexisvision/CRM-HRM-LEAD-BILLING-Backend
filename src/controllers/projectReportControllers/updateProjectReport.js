@@ -38,10 +38,10 @@ export default {
             });
 
 
-            responseHandler.success(res, "Project report updated successfully", updatedProjectReport);
+            return responseHandler.success(res, "Project report updated successfully", updatedProjectReport);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

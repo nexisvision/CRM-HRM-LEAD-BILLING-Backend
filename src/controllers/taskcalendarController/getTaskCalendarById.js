@@ -5,10 +5,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Event ID must be a string',
-                'string.empty': 'Event ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -19,9 +16,9 @@ export default {
             if (!task) {
                 return responseHandler.error(res, "Task not found");
             }
-            responseHandler.success(res, "Task fetched successfully", task);
+            return responseHandler.success(res, "Task fetched successfully", task);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

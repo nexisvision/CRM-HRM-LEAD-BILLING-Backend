@@ -27,11 +27,14 @@ const Tag = sequelize.define('tag', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
+
     }
 });
 Tag.beforeCreate(async (tag) => {

@@ -26,12 +26,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { requestor, assignGroup, agent,status, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
+            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
             const ticket = await Ticket.findByPk(id);
             if (!ticket) {
                 return responseHandler.error(res, "Ticket not found");
             }
-            await ticket.update({ requestor, assignGroup,status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
+            await ticket.update({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
             return responseHandler.success(res, "Ticket updated successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error);

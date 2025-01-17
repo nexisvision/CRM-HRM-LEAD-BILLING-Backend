@@ -14,9 +14,9 @@ export default {
         try {
             const { featureName } = req.body;
             const feature = await Feature.create({ featureName, created_by: req.user.id });
-            responseHandler.success(res, "Feature created successfully", feature);
+            return responseHandler.success(res, "Feature created successfully", feature);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

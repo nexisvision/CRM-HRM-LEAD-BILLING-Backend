@@ -6,10 +6,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'superAdmin ID must be a string',
-                'string.empty': 'superAdmin ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -24,7 +21,7 @@ export default {
             await superAdmin.destroy();
             return responseHandler.success(res, "superAdmin deleted successfully", superAdmin);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

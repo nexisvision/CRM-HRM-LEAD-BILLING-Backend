@@ -24,9 +24,9 @@ export default {
                 return responseHandler.error(res, "Announcement not found");
             }
             await announcement.update({ title, description, updated_by: req.user?.username });
-            responseHandler.success(res, "Announcement updated successfully", announcement);
+            return responseHandler.success(res, "Announcement updated successfully", announcement);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

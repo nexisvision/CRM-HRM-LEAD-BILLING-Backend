@@ -19,10 +19,10 @@ export default {
                 return responseHandler.notFound(res, "Attendance record not found");
             }
 
-            responseHandler.success(res, "Attendance fetched successfully", attendance);
+            return responseHandler.success(res, "Attendance fetched successfully", attendance);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

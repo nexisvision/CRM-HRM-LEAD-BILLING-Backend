@@ -1,9 +1,6 @@
 import Joi from "joi";
 import User from "../../models/userModel.js";
-import Client from "../../models/clientModel.js";
 import validator from "../../utils/validator.js";
-import SubClient from "../../models/subClientModel.js";
-import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 export default {
@@ -17,20 +14,15 @@ export default {
             const { id } = req.params;
 
             const user = await User.findByPk(id);
-            const client = await Client.findByPk(id);
-            const subClient = await SubClient.findByPk(id);
-            const superAdmin = await SuperAdmin.findByPk(id);
 
-            const foundUser = user || client || subClient || superAdmin;
-
-            if (!foundUser) {
+            if (!user) {
                 return responseHandler.notFound(res, "User not found");
             }
 
-            responseHandler.success(res, "User fetched successfully", foundUser);
+            return responseHandler.success(res, "User fetched successfully", foundUser);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

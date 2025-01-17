@@ -1,22 +1,19 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Client ID must be a string',
-                'string.empty': 'Client ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
 
-            const client = await Client.findByPk(id);
+            const client = await User.findByPk(id);
             if (!client) {
                 return responseHandler.error(res, "Client not found");
             }
@@ -24,7 +21,7 @@ export default {
             await client.destroy();
             return responseHandler.success(res, "Client deleted successfully", client);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

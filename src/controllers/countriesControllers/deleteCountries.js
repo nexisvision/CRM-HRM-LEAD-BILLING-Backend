@@ -6,20 +6,16 @@ import Joi from "joi";
 export default {
     validator: validator,
     params: Joi.object({
-        id: Joi.string().required().messages({
-            'string.base': 'Id must be a string',
-            'string.empty': 'Id is required'
-        })
+        id: Joi.string().required()
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
             const country = await Country.findByPk(id);
             await country.destroy();
-            responseHandler.success(res, "Country deleted successfully", country);
+            return responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
-            console.error('Error deleting country:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

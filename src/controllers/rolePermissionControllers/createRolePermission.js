@@ -8,14 +8,8 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            role_id: Joi.string().required().messages({
-                'string.base': 'Role ID must be a string',
-                'string.empty': 'Role ID is required'
-            }),
-            permission_id: Joi.string().required().messages({
-                'string.base': 'Permission ID must be a string',
-                'string.empty': 'Permission ID is required'
-            })
+            role_id: Joi.string().required(),
+            permission_id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -49,10 +43,10 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.created(res, "Role permission created successfully", rolePermission);
+            return responseHandler.created(res, "Role permission created successfully", rolePermission);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

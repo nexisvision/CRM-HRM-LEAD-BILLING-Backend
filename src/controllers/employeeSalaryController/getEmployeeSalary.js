@@ -15,7 +15,7 @@ export default {
             const employeeSalary = await EmployeeSalary.findAll();
             return responseHandler.success(res, "Employee salary fetched successfully.", employeeSalary);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

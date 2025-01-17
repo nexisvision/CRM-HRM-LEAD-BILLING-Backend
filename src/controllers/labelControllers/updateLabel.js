@@ -42,10 +42,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Tag updated successfully", updatedTag);
+            return responseHandler.success(res, "Tag updated successfully", updatedTag);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

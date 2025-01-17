@@ -22,14 +22,14 @@ export default {
     handler: async (req, res) => {
         try {
             const { job, name, email, phone, location, total_experience,
-                 current_location, notice_period, status, applied_source, cover_letter } = req.body;
+                current_location, notice_period, status, applied_source, cover_letter } = req.body;
             const jobApplication = await JobApplication.create({
-                job, name, email, phone, location, total_experience, current_location, 
-                notice_period, status, applied_source, cover_letter,created_by: req.user?.username
+                job, name, email, phone, location, total_experience, current_location,
+                notice_period, status, applied_source, cover_letter, created_by: req.user?.username
             });
             return responseHandler.success(res, "Job application created successfully", jobApplication);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

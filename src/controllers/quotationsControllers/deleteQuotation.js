@@ -21,10 +21,10 @@ export default {
 
             await quotation.destroy();
 
-            responseHandler.success(res, "Quotation deleted successfully", quotation);
+            return responseHandler.success(res, "Quotation deleted successfully", quotation);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };   

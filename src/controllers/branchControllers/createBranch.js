@@ -6,31 +6,24 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            branchName: Joi.string().required()
+            branchName: Joi.string().required(),
+            department: Joi.string().required(),
+            address: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { branchName } = req.body;
-
-            // Check if branch with same name already exists
-            const existingBranch = await Branch.findOne({
-                where: { branchName }
-            });
-
-            if (existingBranch) {
-                return responseHandler.error(res, "Branch with this name already exists");
-            }
-
+            const { branchName, department, address } = req.body;
             const branch = await Branch.create({
                 branchName,
+                department,
+                address,
                 created_by: req.user?.username
             });
 
-            responseHandler.success(res, "Branch created successfully", branch);
+            return responseHandler.success(res, "Branch created successfully", branch);
         } catch (error) {
-            console.error('Error creating branch:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

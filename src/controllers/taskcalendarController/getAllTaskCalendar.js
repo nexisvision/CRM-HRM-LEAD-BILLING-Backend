@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const tasks = await TaskCalendar.findAll();
-            responseHandler.success(res, "Tasks fetched successfully", tasks);
+            return responseHandler.success(res, "Tasks fetched successfully", tasks);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

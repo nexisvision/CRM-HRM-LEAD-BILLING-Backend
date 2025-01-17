@@ -1,11 +1,16 @@
 import Joi from "joi";
 import bcrypt from 'bcrypt';
 import validator from "../../utils/validator.js";
-import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";
-import ClientSubscription from "../../models/clientSubscriptionModel.js";
+import User from "../../models/userModel.js";
+import { sendEmail } from '../../utils/emailService.js';
+import { generateOTP } from "../../utils/otpService.js";
+import { OTP_CONFIG } from "../../config/config.js";
+import jwt from "jsonwebtoken";
+import { JWT_SECRET } from "../../config/config.js";
+import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
 
 export default {
     validator: validator({
@@ -28,7 +33,7 @@ export default {
             const { subscription } = req;
             const { username, email, password } = req.body;
 
-            const existingUsername = await SubClient.findOne({
+            const existingUsername = await User.findOne({
                 where: { username }
             });
 
@@ -36,7 +41,7 @@ export default {
                 return responseHandler.error(res, "Username already exists.");
             }
 
-            const existingEmail = await SubClient.findOne({
+            const existingEmail = await User.findOne({
                 where: { email }
             });
 
@@ -48,24 +53,46 @@ export default {
                 where: { role_name: 'sub-client' },
                 defaults: { id: generateId() }
             });
+            // Generate OTP
+            const otp = generateOTP(OTP_CONFIG.LENGTH);
 
-            const hashedPassword = await bcrypt.hash(password, 10);
+            // Hash password
+            const hashedPassword = await bcrypt.hash(password, 12);
 
-            const subClient = await SubClient.create({
+            // Create temporary user record
+            const tempUser = {
+                id: req.user.id,
                 username,
-                password: hashedPassword,
                 email,
                 role_id: role.id,
-                created_by: req.user?.username,
-            });
+                password: hashedPassword,
+                verificationOTP: otp,
+                verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT
+            };
 
-            const clientSubscription = await ClientSubscription.findByPk(subscription.id);
-            await clientSubscription.increment('current_clients_count');
+            // Store in session
+            const sessionToken = jwt.sign(
+                {
+                    ...tempUser,
+                    ...subscription,
+                    type: 'signup_verification'
+                },
+                JWT_SECRET,
+                { expiresIn: '15m' }
+            );
 
-            return responseHandler.created(res, "subClient created successfully", subClient);
+            // Send verification email
+            const emailTemplate = getVerificationEmailTemplate(username, otp);
+            await sendEmail(
+                email,
+                'Verify Your Email',
+                emailTemplate
+            );
+
+            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken });
 
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

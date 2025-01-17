@@ -22,8 +22,6 @@ export default {
             // Safely access project_members array from the payload
             const newMemberIds = project_members?.project_members || [];
 
-            console.log("Received project members:", newMemberIds);
-
             const project = await Project.findByPk(id);
 
             if (!project) {
@@ -53,12 +51,12 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Project members added successfully", {
+            return responseHandler.success(res, "Project members added successfully", {
                 project_members: { project_members: updatedMembers }
             });
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

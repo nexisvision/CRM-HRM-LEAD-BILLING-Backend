@@ -55,9 +55,9 @@ export default {
                 where: { project_name }
             });
 
-            // if (existingProject) {
-            //     return responseHandler.error(res, "Project with this name already exists");
-            // }
+            if (existingProject) {
+                return responseHandler.error(res, "Project with this name already exists");
+            }
 
             const updatedProject = await project.update({
                 project_name,
@@ -77,10 +77,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Project updated successfully", updatedProject);
+            return responseHandler.success(res, "Project updated successfully", updatedProject);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

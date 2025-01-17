@@ -27,10 +27,10 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Permission created successfully", permission);
+            return responseHandler.created(res, "Permission created successfully", permission);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }; 

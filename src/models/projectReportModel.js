@@ -35,11 +35,14 @@ const ProjectReport = sequelize.define("ProjectReport", {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
+
     }
 });
 

@@ -1,7 +1,7 @@
-import Announcement from "../../models/announcementModel.js";
-import responseHandler from "../../utils/responseHandler.js";
 import Joi from "joi";
 import validator from "../../utils/validator.js";
+import Announcement from "../../models/announcementModel.js";
+import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
@@ -14,9 +14,9 @@ export default {
         const { title, description, } = req.body;
         try {
             const announcement = await Announcement.create({ title, description, });
-            responseHandler.success(res, "Announcement created successfully", announcement);
+            return responseHandler.success(res, "Announcement created successfully", announcement);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
 
     }

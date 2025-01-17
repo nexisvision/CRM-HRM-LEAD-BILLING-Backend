@@ -30,7 +30,7 @@ export default {
             await meeting.update({ title, date, startTime, endTime, description, meetingLink, status });
             return responseHandler.success(res, "Meeting updated successfully", meeting);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

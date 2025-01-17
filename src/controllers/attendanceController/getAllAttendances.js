@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const attendances = await Attendance.findAll();
-            responseHandler.success(res, "Attendances fetched successfully", attendances);
+            return responseHandler.success(res, "Attendances fetched successfully", attendances);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

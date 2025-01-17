@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'User ID must be a string',
-                'string.empty': 'User ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -21,9 +18,9 @@ export default {
                 return responseHandler.error(res, "User not found");
             }
 
-            responseHandler.success(res, "User fetched successfully", user);
+            return responseHandler.success(res, "User fetched successfully", user);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

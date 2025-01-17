@@ -13,9 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const announcements = await Announcement.findAll();
-            responseHandler.success(res, "Announcements fetched successfully", announcements);
+            return responseHandler.success(res, "Announcements fetched successfully", announcements);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -42,8 +42,8 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
         defaultValue: 0
     },
     payment_status: {
-        type: DataTypes.ENUM('pending', 'completed', 'failed'),
-        defaultValue: 'pending'
+        type: DataTypes.ENUM('paid', 'unpaid'),
+        defaultValue: 'unpaid'
     },
     last_payment_date: {
         type: DataTypes.DATE,

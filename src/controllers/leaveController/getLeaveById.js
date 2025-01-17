@@ -17,10 +17,10 @@ export default {
             if (!leave) {
                 return responseHandler.notFound(res, "Leave record not found");
             }
-            responseHandler.success(res, "Leave fetched successfully", leave);
+            return responseHandler.success(res, "Leave fetched successfully", leave);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

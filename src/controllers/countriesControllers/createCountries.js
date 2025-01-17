@@ -23,10 +23,9 @@ export default {
                 created_by: req.user?.username
             });
 
-            responseHandler.success(res, "Country created successfully", country);
+            return responseHandler.success(res, "Country created successfully", country);
         } catch (error) {
-            console.error('Error creating country:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

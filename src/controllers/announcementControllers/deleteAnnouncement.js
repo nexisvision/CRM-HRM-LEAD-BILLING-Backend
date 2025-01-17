@@ -6,10 +6,7 @@ import Announcement from "../../models/announcementModel.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Department ID must be a string',
-                'string.empty': 'Department ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -20,9 +17,9 @@ export default {
                 return responseHandler.error(res, "Announcement not found");
             }
             await announcement.destroy();
-            responseHandler.success(res, "Announcement deleted successfully", announcement);
+            return responseHandler.success(res, "Announcement deleted successfully", announcement);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

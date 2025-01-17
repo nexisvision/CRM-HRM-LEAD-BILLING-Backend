@@ -66,10 +66,9 @@ export default {
                 role_id: role.id,
             });
 
-            responseHandler.created(res, "Super admin created successfully", superAdmin);
+            return responseHandler.created(res, "Super admin created successfully", superAdmin);
         } catch (error) {
-            console.error(error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }; 

@@ -1,7 +1,7 @@
 import Joi from "joi";
-import Client from "../../models/clientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -36,18 +36,20 @@ export default {
                 bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address } = req.body;
 
-            const client = await Client.findByPk(id);
+            const client = await User.findByPk(id);
             if (!client) {
                 return responseHandler.notFound(res, "Client not found");
             }
 
-            await client.update({ username, email, firstName, lastName,
+            await client.update({
+                username, email, firstName, lastName,
                 phone, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
-                city, state, country, zipcode, address, updated_by: req.user?.username });
-            responseHandler.success(res, "Client updated successfully", client);
+                city, state, country, zipcode, address, updated_by: req.user?.username
+            });
+            return responseHandler.success(res, "Client updated successfully", client);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

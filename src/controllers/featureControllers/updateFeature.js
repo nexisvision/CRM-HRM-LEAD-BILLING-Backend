@@ -5,13 +5,10 @@ import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
         body: Joi.object({
-            params: Joi.object({
-                id: Joi.string().required().messages({
-                    'string.base': 'Feature ID must be a string',
-                    'string.empty': 'Feature ID is required',
-                })
-            }),
             featureName: Joi.string().required()
         })
     }),
@@ -24,9 +21,9 @@ export default {
                 return responseHandler.error(res, "Feature not found");
             }
             await feature.update({ featureName });
-            responseHandler.success(res, "Feature updated successfully", feature);
+            return responseHandler.success(res, "Feature updated successfully", feature);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

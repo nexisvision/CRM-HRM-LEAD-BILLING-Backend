@@ -13,15 +13,15 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            
+
             const skill = await Skill.findByPk(id);
             if (!skill) {
                 return responseHandler.notFound(res, "Skill not found");
-            }   
+            }
             await skill.destroy();
             return responseHandler.success(res, "Skill deleted successfully", skill);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

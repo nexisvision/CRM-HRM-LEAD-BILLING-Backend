@@ -6,10 +6,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Lead ID must be a string',
-                'string.empty': 'Lead ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             leadTitle: Joi.string().required(),
@@ -64,9 +61,9 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Lead updated successfully!", lead);
+            return responseHandler.success(res, "Lead updated successfully!", lead);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

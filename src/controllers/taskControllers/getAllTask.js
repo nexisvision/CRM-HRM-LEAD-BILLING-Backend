@@ -17,9 +17,9 @@ export default {
         try {
             const { id } = req.params;
             const tasks = await Task.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Tasks fetched successfully", tasks);
+            return responseHandler.success(res, "Tasks fetched successfully", tasks);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     }
 }

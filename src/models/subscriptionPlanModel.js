@@ -11,7 +11,8 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     currency: {
         type: DataTypes.STRING,

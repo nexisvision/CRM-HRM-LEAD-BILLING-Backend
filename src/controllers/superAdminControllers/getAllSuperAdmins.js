@@ -13,10 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const superAdmins = await SuperAdmin.findAll();
-            responseHandler.success(res, "Super Admins fetched successfully", superAdmins);
+            return responseHandler.success(res, "Super Admins fetched successfully", superAdmins);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

@@ -45,10 +45,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Attendance updated successfully", attendance);
+            return responseHandler.success(res, "Attendance updated successfully", attendance);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

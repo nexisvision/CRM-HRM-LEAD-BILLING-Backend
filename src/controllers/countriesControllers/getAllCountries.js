@@ -14,10 +14,9 @@ export default {
         try {
 
             const countries = await Country.findAll();
-            responseHandler.success(res, "Countries fetched successfully", countries);
+            return responseHandler.success(res, "Countries fetched successfully", countries);
         } catch (error) {
-            console.error('Error fetching countries:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

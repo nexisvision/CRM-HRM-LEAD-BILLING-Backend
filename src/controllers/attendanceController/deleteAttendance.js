@@ -20,10 +20,10 @@ export default {
 
             await attendance.destroy();
 
-            responseHandler.success(res, "Attendance deleted successfully", attendance);
+            return responseHandler.success(res, "Attendance deleted successfully", attendance);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

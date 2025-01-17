@@ -1,7 +1,7 @@
 import Joi from "joi";
-import SubClient from "../../models/subClientModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -12,10 +12,19 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const subClients = await SubClient.findAll();
-            responseHandler.success(res, "SubClients fetched successfully", subClients);
+            const SubClientRoleID = await Role.findOne({
+                where: {
+                    role_name: "sub-client"
+                }
+            });
+            const subClients = await User.findAll({
+                where: {
+                    role_id: SubClientRoleID.id
+                }
+            });
+            return responseHandler.success(res, "SubClients fetched successfully", subClients);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -22,7 +22,7 @@ export default {
             const salesQuotation = await SalesQuotations.create({ related_id: id, customer, issueDate, category, items, discount, tax, total, created_by: req.user?.username });
             return responseHandler.success(res, "SalesQuotation created successfully", salesQuotation);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

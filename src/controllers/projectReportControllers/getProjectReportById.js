@@ -16,10 +16,10 @@ export default {
             if (!projectReport) {
                 return responseHandler.notFound(res, "Project report not found");
             }
-            responseHandler.success(res, "Project report fetched successfully", projectReport);
+            return responseHandler.success(res, "Project report fetched successfully", projectReport);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

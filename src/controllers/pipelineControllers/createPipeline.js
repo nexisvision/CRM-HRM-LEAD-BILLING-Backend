@@ -6,16 +6,16 @@ export default {
     validator: validator({
         body: Joi.object({
             pipeline_name: Joi.string().required(),
-            
+
         })
     }),
     handler: async (req, res) => {
         try {
             const { pipeline_name } = req.body;
             const pipeline = await Pipeline.create({ pipeline_name, created_by: req.user?.username, updated_by: req.user?.username });
-            responseHandler.success(res, "Pipeline created successfully", pipeline);
+            return responseHandler.success(res, "Pipeline created successfully", pipeline);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

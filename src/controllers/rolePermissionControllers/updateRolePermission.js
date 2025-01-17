@@ -27,10 +27,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Role permission updated successfully", rolePermission);
+            return responseHandler.success(res, "Role permission updated successfully", rolePermission);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

@@ -26,10 +26,10 @@ export default {
                 activity_message: `Milestone ${milestone.milestone_title} deleted successfully`
             });
             await milestone.destroy();
-            responseHandler.success(res, "Milestone deleted successfully", milestone);
+            return responseHandler.success(res, "Milestone deleted successfully", milestone);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

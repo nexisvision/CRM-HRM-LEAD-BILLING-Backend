@@ -7,10 +7,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Department ID must be a string',
-                'string.empty': 'Department ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -21,9 +18,9 @@ export default {
                 return responseHandler.error(res, "Department not found");
             }
             await department.destroy();
-            responseHandler.success(res, "Department deleted successfully", department);
+            return responseHandler.success(res, "Department deleted successfully", department);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }   

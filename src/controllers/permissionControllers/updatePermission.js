@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Permission ID must be a string',
-                'string.empty': 'Permission ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             permissions: Joi.object().allow(null).required()
@@ -31,10 +28,10 @@ export default {
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Permission updated successfully", permission);
+            return responseHandler.success(res, "Permission updated successfully", permission);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

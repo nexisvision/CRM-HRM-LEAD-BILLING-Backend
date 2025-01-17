@@ -6,10 +6,7 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Employee ID must be a string',
-                'string.empty': 'Employee ID is required',
-            })
+            id: Joi.string().required()
         }),
         body: Joi.object({
             firstName: Joi.string().allow('', null),
@@ -28,13 +25,14 @@ export default {
             ifsc: Joi.number().allow('', null),
             banklocation: Joi.string().allow('', null),
             e_signatures: Joi.object().optional().allow(null),
+            documents: Joi.object().optional().allow(null),
             links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links } = req.body;
+            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
@@ -46,7 +44,6 @@ export default {
                 return responseHandler.conflict(res, "Phone number already exists");
             }
 
-            // Update employee
             await employee.update({
                 firstName,
                 lastName,
@@ -64,13 +61,14 @@ export default {
                 ifsc,
                 banklocation,
                 e_signatures,
+                documents,
                 links,
                 updated_by: req.user?.username
             });
 
-            responseHandler.success(res, "Employee updated successfully", employee);
+            return responseHandler.success(res, "Employee updated successfully", employee);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

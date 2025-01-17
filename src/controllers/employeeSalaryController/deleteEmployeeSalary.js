@@ -19,9 +19,9 @@ export default {
             }
 
             await employeeSalary.destroy();
-            responseHandler.success(res, "EmployeeSalary deleted successfully", employeeSalary);
+            return responseHandler.success(res, "EmployeeSalary deleted successfully", employeeSalary);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

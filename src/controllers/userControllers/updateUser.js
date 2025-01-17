@@ -24,10 +24,10 @@ export default {
             }
 
             await user.update({ username, email });
-            responseHandler.success(res, "User updated successfully", user);
+            return responseHandler.success(res, "User updated successfully", user);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

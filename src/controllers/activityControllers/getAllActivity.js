@@ -13,10 +13,12 @@ export default {
         try {
             const { id } = req.params;
             const activities = await Activity.findAll({ where: { related_id: id } });
-            responseHandler.success(res, "Activities fetched successfully", activities);
+            if (!activities) {
+                return responseHandler.error(res, "Activities Not Found");
+            }
+            return responseHandler.success(res, "Activities fetched successfully", activities);
         } catch (error) {
-            console.error(error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

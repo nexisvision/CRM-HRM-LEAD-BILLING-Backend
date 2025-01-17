@@ -4,6 +4,7 @@ import routes from "./routes/index.js";
 import sequelize from "./config/db.js";
 import fileUpload from 'express-fileupload';
 import responseHandler from "./utils/responseHandler.js";
+import logAuditTrails from "./middlewares/logAuditTrails.js";
 import cors from "cors";
 
 const app = express();
@@ -14,11 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     try {
-        responseHandler.success(res, "Server is running successfully");
+        return responseHandler.success(res, "Server is running successfully");
     } catch (error) {
-        responseHandler.error(res, error.message);
+        return responseHandler.error(res, error);
     }
 });
+app.use(logAuditTrails);
 
 app.use("/api/v1/", routes);
 
@@ -26,7 +28,7 @@ app.use("/api/v1/", routes);
 app.use(fileUpload());
 
 app.get("*", (req, res) => {
-    responseHandler.error(res, "Route not found", 404);
+    return responseHandler.error(res, "Route not found");
 });
 
 const startServer = async () => {
@@ -42,4 +44,4 @@ const startServer = async () => {
     }
 };
 
-startServer();  
+startServer();

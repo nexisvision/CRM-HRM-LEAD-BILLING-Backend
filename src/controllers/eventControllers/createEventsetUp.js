@@ -23,9 +23,9 @@ export default {
                 EventTime,
                 created_by: req.user?.username
             });
-            responseHandler.success(res, "Event scheduled successfully!", event);
+            return responseHandler.success(res, "Event scheduled successfully!", event);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

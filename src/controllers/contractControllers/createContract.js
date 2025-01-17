@@ -37,7 +37,7 @@ export default {
             });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 

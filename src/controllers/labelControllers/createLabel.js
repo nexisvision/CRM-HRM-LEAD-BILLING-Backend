@@ -35,12 +35,10 @@ export default {
                 lableType,
                 created_by: req.user?.username
             });
-
-            console.log("sdfsdfdfs",newTag);
-            responseHandler.success(res, "Tag created successfully", newTag);
+            return responseHandler.success(res, "Tag created successfully", newTag);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

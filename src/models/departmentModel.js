@@ -9,14 +9,13 @@ const Department = sequelize.define('Department', {
     unique: true,
     defaultValue: () => generateId()
   },
+  branch: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   department_name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true
-  },
-  description: {
-    type: DataTypes.STRING,
-    allowNull: true
   },
   created_by: {
     type: DataTypes.STRING,

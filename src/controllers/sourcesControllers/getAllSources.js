@@ -1,26 +1,22 @@
-import responseHandler from "../../utils/responseHandler.js";
-import Sources from "../../models/sourcesModel.js";
 import Joi from "joi";
 import validator from "../../utils/validator.js";
+import Sources from "../../models/sourcesModel.js";
+import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
         query: Joi.object({
-            page: Joi.number().optional().default(1),
-            limit: Joi.number().optional().default(10)
+            page: Joi.number().optional(),
+            limit: Joi.number().optional()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const sources = await Sources.findAll({
-                offset: (page - 1) * limit,
-                limit: limit
-            });
-            responseHandler.success(res, "Sources fetched successfully", sources);
+            const sources = await Sources.findAll();
+            return responseHandler.success(res, "Sources fetched successfully", sources);
         } catch (error) {
-            responseHandler.error(res, error);
+            return responseHandler.error(res, error);
         }
     },
-    
+
 }

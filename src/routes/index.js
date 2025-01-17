@@ -55,6 +55,24 @@ import salesQuotations from "./salesQuotations.js";
 import salesInvoiceRoutes from "./salesInvoiceRoutes.js";
 import salesRevenueRoutes from "./salesRevenueRoutes.js";
 import salesCreditnoteRoutes from "./salesCreditnoteRoutes.js";
+import inquiryRoutes from "./inquiryRoutes.js";
+import orderRoutes from "./orderRoutes.js";
+import billRoutes from "./billRoutes.js";
+import leaveTypeRoutes from "./leaveTypeRoutes.js";
+import documentTypeRoutes from "./documentTypeRoutes.js";
+import payslipTypeRoutes from "./payslipTypeRoutes.js";
+import allowanceOptionRoutes from "./allowanceOptionRoutes.js";
+import loanOptionRoutes from "./loanOptionRoutes.js";
+import deductionOptionRoutes from "./deductionOptionRoutes.js";
+import goalTypeRoutes from "./goalTypeRoutes.js";
+import trainingTypeRoutes from "./trainingTypeRoutes.js";
+import awardTypeRoutes from "./awardTypeRoutes.js";
+import terminationTypeRoutes from "./terminationTypeRoutes.js";
+import jobCategoryRoutes from "./jobCategoryRoutes.js";
+import jobStageRoutes from "./jobStageRoutes.js";
+import performanceTypeRoutes from "./performanceTypeRoutes.js";
+import competenciesRoutes from "./competenciesRoutes.js";
+
 const router = express.Router();
 
 router.use('/auth', authRoutes);
@@ -64,8 +82,6 @@ router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/employees', employeeRoutes);
 router.use('/users', userRoutes);
-router.use('/departments', departmentRoutes);
-router.use('/designations', designationRoutes);
 router.use('/attendance', attendanceRoutes);
 router.use('/leaves', leaveRoutes);
 router.use('/permissions', permissionRoutes);
@@ -78,7 +94,6 @@ router.use('/project-reports', projectReportRoutes);
 router.use('/features', featureRoutes);
 router.use('/taskcalendars', taskCalendarRoutes);
 router.use('/currencies', currencyRoutes);
-router.use('/branches', branchRoutes);
 router.use('/tasks', taskRoutes);
 router.use('/countries', countriesRoutes);
 router.use('/labels', labelRoutes);
@@ -113,5 +128,29 @@ router.use('/sales-quotations', salesQuotations);
 router.use('/sales-invoices', salesInvoiceRoutes);
 router.use('/sales-revenue', salesRevenueRoutes);
 router.use('/sales-creditnote', salesCreditnoteRoutes);
+router.use('/inquiry', inquiryRoutes);
+router.use('/orders', orderRoutes);
+router.use('/bills', billRoutes);
+
+
+//HRM
+router.use('/branches', branchRoutes);
+router.use('/departments', departmentRoutes);
+router.use('/designations', designationRoutes);
+router.use('/leave-types', leaveTypeRoutes);
+router.use('/document-types', documentTypeRoutes);
+router.use('/payslip-types', payslipTypeRoutes);
+router.use('/allowance-options', allowanceOptionRoutes);
+router.use('/loan-options', loanOptionRoutes);
+router.use('/deduction-options', deductionOptionRoutes);
+router.use('/goal-types', goalTypeRoutes);
+router.use('/training-types', trainingTypeRoutes);
+router.use('/award-types', awardTypeRoutes);
+router.use('/termination-types', terminationTypeRoutes);
+router.use('/job-categories', jobCategoryRoutes);
+router.use('/job-stages', jobStageRoutes);
+router.use('/performance-types', performanceTypeRoutes);
+router.use('/competencies', competenciesRoutes);
+
 
 export default router;

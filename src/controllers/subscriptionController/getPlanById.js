@@ -18,10 +18,10 @@ export default {
                 return responseHandler.notFound(res, "Plan not found");
             }
 
-            responseHandler.success(res, "Plan retrieved successfully", plan);
+            return responseHandler.success(res, "Plan retrieved successfully", plan);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }; 

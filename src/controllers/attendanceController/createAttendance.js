@@ -36,10 +36,10 @@ export default {
                 created_by: req.user?.username,
             });
 
-            responseHandler.created(res, "Attendance marked successfully", attendance);
+            return responseHandler.created(res, "Attendance marked successfully", attendance);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

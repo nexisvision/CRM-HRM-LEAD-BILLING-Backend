@@ -32,10 +32,10 @@ export default {
 
             await plan.update({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, updated_by: req.user?.username });
 
-            responseHandler.success(res, "Plan updated successfully", plan);
+            return responseHandler.success(res, "Plan updated successfully", plan);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }; 

@@ -12,12 +12,13 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { page, limit } = req.query;
-            const branches = await Branch.findAll({ limit: limit, offset: page });
-            responseHandler.success(res, "Branches fetched successfully", branches);
+            const branches = await Branch.findAll();
+            if (!branches) {
+                return responseHandler.error(res, "Branches not found");
+            }
+            return responseHandler.success(res, "Branches fetched successfully", branches);
         } catch (error) {
-            console.error('Error fetching branches:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

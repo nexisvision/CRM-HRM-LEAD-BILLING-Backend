@@ -16,9 +16,9 @@ export default {
                 return responseHandler.notFound(res, "Pipeline not found");
             }
             await pipeline.destroy();
-            responseHandler.success(res, 'Pipeline deleted successfully', pipeline);
+            return responseHandler.success(res, 'Pipeline deleted successfully', pipeline);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

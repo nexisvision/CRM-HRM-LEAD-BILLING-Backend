@@ -17,12 +17,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-           
-            const payments = await Payment.findAll({ where: { related_id: id }});
-            responseHandler.success(res, "Payments fetched successfully", payments);
+
+            const payments = await Payment.findAll({ where: { related_id: id } });
+            return responseHandler.success(res, "Payments fetched successfully", payments);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -25,10 +25,7 @@ export default {
                 })
         }),
         params: Joi.object({
-            id: Joi.string().required().messages({
-                'string.base': 'Task ID must be a string',
-                'string.empty': 'Task ID is required',
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
@@ -40,9 +37,9 @@ export default {
                 return responseHandler.error(res, "Task not found");
             }
             await task.update({ taskName, taskDate, taskTime, taskDescription, updated_by: req.user?.username });
-            responseHandler.success(res, "Task updated successfully", task);
+            return responseHandler.success(res, "Task updated successfully", task);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -5,19 +5,18 @@ import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";
 import User from "../../models/userModel.js";
+import { sendEmail } from '../../utils/emailService.js';
+import { generateOTP } from "../../utils/otpService.js";
+import { OTP_CONFIG } from "../../config/config.js";
+import jwt from "jsonwebtoken";
+import { JWT_SECRET } from "../../config/config.js";
+import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
 
 export default {
     validator: validator({
         body: Joi.object({
-            username: Joi.string().required().messages({
-                'string.base': 'Username must be a string',
-                'string.empty': 'Username is required'
-            }),
-            email: Joi.string().email().required().messages({
-                'string.base': 'Email must be a string',
-                'string.empty': 'Email is required',
-                'string.email': 'Invalid email format'
-            }),
+            username: Joi.string().required(),
+            email: Joi.string().email().required(),
             password: Joi.string()
                 .required()
                 .min(8)
@@ -28,12 +27,29 @@ export default {
                     'string.min': 'Password must be at least 8 characters',
                     'string.pattern.base': 'Password must contain only letters, numbers and special characters'
                 }),
+            firstName: Joi.string().allow('', null),
+            lastName: Joi.string().allow('', null),
+            phone: Joi.string().allow('', null),
+            address: Joi.string().allow('', null),
+            joiningDate: Joi.date().allow('', null),
+            leaveDate: Joi.date().allow(null),
+            department: Joi.string().allow('', null),
+            designation: Joi.string().allow('', null),
+            salary: Joi.number().allow('', null),
+            accountholder: Joi.string().allow('', null),
+            accountnumber: Joi.number().allow('', null),
+            bankname: Joi.string().allow('', null),
+            ifsc: Joi.number().allow('', null),
+            banklocation: Joi.string().allow('', null),
+            e_signatures: Joi.object().optional().allow(null),
+            documents: Joi.object().optional().allow(null),
+            links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
-            const {
-                username, email, password } = req.body;
+            const { subscription } = req;
+            const { username, email, password, firstName, lastName, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -57,23 +73,63 @@ export default {
                 defaults: { id: generateId() }
             });
 
-            // Hash the password
-            const hashedPassword = await bcrypt.hash(password, 10);
+            // Generate OTP
+            const otp = generateOTP(OTP_CONFIG.LENGTH);
 
-            // Create employee with all fields
-            const employee = await User.create({
+            // Hash password
+            const hashedPassword = await bcrypt.hash(password, 12);
+
+            // Create temporary user record
+            const tempUser = {
+                id: req.user.id,
                 username,
                 email,
-                password: hashedPassword,
                 role_id: role.id,
-                created_by: req.user?.username,
-            });
+                password: hashedPassword,
+                firstName,
+                lastName,
+                phone,
+                address,
+                joiningDate,
+                leaveDate,
+                department,
+                designation,
+                salary,
+                accountholder,
+                accountnumber,
+                bankname,
+                ifsc,
+                banklocation,
+                e_signatures,
+                documents,
+                links,
+                verificationOTP: otp,
+                verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT
+            };
 
-            return responseHandler.created(res, "Employee created successfully", employee);
+            // Store in session
+            const sessionToken = jwt.sign(
+                {
+                    ...tempUser,
+                    ...subscription,
+                    type: 'signup_verification'
+                },
+                JWT_SECRET,
+                { expiresIn: '15m' }
+            );
+
+            // Send verification email
+            const emailTemplate = getVerificationEmailTemplate(username, otp);
+            await sendEmail(
+                email,
+                'Verify Your Email',
+                emailTemplate
+            );
+
+            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            console.error('Error creating employee:', error);
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

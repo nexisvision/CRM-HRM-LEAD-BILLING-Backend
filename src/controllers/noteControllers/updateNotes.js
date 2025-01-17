@@ -35,7 +35,7 @@ export default {
             });
             return responseHandler.success(res, "Note updated successfully", note);
         } catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

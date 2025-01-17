@@ -16,7 +16,7 @@ export default {
             const quotations = await Quotations.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "Quotations fetched successfully", quotations);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

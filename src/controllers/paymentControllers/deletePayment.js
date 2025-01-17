@@ -17,10 +17,9 @@ export default {
                 return responseHandler.error(res, "Payment not found", 404);
             }
             await payment.destroy();
-            responseHandler.success(res, "Payment deleted successfully", payment);
+            return responseHandler.success(res, "Payment deleted successfully", payment);
         } catch (error) {
-            console.error('Error deleting payment:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };

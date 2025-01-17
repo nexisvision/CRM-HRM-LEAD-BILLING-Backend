@@ -30,10 +30,10 @@ export default {
                 }
             });
 
-            responseHandler.success(res, "Role permissions fetched successfully", rolePermissions);
+            return responseHandler.success(res, "Role permissions fetched successfully", rolePermissions);
         } catch (error) {
-            console.log(error);
-            responseHandler.error(res, error.message);
+
+            return responseHandler.error(res, error);
         }
     }
 };

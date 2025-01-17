@@ -17,10 +17,10 @@ export default {
                 return responseHandler.notFound(res, "Project report not found");
             }
             await projectReport.destroy();
-            responseHandler.success(res, "Project report deleted successfully", projectReport);
+            return responseHandler.success(res, "Project report deleted successfully", projectReport);
         }
         catch (error) {
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

@@ -17,7 +17,7 @@ export default {
             const salesQuotations = await SalesQuotations.findAll({ where: { related_id: id } });
             return responseHandler.success(res, "salesQuotations fetched successfully", salesQuotations);
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 }

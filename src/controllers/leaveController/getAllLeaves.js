@@ -12,10 +12,9 @@ export default {
     handler: async (req, res) => {
         try {
             const leaves = await Leave.findAll();
-            responseHandler.success(res, "Leaves fetched successfully", leaves);
+            return responseHandler.success(res, "Leaves fetched successfully", leaves);
         } catch (error) {
-            console.error('Error fetching leaves:', error);
-            responseHandler.error(res, error.message);
+            return responseHandler.error(res, error);
         }
     }
 };
