@@ -7,7 +7,7 @@ export default {
     validator: validator({
         body: Joi.object({
             date: Joi.date().required(),
-            currency: Joi.string().required(),
+            currency: Joi.string().optional(),
             amount: Joi.number().required(),
             account: Joi.string().required(),
             customer: Joi.string().required(),

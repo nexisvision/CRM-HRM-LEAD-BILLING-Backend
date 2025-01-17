@@ -72,6 +72,7 @@ import jobCategoryRoutes from "./jobCategoryRoutes.js";
 import jobStageRoutes from "./jobStageRoutes.js";
 import performanceTypeRoutes from "./performanceTypeRoutes.js";
 import competenciesRoutes from "./competenciesRoutes.js";
+import jobonboardingrouter from "./jobonboardingrouter.js";
 
 const router = express.Router();
 
@@ -131,6 +132,7 @@ router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
 router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
+router.use('/job-onboarding', jobonboardingrouter)
 
 
 //HRM

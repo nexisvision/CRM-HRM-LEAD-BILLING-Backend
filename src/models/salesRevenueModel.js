@@ -21,7 +21,7 @@ const SalesRevenue = sequelize.define('sales_Revenue', {
     },
     currency: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     amount: {
         type: DataTypes.INTEGER,

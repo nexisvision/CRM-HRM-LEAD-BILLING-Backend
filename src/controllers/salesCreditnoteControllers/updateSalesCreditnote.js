@@ -9,9 +9,9 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            invoice: Joi.string().required(),
+            invoice: Joi.string().optional(),
             date: Joi.date().required(),
-            currency: Joi.string().required(),
+            currency: Joi.string().optional(),
             amount: Joi.number().required(),
             description: Joi.string().optional().allow('', null),
         })
@@ -24,7 +24,7 @@ export default {
             if (!salesCreditnote) {
                 return responseHandler.error(res, "SalesCreditnote not found");
             }
-            await salesCreditnote.update({ invoice, date, currency, amount, description, updated_by: req.user?.username });
+            await salesCreditnote.update({  invoice, date, currency, amount, description, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesCreditnote updated successfully", salesCreditnote);
         } catch (error) {
             return responseHandler.error(res, error);

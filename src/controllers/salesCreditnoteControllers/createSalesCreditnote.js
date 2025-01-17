@@ -8,7 +8,7 @@ export default {
         body: Joi.object({
             invoice: Joi.string().required(),
             date: Joi.date().required(),
-            currency: Joi.string().required(),
+            currency: Joi.string().optional(),
             amount: Joi.number().required(),
             description: Joi.string().optional().allow('', null),
         })

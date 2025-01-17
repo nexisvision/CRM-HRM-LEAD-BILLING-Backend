@@ -11,8 +11,8 @@ export default {
             dueDate: Joi.date().required(),
             category: Joi.string().required(),
             items: Joi.object().required(),
-            discount: Joi.number().required(),
-            tax: Joi.number().required(),
+            discount: Joi.number().optional(),
+            tax: Joi.number().optional(),
             total: Joi.number().required()
         })
     }),
