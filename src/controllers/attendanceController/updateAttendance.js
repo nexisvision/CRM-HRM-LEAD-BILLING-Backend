@@ -9,22 +9,19 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            department: Joi.string().optional().allow('', null),
-            employee: Joi.object().optional().allow('', null),
-            startDate: Joi.date().optional().allow('', null),
+            employee: Joi.string().optional().allow('', null),
+            date: Joi.date().optional().allow('', null),
             startTime: Joi.string().optional().allow('', null),
-            endDate: Joi.date().optional().allow('', null),
             endTime: Joi.string().optional().allow('', null),
             late: Joi.string().optional().allow('', null),
             halfDay: Joi.string().optional().allow('', null),
-            working_from: Joi.string().optional().allow('', null),
             comment: Joi.string().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { department, employee, startDate, startTime, endDate, endTime, late, halfDay, working_from, comment } = req.body;
+            const { employee, date, startTime, endTime, late, halfDay, comment } = req.body;
 
             const attendance = await Attendance.findByPk(id);
             if (!attendance) {
@@ -32,16 +29,12 @@ export default {
             }
 
             await attendance.update({
-                department,
                 employee,
-                startDate,
+                date,
                 startTime,
-                endDate,
                 endTime,
                 late,
                 halfDay,
-                working_from,
-                comment,
                 updated_by: req.user?.username
             });
 

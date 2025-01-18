@@ -89,7 +89,6 @@ router.use('/roles', roleRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
 router.use('/users', userRoutes);
-router.use('/attendance', attendanceRoutes);
 router.use('/permissions', permissionRoutes);
 router.use('/role-permissions', rolePermissionRoutes);
 router.use('/subscriptions', subscriptionRoutes);
@@ -167,6 +166,7 @@ router.use('/deduction', deductionRoutes);
 router.use('/other-payments', otherPaymentRoutes);
 router.use('/overtime', overtimeRoutes);
 router.use('/leaves', leaveRoutes);
+router.use('/attendance', attendanceRoutes);
 
 
 

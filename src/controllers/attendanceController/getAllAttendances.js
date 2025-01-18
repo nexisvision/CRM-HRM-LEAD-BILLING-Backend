@@ -13,6 +13,11 @@ export default {
     handler: async (req, res) => {
         try {
             const attendances = await Attendance.findAll();
+
+            if (!attendances) {
+                return responseHandler.notFound(res, "Attendances record not found");
+            }
+
             return responseHandler.success(res, "Attendances fetched successfully", attendances);
         } catch (error) {
             return responseHandler.error(res, error?.message);

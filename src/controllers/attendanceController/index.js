@@ -6,5 +6,4 @@ import deleteAttendance from './deleteAttendance.js';
 import createBulkAttendance from './createBulkAttendance.js';
 
 
-export { createAttendance, getAllAttendances,
-     getAttendanceById, updateAttendance, deleteAttendance, createBulkAttendance };
+export { createAttendance, getAllAttendances, getAttendanceById, updateAttendance, deleteAttendance, createBulkAttendance };
