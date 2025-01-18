@@ -80,6 +80,7 @@ import deductionRoutes from "./deductionRoutes.js";
 import otherPaymentRoutes from "./otherPaymentRoutes.js";
 import overtimeRoutes from "./overtimeRoutes.js";
 import leaveRoutes from "./leaveRoutes.js";
+import indicatorRoutes from "./indicatorRoutes.js";
 
 const router = express.Router();
 
@@ -138,7 +139,6 @@ router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
 router.use('/job-onboarding', jobonboardingrouter);
 
-
 //HRM System
 router.use('/branches', branchRoutes);
 router.use('/departments', departmentRoutes);
@@ -167,6 +167,7 @@ router.use('/other-payments', otherPaymentRoutes);
 router.use('/overtime', overtimeRoutes);
 router.use('/leaves', leaveRoutes);
 router.use('/attendance', attendanceRoutes);
+router.use('/indicator', indicatorRoutes);
 
 
 
