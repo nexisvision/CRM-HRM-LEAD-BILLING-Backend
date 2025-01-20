@@ -2,6 +2,7 @@ import Joi from "joi";
 import Leave from "../../models/leaveModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -25,6 +26,20 @@ export default {
             const leave = await Leave.findByPk(id);
             if (!leave) {
                 return responseHandler.notFound(res, "Leave record not found");
+            }
+
+            const existingLeave = await Leave.findOne({
+                where: {
+                    employeeId,
+                    startDate: {
+                        [Op.between]: [startDate, endDate]
+                    },
+                    id: { [Op.not]: id }
+                }
+            });
+
+            if (existingLeave) {
+                return responseHandler.conflict(res, "Leave already exists for the given date range");
             }
 
             await leave.update({

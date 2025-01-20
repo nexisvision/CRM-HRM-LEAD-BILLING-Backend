@@ -24,6 +24,10 @@ export default {
         try {
             const { id } = req.params;
             const { valid_till, currency, lead, client, calculatedTax, items, discount, tax, total } = req.body;
+            const existingQuotation = await Quotations.findOne({ where: { related_id: id, valid_till, currency, lead, client, calculatedTax, items, discount, tax, total } });
+            if (existingQuotation) {
+                return responseHandler.error(res, "Quotation already exists");
+            }
             const quotation = await Quotations.create({ related_id: id, valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, created_by: req.user?.username });
             return responseHandler.success(res, "Quotation created successfully", quotation);
         } catch (error) {

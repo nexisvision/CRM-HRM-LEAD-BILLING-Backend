@@ -2,6 +2,7 @@ import Joi from "joi";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Designation from "../../models/designationModel.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -25,7 +26,7 @@ export default {
             }
 
             const existingDesignation = await Designation.findOne({
-                where: { designation_name, branch, department }
+                where: { designation_name, branch, department, id: { [Op.not]: id } }
             });
 
             if (existingDesignation) {

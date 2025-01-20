@@ -18,11 +18,23 @@ export default {
         try {
             const { employeeId, startDate, endDate, leaveType, reason, isHalfDay } = req.body;
 
-            // Validation for half-day leave:
             if (isHalfDay) {
                 if (startDate.getTime() !== endDate.getTime()) {
                     throw new Error('Half-day leave must have the same start and end date');
                 }
+            }
+
+            const existingLeave = await Leave.findOne({
+                where: {
+                    employeeId,
+                    startDate: {
+                        [Op.between]: [startDate, endDate]
+                    }
+                }
+            });
+
+            if (existingLeave) {
+                return responseHandler.conflict(res, "Leave already exists for the given date range");
             }
 
             const leave = await Leave.create({

@@ -2,7 +2,7 @@ import Joi from "joi";
 import Task from "../../../models/taskModel.js";
 import responseHandler from "../../../utils/responseHandler.js";
 import validator from "../../../utils/validator.js";
-import Deal from "../../../models/dealModel.js";
+import Lead from "../../../models/leadModel.js";
 
 export default {
     validator: validator({
@@ -33,10 +33,18 @@ export default {
                 taskDate
             } = req.body;
 
-            // Check if lead exists
             const lead = await Lead.findByPk(leadId);
             if (!lead) {
                 return responseHandler.notFound(res, "Lead not found");
+            }
+            const existingTask = await Task.findOne({
+                where: {
+                    leadId,
+                    taskTitle
+                }
+            });
+            if (existingTask) {
+                return responseHandler.conflict(res, "Lead task with this title already exists!");
             }
 
             const task = await Task.create({

@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import LoanOption from "../../models/LoanOptionModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const loanOption = await LoanOption.findByPk(id);
             if (!loanOption) {
                 return responseHandler.error(res, "Loan option not found");
+            }
+            const existingLoanOption = await LoanOption.findOne({ where: { name, id: { [Op.not]: id } } });
+            if (existingLoanOption) {
+                return responseHandler.error(res, "Loan option already exists");
             }
             await loanOption.update({
                 name,

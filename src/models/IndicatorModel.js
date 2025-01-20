@@ -13,19 +13,36 @@ const Indicator = sequelize.define('indicator', {
     branch: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     department: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     designation: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
-    overall_rating: {
+    businessProcess: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    oralCommunication: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    leadership: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    projectManagement: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    allocatingResources: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    overallRating: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {

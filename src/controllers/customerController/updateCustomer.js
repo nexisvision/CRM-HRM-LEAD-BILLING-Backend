@@ -2,6 +2,7 @@ import Joi from "joi";
 import Customer from "../../models/customersModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -25,6 +26,11 @@ export default {
             const customer = await Customer.findByPk(id);
             if (!customer) {
                 return responseHandler.error(res, "Customer not found");
+            }
+
+            const existingCustomer = await Customer.findOne({ where: { email, id: { [Op.not]: id } } });
+            if (existingCustomer) {
+                return responseHandler.error(res, "Customer already exists");
             }
 
             await customer.update({ name, contact, email, tax_number, alternate_contact, billing_address, shipping_address, updated_by: req.user?.username });

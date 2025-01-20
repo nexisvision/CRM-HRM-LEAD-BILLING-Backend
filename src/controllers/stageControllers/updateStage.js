@@ -2,6 +2,7 @@ import Joi from "joi";
 import Stage from "../../models/stageModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -20,6 +21,10 @@ export default {
             const stage = await Stage.findByPk(id)
             if (!stage) {
                 return responseHandler.notFound(res, "Stage not found");
+            }
+            const existingStage = await Stage.findOne({ where: { stageName, pipeline, id: { [Op.not]: id } } });
+            if (existingStage) {
+                return responseHandler.error(res, "Stage already exists");
             }
             await stage.update({ stageName, pipeline, updated_by: req.user.id });
             return responseHandler.success(res, "Stage updated successfully", stage);

@@ -21,6 +21,11 @@ export default {
         try {
             const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project } = req.body;
 
+            const existingDeal = await Deal.findOne({ where: { dealName } });
+            if (existingDeal) {
+                return responseHandler.error(res, "Deal already exists");
+            }
+
             const deal = await Deal.create({
                 leadTitle,
                 dealName,

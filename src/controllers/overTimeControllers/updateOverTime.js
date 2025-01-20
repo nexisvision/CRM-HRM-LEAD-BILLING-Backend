@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import OverTime from "../../models/overTimeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -22,6 +23,10 @@ export default {
             const overTime = await OverTime.findByPk(id);
             if (!overTime) {
                 return responseHandler.notFound(res, 'OverTime not found');
+            }
+            const existingOverTime = await OverTime.findOne({ where: { employeeId: overTime.employeeId, title, days, Hours, rate, id: { [Op.not]: overTime.id } } });
+            if (existingOverTime) {
+                return responseHandler.error(res, "OverTime already exists");
             }
             const updatedOverTime = await overTime.update({ title, days, Hours, rate, updated_by: req.user?.username });
             return responseHandler.success(res, 'OverTime updated successfully', updatedOverTime);

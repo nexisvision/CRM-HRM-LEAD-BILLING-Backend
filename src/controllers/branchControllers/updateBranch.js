@@ -2,6 +2,7 @@ import Joi from "joi";
 import Branch from "../../models/branchModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const branch = await Branch.findByPk(id);
             if (!branch) {
                 return responseHandler.error(res, "Branch not found");
+            }
+            const existingBranch = await Branch.findOne({ where: { branchName, id: { [Op.not]: id } } });
+            if (existingBranch) {
+                return responseHandler.error(res, "Branch name already exists");
             }
             await branch.update({ branchName, updated_by: req.user?.username });
             return responseHandler.success(res, "Branch updated successfully", branch);

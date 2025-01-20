@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import OtherPayment from "../../models/otherPaymentModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -23,7 +24,10 @@ export default {
             if (!otherPayment) {
                 return responseHandler.notFound(res, 'OtherPayment not found');
             }
-
+            const existingOtherPayment = await OtherPayment.findOne({ where: { employeeId: otherPayment.employeeId, title, type, currency, amount, id: { [Op.not]: otherPayment.id } } });
+            if (existingOtherPayment) {
+                return responseHandler.error(res, "OtherPayment already exists");
+            }
             await otherPayment.update({ title, type, currency, amount, updated_by: req.user?.username });
 
             return responseHandler.success(res, 'OtherPayment updated successfully', otherPayment);

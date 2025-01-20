@@ -2,6 +2,7 @@ import Joi from "joi";
 import Project from "../../models/projectModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -52,7 +53,7 @@ export default {
             }
 
             const existingProject = await Project.findOne({
-                where: { project_name }
+                where: { project_name, id: { [Op.not]: id } }
             });
 
             if (existingProject) {

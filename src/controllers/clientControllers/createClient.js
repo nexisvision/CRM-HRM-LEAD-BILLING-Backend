@@ -54,13 +54,10 @@ export default {
                 defaults: { id: generateId() }
             });
 
-            // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
 
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 12);
 
-            // Create temporary user record
             const tempUser = {
                 id: req.user.id,
                 username,
@@ -72,7 +69,6 @@ export default {
                 created_by: req.user?.username
             };
 
-            // Store in session
             const sessionToken = jwt.sign(
                 {
                     ...tempUser,
@@ -83,7 +79,6 @@ export default {
                 { expiresIn: '15m' }
             );
 
-            // Send verification email
             const emailTemplate = getVerificationEmailTemplate(username, otp);
             await sendEmail(
                 email,

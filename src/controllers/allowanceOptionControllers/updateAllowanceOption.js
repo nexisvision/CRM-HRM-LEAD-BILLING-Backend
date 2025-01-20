@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import AllowanceOption from "../../models/allowanceOptionModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const allowanceOption = await AllowanceOption.findByPk(id);
             if (!allowanceOption) {
                 return responseHandler.error(res, "Allowance option not found");
+            }
+            const existingAllowanceOption = await AllowanceOption.findOne({ where: { name, id: { [Op.not]: id } } });
+            if (existingAllowanceOption) {
+                return responseHandler.error(res, "Allowance option already exists");
             }
             await allowanceOption.update({
                 name,

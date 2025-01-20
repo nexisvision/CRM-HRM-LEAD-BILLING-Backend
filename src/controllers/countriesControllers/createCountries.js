@@ -1,8 +1,7 @@
-import Country from "../../models/countriesModel.js";
-import responseHandler from "../../utils/responseHandler.js";
 import Joi from "joi";
+import Country from "../../models/countriesModel.js";
 import validator from "../../utils/validator.js";
-
+import responseHandler from "../../utils/responseHandler.js";
 
 export default {
     validator: validator({
@@ -15,6 +14,11 @@ export default {
     handler: async (req, res) => {
         try {
             const { countryName, countryCode, phoneCode } = req.body;
+
+            const existingCountry = await Country.findOne({ where: { countryName } });
+            if (existingCountry) {
+                return responseHandler.error(res, "Country already exists");
+            }
 
             const country = await Country.create({
                 countryName,

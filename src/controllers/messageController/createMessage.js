@@ -15,6 +15,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { chooseMember, message, file, isRead } = req.body;
+            const existingMessage = await Message.findOne({ where: { chooseMember, message, file, isRead } });
+            if (existingMessage) {
+                return responseHandler.error(res, "Message already exists");
+            }
             const messageData = await Message.create({
                 chooseMember,
                 message,

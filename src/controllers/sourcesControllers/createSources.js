@@ -14,7 +14,6 @@ export default {
         try {
             const { sourceName, description } = req.body;
 
-            // Check if source name already exists
             const existingSource = await Sources.findOne({
                 where: { sourceName }
             });

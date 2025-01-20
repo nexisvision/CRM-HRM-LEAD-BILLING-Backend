@@ -25,10 +25,6 @@ const Milestone = sequelize.define("milestone", {
         type: DataTypes.STRING,
         allowNull: true
     },
-    currency: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
     milestone_summary: {
         type: DataTypes.STRING,
         allowNull: true

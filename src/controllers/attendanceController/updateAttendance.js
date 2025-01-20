@@ -2,6 +2,7 @@ import Joi from "joi";
 import Attendance from "../../models/attendanceModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -27,7 +28,10 @@ export default {
             if (!attendance) {
                 return responseHandler.notFound(res, "Attendance record not found");
             }
-
+            const existingAttendance = await Attendance.findOne({ where: { employee, date, id: { [Op.not]: id } } });
+            if (existingAttendance) {
+                return responseHandler.error(res, "Attendance already exists");
+            }
             await attendance.update({
                 employee,
                 date,
@@ -35,6 +39,7 @@ export default {
                 endTime,
                 late,
                 halfDay,
+                comment,
                 updated_by: req.user?.username
             });
 

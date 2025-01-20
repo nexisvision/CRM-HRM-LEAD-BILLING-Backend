@@ -12,13 +12,17 @@ export default {
             startTime: Joi.string().required(),
             endTime: Joi.string().required(),
             meetingLink: Joi.string(),
-
             status: Joi.string().valid('scheduled', 'completed', 'cancelled').default('scheduled')
         })
     }),
     handler: async (req, res) => {
         try {
             const { title, date, startTime, endTime, description, meetingLink, status } = req.body;
+
+            const existingMeeting = await Meeting.findOne({ where: { title, date, startTime, endTime, description, meetingLink, status } });
+            if (existingMeeting) {
+                return responseHandler.error(res, "Meeting already exists");
+            }
             const meeting = await Meeting.create({
                 title,
                 description,

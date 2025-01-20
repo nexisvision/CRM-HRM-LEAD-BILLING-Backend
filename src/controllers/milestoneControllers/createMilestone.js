@@ -13,7 +13,6 @@ export default {
             milestone_title: Joi.string().optional().allow('', null),
             milestone_status: Joi.string().optional().allow('', null),
             milestone_cost: Joi.string().optional().allow('', null),
-            // currency: Joi.string().optional(),
             add_cost_to_project_budget: Joi.string().optional().allow('', null),
             milestone_summary: Joi.string().optional().allow('', null),
             milestone_start_date: Joi.date().optional().allow('', null),
@@ -23,13 +22,16 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { milestone_title, milestone_status, milestone_cost, currency, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
+            const { milestone_title, milestone_status, milestone_cost, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date } = req.body;
+            const existingMilestone = await Milestone.findOne({ where: { milestone_title, milestone_status, milestone_cost, add_cost_to_project_budget, milestone_summary, milestone_start_date, milestone_end_date, related_id: id } });
+            if (existingMilestone) {
+                return responseHandler.error(res, "Milestone already exists");
+            }
             const milestone = await Milestone.create({
                 related_id: id,
                 milestone_title,
                 milestone_status,
                 milestone_cost,
-                // currency,
                 add_cost_to_project_budget,
                 milestone_summary,
                 milestone_start_date,

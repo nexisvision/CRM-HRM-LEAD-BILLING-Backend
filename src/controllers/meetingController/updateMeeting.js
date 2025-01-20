@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Meeting from "../../models/meetingModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -26,6 +27,10 @@ export default {
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
                 return responseHandler.notFound(res, "Meeting not found");
+            }
+            const existingMeeting = await Meeting.findOne({ where: { title, date, startTime, endTime, description, meetingLink, status, id: { [Op.not]: id } } });
+            if (existingMeeting) {
+                return responseHandler.error(res, "Meeting already exists");
             }
             await meeting.update({ title, date, startTime, endTime, description, meetingLink, status });
             return responseHandler.success(res, "Meeting updated successfully", meeting);

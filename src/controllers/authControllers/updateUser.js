@@ -2,6 +2,7 @@ import Joi from "joi";
 import User from "../../models/userModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -37,6 +38,11 @@ export default {
 
             if (!user) {
                 return responseHandler.notFound(res, "User not found");
+            }
+
+            const existingUser = await User.findOne({ where: { username, id: { [Op.not]: id } } });
+            if (existingUser) {
+                return responseHandler.error(res, "User already exists");
             }
 
             await user.update({ firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, updated_by: req.user?.username });

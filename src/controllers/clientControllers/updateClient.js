@@ -9,11 +9,8 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            username: Joi.string().min(3).max(30).allow('', null),
-            email: Joi.string().email().allow('', null),
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
-            phone: Joi.string().optional().allow('', null),
             profilePic: Joi.string().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
@@ -32,7 +29,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username, email, firstName, lastName, phone, profilePic,
+            const { firstName, lastName, profilePic,
                 bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address } = req.body;
 
@@ -42,8 +39,7 @@ export default {
             }
 
             await client.update({
-                username, email, firstName, lastName,
-                phone, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
+                firstName, lastName, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
             return responseHandler.success(res, "Client updated successfully", client);

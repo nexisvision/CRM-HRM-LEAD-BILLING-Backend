@@ -2,6 +2,7 @@ import Joi from "joi";
 import Salary from "../../models/SalaryModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const salaryData = await Salary.findByPk(id);
             if (!salaryData) {
                 return responseHandler.error(res, "Salary not found");
+            }
+            const existingSalary = await Salary.findOne({ where: { employeeId: salaryData.employeeId, id: { [Op.not]: id } } });
+            if (existingSalary) {
+                return responseHandler.error(res, "Salary already exists");
             }
             await salaryData.update({
                 status,

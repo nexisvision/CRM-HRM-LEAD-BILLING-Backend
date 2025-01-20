@@ -13,6 +13,9 @@ export default {
     handler: async (req, res) => {
         try {
             const features = await Feature.findAll();
+            if (!features) {
+                return responseHandler.error(res, "Features not found");
+            }
             return responseHandler.success(res, "Features fetched successfully", features);
         }
         catch (error) {

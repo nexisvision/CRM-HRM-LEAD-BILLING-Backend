@@ -2,6 +2,7 @@ import Joi from "joi";
 import GoalType from "../../models/GoalTypeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
             if (!goalTypeToUpdate) {
                 return responseHandler.error(res, "Goal type not found");
             }
-            const existingGoalType = await GoalType.findOne({ where: { name } });
+            const existingGoalType = await GoalType.findOne({ where: { name, id: { [Op.not]: id } } });
             if (existingGoalType) {
                 return responseHandler.error(res, "Goal type already exists");
             }

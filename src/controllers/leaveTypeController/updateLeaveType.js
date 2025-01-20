@@ -2,6 +2,7 @@ import Joi from "joi";
 import LeaveType from "../../models/leaveTypeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -22,7 +23,7 @@ export default {
             if (!leaveTypeToUpdate) {
                 return responseHandler.error(res, "Leave type not found");
             }
-            const existingLeaveType = await LeaveType.findOne({ where: { name } });
+            const existingLeaveType = await LeaveType.findOne({ where: { leaveType, id: { [Op.not]: id } } });
             if (existingLeaveType) {
                 return responseHandler.error(res, "Leave type already exists");
             }

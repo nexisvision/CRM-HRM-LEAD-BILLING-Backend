@@ -2,6 +2,7 @@ import Joi from "joi";
 import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -24,6 +25,11 @@ export default {
             const superAdmin = await SuperAdmin.findByPk(id);
             if (!superAdmin) {
                 return responseHandler.notFound(res, "Super admin not found");
+            }
+
+            const existingSuperAdmin = await SuperAdmin.findOne({ where: { username, email, id: { [Op.not]: id } } });
+            if (existingSuperAdmin) {
+                return responseHandler.error(res, "Username or Email already exists");
             }
 
             await superAdmin.update({ username, firstName, lastName, phone, profilePic, updated_by: req.user?.username });

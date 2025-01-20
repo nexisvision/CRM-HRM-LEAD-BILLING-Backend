@@ -20,6 +20,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate } = req.body;
+            const existingInterviewSchedule = await InterviewSchedule.findOne({ where: { job, candidate, interviewer, round, interviewType, startOn, startTime } });
+            if (existingInterviewSchedule) {
+                return responseHandler.error(res, "Interview schedule already exists");
+            }
             const interviewSchedule = await InterviewSchedule.create({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
             return responseHandler.success(res, "Interview schedule created successfully", interviewSchedule);
         } catch (error) {

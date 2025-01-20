@@ -2,6 +2,7 @@ import Joi from "joi";
 import Proposal from "../../models/proposalModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -28,6 +29,10 @@ export default {
             const proposal = await Proposal.findByPk(id);
             if (!proposal) {
                 return responseHandler.notFound(res, "Proposal not found");
+            }
+            const existingProposal = await Proposal.findOne({ where: { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, id: { [Op.not]: id } } });
+            if (existingProposal) {
+                return responseHandler.error(res, "Proposal already exists");
             }
             await proposal.update({ lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "Proposal updated successfully", proposal);

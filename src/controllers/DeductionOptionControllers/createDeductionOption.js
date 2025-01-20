@@ -12,7 +12,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { name } = req.body;
-            const existingDeductionOption = await DeductionOption.findOne({ where: { name: name } });
+            const existingDeductionOption = await DeductionOption.findOne({ where: { name } });
             if (existingDeductionOption) {
                 return responseHandler.error(res, "Deduction option already exists");
             }

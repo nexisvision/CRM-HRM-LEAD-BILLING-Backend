@@ -1,11 +1,13 @@
-import createjobonboarding from "./createjobonboarding.js";       
+import createjobonboarding from "./createjobonboarding.js";
 import getjobonboarding from "./getjobonboarding.js";
-import deleteonbaording from "./deletejobonboards.js";
-import editjobonboarding from "./editjobonboarding.js";
+import getjobonboardingbyid from "./getjobonboardingbyid.js";
+import deletejobonboarding from "./deletejobonboarding.js";
+import updatejobonboarding from "./updatejobonboarding.js";
 
-export  {
+export {
     createjobonboarding,
     getjobonboarding,
-    deleteonbaording,
-    editjobonboarding
+    deletejobonboarding,
+    updatejobonboarding,
+    getjobonboardingbyid
 }

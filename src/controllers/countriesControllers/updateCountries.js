@@ -1,12 +1,14 @@
+import Joi from "joi";
+import validator from "../../utils/validator.js";
 import Country from "../../models/countriesModel.js";
 import responseHandler from "../../utils/responseHandler.js";
-import validator from "../../utils/validator.js";
-import Joi from "joi";
+import { Op } from "sequelize";
 
 export default {
-    validator: validator,
-    params: Joi.object({
-        id: Joi.string().required()
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        }),
     }),
     body: Joi.object({
         countryName: Joi.string().required(),
@@ -19,6 +21,13 @@ export default {
             const { id } = req.params;
             const { countryName, countryCode, phoneCode } = req.body;
             const country = await Country.findByPk(id);
+            if (!country) {
+                return responseHandler.notFound(res, "Country not found");
+            }
+            const existingCountry = await Country.findOne({ where: { countryName, id: { [Op.not]: id } } });
+            if (existingCountry) {
+                return responseHandler.error(res, "Country already exists");
+            }
             await country.update({ countryName, countryCode, phoneCode });
             return responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {

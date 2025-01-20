@@ -18,6 +18,11 @@ export default {
         try {
             const { employee, date, startTime, endTime, late, halfDay } = req.body;
 
+            const existingAttendance = await Attendance.findOne({ where: { employee, date } });
+            if (existingAttendance) {
+                return responseHandler.error(res, "Attendance already exists");
+            }
+
             const attendance = await Attendance.create({
                 employee,
                 date,

@@ -2,6 +2,7 @@ import Joi from "joi";
 import Permission from "../../models/permissionModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -21,6 +22,11 @@ export default {
 
             if (!permission) {
                 return responseHandler.notFound(res, "Permission not found");
+            }
+
+            const existingPermission = await Permission.findOne({ where: { permissions, id: { [Op.not]: id } } });
+            if (existingPermission) {
+                return responseHandler.error(res, "Permission already exists");
             }
 
             await permission.update({

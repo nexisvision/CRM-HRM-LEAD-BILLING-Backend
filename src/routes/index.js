@@ -1,6 +1,5 @@
 import express from "express";
 import authRoutes from "./authRoutes.js";
-import userRoutes from "./userRoutes.js";
 import roleRoutes from "./roleRoutes.js";
 import clientRoutes from "./clientRoutes.js";
 import employeeRoutes from "./employeeRoutes.js";
@@ -44,7 +43,6 @@ import jobRoutes from "./jobRoutes.js";
 import skillRoutes from "./skillRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
-import appreciationRoutes from "./appreciationRoutes.js";
 import trainingRoutes from "./trainingRoutes.js";
 import employeeSalaryRoutes from "./employeeSalaryRoutes.js";
 import stageRoutes from "./stageRoutes.js";
@@ -81,7 +79,9 @@ import otherPaymentRoutes from "./otherPaymentRoutes.js";
 import overtimeRoutes from "./overtimeRoutes.js";
 import leaveRoutes from "./leaveRoutes.js";
 import indicatorRoutes from "./indicatorRoutes.js";
-
+import appraisalRoutes from "./appraisalRoutes.js";
+import goalTrackingRoutes from "./goalTrackingRoutes.js";
+import offerLetterRoutes from "./offerLetterRoutes.js";
 const router = express.Router();
 
 router.use('/auth', authRoutes);
@@ -89,7 +89,6 @@ router.use('/super-admin', superAdminRoutes);
 router.use('/roles', roleRoutes);
 router.use('/clients', clientRoutes);
 router.use('/sub-clients', subClientRoutes);
-router.use('/users', userRoutes);
 router.use('/permissions', permissionRoutes);
 router.use('/role-permissions', rolePermissionRoutes);
 router.use('/subscriptions', subscriptionRoutes);
@@ -119,13 +118,8 @@ router.use('/products', productsRoutes);
 router.use('/quotations', quotationsRoutes);
 router.use('/proposals', proposalRoutes);
 router.use('/tickets', ticketRoutes);
-router.use('/job-applications', jobApplicationRoutes);
 router.use('/meetings', meetingRoutes);
-router.use('/jobs', jobRoutes);
-router.use('/skills', skillRoutes);
-router.use('/interview-schedules', interviewScheduleRoutes);
 router.use('/messages', messageRoutes);
-router.use('/appreciations', appreciationRoutes);
 router.use('/trainings', trainingRoutes);
 router.use('/employeeSalary', employeeSalaryRoutes);
 router.use('/notifications', notificationRoutes);
@@ -137,7 +131,6 @@ router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
 router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
-router.use('/job-onboarding', jobonboardingrouter);
 
 //HRM System
 router.use('/branches', branchRoutes);
@@ -168,7 +161,13 @@ router.use('/overtime', overtimeRoutes);
 router.use('/leaves', leaveRoutes);
 router.use('/attendance', attendanceRoutes);
 router.use('/indicator', indicatorRoutes);
-
-
+router.use('/appraisal', appraisalRoutes);
+router.use('/goal-tracking', goalTrackingRoutes);
+router.use('/skills', skillRoutes);
+router.use('/jobs', jobRoutes);
+router.use('/job-applications', jobApplicationRoutes);
+router.use('/job-onboarding', jobonboardingrouter);
+router.use('/interview-schedules', interviewScheduleRoutes);
+router.use('/offer-letters', offerLetterRoutes);
 
 export default router;

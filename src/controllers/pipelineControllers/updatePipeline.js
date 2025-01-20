@@ -2,6 +2,7 @@ import Joi from "joi";
 import Pipeline from "../../models/pipelineModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -21,16 +22,9 @@ export default {
             if (!pipeline) {
                 return responseHandler.notFound(res, "Pipeline not found");
             }
-
-            // Check if new tag name already exists (if being updated)
-            if (pipeline_name && pipeline_name !== pipeline.pipeline_name) {
-                const existingPipeline = await Pipeline.findOne({
-                    where: { pipeline_name }
-                });
-
-                if (existingPipeline) {
-                    return responseHandler.error(res, "Pipeline with this name already exists");
-                }
+            const existingPipeline = await Pipeline.findOne({ where: { pipeline_name, id: { [Op.not]: id } } });
+            if (existingPipeline) {
+                return responseHandler.error(res, "Pipeline already exists");
             }
             const updatedPipeline = await pipeline.update({ pipeline_name, updated_by: req.user?.username });
             return responseHandler.success(res, "Pipeline updated successfully", updatedPipeline);

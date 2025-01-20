@@ -2,6 +2,7 @@ import Joi from "joi";
 import Ticket from "../../models/ticketModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -30,6 +31,10 @@ export default {
             const ticket = await Ticket.findByPk(id);
             if (!ticket) {
                 return responseHandler.error(res, "Ticket not found");
+            }
+            const existingTicket = await Ticket.findOne({ where: { ticketSubject, id: { [Op.not]: id } } });
+            if (existingTicket) {
+                return responseHandler.error(res, "Ticket already exists");
             }
             await ticket.update({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, updated_by: req.user?.username });
             return responseHandler.success(res, "Ticket updated successfully", ticket);

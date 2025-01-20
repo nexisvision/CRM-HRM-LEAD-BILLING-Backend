@@ -2,6 +2,7 @@ import Joi from "joi";
 import SubscriptionPlan from "../../models/subscriptionPlanModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -28,6 +29,11 @@ export default {
             const plan = await SubscriptionPlan.findByPk(id);
             if (!plan) {
                 return responseHandler.notFound(res, "Plan not found");
+            }
+
+            const existingPlan = await SubscriptionPlan.findOne({ where: { name, id: { [Op.not]: id } } });
+            if (existingPlan) {
+                return responseHandler.error(res, "Plan already exists");
             }
 
             await plan.update({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, updated_by: req.user?.username });

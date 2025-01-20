@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Allowance from "../../models/deductionModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -23,6 +24,14 @@ export default {
             const deduction = await Allowance.findByPk(id);
             if (!deduction) {
                 return responseHandler.notFound(res, 'Allowance not found');
+            }
+            const EMP = await User.findOne({ where: { id: req.user?.id } });
+            if (!EMP) {
+                return responseHandler.error(res, "Employee not found");
+            }
+            const existingDeduction = await Allowance.findOne({ where: { employeeId: EMP.employeeId, id: { [Op.not]: id } } });
+            if (existingDeduction) {
+                return responseHandler.error(res, "Deduction already exists for this employee");
             }
 
             await deduction.update({ deductionOption, title, type, currency, amount, updated_by: req.user?.username });

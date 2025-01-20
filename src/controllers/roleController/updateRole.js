@@ -2,6 +2,7 @@ import Joi from "joi";
 import Role from "../../models/roleModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -22,6 +23,11 @@ export default {
             if (!role) {
                 return responseHandler.notFound(res, 'Role not found');
             }
+            const existingRole = await Role.findOne({ where: { role_name, id: { [Op.not]: id } } });
+            if (existingRole) {
+                return responseHandler.error(res, "Role already exists");
+            }
+
 
             await role.update({
                 role_name,

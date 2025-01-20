@@ -19,6 +19,10 @@ export default {
         try {
             const { id } = req.user;
             const { customer, issueDate, category, items, discount, tax, total } = req.body;
+            const existingSalesQuotation = await SalesQuotations.findOne({ where: { related_id: id, customer, issueDate, category, items, discount, tax, total } });
+            if (existingSalesQuotation) {
+                return responseHandler.error(res, "SalesQuotation already exists");
+            }
             const salesQuotation = await SalesQuotations.create({ related_id: id, customer, issueDate, category, items, discount, tax, total, created_by: req.user?.username });
             return responseHandler.success(res, "SalesQuotation created successfully", salesQuotation);
         } catch (error) {

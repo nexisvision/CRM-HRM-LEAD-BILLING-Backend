@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import Contract from "../../models/contractModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -24,6 +25,13 @@ export default {
             const { id } = req.params;
             const { subject, project, client, type, value, startDate, endDate, description } = req.body;
             const contract = await Contract.findByPk(id);
+            if (!contract) {
+                return responseHandler.notFound(res, "Contract not found");
+            }
+            const existingContract = await Contract.findOne({ where: { subject, id: { [Op.not]: id } } });
+            if (existingContract) {
+                return responseHandler.error(res, "Contract already exists");
+            }
             await contract.update({ subject, project, client, type, value, startDate, endDate, description, updated_by: req.user.id });
             return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {

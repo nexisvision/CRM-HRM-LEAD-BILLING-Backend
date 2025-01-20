@@ -5,5 +5,5 @@ import deleteLeadTask from "./deleteLeadTask.js";
 export default {
     getAllLeadTask,
     createLeadTask,
-    deleteLeadTask
+    deleteLeadTask,
 }

@@ -20,6 +20,10 @@ export default {
         try {
             const { id } = req.user;
             const { date, currency, amount, account, customer, description, category, paymentReceipt } = req.body;
+            const existingSalesRevenue = await SalesRevenue.findOne({ where: { related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt } });
+            if (existingSalesRevenue) {
+                return responseHandler.error(res, "SalesRevenue already exists");
+            }
             const salesRevenue = await SalesRevenue.create({ related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt, created_by: req.user?.username });
             return responseHandler.success(res, "SalesRevenue created successfully", salesRevenue);
         } catch (error) {

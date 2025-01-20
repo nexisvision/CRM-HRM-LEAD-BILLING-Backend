@@ -21,12 +21,12 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { job, name, email, phone, location, total_experience,
-                current_location, notice_period, status, applied_source, cover_letter } = req.body;
-            const jobApplication = await JobApplication.create({
-                job, name, email, phone, location, total_experience, current_location,
-                notice_period, status, applied_source, cover_letter, created_by: req.user?.username
-            });
+            const { job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter } = req.body;
+            const existingJobApplication = await JobApplication.findOne({ where: { job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter } });
+            if (existingJobApplication) {
+                return responseHandler.error(res, "Job application already exists");
+            }
+            const jobApplication = await JobApplication.create({ job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter, created_by: req.user?.username });
             return responseHandler.success(res, "Job application created successfully", jobApplication);
         } catch (error) {
             return responseHandler.error(res, error?.message);

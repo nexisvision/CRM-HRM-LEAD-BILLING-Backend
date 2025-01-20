@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Appreciation from "../../models/appreciationModel.js";
+import Appraisal from "../../models/AppraisalModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -12,12 +12,11 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const appreciation = await Appreciation.findByPk(id);
-            if (!appreciation) {
-                return responseHandler.error(res, "Appreciation not found");
+            const appraisal = await Appraisal.findByPk(id);
+            if (!appraisal) {
+                return responseHandler.error(res, "Appraisal not found");
             }
-            await appreciation.destroy();
-            return responseHandler.success(res, "Appreciation deleted successfully", appreciation);
+            return responseHandler.success(res, "Appraisal fetched successfully", appraisal);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

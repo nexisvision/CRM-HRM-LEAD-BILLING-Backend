@@ -21,7 +21,7 @@ export default {
             if (!jobCategoryToUpdate) {
                 return responseHandler.error(res, "Job category not found");
             }
-            const existingJobCategory = await JobCategory.findOne({ where: { title } });
+            const existingJobCategory = await JobCategory.findOne({ where: { title, id: { [Op.not]: id } } });
             if (existingJobCategory) {
                 return responseHandler.error(res, "Job category already exists");
             }

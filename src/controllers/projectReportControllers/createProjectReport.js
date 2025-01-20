@@ -17,6 +17,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { project, startdate, enddate, projectMembers, completion, status } = req.body;
+            const existingProjectReport = await ProjectReport.findOne({ where: { project, startdate, enddate, projectMembers, completion, status } });
+            if (existingProjectReport) {
+                return responseHandler.error(res, "Project report already exists");
+            }
             const projectReport = await ProjectReport.create({
                 project,
                 startdate,

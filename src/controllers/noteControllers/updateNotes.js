@@ -3,6 +3,7 @@ import Note from "../../models/noteModel.js";
 import Activity from "../../models/activityModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -23,6 +24,10 @@ export default {
             const note = await Note.findByPk(id);
             if (!note) {
                 return responseHandler.error(res, "Note not found");
+            }
+            const existingNote = await Note.findOne({ where: { note_title, notetype, employees, description, related_id: note.related_id, id: { [Op.not]: id } } });
+            if (existingNote) {
+                return responseHandler.error(res, "Note already exists");
             }
             await note.update({ note_title, notetype, employees, description, updated_by: req.user?.username });
             await Activity.create({

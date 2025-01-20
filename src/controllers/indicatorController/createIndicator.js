@@ -9,13 +9,24 @@ export default {
             branch: Joi.string().required(),
             department: Joi.string().required(),
             designation: Joi.string().required(),
-            overall_rating: Joi.number().required(),
+            businessProcess: Joi.number().required(),
+            oralCommunication: Joi.number().required(),
+            leadership: Joi.number().required(),
+            projectManagement: Joi.number().required(),
+            allocatingResources: Joi.number().required(),
+            overallRating: Joi.number().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { branch, department, designation, overall_rating } = req.body;
-            const indicator = await Indicator.create({ branch, department, designation, overall_rating });
+            const { branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating } = req.body;
+            const existingIndicator = await Indicator.findOne({
+                where: { branch, department, designation }
+            });
+            if (existingIndicator) {
+                return responseHandler.error(res, "Indicator already exists for the given branch, department, and designation");
+            }
+            const indicator = await Indicator.create({ branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, created_by: req.user?.username });
             responseHandler.success(res, "Indicator created successfully", indicator);
         } catch (error) {
             responseHandler.error(res, error?.message);

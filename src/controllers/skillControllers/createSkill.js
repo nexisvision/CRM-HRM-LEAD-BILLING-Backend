@@ -12,6 +12,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { skillName } = req.body;
+            const existingSkill = await Skill.findOne({ where: { skillName } });
+            if (existingSkill) {
+                return responseHandler.error(res, "Skill already exists");
+            }
             const skill = await Skill.create({ skillName, created_by: req.user?.username });
             return responseHandler.success(res, "Skill created successfully", skill);
         } catch (error) {

@@ -2,6 +2,7 @@ import Joi from "joi";
 import Competency from "../../models/competencyModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -22,7 +23,7 @@ export default {
             if (!competencyToUpdate) {
                 return responseHandler.error(res, "Competency not found");
             }
-            const existingCompetency = await Competency.findOne({ where: { name } });
+            const existingCompetency = await Competency.findOne({ where: { name, id: { [Op.not]: id } } });
             if (existingCompetency) {
                 return responseHandler.error(res, "Competency already exists");
             }

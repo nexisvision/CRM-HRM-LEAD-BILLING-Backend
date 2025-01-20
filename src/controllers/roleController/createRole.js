@@ -18,7 +18,10 @@ export default {
                 permissions,
                 created_by: req.user?.username,
             });
-
+            const existingRole = await Role.findOne({ where: { role_name } });
+            if (existingRole) {
+                return responseHandler.error(res, "Role already exists");
+            }
             return responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {
             return responseHandler.error(res, error.errors[0].message);

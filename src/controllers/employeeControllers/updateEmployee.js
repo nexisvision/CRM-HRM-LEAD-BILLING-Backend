@@ -11,8 +11,6 @@ export default {
         body: Joi.object({
             firstName: Joi.string().allow('', null),
             lastName: Joi.string().allow('', null),
-            username: Joi.string().allow('', null),
-            phone: Joi.string().allow('', null),
             address: Joi.string().allow('', null),
             gender: Joi.string().allow('', null),
             joiningDate: Joi.date().allow('', null),
@@ -34,7 +32,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, username, phone, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { firstName, lastName, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
@@ -44,8 +42,6 @@ export default {
             await employee.update({
                 firstName,
                 lastName,
-                username,
-                phone,
                 address,
                 gender,
                 joiningDate,

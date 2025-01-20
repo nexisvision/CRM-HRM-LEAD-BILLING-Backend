@@ -4,6 +4,7 @@ import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Notification from "../../models/notificationModel.js";
 import isSameDay from "../../utils/isSameDay.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -41,6 +42,10 @@ export default {
             const task = await Task.findByPk(id);
             if (!task) {
                 return responseHandler.error(res, 'Task not found');
+            }
+            const existingTask = await Task.findOne({ where: { taskName, id: { [Op.not]: id } } });
+            if (existingTask) {
+                return responseHandler.error(res, "Task already exists");
             }
             const updatedTask = await task.update({
                 taskName,

@@ -14,6 +14,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { stageType, stageName, pipeline } = req.body;
+            const existingStage = await Stage.findOne({ where: { stageName, pipeline } });
+            if (existingStage) {
+                return responseHandler.error(res, "Stage already exists");
+            }
             const stage = await Stage.create({ stageType, stageName, pipeline, created_by: req.user.id });
             return responseHandler.success(res, "Stage created successfully", stage);
         } catch (error) {

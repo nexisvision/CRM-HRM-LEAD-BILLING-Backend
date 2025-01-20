@@ -21,6 +21,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } = req.body;
+            const existingProposal = await Proposal.findOne({ where: { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } });
+            if (existingProposal) {
+                return responseHandler.error(res, "Proposal already exists");
+            }
             const proposal = await Proposal.create({
                 lead_title, deal_title, valid_till, currency, calculatedTax, description,
                 items, discount, tax, total, created_by: req.user?.username

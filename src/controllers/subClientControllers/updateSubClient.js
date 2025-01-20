@@ -9,10 +9,8 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            username: Joi.string().min(3).max(30).allow('', null),
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
-            phone: Joi.string().optional().allow('', null),
             profilePic: Joi.string().optional().allow('', null),
             accountholder: Joi.string().optional().allow('', null),
             accountnumber: Joi.number().optional().allow('', null),
@@ -32,7 +30,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { username, firstName, lastName, phone, profilePic, accountholder,
+            const { firstName, lastName, profilePic, accountholder,
                 accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
                 city, state, country, zipcode, address, links } = req.body;
 
@@ -42,11 +40,11 @@ export default {
             }
 
             await subClient.update({
-                username, firstName, lastName, phone, profilePic, accountholder,
+                firstName, lastName, profilePic, accountholder,
                 accountnumber, bankname, ifsc, banklocation, gstIn, e_signatures,
                 city, state, country, zipcode, address, links, updated_by: req.user?.username
             });
-            return responseHandler.success(res, "Company updated successfully", subClient);
+            return responseHandler.success(res, "SubClient updated successfully", subClient);
         } catch (error) {
 
             return responseHandler.error(res, error?.message);

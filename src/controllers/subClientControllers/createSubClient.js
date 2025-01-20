@@ -56,7 +56,6 @@ export default {
             // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
 
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 12);
 
             // Create temporary user record

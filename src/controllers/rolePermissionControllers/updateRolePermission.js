@@ -2,6 +2,7 @@ import Joi from "joi";
 import RolePermission from "../../models/rolePermissionModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -20,6 +21,11 @@ export default {
             const rolePermission = await RolePermission.findByPk(id);
             if (!rolePermission) {
                 return responseHandler.notFound(res, "Role permission not found");
+            }
+
+            const existingRolePermission = await RolePermission.findOne({ where: { role_id, permission_id, id: { [Op.not]: id } } });
+            if (existingRolePermission) {
+                return responseHandler.error(res, "Role permission already exists");
             }
 
             await rolePermission.update({

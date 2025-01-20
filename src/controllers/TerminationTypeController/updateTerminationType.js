@@ -2,6 +2,7 @@ import Joi from "joi";
 import TerminationType from "../../models/TerminationTypeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
             if (!terminationTypeToUpdate) {
                 return responseHandler.error(res, "Termination type not found");
             }
-            const existingTerminationType = await TerminationType.findOne({ where: { name } });
+            const existingTerminationType = await TerminationType.findOne({ where: { name, id: { [Op.not]: id } } });
             if (existingTerminationType) {
                 return responseHandler.error(res, "Termination type already exists");
             }

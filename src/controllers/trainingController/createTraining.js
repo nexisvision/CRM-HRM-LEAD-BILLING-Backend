@@ -13,6 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { category, links } = req.body
+            const existingTraining = await Training.findOne({ where: { category } });
+            if (existingTraining) {
+                return responseHandler.error(res, "Training already exists");
+            }
             const training = await Training.create({
                 category,
                 links,

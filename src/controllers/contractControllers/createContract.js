@@ -1,6 +1,6 @@
+import Joi from "joi";
 import Contract from "../../models/contractModel.js";
 import responseHandler from "../../utils/responseHandler.js";
-import Joi from "joi";
 import validator from "../../utils/validator.js";
 
 export default {
@@ -31,6 +31,10 @@ export default {
         try {
             const { subject, client, project, type, value, startDate, endDate, currency, description,
                 phone, address, city, state, country, zipcode, notes } = req.body;
+            const existingContract = await Contract.findOne({ where: { subject } });
+            if (existingContract) {
+                return responseHandler.error(res, "Contract already exists");
+            }
             const contract = await Contract.create({
                 subject, client, project, type, value, startDate, endDate, currency, description,
                 phone, address, city, state, country, zipcode, notes, created_by: req.user?.id

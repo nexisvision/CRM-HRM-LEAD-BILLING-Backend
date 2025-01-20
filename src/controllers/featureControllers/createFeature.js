@@ -13,6 +13,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { featureName } = req.body;
+            const existingFeature = await Feature.findOne({ where: { featureName } });
+            if (existingFeature) {
+                return responseHandler.error(res, "Feature already exists");
+            }
             const feature = await Feature.create({ featureName, created_by: req.user.id });
             return responseHandler.success(res, "Feature created successfully", feature);
         } catch (error) {

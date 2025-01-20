@@ -39,7 +39,10 @@ export default {
             if (!payment) {
                 return responseHandler.notFound(res, "Payment not found");
             }
-
+            const existingPayment = await Payment.findOne({ where: { related_id: payment.related_id, project, invoice, paidOn, amount, currency, transactionId, paymentMethod, receipt, remark, id: { [Op.not]: payment.id } } });
+            if (existingPayment) {
+                return responseHandler.error(res, "Payment already exists");
+            }
             await payment.update({
                 project,
                 invoice,

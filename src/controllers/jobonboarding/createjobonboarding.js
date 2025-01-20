@@ -6,20 +6,30 @@ import JobOnboarding from "../../models/jobonboarding.js";
 export default {
     validator: validator({
         body: Joi.object({
-            Interviewer: Joi.string().allow('', null),
+            Interviewer: Joi.string().required(),
             JoiningDate: Joi.string().required(),
-            DaysOfWeek: Joi.string().allow('', null),
-            Salary: Joi.string().allow('', null),
+            DaysOfWeek: Joi.string().required(),
+            Salary: Joi.string().required(),
             SalaryType: Joi.string().required(),
-            SalaryDuration: Joi.string().allow('', null),
+            SalaryDuration: Joi.string().required(),
             JobType: Joi.string().required(),
-            Status: Joi.string().allow('', null),
+            Status: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { Interviewer, JoiningDate, DaysOfWeek, Salary,
-                SalaryType, SalaryDuration, JobType, Status } = req.body;
+            const { Interviewer, JoiningDate, DaysOfWeek, Salary, SalaryType, SalaryDuration, JobType, Status } = req.body;
+
+            const existingJobOnboarding = await JobOnboarding.findOne({
+                where: {
+                    Interviewer,
+                    JoiningDate,
+                    Status
+                }
+            });
+            if (existingJobOnboarding) {
+                return responseHandler.error(res, "Job onboarding already exists");
+            }
 
             const jobOnboarding = await JobOnboarding.create({
                 Interviewer,

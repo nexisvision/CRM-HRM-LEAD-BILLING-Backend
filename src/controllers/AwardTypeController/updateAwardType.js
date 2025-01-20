@@ -2,6 +2,7 @@ import Joi from "joi";
 import AwardType from "../../models/AwardTypeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
             if (!awardTypeToUpdate) {
                 return responseHandler.error(res, "Award type not found");
             }
-            const existingAwardType = await AwardType.findOne({ where: { name } });
+            const existingAwardType = await AwardType.findOne({ where: { name, id: { [Op.not]: id } } });
             if (existingAwardType) {
                 return responseHandler.error(res, "Award type already exists");
             }

@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import JobApplication from "../../models/jobapplicationModel.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -25,8 +26,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { job, name, email, phone, location,
-                total_experience, current_location, notice_period, status, applied_source, cover_letter } = req.body;
+            const { job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter } = req.body;
 
             const jobApplication = await JobApplication.findByPk(id);
 
@@ -34,11 +34,13 @@ export default {
                 return responseHandler.error(res, "Job application not found");
             }
 
-            await jobApplication.update({
-                job, name, email, phone, location, total_experience,
-                current_location, notice_period, status, applied_source, cover_letter,
-                updated_by: req.user?.username
-            });
+            const existingJobApplication = await JobApplication.findOne({ where: { job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter, id: { [Op.not]: id } } });
+
+            if (existingJobApplication) {
+                return responseHandler.error(res, "Job application already exists");
+            }
+
+            await jobApplication.update({ job, name, email, phone, location, total_experience, current_location, notice_period, status, applied_source, cover_letter, updated_by: req.user?.username });
             return responseHandler.success(res, "Job application updated successfully", jobApplication);
         } catch (error) {
             return responseHandler.error(res, error?.message);

@@ -2,21 +2,22 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import JobOnboarding from "../../models/jobonboarding.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()  // Validate the 'id' parameter in the URL
+            id: Joi.string().required()
         }),
         body: Joi.object({
-            Interviewer: Joi.string().allow('', null),
+            Interviewer: Joi.string().required(),
             JoiningDate: Joi.string().required(),
-            DaysOfWeek: Joi.string().allow('', null),
-            Salary: Joi.string().allow('', null),
+            DaysOfWeek: Joi.string().required(),
+            Salary: Joi.string().required(),
             SalaryType: Joi.string().required(),
-            SalaryDuration: Joi.string().allow('', null),
+            SalaryDuration: Joi.string().required(),
             JobType: Joi.string().required(),
-            Status: Joi.string().allow('', null),
+            Status: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
@@ -25,15 +26,25 @@ export default {
             const { Interviewer, JoiningDate, DaysOfWeek, Salary,
                 SalaryType, SalaryDuration, JobType, Status } = req.body;
 
-            // Find the job onboarding record by primary key (id)
             const jobOnboarding = await JobOnboarding.findByPk(id);
 
-            // If the record is not found, return an error
             if (!jobOnboarding) {
-                return responseHandler.error(res, "Job onboarding record not found", 404);
+                return responseHandler.error(res, "Job onboarding record not found");
             }
 
-            // Update the job onboarding record with the provided value
+            const existingJobOnboarding = await JobOnboarding.findOne({
+                where: {
+                    Interviewer,
+                    JoiningDate,
+                    Status,
+                    id: {
+                        [Op.not]: id
+                    }
+                }
+            });
+            if (existingJobOnboarding) {
+                return responseHandler.error(res, "Job onboarding already exists");
+            }
             await jobOnboarding.update({
                 Interviewer,
                 JoiningDate,
@@ -45,8 +56,6 @@ export default {
                 Status,
                 updated_by: req.user?.username
             })
-
-            // Return success response with the updated record
             return responseHandler.success(res, "Job onboarding record updated successfully", jobOnboarding);
         } catch (error) {
             return responseHandler.error(res, error?.message);

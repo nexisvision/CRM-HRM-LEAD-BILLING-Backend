@@ -2,6 +2,7 @@ import Joi from "joi";
 import JobStages from "../../models/JobStagesModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
             if (!jobStagesToUpdate) {
                 return responseHandler.error(res, "Job category not found");
             }
-            const existingJobStages = await JobStages.findOne({ where: { title } });
+            const existingJobStages = await JobStages.findOne({ where: { title, id: { [Op.not]: id } } });
             if (existingJobStages) {
                 return responseHandler.error(res, "Job category already exists");
             }

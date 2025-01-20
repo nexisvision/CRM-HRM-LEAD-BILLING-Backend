@@ -6,23 +6,19 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         body: Joi.object({
-            currencyName: Joi.string().required().messages({
-                'string.base': 'Currency name must be a string',
-                'string.empty': 'Currency name is required'
-            }),
-            currencyIcon: Joi.string().required().messages({
-                'string.base': 'Currency icon must be a string',
-                'string.empty': 'Currency icon is required'
-            }),
-            currencyCode: Joi.string().required().messages({
-                'string.base': 'Currency code must be a string',
-                'string.empty': 'Currency code is required'
-            })
+            currencyName: Joi.string().required(),
+            currencyIcon: Joi.string().required(),
+            currencyCode: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
             const { currencyName, currencyIcon, currencyCode } = req.body;
+
+            const existingCurrency = await Currency.findOne({ where: { currencyName } });
+            if (existingCurrency) {
+                return responseHandler.error(res, "Currency already exists");
+            }
 
             const currency = await Currency.create({
                 currencyName,

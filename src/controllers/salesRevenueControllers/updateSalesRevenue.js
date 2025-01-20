@@ -2,6 +2,7 @@ import Joi from "joi";
 import SalesRevenue from "../../models/salesRevenueModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -26,6 +27,10 @@ export default {
             const salesRevenue = await SalesRevenue.findByPk(id);
             if (!salesRevenue) {
                 return responseHandler.error(res, "SalesRevenue not found");
+            }
+            const existingSalesRevenue = await SalesRevenue.findOne({ where: { related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt, id: { [Op.not]: id } } });
+            if (existingSalesRevenue) {
+                return responseHandler.error(res, "SalesRevenue already exists");
             }
             await salesRevenue.update({ date, currency, amount, account, customer, description, category, paymentReceipt, updated_by: req.user?.username });
             return responseHandler.success(res, "SalesRevenue updated successfully", salesRevenue);

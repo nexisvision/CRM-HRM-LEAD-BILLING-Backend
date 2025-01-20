@@ -24,13 +24,11 @@ export default {
         try {
             const { client_id, plan_id, start_date, end_date, status, payment_status } = req.body;
 
-            // Check if plan exists
             const plan = await SubscriptionPlan.findByPk(plan_id);
             if (!plan) {
                 return responseHandler.notFound(res, "Subscription plan not found");
             }
 
-            // Check if client already has an active subscription
             const existingSubscription = await ClientSubscription.findOne({
                 where: {
                     client_id,
@@ -41,8 +39,6 @@ export default {
             if (existingSubscription) {
                 return responseHandler.error(res, "Client already has an active subscription");
             }
-
-            // Create new subscription
             const subscription = await ClientSubscription.create({
                 client_id,
                 plan_id,
@@ -59,7 +55,6 @@ export default {
             const planPrice = plan.price;
             const client = await User.findByPk(client_id);
 
-            // Create bill record
             const bill = await Bill.create({
                 related_id: subscription.id,
                 vendor: client_id,

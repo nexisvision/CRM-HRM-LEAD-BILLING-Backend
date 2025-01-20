@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import PayslipType from "../../models/payslipTypeModel.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -20,7 +21,7 @@ export default {
             if (!payslipType) {
                 return responseHandler(res, "Payslip type not found");
             }
-            const existingPayslipType = await PayslipType.findOne({ where: { name } });
+            const existingPayslipType = await PayslipType.findOne({ where: { name, id: { [Op.not]: id } } });
             if (existingPayslipType) {
                 return responseHandler.error(res, "Payslip type already exists");
             }

@@ -1,7 +1,7 @@
 import Joi from "joi";
-import User from "../../models/userModel.js";
-import validator from "../../utils/validator.js";
+import Appraisal from "../../models/AppraisalModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import validator from "../../utils/validator.js";
 
 export default {
     validator: validator({
@@ -12,13 +12,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const user = await User.findByPk(id);
-
-            if (!user) {
-                return responseHandler.error(res, "User not found");
+            const appraisal = await Appraisal.findByPk(id);
+            if (!appraisal) {
+                return responseHandler.error(res, "Appraisal not found");
             }
-
-            return responseHandler.success(res, "User fetched successfully", user);
+            await appraisal.destroy();
+            return responseHandler.success(res, "Appraisal deleted successfully", appraisal);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

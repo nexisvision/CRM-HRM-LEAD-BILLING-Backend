@@ -2,6 +2,7 @@ import Department from "../../models/departmentModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Joi from "joi";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -22,7 +23,7 @@ export default {
                 return responseHandler.error(res, "Department not found");
             }
             const existingDepartment = await Department.findOne({
-                where: { department_name, branch }
+                where: { department_name, branch, id: { [Op.not]: id } }
             });
 
             if (existingDepartment) {

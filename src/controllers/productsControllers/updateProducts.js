@@ -3,6 +3,7 @@ import Product from "../../models/productModel.js";
 import Activity from "../../models/activityModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -27,6 +28,10 @@ export default {
             const product = await Product.findByPk(id);
             if (!product) {
                 return responseHandler.error(res, "Product not found");
+            }
+            const existingProduct = await Product.findOne({ where: { name, id: { [Op.not]: id } } });
+            if (existingProduct) {
+                return responseHandler.error(res, "Product already exists");
             }
             await product.update({ name, category, price, sku, tax, hsn_sac, description, files, updated_by: req.user?.username });
             await Activity.create({

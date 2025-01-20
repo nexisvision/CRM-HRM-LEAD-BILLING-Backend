@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Feature from "../../models/featureModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const feature = await Feature.findByPk(id);
             if (!feature) {
                 return responseHandler.error(res, "Feature not found");
+            }
+            const existingFeature = await Feature.findOne({ where: { featureName, id: { [Op.not]: id } } });
+            if (existingFeature) {
+                return responseHandler.error(res, "Feature already exists");
             }
             await feature.update({ featureName });
             return responseHandler.success(res, "Feature updated successfully", feature);

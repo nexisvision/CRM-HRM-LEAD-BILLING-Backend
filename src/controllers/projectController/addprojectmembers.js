@@ -2,6 +2,7 @@ import Joi from "joi";
 import Project from "../../models/projectModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -44,7 +45,10 @@ export default {
 
             // Combine existing members with new members
             const updatedMembers = [...currentMembers, ...newMemberIds];
-
+            const existingProjectMembers = await Project.findOne({ where: { project_members: { project_members: updatedMembers, id: { [Op.not]: project.id } } } });
+            if (existingProjectMembers) {
+                return responseHandler.error(res, "Project members already exist");
+            }
             // Update the project with the new members list
             await project.update({
                 project_members: { project_members: updatedMembers },

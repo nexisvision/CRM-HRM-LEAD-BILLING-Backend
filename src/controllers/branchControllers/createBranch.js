@@ -12,6 +12,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { branchName } = req.body;
+
+            const existingBranch = await Branch.findOne({ where: { branchName } });
+            if (existingBranch) {
+                return responseHandler.error(res, "Branch name already exists");
+            }
+
             const branch = await Branch.create({
                 branchName,
                 created_by: req.user?.username

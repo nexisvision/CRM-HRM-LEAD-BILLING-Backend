@@ -1,7 +1,7 @@
 import Joi from "joi";
-import User from "../../models/userModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import OfferLetter from "../../models/offerletter.js";
 
 export default {
     validator: validator({
@@ -12,16 +12,15 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-
-            const user = await User.findByPk(id);
-            if (!user) {
-                return responseHandler.error(res, "User not found");
+            const offerletter = await OfferLetter.findByPk(id);
+            if (!offerletter) {
+                return responseHandler.error(res, "Offer letter not found");
             }
-
-            await user.destroy();
-            return responseHandler.success(res, "User deleted successfully", user);
+            await offerletter.destroy();
+            return responseHandler.success(res, "Offer letter deleted successfully", offerletter);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }
     }
 }
+

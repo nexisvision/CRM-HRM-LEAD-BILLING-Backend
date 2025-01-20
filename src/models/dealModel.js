@@ -15,7 +15,8 @@ const Deal = sequelize.define("Deal", {
     },
     dealName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     pipeline: {
         type: DataTypes.STRING,

@@ -2,6 +2,7 @@ import Lead from "../../models/leadModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Joi from "joi";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -39,7 +40,10 @@ export default {
             if (!lead) {
                 return responseHandler.notFound(res, "Lead not found");
             }
-
+            const existingLead = await Lead.findOne({ where: { email, id: { [Op.not]: id } } });
+            if (existingLead) {
+                return responseHandler.conflict(res, "Lead with this email already exists!");
+            }
             await lead.update({
                 leadTitle,
                 firstName,

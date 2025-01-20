@@ -26,6 +26,10 @@ export default {
         try {
             const { id } = req.params;
             const { client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note } = req.body;
+            const existingOrder = await Order.findOne({ where: { related_id: id, client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note } });
+            if (existingOrder) {
+                return responseHandler.error(res, "Order already exists");
+            }
             const order = await Order.create({ related_id: id, client, billing_address, shipping_address, project, genratedBy, status, items, discount, tax, total, client_Note, created_by: req.user?.username, });
             return responseHandler.success(res, "Order created successfully", order);
         } catch (error) {

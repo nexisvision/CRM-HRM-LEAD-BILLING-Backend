@@ -2,6 +2,7 @@ import Joi from "joi";
 import Deal from "../../models/dealModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -27,6 +28,10 @@ export default {
             const deal = await Deal.findByPk(id);
             if (!deal) {
                 return responseHandler.error(res, "Deal not found");
+            }
+            const existingDeal = await Deal.findOne({ where: { dealName, id: { [Op.not]: id } } });
+            if (existingDeal) {
+                return responseHandler.error(res, "Deal already exists");
             }
             await deal.update({ leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project, updated_by: req.user?.username });
             return responseHandler.success(res, "Deal updated successfully", deal);

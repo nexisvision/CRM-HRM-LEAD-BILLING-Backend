@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Job from "../../models/jobModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -32,6 +33,10 @@ export default {
             const job = await Job.findByPk(id);
             if (!job) {
                 return responseHandler.error(res, "Job not found");
+            }
+            const existingJob = await Job.findOne({ where: { title, id: { [Op.not]: id } } });
+            if (existingJob) {
+                return responseHandler.error(res, "Job already exists");
             }
             await job.update({ title, category, skills, location, interviewRounds, startDate, endDate, status, recruiter, jobType, workExperience, currency, expectedSalary, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Job updated successfully", job);

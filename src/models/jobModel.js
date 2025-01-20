@@ -18,12 +18,11 @@ const Job = sequelize.define('job', {
         type: DataTypes.STRING,
         allowNull: false
     },
-
     skills: {
         type: DataTypes.JSON,
         allowNull: false
     },
-    location: { 
+    location: {
         type: DataTypes.STRING,
         allowNull: false
     },

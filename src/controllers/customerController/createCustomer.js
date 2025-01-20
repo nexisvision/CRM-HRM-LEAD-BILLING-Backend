@@ -19,6 +19,11 @@ export default {
         try {
             const { name, contact, email, tax_number, alternate_number, billing_address, shipping_address } = req.body;
 
+            const existingCustomer = await Customer.findOne({ where: { email } });
+            if (existingCustomer) {
+                return responseHandler.error(res, "Customer already exists");
+            }
+
             const customer = await Customer.create({
                 related_id: req.user?.id,
                 name,

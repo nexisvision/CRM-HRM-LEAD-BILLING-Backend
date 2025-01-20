@@ -21,10 +21,6 @@ export default {
             if (!EMP) {
                 return responseHandler.error(res, "Employee not found");
             }
-            const existingAllowance = await Allowance.findOne({ where: { employeeId: EMP.employeeId } });
-            if (existingAllowance) {
-                return responseHandler.error(res, "Allowance already exists");
-            }
             const allowance = await Allowance.create({
                 employeeId: EMP.employeeId,
                 allowanceOption,

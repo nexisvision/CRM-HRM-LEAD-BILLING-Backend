@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import DeductionOption from "../../models/DeductionOptionModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -19,6 +20,10 @@ export default {
             const deductionOption = await DeductionOption.findByPk(id);
             if (!deductionOption) {
                 return responseHandler.error(res, "Deduction option not found");
+            }
+            const existingDeductionOption = await DeductionOption.findOne({ where: { name, id: { [Op.not]: id } } });
+            if (existingDeductionOption) {
+                return responseHandler.error(res, "Deduction option already exists");
             }
             await deductionOption.update({
                 name,

@@ -2,6 +2,7 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Commission from "../../models/commissionModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -23,7 +24,14 @@ export default {
             if (!commission) {
                 return responseHandler.notFound(res, 'Commission not found');
             }
-
+            const EMP = await User.findOne({ where: { id: req.user?.id } });
+            if (!EMP) {
+                return responseHandler.error(res, "Employee not found");
+            }
+            const existingCommission = await Commission.findOne({ where: { employeeId: EMP.employeeId, id: { [Op.not]: id } } });
+            if (existingCommission) {
+                return responseHandler.error(res, "Commission already exists");
+            }
             await commission.update({ title, type, currency, amount, updated_by: req.user?.username });
 
             return responseHandler.success(res, 'Commission updated successfully', commission);
