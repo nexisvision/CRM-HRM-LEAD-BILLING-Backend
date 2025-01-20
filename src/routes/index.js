@@ -8,7 +8,6 @@ import designationRoutes from "./designationRoutes.js";
 import attendanceRoutes from "./attendanceRoutes.js";
 import permissionRoutes from "./permissionRoutes.js";
 import subscriptionRoutes from "./subscriptionRoutes.js";
-import rolePermissionRoutes from "./rolePermissionRoutes.js";
 import announcementRoutes from "./announcementRoutes.js";
 import projectRoutes from "./projectRoutes.js";
 import meetingRoutes from "./meetingRoutes.js";
@@ -21,7 +20,6 @@ import superAdminRoutes from "./superAdminRoutes.js";
 import leadRoutes from "./leadRoutes.js";
 import taskRoutes from "./taskRoutes.js";
 import countriesRoutes from "./countriesRoutes.js";
-import sourcesRoutes from "./sourcesRoutes.js";
 import labelRoutes from "./labelRoutes.js";
 import contractRoutes from "./contractRoutes.js";
 import projectReportRoutes from "./projectReportRoutes.js";
@@ -43,7 +41,6 @@ import skillRoutes from "./skillRoutes.js";
 import interviewScheduleRoutes from "./interviewScheduleRoutes.js";
 import messageRoutes from "./messageRoutes.js";
 import trainingRoutes from "./trainingRoutes.js";
-import employeeSalaryRoutes from "./employeeSalaryRoutes.js";
 import stageRoutes from "./stageRoutes.js";
 import notificationRoutes from "./notificationRoutes.js";
 import customerRoutes from "./customerRoutes.js";
@@ -86,48 +83,69 @@ import documentRoutes from "./documentRoutes.js";
 import awardRoutes from "./awardRoutes.js";
 const router = express.Router();
 
-router.use('/auth', authRoutes);
-router.use('/super-admin', superAdminRoutes);
-router.use('/roles', roleRoutes);
-router.use('/clients', clientRoutes);
-router.use('/sub-clients', subClientRoutes);
-router.use('/permissions', permissionRoutes);
-router.use('/role-permissions', rolePermissionRoutes);
-router.use('/subscriptions', subscriptionRoutes);
-router.use('/announcements', announcementRoutes);
-router.use('/projects', projectRoutes);
-router.use('/project-reports', projectReportRoutes);
-router.use('/features', featureRoutes);
-router.use('/taskcalendars', taskCalendarRoutes);
-router.use('/currencies', currencyRoutes);
-router.use('/tasks', taskRoutes);
-router.use('/countries', countriesRoutes);
-router.use('/labels', labelRoutes);
-router.use('/sources', sourcesRoutes);
-router.use('/contracts', contractRoutes);
-router.use('/invoices', invoiceRoutes);
-router.use('/expenses', expenseRoutes);
-router.use('/payments', paymentRoutes);
-router.use('/milestones', milestoneRoutes);
-router.use('/notes', notesRoutes);
-router.use('/activities', activityRoutes);
-router.use('/deals', dealRoutes);
-router.use('/leads', leadRoutes);
-router.use('/pipelines', pipelineRoutes);
-router.use('/stages', stageRoutes);
-router.use('/products', productsRoutes);
-router.use('/quotations', quotationsRoutes);
-router.use('/proposals', proposalRoutes);
-router.use('/tickets', ticketRoutes);
-router.use('/messages', messageRoutes);
-router.use('/trainings', trainingRoutes);
-router.use('/employeeSalary', employeeSalaryRoutes);
-router.use('/notifications', notificationRoutes);
-router.use('/inquiry', inquiryRoutes);
-router.use('/orders', orderRoutes);
-router.use('/bills', billRoutes);
 
-//HRM System
+//>>>>>>>>>>>>>>  Super Admin  <<<<<<<<<<<<<<<//
+router.use('/super-admin', superAdminRoutes);
+router.use('/clients', clientRoutes);
+router.use('/subscriptions', subscriptionRoutes);
+router.use('/currencies', currencyRoutes);
+router.use('/countries', countriesRoutes);
+router.use('/tickets', ticketRoutes);
+router.use('/inquiry', inquiryRoutes);
+router.use('/features', featureRoutes);
+
+//>>>>>>>>>>>>>>  User Management System  <<<<<<<<<<<<<<<//
+router.use('/auth', authRoutes);
+router.use('/permissions', permissionRoutes);
+router.use('/roles', roleRoutes);
+router.use('/sub-clients', subClientRoutes);
+router.use('/announcements', announcementRoutes);
+
+//>>>>>>>>>>>>>>  HRM System  <<<<<<<<<<<<<<<//
+
+/** 1. Employee Setup*/
+router.use('/employees', employeeRoutes);
+
+/** 2. Payroll Setup*/
+router.use('/salary', salaryRoutes);
+router.use('/allowance', allowanceRoutes);
+router.use('/commission', commissionRoutes);
+router.use('/loan', loanRoutes);
+router.use('/deduction', deductionRoutes);
+router.use('/other-payments', otherPaymentRoutes);
+router.use('/overtime', overtimeRoutes);
+
+/** 3. Leave Management Setup*/
+router.use('/leaves', leaveRoutes);
+router.use('/attendance', attendanceRoutes);
+
+/** 4. Performance Setup*/
+router.use('/indicator', indicatorRoutes);
+router.use('/appraisal', appraisalRoutes);
+router.use('/goal-tracking', goalTrackingRoutes);
+router.use('/awards', awardRoutes);
+
+/** 5. Recruitment Setup*/
+router.use('/skills', skillRoutes);
+router.use('/jobs', jobRoutes);
+router.use('/job-applications', jobApplicationRoutes);
+router.use('/job-onboarding', jobonboardingrouter);
+router.use('/interview-schedules', interviewScheduleRoutes);
+router.use('/offer-letters', offerLetterRoutes);
+
+/** 6. Document Setup*/
+router.use('/documents', documentRoutes);
+
+/** 7. Company policy*/
+router.use('/policies', policyRoutes);
+
+/** 8. Meeting Setup*/
+router.use('/meetings', meetingRoutes);
+
+/** 9. Training Setup*/
+router.use('/trainings', trainingRoutes);
+
+/** 10. HRM System Setup*/
 router.use('/branches', branchRoutes);
 router.use('/departments', departmentRoutes);
 router.use('/designations', designationRoutes);
@@ -145,31 +163,10 @@ router.use('/job-categories', jobCategoryRoutes);
 router.use('/job-stages', jobStageRoutes);
 router.use('/performance-types', performanceTypeRoutes);
 router.use('/competencies', competenciesRoutes);
-router.use('/employees', employeeRoutes);
-router.use('/salary', salaryRoutes);
-router.use('/allowance', allowanceRoutes);
-router.use('/commission', commissionRoutes);
-router.use('/loan', loanRoutes);
-router.use('/deduction', deductionRoutes);
-router.use('/other-payments', otherPaymentRoutes);
-router.use('/overtime', overtimeRoutes);
-router.use('/leaves', leaveRoutes);
-router.use('/attendance', attendanceRoutes);
-router.use('/indicator', indicatorRoutes);
-router.use('/appraisal', appraisalRoutes);
-router.use('/goal-tracking', goalTrackingRoutes);
-router.use('/skills', skillRoutes);
-router.use('/jobs', jobRoutes);
-router.use('/job-applications', jobApplicationRoutes);
-router.use('/job-onboarding', jobonboardingrouter);
-router.use('/interview-schedules', interviewScheduleRoutes);
-router.use('/offer-letters', offerLetterRoutes);
-router.use('/meetings', meetingRoutes);
-router.use('/policies', policyRoutes);
-router.use('/documents', documentRoutes);
-router.use('/awards', awardRoutes);
 
-//ACCOUNTING SYSTEM
+//>>>>>>>>>>>>>>  Accounting System  <<<<<<<<<<<<<<<//
+
+/** 1. Sales Setup*/
 router.use('/customers', customerRoutes);
 router.use('/sales-quotations', salesQuotations);
 router.use('/sales-invoices', salesInvoiceRoutes);
@@ -177,7 +174,48 @@ router.use('/sales-revenue', salesRevenueRoutes);
 router.use('/sales-creditnote', salesCreditnoteRoutes);
 
 
+//>>>>>>>>>>>>>>  CRM System  <<<<<<<<<<<<<<<//
+
+/** 1. Lead Setup*/
+router.use('/leads', leadRoutes);
+
+/** 2. Deal Setup*/
+router.use('/deals', dealRoutes);
+
+/** 3. Contract Setup*/
+router.use('/contracts', contractRoutes);
+
+/** 4. CRM system Setup*/
+router.use('/pipelines', pipelineRoutes);
+router.use('/stages', stageRoutes);
 
 
+//>>>>>>>>>>>>>>  Project Management System  <<<<<<<<<<<<<<<//
+
+router.use('/projects', projectRoutes);
+router.use('/project-reports', projectReportRoutes);
+router.use('/quotations', quotationsRoutes);
+router.use('/milestones', milestoneRoutes);
+router.use('/invoices', invoiceRoutes);
+router.use('/expenses', expenseRoutes);
+router.use('/payments', paymentRoutes);
+router.use('/notes', notesRoutes);
+router.use('/activities', activityRoutes);
+
+//>>>>>>>>>>>>>>  Task Management System  <<<<<<<<<<<<<<<//
+
+router.use('/tasks', taskRoutes);
+router.use('/taskcalendars', taskCalendarRoutes);
+
+//>>>>>>>>>>>>>>  Order Management System  <<<<<<<<<<<<<<<//
+router.use('/products', productsRoutes);
+router.use('/orders', orderRoutes);
+router.use('/bills', billRoutes);
+
+//>>>>>>>>>>>>>>  Others  <<<<<<<<<<<<<<<//
+router.use('/labels', labelRoutes);
+router.use('/proposals', proposalRoutes);
+router.use('/messages', messageRoutes);
+router.use('/notifications', notificationRoutes);
 
 export default router;

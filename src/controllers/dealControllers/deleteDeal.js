@@ -6,8 +6,7 @@ import validator from "../../utils/validator.js";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required().messages({
-            })
+            id: Joi.string().required()
         })
     }),
     handler: async (req, res) => {

@@ -1,7 +1,7 @@
 import Joi from "joi";
+import Deal from "../../models/dealModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
-import EmployeeSalary from "../../models/employeeSalaryModel.js";
 
 export default {
     validator: validator({
@@ -12,16 +12,14 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-
-            const employeeSalary = await EmployeeSalary.findByPk(id);
-            if (!employeeSalary) {
-                return responseHandler.notFound(res, "EmployeeSalary not found");
+            const deal = await Deal.findByPk(id);
+            if (!deal) {
+                return responseHandler.error(res, "Deal not found");
             }
-
-            await employeeSalary.destroy();
-            return responseHandler.success(res, "EmployeeSalary deleted successfully", employeeSalary);
+            return responseHandler.success(res, "Deal fetched successfully", deal);
         } catch (error) {
+
             return responseHandler.error(res, error?.message);
         }
     }
-};
+}

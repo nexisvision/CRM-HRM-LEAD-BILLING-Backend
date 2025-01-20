@@ -14,6 +14,16 @@ const Feature = sequelize.define('feature', {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
+    },
+    created_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
 });
 

@@ -1,5 +1,5 @@
 import Joi from "joi";
-import RolePermission from "../../models/rolePermissionModel.js";
+import Stage from "../../models/stageModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
@@ -7,23 +7,18 @@ export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required()
-        })
+        }),
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-
-            const rolePermission = await RolePermission.findByPk(id);
-            if (!rolePermission) {
-                return responseHandler.notFound(res, "Role permission not found");
+            const stage = await Stage.findByPk(id);
+            if (!stage) {
+                return responseHandler.notFound(res, "Stage not found");
             }
-
-            await rolePermission.destroy();
-
-            return responseHandler.success(res, "Role permission deleted successfully");
+            return responseHandler.success(res, "Stage fetched successfully", stage);
         } catch (error) {
-
             return responseHandler.error(res, error?.message);
         }
     }
-};
+}

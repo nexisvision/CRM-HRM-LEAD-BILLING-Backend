@@ -25,7 +25,7 @@ export default {
             if (existingFeature) {
                 return responseHandler.error(res, "Feature already exists");
             }
-            await feature.update({ featureName });
+            await feature.update({ featureName, updated_by: req.user.username });
             return responseHandler.success(res, "Feature updated successfully", feature);
         } catch (error) {
             return responseHandler.error(res, error?.message);

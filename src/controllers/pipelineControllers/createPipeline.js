@@ -7,7 +7,6 @@ export default {
     validator: validator({
         body: Joi.object({
             pipeline_name: Joi.string().required(),
-
         })
     }),
     handler: async (req, res) => {

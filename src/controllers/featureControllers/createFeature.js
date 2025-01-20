@@ -17,7 +17,7 @@ export default {
             if (existingFeature) {
                 return responseHandler.error(res, "Feature already exists");
             }
-            const feature = await Feature.create({ featureName, created_by: req.user.id });
+            const feature = await Feature.create({ featureName, created_by: req.user.username });
             return responseHandler.success(res, "Feature created successfully", feature);
         } catch (error) {
             return responseHandler.error(res, error?.message);
