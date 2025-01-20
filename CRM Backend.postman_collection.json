@@ -9686,7 +9686,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiIzRnI0QXQ4WU5wMXEycENIN1A0R2lodyIsInJvbGUiOiJpamZiWWtVWnNKOUd4RHpMQng4Ync0VSIsImlhdCI6MTczNzM2OTU4NSwiZXhwIjoxNzM3NDU1OTg1fQ.uNTD-4GUnjg3G453iVDt-0AQOJETZuDysBpOmxF-hUc"
 									}
 								},
 								"method": "POST",
@@ -9705,7 +9705,22 @@
 							"response": []
 						},
 						{
-							"name": "Get Bills",
+							"name": "Get All Bills",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyZXdveEB5b3BtYWlsLmNvbSIsImlkIjoiTFhOQ1FmNXVLdFBkMWFRWGtqSnVYTnMiLCJyb2xlIjoiWVFTazBMUFFHeXNTQzVtakhCMU5iMUMiLCJpYXQiOjE3MzY5MTUwMjAsImV4cCI6MTczNzAwMTQyMH0.hm4K2sd8C-0MqKpN959uW7Uuwh_7LpGrNzVA-NpiKeg"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/bills/abc124$$"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Bill By ID",
 							"request": {
 								"auth": {
 									"type": "bearer",

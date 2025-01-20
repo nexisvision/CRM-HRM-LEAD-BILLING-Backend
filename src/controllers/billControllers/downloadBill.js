@@ -1,17 +1,24 @@
+import Joi from 'joi';
 import responseHandler from '../../utils/responseHandler.js';
 import Bill from '../../models/billModel.js';
 import User from '../../models/userModel.js';
 import SubscriptionPlan from '../../models/subscriptionPlanModel.js';
 import ClientSubscription from '../../models/clientSubscriptionModel.js';
 import { generateBillPDF } from '../../utils/pdfGenerator.js';
+import validator from '../../utils/validator.js';
 
 export default {
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        })
+    }),
     handler: async (req, res) => {
         try {
-            const { billId } = req.params;
+            const { id } = req.params;
 
             // Get bill details
-            const bill = await Bill.findByPk(billId);
+            const bill = await Bill.findOne({ where: { id } });
             if (!bill) {
                 return responseHandler.notFound(res, 'Bill not found');
             }
