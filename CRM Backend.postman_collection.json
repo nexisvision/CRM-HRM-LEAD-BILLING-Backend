@@ -314,14 +314,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5IiwidXNlcm5hbWUiOiJncmV3b3hlbXAxIiwiZW1haWwiOiJncmV3b3hlbXAxQHlvcG1haWwuY29tIiwicm9sZV9pZCI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwicGFzc3dvcmQiOiIkMmIkMTIkS2lEa3R2MFFwaURJeFNOTEswVGVPZTAuUUtvTHllRU5rOEthTXhha3M3V25MclM5eVJYQ1MiLCJmaXJzdE5hbWUiOiJKb2huIiwibGFzdE5hbWUiOiJEb2UiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJhZGRyZXNzIjoiMTIzIE1haW4gU3QiLCJqb2luaW5nRGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImxlYXZlRGF0ZSI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImJyYW5jaCI6Ik5ldyBZb3JrIiwiZGVwYXJ0bWVudCI6IkVuZ2luZWVyaW5nIiwiZGVzaWduYXRpb24iOiJTb2Z0d2FyZSBFbmdpbmVlciIsInNhbGFyeSI6NzUwMDAsImFjY291bnRob2xkZXIiOiJKb2huIERvZSIsImFjY291bnRudW1iZXIiOjEyMzQ1Njc4OTAsImJhbmtuYW1lIjoiQUJDIEJhbmsiLCJpZnNjIjoxMjM0NTYsImJhbmtsb2NhdGlvbiI6Ik5ldyBZb3JrIiwiZV9zaWduYXR1cmVzIjp7InNpZ25hdHVyZUZpbGUiOiJwYXRoL3RvL3NpZ25hdHVyZS9maWxlIiwiZGF0ZVNpZ25lZCI6IjIwMjUtMDEtMDFUMDA6MDA6MDBaIn0sImRvY3VtZW50cyI6eyJkb2N1bWVudFR5cGUiOiJJRCBQcm9vZiIsImRvY3VtZW50RmlsZSI6InBhdGgvdG8vaWQvcHJvb2YifSwibGlua3MiOnsicG9ydGZvbGlvIjoiaHR0cDovL2pvaG5zcG9ydGZvbGlvLmNvbSIsImxpbmtlZGluIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2pvaG5kb2UifSwidmVyaWZpY2F0aW9uT1RQIjoiMDA4Mzk5IiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM3MDk0NzM2NjcwLCJjcmVhdGVkX2J5IjoiZ3Jld294MTAwMSIsImNsaWVudFN1YnNjcmlwdGlvbiI6eyJpZCI6InROM1NCV25OeG9oMTZUTmVoYVhXOUlBIiwiY2xpZW50X2lkIjoiZzZBSmhidUYxNDJ6Sm8zR2ZQb0dIVTkiLCJwbGFuX2lkIjoiMHlYcUM0d2RxMUtQRHVsdjV4TmNxWEoiLCJzdGFydF9kYXRlIjoiMjAyNS0wMS0wMVQwMDowMDowMC4wMDBaIiwiZW5kX2RhdGUiOiIyMDI1LTAxLTMwVDAwOjAwOjAwLjAwMFoiLCJzdGF0dXMiOiJhY3RpdmUiLCJjdXJyZW50X3N0b3JhZ2VfdXNlZCI6MCwiY3VycmVudF91c2Vyc19jb3VudCI6MCwiY3VycmVudF9jbGllbnRzX2NvdW50IjowLCJwYXltZW50X3N0YXR1cyI6InVucGFpZCIsImxhc3RfcGF5bWVudF9kYXRlIjpudWxsLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTdUMDY6MDc6NDcuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTdUMDY6MDc6NDcuMDAwWiJ9LCJwbGFuIjp7ImlkIjoiMHlYcUM0d2RxMUtQRHVsdjV4TmNxWEoiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMTdUMDQ6NTY6MjQuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMTdUMDQ6NTY6MjQuMDAwWiJ9LCJ0eXBlIjoic2lnbnVwX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTczNzA5NDQzNiwiZXhwIjoxNzM3MDk1MzM2fQ.0K-ZYR13yG38ydHUscVHHEBcO0gPEVOj_uAVtIqvwNs"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwidXNlcm5hbWUiOiJncmV3b3hlbXAxIiwiZW1haWwiOiJncmV3b3hlbXAxQHlvcG1haWwuY29tIiwicm9sZV9pZCI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwicGFzc3dvcmQiOiIkMmIkMTIkdlh3RFprY1lYc2tZUFg0NS5WbERPdTVoWXBSdHNhYUg3azRMNnVzc2Q0c2xpZ2hMaXBhbTYiLCJmaXJzdE5hbWUiOiJKb2huIiwibGFzdE5hbWUiOiJEb2UiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJhZGRyZXNzIjoiMTIzIE1haW4gU3QiLCJqb2luaW5nRGF0ZSI6IjIwMjUtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImxlYXZlRGF0ZSI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImJyYW5jaCI6Ik5ldyBZb3JrIiwiZGVwYXJ0bWVudCI6IkVuZ2luZWVyaW5nIiwiZGVzaWduYXRpb24iOiJTb2Z0d2FyZSBFbmdpbmVlciIsInNhbGFyeSI6NzUwMDAsImFjY291bnRob2xkZXIiOiJKb2huIERvZSIsImFjY291bnRudW1iZXIiOjEyMzQ1Njc4OTAsImJhbmtuYW1lIjoiQUJDIEJhbmsiLCJpZnNjIjoxMjM0NTYsImJhbmtsb2NhdGlvbiI6Ik5ldyBZb3JrIiwiZV9zaWduYXR1cmVzIjp7InNpZ25hdHVyZUZpbGUiOiJwYXRoL3RvL3NpZ25hdHVyZS9maWxlIiwiZGF0ZVNpZ25lZCI6IjIwMjUtMDEtMDFUMDA6MDA6MDBaIn0sImRvY3VtZW50cyI6eyJkb2N1bWVudFR5cGUiOiJJRCBQcm9vZiIsImRvY3VtZW50RmlsZSI6InBhdGgvdG8vaWQvcHJvb2YifSwibGlua3MiOnsicG9ydGZvbGlvIjoiaHR0cDovL2pvaG5zcG9ydGZvbGlvLmNvbSIsImxpbmtlZGluIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2pvaG5kb2UifSwidmVyaWZpY2F0aW9uT1RQIjoiNjM1NzE5IiwidmVyaWZpY2F0aW9uT1RQRXhwaXJ5IjoxNzM3MzUyMjAzNjk2LCJjcmVhdGVkX2J5IjoiZ3Jld294MTAwMSIsImNsaWVudFN1YnNjcmlwdGlvbiI6eyJpZCI6ImdOOTA5dEUzMkx6UG1mNmU1Q0N4M0V3IiwiY2xpZW50X2lkIjoiVjhqRHR2VjhJaUt2NnFnRk5XTEo2aEMiLCJwbGFuX2lkIjoiZ0d1eXhEWDJpdWFNekxiOGlWcGVZMmkiLCJzdGFydF9kYXRlIjoiMjAyNS0wMS0wMVQwMDowMDowMC4wMDBaIiwiZW5kX2RhdGUiOiIyMDI1LTAxLTMwVDAwOjAwOjAwLjAwMFoiLCJzdGF0dXMiOiJhY3RpdmUiLCJjdXJyZW50X3N0b3JhZ2VfdXNlZCI6MCwiY3VycmVudF91c2Vyc19jb3VudCI6MCwiY3VycmVudF9jbGllbnRzX2NvdW50IjowLCJwYXltZW50X3N0YXR1cyI6InVucGFpZCIsImxhc3RfcGF5bWVudF9kYXRlIjpudWxsLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMjBUMDU6NDQ6MzkuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMjBUMDU6NDQ6MzkuMDAwWiJ9LCJwbGFuIjp7ImlkIjoiZ0d1eXhEWDJpdWFNekxiOGlWcGVZMmkiLCJuYW1lIjoiQmFzaWMiLCJjdXJyZW5jeSI6IlVTRCIsInByaWNlIjoiOS45OSIsImR1cmF0aW9uIjoiUGVyIE1vbnRoIiwidHJpYWxfcGVyaW9kIjo3LCJtYXhfdXNlcnMiOjUsIm1heF9jbGllbnRzIjoxMCwic3RvcmFnZV9saW1pdCI6MTAsImZlYXR1cmVzIjoie1wiZmVhdHVyZTFcIjp0cnVlLFwiZmVhdHVyZTJcIjpmYWxzZX0iLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkX2J5Ijoic3VwZXJhZG1pbiIsInVwZGF0ZWRfYnkiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjUtMDEtMjBUMDU6MjY6MjcuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDEtMjBUMDU6MjY6MjcuMDAwWiJ9LCJ0eXBlIjoic2lnbnVwX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTczNzM1MTkwMywiZXhwIjoxNzM3MzUyODAzfQ.ckz6sHv23y-OJ_64OBDPZTZRSLqYkJ15hrFXq2eoVMk"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"otp\":\"008399\"\r\n}",
+							"raw": "{\r\n        \"otp\":\"635719\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -424,7 +424,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiIzRnI0QXQ4WU5wMXEycENIN1A0R2lodyIsInJvbGUiOiJpamZiWWtVWnNKOUd4RHpMQng4Ync0VSIsImlhdCI6MTczNzM1MDQ4MywiZXhwIjoxNzM3NDM2ODgzfQ.l6OFMQmg-qUbOqATsI8unqRhnhHgU3rILbQzmhQRruY"
 							}
 						},
 						"method": "POST",
@@ -510,7 +510,22 @@
 								}
 							}
 						},
-						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -527,14 +542,29 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"johndoe updates\",\n  \"email\": \"john.doe@example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"profilePic\": \"https://example.com/profile.jpg\",\n  \"accountholder\": \"John Doe\",\n  \"accountnumber\": 1234567890,\n  \"bankname\": \"Example Bank\",\n  \"gstIn\": \"ABC1234567890ABCDEF\",\n  \"ifsc\": \"EXAB0000000\",\n  \"banklocation\": \"New York\",\n  \"e_signature\": \"path/to/signature.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -558,7 +588,22 @@
 								}
 							}
 						},
-						"url": "{{base}}/clients/se9s43PRODx48HjKoLSp6GY"
+						"url": {
+							"raw": "{{base}}/clients/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -3417,7 +3462,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MDk0MTIxLCJleHAiOjE3MzcxODA1MjF9.1Qz1oH0aB5UsvJxNAHtjPGXAkO_E0MEZ6jXIBQt4sL8"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUwNTQxLCJleHAiOjE3Mzc0MzY5NDF9.86XNRj5Jr7p2cp1EgfhuFi-38Xj5MjPTpKrV1IIRmtY"
 									}
 								},
 								"method": "POST",
@@ -3511,7 +3556,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"grewoxemp1\",\n    \"email\": \"grewoxemp1@yopmail.com\",\n    \"password\": \"Password123!\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"1234567890\",\n    \"address\": \"123 Main St\",\n    \"gender\":\"male\",\n    \"joiningDate\": \"2025-01-01T00:00:00Z\",\n    \"leaveDate\": \"2026-01-01T00:00:00Z\",\n    \"branch\": \"New York\",\n    \"department\": \"Engineering\",\n    \"designation\": \"Software Engineer\",\n    \"salary\": 75000,\n    \"accountholder\": \"John Doe\",\n    \"accountnumber\": 1234567890,\n    \"bankname\": \"ABC Bank\",\n    \"ifsc\": 123456,\n    \"banklocation\": \"New York\",\n    \"e_signatures\": {\n        \"signatureFile\": \"path/to/signature/file\",\n        \"dateSigned\": \"2025-01-01T00:00:00Z\"\n    },\n    \"documents\": {\n        \"documentType\": \"ID Proof\",\n        \"documentFile\": \"path/to/id/proof\"\n    },\n    \"links\": {\n        \"portfolio\": \"http://johnsportfolio.com\",\n        \"linkedin\": \"https://www.linkedin.com/in/johndoe\"\n    }\n}\n",
+									"raw": "{\n    \"password\": \"Password123!\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"address\": \"123 Main St\",\n    \"gender\":\"male\",\n    \"joiningDate\": \"2025-01-01T00:00:00Z\",\n    \"leaveDate\": \"2026-01-01T00:00:00Z\",\n    \"branch\": \"New York\",\n    \"department\": \"Engineering\",\n    \"designation\": \"Software Engineer\",\n    \"salary\": 75000,\n    \"accountholder\": \"John Doe\",\n    \"accountnumber\": 1234567890,\n    \"bankname\": \"ABC Bank\",\n    \"ifsc\": 123456,\n    \"banklocation\": \"New York\",\n    \"e_signatures\": {\n        \"signatureFile\": \"path/to/signature/file\",\n        \"dateSigned\": \"2025-01-01T00:00:00Z\"\n    },\n    \"documents\": {\n        \"documentType\": \"ID Proof\",\n        \"documentFile\": \"path/to/id/proof\"\n    },\n    \"links\": {\n        \"portfolio\": \"http://johnsportfolio.com\",\n        \"linkedin\": \"https://www.linkedin.com/in/johndoe\"\n    }\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3778,7 +3823,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+										"token": ""
 									}
 								},
 								"method": "GET",
@@ -4745,6 +4790,1382 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Attendance",
+					"item": [
+						{
+							"name": "Create Attendance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employee\": \"John\",\n  \"date\": \"2025-01-17\",\n  \"startTime\": \"09:00 AM\",\n  \"endTime\": \"05:00 PM\",\n  \"late\": null,\n  \"halfDay\": null\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/attendance"
+							},
+							"response": []
+						},
+						{
+							"name": "bulk Attendance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTcyOTA1LCJleHAiOjE3MzcyNTkzMDV9.yZxGmzCHE5Rz1Avvj16Y7tUMtScOgjEE1nvfedlMYgo"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"attendances\": {\n    \"1\": {\n      \"employee\": \"E123\",\n      \"date\": \"2025-01-10\",\n      \"startTime\": \"09:00 AM\",\n      \"endTime\": \"05:00 PM\",\n      \"late\": \"15 minutes\",\n      \"halfDay\": false\n    },\n    \"2\": {\n      \"employee\": \"E124\",\n      \"date\": \"2025-01-10\",\n      \"startTime\": \"09:15 AM\",\n      \"endTime\": \"05:15 PM\",\n      \"late\": \"15 minutes\",\n      \"halfDay\": false\n    },\n    \"3\": {\n      \"employee\": \"E125\",\n      \"date\": \"2025-01-11\",\n      \"startTime\": \"08:45 AM\",\n      \"endTime\": \"05:00 PM\",\n      \"late\": \"\",\n      \"halfDay\": false\n    },\n    \"4\": {\n      \"employee\": \"E126\",\n      \"date\": \"2025-01-11\",\n      \"startTime\": \"09:00 AM\",\n      \"endTime\": \"06:00 PM\",\n      \"late\": \"\",\n      \"halfDay\": true\n    },\n    \"5\": {\n      \"employee\": \"E127\",\n      \"date\": \"2025-01-12\",\n      \"startTime\": \"08:55 AM\",\n      \"endTime\": \"05:00 PM\",\n      \"late\": \"5 minutes\",\n      \"halfDay\": false\n    },\n    \"6\": {\n      \"employee\": \"E128\",\n      \"date\": \"2025-01-12\",\n      \"startTime\": \"09:00 AM\",\n      \"endTime\": \"05:00 PM\",\n      \"late\": \"\",\n      \"halfDay\": false\n    },\n    \"7\": {\n      \"employee\": \"E129\",\n      \"date\": \"2025-01-13\",\n      \"startTime\": \"08:30 AM\",\n      \"endTime\": \"04:30 PM\",\n      \"late\": \"\",\n      \"halfDay\": false\n    },\n    \"8\": {\n      \"employee\": \"E130\",\n      \"date\": \"2025-01-13\",\n      \"startTime\": \"09:05 AM\",\n      \"endTime\": \"05:05 PM\",\n      \"late\": \"5 minutes\",\n      \"halfDay\": false\n    },\n    \"9\": {\n      \"employee\": \"E131\",\n      \"date\": \"2025-01-14\",\n      \"startTime\": \"09:00 AM\",\n      \"endTime\": \"06:00 PM\",\n      \"late\": \"\",\n      \"halfDay\": true\n    },\n    \"10\": {\n      \"employee\": \"E132\",\n      \"date\": \"2025-01-14\",\n      \"startTime\": \"08:50 AM\",\n      \"endTime\": \"05:00 PM\",\n      \"late\": \"10 minutes\",\n      \"halfDay\": false\n    }\n  }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/attendance/bulk"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Attendance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/attendance"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Attendance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/attendance/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"attendance",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Attendance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6IlBWTU90Z2VYOWZ2TVc4RUd0WXJEZWZDIiwicm9sZSI6Im5Ua2lXeVNTYUxYMGJhNzN4TDNheUxwIiwiaWF0IjoxNzM3MTA0ODM5LCJleHAiOjE3MzcxOTEyMzl9.WI-VnrZGcpSwCdPjPS1wTj0xp6RpXPW1kuAanL4sG0E"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee\": \"John Doe\",\r\n  \"date\": \"2025-01-17\",\r\n  \"startTime\": \"09:00 AM\",\r\n  \"endTime\": \"05:00 PM\",\r\n  \"late\": null,\r\n  \"halfDay\": null\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/attendance/eltTV4C1qWjJcufE2dPtZ2G"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Attendance By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/attendance/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"attendance",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Indicator",
+					"item": [
+						{
+							"name": "Create Indicator",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branch\": \"New York\",\n  \"department\": \"Sales\",\n  \"designation\": \"Sales Manager\",\n  \"businessProcess\": 4.2,\n  \"oralCommunication\": 4.5,\n  \"leadership\": 4.0,\n  \"projectManagement\": 3.9,\n  \"allocatingResources\": 4.3,\n  \"overallRating\": 4.4\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/indicator"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Indicator",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/indicator"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Indicator By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/indicator/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"indicator",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Indicator By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"branch\": \"USA\",\r\n  \"department\": \"Sales\",\r\n  \"designation\": \"Sales Manager\",\r\n  \"businessProcess\": 4.2,\r\n  \"oralCommunication\": 4.5,\r\n  \"leadership\": 4.0,\r\n  \"projectManagement\": 3.9,\r\n  \"allocatingResources\": 4.3,\r\n  \"overallRating\": 4.4\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/indicator/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"indicator",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Indicator By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/indicator/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"indicator",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Appraisal",
+					"item": [
+						{
+							"name": "Create Appraisal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employee\":\"E124\",\n  \"branch\": \"USA\",\n  \"department\": \"Sales\",\n  \"designation\": \"Sales Manager\",\n  \"businessProcess\": 4.2,\n  \"oralCommunication\": 4.5,\n  \"leadership\": 4.0,\n  \"projectManagement\": 3.9,\n  \"allocatingResources\": 4.3,\n  \"overallRating\": 4.4\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/appraisal"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Appraisal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/appraisal"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Appraisal By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/appraisal/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"appraisal",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Appraisal By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee\": \"E123\",\r\n  \"branch\": \"New York\",\r\n  \"department\": \"Sales\",\r\n  \"designation\": \"Sales Manager\",\r\n  \"businessProcess\": 4.2,\r\n  \"oralCommunication\": 4.5,\r\n  \"leadership\": 4.0,\r\n  \"projectManagement\": 3.9,\r\n  \"allocatingResources\": 4.3,\r\n  \"overallRating\": 4.4\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/appraisal/jxz4slkmvmvlPPA5hYqUMxg"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Appraisal By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6Imc2QUpoYnVGMTQyekpvM0dmUG9HSFU5Iiwicm9sZSI6IlZJcGlRNEtnaWR2NFVxQnRnMllFOTg4IiwiaWF0IjoxNzM3MTc2OTkxLCJleHAiOjE3MzcyNjMzOTF9.-wssCMao3ip0LjPHygWxAazVsKQZc4ORlrY30any7y8"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/appraisal/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"appraisal",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Goal Tracking",
+					"item": [
+						{
+							"name": "Goal Tracking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6Ijh5b3hXZVFjZEYxTmJ3dnpJTnY4WUo2Iiwicm9sZSI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwiaWF0IjoxNzM3MzUxOTU3LCJleHAiOjE3Mzc0MzgzNTd9.fTHrTasDTOpm8p7bTGv1ib063qYQTlRtHhYD6SnQB64"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n    \"branch\": \"Ahmedabad\",\n    \"goalType\": \"Sales Target\",\n    \"startDate\": \"2024-03-01\",\n    \"endDate\": \"2024-03-31\",\n    \"status\": \"In Progress\",\n    \"target_achievement\": \"500000\",\n    \"rating\": \"4\",\n    \"description\": \"Monthly sales target for Ahmedabad branch\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/goal-tracking"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Goal Tracking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6Ijh5b3hXZVFjZEYxTmJ3dnpJTnY4WUo2Iiwicm9sZSI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwiaWF0IjoxNzM3MzUxOTU3LCJleHAiOjE3Mzc0MzgzNTd9.fTHrTasDTOpm8p7bTGv1ib063qYQTlRtHhYD6SnQB64"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/goal-tracking"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Goal Tracking By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6Ijh5b3hXZVFjZEYxTmJ3dnpJTnY4WUo2Iiwicm9sZSI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwiaWF0IjoxNzM3MzUxOTU3LCJleHAiOjE3Mzc0MzgzNTd9.fTHrTasDTOpm8p7bTGv1ib063qYQTlRtHhYD6SnQB64"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/goal-tracking/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"goal-tracking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Goal Tracking By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6Ijh5b3hXZVFjZEYxTmJ3dnpJTnY4WUo2Iiwicm9sZSI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwiaWF0IjoxNzM3MzUxOTU3LCJleHAiOjE3Mzc0MzgzNTd9.fTHrTasDTOpm8p7bTGv1ib063qYQTlRtHhYD6SnQB64"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"branch\": \"Ahmedabad\",\r\n    \"goalType\": \"Sales Target\",\r\n    \"startDate\": \"2024-03-01\",\r\n    \"endDate\": \"2024-03-31\",\r\n    \"status\": \"In Progress\",\r\n    \"target_achievement\": \"500000\",\r\n    \"rating\": \"4\",\r\n    \"progress\":\"60%\",\r\n    \"description\": \"Monthly sales target for Ahmedabad branch\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/goal-tracking/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"goal-tracking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Goal Tracking By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveGVtcDEiLCJlbWFpbCI6ImdyZXdveGVtcDFAeW9wbWFpbC5jb20iLCJpZCI6Ijh5b3hXZVFjZEYxTmJ3dnpJTnY4WUo2Iiwicm9sZSI6Ik1HcG81SXZQYlBYVU02ck5yM0RwdWZJIiwiaWF0IjoxNzM3MzUxOTU3LCJleHAiOjE3Mzc0MzgzNTd9.fTHrTasDTOpm8p7bTGv1ib063qYQTlRtHhYD6SnQB64"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base}}/goal-tracking/SAOhOXEQQEeEEWVSHpTMdRp"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Skill",
+					"item": [
+						{
+							"name": "Create Skill",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skillName\":\"css\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/skills"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Skill",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/skills"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Skill",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skillName\":\"dssdfsdf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/skills/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"skills",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete  Skill",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base}}/skills/lp8PrUXYHxLpf0gYLd91oog"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job",
+					"item": [
+						{
+							"name": "Create Job",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"123\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": \"5\",\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": \"100000\",\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/jobs"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Jobs",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/jobs"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/jobs/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Job By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"1234\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"NATHI KEVU\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": \"5\",\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": \"100000\",\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/jobs/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Job By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/jobs/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Application",
+					"item": [
+						{
+							"name": "Create Job-application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"job\": \"web\",\r\n      \"name\": \"sdfsd\",\r\n      \"email\": \"fsdfsd@gmail.com\",\r\n      \"phone\":\"32423423423\" ,\r\n      \"location\": \"fsdfdsfsdfs\",\r\n      \"total_experience\": \"10 years\",\r\n      \"current_location\": \"sdfgsdfsf\",\r\n      \"notice_period\":\"10 days\",\r\n      \"status\": \"sdfsdfsdf\",\r\n      \"applied_source\": \"dsfdfsdfsdf\",\r\n      \"cover_letter\": \"dsfsdfsdg\"\r\n            \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/job-applications"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Job-application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/job-applications"
+							},
+							"response": []
+						},
+						{
+							"name": "Update job-application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"job\": \"sdfsdfsdf\",\r\n            \"name\": \"dsfsdfsdf\",\r\n            \"email\": \"SDasASa@gmail.com\",\r\n            \"phone\":\"324dsfsdf23erter423423\" ,\r\n            \"location\": \"dsf\",\r\n            \"total_experience\": \"101 years\",\r\n            \"current_location\": \"dsa\",\r\n            \"notice_period\":\"110 days\",\r\n            \"status\": \"asd\",\r\n            \"applied_source\": \"sadasdsa\",\r\n            \"cover_letter\": \"asds\"\r\n            \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/job-applications/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Job-Application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-applications/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Onboarding",
+					"item": [
+						{
+							"name": "Create Job Onboarding",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Interviewer\": \"Yash Babariya\",\r\n    \"JoiningDate\": \"2024-04-01\",\r\n    \"DaysOfWeek\": \"Monday to Friday\",\r\n    \"Salary\": \"50000\",\r\n    \"SalaryType\": \"Fixed\",\r\n    \"SalaryDuration\": \"Monthly\",\r\n    \"JobType\": \"Full Time\",\r\n    \"Status\": \"Confirmed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/job-onboarding"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Job Onboarding",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/job-onboarding"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Onboarding By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-onboarding/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-onboarding",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Job Onboarding",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Interviewer\": \"Yash\",\r\n    \"JoiningDate\": \"2024-04-01\",\r\n    \"DaysOfWeek\": \"Monday to Friday\",\r\n    \"Salary\": \"50000\",\r\n    \"SalaryType\": \"Fixed\",\r\n    \"SalaryDuration\": \"Monthly\",\r\n    \"JobType\": \"Full Time\",\r\n    \"Status\": \"Confirmed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/job-onboarding/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-onboarding",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Job Onboarding",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/job-onboarding/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"job-onboarding",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Interview Schedule",
+					"item": [
+						{
+							"name": "Create Interview Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"job\": \"Software Engineer\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/interview-schedules"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Interview Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/interview-schedules"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Interview Schedule By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/interview-schedules/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"interview-schedules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Interview Schedule By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"job\": \"Software Engineerrr\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/interview-schedules/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"interview-schedules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Interview Schedule By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/interview-schedules/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"interview-schedules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Offer Letter",
+					"item": [
+						{
+							"name": "Create Offer Letter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"job\": \"MERN Stack Developer\",\r\n    \"job_applicant\": \"64f8a12345678901234567890\",  \r\n    \"offer_expiry\": \"2024-04-15\",\r\n    \"expected_joining_date\": \"2024-05-01\",\r\n    \"salary\": \"60000\",\r\n    \"description\": \"We are pleased to offer you the position of MERN Stack Developer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base}}/offer-letters"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Offer Letter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base}}/offer-letters"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Offer Letter By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/offer-letters/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"offer-letters",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Offer Letter By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"job\": \"MERN Stack Developer UO\",\r\n    \"job_applicant\": \"64f8a12345678901234567890\",  // Assuming this is an applicant ID\r\n    \"offer_expiry\": \"2024-04-15\",\r\n    \"expected_joining_date\": \"2024-05-01\",\r\n    \"salary\": \"60000\",\r\n    \"description\": \"We are pleased to offer you the position of MERN Stack Developer\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/offer-letters/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"offer-letters",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Offer Letter By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdyZXdveDEwMDEiLCJlbWFpbCI6ImdyZXdveDEwMDFAeW9wbWFpbC5jb20iLCJpZCI6IlY4akR0dlY4SWlLdjZxZ0ZOV0xKNmhDIiwicm9sZSI6IkJjd0dzR1BCcUFDQkJtd2NaM2JUbmJ3IiwiaWF0IjoxNzM3MzUzMTYwLCJleHAiOjE3Mzc0Mzk1NjB9.m1LykHaEf51o-I3SGYX9yYB2j3hRT9pKgI2WEqu4kik"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/offer-letters/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"offer-letters",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -4850,104 +6271,6 @@
 							}
 						},
 						"url": "{{base}}/leads/SJF6IB20dFfh47fQl15OZf3"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Attendance",
-			"item": [
-				{
-					"name": "Create Attendance",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"department\": \"Engineering\",\n  \"employee\": [\"EMP123\", \"EMP456\"],\n  \"startDate\": \"2025-01-10\",\n  \"startTime\": \"09:00:00\",\n  \"endDate\": \"2025-01-10\",\n  \"endTime\": \"17:00:00\",\n  \"late\": \"\",  // Not late\n  \"halfDay\": \"No\",  // Full day\n  \"working_from\": \"Office\",\n  \"comment\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/attendance"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Attendance",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/attendance"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Attendance By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Attendance By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "// Valid Update Test Cases\r\n{\r\n    \"id\": \"65f97a3b12345\",  // Attendance record ID\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:30\",    // Changed from 09:00\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:30\",      // Changed from 18:00\r\n    \"comment\": \"Updated timing due to traffic delay\"\r\n}\r\n\r\n// Test Cases with Different Valid Updates\r\n/*\r\n// 1. Update only time\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"10:00\",    // Late arrival\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"19:00\",      // Extended hours\r\n    \"comment\": \"Late arrival compensated with extended hours\"\r\n}\r\n\r\n// 2. Update with half day\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"13:00\",      // Changed to half day\r\n    \"comment\": \"Half day due to doctor's appointment\"\r\n}\r\n\r\n// 3. Update comment only\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\",\r\n    \"comment\": \"Updated comment for attendance record\"\r\n}\r\n\r\n// 4. Update for night shift\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"22:00\",\r\n    \"endDate\": \"2024-03-20\",\r\n    \"endTime\": \"06:00\",\r\n    \"comment\": \"Changed to night shift\"\r\n}\r\n*/\r\n\r\n// Invalid Update Test Cases\r\n/*\r\n// 1. Invalid Attendance ID\r\n{\r\n    \"id\": \"invalid-id\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 2. Update to Invalid Date Format\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"19-03-2024\",  // Wrong format\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"19-03-2024\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 3. Update to Invalid Time Format\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"9:00 AM\",  // Wrong format\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"6:00 PM\"\r\n}\r\n\r\n// 4. End Date Before Start Date\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-18\",  // Previous day\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 5. End Time Before Start Time (Same Day)\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"14:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"13:00\"  // Before start time\r\n}\r\n\r\n// 6. Missing Required Fields\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n    // Missing startTime\r\n}\r\n\r\n// 7. Update to Future Date\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-12-19\",  // Future date\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-12-19\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 8. Update After Time Limit\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-01\",  // Trying to update old record\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-01\",\r\n    \"endTime\": \"18:00\"\r\n}\r\n\r\n// 9. Invalid Working Hours\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"02:00\",  // Outside working hours\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"03:00\"\r\n}\r\n\r\n// 10. Overlapping Attendance\r\n{\r\n    \"id\": \"65f97a3b12345\",\r\n    \"startDate\": \"2024-03-19\",\r\n    \"startTime\": \"09:00\",\r\n    \"endDate\": \"2024-03-19\",\r\n    \"endTime\": \"18:00\"\r\n    // This time might overlap with another attendance record\r\n}\r\n*/",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Attendance By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{base}}/attendance/OE3CRogYiVXjeoDSKHUkwzn"
 					},
 					"response": []
 				}
@@ -5168,7 +6491,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiIzRnI0QXQ4WU5wMXEycENIN1A0R2lodyIsInJvbGUiOiJpamZiWWtVWnNKOUd4RHpMQng4Ync0VSIsImlhdCI6MTczNzM1MDQ4MywiZXhwIjoxNzM3NDM2ODgzfQ.l6OFMQmg-qUbOqATsI8unqRhnhHgU3rILbQzmhQRruY"
 							}
 						},
 						"method": "POST",
@@ -5192,14 +6515,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJFem1mNTE3WUpCVWhVZTJHTXFvdTNwbiIsInJvbGUiOiIyd3duNjZpcXcwTHZqSTVUQnFITWVEMiIsImlhdCI6MTczNzA4OTc2NCwiZXhwIjoxNzM3MTc2MTY0fQ.cMycvjwJOQnJr3uSTyYsNkwEFpK2uIko4aPRRrit8V0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiIzRnI0QXQ4WU5wMXEycENIN1A0R2lodyIsInJvbGUiOiJpamZiWWtVWnNKOUd4RHpMQng4Ync0VSIsImlhdCI6MTczNzM1MDQ4MywiZXhwIjoxNzM3NDM2ODgzfQ.l6OFMQmg-qUbOqATsI8unqRhnhHgU3rILbQzmhQRruY"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"client_id\": \"g6AJhbuF142zJo3GfPoGHU9\",\r\n  \"plan_id\": \"0yXqC4wdq1KPDulv5xNcqXJ\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
+							"raw": "{\r\n  \"client_id\": \"V8jDtvV8IiKv6qgFNWLJ6hC\",\r\n  \"plan_id\": \"gGuyxDX2iuaMzLb8iVpeY2i\",\r\n  \"start_date\": \"2025-01-01\",\r\n  \"end_date\": \"2025-01-30\", \r\n  \"status\": \"active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7182,389 +8505,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base}}/proposals/zsbxuemxtkgiGPLWnLL9ebE"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Job",
-			"item": [
-				{
-					"name": "Create Job",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"123\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/jobs"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Jobs",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"Remote\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/jobs"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Job By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Job By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Software Engineer\",\r\n  \"category\":\"123\",\r\n  \"department\": \"Engineering\",\r\n  \"skills\": {\r\n    \"skillName\": \"JavaScript\",\r\n    \"yearsOfExperience\": 3,\r\n    \"level\": \"Intermediate\"\r\n  },\r\n  \"location\": \"NATHI KEVU\",\r\n  \"interviewRounds\": {\r\n    \"roundNumber\": 1,\r\n    \"type\": \"Technical\",\r\n    \"panelMembers\": [\"Senior Engineer\", \"Tech Lead\"]\r\n  },\r\n  \"startDate\": \"2025-01-20\",\r\n  \"endDate\": \"2025-02-10\",\r\n  \"totalOpenings\": 2,\r\n  \"status\": \"Open\",\r\n  \"recruiter\": \"Jane Smith\",\r\n  \"jobType\": \"Full-time\",\r\n  \"workExperience\": 5,\r\n  \"currency\": \"USD\",\r\n  \"expectedSalary\": 100000,\r\n  \"description\": \"We are looking for a talented Software Engineer to join our team...\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Job By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiJyZFp5TGk4TzVUajR4c1pOOVVKa0lCdCIsInJvbGUiOiJ0NVBIRDBDaWdNblNaVTlUSG5aSTZxdSIsImlhdCI6MTczNTkwMTU2MCwiZXhwIjoxNzM1OTg3OTYwfQ.0qv2pRA9ROYr7AtvFpRubkyOb8UgjKJcOkA_LeN5tPw"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{base}}/jobs/3O7Bsw1cg9TzghuUx6ejHST"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Job Application",
-			"item": [
-				{
-					"name": "Create Job-application",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n      \"job\": \"web\",\r\n            \"name\": \"sdfsd\",\r\n            \"email\": \"fsdfsd@gmail.com\",\r\n            \"phone\":\"32423423423\" ,\r\n            \"location\": \"fsdfdsfsdfs\",\r\n            \"total_experience\": \"10 years\",\r\n            \"current_location\": \"sdfgsdfsf\",\r\n            \"notice_period\":\"10 days\",\r\n            \"status\": \"sdfsdfsdf\",\r\n            \"applied_source\": \"dsfdfsdfsdf\",\r\n            \"cover_letter\": \"dsfsdfsdg\"\r\n            \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/job-applications"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Job-application",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/job-applications"
-					},
-					"response": []
-				},
-				{
-					"name": "Update job-application",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n      \"job\": \"sdfsdfsdf\",\r\n            \"name\": \"dsfsdfsdf\",\r\n            \"email\": \"SDasASa@gmail.com\",\r\n            \"phone\":\"324dsfsdf23erter423423\" ,\r\n            \"location\": \"dsf\",\r\n            \"total_experience\": \"101 years\",\r\n            \"current_location\": \"dsa\",\r\n            \"notice_period\":\"110 days\",\r\n            \"status\": \"asd\",\r\n            \"applied_source\": \"sadasdsa\",\r\n            \"cover_letter\": \"asds\"\r\n            \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/job-applications/tCfLw9CMPpAvnjojJD4k3XR"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Job-Application",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Interview Schedule",
-			"item": [
-				{
-					"name": "Create Interview Schedule",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"job\": \"Software Engineer\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/interview-schedules"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Interview Schedule",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/interview-schedules"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Interview Schedule By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Interview Schedule By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"job\": \"Software Engineerrr\",\r\n  \"candidate\": \"John Doe\",\r\n  \"interviewer\": \"Jane Smith\",\r\n  \"round\": \"2\",\r\n  \"interviewType\": \"Technical\",\r\n  \"startOn\": \"2025-01-25\",\r\n  \"startTime\": \"10:00:00\",\r\n  \"commentForInterviewer\": \"Review candidate's code samples.\",\r\n  \"commentForCandidate\": \"Be prepared to answer questions about your experience with JavaScript.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Interview Schedule By ID",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWQiOiI2d0w5bmFYMVhYblAzS2g1OUpwR2p2UiIsInJvbGUiOiI1b1NtT21BaTJrRGVINlFDTGJJOVBUWCIsImlhdCI6MTczNTg3NjMwNiwiZXhwIjoxNzM1OTYyNzA2fQ.XpnLUG30B6YLI8zE3xAtEF0J0Ja3IpWVH3ZozetuUwo"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/interview-schedules/nrZFgWW1ykIu1SFMVNE0uYG"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Skill",
-			"item": [
-				{
-					"name": "Create Skill",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"skillName\":\"dsfsdfsdf\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/skills"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Skill",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/skills"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Skill",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AbmV4aXN2aXNpb24uY29tIiwiaWQiOiJsanpMbkZ4N2llUkJNeXAzelpVcHZDdyIsInJvbGUiOiJCbHJMR2o4UDc5MDdpSVVvQ2x6ZzRQUiIsImlhdCI6MTczNTg3OTEzMSwiZXhwIjoxNzM1OTY1NTMxfQ.7SbCj9egmMfq7Sfe3b47YVtOoxb6EGe-g2BqNkJCk2A"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"skillName\":\"dssdfsdf\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base}}/skills/ptFBxpLPPl81usQOtpYXmru"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete  Skill",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": ""
 					},
 					"response": []
 				}
