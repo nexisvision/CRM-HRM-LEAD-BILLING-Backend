@@ -83,6 +83,7 @@ import goalTrackingRoutes from "./goalTrackingRoutes.js";
 import offerLetterRoutes from "./offerLetterRoutes.js";
 import policyRoutes from "./policyRoutes.js";
 import documentRoutes from "./documentRoutes.js";
+import awardRoutes from "./awardRoutes.js";
 const router = express.Router();
 
 router.use('/auth', authRoutes);
@@ -171,5 +172,6 @@ router.use('/offer-letters', offerLetterRoutes);
 router.use('/meetings', meetingRoutes);
 router.use('/policies', policyRoutes);
 router.use('/documents', documentRoutes);
+router.use('/awards', awardRoutes);
 
 export default router;
