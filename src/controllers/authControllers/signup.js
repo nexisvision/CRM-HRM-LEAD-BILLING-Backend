@@ -9,7 +9,6 @@ import { OTP_CONFIG } from "../../config/config.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../config/config.js";
 import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
-import { getActiveSubscription } from "../../middlewares/checkSubscriptionLimits.js";
 
 export default {
     validator: validator({

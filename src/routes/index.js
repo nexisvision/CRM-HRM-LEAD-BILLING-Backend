@@ -81,6 +81,7 @@ import offerLetterRoutes from "./offerLetterRoutes.js";
 import policyRoutes from "./policyRoutes.js";
 import documentRoutes from "./documentRoutes.js";
 import awardRoutes from "./awardRoutes.js";
+import calendarRoutes from "./calendarRoutes.js";
 const router = express.Router();
 
 
@@ -217,5 +218,6 @@ router.use('/labels', labelRoutes);
 router.use('/proposals', proposalRoutes);
 router.use('/messages', messageRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/calendar', calendarRoutes);
 
 export default router;

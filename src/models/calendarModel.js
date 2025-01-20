@@ -1,30 +1,28 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
-import generateId from '../middlewares/generatorId.js';
+import generateId from "../middlewares/generatorId.js";
 
-const TaskCalendar = sequelize.define('taskcalendar', {
+const Calendar = sequelize.define('calendar', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: () => generateId(),
+        primaryKey: true,
         unique: true,
-        primaryKey: true
+        defaultValue: generateId(),
     },
-    taskName: {
+    name: {
         type: DataTypes.STRING,
-        allowNull: false,
-        // unique: true
+        allowNull: false
     },
-
-    taskDate: {
+    startDate: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    taskTime: {
-        type: DataTypes.STRING,
+    endDate: {
+        type: DataTypes.DATE,
         allowNull: false
     },
-    taskDescription: {
+    color: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -33,20 +31,24 @@ const TaskCalendar = sequelize.define('taskcalendar', {
         allowNull: true,
         defaultValue: null
     },
-
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    }
 });
 
-TaskCalendar.beforeCreate(async (taskCalendar) => {
+Calendar.beforeCreate(async (calendar) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingTaskCalendar = await TaskCalendar.findOne({ where: { id: newId } });
-        if (!existingTaskCalendar) {
+        const existingCalendar = await Calendar.findOne({ where: { id: newId } });
+        if (!existingCalendar) {
             isUnique = true;
         }
     }
-    taskCalendar.id = newId;
+    calendar.id = newId;
 });
 
-export default TaskCalendar;
+export default Calendar;

@@ -67,4 +67,18 @@ const Task = sequelize.define('Task', {
     }
 
 });
+
+Task.beforeCreate(async (task) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingTask = await Task.findOne({ where: { id: newId } });
+        if (!existingTask) {
+            isUnique = true;
+        }
+    }
+    task.id = newId;
+});
+
 export default Task;
