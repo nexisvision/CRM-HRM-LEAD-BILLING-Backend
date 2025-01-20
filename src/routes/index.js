@@ -123,11 +123,6 @@ router.use('/messages', messageRoutes);
 router.use('/trainings', trainingRoutes);
 router.use('/employeeSalary', employeeSalaryRoutes);
 router.use('/notifications', notificationRoutes);
-router.use('/customers', customerRoutes);
-router.use('/sales-quotations', salesQuotations);
-router.use('/sales-invoices', salesInvoiceRoutes);
-router.use('/sales-revenue', salesRevenueRoutes);
-router.use('/sales-creditnote', salesCreditnoteRoutes);
 router.use('/inquiry', inquiryRoutes);
 router.use('/orders', orderRoutes);
 router.use('/bills', billRoutes);
@@ -173,5 +168,16 @@ router.use('/meetings', meetingRoutes);
 router.use('/policies', policyRoutes);
 router.use('/documents', documentRoutes);
 router.use('/awards', awardRoutes);
+
+//ACCOUNTING SYSTEM
+router.use('/customers', customerRoutes);
+router.use('/sales-quotations', salesQuotations);
+router.use('/sales-invoices', salesInvoiceRoutes);
+router.use('/sales-revenue', salesRevenueRoutes);
+router.use('/sales-creditnote', salesCreditnoteRoutes);
+
+
+
+
 
 export default router;
