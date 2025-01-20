@@ -1,5 +1,5 @@
 import Joi from "joi";
-import EventSetup from "../../models/eventsetupModel.js";
+import Document from "../../models/documentModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -12,8 +12,11 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const events = await EventSetup.findAll();
-            return responseHandler.success(res, "Events fetched successfully", events);
+            const documents = await Document.findAll();
+            if (!documents) {
+                return responseHandler.error(res, "No documents found");
+            }
+            return responseHandler.success(res, "Documents fetched successfully", documents);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

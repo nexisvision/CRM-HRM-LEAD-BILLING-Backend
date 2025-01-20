@@ -2,29 +2,30 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-
-const EventSetup = sequelize.define('EventSetup', {
+const Policy = sequelize.define('policy', {
     id: {
         type: DataTypes.STRING,
-        primaryKey: true,
+        allowNull: false,
         unique: true,
-        defaultValue: () => generateId()
+        primaryKey: true,
+        defaultValue: () => generateId(),
     },
-    EventTitle: {
+    branch: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    EventManager: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    EventDate: {
-        type: DataTypes.DATE,
+    description: {
+        type: DataTypes.TEXT,
         allowNull: false
     },
-    EventTime: {
-        type: DataTypes.STRING,
-        allowNull: false
+    files: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,
@@ -36,19 +37,19 @@ const EventSetup = sequelize.define('EventSetup', {
         allowNull: true,
         defaultValue: null
     }
-})
+});
 
-EventSetup.beforeCreate(async (eventSetup) => {
+Policy.beforeCreate(async (policy) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingEventSetup = await EventSetup.findOne({ where: { id: newId } });
-        if (!existingEventSetup) {
+        const existingPolicy = await Policy.findOne({ where: { id: newId } });
+        if (!existingPolicy) {
             isUnique = true;
         }
     }
-    eventSetup.id = newId;
+    policy.id = newId;
 });
 
-export default EventSetup;
+export default Policy;

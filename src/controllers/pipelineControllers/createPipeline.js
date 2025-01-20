@@ -2,7 +2,7 @@ import Joi from "joi";
 import Pipeline from "../../models/pipelineModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
-import { Op } from "sequelize";
+
 export default {
     validator: validator({
         body: Joi.object({
@@ -14,7 +14,7 @@ export default {
         try {
             const { pipeline_name } = req.body;
             const pipeline = await Pipeline.create({ pipeline_name, created_by: req.user?.username });
-            const existingPipeline = await Pipeline.findOne({ where: { pipeline_name, id: { [Op.not]: pipeline.id } } });
+            const existingPipeline = await Pipeline.findOne({ where: { pipeline_name } });
             if (existingPipeline) {
                 return responseHandler.error(res, "Pipeline already exists");
             }

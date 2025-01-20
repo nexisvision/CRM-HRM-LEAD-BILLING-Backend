@@ -28,5 +28,19 @@ const Pipeline = sequelize.define('pipeline', {
     }
 });
 
+Pipeline.beforeCreate(async (pipeline) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingPipeline = await Pipeline.findOne({
+            where: { id: newId }
+        });
+        if (!existingPipeline) {
+            isUnique = true;
+        }
+    }
+    pipeline.id = newId;
+});
 
 export default Pipeline;
