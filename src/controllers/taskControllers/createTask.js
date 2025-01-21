@@ -12,8 +12,8 @@ export default {
         }),
         body: Joi.object({
             taskName: Joi.string().required(),
-            category: Joi.string().required(),
-            project: Joi.string().required(),
+            // category: Joi.string().required(),
+            // project: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
             assignTo: Joi.any().optional(),
@@ -28,8 +28,8 @@ export default {
             const { id } = req.params;
             const {
                 taskName,
-                category,
-                project,
+                // category,
+                // project,
                 startDate,
                 dueDate,
                 assignTo,
@@ -46,8 +46,8 @@ export default {
             const task = await Task.create({
                 related_id: id,
                 taskName,
-                category,
-                project,
+                // category,
+                // project,
                 startDate,
                 dueDate,
                 assignTo,

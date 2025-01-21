@@ -14,10 +14,7 @@ const Designation = sequelize.define('Designation', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  department: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
+ 
   designation_name: {
     type: DataTypes.STRING,
     allowNull: false

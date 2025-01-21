@@ -13,11 +13,11 @@ export default {
         }),
         body: Joi.object({
             taskName: Joi.string().required(),
-            category: Joi.string().required(),
-            project: Joi.string().required(),
+            // category: Joi.string().required(),
+            // project: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            assignTo: Joi.object().required(),
+            assignTo: Joi.array().required(),
             description: Joi.string().required(),
             priority: Joi.string().required(),
             status: Joi.string().required(),
@@ -29,8 +29,8 @@ export default {
             const { id } = req.params;
             const {
                 taskName,
-                category,
-                project,
+                // category,
+                // project,
                 startDate,
                 dueDate,
                 assignTo,
@@ -49,8 +49,8 @@ export default {
             }
             const updatedTask = await task.update({
                 taskName,
-                category,
-                project,
+                // category,
+                // project,
                 startDate,
                 dueDate,
                 assignTo,

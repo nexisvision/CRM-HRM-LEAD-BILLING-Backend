@@ -27,10 +27,10 @@ export default {
             if (!offerletter) {
                 return responseHandler.error(res, "Offer letter not found");
             }
-            const existingOfferLetter = await OfferLetter.findOne({ where: { job, job_applicant, id: { [Op.not]: id } } });
-            if (existingOfferLetter) {
-                return responseHandler.error(res, "Offer letter already exists");
-            }
+            // const existingOfferLetter = await OfferLetter.findOne({ where: { job, job_applicant, id: { [Op.not]: id } } });
+            // if (existingOfferLetter) {
+            //     return responseHandler.error(res, "Offer letter already exists");
+            // }
             await offerletter.update({ job, job_applicant, offer_expiry, expected_joining_date, salary, description, files });
             return responseHandler.success(res, "Offer letter updated successfully", offerletter);
         } catch (error) {
