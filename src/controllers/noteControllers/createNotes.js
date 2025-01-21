@@ -20,11 +20,11 @@ export default {
         try {
             const { id } = req.params;
             const { note_title, notetype, employees, description } = req.body;
-            const existingNote = await Note.findOne({ where: { note_title, notetype, employees, description, project_id: id } });
+            const existingNote = await Note.findOne({ where: { note_title, notetype, employees, description, related_id: id } });
             if (existingNote) {
                 return responseHandler.error(res, "Note already exists");
             }
-            const note = await Note.create({ project_id: id, note_title, notetype, employees, description, created_by: req.user?.username });
+            const note = await Note.create({ related_id: id, note_title, notetype, employees, description, created_by: req.user?.username });
             await Activity.create({
                 related_id: id,
                 activity_from: "note",
