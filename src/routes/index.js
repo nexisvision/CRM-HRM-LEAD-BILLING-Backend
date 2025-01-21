@@ -82,7 +82,6 @@ import policyRoutes from "./policyRoutes.js";
 import documentRoutes from "./documentRoutes.js";
 import awardRoutes from "./awardRoutes.js";
 import calendarRoutes from "./calendarRoutes.js";
-import fileRoutes from "./fileRoutes.js";
 const router = express.Router();
 
 
@@ -203,7 +202,6 @@ router.use('/expenses', expenseRoutes);
 router.use('/payments', paymentRoutes);
 router.use('/notes', notesRoutes);
 router.use('/activities', activityRoutes);
-router.use('/files', fileRoutes);
 
 //>>>>>>>>>>>>>>  Task Management System  <<<<<<<<<<<<<<<//
 
