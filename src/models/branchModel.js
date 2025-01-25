@@ -8,7 +8,7 @@ const Branch = sequelize.define('branch', {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId(),
+        defaultValue: () => generateId(),
     },
     branchName: {
         type: DataTypes.STRING,

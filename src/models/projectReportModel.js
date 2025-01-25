@@ -7,7 +7,7 @@ const ProjectReport = sequelize.define("ProjectReport", {
         type: DataTypes.STRING,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId()
+        defaultValue: () => generateId()
     },
     project: {
         type: DataTypes.STRING,

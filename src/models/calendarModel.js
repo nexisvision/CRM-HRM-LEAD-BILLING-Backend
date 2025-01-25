@@ -8,7 +8,7 @@ const Calendar = sequelize.define('calendar', {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId(),
+        defaultValue: () => generateId(),
     },
     name: {
         type: DataTypes.STRING,

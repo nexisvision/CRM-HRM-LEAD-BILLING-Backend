@@ -8,7 +8,7 @@ const Order = sequelize.define('Order', {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        defaultValue: generateId()
+        defaultValue: () => generateId()
     },
     related_id: {
         type: DataTypes.STRING,

@@ -8,7 +8,7 @@ const Inquiry = sequelize.define('inquiry', {
         primaryKey: true,
         unique: true,
         allowNull: false,
-        defaultValue: generateId()
+        defaultValue: () => generateId()
     },
     name: {
         type: DataTypes.STRING,
