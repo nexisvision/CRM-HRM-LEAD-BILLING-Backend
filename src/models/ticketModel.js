@@ -60,7 +60,6 @@ const Ticket = sequelize.define('ticket', {
         allowNull: true,
         defaultValue: null
     },
-
     status: {
         type: DataTypes.STRING,
         allowNull: false

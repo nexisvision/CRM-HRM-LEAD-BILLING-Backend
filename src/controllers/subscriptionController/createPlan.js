@@ -23,6 +23,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status } = req.body;
+            const existingPlan = await SubscriptionPlan.findOne({ where: { name } });
+            if (existingPlan) {
+                return responseHandler.error(res, "Plan already exists");
+            }
             const plan = await SubscriptionPlan.create({ name, currency, price, duration, trial_period, max_users, max_clients, storage_limit, features, status, created_by: req.user?.username });
             const clients = await ClientSubscription.findAll({ where: { status: 'active' } });
 

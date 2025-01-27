@@ -1,13 +1,14 @@
 import express from 'express';
-import { authenticateUser, checkUserRole } from '../middlewares/index.js';
+import { authenticateUser, checkRole, checkUserRole } from '../middlewares/index.js';
 import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans } from '../controllers/subscriptionController/index.js';
 
 const router = express.Router();
 
-router.use(authenticateUser, checkUserRole(['super-admin']));
-
-router.post('/', createPlan.validator, createPlan.handler);
+router.use(authenticateUser, checkRole);
 router.get('/', getAllPlans.validator, getAllPlans.handler);
+
+router.use(authenticateUser, checkUserRole(['super-admin']));
+router.post('/', createPlan.validator, createPlan.handler);
 router.put('/:id', updatePlan.validator, updatePlan.handler);
 router.delete('/:id', deletePlan.validator, deletePlan.handler);
 
