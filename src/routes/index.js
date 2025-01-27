@@ -105,7 +105,7 @@ router.use('/announcements', announcementRoutes);
 //>>>>>>>>>>>>>>  HRM System  <<<<<<<<<<<<<<<//
 
 /** 1. Employee Setup*/
-router.use('/employees', employeeRoutes);
+router.use('/employees', employeeRoutes);       
 
 /** 2. Payroll Setup*/
 router.use('/salary', salaryRoutes);

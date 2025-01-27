@@ -13,6 +13,10 @@ const Lead = sequelize.define('Lead', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    leadStage: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: false,

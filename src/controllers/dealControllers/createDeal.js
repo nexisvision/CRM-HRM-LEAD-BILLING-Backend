@@ -13,8 +13,8 @@ export default {
             price: Joi.number().required(),
             currency: Joi.string().required(),
             closedDate: Joi.date().required(),
-            category: Joi.string().required(),
-            project: Joi.string().required(),
+            category: Joi.string().optional(),
+            project: Joi.string().optional(),
         })
     }),
     handler: async (req, res) => {

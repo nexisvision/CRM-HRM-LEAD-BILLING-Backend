@@ -7,18 +7,19 @@ import { Op } from "sequelize";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional()
         }),
         body: Joi.object({
-            leadTitle: Joi.string().required(),
-            firstName: Joi.string().required(),
-            lastName: Joi.string().required(),
+            leadTitle: Joi.string().allow('', null),
+            firstName: Joi.string().allow('', null),
+            lastName: Joi.string().allow('', null),
+            leadStage: Joi.string().allow('', null),
             telephone: Joi.string().allow('', null),
-            email: Joi.string().email(),
+            email: Joi.string().email().allow('', null),
             assigned: Joi.string().allow('', null),
             lead_owner: Joi.string().allow('', null),
             category: Joi.string().allow('', null),
-            status: Joi.string().required(),
+            status: Joi.string().allow('', null),
             source: Joi.string().allow('', null),
             company_name: Joi.string().allow('', null),
             website: Joi.string().allow('', null),
@@ -33,21 +34,22 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address } = req.body;
+            const {leadStage, leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address } = req.body;
 
             const lead = await Lead.findByPk(id);
 
             if (!lead) {
                 return responseHandler.notFound(res, "Lead not found");
             }
-            const existingLead = await Lead.findOne({ where: { email, id: { [Op.not]: id } } });
-            if (existingLead) {
-                return responseHandler.conflict(res, "Lead with this email already exists!");
-            }
+            // const existingLead = await Lead.findOne({ where: { email, id: { [Op.not]: id } } });
+            // if (existingLead) {
+            //     return responseHandler.conflict(res, "Lead with this email already exists!");
+            // }
             await lead.update({
                 leadTitle,
                 firstName,
                 lastName,
+                leadStage,
                 telephone,
                 email,
                 assigned,

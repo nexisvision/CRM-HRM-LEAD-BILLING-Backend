@@ -7,6 +7,7 @@ import User from "../../models/userModel.js";
 export default {
     validator: validator({
         body: Joi.object({
+            employeeId: Joi.string().required(),
             deductionOption: Joi.string().required(),
             title: Joi.string().required(),
             type: Joi.string().required(),
@@ -16,17 +17,13 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { deductionOption, title, type, currency, amount } = req.body;
-            const EMP = await User.findOne({ where: { id: req.user?.id } });
-            if (!EMP) {
-                return responseHandler.error(res, "Employee not found");
-            }
-            const existingDeduction = await Deduction.findOne({ where: { employeeId: EMP.employeeId } });
-            if (existingDeduction) {
-                return responseHandler.error(res, "Deduction already exists");
+            const { employeeId,deductionOption, title, type, currency, amount } = req.body;
+            const existingSalary = await Deduction.findOne({ where: { employeeId } });
+            if (existingSalary) {
+                return responseHandler.error(res, "Salary already exists");
             }
             const deduction = await Deduction.create({
-                employeeId: EMP.employeeId,
+                employeeId,
                 deductionOption,
                 title,
                 type,

@@ -40,11 +40,11 @@ const Deal = sequelize.define("Deal", {
     },
     category: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     project: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     created_by: {
         type: DataTypes.STRING,

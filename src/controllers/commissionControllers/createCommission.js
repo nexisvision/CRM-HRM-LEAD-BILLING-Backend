@@ -7,6 +7,7 @@ import User from "../../models/userModel.js";
 export default {
     validator: validator({
         body: Joi.object({
+            employeeId: Joi.string().required(),
             title: Joi.string().required(),
             type: Joi.string().required(),
             currency: Joi.string().required(),
@@ -15,17 +16,13 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { title, type, currency, amount } = req.body;
-            const EMP = await User.findOne({ where: { id: req.user?.id } });
-            if (!EMP) {
-                return responseHandler.error(res, "Employee not found");
-            }
-            const existingCommission = await Commission.findOne({ where: { employeeId: EMP.employeeId } });
-            if (existingCommission) {
-                return responseHandler.error(res, "Commission already exists");
+            const { employeeId,title, type, currency, amount } = req.body;
+            const existingSalary = await Commission.findOne({ where: { employeeId } });
+            if (existingSalary) {
+                return responseHandler.error(res, "Salary already exists");
             }
             const commission = await Commission.create({
-                employeeId: EMP.employeeId,
+                employeeId,
                 title,
                 type,
                 currency,
