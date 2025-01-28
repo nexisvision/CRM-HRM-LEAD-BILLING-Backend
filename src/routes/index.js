@@ -82,6 +82,7 @@ import policyRoutes from "./policyRoutes.js";
 import documentRoutes from "./documentRoutes.js";
 import awardRoutes from "./awardRoutes.js";
 import calendarRoutes from "./calendarRoutes.js";
+import userRoutes from './userRoutes.js';
 const router = express.Router();
 
 
@@ -219,5 +220,7 @@ router.use('/proposals', proposalRoutes);
 router.use('/messages', messageRoutes);
 router.use('/notifications', notificationRoutes);
 router.use('/calendar', calendarRoutes);
+
+router.use('/userss', userRoutes);
 
 export default router;
