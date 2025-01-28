@@ -19,7 +19,7 @@ export default {
             accountnumber: Joi.number().optional().allow('', null),
             e_signature: Joi.string().optional().allow('', null),
             gstIn: Joi.string().optional().allow('', null),
-            city: Joi.string().optional().allow('', null),
+            city: Joi.string().optional().allow('', null), 
             state: Joi.string().optional().allow('', null),
             country: Joi.string().optional().allow('', null),
             zipcode: Joi.string().optional().allow('', null),

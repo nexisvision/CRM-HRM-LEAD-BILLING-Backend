@@ -2,6 +2,7 @@ import Joi from "joi";
 import Leave from "../../models/leaveModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({

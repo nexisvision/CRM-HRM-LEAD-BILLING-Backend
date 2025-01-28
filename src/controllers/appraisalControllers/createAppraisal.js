@@ -8,8 +8,6 @@ export default {
         body: Joi.object({
             employee: Joi.string().required(),
             branch: Joi.string().required(),
-            department: Joi.string().required(),
-            designation: Joi.string().required(),
             businessProcess: Joi.number().required(),
             oralCommunication: Joi.number().required(),
             leadership: Joi.number().required(),
@@ -20,14 +18,15 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { employee, branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating } = req.body;
+            const { employee, branch, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating } = req.body;
+            
             const existingAppraisal = await Appraisal.findOne({
                 where: { employee }
             });
             if (existingAppraisal) {
                 return responseHandler.error(res, "Appraisal already exists for the given employee");
             }
-            const appraisal = await Appraisal.create({ employee, branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, created_by: req.user?.username });
+            const appraisal = await Appraisal.create({ employee, branch, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, created_by: req.user?.username });
             responseHandler.success(res, "Appraisal created successfully", appraisal);
         } catch (error) {
             responseHandler.error(res, error?.message);

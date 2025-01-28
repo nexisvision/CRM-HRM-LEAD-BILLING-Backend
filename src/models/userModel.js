@@ -114,6 +114,11 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
+    gstIn: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     banklocation: {
         type: DataTypes.STRING,
         allowNull: true,

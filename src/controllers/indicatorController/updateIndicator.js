@@ -29,17 +29,17 @@ export default {
             if (!indicator) {
                 return responseHandler.error(res, "Indicator not found");
             }
-            const existingIndicator = await Indicator.findOne({
-                where: {
-                    employee,
-                    id: {
-                        [Op.not]: id
-                    }
-                }
-            });
-            if (existingIndicator && employee !== indicator.employee) {
-                return responseHandler.error(res, "Indicator already exists for the given employee");
-            }
+            // const existingIndicator = await Indicator.findOne({
+            //     where: {
+            //         employee,
+            //         id: {
+            //             [Op.not]: id
+            //         }
+            //     }
+            // });
+            // if (existingIndicator && employee !== indicator.employee) {
+            //     return responseHandler.error(res, "Indicator already exists for the given employee");
+            // }
             await indicator.update({ branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, updated_by: req.user?.username });
             return responseHandler.success(res, "Indicator updated successfully", indicator);
         } catch (error) {

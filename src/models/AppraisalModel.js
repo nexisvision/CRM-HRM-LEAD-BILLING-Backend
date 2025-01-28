@@ -18,14 +18,7 @@ const Appraisal = sequelize.define("appraisal", {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    department: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    designation: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+   
     businessProcess: {
         type: DataTypes.INTEGER,
         allowNull: false,

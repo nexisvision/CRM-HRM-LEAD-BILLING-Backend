@@ -11,7 +11,7 @@ export default {
         }),
         body: Joi.object({
             role_name: Joi.string().required(),
-            permissions: Joi.array().items(Joi.string()).allow(null),
+            permissions: Joi.object().allow(null)
         })
     }),
     handler: async (req, res) => {

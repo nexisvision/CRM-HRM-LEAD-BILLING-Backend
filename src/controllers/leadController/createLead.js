@@ -13,7 +13,7 @@ export default {
             telephone: Joi.string().allow('', null),
             email: Joi.string().email(),
             assigned: Joi.string().allow('', null),
-            lead_owner: Joi.string().allow('', null),
+            lead_owner: Joi.string().allow('', null),   
             category: Joi.string().allow('', null),
             status: Joi.string().required(),
             source: Joi.string().allow('', null),

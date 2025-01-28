@@ -11,7 +11,7 @@ export default {
             valid_till: Joi.date().required(),
             currency: Joi.string().required(),
             calculatedTax: Joi.number().required(),
-            description: Joi.string().required(),
+            description: Joi.string().required(),   
             items: Joi.array().required(),
             discount: Joi.number().optional(),
             tax: Joi.number().optional(),
