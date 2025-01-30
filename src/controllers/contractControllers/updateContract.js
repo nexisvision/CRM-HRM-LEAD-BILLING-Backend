@@ -32,7 +32,7 @@ export default {
             if (existingContract) {
                 return responseHandler.error(res, "Contract already exists");
             }
-            await contract.update({ subject, project, client, type, value, startDate, endDate, description, updated_by: req.user.id });
+            await contract.update({ subject, project, client, type, value, startDate, endDate, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Contract updated successfully", contract);
         } catch (error) {
             return responseHandler.error(res, error?.message);

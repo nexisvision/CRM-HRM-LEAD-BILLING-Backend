@@ -29,7 +29,25 @@ export const Countries = sequelize.define("Countries", {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     }
+});
+
+Countries.beforeCreate(async (countries) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingCountries = await Countries.findOne({ where: { id: newId } });
+        if (!existingCountries) {
+            isUnique = true;
+        }
+    }
+    countries.id = newId;
 });
 
 export default Countries;

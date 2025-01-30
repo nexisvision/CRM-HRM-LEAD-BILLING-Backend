@@ -28,7 +28,7 @@ export default {
             if (existingCountry) {
                 return responseHandler.error(res, "Country already exists");
             }
-            await country.update({ countryName, countryCode, phoneCode });
+            await country.update({ countryName, countryCode, phoneCode, updated_by: req.user?.username });
             return responseHandler.success(res, "Country updated successfully", country);
         } catch (error) {
             return responseHandler.error(res, error?.message);

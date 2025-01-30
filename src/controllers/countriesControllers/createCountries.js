@@ -15,9 +15,9 @@ export default {
         try {
             const { countryName, countryCode, phoneCode } = req.body;
 
-            const existingCountry = await Country.findOne({ where: { countryName } });
+            const existingCountry = await Country.findOne({ where: { countryName, countryCode, phoneCode } });
             if (existingCountry) {
-                return responseHandler.error(res, "Country already exists");
+                return responseHandler.error(res, "Already already exists");
             }
 
             const country = await Country.create({

@@ -4,9 +4,10 @@ import validator from "../../utils/validator.js";
 import Joi from "joi";
 
 export default {
-    validator: validator,
-    params: Joi.object({
-        id: Joi.string().required()
+    validator: validator({
+        params: Joi.object({
+            id: Joi.string().required()
+        })
     }),
     handler: async (req, res) => {
         try {
@@ -15,7 +16,7 @@ export default {
             await country.destroy();
             return responseHandler.success(res, "Country deleted successfully", country);
         } catch (error) {
-            return responseHandler.error(res, error?.message);
+            return responseHandler.error(res, error);
         }
     }
 }

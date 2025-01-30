@@ -12,7 +12,6 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-
             const contracts = await Contract.findAll();
             return responseHandler.success(res, "Contracts fetched successfully", contracts);
         } catch (error) {

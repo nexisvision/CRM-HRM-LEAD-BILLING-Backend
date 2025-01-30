@@ -12,7 +12,6 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-
             const countries = await Country.findAll();
             return responseHandler.success(res, "Countries fetched successfully", countries);
         } catch (error) {
