@@ -7,17 +7,17 @@ import { Op } from "sequelize";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional()
         }),
         body: Joi.object({
-            name: Joi.string().required(),
-            currency: Joi.string().required(),
-            price: Joi.number().required(),
-            duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').required(),
-            trial_period: Joi.number().required(),
-            max_users: Joi.number().required(),
-            max_clients: Joi.number().required(),
-            storage_limit: Joi.number().required(),
+            name: Joi.string().optional(),
+            currency: Joi.string().optional(),
+            price: Joi.string().optional(),
+            duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').optional(),
+            trial_period: Joi.string().optional(),
+            max_users: Joi.string().optional(),
+            max_clients: Joi.string().optional(),
+            storage_limit: Joi.string().optional(),
             features: Joi.object().optional().allow(null),
         })
     }),

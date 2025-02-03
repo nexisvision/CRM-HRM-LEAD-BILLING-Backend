@@ -50,7 +50,7 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: 'client' },
+                where: { role_name: 'client' ,  created_by: req.user?.username},
                 defaults: { id: generateId() }
             });
 

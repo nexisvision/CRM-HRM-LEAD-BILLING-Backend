@@ -4,10 +4,10 @@ import { createSubClient, getAllSubClients, updateSubClient, deleteSubClient } f
 import { getActiveSubscription } from "../middlewares/checkSubscriptionLimits.js";
 const router = express.Router();
 
-router.use(authenticateUser, checkUserRole(['client']));
+router.use(authenticateUser, checkUserRole(['client','super-admin']));
 
 router.post('/', getActiveSubscription, createSubClient.validator, createSubClient.handler);
-router.get('/', getAllSubClients.validator, getAllSubClients.handler);
+router.get('/', getAllSubClients.validator, getAllSubClients.handler);  
 router.put('/:id', updateSubClient.validator, updateSubClient.handler);
 router.delete('/:id', deleteSubClient.validator, deleteSubClient.handler);
 

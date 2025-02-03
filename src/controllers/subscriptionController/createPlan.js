@@ -8,15 +8,15 @@ import ClientSubscription from "../../models/clientSubscriptionModel.js";
 export default {
     validator: validator({
         body: Joi.object({
-            name: Joi.string().optional(),
-            currency: Joi.string().optional(),
-            price: Joi.number().optional(),
+            name: Joi.string().optional().allow("",null),
+            currency: Joi.string().optional().allow("",null),
+            price: Joi.string().optional().allow("",null),
             duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').optional(),
-            trial_period: Joi.number().optional(),
-            max_users: Joi.number().optional(),
-            max_clients: Joi.number().optional(),
-            storage_limit: Joi.number().optional(),
-            features: Joi.object().optional().allow(null),
+            trial_period: Joi.string().optional().allow("",null),
+            max_users: Joi.string().optional().allow("",null),
+            max_clients: Joi.string().optional().allow("",null),
+            storage_limit: Joi.string().optional().allow("",null),
+            features: Joi.object().optional().allow("",null),
             status: Joi.string().valid('active', 'inactive').optional()
         })
     }),

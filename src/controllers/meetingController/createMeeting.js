@@ -10,8 +10,8 @@ export default {
             description: Joi.string().required(),
             date: Joi.date().required(),
             startTime: Joi.string().required(),
-            endTime: Joi.string().required(),
-            meetingLink: Joi.string(),
+            endTime: Joi.string().optional().allow("",null),
+            meetingLink: Joi.string().optional().allow("",null),
             status: Joi.string().valid('scheduled', 'completed', 'cancelled').default('scheduled')
         })
     }),

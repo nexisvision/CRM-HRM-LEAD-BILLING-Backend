@@ -28,7 +28,7 @@ const Meeting = sequelize.define('Meeting', {
     },
     endTime: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: true
     },
     meetingLink: {
         type: DataTypes.STRING,
