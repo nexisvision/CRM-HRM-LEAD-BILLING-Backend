@@ -4,27 +4,61 @@ import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 export default {
-    validator: validator({
-        body: Joi.object({
-            role_name: Joi.string().required(),
-            permissions: Joi.object().allow(null)
-        })
-    }),
+    // validator: validator({
+    //     body: Joi.object({
+    //         role_name: Joi.string().required(),
+    //         permissions: Joi.object().required() // Accept any structure for permissions
+    //     })
+    // }),
+
+
+    // validator: validator({
+    //     body: Joi.object({
+    //         role_name: Joi.string().required(),
+    //         permissions: Joi.object({
+    //             hrm: Joi.array().items(
+    //                 Joi.object({
+    //                     key: Joi.string().required(),
+    //                     permissions: Joi.array().items(
+    //                         Joi.string().valid('view', 'create', 'update', 'delete')
+    //                     ).required()
+    //                 })
+    //             )
+    //         }).allow(null)
+    //     })
+    // }),
+
+
+
+    
+        validator: validator({
+            body: Joi.object({
+                role_name: Joi.string().required(),
+                permissions: Joi.object().required() // Accept any structure for permissions
+            })
+        }),
+
+
     handler: async (req, res) => {
         try {
-            const { role_name, permissions } = req.body;
+            const { role_name, permissions } = req.body; // Destructure permissions
+
+            console.log("Raw permissions:", permissions); // Debugging line
             const existingRole = await Role.findOne({ where: { role_name } });
             if (existingRole) {
                 return responseHandler.error(res, "Role already exists");
             }
+
+            // Save the entire permissions object directly
             const role = await Role.create({
                 role_name,
-                permissions,
+                permissions: permissions, // Save the entire permissions object
                 created_by: req.user?.username,
             });
             return responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {
-            return responseHandler.error(res, error.errors[0].message);
+            console.error("Error creating role:", error); // Debugging line
+            return responseHandler.error(res, error.errors[0]?.message || "An error occurred");
         }
     }
-}
+}   
