@@ -11,14 +11,14 @@ export default {
         }),
         body: Joi.object({
             branch: Joi.string().required(),
-            department: Joi.string().required(),
+            // department: Joi.string().required(),
             designation_name: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { designation_name, branch, department } = req.body;
+            const { designation_name, branch } = req.body;
             const designation = await Designation.findByPk(id);
 
             if (!designation) {
@@ -26,13 +26,14 @@ export default {
             }
 
             const existingDesignation = await Designation.findOne({
-                where: { designation_name, branch, department, id: { [Op.not]: id } }
+                where: { designation_name, branch, updated_by: req.user?.username, id: { [Op.not]: id } }
             });
 
             if (existingDesignation) {
-                return responseHandler.error(res, "Designation name already exists for the given branch and department");
+                return responseHandler.error(res, "Designation name already exists for the given branch");
             }
-            await designation.update({ designation_name, branch, department, updated_by: req.user?.username });
+
+            await designation.update({ designation_name, branch, updated_by: req.user?.username });
             return responseHandler.success(res, "Designation updated successfully", designation);
         } catch (error) {
             return responseHandler.error(res, error?.message);

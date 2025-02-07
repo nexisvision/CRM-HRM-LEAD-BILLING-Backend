@@ -13,7 +13,7 @@ export default {
     handler: async (req, res) => {
         const { title, description, } = req.body;
         try {
-            const announcement = await Announcement.create({ title, description, });
+            const announcement = await Announcement.create({ title, description, created_by: req.user.username });
             return responseHandler.success(res, "Announcement created successfully", announcement);
         } catch (error) {
             return responseHandler.error(res, error?.message);

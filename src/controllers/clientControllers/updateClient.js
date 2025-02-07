@@ -12,6 +12,8 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             profilePic: Joi.string().optional().allow('', null),
+            phone: Joi.string().optional().allow('', null),
+            email: Joi.string().email().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
@@ -30,8 +32,10 @@ export default {
         try {
             const { id } = req.params;
             const { firstName, lastName, profilePic,
-                bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
+                phone, email, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address } = req.body;
+
+
 
             const client = await User.findByPk(id);
             if (!client) {
@@ -39,7 +43,7 @@ export default {
             }
 
             await client.update({
-                firstName, lastName, profilePic, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
+                firstName, lastName, profilePic, phone, email, bankname, ifsc, banklocation, accountholder, accountnumber, e_signature, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
             return responseHandler.success(res, "Client updated successfully", client);

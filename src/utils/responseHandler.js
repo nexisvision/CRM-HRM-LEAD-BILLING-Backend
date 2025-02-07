@@ -1,8 +1,8 @@
 const extractErrorMessage = (error) => {
-    if (!error) return `:x: Unknown error occurred`;
+    if (!error) return `❌ Unknown error occurred`;
     if (typeof error === 'string') return error;
     return error.message || error.error?.message || error.errors?.[0]?.message ||
-        error.sqlMessage || error.details?.[0]?.message || `:x: Unknown error occurred`;
+        error.sqlMessage || error.details?.[0]?.message || `❌ Unknown error occurred`;
 };
 const formatError = (error) => {
     if (!error) return null;
@@ -22,14 +22,14 @@ const HTTP_STATUS = {
 };
 const responseHandler = {
     success: (res, message, data = null, status = HTTP_STATUS.OK) =>
-        res.status(status).json({ success: true, message: `:white_check_mark: ${message}`, data, statusCode: status }),
+        res.status(status).json({ success: true, message: `${message}`, data, statusCode: status }),
     created: (res, message, data) =>
-        res.status(HTTP_STATUS.CREATED).json({ success: true, message: `:new: ${message}`, data, statusCode: HTTP_STATUS.CREATED }),
+        res.status(HTTP_STATUS.CREATED).json({ success: true, message: `${message}`, data, statusCode: HTTP_STATUS.CREATED }),
     noContent: (res) => res.status(HTTP_STATUS.NO_CONTENT).send(),
     error: (res, error, status = HTTP_STATUS.INTERNAL_SERVER_ERROR) => {
         const formattedError = formatError(error);
         return res.status(status).json({
-            success: false, message: `:x: ${formattedError.message}`,
+            success: false, message: `❌ ${formattedError.message}`,
             error: formattedError, statusCode: status
         });
     },
@@ -37,63 +37,62 @@ const responseHandler = {
         const formattedError = formatError(error);
         formattedError.code = formattedError.code === 'UNKNOWN_ERROR' ? 'BAD_REQUEST' : formattedError.code;
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
-            success: false, message: `:warning: ${formattedError.message}`,
+            success: false, message: `⚠️ ${formattedError.message}`,
             error: formattedError, statusCode: HTTP_STATUS.BAD_REQUEST
         });
     },
     unauthorized: (res, message = 'Unauthorized access') =>
         res.status(HTTP_STATUS.UNAUTHORIZED).json({
-            success: false, message: `:lock: ${message}`,
+            success: false, message: `🔒 ${message}`,
             error: 'UNAUTHORIZED', statusCode: HTTP_STATUS.UNAUTHORIZED
         }),
     forbidden: (res, message = 'Access forbidden') =>
         res.status(HTTP_STATUS.FORBIDDEN).json({
-            success: false, message: `:no_entry_sign: ${message}`,
+            success: false, message: `🚫 ${message}`,
             error: 'FORBIDDEN', statusCode: HTTP_STATUS.FORBIDDEN
         }),
     notFound: (res, message = 'Resource not found') =>
         res.status(HTTP_STATUS.NOT_FOUND).json({
-            success: false, message: `:mag: ${message}`,
+            success: false, message: `🔍 ${message}`,
             error: 'NOT_FOUND', statusCode: HTTP_STATUS.NOT_FOUND
         }),
     conflict: (res, message) =>
         res.status(HTTP_STATUS.CONFLICT).json({
-            success: false, message: `:crossed_swords: ${message}`,
+            success: false, message: `⚔️ ${message}`,
             error: 'CONFLICT', statusCode: HTTP_STATUS.CONFLICT
         }),
     validationError: (res, error) => {
         const formattedError = formatError(error);
         formattedError.code = 'VALIDATION_ERROR';
         return res.status(HTTP_STATUS.UNPROCESSABLE_ENTITY).json({
-            success: false, message: `:exclamation: ${formattedError.message}`,
+            success: false, message: `❗ ${formattedError.message}`,
             error: formattedError, statusCode: HTTP_STATUS.UNPROCESSABLE_ENTITY
         });
     },
     tooManyRequests: (res, message = 'Too many requests', retryAfter = 60) => {
         res.set('Retry-After', retryAfter.toString());
         return res.status(HTTP_STATUS.TOO_MANY_REQUESTS).json({
-            success: false, message: `:arrows_counterclockwise: ${message}`,
+            success: false, message: `🔄 ${message}`,
             error: 'TOO_MANY_REQUESTS', retryAfter,
             statusCode: HTTP_STATUS.TOO_MANY_REQUESTS
         });
     },
     internalServerError: (res, error) => {
-        console.error(':boom: Internal Server Error:', error);
+        console.error('💥 Internal Server Error:', error);
         const formattedError = formatError(error);
         formattedError.code = 'INTERNAL_SERVER_ERROR';
         return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
-            success: false, message: `:boom: ${formattedError.message}`,
+            success: false, message: `💥 ${formattedError.message}`,
             error: formattedError, statusCode: HTTP_STATUS.INTERNAL_SERVER_ERROR
         });
     },
     serviceUnavailable: (res, message = 'Service temporarily unavailable') =>
         res.status(HTTP_STATUS.SERVICE_UNAVAILABLE).json({
-            success: false, message: `:hammer_and_wrench: ${message}`,
+            success: false, message: `🛠️ ${message}`,
             error: 'SERVICE_UNAVAILABLE', statusCode: HTTP_STATUS.SERVICE_UNAVAILABLE
         })
 };
 export default responseHandler;
-
 
 
 
