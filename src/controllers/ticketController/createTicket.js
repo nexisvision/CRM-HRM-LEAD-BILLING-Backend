@@ -2,6 +2,7 @@ import Joi from "joi";
 import Ticket from "../../models/ticketModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -13,7 +14,6 @@ export default {
             type: Joi.string().allow(null),
             ticketSubject: Joi.string().required(),
             description: Joi.string().required(),
-            files: Joi.object().allow(null),
             priority: Joi.string().allow(null),
             status: Joi.string().allow(null),
             channelName: Joi.string().allow(null),
@@ -22,12 +22,14 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, files, priority, channelName, tag } = req.body;
+            const file = req.file;
+            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, priority, channelName, tag } = req.body;
             const existingTicket = await Ticket.findOne({ where: { ticketSubject } });
             if (existingTicket) {
                 return responseHandler.error(res, "Ticket already exists");
             }
-            const ticket = await Ticket.create({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, files, priority, channelName, tag, created_by: req.user?.username });
+            const fileUrl = await uploadToS3(file, req.user?.roleName, "support-tickets", req.user?.username);
+            const ticket = await Ticket.create({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, priority, channelName, tag, file: fileUrl, created_by: req.user?.username });
             return responseHandler.success(res, "Ticket created successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error?.message);

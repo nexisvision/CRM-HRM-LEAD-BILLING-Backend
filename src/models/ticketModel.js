@@ -16,11 +16,13 @@ const Ticket = sequelize.define('ticket', {
     },
     requestorName: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     assignGroup: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     agent: {
         type: DataTypes.STRING,
@@ -45,8 +47,8 @@ const Ticket = sequelize.define('ticket', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    files: {
-        type: DataTypes.JSON,
+    file: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
@@ -71,7 +73,8 @@ const Ticket = sequelize.define('ticket', {
     },
     created_by: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     updated_by: {
         type: DataTypes.STRING,

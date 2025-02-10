@@ -11,6 +11,7 @@ import { OTP_CONFIG } from "../../config/config.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../config/config.js";
 import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -43,16 +44,17 @@ export default {
             bankname: Joi.string().allow('', null),
             ifsc: Joi.string().allow('', null),
             banklocation: Joi.string().allow('', null),
-            e_signatures: Joi.object().optional().allow(null),
             documents: Joi.object().optional().allow(null),
             links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
+            const profilePic = req.files?.profilePic?.[0];
+            const e_signatures = req.files?.e_signatures?.[0];
 
             const { subscription } = req;
-            const { username, email, password, firstName, lastName, phone, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { username, email, password, firstName, lastName, phone, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, documents, links } = req.body;
 
             // Check if email already exists
             const existingUsername = await User.findOne({
@@ -105,6 +107,7 @@ export default {
                 bankname,
                 ifsc,
                 banklocation,
+                profilePic,
                 e_signatures,
                 documents,
                 links,

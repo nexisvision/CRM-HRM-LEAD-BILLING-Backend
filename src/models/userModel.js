@@ -134,8 +134,8 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
-    e_signatures: {
-        type: DataTypes.JSON,
+    e_signature: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },

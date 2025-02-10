@@ -3,6 +3,7 @@ import Product from "../../models/productModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Activity from "../../models/activityModel.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 
 export default {
@@ -18,12 +19,13 @@ export default {
             tax: Joi.string().optional().allow('', null),
             hsn_sac: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null),
-            files: Joi.array().optional().allow('', null),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { name, category, price, sku, tax, hsn_sac, description, files } = req.body;
+            const { name, category, price, sku, tax, hsn_sac, description } = req.body;
+            const image = req.file;
+            const imageUrl = await uploadToS3(image, req.user?.roleName, "products", req.user?.username);
             const product = await Product.create({
                 related_id: req.params.id,
                 name,
@@ -33,7 +35,7 @@ export default {
                 tax,
                 hsn_sac,
                 description,
-                files,
+                image: imageUrl,
                 created_by: req.user?.username,
             });
             const existingProduct = await Product.findOne({ where: { name } });

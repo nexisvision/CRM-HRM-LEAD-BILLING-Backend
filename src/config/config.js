@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import AWS from "aws-sdk";
 
 dotenv.config();
 
@@ -30,9 +31,9 @@ export const EMAIL_CONFIG = {
     }
 };
 
-export const AWS_CONFIG = {
+export const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    bucketName: process.env.AWS_BUCKET_NAME,
     region: process.env.AWS_REGION,
-    bucketName: process.env.AWS_BUCKET_NAME
-};
+});

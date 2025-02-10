@@ -16,7 +16,7 @@ export default {
             currency: Joi.string().required(),
             calculatedTax: Joi.number().required(),
             description: Joi.string().required(),
-            items: Joi.array().required(),
+            items: Joi.object().required(),
             discount: Joi.number().optional(),
             tax: Joi.number().optional(),
             total: Joi.number().required()

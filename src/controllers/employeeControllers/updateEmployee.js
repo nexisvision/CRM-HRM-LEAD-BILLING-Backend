@@ -2,6 +2,8 @@ import Joi from "joi";
 import User from "../../models/userModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import { s3 } from "../../config/config.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -23,20 +25,49 @@ export default {
             accountnumber: Joi.number().allow('', null),
             bankname: Joi.string().allow('', null),
             ifsc: Joi.number().allow('', null),
-            banklocation: Joi.string().allow('', null),
-            e_signatures: Joi.object().optional().allow(null),
             documents: Joi.object().optional().allow(null),
             links: Joi.object().optional().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
+            const profilePic = req.files?.profilePic?.[0];
+            const e_signature = req.files?.e_signature?.[0];
+
             const { id } = req.params;
-            const { firstName, lastName, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, documents, links } = req.body;
+            const { firstName, lastName, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
                 return responseHandler.notFound(res, "Employee not found");
+            }
+
+            const client = await User.findOne({ where: { username: employee.created_by } });
+
+            let profilePicUrl = employee.profilePic;
+            if (profilePic) {
+                if (employee.profilePic) {
+                    const key = decodeURIComponent(employee.profilePic.split(".com/").pop());
+                    const s3Params = {
+                        Bucket: s3.config.bucketName,
+                        Key: key,
+                    };
+                    await s3.deleteObject(s3Params).promise();
+                }
+                profilePicUrl = await uploadToS3(profilePic, "employee", "profile-pic", employee.username, employee.created_by);
+            }
+
+            let e_signatureUrl = employee.e_signature;
+            if (e_signature) {
+                if (employee.e_signature) {
+                    const key = decodeURIComponent(employee.e_signature.split(".com/").pop());
+                    const s3Params = {
+                        Bucket: s3.config.bucketName,
+                        Key: key,
+                    };
+                    await s3.deleteObject(s3Params).promise();
+                }
+                e_signatureUrl = await uploadToS3(e_signature, "employee", "signatures", employee.username, employee.created_by);
             }
 
             await employee.update({
@@ -55,9 +86,10 @@ export default {
                 bankname,
                 ifsc,
                 banklocation,
-                e_signatures,
                 documents,
                 links,
+                profilePic: profilePicUrl,
+                e_signature: e_signatureUrl,
                 updated_by: req.user?.username
             });
 

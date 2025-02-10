@@ -2,6 +2,7 @@ import Joi from "joi";
 import Payment from "../../models/paymentModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -16,29 +17,20 @@ export default {
             currency: Joi.string().required(),
             transactionId: Joi.number().required(),
             paymentMethod: Joi.string().required(),
-            receipt: Joi.string().optional().allow('', null),
             remark: Joi.string().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
+            const receipt = req.file;
             const { id } = req.params;
-            const {
-                project,
-                invoice,
-                paidOn,
-                amount,
-                currency,
-                transactionId,
-                paymentMethod,
-                receipt,
-                remark
-            } = req.body;
-            const existingPayment = await Payment.findOne({ where: { related_id: id, project, invoice, paidOn, amount, currency, transactionId, paymentMethod, receipt, remark } });
+            const { project, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } = req.body;
+            const existingPayment = await Payment.findOne({ where: { related_id: id, project, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } });
             if (existingPayment) {
                 return responseHandler.error(res, "Payment already exists");
             }
 
+            const receiptUrl = await uploadToS3(receipt, req.user?.roleName, "payments", req.user?.username);
             const payment = await Payment.create({
                 related_id: id,
                 project,
@@ -48,7 +40,7 @@ export default {
                 currency,
                 transactionId,
                 paymentMethod,
-                receipt,
+                receipt: receiptUrl,
                 remark,
                 created_by: req.user?.username,
                 updated_by: req.user?.username
