@@ -13,6 +13,8 @@ export default {
         body: Joi.object({
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
+            phone: Joi.string().optional().allow('', null),
+            email: Joi.string().email().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
@@ -32,7 +34,7 @@ export default {
             const e_signatures = req.files?.e_signatures?.[0];
             const { id } = req.params;
             const { firstName, lastName,
-                bankname, ifsc, banklocation, accountholder, accountnumber, gstIn,
+                phone, email, bankname, ifsc, banklocation, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address } = req.body;
 
 
@@ -76,10 +78,11 @@ export default {
             }
 
             await client.update({
-                firstName, lastName, bankname, profilePic: profilePicUrl, e_signatures: e_signaturesUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
+                firstName, lastName, phone, email, bankname, profilePic: profilePicUrl, e_signatures: e_signaturesUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
             return responseHandler.success(res, "Client updated successfully", client);
+
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

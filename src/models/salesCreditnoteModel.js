@@ -16,7 +16,7 @@ const SalesCreditnote = sequelize.define('sales_Creditnote', {
         allowNull: false
     },
     invoice: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     currency: {

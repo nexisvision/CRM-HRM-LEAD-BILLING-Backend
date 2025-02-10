@@ -14,7 +14,7 @@ router.post("/verify-otp", authenticateUser, verifyOtp.validator, verifyOtp.hand
 router.post("/reset-password", authenticateUser, resetPassword.validator, resetPassword.handler);
 
 //Super-Admin 
-router.use(authenticateUser, checkUserRole(['super-admin']));
+router.use(authenticateUser, checkUserRole(['super-admin','client']));
 
 router.get('/', getAllUsers.validator, getAllUsers.handler);
 router.get('/:id', getUserById.validator, getUserById.handler);

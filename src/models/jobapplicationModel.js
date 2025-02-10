@@ -44,6 +44,7 @@ const JobApplication = sequelize.define('job_application', {
     },
     status: {
         type: DataTypes.STRING,
+        // defaultValue: "active",
         allowNull: false
     },
     applied_source: {

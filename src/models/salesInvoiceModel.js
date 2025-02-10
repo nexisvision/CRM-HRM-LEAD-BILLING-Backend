@@ -86,8 +86,8 @@ SalesInvoice.beforeCreate(async (salesInvoice) => {
 
     let nextNumber = 1;
     if (lastSalesInvoice && lastSalesInvoice.salesInvoiceNumber) {
-        const lastNumber = parseInt(lastSalesInvoice.salesInvoiceNumber.replace('INV#', ''));
-        nextNumber = lastNumber + 1;
+        const lastNumber = parseInt(lastSalesInvoice.salesInvoiceNumber.replace('QUO#', ''));
+        nextNumber = lastNumber + 1;    
     }
 
     salesInvoice.salesInvoiceNumber = `QUO#${nextNumber}`;
