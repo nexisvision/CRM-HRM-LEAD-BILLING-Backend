@@ -38,10 +38,6 @@ export default {
                 image: imageUrl,
                 created_by: req.user?.username,
             });
-            const existingProduct = await Product.findOne({ where: { name } });
-            if (existingProduct) {
-                return responseHandler.error(res, "Product already exists");
-            }
             await Activity.create({
                 related_id: req.params.id,
                 activity_from: "product",
