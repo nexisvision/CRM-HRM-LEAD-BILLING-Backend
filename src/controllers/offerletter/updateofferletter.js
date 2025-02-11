@@ -3,6 +3,8 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import OfferLetter from "../../models/offerletter.js";
+import { s3 } from "../../config/config.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -22,16 +24,29 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { job, job_applicant, offer_expiry, expected_joining_date, salary, description, files } = req.body;
+            const file = req.file;
+            const { job, job_applicant, offer_expiry, expected_joining_date, salary, description } = req.body;
             const offerletter = await OfferLetter.findByPk(id);
             if (!offerletter) {
                 return responseHandler.error(res, "Offer letter not found");
             }
-            // const existingOfferLetter = await OfferLetter.findOne({ where: { job, job_applicant, id: { [Op.not]: id } } });
-            // if (existingOfferLetter) {
-            //     return responseHandler.error(res, "Offer letter already exists");
-            // }
-            await offerletter.update({ job, job_applicant, offer_expiry, expected_joining_date, salary, description, files });
+            const existingOfferLetter = await OfferLetter.findOne({ where: { job, job_applicant, id: { [Op.not]: id } } });
+            if (existingOfferLetter) {
+                return responseHandler.error(res, "Offer letter already exists");
+            }
+            let fileUrl = offerletter.file;
+            if (file) {
+                if (fileUrl) {
+                    const key = decodeURIComponent(fileUrl.split(".com/").pop());
+                    const s3Params = {
+                        Bucket: s3.config.bucketName,
+                        Key: key,
+                    };
+                    await s3.deleteObject(s3Params).promise();
+                }
+                fileUrl = await uploadToS3(file, req.user?.roleName, "offer-letters", req.user?.username);
+            }
+            await offerletter.update({ job, job_applicant, offer_expiry, expected_joining_date, salary, description, file: fileUrl });
             return responseHandler.success(res, "Offer letter updated successfully", offerletter);
         } catch (error) {
             return responseHandler.error(res, error?.message);

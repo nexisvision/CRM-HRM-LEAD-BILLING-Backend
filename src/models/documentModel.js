@@ -24,8 +24,8 @@ const Document = sequelize.define('Document', {
         allowNull: true,
         defaultValue: null
     },
-    files: {
-        type: DataTypes.JSON,
+    file: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },

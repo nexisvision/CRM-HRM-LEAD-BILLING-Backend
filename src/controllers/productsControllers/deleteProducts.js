@@ -3,6 +3,7 @@ import Product from "../../models/productModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import Activity from "../../models/activityModel.js";
+import { s3 } from "../../config/config.js";
 
 export default {
     validator: validator({
@@ -16,6 +17,15 @@ export default {
             const product = await Product.findByPk(id);
             if (!product) {
                 return responseHandler.error(res, "Product not found");
+            }
+            let image = product.image;
+            if (image) {
+                const key = decodeURIComponent(image.split(".com/").pop());
+                const s3Params = {
+                    Bucket: s3.config.bucketName,
+                    Key: key,
+                };
+                await s3.deleteObject(s3Params).promise();
             }
             await product.destroy();
             await Activity.create({

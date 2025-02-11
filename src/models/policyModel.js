@@ -22,8 +22,8 @@ const Policy = sequelize.define('policy', {
         type: DataTypes.TEXT,
         allowNull: false
     },
-    files: {
-        type: DataTypes.JSON,
+    file: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },

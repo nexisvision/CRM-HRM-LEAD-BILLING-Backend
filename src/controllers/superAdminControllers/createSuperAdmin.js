@@ -45,9 +45,15 @@ export default {
                 return responseHandler.unauthorized(res, "Invalid secret key");
             }
 
-            const existingUser = await SuperAdmin.findOne({ where: { username, email } });
-            if (existingUser) {
-                return responseHandler.error(res, "Username or Email already exists");
+
+            const existingUsername = await SuperAdmin.findOne({ where: { username } });
+            if (existingUsername) {
+                return responseHandler.error(res, "Username already exists");
+            }
+
+            const existingEmail = await SuperAdmin.findOne({ where: { email } });
+            if (existingEmail) {
+                return responseHandler.error(res, "Email already exists");
             }
 
             const [role] = await Role.findOrCreate({

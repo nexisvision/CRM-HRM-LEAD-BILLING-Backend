@@ -45,8 +45,8 @@ const Product = sequelize.define('Product', {
         allowNull: true,
         defaultValue: null
     },
-    files: {
-        type: DataTypes.JSON,
+    image: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },

@@ -50,7 +50,7 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: 'client' ,  created_by: req.user?.username},
+                where: { role_name: 'client', created_by: req.user?.username },
                 defaults: { id: generateId() }
             });
 
@@ -89,8 +89,7 @@ export default {
             return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-
-            return responseHandler.error(res, error?.message);
+            return responseHandler.error(res, error?.message)
         }
     }
 };

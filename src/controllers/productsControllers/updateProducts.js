@@ -4,6 +4,8 @@ import Activity from "../../models/activityModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 import { Op } from "sequelize";
+import { s3 } from "../../config/config.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
 
 export default {
     validator: validator({
@@ -18,13 +20,13 @@ export default {
             tax: Joi.string().optional().allow('', null),
             hsn_sac: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null),
-            files: Joi.array().optional().allow('', null),
         })
     }),
     handler: async (req, res) => {
         try {
+            const image = req.file;
             const { id } = req.params;
-            const { name, category, price, sku, tax, hsn_sac, description, files } = req.body;
+            const { name, category, price, sku, tax, hsn_sac, description } = req.body;
             const product = await Product.findByPk(id);
             if (!product) {
                 return responseHandler.error(res, "Product not found");
@@ -33,7 +35,26 @@ export default {
             if (existingProduct) {
                 return responseHandler.error(res, "Product already exists");
             }
-            await product.update({ name, category, price, sku, tax, hsn_sac, description, files, updated_by: req.user?.username });
+            let imageUrl = product.image;
+            if (image) {
+                if (product.image) {
+                    // Get everything after the bucket URL
+                    const key = product.image.split('.amazonaws.com/').pop();
+                    console.log('Deleting S3 key:', key);
+                    const s3Params = {
+                        Bucket: s3.config.bucketName,
+                        Key: key,
+                    };
+                    try {
+                        await s3.deleteObject(s3Params).promise();
+                        console.log('Successfully deleted old product image');
+                    } catch (error) {
+                        console.error('Error deleting old product image:', error);
+                    }
+                }
+                imageUrl = await uploadToS3(image, req.user?.roleName, "products", req.user?.username);
+            }
+            await product.update({ name, category, price, sku, tax, hsn_sac, description, image: imageUrl, updated_by: req.user?.username });
             await Activity.create({
                 related_id: product.related_id,
                 activity_from: "product",

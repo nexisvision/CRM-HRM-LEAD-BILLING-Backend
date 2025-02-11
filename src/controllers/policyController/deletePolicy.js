@@ -2,6 +2,7 @@ import Joi from "joi";
 import Policy from "../../models/policyModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import { s3 } from "../../config/config.js";
 
 export default {
     validator: validator({
@@ -15,6 +16,15 @@ export default {
             const policy = await Policy.findByPk(id);
             if (!policy) {
                 return responseHandler.error(res, "Policy not found");
+            }
+            const file = policy.file;
+            if (file) {
+                const key = decodeURIComponent(file.split(".com/").pop());
+                const s3Params = {
+                    Bucket: s3.config.bucketName,
+                    Key: key,
+                };
+                await s3.deleteObject(s3Params).promise();
             }
             await policy.destroy();
             return responseHandler.success(res, "Policy deleted successfully", policy);
