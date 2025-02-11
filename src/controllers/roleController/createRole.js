@@ -30,20 +30,18 @@ export default {
 
 
 
-    
-        validator: validator({
-            body: Joi.object({
-                role_name: Joi.string().required(),
-                permissions: Joi.object().required() // Accept any structure for permissions
-            })
-        }),
+
+    validator: validator({
+        body: Joi.object({
+            role_name: Joi.string().required(),
+            permissions: Joi.object().required() // Accept any structure for permissions
+        })
+    }),
 
 
     handler: async (req, res) => {
         try {
             const { role_name, permissions } = req.body; // Destructure permissions
-
-            console.log("Raw permissions:", permissions); // Debugging line
             const existingRole = await Role.findOne({ where: { role_name } });
             if (existingRole) {
                 return responseHandler.error(res, "Role already exists");

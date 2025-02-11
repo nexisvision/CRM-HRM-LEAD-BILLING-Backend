@@ -1,15 +1,22 @@
+import cors from "cors";
 import express from "express";
+import { createServer } from "http";
 import { PORT } from "./config/config.js";
 import routes from "./routes/index.js";
 import sequelize from "./config/db.js";
 import fileUpload from 'express-fileupload';
+import initializeSocket from "./socket/index.js";
 import responseHandler from "./utils/responseHandler.js";
 import logAuditTrails from "./middlewares/logAuditTrails.js";
-import cors from "cors";
 
 const app = express();
 
-app.use(cors({ origin: '*' }));
+const server = createServer(app);
+
+app.use(cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -36,9 +43,15 @@ const startServer = async () => {
         await sequelize.sync({ force: false });
         console.log('✅ Database synced successfully');
 
-        app.listen(PORT, () => {
-            console.log(`✅ Server is running on port ${PORT}`);
+        const io = initializeSocket(server);
+        console.log('✅ Socket.IO initialized');
+
+        server.listen(PORT, () => {
+            console.log(`✅ Server and Socket.IO running on port ${PORT}`);
         });
+
+        app.set('io', io);
+
     } catch (error) {
         console.error('❌ Error starting server:', error.message);
     }

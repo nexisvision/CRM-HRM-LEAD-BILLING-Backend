@@ -144,11 +144,35 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
+    conversations: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: {},
+        get() {
+            const value = this.getDataValue('conversations');
+            if (!value) return {};
+            try {
+                return typeof value === 'string' ? JSON.parse(value) : value;
+            } catch {
+                return {};
+            }
+        },
+        set(value) {
+            try {
+                const convValue = typeof value === 'string' ? value : JSON.stringify(value);
+                this.setDataValue('conversations', convValue);
+            } catch (error) {
+                console.error('Error setting conversations:', error);
+                this.setDataValue('conversations', '{}');
+            }
+        }
+    },
     resetPasswordOTP: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
+
     resetPasswordOTPExpiry: {
         type: DataTypes.DATE,
         allowNull: true,
@@ -163,8 +187,7 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
-    }
-
+    },
 });
 
 
