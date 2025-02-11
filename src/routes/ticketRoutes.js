@@ -12,3 +12,4 @@ router.put('/:id', upload.single('file'), updateTicket.validator, updateTicket.h
 router.delete('/:id', deleteTicket.validator, deleteTicket.handler);
 
 export default router;
+

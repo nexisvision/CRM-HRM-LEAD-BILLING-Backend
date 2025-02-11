@@ -18,7 +18,9 @@ export default {
             const { id } = req.params;
             const { name, color, lableType } = req.body;
 
-            const existingTag = await Tag.findOne({
+            console.log("lableType", lableType);
+
+            const existingTag = await Tag.findOne({ 
                 where: { related_id: id, name }
             });
             if (existingTag) {

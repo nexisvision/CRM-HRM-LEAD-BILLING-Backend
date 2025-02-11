@@ -25,6 +25,11 @@ const Task = sequelize.define('Task', {
         type: DataTypes.STRING,
         allowNull: true
     },
+    lead: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     startDate: {
         type: DataTypes.DATE,
         allowNull: false

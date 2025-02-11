@@ -26,7 +26,7 @@ export default {
             if (existingStage) {
                 return responseHandler.error(res, "Stage already exists");
             }
-            await stage.update({ stageName, pipeline, updated_by: req.user.id });
+            await stage.update({ stageName, pipeline, updated_by: req.user.username });
             return responseHandler.success(res, "Stage updated successfully", stage);
         } catch (error) {
             return responseHandler.error(res, error?.message);

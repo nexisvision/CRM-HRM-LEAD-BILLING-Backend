@@ -10,7 +10,7 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            project: Joi.string().required(),
+            project_name: Joi.string().required(),
             invoice: Joi.string().required(),
             paidOn: Joi.date().required(),
             amount: Joi.string().required(),
@@ -33,7 +33,7 @@ export default {
             const receiptUrl = await uploadToS3(receipt, req.user?.roleName, "payments", req.user?.username);
             const payment = await Payment.create({
                 related_id: id,
-                project,
+                project_name,
                 invoice,
                 paidOn,
                 amount,

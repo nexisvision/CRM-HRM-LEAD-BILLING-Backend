@@ -18,11 +18,23 @@ export default {
             status: Joi.string().allow(null),
             channelName: Joi.string().allow(null),
             tag: Joi.string().allow(null),
+            // file: Joi.string().allow(null),
         })
     }),
     handler: async (req, res) => {
         try {
+
+            console.log("Request Body:", req.body); // Log the request body
+            console.log("Uploaded File:", req.file); // Log the uploaded file
+
             const file = req.file;
+
+            console.log("file", file);
+            // Check if file is provided
+
+            if (!file) {
+                return responseHandler.error(res, "file is required");
+            }
             const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, priority, channelName, tag } = req.body;
             const existingTicket = await Ticket.findOne({ where: { ticketSubject } });
             if (existingTicket) {

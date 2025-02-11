@@ -13,7 +13,7 @@ const Payment = sequelize.define('Payment', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    project: {
+    project_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
