@@ -83,6 +83,7 @@ import documentRoutes from "./documentRoutes.js";
 import awardRoutes from "./awardRoutes.js";
 import calendarRoutes from "./calendarRoutes.js";
 import userRoutes from './userRoutes.js';
+import { s3 } from '../config/config.js';
 const router = express.Router();
 
 
@@ -106,7 +107,7 @@ router.use('/announcements', announcementRoutes);
 //>>>>>>>>>>>>>>  HRM System  <<<<<<<<<<<<<<<//
 
 /** 1. Employee Setup*/
-router.use('/employees', employeeRoutes);       
+router.use('/employees', employeeRoutes);
 
 /** 2. Payroll Setup*/
 router.use('/salary', salaryRoutes);
@@ -222,5 +223,64 @@ router.use('/notifications', notificationRoutes);
 router.use('/calendar', calendarRoutes);
 
 router.use('/userss', userRoutes);
+
+// Add this route
+router.get('/api/chat/get-signed-url', async (req, res) => {
+    try {
+        const { fileUrl } = req.query;
+        if (!fileUrl) {
+            return res.status(400).json({ error: 'File URL is required' });
+        }
+
+        // Extract the key from the S3 URL
+        const urlParts = new URL(fileUrl);
+        const key = decodeURIComponent(urlParts.pathname.substring(1));
+
+        // Generate signed URL with proper ContentType
+        const signedUrl = await s3.getSignedUrlPromise('getObject', {
+            Bucket: s3.config.bucketName,
+            Key: key,
+            Expires: 60, // URL expires in 60 seconds
+            ResponseContentDisposition: `attachment; filename="${key.split('/').pop()}"`,
+        });
+
+        res.json({ signedUrl });
+    } catch (error) {
+        console.error('Error generating signed URL:', error);
+        res.status(500).json({ error: 'Failed to generate download URL' });
+    }
+});
+
+// Add this new route for file downloads
+router.get('/api/chat/download-file', async (req, res) => {
+    try {
+        const { fileUrl } = req.query;
+        if (!fileUrl) {
+            return res.status(400).json({ error: 'File URL is required' });
+        }
+
+        // Extract the key from the S3 URL
+        const urlParts = new URL(fileUrl);
+        const key = decodeURIComponent(urlParts.pathname.substring(1));
+
+        // Get the file from S3
+        const s3File = await s3.getObject({
+            Bucket: s3.config.bucketName,
+            Key: key
+        }).promise();
+
+        // Set appropriate headers
+        res.setHeader('Content-Type', s3File.ContentType);
+        res.setHeader('Content-Disposition', `attachment; filename="${key.split('/').pop()}"`);
+        res.setHeader('Content-Length', s3File.ContentLength);
+
+        // Send the file
+        res.send(s3File.Body);
+
+    } catch (error) {
+        console.error('Error downloading file:', error);
+        res.status(500).json({ error: 'Failed to download file' });
+    }
+});
 
 export default router;

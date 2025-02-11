@@ -31,9 +31,26 @@ export const EMAIL_CONFIG = {
     }
 };
 
+export const UPLOAD_CONFIG = {
+    MAX_FILE_SIZE: 25 * 1024 * 1024, // 25MB
+    ALLOWED_FILE_TYPES: {
+        IMAGE: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
+        VIDEO: ['video/mp4', 'video/webm', 'video/quicktime'],
+        DOCUMENT: [
+            'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'text/plain'
+        ]
+    },
+    MAX_FILES_PER_MESSAGE: 5
+};
+
 export const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    bucketName: process.env.AWS_BUCKET_NAME,
     region: process.env.AWS_REGION,
+    bucketName: process.env.AWS_BUCKET_NAME
 });

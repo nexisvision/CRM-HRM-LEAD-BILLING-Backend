@@ -20,14 +20,20 @@ export default {
         try {
             const { login, password } = req.body;
             const entities = await Promise.all([
-                SuperAdmin.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
-                User.findOne({ where: { [Op.or]: [{ email: login }, { username: login }] } }),
+                SuperAdmin.findOne({
+                    where: { [Op.or]: [{ email: login }, { username: login }] },
+                    attributes: { exclude: ['conversations'] }
+                }),
+                User.findOne({
+                    where: { [Op.or]: [{ email: login }, { username: login }] },
+                    attributes: { exclude: ['conversations'] }
+                }),
             ]);
             const foundEntity = entities.find(entity => entity && bcrypt.compareSync(password, entity.password));
+
             if (!foundEntity) {
                 return responseHandler.error(res, entities.some(e => e) ? "Invalid password" : "Account not found");
             }
-
             const role = await Role.findOne({ where: { id: foundEntity.role_id } });
 
             const token = jwt.sign({
