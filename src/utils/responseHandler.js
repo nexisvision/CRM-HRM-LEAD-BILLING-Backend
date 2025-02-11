@@ -21,16 +21,20 @@ const HTTP_STATUS = {
     SERVICE_UNAVAILABLE: 503
 };
 const responseHandler = {
-    success: (res, message, data = null, status = HTTP_STATUS.OK) =>
-        res.status(status).json({ success: true, message: `${message}`, data, statusCode: status }),
+    success: (res, message, data = null) => {
+        return res.status(200).json({
+            success: true,
+            message,
+            data
+        });
+    },
     created: (res, message, data) =>
         res.status(HTTP_STATUS.CREATED).json({ success: true, message: `${message}`, data, statusCode: HTTP_STATUS.CREATED }),
     noContent: (res) => res.status(HTTP_STATUS.NO_CONTENT).send(),
-    error: (res, error, status = HTTP_STATUS.INTERNAL_SERVER_ERROR) => {
-        const formattedError = formatError(error);
-        return res.status(status).json({
-            success: false, message: `❌ ${formattedError.message}`,
-            error: formattedError, statusCode: status
+    error: (res, message, statusCode = 400) => {
+        return res.status(statusCode).json({
+            success: false,
+            message: message || 'Something went wrong'
         });
     },
     badRequest: (res, error) => {
@@ -51,11 +55,12 @@ const responseHandler = {
             success: false, message: `🚫 ${message}`,
             error: 'FORBIDDEN', statusCode: HTTP_STATUS.FORBIDDEN
         }),
-    notFound: (res, message = 'Resource not found') =>
-        res.status(HTTP_STATUS.NOT_FOUND).json({
-            success: false, message: `🔍 ${message}`,
-            error: 'NOT_FOUND', statusCode: HTTP_STATUS.NOT_FOUND
-        }),
+    notFound: (res, message = 'Resource not found') => {
+        return res.status(404).json({
+            success: false,
+            message
+        });
+    },
     conflict: (res, message) =>
         res.status(HTTP_STATUS.CONFLICT).json({
             success: false, message: `⚔️ ${message}`,

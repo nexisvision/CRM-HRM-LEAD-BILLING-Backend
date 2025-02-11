@@ -15,7 +15,7 @@ export default {
             const employees = await User.findAll();
             return responseHandler.success(res, 'Employees retrieved successfully', employees);
         } catch (error) {
-            return responseHandler.error(res, 'Error fetching employees');
+            return responseHandler.error(res, error,'Error fetching employees');
         }
     }
 };
