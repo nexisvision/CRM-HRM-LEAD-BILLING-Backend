@@ -24,8 +24,8 @@ export default {
         try {
             const receipt = req.file;
             const { id } = req.params;
-            const { project, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } = req.body;
-            const existingPayment = await Payment.findOne({ where: { related_id: id, project, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } });
+            const { project_name, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } = req.body;
+            const existingPayment = await Payment.findOne({ where: { related_id: id, project_name, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } });
             if (existingPayment) {
                 return responseHandler.error(res, "Payment already exists");
             }
