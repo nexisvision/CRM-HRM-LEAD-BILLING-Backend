@@ -14,7 +14,7 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            email: Joi.string().email().optional().allow('', null),
+            // email: Joi.string().email().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
@@ -30,7 +30,19 @@ export default {
     }),
     handler: async (req, res) => {
         try {
+
+            console.log("Request Body:", req.body); // Log the request body
+            console.log("Uploaded File:", req.files); // Log the uploaded file
+
             const profilePic = req.files?.profilePic?.[0];
+
+            console.log("profilePic", profilePic);
+            // Check if file is provided
+
+            if (!profilePic) {
+                return responseHandler.error(res, "profilePic is required");
+            }
+
             const e_signatures = req.files?.e_signatures?.[0];
             const { id } = req.params;
             const { firstName, lastName,

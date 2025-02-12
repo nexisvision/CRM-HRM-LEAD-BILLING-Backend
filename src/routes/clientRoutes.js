@@ -6,6 +6,7 @@ import upload from "../middlewares/upload.js";
 const router = express.Router();
 
 router.use(authenticateUser, checkRole);
+
 router.put('/:id', upload.fields([
     { name: 'profilePic', maxCount: 1 },
     { name: 'e_signatures', maxCount: 1 }
