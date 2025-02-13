@@ -40,8 +40,6 @@ export default {
             }
 
 
-
-
             // Create verified user
             const newUser = role.role_name === 'employee' ? await User.create({
                 username: user.username,

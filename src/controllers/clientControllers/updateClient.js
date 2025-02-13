@@ -23,6 +23,7 @@ export default {
             gstIn: Joi.string().optional().allow('', null),
             city: Joi.string().optional().allow('', null),
             state: Joi.string().optional().allow('', null),
+            website: Joi.string().optional().allow('', null),
             country: Joi.string().optional().allow('', null),
             zipcode: Joi.string().optional().allow('', null),
             address: Joi.string().optional().allow('', null),
@@ -31,12 +32,12 @@ export default {
     handler: async (req, res) => {
         try {
 
-            console.log("Request Body:", req.body); // Log the request body
-            console.log("Uploaded File:", req.files); // Log the uploaded file
+            // console.log("Request Body:", req.body); // Log the request body
+            // console.log("Uploaded File:", req.files); // Log the uploaded file
 
             const profilePic = req.files?.profilePic?.[0];
 
-            console.log("profilePic", profilePic);
+            // console.log("profilePic", profilePic);
             // Check if file is provided
 
             if (!profilePic) {
@@ -46,9 +47,8 @@ export default {
             const e_signatures = req.files?.e_signatures?.[0];
             const { id } = req.params;
             const { firstName, lastName,
-                phone, email, bankname, ifsc, banklocation, accountholder, accountnumber, gstIn,
+                phone, email, bankname, ifsc, banklocation, website, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address } = req.body;
-
 
             const client = await User.findByPk(id);
             if (!client) {
@@ -90,7 +90,7 @@ export default {
             }
 
             await client.update({
-                firstName, lastName, phone, email, bankname, profilePic: profilePicUrl, e_signatures: e_signaturesUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
+                firstName, lastName, phone, email, bankname, website, profilePic: profilePicUrl, e_signatures: e_signaturesUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
             return responseHandler.success(res, "Client updated successfully", client);
