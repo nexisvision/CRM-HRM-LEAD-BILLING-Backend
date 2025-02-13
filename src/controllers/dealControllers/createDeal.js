@@ -13,13 +13,12 @@ export default {
             price: Joi.number().required(),
             currency: Joi.string().required(),
             closedDate: Joi.date().required(),
-            category: Joi.string().optional(),
             project: Joi.string().optional(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project } = req.body;
+            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, project } = req.body;
 
             const existingDeal = await Deal.findOne({ where: { dealName } });
             if (existingDeal) {
@@ -34,7 +33,6 @@ export default {
                 price,
                 currency,
                 closedDate,
-                category,
                 project,
                 created_by: req.user?.username
             });

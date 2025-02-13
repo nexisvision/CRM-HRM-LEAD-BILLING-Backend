@@ -67,7 +67,7 @@ export const Contract = sequelize.define("Contract", {
         allowNull: false,
     },
     zipcode: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     address: {

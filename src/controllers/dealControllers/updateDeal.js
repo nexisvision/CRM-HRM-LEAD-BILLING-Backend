@@ -17,14 +17,13 @@ export default {
             price: Joi.number().required(),
             currency: Joi.string().required(),
             closedDate: Joi.date().required(),
-            category: Joi.string().required(),
             project: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project } = req.body;
+            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, project } = req.body;
             const deal = await Deal.findByPk(id);
             if (!deal) {
                 return responseHandler.error(res, "Deal not found");
@@ -33,7 +32,7 @@ export default {
             if (existingDeal) {
                 return responseHandler.error(res, "Deal already exists");
             }
-            await deal.update({ leadTitle, dealName, pipeline, stage, price, currency, closedDate, category, project, updated_by: req.user?.username });
+            await deal.update({ leadTitle, dealName, pipeline, stage, price, currency, closedDate, project, updated_by: req.user?.username });
             return responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
 
