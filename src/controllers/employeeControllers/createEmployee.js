@@ -35,7 +35,7 @@ export default {
             gender: Joi.string().allow('', null),
             joiningDate: Joi.date().allow('', null),
             leaveDate: Joi.date().allow(null),
-            branch: Joi.string().allow('', null),
+            branch: Joi.string().allow('', null),   
             department: Joi.string().allow('', null),
             designation: Joi.string().allow('', null),
             salary: Joi.number().allow('', null),
