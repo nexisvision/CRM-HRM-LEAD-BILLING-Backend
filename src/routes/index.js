@@ -85,6 +85,7 @@ import calendarRoutes from "./calendarRoutes.js";
 import userRoutes from './userRoutes.js';
 import taxRoutes from "./taxRoutes.js";
 import { s3 } from '../config/config.js';
+import esignatureRoutes from "./esignatureRoutes.js";
 const router = express.Router();
 
 
@@ -94,6 +95,8 @@ router.use('/clients', clientRoutes);
 router.use('/subscriptions', subscriptionRoutes);
 router.use('/currencies', currencyRoutes);
 router.use('/countries', countriesRoutes);
+router.use('/esignatures', esignatureRoutes);
+
 router.use('/taxes', taxRoutes);
 router.use('/tickets', ticketRoutes);
 router.use('/inquiry', inquiryRoutes);
