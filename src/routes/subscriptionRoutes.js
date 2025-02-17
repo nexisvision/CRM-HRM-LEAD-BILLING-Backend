@@ -1,6 +1,6 @@
 import express from 'express';
 import { authenticateUser, checkRole, checkUserRole } from '../middlewares/index.js';
-import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans } from '../controllers/subscriptionController/index.js';
+import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans, planrequest } from '../controllers/subscriptionController/index.js';
 
 const router = express.Router();
 
@@ -17,5 +17,8 @@ router.post('/assign', assignPlanToClient.validator, assignPlanToClient.handler)
 
 // New route for getting all assigned plans
 router.get('/assign', getAllAssignedPlans.validator, getAllAssignedPlans.handler);
+
+router.post('/request', planrequest.validator, planrequest.handler);
+
 
 export default router;
