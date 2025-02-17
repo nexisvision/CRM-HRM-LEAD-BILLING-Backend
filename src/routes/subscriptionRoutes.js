@@ -7,6 +7,9 @@ const router = express.Router();
 router.use(authenticateUser, checkRole);
 router.get('/', getAllPlans.validator, getAllPlans.handler);
 
+router.post('/request', planrequest.validator, planrequest.handler);
+
+
 router.use(authenticateUser, checkUserRole(['super-admin']));
 router.post('/', createPlan.validator, createPlan.handler);
 router.put('/:id', updatePlan.validator, updatePlan.handler);
@@ -18,7 +21,6 @@ router.post('/assign', assignPlanToClient.validator, assignPlanToClient.handler)
 // New route for getting all assigned plans
 router.get('/assign', getAllAssignedPlans.validator, getAllAssignedPlans.handler);
 
-router.post('/request', planrequest.validator, planrequest.handler);
 
 
 export default router;
