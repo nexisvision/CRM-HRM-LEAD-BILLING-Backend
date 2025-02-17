@@ -42,7 +42,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { role_name, permissions } = req.body; // Destructure permissions
-            const existingRole = await Role.findOne({ where: { role_name } });
+            const existingRole = await Role.findOne({ where: { role_name, created_by: req.user?.username } });
             if (existingRole) {
                 return responseHandler.error(res, "Role already exists");
             }

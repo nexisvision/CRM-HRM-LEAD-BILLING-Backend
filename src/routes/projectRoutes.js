@@ -1,6 +1,7 @@
 import express from "express";
-import { createProject, getAllProjects, getProjectById, updateProject, deleteProject, deleteProjectMembers, addProjectMembers, getAllClientsProject } from "../controllers/projectController/index.js";
+import { createProject, getAllProjects, getProjectById, updateProject, deleteProject, deleteProjectMembers, addProjectMembers, getAllClientsProject, addProjectFiles } from "../controllers/projectController/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
+import upload from "../middlewares/upload.js";
 
 const router = express.Router();
 
@@ -16,5 +17,7 @@ router.post('/membersdelete/:id', deleteProjectMembers.validator, deleteProjectM
 router.post('/membersadd/:id', addProjectMembers.validator, addProjectMembers.handler);
 
 router.get('/clients/:id', getAllClientsProject.validator, getAllClientsProject.handler);
+
+router.post('/files/:id', upload.fields([{ name: 'project_files', maxCount: 1 }]), addProjectFiles.validator, addProjectFiles.handler);
 
 export default router;

@@ -27,8 +27,9 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         allowNull: false
     },
     trial_period: {
-        type: DataTypes.STRING,
-        allowNull: true
+        type: DataTypes.STRING,     
+        allowNull: true,
+        defaultValue: null
     },
     max_users: {
         type: DataTypes.STRING,

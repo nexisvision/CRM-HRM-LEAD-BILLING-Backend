@@ -6,8 +6,10 @@ import deleteProject from "./deleteProject.js";
 import deleteProjectMembers from "./deleteProjectMembers.js";
 import addProjectMembers from "./addprojectmembers.js";
 import getAllClientsProject from "./getAllClientsProject.js";
+import addProjectFiles from "./addprojectfiles.js";
+// import addProductFiles from "./addprojectfiles.js";
 
 export {
      createProject, getAllProjects, getProjectById, updateProject, deleteProject, deleteProjectMembers,
-     addProjectMembers, getAllClientsProject
+     addProjectMembers, getAllClientsProject, addProjectFiles
 };
