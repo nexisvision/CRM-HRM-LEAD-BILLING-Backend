@@ -12,7 +12,7 @@ router.put('/:id', upload.fields([
     { name: 'e_signatures', maxCount: 1 }
 ]), updateClient.validator, updateClient.handler);
 
-router.put('/:id/email', updatemail.validator, updatemail.handler);
+router.put('/email/:id', updatemail.validator, updatemail.handler);
 
 router.use(authenticateUser, checkUserRole(['super-admin']));
 

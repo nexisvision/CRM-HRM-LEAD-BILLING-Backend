@@ -99,6 +99,11 @@ const User = sequelize.define('User', {
         allowNull: true,
         defaultValue: null
     },
+    accounttype: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     accountholder: {
         type: DataTypes.STRING,
         allowNull: true,
