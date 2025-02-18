@@ -18,6 +18,11 @@ const JobApplication = sequelize.define('job_application', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    cv_path: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false
