@@ -8,6 +8,7 @@ router.use(authenticateUser, checkRole);
 router.get('/', getAllPlans.validator, getAllPlans.handler);
 
 router.post('/request', planrequest.validator, planrequest.handler);
+router.get('/assign', getAllAssignedPlans.validator, getAllAssignedPlans.handler);
 
 
 router.use(authenticateUser, checkUserRole(['super-admin']));
@@ -19,7 +20,6 @@ router.delete('/:id', deletePlan.validator, deletePlan.handler);
 router.post('/assign', assignPlanToClient.validator, assignPlanToClient.handler);
 
 // New route for getting all assigned plans
-router.get('/assign', getAllAssignedPlans.validator, getAllAssignedPlans.handler);
 
 
 

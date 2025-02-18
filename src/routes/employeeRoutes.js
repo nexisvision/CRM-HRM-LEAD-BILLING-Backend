@@ -12,7 +12,8 @@ router.post('/', getActiveSubscription, createEmployee.validator, createEmployee
 router.get('/', getAllEmployees.validator, getAllEmployees.handler);
 router.put('/:id', upload.fields([
     { name: 'profilePic', maxCount: 1 },
-    { name: 'e_signature', maxCount: 1 }
+    // { name: 'e_signature', maxCount: 1 }
+    { name: 'cv', maxCount: 1 }
 ]), updateEmployee.validator, updateEmployee.handler);
 router.delete('/:id', deleteEmployee.validator, deleteEmployee.handler);
 
