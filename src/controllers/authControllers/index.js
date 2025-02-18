@@ -9,6 +9,7 @@ import getAllUsers from "./getAllUsers.js";
 import getUserById from "./getUserById.js";
 import updateUser from "./updateUser.js";
 import deleteUser from "./deleteUser.js";
+import verify from "./verify.js";
 
 export {
     signup,
@@ -22,4 +23,5 @@ export {
     getUserById,
     updateUser,
     deleteUser,
+    verify
 };

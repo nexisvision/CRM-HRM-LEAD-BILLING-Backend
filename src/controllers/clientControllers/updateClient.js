@@ -14,7 +14,7 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            email: Joi.string().email().optional().allow('', null),
+            // email: Joi.string().email().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
@@ -47,7 +47,7 @@ export default {
             const e_signatures = req.files?.e_signatures?.[0];
             const { id } = req.params;
             const { firstName, lastName,
-                phone, email, bankname, ifsc, banklocation, website, accountholder, accountnumber, gstIn,
+                phone, bankname, ifsc, banklocation, website, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address } = req.body;
 
             const client = await User.findByPk(id);
@@ -72,25 +72,25 @@ export default {
                 profilePicUrl = await uploadToS3(profilePic, "client", "profile-pic", client.username);
             }
 
-            let e_signaturesUrl = client.e_signatures;
-            if (e_signatures) {
-                if (client.e_signatures) {
-                    const key = decodeURIComponent(client.e_signatures.split(".com/").pop());
-                    const s3Params = {
-                        Bucket: s3.config.bucketName,
-                        Key: key,
-                    };
-                    try {
-                        await s3.deleteObject(s3Params).promise();
-                    } catch (error) {
-                        console.error('Error deleting old signature:', error);
-                    }
-                }
-                e_signaturesUrl = await uploadToS3(e_signatures, "client", "signatures", client.username, client.created_by);
-            }
+            // let e_signaturesUrl = client.e_signatures;
+            // if (e_signatures) {
+            //     if (client.e_signatures) {
+            //         const key = decodeURIComponent(client.e_signatures.split(".com/").pop());
+            //         const s3Params = {
+            //             Bucket: s3.config.bucketName,
+            //             Key: key,
+            //         };
+            //         try {
+            //             await s3.deleteObject(s3Params).promise();
+            //         } catch (error) {
+            //             console.error('Error deleting old signature:', error);
+            //         }
+            //     }
+            //     e_signaturesUrl = await uploadToS3(e_signatures, "client", "signatures", client.username, client.created_by);
+            // }
 
             await client.update({
-                firstName, lastName, phone, email, bankname, website, profilePic: profilePicUrl, e_signatures: e_signaturesUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
+                firstName, lastName, phone, bankname, website, profilePic: profilePicUrl, ifsc, banklocation, accountholder, accountnumber, gstIn,
                 city, state, country, zipcode, address, updated_by: req.user?.username
             });
             return responseHandler.success(res, "Client updated successfully", client);

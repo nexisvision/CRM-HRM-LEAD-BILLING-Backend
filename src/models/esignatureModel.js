@@ -16,6 +16,10 @@ const ESignature = sequelize.define("ESignature", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    related_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     // user_id: {
     //     type: DataTypes.UUID,
     //     allowNull: false,
@@ -28,5 +32,19 @@ const ESignature = sequelize.define("ESignature", {
         type: DataTypes.STRING,
         allowNull: true,
     }
-}, );
+} );
+
+
+ESignature.beforeCreate(async (esignature) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingESignature = await ESignature.findOne({ where: { id: newId } });
+        if (!existingESignature) {
+            isUnique = true;
+        }
+    }
+    esignature.id = newId;
+})
 export default ESignature; 

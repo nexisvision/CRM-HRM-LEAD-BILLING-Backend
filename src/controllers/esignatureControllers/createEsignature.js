@@ -37,6 +37,7 @@ export default {
             }
             const newESignature = await ESignature.create({
                 esignature_name,
+                related_id: req.user?.id,
                 e_signatures: esignatureUrl,
                 created_by: req.user?.username
             });
