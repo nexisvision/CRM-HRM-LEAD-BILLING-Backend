@@ -34,7 +34,8 @@ const Quotations = sequelize.define('quotations', {
     },
     client: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     calculatedTax: {
         type: DataTypes.INTEGER,
