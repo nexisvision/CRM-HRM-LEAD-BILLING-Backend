@@ -36,7 +36,7 @@ export default {
             }
             const contract = await Contract.create({
                 subject, client, project, type, value, startDate, endDate, currency, description,
-                phone, address, city, state, country, zipcode, notes, created_by: req.user?.id
+                phone, address, city, state, country, zipcode, notes, created_by: req.user?.username
             });
             return responseHandler.success(res, "Contract created successfully", contract);
         } catch (error) {

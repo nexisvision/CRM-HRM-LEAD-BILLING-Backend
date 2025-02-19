@@ -8,7 +8,7 @@ export default {
     validator: validator({
         params: Joi.object({
             id: Joi.string().required(),
-        }),
+        }), 
         body: Joi.object({
             note_title: Joi.string().required(),
             notetype: Joi.string().required(),

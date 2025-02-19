@@ -86,11 +86,11 @@ SalesInvoice.beforeCreate(async (salesInvoice) => {
 
     let nextNumber = 1;
     if (lastSalesInvoice && lastSalesInvoice.salesInvoiceNumber) {
-        const lastNumber = parseInt(lastSalesInvoice.salesInvoiceNumber.replace('QUO#', ''));
+        const lastNumber = parseInt(lastSalesInvoice.salesInvoiceNumber.replace('S-INV#', ''));
         nextNumber = lastNumber + 1;    
     }
 
-    salesInvoice.salesInvoiceNumber = `QUO#${nextNumber}`;
+    salesInvoice.salesInvoiceNumber = `S-INV#${nextNumber}`;
 
 });
 
