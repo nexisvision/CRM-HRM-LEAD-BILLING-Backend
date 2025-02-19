@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Project from "../../models/projectModel.js";
+import Lead from "../../models/leadModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import { Op } from "sequelize";
@@ -12,37 +12,37 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            project_members: Joi.object({
-                project_members: Joi.array().items(Joi.string()).optional()
+            lead_members: Joi.object({
+                lead_members: Joi.array().items(Joi.string()).optional()
             }).optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { project_members } = req.body;
+            const { lead_members } = req.body;
 
             // Safely access project_members array from the payload
-            const newMemberIds = project_members?.project_members || [];
+            const newMemberIds = lead_members?.lead_members || [];
 
-            const project = await Project.findByPk(id);
+            const lead = await Lead.findByPk(id);
 
-            if (!project) {
-                return responseHandler.notFound(res, "Project not found");
+            if (!lead) {
+                return responseHandler.notFound(res, "Lead not found");
             }
 
             // Parse project_members if it's a string
-            const currentProjectMembers = typeof project.project_members === 'string'
-                ? JSON.parse(project.project_members)
-                : project.project_members;
+            const currentLeadMembers = typeof lead.lead_members === 'string'
+                ? JSON.parse(lead.lead_members)
+                : lead.lead_members;
 
             // Get current members array
-            const currentMembers = currentProjectMembers?.project_members || [];
+            const currentMembers = currentLeadMembers?.lead_members || [];
 
             // Check for duplicate members
             const duplicateMembers = newMemberIds.filter(id => currentMembers.includes(id));
             if (duplicateMembers.length > 0) {
-                return responseHandler.error(res, `These members already exist in project: ${duplicateMembers.join(', ')}`);
+                    return responseHandler.error(res, `These members already exist in lead: ${duplicateMembers.join(', ')}`);
             }
 
             // Combine existing members with new members
@@ -52,25 +52,25 @@ export default {
             // const existingProjectMembers = await Project.findOne({ where: { project_members: { project_members: updatedMembers, id: { [Op.not]: project.id } } } });
 
 
-            const existingProjectMembers = await Project.findOne({
+            const existingLeadMembers = await Lead.findOne({
                 where: {
                     [Op.and]: [
-                        sequelize.literal(`JSON_SEARCH(project_members, 'one', '${JSON.stringify(updatedMembers)}') IS NOT NULL`),
-                        { id: { [Op.not]: project.id } }
+                        sequelize.literal(`JSON_SEARCH(lead_members, 'one', '${JSON.stringify(updatedMembers)}') IS NOT NULL`),
+                        { id: { [Op.not]: lead.id } }
                     ]
                 }
             });
-            if (existingProjectMembers) {
-                return responseHandler.error(res, "Project members already exist");
+            if (existingLeadMembers) {
+                return responseHandler.error(res, "Lead members already exist");
             }
             // Update the project with the new members list
-            await project.update({
-                project_members: { project_members: updatedMembers },
+            await lead.update({
+                lead_members: { lead_members: updatedMembers },
                 updated_by: req.user?.username
             });
 
-            return responseHandler.success(res, "Project members added successfully", {
-                project_members: { project_members: updatedMembers }
+            return responseHandler.success(res, "Lead members added successfully", {
+                lead_members: { lead_members: updatedMembers }
             });
         } catch (error) {
 

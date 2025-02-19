@@ -45,6 +45,16 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
+    lead_members: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
+    files: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
     category: {
         type: DataTypes.STRING,
         allowNull: true,
