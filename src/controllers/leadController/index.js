@@ -5,8 +5,9 @@ import updateLead from "./updateLead.js";
 import deleteLead from "./deleteLead.js";
 import addLeadMembers from "./addleadmem.js";
 import addLeadFiles from "./addleadfile.js";
-import leadNote from "./leadNote.js";
+import deleteLeadMembers from "./deleteleadmem.js";
+// import leadNote from "../noteControllers/leadNote.js";
 
 
 
-export { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addLeadMembers, addLeadFiles, leadNote };
+export { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addLeadMembers, addLeadFiles, deleteLeadMembers };

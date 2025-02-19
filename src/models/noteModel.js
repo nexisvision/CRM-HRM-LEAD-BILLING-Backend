@@ -19,15 +19,18 @@ const Note = sequelize.define("note", {
     },
     notetype: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     employees: {
         type: DataTypes.JSON,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,

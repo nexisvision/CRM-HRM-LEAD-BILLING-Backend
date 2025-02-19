@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNotes, getAllNotes, updateNotes, deleteNotes } from "../controllers/noteControllers/index.js";
+import { createNotes, getAllNotes, updateNotes, deleteNotes, leadNote } from "../controllers/noteControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 
 const router = Router();
@@ -10,5 +10,7 @@ router.post("/:id", createNotes.validator, createNotes.handler);
 router.get("/:id", getAllNotes.validator, getAllNotes.handler);
 router.put("/:id", updateNotes.validator, updateNotes.handler);
 router.delete("/:id", deleteNotes.validator, deleteNotes.handler);
+
+router.post("/note/:id", leadNote.validator, leadNote.handler);
 
 export default router;

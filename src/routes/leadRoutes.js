@@ -1,5 +1,5 @@
 import express from "express";
-import { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addLeadMembers, addLeadFiles, leadNote } from "../controllers/leadController/index.js";
+import { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addLeadMembers, addLeadFiles, deleteLeadMembers } from "../controllers/leadController/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import upload from "../middlewares/upload.js";
 
@@ -15,9 +15,10 @@ router.put('/:id', updateLead.validator, updateLead.handler);
 router.delete('/:id', deleteLead.validator, deleteLead.handler);
 
 router.post('/membersadd/:id', addLeadMembers.validator, addLeadMembers.handler);
+router.delete('/membersdel/:id', deleteLeadMembers.validator, deleteLeadMembers.handler);
 
 router.post('/files/:id', upload.fields([{ name: 'lead_files', maxCount: 1 }]), addLeadFiles.validator, addLeadFiles.handler);
 
-router.post('/note/:id', leadNote.validator, leadNote.handler);
+// router.post('/note/:id', leadNote.validator, leadNote.handler);
 
 export default router;
