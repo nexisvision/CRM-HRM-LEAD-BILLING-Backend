@@ -12,5 +12,6 @@ router.put('/:id', updateQuotation.validator, updateQuotation.handler);
 router.delete('/:id', deleteQuotation.validator, deleteQuotation.handler);
 router.post('/lead/:id', leadQuotation.validator, leadQuotation.handler);
 router.put('/lead/:id', updateLeadQuotation.validator, updateLeadQuotation.handler);
+// router.get('/lead/:id', getLeadQuotation.validator, getLeadQuotation.handler);
 
 export default router;

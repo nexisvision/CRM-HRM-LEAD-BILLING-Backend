@@ -12,13 +12,15 @@ export default {
         body: Joi.object({
             plan_id: Joi.string().required(),
             client_id: Joi.string().required(),
+            start_date: Joi.date().required(),
+            end_date: Joi.date().required(),
             // amount: Joi.number().required(),
             payment_status: Joi.string().valid('paid', 'unpaid').default('unpaid')
         })
     }),
     handler: async (req, res) => {
         try {
-            const { plan_id, payment_status , client_id} = req.body;
+            const { plan_id, payment_status , client_id, start_date, end_date} = req.body;
             // const client_id = req.user.id;
 
             // Get the plan details
@@ -40,17 +42,17 @@ export default {
             });
 
             // Calculate dates
-            const start_date = new Date();
-            const end_date = new Date(start_date);
-            end_date.setMonth(end_date.getMonth() + plan.duration);
+            // const start_date = new Date();
+            // const end_date = new Date(start_date);
+            // end_date.setMonth(end_date.getMonth() + plan.duration);
 
             let subscription;
             if (existingSubscription) {
                 // Update existing subscription
                 subscription = await existingSubscription.update({
                     plan_id,
-                    start_date,
-                    end_date,
+                    start_date: start_date,
+                    end_date: end_date,
                     status: 'active',
                     current_storage_used: 0,
                     current_users_count: 0,
@@ -64,8 +66,8 @@ export default {
                 subscription = await ClientSubscription.create({
                     client_id,
                     plan_id,
-                    start_date,
-                    end_date,
+                    start_date: start_date,
+                    end_date: end_date,
                     status: 'active',
                     current_users_count: 0,
                     current_clients_count: 0,

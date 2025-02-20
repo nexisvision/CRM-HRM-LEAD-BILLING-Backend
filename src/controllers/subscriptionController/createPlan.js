@@ -11,7 +11,7 @@ export default {
             name: Joi.string().optional().allow("",null),
             currency: Joi.string().optional().allow("",null),
             price: Joi.string().optional().allow("",null),
-            duration: Joi.string().valid('Lifetime', 'Per Month', 'Per Year').optional(),
+            duration: Joi.string().optional().allow("",null),
             trial_period: Joi.string().optional().allow("",null),
             max_users: Joi.string().optional().allow("",null),
             max_clients: Joi.string().optional().allow("",null),

@@ -11,6 +11,6 @@ router.get("/:id", getAllNotes.validator, getAllNotes.handler);
 router.put("/:id", updateNotes.validator, updateNotes.handler);
 router.delete("/:id", deleteNotes.validator, deleteNotes.handler);
 
-router.post("/note/:id", leadNote.validator, leadNote.handler);
+// router.post("/leadnote/:id", leadNote.validator, leadNote.handler);
 
 export default router;

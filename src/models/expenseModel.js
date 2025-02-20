@@ -45,7 +45,8 @@ const Expense = sequelize.define('expense', {
     },
     bill: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,

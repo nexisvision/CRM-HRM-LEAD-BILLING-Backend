@@ -2,6 +2,8 @@ import Joi from "joi";
 import Expense from "../../models/expenseModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import uploadToS3 from "../../utils/uploadToS3.js";
+
 
 export default {
     validator: validator({
@@ -15,15 +17,24 @@ export default {
             purchase_date: Joi.date().required(),
             employee: Joi.string().required(),
             project: Joi.string().required(),
-            bill: Joi.string().optional().allow('', null),
+            // bill: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { item, price, currency, purchase_date, employee, project, bill, description } = req.body;
-            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, employee, project, bill, description, created_by: req.user?.username });
+            const bill = req.files?.bill?.[0];
+
+            // console.log(bill);
+            
+
+
+            const { item, price, currency, purchase_date, employee, project, description } = req.body;
+
+            const receiptUrl = await uploadToS3(bill, req.user?.roleName, "expenses", req.user?.username);
+
+            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, employee, project, bill: receiptUrl, description, created_by: req.user?.username });
             return responseHandler.success(res, "Expense created successfully", expense);
         } catch (error) {
             return responseHandler.error(res, error?.message);

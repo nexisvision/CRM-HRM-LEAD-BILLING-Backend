@@ -23,7 +23,7 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         allowNull: false
     },
     duration: {
-        type: DataTypes.ENUM('Lifetime', 'Per Month', 'Per Year'),
+        type: DataTypes.STRING,
         allowNull: false
     },
     trial_period: {
