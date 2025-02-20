@@ -11,6 +11,8 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
+            department: Joi.string().optional(),
+            employee: Joi.any().optional(),
             title: Joi.string().optional(),
             date: Joi.date().optional(),
             startTime: Joi.string().optional(),
@@ -22,17 +24,17 @@ export default {
     }),
     handler: async (req, res) => {
         const { id } = req.params;
-        const { title, date, startTime, endTime, description, meetingLink, status } = req.body;
+        const { title, date, startTime, endTime, description, meetingLink, status, department, employee } = req.body;
         try {
             const meeting = await Meeting.findByPk(id);
             if (!meeting) {
                 return responseHandler.notFound(res, "Meeting not found");
             }
-            const existingMeeting = await Meeting.findOne({ where: { title, date, startTime, endTime, description, meetingLink, status, id: { [Op.not]: id } } });
+            const existingMeeting = await Meeting.findOne({ where: { title, date, startTime, endTime, description, meetingLink, status, department, employee, id: { [Op.not]: id } } });
             if (existingMeeting) {
                 return responseHandler.error(res, "Meeting already exists");
             }
-            await meeting.update({ title, date, startTime, endTime, description, meetingLink, status });
+            await meeting.update({ title, date, startTime, endTime, description, meetingLink, status, department, employee });
             return responseHandler.success(res, "Meeting updated successfully", meeting);
         } catch (error) {
             return responseHandler.error(res, error?.message);

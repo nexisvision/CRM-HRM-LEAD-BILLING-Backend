@@ -18,6 +18,14 @@ const Meeting = sequelize.define('Meeting', {
         type: DataTypes.TEXT,
         allowNull: true
     },
+    department: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    employee: {
+        type: DataTypes.JSON,
+        allowNull: true,
+    },
     date: {
         type: DataTypes.DATE,
         allowNull: false
