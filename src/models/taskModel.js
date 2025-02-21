@@ -30,6 +30,11 @@ const Task = sequelize.define('Task', {
         allowNull: true,
         defaultValue: null
     },
+    task_file: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     startDate: {
         type: DataTypes.DATE,
         allowNull: false

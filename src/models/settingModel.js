@@ -8,7 +8,19 @@ const Setting = sequelize.define("Setting", {
         unique: true,
        defaultValue: () => generateId()
     },
+    companyName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     companylogo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    favicon: {
         type: DataTypes.STRING,
         allowNull: false,
     },

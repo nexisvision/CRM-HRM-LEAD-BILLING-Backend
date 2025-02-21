@@ -21,11 +21,11 @@ export default {
             const { login, password } = req.body;
             const entities = await Promise.all([
                 SuperAdmin.findOne({
-                    where: { [Op.or]: [{ email: login }, { username: login }] },
+                    where: { [Op.or]: [{ email: login }, { username: login }, { phone: login }] },
                     attributes: { exclude: ['conversations'] }
                 }),
                 User.findOne({
-                    where: { [Op.or]: [{ email: login }, { username: login }] },
+                    where: { [Op.or]: [{ email: login }, { username: login }, { phone: login }] },
                     attributes: { exclude: ['conversations'] }
                 }),
             ]);
@@ -39,6 +39,7 @@ export default {
             const token = jwt.sign({
                 username: foundEntity.username,
                 email: foundEntity.email,
+                phone: foundEntity.phone,
                 id: foundEntity.id,
                 role: foundEntity.role_id,
                 roleName: role.role_name,

@@ -8,22 +8,33 @@ export default {
     validator: validator({
         body: Joi.object({
             termsandconditions: Joi.string().required(),
+            companyName: Joi.string().required(),
+            title: Joi.string().required(),
         })
     }),
     handler: async (req, res) => {
         try {
-            const { termsandconditions } = req.body;
+            const { termsandconditions, companyName, title } = req.body;
             const logo = req.files?.companylogo?.[0];
+            const favicon = req.files?.favicon?.[0];
 
             if (!logo) {
                 return responseHandler.error(res, "Company logo is required");
             }
+            if (!favicon) {
+                return responseHandler.error(res, "Favicon is required");
+            }
+
 
             // Upload logo to S3
             const logoUrl = await uploadToS3(logo, "company-logos", `logo-${req.user?.id}`, req.user?.username);
+            const faviconUrl = await uploadToS3(favicon, "company-logos", `favicon-${req.user?.id}`, req.user?.username);
 
             const setting = await Setting.create({
                 companylogo: logoUrl,
+                favicon: faviconUrl,
+                companyName,
+                title,
                 termsandconditions,
                 client_id: req.user?.id,
                 created_by: req.user?.username
@@ -31,6 +42,7 @@ export default {
 
             return responseHandler.success(res, "Setting created successfully", setting);
         } catch (error) {
+            console.log(error);
             return responseHandler.error(res, error?.message);
         }
     }

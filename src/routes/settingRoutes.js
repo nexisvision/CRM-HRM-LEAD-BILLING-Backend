@@ -8,7 +8,7 @@ const router = Router();
 
 router.use(authenticateUser, checkRole);
 
-router.post("/", upload.fields([{ name: 'companylogo', maxCount: 1 }]), createSetting.validator, createSetting.handler);
+router.post("/", upload.fields([{ name: 'companylogo', maxCount: 1 }, { name: 'favicon', maxCount: 1 }]), createSetting.validator, createSetting.handler);
 router.get("/", getAllSetting.validator, getAllSetting.handler);
 router.delete("/:id", deleteSetting.validator, deleteSetting.handler);
 
