@@ -88,6 +88,7 @@ import { s3 } from '../config/config.js';
 import esignatureRoutes from "./esignatureRoutes.js";
 import settingRoutes from "./settingRoutes.js";
 import accountRoutes from "./accountRoutes.js";
+import vendorRoutes from "./vendorRoutes.js";
 const router = express.Router();
 
 
@@ -100,6 +101,7 @@ router.use('/countries', countriesRoutes);
 router.use('/esignatures', esignatureRoutes);
 
 router.use('/accounts', accountRoutes);
+router.use('/vendors', vendorRoutes);
 
 router.use('/settings', settingRoutes);
 
