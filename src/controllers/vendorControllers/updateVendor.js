@@ -22,27 +22,37 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { id } = req.params
-            const { name, contact, email, taxNumber, address, city, state, country, zipcode } = req.body
-            const existingVendor = await Vendor.findOne({ where: { id } });
+            const { id } = req.params;
+            const { name, contact, email, taxNumber, address, city, state, country, zipcode } = req.body;
+
+            const existingVendor = await Vendor.findByPk(id);
             if (!existingVendor) {
                 return responseHandler.error(res, "Vendor not found");
             }   
-            const vendor = await Vendor.update({
-                name,
-                contact,
-                email,
-                taxNumber,
-                address,
-                city,
-                state, 
-                country,
-                zipcode,
-                updated_by: req.user?.username
-            })
-            return responseHandler.success(res, "Vendor created successfully", vendor)
+
+            await Vendor.update(
+                {
+                    name,
+                    contact,
+                    email,
+                    taxNumber,
+                    address,
+                    city,
+                    state, 
+                    country,
+                    zipcode,
+                    updated_by: req.user?.username
+                },
+                {
+                    where: { id }
+                }
+            );
+            
+            const updatedVendor = await Vendor.findByPk(id);
+            
+            return responseHandler.success(res, "Vendor updated successfully", updatedVendor);
         } catch (error) {
-            return responseHandler.error(res, error.message)
+            return responseHandler.error(res, error.message);
         }
     }
 }
