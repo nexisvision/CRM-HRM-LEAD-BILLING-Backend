@@ -7,11 +7,14 @@ export default {
     validator: validator({
         body: Joi.object({
             branchName: Joi.string().required(),
+            branchAddress: Joi.string().required(),
+            branchManager: Joi.string().required(),
+            
         })
     }),
     handler: async (req, res) => {
         try {
-            const { branchName } = req.body;
+            const { branchName, branchAddress, branchManager } = req.body;
 
             const existingBranch = await Branch.findOne({ where: { branchName } });
             if (existingBranch) {
@@ -20,6 +23,8 @@ export default {
 
             const branch = await Branch.create({
                 branchName,
+                branchAddress,
+                branchManager,
                 created_by: req.user?.username
             });
 

@@ -1,5 +1,6 @@
 import Joi from "joi";
 import TransferAccount from "../../models/transferacconutModel.js";
+import Account from "../../models/accountModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -22,12 +23,12 @@ export default {
             const { id } = req.params;
             const { fromAccount, toAccount, amount, date, description } = req.body;
             
-            const sourceAccount = await TransferAccount.findByPk(id);
+            const sourceAccount = await Account.findOne({ where: { id: fromAccount } });
             if (!sourceAccount) {
                 return responseHandler.error(res, "Source account not found");
             }
 
-            const destinationAccount = await TransferAccount.findByPk(id);
+            const destinationAccount = await Account.findOne({ where: { id: toAccount } });
             if (!destinationAccount) {
                 return responseHandler.error(res, "Destination account not found");
             }
@@ -53,6 +54,8 @@ export default {
                 date,
                 description,
                 updated_by: req.user?.username
+            }, {
+                where: { id }
             });
 
             return responseHandler.success(res, "Transfer updated successfully", transfer);

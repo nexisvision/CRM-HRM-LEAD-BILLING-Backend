@@ -11,12 +11,14 @@ export default {
         }),
         body: Joi.object({
             branchName: Joi.string().required(),
+            branchAddress: Joi.string().required(),
+            branchManager: Joi.string().required()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { branchName } = req.body;
+            const { branchName, branchAddress, branchManager } = req.body;
             const branch = await Branch.findByPk(id);
             if (!branch) {
                 return responseHandler.error(res, "Branch not found");
@@ -25,7 +27,7 @@ export default {
             if (existingBranch) {
                 return responseHandler.error(res, "Branch name already exists");
             }
-            await branch.update({ branchName, updated_by: req.user?.username });
+            await branch.update({ branchName, branchAddress, branchManager, updated_by: req.user?.username });
             return responseHandler.success(res, "Branch updated successfully", branch);
         } catch (error) {
             return responseHandler.error(res, error?.message);

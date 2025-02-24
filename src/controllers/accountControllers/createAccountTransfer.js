@@ -1,5 +1,6 @@
 import Joi from "joi";
 import TransferAccount from "../../models/transferacconutModel.js";
+import Account from "../../models/accountModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
 
@@ -17,27 +18,18 @@ export default {
         try {
             const { fromAccount, toAccount, amount, date, description } = req.body;
             
-            const sourceAccount = await TransferAccount.findOne({ where: { fromAccount } });
+            const sourceAccount = await Account.findOne({ where: { id: fromAccount } });
             if (!sourceAccount) {
-                return res.status(400).json({
-                    success: false,
-                    message: "Source account not found"
-                });
+                return responseHandler.error(res, "Source account not found");
             }
 
-            const destinationAccount = await TransferAccount.findOne({ where: { toAccount } });
+            const destinationAccount = await Account.findOne({ where: { id: toAccount } });
             if (!destinationAccount) {
-                return res.status(400).json({
-                    success: false, 
-                    message: "Destination account not found"
-                });
+                return responseHandler.error(res, "Destination account not found");
             }
 
             if (sourceAccount.openingBalance < amount) {
-                return res.status(400).json({
-                    success: false,
-                    message: "Insufficient balance in source account"
-                });
+                return responseHandler.error(res, "Insufficient balance in source account");
             }
 
             // Update source account balance

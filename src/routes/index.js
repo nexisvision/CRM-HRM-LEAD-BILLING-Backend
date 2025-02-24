@@ -89,6 +89,7 @@ import esignatureRoutes from "./esignatureRoutes.js";
 import settingRoutes from "./settingRoutes.js";
 import accountRoutes from "./accountRoutes.js";
 import vendorRoutes from "./vendorRoutes.js";
+import billDebitRoutes from "./billdebitRoutes.js";
 const router = express.Router();
 
 
@@ -102,6 +103,8 @@ router.use('/esignatures', esignatureRoutes);
 
 router.use('/accounts', accountRoutes);
 router.use('/vendors', vendorRoutes);
+
+router.use('/bill-debits', billDebitRoutes);
 
 router.use('/settings', settingRoutes);
 

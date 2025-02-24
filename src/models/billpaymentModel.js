@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-const Branch = sequelize.define('branch', {
+const BillPayment = sequelize.define('billpayment', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -10,17 +10,31 @@ const Branch = sequelize.define('branch', {
         unique: true,
         defaultValue: () => generateId(),
     },
-    branchName: {
+    bill: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    branchAddress: {
+    date: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    amount: {
+        type: DataTypes.NUMBER,
+        allowNull: false
+    },
+    account: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    branchManager: {
+    reference: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,
@@ -35,17 +49,17 @@ const Branch = sequelize.define('branch', {
     }
 });
 
-Branch.beforeCreate(async (branch) => {
+BillPayment.beforeCreate(async (billPayment) => {
     let isUnique = false;
     let newId;
     while (!isUnique) {
         newId = generateId();
-        const existingBranch = await Branch.findOne({ where: { id: newId } });
-        if (!existingBranch) {
+        const existingBillPayment = await BillPayment.findOne({ where: { id: newId } });
+        if (!existingBillPayment) {
             isUnique = true;
         }
     }
-    branch.id = newId;
+    billPayment.id = newId;
 })
 
-export default Branch;
+export default BillPayment;
