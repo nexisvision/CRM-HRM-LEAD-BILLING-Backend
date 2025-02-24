@@ -10,7 +10,6 @@ export default {
             id: Joi.string().required(),
         }),
         body: Joi.object({
-            // id: Joi.string().required(),
             fromAccount: Joi.string().required(),
             toAccount: Joi.string().required(),
             amount: Joi.number().required(),
@@ -21,7 +20,15 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
+
+            // console.log(id);
             const { fromAccount, toAccount, amount, date, description } = req.body;
+
+            // First find the transfer account
+            const existingTransfer = await TransferAccount.findByPk(id);
+            if (!existingTransfer) {
+                return responseHandler.error(res, "Transfer account not found");
+            }
             
             const sourceAccount = await Account.findOne({ where: { id: fromAccount } });
             if (!sourceAccount) {
@@ -47,6 +54,7 @@ export default {
                 openingBalance: destinationAccount.openingBalance + amount
             });
 
+            // Update the transfer account with where clause
             const transfer = await TransferAccount.update({
                 fromAccount,
                 toAccount,

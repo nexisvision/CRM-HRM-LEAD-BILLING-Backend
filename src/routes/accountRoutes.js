@@ -4,6 +4,10 @@ import { getAccounts, getAccountById, createAccount, updateAccount, deleteAccoun
 // import { createAccountTransfer } from "../controllers/accountControllers/index.js";
 
 const router = express.Router();
+router.get('/transfer', getAccountTransfer.validator, getAccountTransfer.handler);
+router.post('/transfer', createAccountTransfer.validator, createAccountTransfer.handler);
+router.put('/transfer/:id', updateAccountTransfer.validator, updateAccountTransfer.handler);
+router.delete('/transfer/:id', deleteAccountTansfer.validator, deleteAccountTansfer.handler);
 
 router.use(authenticateUser, checkRole);
 
@@ -14,9 +18,6 @@ router.put('/:id', updateAccount.validator, updateAccount.handler);
 router.delete('/:id', deleteAccount.validator, deleteAccount.handler);
 
 
-router.post('/transfer', createAccountTransfer.validator, createAccountTransfer.handler);
-router.get('/transfer', getAccountTransfer.validator, getAccountTransfer.handler);
-router.put('/transfer/:id', updateAccountTransfer.validator, updateAccountTransfer.handler);
-router.delete('/transfer/:id', deleteAccountTansfer.validator, deleteAccountTansfer.handler);
+
 
 export default router;

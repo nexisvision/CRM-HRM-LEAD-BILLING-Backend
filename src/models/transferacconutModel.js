@@ -33,6 +33,10 @@ const TransferAccount = sequelize.define('TransferAccount', {
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    updated_by: {
+        type: DataTypes.STRING,
+        allowNull: true,
     }
 }, );
 
