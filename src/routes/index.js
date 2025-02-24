@@ -90,6 +90,7 @@ import settingRoutes from "./settingRoutes.js";
 import accountRoutes from "./accountRoutes.js";
 import vendorRoutes from "./vendorRoutes.js";
 import billDebitRoutes from "./billdebitRoutes.js";
+import billPaymentRoutes from "./billpayment.js";
 const router = express.Router();
 
 
@@ -105,7 +106,7 @@ router.use('/accounts', accountRoutes);
 router.use('/vendors', vendorRoutes);
 
 router.use('/bill-debits', billDebitRoutes);
-
+router.use('/bill-payments', billPaymentRoutes);
 router.use('/settings', settingRoutes);
 
 router.use('/taxes', taxRoutes);

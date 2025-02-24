@@ -19,20 +19,26 @@ export default {
             const { id } = req.user;
             const { bill, date, amount, description } = req.body;
 
-            // Find the related sales invoice
-            const billDebitnotee = await BillDebitnote.findByPk(bill);
-            if (!billDebitnotee) {
-                return responseHandler.error(res, "Bill Debitnote not found");
+            // Find the bill in bill model
+            const billData = await Bill.findOne({ 
+                where: { 
+                    id: bill,
+                    // related_id: id 
+                } 
+            });
+            
+            if (!billData) {
+                return responseHandler.error(res, "Bill not found");
             }
 
-            // Check if credit amount is valid
-            if (amount > billDebitnotee.total) {
-                return responseHandler.error(res, "Credit amount cannot be greater than invoice total");
+            // Check if debit amount is valid
+            if (amount > billData.total) {
+                return responseHandler.error(res, "Debit amount cannot be greater than bill total");
             }
 
-            // Create credit note
-            const billDebitnote = await BillDebitnotee.create({ 
-                related_id: id, 
+            // Create debit note
+            const billDebitnote = await BillDebitnote.create({ 
+                // related_id: id, 
                 bill, 
                 date, 
                 // currency, 
@@ -41,9 +47,9 @@ export default {
                 created_by: req.user?.username 
             });
 
-            // Update invoice total
-            const updatedTotal = billDebitnotee.total - amount;
-                await billDebitnotee.update({ total: updatedTotal });
+            // Update bill total
+            const updatedTotal = billData.total - amount;
+            await billData.update({ total: updatedTotal });
 
             return responseHandler.success(res, "Bill Debit Note created successfully", billDebitnote);
         } catch (error) {

@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import generateId from "../middlewares/generatorId.js";
 
-const BillPayment = sequelize.define('billpayment', {
+const BillPayment = sequelize.define('bill_payment', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -14,28 +14,30 @@ const BillPayment = sequelize.define('billpayment', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    date: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    amount: {
-        type: DataTypes.NUMBER,
-        allowNull: false
-    },
     account: {
         type: DataTypes.STRING,
         allowNull: false
     },
+    amount: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+    },
+    date: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
     reference: {
         type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
+        allowNull: false
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
+        allowNull: false
     },
+    // payment_method: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    // },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

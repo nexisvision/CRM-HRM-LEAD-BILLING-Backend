@@ -58,7 +58,7 @@ export default {
             const transfer = await TransferAccount.update({
                 fromAccount,
                 toAccount,
-                amount,
+                amount, 
                 date,
                 description,
                 updated_by: req.user?.username

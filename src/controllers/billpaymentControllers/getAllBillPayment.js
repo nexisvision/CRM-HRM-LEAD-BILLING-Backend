@@ -1,6 +1,6 @@
 import Joi from "joi";
 import validator from "../../utils/validator.js";
-import BillDebitnote from "../../models/billdebitnoteModel.js";
+import BillPayment from "../../models/billpaymentModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 
 
@@ -14,8 +14,8 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.user;
-            const billDebitnote = await BillDebitnote.findAll();
-            return responseHandler.success(res, "billDebitnote fetched successfully", billDebitnote);
+            const billPayment = await BillPayment.findAll();
+            return responseHandler.success(res, "billPayment fetched successfully", billPayment);
 
         } catch (error) {
             return responseHandler.error(res, error?.message);
