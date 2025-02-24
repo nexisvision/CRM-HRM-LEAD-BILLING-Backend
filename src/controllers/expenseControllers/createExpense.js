@@ -15,7 +15,7 @@ export default {
             price: Joi.number().required(),
             currency: Joi.string().required(),
             purchase_date: Joi.date().required(),
-            employee: Joi.string().required(),
+            // employee: Joi.string().required(),
             project: Joi.string().required(),
             // bill: Joi.string().optional().allow('', null),
             description: Joi.string().optional().allow('', null)
@@ -30,11 +30,11 @@ export default {
             
 
 
-            const { item, price, currency, purchase_date, employee, project, description } = req.body;
+            const { item, price, currency, purchase_date, project, description } = req.body;
 
             const receiptUrl = await uploadToS3(bill, req.user?.roleName, "expenses", req.user?.username);
 
-            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, employee, project, bill: receiptUrl, description, created_by: req.user?.username });
+            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, project, bill: receiptUrl, description, created_by: req.user?.username });
             return responseHandler.success(res, "Expense created successfully", expense);
         } catch (error) {
             return responseHandler.error(res, error?.message);

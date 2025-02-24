@@ -11,10 +11,10 @@ export default {
         }),
         body: Joi.object({
             lead_title: Joi.string().required(),
-            deal_title: Joi.string().required(),
+            // deal_title: Joi.string().required(),
             valid_till: Joi.date().required(),
             currency: Joi.string().required(),
-            calculatedTax: Joi.number().required(),
+            // calculatedTax: Joi.number().required(),
             description: Joi.string().required(),
             items: Joi.object().required(),
             discount: Joi.number().optional(),
@@ -25,16 +25,16 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } = req.body;
+            const { lead_title, valid_till, currency, description, items, discount, tax, total } = req.body;
             const proposal = await Proposal.findByPk(id);
             if (!proposal) {
                 return responseHandler.notFound(res, "Proposal not found");
             }
-            const existingProposal = await Proposal.findOne({ where: { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, id: { [Op.not]: id } } });
+            const existingProposal = await Proposal.findOne({ where: { lead_title, valid_till, currency, description, items, discount, tax, total, id: { [Op.not]: id } } });
             if (existingProposal) {
                 return responseHandler.error(res, "Proposal already exists");
             }
-            await proposal.update({ lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total, updated_by: req.user?.username });
+            await proposal.update({ lead_title,  valid_till, currency, description, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "Proposal updated successfully", proposal);
         } catch (error) {
             return responseHandler.error(res, error?.message);

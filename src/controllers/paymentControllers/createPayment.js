@@ -11,7 +11,7 @@ export default {
         }),
         body: Joi.object({
             project_name: Joi.string().required(),
-            invoice: Joi.string().required(),
+            invoice: Joi.string().required(),   
             paidOn: Joi.date().required(),
             amount: Joi.string().required(),
             currency: Joi.string().required(),

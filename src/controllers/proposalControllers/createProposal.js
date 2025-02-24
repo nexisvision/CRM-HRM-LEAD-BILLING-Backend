@@ -7,10 +7,10 @@ export default {
     validator: validator({
         body: Joi.object({
             lead_title: Joi.string().required(),
-            deal_title: Joi.string().required(),
+            // deal_title: Joi.string().required(),
             valid_till: Joi.date().required(),
             currency: Joi.string().required(),
-            calculatedTax: Joi.number().required(),
+            // calculatedTax: Joi.number().required(),
             description: Joi.string().required(),
             items: Joi.object().required(),
             discount: Joi.number().optional(),
@@ -20,13 +20,13 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } = req.body;
-            const existingProposal = await Proposal.findOne({ where: { lead_title, deal_title, valid_till, currency, calculatedTax, description, items, discount, tax, total } });
+            const { lead_title, valid_till, currency, description, items, discount, tax, total } = req.body;
+            const existingProposal = await Proposal.findOne({ where: { lead_title, valid_till, currency, description, items, discount, tax, total } });
             if (existingProposal) {
                 return responseHandler.error(res, "Proposal already exists");
             }
             const proposal = await Proposal.create({
-                lead_title, deal_title, valid_till, currency, calculatedTax, description,
+                lead_title, valid_till, currency, description,
                 items, discount, tax, total, created_by: req.user?.username
             });
             return responseHandler.success(res, "Proposal created successfully", proposal);

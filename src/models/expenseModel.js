@@ -30,10 +30,10 @@ const Expense = sequelize.define('expense', {
         type: DataTypes.DATE,
         allowNull: false
     },
-    employee: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    // employee: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    // },
     project: {
         type: DataTypes.STRING,
         allowNull: false

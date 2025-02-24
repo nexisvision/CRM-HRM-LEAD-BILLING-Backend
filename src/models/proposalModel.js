@@ -13,10 +13,10 @@ const Proposal = sequelize.define("proposal", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    deal_title: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    // deal_title: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    // },
     valid_till: {
         type: DataTypes.DATE,
         allowNull: false
@@ -25,10 +25,10 @@ const Proposal = sequelize.define("proposal", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    calculatedTax: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-    },
+    // calculatedTax: {
+    //     type: DataTypes.FLOAT,
+    //     allowNull: false
+    // },
     description: {
         type: DataTypes.TEXT,
         allowNull: false
