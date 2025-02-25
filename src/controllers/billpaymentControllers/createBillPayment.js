@@ -53,10 +53,24 @@ export default {
                 created_by: req.user?.username
             });
 
-            // Update the bill total
+            // Update the bill total and determine bill status
             const updatedTotal = billData.total - amount;
-            await billData.update({ total: updatedTotal });
+            let bill_status;
 
+            if (updatedTotal === billData.total) {
+                bill_status = 'draft';
+            } else if (updatedTotal > 0) {
+                bill_status = 'partially_paid';
+            } else if (updatedTotal === 0) {
+                bill_status = 'paid';
+            }
+
+            // Update bill with new total and status
+            await billData.update({ 
+                updated_total: updatedTotal,
+                bill_status: bill_status
+            });
+            
             // Update account opening balance
             const updatedBalance = accountData.opening_balance - amount;
             await accountData.update({ opening_balance: updatedBalance });

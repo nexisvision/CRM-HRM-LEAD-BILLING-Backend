@@ -54,12 +54,14 @@ const Project = sequelize.define("Project", {
         allowNull: false
     },
     estimatedmonths: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     estimatedhours: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     files: {
         type: DataTypes.JSON,

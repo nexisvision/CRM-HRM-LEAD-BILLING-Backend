@@ -32,6 +32,16 @@ const Bill = sequelize.define('Bill', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    updated_total: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: null
+    },
+    bill_status: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     discount: {
         type: DataTypes.INTEGER,
         allowNull: false,

@@ -23,7 +23,23 @@ export default {
         try {
             const { id } = req.params;
             const { vendor, billDate, discription, status, discount, tax, total, note } = req.body;
-            const newBill = await Bill.create({ related_id: id, vendor, billDate, discription, status, discount, tax, total, note, created_by: req.user?.username });
+
+            // Determine bill_status based on total and updated total amounts
+          
+
+            const newBill = await Bill.create({ 
+                related_id: id,
+                vendor,
+                billDate,
+                discription,
+                status,
+                discount,
+                tax, 
+                total,
+                note,
+                created_by: req.user?.username
+            });
+
             return responseHandler.success(res, "Bill created successfully", newBill);
         } catch (error) {
             return responseHandler.error(res, error?.message);
