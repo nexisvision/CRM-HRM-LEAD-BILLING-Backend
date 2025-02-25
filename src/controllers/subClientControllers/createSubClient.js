@@ -50,9 +50,29 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: 'sub-client' },
+                where: { role_name: 'sub-client', created_by: req.user?.username, client_id: req.user?.client_id },
                 defaults: { id: generateId() }
             });
+
+
+            const creatorRole = await Role.findByPk(req.user?.role);
+            // console.log("dfgfdgfd",creatorRole);
+            if (!creatorRole) {
+                return responseHandler.error(res, "Invalid creator role");
+            }
+
+
+            // console.log("dfgfdgfd",creatorRole);
+
+            let client_id;
+            if (creatorRole.role_name === 'client') {
+                client_id = req.user.id;
+            } else if (creatorRole.role_name === 'super-admin') {
+                client_id = req.user.id;
+            } else {
+                client_id = req.user.client_id;
+                // console.log("dfgfdgfd",client_id);
+            }
             // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
 

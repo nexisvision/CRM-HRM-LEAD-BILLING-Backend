@@ -1,6 +1,6 @@
 import express from 'express';
 import { authenticateUser, checkRole, checkUserRole } from '../middlewares/index.js';
-import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans, planrequest } from '../controllers/subscriptionController/index.js';
+import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans, planrequest, removePlanFromClient } from '../controllers/subscriptionController/index.js';
 
 const router = express.Router();
 
@@ -18,6 +18,10 @@ router.delete('/:id', deletePlan.validator, deletePlan.handler);
 
 // Assign plan to client
 router.post('/assign', assignPlanToClient.validator, assignPlanToClient.handler);
+
+
+// Remove plan from client
+router.delete('/remove/:id', removePlanFromClient.validator, removePlanFromClient.handler);
 
 // New route for getting all assigned plans
 

@@ -18,6 +18,8 @@ export default {
                     role_name: "client"
                 }
             });
+
+            // console.log("ClientRoleID", ClientRoleID);
             const clients = await User.findAll({ where: { role_id: ClientRoleID.id } });
             if (clients) {
                 return responseHandler.success(res, "Clients fetched successfully", clients);

@@ -5,6 +5,7 @@ import deletePlan from "./deletePlan.js";
 import assignPlanToClient from "./assignPlanToClient.js";
 import getAllAssignedPlans from './getAllAssignedPlans.js';
 import planrequest from './planrequest.js';
+import removePlanFromClient from './removeplanformclient.js';
 
 export {
     createPlan,
@@ -13,5 +14,6 @@ export {
     deletePlan,
     assignPlanToClient,
     getAllAssignedPlans,
-    planrequest
+    planrequest,
+    removePlanFromClient
 };

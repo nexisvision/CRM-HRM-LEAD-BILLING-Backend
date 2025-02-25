@@ -15,7 +15,8 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
     },
     plan_id: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue: null
     },
     start_date: {
         type: DataTypes.DATE,

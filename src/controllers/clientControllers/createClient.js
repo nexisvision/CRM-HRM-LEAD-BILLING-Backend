@@ -55,13 +55,13 @@ export default {
             });
 
             const creatorRole = await Role.findByPk(req.user?.role);
-            console.log("dfgfdgfd",creatorRole);
+            // console.log("dfgfdgfd",creatorRole);
             if (!creatorRole) {
                 return responseHandler.error(res, "Invalid creator role");
             }
 
 
-            console.log("dfgfdgfd",creatorRole);
+            // console.log("dfgfdgfd",creatorRole);
 
             let client_id;
             if (creatorRole.role_name === 'client') {
@@ -70,7 +70,7 @@ export default {
                 client_id = req.user.id;
             } else {
                 client_id = req.user.client_id;
-                console.log("dfgfdgfd",client_id);
+                // console.log("dfgfdgfd",client_id);
             }
 
             const otp = generateOTP(OTP_CONFIG.LENGTH);

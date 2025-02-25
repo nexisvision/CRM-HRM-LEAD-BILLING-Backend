@@ -17,8 +17,38 @@ export default {
             // First get all users
             const allUsers = await Users.findAll();
 
-            // Filter users created by logged in user
-            const createdUsers = allUsers.filter(user => user.created_by === req.user.username);
+            // Get logged in user's client_id
+            // Get logged in user's role
+            const userRole = await Role.findOne({
+                where: { id: req.user.role }
+
+            });
+
+            if (!userRole) {
+            // console.log("sdfsdfsdfsd",userRole);
+
+                return responseHandler.notFound(res, "User role not found");
+            }
+
+            let clientId;
+            if (userRole.role_name === 'client') {
+                // If user is client, use their ID directly
+                clientId = req.user.id;
+            } else {
+                // If not client, find the user's client_id
+                const loggedInUser = await Users.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!loggedInUser) {
+                    return responseHandler.notFound(res, "Logged in user not found");
+                }
+
+                clientId = loggedInUser.client_id;
+            }
+
+            // Filter users created by the determined client_id
+            const createdUsers = allUsers.filter(user => user.client_id === clientId);
 
             if (!createdUsers || createdUsers.length === 0) {
                 return responseHandler.notFound(res, "No users found");

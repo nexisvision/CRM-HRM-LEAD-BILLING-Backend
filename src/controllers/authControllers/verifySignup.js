@@ -88,13 +88,16 @@ export default {
                 isEmailVerified: true,
                 created_by: user.created_by
             });
-            //increment user/client count
-            const clientSubscription = await ClientSubscription.findByPk(subscription?.id);
-
-            if (role.role_name === 'sub-client') {
-                await clientSubscription.increment('current_clients_count');
-            } else if (!['super-admin', 'client'].includes(role.role_name)) {
-                await clientSubscription.increment('current_users_count');
+            //increment user/client count if subscription exists
+            if (subscription) {
+                const clientSubscription = await ClientSubscription.findByPk(subscription.id);
+                if (clientSubscription) {
+                    if (role.role_name === 'sub-client') {
+                        await clientSubscription.increment('current_clients_count');
+                    } else if (!['super-admin', 'client'].includes(role.role_name)) {
+                        await clientSubscription.increment('current_users_count');
+                    }
+                }
             }
 
 
