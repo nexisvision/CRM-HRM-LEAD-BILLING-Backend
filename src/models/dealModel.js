@@ -11,7 +11,8 @@ const Deal = sequelize.define("Deal", {
     },
     leadTitle: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     dealName: {
         type: DataTypes.STRING,
@@ -20,28 +21,34 @@ const Deal = sequelize.define("Deal", {
     },
     pipeline: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     stage: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     currency: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     price: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     closedDate: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
    
     project: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null
     },
     created_by: {
         type: DataTypes.STRING,

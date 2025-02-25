@@ -8,11 +8,11 @@ export default {
         body: Joi.object({
             leadTitle: Joi.string().required(),
             dealName: Joi.string().required(),
-            pipeline: Joi.string().required(),
-            stage: Joi.string().required(),
-            price: Joi.number().required(),
-            currency: Joi.string().required(),
-            closedDate: Joi.date().required(),
+            pipeline: Joi.string().optional(),
+            stage: Joi.string().optional(),
+            price: Joi.number().optional(),
+            currency: Joi.string().optional(),
+            closedDate: Joi.date().optional(),
             project: Joi.string().optional(),
         })
     }),
