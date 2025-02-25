@@ -8,12 +8,12 @@ export default {
         body: Joi.object({
             leadTitle: Joi.string().required(),
             dealName: Joi.string().required(),
-            pipeline: Joi.string().optional(),
-            stage: Joi.string().optional(),
-            price: Joi.number().optional(),
-            currency: Joi.string().optional(),
-            closedDate: Joi.date().optional(),
-            project: Joi.string().optional(),
+            pipeline: Joi.string().optional().allow("",null),
+            stage: Joi.string().optional().allow("",null),
+            price: Joi.number().optional().allow("",null),
+            currency: Joi.string().optional().allow("",null),
+            closedDate: Joi.date().optional().allow("",null),
+            project: Joi.string().optional().allow("",null),
         })
     }),
     handler: async (req, res) => {
