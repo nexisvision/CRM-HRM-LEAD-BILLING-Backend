@@ -50,7 +50,7 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: 'sub-client', created_by: req.user?.username, client_id: req.user?.client_id },
+                where: { role_name: 'sub-client', created_by: req.user?.username},
                 defaults: { id: generateId() }
             });
 
@@ -86,6 +86,7 @@ export default {
                 role_id: role.id,
                 password: hashedPassword,
                 verificationOTP: otp,
+                client_id: client_id,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
                 created_by: req.user?.username
             };
