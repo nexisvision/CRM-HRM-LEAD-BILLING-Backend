@@ -9,6 +9,9 @@ router.post('/transfer', createAccountTransfer.validator, createAccountTransfer.
 router.put('/transfer/:id', updateAccountTransfer.validator, updateAccountTransfer.handler);
 router.delete('/transfer/:id', deleteAccountTansfer.validator, deleteAccountTansfer.handler);
 
+router.get('/transfer', getAccountTransfer.validator, getAccountTransfer.handler);
+
+
 router.use(authenticateUser, checkRole);
 
 router.post('/', createAccount.validator, createAccount.handler);
@@ -16,7 +19,6 @@ router.get('/', getAccounts.validator, getAccounts.handler);
 router.get('/:id', getAccountById.validator, getAccountById.handler);
 router.put('/:id', updateAccount.validator, updateAccount.handler);
 router.delete('/:id', deleteAccount.validator, deleteAccount.handler);
-
 
 
 

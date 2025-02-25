@@ -15,7 +15,7 @@ router.put('/:id', updateLead.validator, updateLead.handler);
 router.delete('/:id', deleteLead.validator, deleteLead.handler);
 
 router.post('/membersadd/:id', addLeadMembers.validator, addLeadMembers.handler);
-router.delete('/membersdel/:id', deleteLeadMembers.validator, deleteLeadMembers.handler);
+router.post('/membersdel/:id', deleteLeadMembers.validator, deleteLeadMembers.handler);
 
 router.post('/files/:id', upload.fields([{ name: 'lead_files', maxCount: 1 }]), addLeadFiles.validator, addLeadFiles.handler);
 

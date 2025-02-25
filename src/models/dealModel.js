@@ -24,7 +24,7 @@ const Deal = sequelize.define("Deal", {
     },
     stage: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     currency: {
         type: DataTypes.STRING,

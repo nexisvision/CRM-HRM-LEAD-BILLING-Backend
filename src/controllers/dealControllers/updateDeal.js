@@ -7,35 +7,30 @@ import { Op } from "sequelize";
 export default {
     validator: validator({
         params: Joi.object({
-            id: Joi.string().required()
+            id: Joi.string().optional()
         }),
         body: Joi.object({
-            leadTitle: Joi.string().required(),
-            dealName: Joi.string().required(),
-            pipeline: Joi.string().required(),
-            stage: Joi.string().required(),
-            price: Joi.number().required(),
-            currency: Joi.string().required(),
-            closedDate: Joi.date().required(),
-            project: Joi.string().required(),
+            leadTitle: Joi.string().allow('', null),
+            dealName: Joi.string().allow('', null),
+            pipeline: Joi.string().allow('', null),
+            stage: Joi.string().allow('', null),
+            price: Joi.number().optional(),
+            currency: Joi.string().allow('', null),
+            closedDate: Joi.date().optional(),
+            project: Joi.string().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { leadTitle, dealName, pipeline, stage, price, currency, closedDate, project } = req.body;
+            const updateData = req.body;
             const deal = await Deal.findByPk(id);
             if (!deal) {
-                return responseHandler.error(res, "Deal not found");
+                return responseHandler.notFound(res, "Deal not found");
             }
-            const existingDeal = await Deal.findOne({ where: { dealName, id: { [Op.not]: id } } });
-            if (existingDeal) {
-                return responseHandler.error(res, "Deal already exists");
-            }
-            await deal.update({ leadTitle, dealName, pipeline, stage, price, currency, closedDate, project, updated_by: req.user?.username });
+            await deal.update({ ...updateData, updated_by: req.user?.username });
             return responseHandler.success(res, "Deal updated successfully", deal);
         } catch (error) {
-
             return responseHandler.error(res, error?.message);
         }
     }
