@@ -20,11 +20,11 @@ const Attendance = sequelize.define('Attendance', {
     },
     startTime: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: true
     },
     endTime: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: true
     },
     late: {
         type: DataTypes.STRING,

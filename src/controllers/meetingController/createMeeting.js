@@ -16,12 +16,13 @@ export default {
             startTime: Joi.string().required(),
             endTime: Joi.string().optional().allow("",null),
             meetingLink: Joi.string().optional().allow("",null),
+            client: Joi.string().optional().allow("",null),
             status: Joi.string().valid('scheduled', 'completed', 'cancelled').default('scheduled')
         })
     }),
     handler: async (req, res) => {
         try {
-            const { title, date, startTime, endTime, description, meetingLink, status, department, employee } = req.body;
+            const { title, date, startTime, endTime, description, meetingLink, status,client, department, employee } = req.body;
 
             const existingMeeting = await Meeting.findOne({ where: { title, date, startTime, endTime, description, meetingLink, status, department, employee } });
             if (existingMeeting) {
@@ -37,6 +38,7 @@ export default {
                 status,
                 department,
                 employee,
+                client,
                 created_by: req.user?.username
             });
 

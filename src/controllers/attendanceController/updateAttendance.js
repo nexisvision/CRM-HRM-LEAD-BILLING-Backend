@@ -24,14 +24,34 @@ export default {
             const { id } = req.params;
             const { employee, date, startTime, endTime, late, halfDay, comment } = req.body;
 
-            const attendance = await Attendance.findByPk(id);
+            // Find attendance by either attendance ID or employee ID
+            const attendance = await Attendance.findOne({
+                where: {
+                    [Op.or]: [
+                        { id },
+                        { employee }
+                    ],
+                    date
+                }
+            });
+
             if (!attendance) {
                 return responseHandler.notFound(res, "Attendance record not found");
             }
-            const existingAttendance = await Attendance.findOne({ where: { employee, date, id: { [Op.not]: id } } });
+
+            // Check if another attendance record exists for the same employee and date
+            const existingAttendance = await Attendance.findOne({
+                where: {
+                    employee,
+                    date,
+                    id: { [Op.not]: attendance.id }
+                }
+            });
+
             if (existingAttendance) {
-                return responseHandler.error(res, "Attendance already exists");
+                return responseHandler.error(res, "Attendance already exists for this employee on the given date");
             }
+
             await attendance.update({
                 employee,
                 date,
@@ -45,7 +65,6 @@ export default {
 
             return responseHandler.success(res, "Attendance updated successfully", attendance);
         } catch (error) {
-
             return responseHandler.error(res, error?.message);
         }
     }

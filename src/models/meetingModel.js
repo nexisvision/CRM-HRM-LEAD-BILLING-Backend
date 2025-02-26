@@ -42,6 +42,11 @@ const Meeting = sequelize.define('Meeting', {
         type: DataTypes.STRING,
         allowNull: true
     },
+    client:{
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     status: {
         type: DataTypes.ENUM('scheduled', 'completed', 'cancelled'),
         defaultValue: 'scheduled'

@@ -9,7 +9,7 @@ export default {
             employee: Joi.string().required(),
             date: Joi.date().required(),
             startTime: Joi.string().required(),
-            endTime: Joi.string().required(),
+            endTime: Joi.string().optional().allow("",null),
             late: Joi.string().optional().allow('', null),
             halfDay: Joi.boolean().optional().allow('', null),
         })

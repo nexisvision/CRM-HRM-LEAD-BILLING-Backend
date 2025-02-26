@@ -8,12 +8,13 @@ export default {
         body: Joi.object({
             title: Joi.string().required(),
             description: Joi.string().required(),
+            branch: Joi.string().optional().allow('',null),
         })
     }),
     handler: async (req, res) => {
-        const { title, description, } = req.body;
+        const { title, description,branch } = req.body;
         try {
-            const announcement = await Announcement.create({ title, description, created_by: req.user.username });
+            const announcement = await Announcement.create({ title, description,branch, created_by: req.user.username });
             return responseHandler.success(res, "Announcement created successfully", announcement);
         } catch (error) {
             return responseHandler.error(res, error?.message);
