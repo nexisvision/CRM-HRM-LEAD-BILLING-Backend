@@ -1,26 +1,34 @@
 import Role from "../models/roleModel.js";
 import responseHandler from "../utils/responseHandler.js";
+import User from "../models/userModel.js";
 
 const passClientId = async (req, res, next) => {
     try {
-        const creatorRole = await Role.findByPk(req.user?.role);
+        const role = await Role.findByPk(req.user?.role);
         
-        if (!creatorRole) {
-            return responseHandler.error(res, "Invalid creator role");
+        if (!role) {
+            return responseHandler.error(res, "Invalid role");
         }
 
-        let client_id;
-        if (creatorRole.role_name === 'client') {
-            client_id = req.user.id;
-        } else if (creatorRole.role_name === 'super-admin') {
-            client_id = req.user.id; 
+        let des = {};
+
+        if (role.role_name === 'client') {
+            des = {
+                client_id: req.user.id,
+                client_plan_id: req.user.client_plan_id
+            };
         } else {
-            client_id = req.user.client_id;
+            const user = await User.findByPk(req.user.id);
+            if (!user) {
+                return responseHandler.error(res, "User not found");
+            }
+            des = {
+                client_id: user.client_id,
+                client_plan_id: user.client_plan_id
+            };
         }
 
-        // Pass the client_id to the request object
-        req.clientId = client_id;
-        
+        req.des = des;
         next();
     } catch (error) {
         return responseHandler.error(res, error?.message);

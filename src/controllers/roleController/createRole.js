@@ -54,7 +54,7 @@ export default {
                 role_name,
                 permissions: permissions, // Save the entire permissions object
                 created_by: req.user?.username,
-                // client_id: client_id
+                client_id: req.des?.client_id
             });
             return responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {

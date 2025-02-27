@@ -29,7 +29,7 @@ export default {
                     id: account
                 }
             });
-            console.log("Account data", accountData);
+            // console.log("Account data", accountData);
 
             if (!accountData) {
                 console.log("Account not found", accountData);
@@ -79,11 +79,16 @@ export default {
             });
             
             // Update account opening balance
-            if (accountData.opening_balance < amount) {
+            if (accountData.openingBalance < amount) {
+                
                 return responseHandler.error(res, "Insufficient balance in account");
             }
-            const updatedBalance = accountData.opening_balance - amount;
-            await accountData.update({ opening_balance: updatedBalance });
+            else{
+                // console.log("Account data", amount, accountData.openingBalance);
+                const updatedBalance = accountData.openingBalance - amount;
+                // console.log("Updated balance", updatedBalance);
+                await accountData.update({ openingBalance: updatedBalance });
+            }
 
             return responseHandler.success(res, "Bill payment created successfully", billPayment);
         } catch (error) {
