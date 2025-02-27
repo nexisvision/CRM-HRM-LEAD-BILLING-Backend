@@ -15,7 +15,7 @@ export default {
             client: Joi.string().allow('', null).optional(),
             currency: Joi.string().allow('', null).optional(),
             budget: Joi.number().required(),
-            estimatedmonths: Joi.string().allow('', null).optional(),
+            estimatedmonths: Joi.number().allow('', null).optional(),
             estimatedhours: Joi.number().allow('', null).optional(),
             files: Joi.array().allow(null).optional(),
             status: Joi.string().allow('', null).optional(),

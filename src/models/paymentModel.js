@@ -19,7 +19,18 @@ const Payment = sequelize.define('Payment', {
     },
     invoice: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue: null,
+    },
+    expense: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
+    },
+    estimate: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
     },
     paidOn: {
         type: DataTypes.DATE,
