@@ -17,6 +17,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { bankHolderName, bankName, accountNumber, openingBalance, contactNumber, bankAddress } = req.body;
+            
             const existingAccount = await Account.findOne({ where: { accountNumber } });
             
             if (existingAccount) {
@@ -33,6 +34,7 @@ export default {
                 openingBalance,
                 contactNumber,
                 bankAddress,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username 
             });
 

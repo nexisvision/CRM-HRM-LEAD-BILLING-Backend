@@ -22,6 +22,19 @@ const Announcement = sequelize.define('Announcement', {
         allowNull: true,
         defaultValue: null
     },
+    time: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    date: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

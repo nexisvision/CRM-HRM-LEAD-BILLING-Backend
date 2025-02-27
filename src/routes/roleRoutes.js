@@ -6,7 +6,7 @@ import passCompanyDetail from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
 
-router.use(authenticateUser, checkRole,passCompanyDetail);
+router.use(authenticateUser, checkRole, passCompanyDetail);
 
 router.post('/', createRole.validator, createRole.handler);
 router.get('/', getAllRoles.validator, getAllRoles.handler);

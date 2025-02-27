@@ -25,6 +25,7 @@ export default {
                 branchName,
                 branchAddress,
                 branchManager,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

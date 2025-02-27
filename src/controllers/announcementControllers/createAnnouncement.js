@@ -7,6 +7,8 @@ export default {
     validator: validator({
         body: Joi.object({
             title: Joi.string().required(),
+            time: Joi.string().required(),
+            date: Joi.date().required(),
             description: Joi.string().required(),
             branch: Joi.object({
                 branches: Joi.array().items(Joi.string())
@@ -14,9 +16,13 @@ export default {
         })
     }),
     handler: async (req, res) => {
-        const { title, description,branch } = req.body;
+ 
+        const { title, description,branch, time, date } = req.body;
+ 
         try {
-            const announcement = await Announcement.create({ title, description,branch, created_by: req.user.username });
+            const announcement = await Announcement.create({ title, description,branch, time, date,
+                client_id: req.des?.client_id,
+                created_by: req.user.username });
             return responseHandler.success(res, "Announcement created successfully", announcement);
         } catch (error) {
             return responseHandler.error(res, error?.message);

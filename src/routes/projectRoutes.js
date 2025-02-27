@@ -2,10 +2,11 @@ import express from "express";
 import { createProject, getAllProjects, getProjectById, updateProject, deleteProject, deleteProjectMembers, addProjectMembers, getAllClientsProject, addProjectFiles } from "../controllers/projectController/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import upload from "../middlewares/upload.js";
+import passCompanyDetail from "../middlewares/passCompanyDetail.js";
 
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetail);
 
 router.post('/', createProject.validator, createProject.handler);
 router.get('/', getAllProjects.validator, getAllProjects.handler);

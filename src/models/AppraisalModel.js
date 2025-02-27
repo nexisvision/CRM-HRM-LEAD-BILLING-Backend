@@ -47,6 +47,11 @@ const Appraisal = sequelize.define("appraisal", {
             min: 0
         }
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

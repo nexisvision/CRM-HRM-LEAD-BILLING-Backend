@@ -1,6 +1,7 @@
 import Role from "../models/roleModel.js";
 import responseHandler from "../utils/responseHandler.js";
 import User from "../models/userModel.js";
+import SuperAdmin from "../models/superAdminModel.js";
 
 const passClientId = async (req, res, next) => {
     try {
@@ -17,8 +18,18 @@ const passClientId = async (req, res, next) => {
                 client_id: req.user.id,
                 client_plan_id: req.user.client_plan_id
             };
+        } else if (role.role_name === 'super-admin') {
+            const superAdmin = await SuperAdmin.findByPk(req.user.id);
+            if (!superAdmin) {
+                return responseHandler.error(res, "Super admin not found");
+            }
+            des = {
+                client_id: superAdmin.id,
+            //     // client_plan_id: superAdmin.client_plan_id
+             };
         } else {
             const user = await User.findByPk(req.user.id);
+            // console.log("dsfdfsd",user);
             if (!user) {
                 return responseHandler.error(res, "User not found");
             }

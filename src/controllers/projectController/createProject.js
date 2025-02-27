@@ -37,6 +37,7 @@ export default {
                 estimatedhours,
             } = req.body;
 
+            // const client_id = req.des?.client_id;
             const existingProject = await Project.findOne({
                 where: { project_name }
             });
@@ -57,6 +58,7 @@ export default {
                 budget,
                 estimatedmonths,
                 estimatedhours,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
 

@@ -2,6 +2,8 @@ import Joi from "joi";
 import Appraisal from "../../models/AppraisalModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import Role from "../../models/roleModel.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -12,10 +14,42 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const appraisals = await Appraisal.findAll();
-            if (!appraisals) {
-                return responseHandler.error(res, "Appraisals not found");
+            const userRole = req.user.role;
+            let appraisals;
+
+            // Find role in role model
+            const role = await Role.findOne({
+                where: { id: userRole }
+            });
+
+            if (!role) {
+                return responseHandler.error(res, "Role not found");
             }
+
+            if (role.role_name === 'client') {
+                // If user is client, find projects matching their client_id
+                appraisals = await Appraisal.findAll({
+                    where: {
+                        client_id: req.user.id
+                    }
+                });
+            } else {
+                // For other roles, get client_id from user model
+                const user = await User.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!user) {
+                    return responseHandler.error(res, "User not found");
+                }
+
+                appraisals = await Appraisal.findAll({
+                    where: {
+                        client_id: user.client_id
+                    }
+                });
+            }
+
             return responseHandler.success(res, "Appraisals fetched successfully", appraisals);
         } catch (error) {
             return responseHandler.error(res, error?.message);

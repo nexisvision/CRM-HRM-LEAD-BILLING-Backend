@@ -26,7 +26,9 @@ export default {
             if (existingAppraisal) {
                 return responseHandler.error(res, "Appraisal already exists for the given employee");
             }
-            const appraisal = await Appraisal.create({ employee, branch, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, created_by: req.user?.username });
+            const appraisal = await Appraisal.create({ employee, branch, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             responseHandler.success(res, "Appraisal created successfully", appraisal);
         } catch (error) {
             responseHandler.error(res, error?.message);

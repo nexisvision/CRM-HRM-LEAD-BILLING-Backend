@@ -1,7 +1,8 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import { getAccounts, getAccountById, createAccount, updateAccount, deleteAccount, createAccountTransfer, getAccountTransfer, updateAccountTransfer, deleteAccountTansfer } from "../controllers/accountControllers/index.js";
-// import { createAccountTransfer } from "../controllers/accountControllers/index.js";
+import passCompanyDetail from "../middlewares/passCompanyDetail.js";
+    // import { createAccountTransfer } from "../controllers/accountControllers/index.js";
 
 const router = express.Router();
 router.get('/transfer', getAccountTransfer.validator, getAccountTransfer.handler);
@@ -12,7 +13,7 @@ router.delete('/transfer/:id', deleteAccountTansfer.validator, deleteAccountTans
 router.get('/transfer', getAccountTransfer.validator, getAccountTransfer.handler);
 
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetail);
 
 router.post('/', createAccount.validator, createAccount.handler);
 router.get('/', getAccounts.validator, getAccounts.handler);

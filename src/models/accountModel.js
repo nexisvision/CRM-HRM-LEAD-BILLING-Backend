@@ -35,6 +35,10 @@ const Account = sequelize.define('Account', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,
