@@ -21,6 +21,21 @@ export default {
         try {
             const { bill, date, amount, account, reference, description } = req.body;
 
+            // console.log("Bill payment data", req.body);
+
+
+            const accountData = await Account.findOne({
+                where: {
+                    id: account
+                }
+            });
+            console.log("Account data", accountData);
+
+            if (!accountData) {
+                console.log("Account not found", accountData);
+                return responseHandler.error(res, "Account not found");
+            }
+
             // Find the bill in bill model
             const billData = await Bill.findOne({
                 where: {
@@ -33,15 +48,7 @@ export default {
             }
 
             // Find the account in account model
-            const accountData = await Account.findOne({
-                where: {
-                    id: account
-                }
-            });
-
-            if (!accountData) {
-                return responseHandler.error(res, "Account not found");
-            }
+           
 
             const billPayment = await BillPayment.create({
                 bill,
@@ -50,7 +57,7 @@ export default {
                 account,
                 reference,
                 description,
-                created_by: req.user?.username
+                created_by: req.user?.username  
             });
 
             // Update the bill total and determine bill status
@@ -72,6 +79,9 @@ export default {
             });
             
             // Update account opening balance
+            if (accountData.opening_balance < amount) {
+                return responseHandler.error(res, "Insufficient balance in account");
+            }
             const updatedBalance = accountData.opening_balance - amount;
             await accountData.update({ opening_balance: updatedBalance });
 

@@ -47,14 +47,14 @@ export default {
                 return responseHandler.error(res, "Role already exists");
             }
 
-            const client_id = req.user?.id;
+            // const client_id = req.user?.id;
 
             // Save the entire permissions object directly
             const role = await Role.create({
                 role_name,
                 permissions: permissions, // Save the entire permissions object
                 created_by: req.user?.username,
-                client_id: client_id
+                // client_id: client_id
             });
             return responseHandler.success(res, 'Role created successfully', role);
         } catch (error) {

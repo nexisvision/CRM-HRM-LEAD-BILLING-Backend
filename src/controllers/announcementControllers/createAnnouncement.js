@@ -8,7 +8,9 @@ export default {
         body: Joi.object({
             title: Joi.string().required(),
             description: Joi.string().required(),
-            branch: Joi.string().optional().allow('',null),
+            branch: Joi.object({
+                branches: Joi.array().items(Joi.string())
+            }).optional().allow('', null),
         })
     }),
     handler: async (req, res) => {

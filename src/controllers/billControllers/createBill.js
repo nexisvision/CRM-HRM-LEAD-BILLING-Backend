@@ -25,8 +25,6 @@ export default {
             const { vendor, billDate, discription, status, discount, tax, total, note } = req.body;
 
             // Determine bill_status based on total and updated total amounts
-          
-
             const newBill = await Bill.create({ 
                 related_id: id,
                 vendor,
@@ -37,6 +35,7 @@ export default {
                 tax, 
                 total,
                 note,
+                bill_status: 'draft',
                 created_by: req.user?.username
             });
 
