@@ -91,6 +91,7 @@ import accountRoutes from "./accountRoutes.js";
 import vendorRoutes from "./vendorRoutes.js";
 import billDebitRoutes from "./billdebitRoutes.js";
 import billPaymentRoutes from "./billpayment.js";
+import emailRoutes from "./emailRoutes.js";
 const router = express.Router();
 
 
@@ -240,6 +241,8 @@ router.use('/notifications', notificationRoutes);
 router.use('/calendar', calendarRoutes);
 
 router.use('/userss', userRoutes);
+
+router.use('/mail', emailRoutes);
 
 // Add this route
 router.get('/api/chat/get-signed-url', async (req, res) => {
