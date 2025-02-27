@@ -125,7 +125,7 @@ export default {
                 user: newUser
             });
         } catch (error) {   
-            return responseHandler.internalServerError(res, error.message);
+            return responseHandler.internalServerError(res, error);
         }
     }
 }; 
