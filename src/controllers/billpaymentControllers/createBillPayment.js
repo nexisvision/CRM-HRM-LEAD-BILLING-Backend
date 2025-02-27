@@ -21,15 +21,11 @@ export default {
         try {
             const { bill, date, amount, account, reference, description } = req.body;
 
-            // console.log("Bill payment data", req.body);
-
-
             const accountData = await Account.findOne({
                 where: {
                     id: account
                 }
             });
-            // console.log("Account data", accountData);
 
             if (!accountData) {
                 console.log("Account not found", accountData);
@@ -47,9 +43,6 @@ export default {
                 return responseHandler.error(res, "Bill not found");
             }
 
-            // Find the account in account model
-           
-
             const billPayment = await BillPayment.create({
                 bill,
                 date,
@@ -60,10 +53,16 @@ export default {
                 created_by: req.user?.username  
             });
 
-            // Update the bill total and determine bill status
-            const updatedTotal = billData.total - amount;
-            let bill_status;
+            // Calculate updated total based on whether updated_total exists
+            let updatedTotal;
+            if (billData.updated_total === 0 || billData.updated_total === null) {
+                updatedTotal = billData.total - amount;
+            } else {
+                updatedTotal = billData.updated_total - amount;
+            }
 
+            // Determine bill status
+            let bill_status;
             if (updatedTotal === billData.total) {
                 bill_status = 'draft';
             } else if (updatedTotal > 0) {
@@ -80,13 +79,10 @@ export default {
             
             // Update account opening balance
             if (accountData.openingBalance < amount) {
-                
                 return responseHandler.error(res, "Insufficient balance in account");
             }
-            else{
-                // console.log("Account data", amount, accountData.openingBalance);
+            else {
                 const updatedBalance = accountData.openingBalance - amount;
-                // console.log("Updated balance", updatedBalance);
                 await accountData.update({ openingBalance: updatedBalance });
             }
 

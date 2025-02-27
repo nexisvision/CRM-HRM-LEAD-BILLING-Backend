@@ -62,4 +62,4 @@ export default {
             return responseHandler.error(res, error.errors[0]?.message || "An error occurred");
         }
     }
-}   
+}               

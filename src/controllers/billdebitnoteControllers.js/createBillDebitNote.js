@@ -47,9 +47,16 @@ export default {
                 created_by: req.user?.username 
             });
 
+            // Calculate updated total based on whether updated_total exists
+            let updatedTotal;
+            if (billData.updated_total === 0 || billData.updated_total === null) {
+                updatedTotal = billData.total - amount;
+            } else {
+                updatedTotal = billData.updated_total - amount;
+            }
+
             // Update bill total
-            const updatedTotal = billData.total - amount;
-            await billData.update({ total: updatedTotal });
+            await billData.update({ updated_total: updatedTotal });
 
             return responseHandler.success(res, "Bill Debit Note created successfully", billDebitnote);
         } catch (error) {
