@@ -8,7 +8,7 @@ export default {
         body: Joi.object({
             title: Joi.string().required(),
             time: Joi.string().required(),
-            date: Joi.date().required(),
+            date: Joi.string().required(),
             description: Joi.string().required(),
             branch: Joi.object({
                 branch: Joi.array().items(Joi.string())
