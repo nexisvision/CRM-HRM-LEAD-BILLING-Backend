@@ -32,7 +32,7 @@ export default {
 
             const task_file = req.files?.task_file?.[0];
 
-           
+
 
             const {
                 taskName,
@@ -50,11 +50,6 @@ export default {
             const existingTask = await Task.findOne({ where: { taskName } });
             if (existingTask) {
                 return responseHandler.error(res, "Task already exists");
-            }
-
-
-            if (!task_file) {
-                return responseHandler.error(res, "Task file is required");
             }
             // const esignatureUrl = await uploadToS3(esignature, "esignatures", esignature_name, req.user?.username);
             let task_file_url = task_file;

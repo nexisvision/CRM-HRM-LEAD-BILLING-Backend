@@ -6,9 +6,9 @@ const Currency = sequelize.define('currency', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: () => generateId(),
         unique: true,
-        primaryKey: true
+        primaryKey: true,
+        defaultValue: () => generateId(),
     },
     currencyName: {
         type: DataTypes.STRING,
@@ -18,7 +18,6 @@ const Currency = sequelize.define('currency', {
     currencyIcon: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     currencyCode: {
         type: DataTypes.STRING,
@@ -35,6 +34,19 @@ const Currency = sequelize.define('currency', {
         allowNull: true,
         defaultValue: null
     }
+});
+
+Currency.beforeCreate(async (currency) => {
+    let isUnique = false;
+    let newId;
+    while (!isUnique) {
+        newId = generateId();
+        const existingCurrencies = await Currency.findOne({ where: { id: newId } });
+        if (!existingCurrencies) {
+            isUnique = true;
+        }
+    }
+    currency.id = newId;
 });
 
 export default Currency;
