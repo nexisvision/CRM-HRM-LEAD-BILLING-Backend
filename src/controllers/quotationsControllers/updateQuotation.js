@@ -14,7 +14,7 @@ export default {
             currency: Joi.string().required(),
             lead: Joi.string().required(),
             client: Joi.string().required().optional(),
-            calculatedTax: Joi.number().required(),
+            // calculatedTax: Joi.number().required(),
             items: Joi.object().required(),
             discount: Joi.number().optional(),
             tax: Joi.number().optional(),
@@ -24,16 +24,16 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { valid_till, currency, lead, client, calculatedTax, items, discount, tax, total } = req.body;
+            const { valid_till, currency, lead, client, items, discount, tax, total } = req.body;
             const quotations = await Quotations.findByPk(id);
             if (!quotations) {
                 return responseHandler.error(res, "Quotation not found");
             }
-            const existingQuotation = await Quotations.findOne({ where: { related_id: id, valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, id: { [Op.not]: id } } });
+            const existingQuotation = await Quotations.findOne({ where: { related_id: id, valid_till, currency, lead, client, items, discount, tax, total, id: { [Op.not]: id } } });
             if (existingQuotation) {
                 return responseHandler.error(res, "Quotation already exists");
             }
-            await quotations.update({ valid_till, currency, lead, client, calculatedTax, items, discount, tax, total, updated_by: req.user?.username });
+            await quotations.update({ valid_till, currency, lead, client, items, discount, tax, total, updated_by: req.user?.username });
             return responseHandler.success(res, "Quotation updated successfully", quotations);
         } catch (error) {
             return responseHandler.error(res, error?.message);
