@@ -15,7 +15,7 @@ export default {
             purchase_date: Joi.date().optional(),
             employee: Joi.string().optional(),
             project: Joi.string().optional(),
-            bill: Joi.string().optional().allow('', null),
+           
             description: Joi.string().optional().allow('', null)
         })
     }),
@@ -31,7 +31,7 @@ export default {
             }
 
 
-            await expense.update({ item, price, currency, purchase_date, employee, project, bill, description, updated_by: req.user?.username });
+            await expense.update({ item, price, currency, purchase_date, employee, project, description, updated_by: req.user?.username });
             return responseHandler.success(res, "Expense updated successfully", expense);
         } catch (error) {
             return responseHandler.error(res, error?.message);

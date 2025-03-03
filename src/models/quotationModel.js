@@ -37,11 +37,11 @@ const Quotations = sequelize.define('quotations', {
         allowNull: true,
         defaultValue: null
     },
-    calculatedTax: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        defaultValue: null
-    },
+    // calculatedTax: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true,
+    //     defaultValue: null
+    // },
     items: {
         type: DataTypes.JSON,
         allowNull: false

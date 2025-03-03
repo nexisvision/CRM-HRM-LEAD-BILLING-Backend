@@ -4,6 +4,7 @@ import validator from "../../utils/validator.js";
 import User from "../../models/userModel.js";
 import { s3 } from "../../config/config.js";
 import uploadToS3 from "../../utils/uploadToS3.js";
+import { Op } from "sequelize";
 
 export default {
     validator: validator({
@@ -14,7 +15,6 @@ export default {
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            // email: Joi.string().email().optional().allow('', null),
             bankname: Joi.string().optional().allow('', null),
             ifsc: Joi.string().optional().allow('', null),
             banklocation: Joi.string().optional().allow('', null),
@@ -32,14 +32,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-
-            // console.log("Request Body:", req.body); // Log the request body
-            // console.log("Uploaded File:", req.files); // Log the uploaded file
-
             const profilePic = req.files?.profilePic?.[0];
-
-            // console.log("profilePic", profilePic);
-            // Check if file is provided
 
             if (!profilePic) {
                 return responseHandler.error(res, "profilePic is required");
@@ -56,6 +49,13 @@ export default {
                 return responseHandler.notFound(res, "Client not found");
             }
 
+
+            const existingPhone = await User.findOne({ where: { phone, id: { [Op.not]: client.id } } });
+            if (existingPhone) {
+                return responseHandler.error(res, "Phone number already exists");
+            }
+
+            // let profilePicUrl = client.profilePic;
             let profilePicUrl = client.profilePic;
             if (profilePic) {
                 if (client.profilePic) {

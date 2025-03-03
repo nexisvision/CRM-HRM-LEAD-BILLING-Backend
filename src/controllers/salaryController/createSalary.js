@@ -10,7 +10,7 @@ export default {
             payslipType: Joi.string().required(),
             currency: Joi.string().required(),
             netSalary: Joi.string().required(),
-            salary: Joi.string().required(),
+            salary: Joi.number().required(),
             bankAccount: Joi.string().required(),
         })
     }),

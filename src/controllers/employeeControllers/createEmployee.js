@@ -73,6 +73,15 @@ export default {
                 return responseHandler.error(res, "Email already exists.");
             }
 
+            // Check if phone number already exists
+            const existingPhoneNumber = await User.findOne({
+                where: { phone }
+            });
+
+            if (existingPhoneNumber) {
+                return responseHandler.error(res, "Phone number already exists.");
+            }
+
             const [role] = await Role.findOrCreate({
                 where: { role_name: 'employee', created_by: req.user?.username },
                 defaults: { id: generateId() }

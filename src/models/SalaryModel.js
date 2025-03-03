@@ -23,7 +23,7 @@ const Salary = sequelize.define('Salary', {
         allowNull: false
     },
     salary: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     netSalary: {

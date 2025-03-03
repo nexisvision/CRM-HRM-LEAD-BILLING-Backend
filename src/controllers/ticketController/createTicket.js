@@ -3,6 +3,7 @@ import Ticket from "../../models/ticketModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import uploadToS3 from "../../utils/uploadToS3.js";
+import Notification from "../../models/notificationModel.js";
 
 export default {
     validator: validator({
@@ -50,7 +51,19 @@ export default {
                 client_id: req.des?.client_id,
                 created_by: req.user?.username 
             });
-            
+
+            //notification
+            const notification = await Notification.create({
+                related_id: ticket.id,
+                users: [req.user?.id],
+                title: "New Ticket Created",
+                message: `New ticket created by ${req.user?.username}`,
+                description: ticketSubject,
+                from: req.user?.username,
+                notification_type: "reminder",
+                created_by: req.user?.username
+            });
+
             return responseHandler.success(res, "Ticket created successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error?.message);
