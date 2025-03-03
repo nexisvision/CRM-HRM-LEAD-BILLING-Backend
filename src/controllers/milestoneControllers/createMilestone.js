@@ -36,6 +36,7 @@ export default {
                 milestone_summary,
                 milestone_start_date,
                 milestone_end_date,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
 
             });

@@ -27,7 +27,9 @@ export default {
             }
             const proposal = await Proposal.create({
                 lead_title, valid_till, currency, description,
-                items, discount, tax, total, created_by: req.user?.username
+                items, discount, tax, total,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username
             });
             return responseHandler.success(res, "Proposal created successfully", proposal);
         } catch (error) {

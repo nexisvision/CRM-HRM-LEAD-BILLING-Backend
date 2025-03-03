@@ -75,6 +75,7 @@ export default {
                 e_signatures: user.e_signatures,
                 documents: user.documents,
                 links: user.links,
+                client_id: user.client_id,
                 created_by: user.created_by
 
             }) : await User.create({

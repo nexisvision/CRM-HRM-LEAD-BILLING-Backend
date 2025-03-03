@@ -1,10 +1,10 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import { createQuotation, getAllQuotations, updateQuotation, deleteQuotation, leadQuotation, updateLeadQuotation } from "../controllers/quotationsControllers/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post('/:id', createQuotation.validator, createQuotation.handler);
 router.get('/:id', getAllQuotations.validator, getAllQuotations.handler);

@@ -24,7 +24,9 @@ export default {
         try {
             const { id } = req.params;
             const { issueDate, dueDate, currency, client, project, items, discount, tax, total } = req.body;
-            const invoice = await Invoice.create({ related_id: id, issueDate, dueDate, currency, client, project, items, discount, tax, total, created_by: req.user?.username });
+            const invoice = await Invoice.create({ related_id: id, issueDate, dueDate, currency, client, project, items, discount, tax, total,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Invoice created successfully", invoice);
         } catch (error) {
             return responseHandler.error(res, error?.message);

@@ -1,10 +1,10 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import { createInterviewSchedule, getInterviewSchedules, getInterviewScheduleById, updateInterviewSchedule, deleteInterviewSchedule } from "../controllers/interviewScheduleController/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post('/', createInterviewSchedule.validator, createInterviewSchedule.handler);
 router.get('/', getInterviewSchedules.validator, getInterviewSchedules.handler);

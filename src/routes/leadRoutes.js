@@ -2,10 +2,10 @@ import express from "express";
 import { createLead, getAllLeads, getLeadById, updateLead, deleteLead, addLeadMembers, addLeadFiles, deleteLeadMembers } from "../controllers/leadController/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import upload from "../middlewares/upload.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole)
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 // Lead Routes start ==============================
 router.post('/', createLead.validator, createLead.handler);

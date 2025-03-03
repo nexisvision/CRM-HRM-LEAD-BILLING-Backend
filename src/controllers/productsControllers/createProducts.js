@@ -36,6 +36,7 @@ export default {
                 hsn_sac,
                 description,
                 image: imageUrl,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
             await Activity.create({
@@ -44,6 +45,7 @@ export default {
                 activity_id: product.id,
                 action: "created",
                 performed_by: req.user?.username,
+                client_id: req.des?.client_id,
                 activity_message: `Product ${product.name} created successfully`
             });
             return responseHandler.success(res, "Product created successfully", product);

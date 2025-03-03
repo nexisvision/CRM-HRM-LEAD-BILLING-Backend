@@ -112,6 +112,7 @@ export default {
                 documents,
                 links,
                 verificationOTP: otp,
+                client_id: req.des?.client_id,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
                 created_by: req.user?.username
             };

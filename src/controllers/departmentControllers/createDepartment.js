@@ -25,6 +25,7 @@ export default {
             const department = await Department.create({
                 branch,
                 department_name,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
             return responseHandler.success(res, "Department created successfully", department);

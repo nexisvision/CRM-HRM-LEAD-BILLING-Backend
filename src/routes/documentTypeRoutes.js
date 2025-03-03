@@ -1,10 +1,10 @@
 import express from 'express';
 import { authenticateUser, checkRole } from '../middlewares/index.js';
 import { createDocumentType, getAllDocumentTypes, getDocumentTypeById, updateDocumentType, deleteDocumentType } from '../controllers/DocumentsTypeController/index.js';
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole,passCompanyDetails);
 
 router.post('/', createDocumentType.validator, createDocumentType.handler);
 router.get('/', getAllDocumentTypes.validator, getAllDocumentTypes.handler);

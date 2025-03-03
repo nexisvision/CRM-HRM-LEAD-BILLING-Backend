@@ -19,7 +19,9 @@ export default {
             if (existingTask) {
                 return responseHandler.error(res, "Task already exists");
             }
-            const task = await TaskCalendar.create({ taskName, taskDate, taskTime, taskDescription, created_by: req.user?.username });
+            const task = await TaskCalendar.create({ taskName, taskDate, taskTime, taskDescription, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Task created successfully", task);
         } catch (error) {
 

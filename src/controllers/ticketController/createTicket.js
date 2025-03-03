@@ -47,6 +47,7 @@ export default {
                 channelName, 
                 tag, 
                 file: fileUrl, 
+                client_id: req.des?.client_id,
                 created_by: req.user?.username 
             });
             

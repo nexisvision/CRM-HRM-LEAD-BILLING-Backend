@@ -1,10 +1,10 @@
 import express from "express";
 import { createDepartment, getAllDepartments, getDepartmentById, updateDepartment, deleteDepartment } from "../controllers/departmentControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole,passCompanyDetails);
 
 router.post("/", createDepartment.validator, createDepartment.handler);
 router.get("/", getAllDepartments.validator, getAllDepartments.handler);

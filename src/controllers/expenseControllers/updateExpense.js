@@ -24,7 +24,7 @@ export default {
             const { id } = req.params;
             // const bill = req.files?.bill?.[0];
 
-            const { item, price, currency, purchase_date, employee, project, description } = req.body;
+            const { item, price, currency, purchase_date, bill, employee, project, description } = req.body;
             const expense = await Expense.findByPk(id);
             if (!expense) {
                 return responseHandler.error(res, "Expense not found");

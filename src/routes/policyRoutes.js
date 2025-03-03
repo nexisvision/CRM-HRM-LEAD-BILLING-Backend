@@ -2,7 +2,7 @@ import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import { createPolicy, getPolicies, getPolicyById, updatePolicy, deletePolicy } from "../controllers/policyController/index.js";
 import upload from "../middlewares/upload.js";
-
+// import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
 router.use(authenticateUser, checkRole);

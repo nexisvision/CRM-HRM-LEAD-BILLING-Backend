@@ -24,13 +24,16 @@ export default {
             if (existingNote) {
                 return responseHandler.error(res, "Note already exists");
             }
-            const note = await Note.create({ related_id: id, note_title, notetype, employees, description, created_by: req.user?.username });
+            const note = await Note.create({ related_id: id, note_title, notetype, employees, description,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             await Activity.create({
                 related_id: id,
                 activity_from: "note",
                 activity_id: note.id,
                 action: "created",
                 performed_by: req.user?.username,
+                client_id: req.des?.client_id,
                 activity_message: `Note ${note.note_title} created successfully`
             });
             return responseHandler.success(res, "Note created successfully", note);

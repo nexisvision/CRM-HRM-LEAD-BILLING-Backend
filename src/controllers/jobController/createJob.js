@@ -29,7 +29,9 @@ export default {
         if (existingJob) {
             return responseHandler.error(res, "Job already exists");
         }
-        const job = await Job.create({ title, category, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, created_by: req.user?.username });
+        const job = await Job.create({ title, category, skills, location, interviewRounds, startDate, endDate, totalOpenings, status, recruiter, jobType, workExperience, currency, expectedSalary, description, 
+            client_id: req.des?.client_id,
+            created_by: req.user?.username });
         return responseHandler.success(res, "Job created successfully", job);
     }
 }

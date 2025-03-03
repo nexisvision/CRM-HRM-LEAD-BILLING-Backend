@@ -89,6 +89,7 @@ export default {
                 status,
                 reminder_date,
                 task_file: task_file_url,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
 
@@ -106,6 +107,7 @@ export default {
                         title: "Task Reminder",
                         notification_type: "reminder",
                         from: req.user?.id,
+                        client_id: req.des?.client_id,
                         message: `Task due: ${dueDateDiff} days. Don't forget: ${taskName}`,
                         description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
                         created_by: req.user?.username,
@@ -118,6 +120,7 @@ export default {
                 users: assignTo,
                 title: "New Task",
                 from: req.user?.id,
+                client_id: req.des?.client_id,  
                 message: `${req.user?.username} assigned you a task: ${taskName}`,
                 description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
                 created_by: req.user?.username,

@@ -2,10 +2,10 @@ import express from "express";
 import { createProducts, getAllProducts, updateProducts, deleteProducts, getallproduct } from "../controllers/productsControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import upload from "../middlewares/upload.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post("/:id", upload.single('image'), createProducts.validator, createProducts.handler);
 router.get("/:id", getAllProducts.validator, getAllProducts.handler);

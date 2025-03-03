@@ -1,10 +1,11 @@
 import express from 'express';
 import { authenticateUser, checkRole, checkUserRole } from '../middlewares/index.js';
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 import { createPlan, getAllPlans, updatePlan, deletePlan, assignPlanToClient, getAllAssignedPlans, planrequest, removePlanFromClient } from '../controllers/subscriptionController/index.js';
 
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 router.get('/', getAllPlans.validator, getAllPlans.handler);
 
 router.post('/request', planrequest.validator, planrequest.handler);

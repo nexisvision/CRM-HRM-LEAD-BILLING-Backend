@@ -24,7 +24,9 @@ export default {
             if (existingInterviewSchedule) {
                 return responseHandler.error(res, "Interview schedule already exists");
             }
-            const interviewSchedule = await InterviewSchedule.create({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, created_by: req.user?.username });
+            const interviewSchedule = await InterviewSchedule.create({ job, candidate, interviewer, round, interviewType, startOn, startTime, commentForInterviewer, commentForCandidate, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Interview schedule created successfully", interviewSchedule);
         } catch (error) {
             return responseHandler.error(res, error?.message);

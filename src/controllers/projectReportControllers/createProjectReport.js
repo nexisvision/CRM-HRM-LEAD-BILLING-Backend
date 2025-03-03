@@ -28,6 +28,7 @@ export default {
                 projectMembers,
                 completion,
                 status,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
             return responseHandler.created(res, "Project report created successfully", projectReport);

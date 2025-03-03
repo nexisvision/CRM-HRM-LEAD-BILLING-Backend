@@ -26,6 +26,7 @@ export default {
                 message,
                 file: fileUrl,
                 isRead,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
             return responseHandler.success(res, "Message sent successfully", messageData);

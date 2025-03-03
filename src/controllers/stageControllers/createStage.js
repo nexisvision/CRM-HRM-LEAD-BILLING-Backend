@@ -18,7 +18,9 @@ export default {
             if (existingStage) {
                 return responseHandler.error(res, "Stage already exists");
             }
-            const stage = await Stage.create({ stageType, stageName, pipeline, created_by: req.user.username });
+            const stage = await Stage.create({ stageType, stageName, pipeline,
+                client_id: req.des?.client_id,
+                created_by: req.user.username });
             return responseHandler.success(res, "Stage created successfully", stage);
         } catch (error) {
             return responseHandler.error(res, error?.message);

@@ -39,6 +39,7 @@ export default {
                 department,
                 employee,
                 client,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 
@@ -57,6 +58,7 @@ export default {
                         title: "Meeting Reminder",
                         notification_type: "reminder",
                         from: req.user?.id,
+                        client_id: req.des?.client_id,
                         message: `Meeting due: ${dueDateDiff} days. Don't forget: ${title}`,
                         description: `Meeting Name: ${title}, start date: ${date}, end date: ${endTime}`,
                         created_by: req.user?.username,
@@ -69,6 +71,7 @@ export default {
                 users: employee,
                 title: "New Meeting",
                 from: req.user?.id,
+                
                 message: `${req.user?.username} assigned you a meeting: ${title}`,
                 description: `Meeting Name: ${title}, start date: ${date}, end date: ${endTime}`,
                 created_by: req.user?.username,

@@ -1,10 +1,10 @@
 import express from 'express';
 import { authenticateUser, checkRole } from '../middlewares/index.js';
 import { createPerformanceType, getAllPerformanceType, getPerformanceTypeById, updatePerformanceType, deletePerformanceType } from '../controllers/PerformanceTypeController/index.js';
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post('/', createPerformanceType.validator, createPerformanceType.handler);
 router.get('/', getAllPerformanceType.validator, getAllPerformanceType.handler);

@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { createSalesQuotation, deleteSalesQuotation, getAllSalesQuotation, getSalesQuotationById, updateSalesQuotation } from "../controllers/salesQuotationControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = Router();
 
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post("/", createSalesQuotation.validator, createSalesQuotation.handler);
 router.get("/", getAllSalesQuotation.validator, getAllSalesQuotation.handler);

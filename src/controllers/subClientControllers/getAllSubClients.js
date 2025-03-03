@@ -15,12 +15,15 @@ export default {
         try {
             const SubClientRoleID = await Role.findOne({
                 where: {
-                    role_name: "sub-client"
+                    role_name: "sub-client",
+                    created_by: req.user.username
+
                 }
             });
             const subClients = await User.findAll({
                 where: {
-                    role_id: SubClientRoleID.id
+                    role_id: SubClientRoleID.id,
+                    // created_by: req.user.username
                 }
             });
             return responseHandler.success(res, "SubClients fetched successfully", subClients);

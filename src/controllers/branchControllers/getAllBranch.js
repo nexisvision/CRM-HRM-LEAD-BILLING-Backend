@@ -25,8 +25,11 @@ export default {
             if (!role) {
                 return responseHandler.error(res, "Role not found");
             }
-
-            if (role.role_name === 'client') {
+            if (role.role_name === 'super-admin') {
+                // If user is super-admin, get all branches
+                branches = await Branch.findAll();
+                
+            } else if (role.role_name === 'client') {
                 // If user is client, find projects matching their client_id
                 branches = await Branch.findAll({
                     where: {

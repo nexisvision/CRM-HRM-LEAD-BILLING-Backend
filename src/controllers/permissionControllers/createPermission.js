@@ -24,6 +24,7 @@ export default {
 
             const permission = await Permission.create({
                 permissions,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
 
