@@ -14,11 +14,12 @@ router.put('/:id', upload.fields([
 
 router.put('/email/:id', updatemail.validator, updatemail.handler);
 
+router.get('/', getAllClients.validator, getAllClients.handler);
+
 router.use(authenticateUser, checkUserRole(['super-admin']));
 
 router.post('/', createClient.validator, createClient.handler);
 
-router.get('/', getAllClients.validator, getAllClients.handler);
 
 
 router.delete('/:id', deleteClient.validator, deleteClient.handler);
