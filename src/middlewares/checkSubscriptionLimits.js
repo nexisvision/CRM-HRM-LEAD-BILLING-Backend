@@ -3,6 +3,7 @@ import Role from '../models/roleModel.js';
 import SubscriptionPlan from '../models/subscriptionPlanModel.js';
 import User from '../models/userModel.js';
 import responseHandler from '../utils/responseHandler.js';
+import { Op } from 'sequelize';
 
 // sanivar
 
@@ -24,7 +25,7 @@ export const getActiveSubscription = async (req, res, next) => {
             clientSubscription = await ClientSubscription.findByPk(user.client_plan_id);
         }
 
-        console.log('Subscription check for user:', req.user.id, 'Role:', role.role_name);
+        // console.log('Subscription check for user:', req.user.id, 'Role:', role.role_name);
 
         if (!clientSubscription) return responseHandler.error(res, 'Subscription is not found');
         if (clientSubscription.status === 'expired') return responseHandler.error(res, 'Subscription expired');
@@ -39,6 +40,84 @@ export const getActiveSubscription = async (req, res, next) => {
         return responseHandler.error(res, error?.message);
     }
 };
+
+
+export const checkSubscriptionDates = async (req, res, next) => {
+    try {
+        const { login } = req.body;
+        const currentDate = new Date();
+
+        // Find user by username, email or phone
+        const user = await User.findOne({
+            where: {
+                [Op.or]: [
+                    login && { username: login },
+                    login && { email: login },
+                    login && { phone: login }
+                ].filter(Boolean)
+            }
+        });
+
+        if (!user) {
+            return responseHandler.error(res, 'User not found');
+        }
+
+        // Get user's role
+        const role = await Role.findByPk(user.role_id);
+        if (!role) {
+            return responseHandler.error(res, 'Role not found');
+        }
+
+        let subscription;
+        if (role.role_name === 'client') {
+            // If user is client, find subscription using user.id as client_id
+            subscription = await ClientSubscription.findOne({
+                where: { 
+                    client_id: user.id,
+                    status: ['active', 'trial']
+                }
+            });
+        } else {
+            // For other roles, find subscription using user.client_id
+            subscription = await ClientSubscription.findOne({
+                where: {
+                    client_id: user.client_id,
+                    status: ['active', 'trial']
+                }
+            });
+        }
+
+        if (!subscription) {
+            return responseHandler.error(res, 'No active subscription found');
+        }
+
+        // Check if current date is within subscription period
+        const startDate = new Date(subscription.start_date);
+        const endDate = subscription.end_date ? new Date(subscription.end_date) : null;
+
+        if (currentDate < startDate) {
+            return responseHandler.error(res, 'Subscription has not started yet');
+        }
+
+        if (endDate && currentDate > endDate) {
+            return responseHandler.error(res, 'Subscription has expired');
+        }
+
+        // Add subscription dates to request
+        req.subscriptionDates = {
+            start_date: subscription.start_date,
+            end_date: subscription.end_date
+        };
+
+        next();
+    } catch (error) {
+        console.error('Error in checkSubscriptionDates:', error);
+        return responseHandler.error(res, error?.message);
+    }
+};
+
+
+
 
 export const checkSubscriptionLimits = async (req, res, next) => {
     try {
@@ -58,7 +137,7 @@ export const checkSubscriptionLimits = async (req, res, next) => {
             plan = await SubscriptionPlan.findByPk(clientSubscription.plan_id);
         }
 
-        console.log('Checking limits for user:', req.user.id, 'Role:', role.role_name);
+        // console.log('Checking limits for user:', req.user.id, 'Role:', role.role_name);
 
         if (['super-admin', 'client'].includes(role.role_name)) {
             req.subscription = { clientSubscription, plan };
@@ -67,21 +146,32 @@ export const checkSubscriptionLimits = async (req, res, next) => {
 
         const limits = {
             'sub-client': { field: 'current_clients_count', max: plan.max_clients, message: 'Maximum client limit reached' },
-            'user': { field: 'current_users_count', max: plan.max_users, message: 'Maximum number of users reached' }
+            'user': { field: 'current_users_count', max: plan.max_users, message: 'Maximum number of users reached' },
+            'vendors': { field: 'current_vendors_count', max: plan.max_vendors, message: 'Maximum number of vendors reached' },
+            'customers': { field: 'current_customers_count', max: plan.max_customers, message: 'Maximum number of customers reached' },
+            
+            
+
+        
         };
 
         if (role.role_name === 'sub-client') {
             if (clientSubscription[limits[role.role_name].field] >= limits[role.role_name].max) {
-                console.log('Limit exceeded for sub-client:', clientSubscription[limits[role.role_name].field], '/', limits[role.role_name].max);
                 return responseHandler.error(res, limits[role.role_name].message);
             }
-        } else {
+        } else if (role.role_name === 'user') {
             if (clientSubscription[limits['user'].field] >= limits['user'].max) {
-                console.log('Limit exceeded for user:', clientSubscription[limits['user'].field], '/', limits['user'].max);
                 return responseHandler.error(res, limits['user'].message);
             }
+        } else {
+            if (clientSubscription[limits['vendors'].field] >= limits['vendors'].max) {
+                return responseHandler.error(res, limits['vendors'].message);
+            }
+            if (clientSubscription[limits['customers'].field] >= limits['customers'].max) {
+                return responseHandler.error(res, limits['customers'].message);
+            }
         }
-
+        
         req.subscription = { clientSubscription, plan };
         return next();
     } catch (error) {

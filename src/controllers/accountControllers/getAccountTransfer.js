@@ -15,12 +15,15 @@ export default {
     handler: async (req, res) => {
         try {
             const userRole = req.user.role;
-            let transferAccount;
+            // console.log("userRole",userRole);
+            let transferAccounts;
 
             // Find role in role model
             const role = await Role.findOne({
                 where: { id: userRole }
             });
+
+            // console.log("role",role);
 
             if (!role) {
                 return responseHandler.error(res, "Role not found");
@@ -28,7 +31,7 @@ export default {
 
             if (role.role_name === 'client') {
                 // If user is client, find projects matching their client_id
-                transferAccount = await TransferAccount.findAll({
+                transferAccounts = await TransferAccount.findAll({
                     where: {
                         client_id: req.user.id
                     }
@@ -43,16 +46,16 @@ export default {
                     return responseHandler.error(res, "User not found");
                 }
 
-                transferAccount = await TransferAccount.findAll({
+                transferAccounts = await TransferAccount.findAll({
                     where: {
                         client_id: user.client_id
                     }
                 });
             }
 
-            return responseHandler.success(res, "Transfer Account fetched successfully", transferAccount);
-
+            return responseHandler.success(res, "Transfer accounts fetched successfully", transferAccounts);
         } catch (error) {
+      
             return responseHandler.error(res, error?.message);
         }
     }

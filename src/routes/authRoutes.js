@@ -1,13 +1,13 @@
 import express from "express";
 import { signup, login, getAllUsers, getUserById, updateUser, deleteUser, verifySignup, resendSignupOtp, forgotPassword, verifyOtp, resetPassword, verify } from "../controllers/authControllers/index.js";
 import { authenticateUser, checkUserRole, checkRole } from "../middlewares/index.js";
-import { checkSubscriptionLimits, getActiveSubscription } from "../middlewares/checkSubscriptionLimits.js";
+import { checkSubscriptionLimits, getActiveSubscription, checkSubscriptionDates } from "../middlewares/checkSubscriptionLimits.js";
 import passCompanyDetail from "../middlewares/passCompanyDetail.js";
 
 const router = express.Router();
 
 router.post('/signup', authenticateUser, checkRole,  getActiveSubscription, passCompanyDetail, signup.validator, signup.handler);
-router.post('/login', login.validator, login.handler);
+router.post('/login', checkSubscriptionDates, login.validator, login.handler);
 router.post("/verify-signup", authenticateUser, checkSubscriptionLimits, verifySignup.validator, verifySignup.handler);
 router.post("/resend-signup-otp", authenticateUser, resendSignupOtp.handler);
 router.post("/forgot-password", forgotPassword.validator, forgotPassword.handler);

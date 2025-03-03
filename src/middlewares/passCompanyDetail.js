@@ -6,7 +6,7 @@ import SuperAdmin from "../models/superAdminModel.js";
 const passClientId = async (req, res, next) => {
     try {
         const role = await Role.findByPk(req.user?.role);
-        
+    
         if (!role) {
             return responseHandler.error(res, "Invalid role");
         }
@@ -14,10 +14,16 @@ const passClientId = async (req, res, next) => {
         let des = {};
 
         if (role.role_name === 'client') {
+            const user = await User.findByPk(req.user.id);
+            if (!user) {
+                return responseHandler.error(res, "User not found");
+            }
             des = {
                 client_id: req.user.id,
-                client_plan_id: req.user.client_plan_id
+                client_plan_id: user.client_plan_id
             };
+
+            // console.log("des",des);
         } else if (role.role_name === 'super-admin') {
             const superAdmin = await SuperAdmin.findByPk(req.user.id);
             if (!superAdmin) {
@@ -29,16 +35,17 @@ const passClientId = async (req, res, next) => {
              };
         } else {
             const user = await User.findByPk(req.user.id);
-            // console.log("dsfdfsd",user);
+           
             if (!user) {
                 return responseHandler.error(res, "User not found");
             }
+
+
             des = {
                 client_id: user.client_id,
                 client_plan_id: user.client_plan_id
             };
         }
-
         req.des = des;
         next();
     } catch (error) {

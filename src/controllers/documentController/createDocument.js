@@ -8,7 +8,7 @@ export default {
     validator: validator({
         body: Joi.object({
             name: Joi.string().required(),
-            role: Joi.string().required(),
+            role: Joi.string().required().optional(),
             description: Joi.string().optional().allow('', null),
         })
     }),
