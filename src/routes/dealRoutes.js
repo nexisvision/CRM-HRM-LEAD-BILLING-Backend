@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { createDeal, deleteDeal, getAllDeal, updateDeal, getDealById } from "../controllers/dealControllers/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole,passCompanyDetails); 
 
 
 router.post("/", createDeal.validator, createDeal.handler);

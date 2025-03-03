@@ -1,15 +1,16 @@
-import express from "express";
+import { Router } from "express";
+import { createBillDebitNote, getAllBillDebitNote, updateBillDebitNote, deleteBillDebitNote } from "../controllers/billdebitnoteControllers.js/index.js";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
-import { createAllowance, getAllAllowance, getAllowance, updateAllowance, deleteAllowance } from "../controllers/allowanceControllers/index.js";
-import  passCompanyDetails from '../middlewares/passCompanyDetail.js';
-const router = express.Router();
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
+const router = Router();
+
 
 router.use(authenticateUser, checkRole, passCompanyDetails);
 
-router.post("/", createAllowance.validator, createAllowance.handler);
-router.get("/", getAllAllowance.validator, getAllAllowance.handler);
-router.get("/:id", getAllowance.validator, getAllowance.handler);
-router.put("/:id", updateAllowance.validator, updateAllowance.handler);
-router.delete("/:id", deleteAllowance.validator, deleteAllowance.handler);
+router.post("/", createBillDebitNote.validator, createBillDebitNote.handler);
+router.get("/", getAllBillDebitNote.validator, getAllBillDebitNote.handler);
+//  router.get("/:id", getBillDebitnoteById.validator, getBillDebitnoteById.handler);
+router.put("/:id", updateBillDebitNote.validator, updateBillDebitNote.handler);
+router.delete("/:id", deleteBillDebitNote.validator, deleteBillDebitNote.handler);
 
 export default router;

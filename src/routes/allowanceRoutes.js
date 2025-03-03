@@ -1,10 +1,10 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middlewares/index.js";
 import { createAllowance, getAllAllowance, getAllowance, updateAllowance, deleteAllowance } from "../controllers/allowanceControllers/index.js";
-
+import  passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post("/", createAllowance.validator, createAllowance.handler);
 router.get("/", getAllAllowance.validator, getAllAllowance.handler);

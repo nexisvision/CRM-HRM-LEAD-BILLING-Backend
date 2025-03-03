@@ -1,10 +1,10 @@
 import express from "express";
 import { authenticateUser, checkRole } from "../middleware/authMiddleware.js";
 import { createPayroll, getAllPayroll, getPayrollById, updatePayroll, deletePayroll } from "../controllers/payrollController/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post('/', createPayroll.validator, createPayroll.controller);
 router.get('/', getAllPayroll.validator, getAllPayroll.controller);

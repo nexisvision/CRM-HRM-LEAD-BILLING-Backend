@@ -1,10 +1,10 @@
 import express from "express";
 import { authenticateUser, checkUserRole } from "../middlewares/index.js";
 import { createPermission, getAllPermissions, getPermissionById, updatePermission, deletePermission } from "../controllers/permissionControllers/index.js";
-
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkUserRole(['super-admin']));
+router.use(authenticateUser, checkUserRole(['super-admin']), passCompanyDetails);
 
 router.post('/', createPermission.validator, createPermission.handler);
 router.get('/', getAllPermissions.validator, getAllPermissions.handler);
