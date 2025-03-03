@@ -16,7 +16,10 @@ export default {
     handler: async (req, res) => {
         try {
             const { name, email, phone, subject, message } = req.body;
-            const inquiry = await Inquiry.create({ name, email, phone, subject, message });
+            const inquiry = await Inquiry.create({ name, email, phone, subject, message,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username
+            });
             return responseHandler.success(res, "Inquiry created successfully", inquiry);
         } catch (error) {
             return responseHandler.error(res, error?.message);

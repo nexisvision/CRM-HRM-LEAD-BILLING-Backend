@@ -26,6 +26,7 @@ export default {
                 startDate,
                 endDate,
                 color,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

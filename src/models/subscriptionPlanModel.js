@@ -39,6 +39,14 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    max_customers: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    max_vendors: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     storage_limit: {
         type: DataTypes.STRING,
         allowNull: false
@@ -53,6 +61,7 @@ const SubscriptionPlan = sequelize.define('SubscriptionPlan', {
         allowNull: false,
         defaultValue: 'active'
     },
+    
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

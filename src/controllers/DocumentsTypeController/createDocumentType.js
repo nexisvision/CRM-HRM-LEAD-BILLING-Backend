@@ -20,6 +20,7 @@ export default {
             const documentType = await DocumentType.create({
                 name,
                 isRequired,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
             return responseHandler.success(res, 'Document type created successfully', documentType);

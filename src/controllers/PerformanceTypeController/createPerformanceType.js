@@ -16,7 +16,9 @@ export default {
             if (existingPerformanceType) {
                 return responseHandler.error(res, "Performance type already exists");
             }
-            const performancetype = await PerformanceType.create({ name, created_by: req.user?.username });
+            const performancetype = await PerformanceType.create({ name,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             if (!performancetype) {
                 return responseHandler.error(res, "Failed to create Performance type");
             }

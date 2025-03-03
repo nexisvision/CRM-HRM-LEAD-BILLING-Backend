@@ -34,6 +34,7 @@ export default {
                 state, 
                 country,
                 zipcode,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             })
             return responseHandler.success(res, "Vendor created successfully", vendor)

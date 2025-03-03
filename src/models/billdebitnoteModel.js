@@ -26,6 +26,11 @@ const BillDebitnote = sequelize.define('BillDebitnote', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

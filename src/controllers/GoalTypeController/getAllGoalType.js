@@ -2,6 +2,8 @@ import Joi from "joi";
 import GoalType from "../../models/GoalTypeModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import Role from "../../models/roleModel.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -12,11 +14,44 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const goalType = await GoalType.findAll();
-            if (!goalType) {
-                return responseHandler.error(res, "Goal types not found");
+            const userRole = req.user.role;
+            let goalType;
+
+            // Find role in role model
+            const role = await Role.findOne({
+                where: { id: userRole }
+            });
+
+            if (!role) {
+                return responseHandler.error(res, "Role not found");
             }
-            return responseHandler.success(res, "Goal types fetched successfully", goalType);
+
+            if (role.role_name === 'client') {
+                // If user is client, find projects matching their client_id
+                goalType = await GoalType.findAll({
+                    where: {
+                        client_id: req.user.id
+                    }
+                });
+            } else {
+                // For other roles, get client_id from user model
+                const user = await User.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!user) {
+                    return responseHandler.error(res, "User not found");
+                }
+
+                goalType = await GoalType.findAll({
+                    where: {
+                        client_id: user.client_id
+                    }
+                });
+            }
+
+            return responseHandler.success(res, "Goal type fetched successfully", goalType);
+
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

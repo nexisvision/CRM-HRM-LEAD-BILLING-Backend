@@ -24,7 +24,9 @@ export default {
             if (existingGoalTracking) {
                 return responseHandler.error(res, "Goal Tracking already exists");
             }
-            const goalTracking = await GoalTracking.create({ branch, goalType, startDate, endDate, status, target_achievement, description, rating, created_by: req.user.id });
+            const goalTracking = await GoalTracking.create({ branch, goalType, startDate, endDate, status, target_achievement, description, rating, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Goal Tracking created successfully", goalTracking);
         } catch (error) {
             return responseHandler.error(res, error?.message);

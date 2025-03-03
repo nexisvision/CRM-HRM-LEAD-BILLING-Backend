@@ -18,6 +18,10 @@ const Training = sequelize.define('training', {
         type: DataTypes.JSON,
         allowNull: false
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

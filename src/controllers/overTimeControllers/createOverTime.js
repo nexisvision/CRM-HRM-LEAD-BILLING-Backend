@@ -21,7 +21,9 @@ export default {
             if (existingSalary) {
                 return responseHandler.error(res, "Salary already exists");
             }
-            const overTime = await OverTime.create({ employeeId, title, days, Hours, rate, created_by: req.user?.username });
+            const overTime = await OverTime.create({ employeeId, title, days, Hours, rate,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "OverTime created successfully", overTime);
         } catch (error) {
             return responseHandler.error(res, error?.message);

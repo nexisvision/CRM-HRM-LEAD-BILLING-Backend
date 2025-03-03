@@ -29,6 +29,7 @@ export default {
                 type,
                 currency,
                 amount,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
             return responseHandler.success(res, "Deduction created successfully", deduction);

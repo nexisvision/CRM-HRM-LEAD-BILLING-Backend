@@ -50,6 +50,10 @@ const Indicator = sequelize.define('indicator', {
             min: 0
         }
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

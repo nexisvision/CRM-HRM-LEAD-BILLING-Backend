@@ -34,7 +34,9 @@ export default {
             if (existingLead) {
                 return responseHandler.conflict(res, "Lead with this email already exists!");
             }
-            const lead = await Lead.create({leadStage, leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address, created_by: req.user?.username });
+            const lead = await Lead.create({leadStage, leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Lead created successfully!", lead);
         } catch (error) {
             return responseHandler.error(res, error?.message);

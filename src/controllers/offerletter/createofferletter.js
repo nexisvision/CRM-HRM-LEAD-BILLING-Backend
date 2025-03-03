@@ -24,7 +24,9 @@ export default {
                 return responseHandler.error(res, "Offer letter already exists");
             }
             const fileUrl = await uploadToS3(file, req.user?.roleName, "offer-letters", req.user?.username);
-            const offerletter = await OfferLetter.create({ job, job_applicant, offer_expiry, expected_joining_date, salary, description, file: fileUrl, created_by: req.user?.username });
+            const offerletter = await OfferLetter.create({ job, job_applicant, offer_expiry, expected_joining_date, salary, description, file: fileUrl,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Offer letter created successfully", offerletter);
         } catch (error) {
             return responseHandler.error(res, error);

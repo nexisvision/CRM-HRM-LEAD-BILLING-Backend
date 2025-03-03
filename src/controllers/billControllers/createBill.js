@@ -36,6 +36,7 @@ export default {
                 total,
                 note,
                 bill_status: 'draft',
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

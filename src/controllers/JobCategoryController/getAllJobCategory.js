@@ -2,6 +2,8 @@ import Joi from "joi";
 import JobCategory from "../../models/JobCategoryModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
+import Role from "../../models/roleModel.js";
+import User from "../../models/userModel.js";
 
 
 export default {
@@ -13,11 +15,44 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const jobCategories = await JobCategory.findAll();
-            if (!jobCategories) {
-                return responseHandler.error(res, "No job categories found");
+            const userRole = req.user.role;
+            let jobCategory;
+
+            // Find role in role model
+            const role = await Role.findOne({
+                where: { id: userRole }
+            });
+
+            if (!role) {
+                return responseHandler.error(res, "Role not found");
             }
-            return responseHandler.success(res, "Job categories fetched successfully", jobCategories);
+
+            if (role.role_name === 'client') {
+                // If user is client, find projects matching their client_id
+                jobCategory = await JobCategory.findAll({
+                    where: {
+                        client_id: req.user.id
+                    }
+                });
+            } else {
+                // For other roles, get client_id from user model
+                const user = await User.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!user) {
+                    return responseHandler.error(res, "User not found");
+                }
+
+                jobCategory = await JobCategory.findAll({
+                    where: {
+                        client_id: user.client_id
+                    }
+                });
+            }
+
+            return responseHandler.success(res, "Job category fetched successfully", jobCategory);
+
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

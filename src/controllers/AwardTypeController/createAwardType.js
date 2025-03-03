@@ -16,7 +16,8 @@ export default {
             if (existingAwardType) {
                 return responseHandler.error(res, "Award type already exists");
             }
-            const awardtype = await AwardType.create({ name, created_by: req.user?.username });
+            const awardtype = await AwardType.create({ name, 
+                created_by: req.user?.username });
             if (!awardtype) {
                 return responseHandler.error(res, "Failed to create Award type");
             }

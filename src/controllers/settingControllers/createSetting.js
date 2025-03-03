@@ -36,7 +36,7 @@ export default {
                 companyName,
                 title,
                 termsandconditions,
-                client_id: req.user?.id,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

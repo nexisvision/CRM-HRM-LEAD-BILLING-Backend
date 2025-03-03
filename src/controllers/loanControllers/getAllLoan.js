@@ -2,6 +2,8 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import Loan from "../../models/loanModel.js";
 import responseHandler from "../../utils/responseHandler.js";
+import Role from "../../models/roleModel.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -12,13 +14,46 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const loans = await Loan.findAll();
-            if (!loans) {
-                return responseHandler.success(res, "Loans not found");
+            const userRole = req.user.role;
+            let loan;
+
+            // Find role in role model
+            const role = await Role.findOne({
+                where: { id: userRole }
+            });
+
+            if (!role) {
+                return responseHandler.error(res, "Role not found");
             }
-            return responseHandler.success(res, "Loans fetched successfully", loans);
+
+            if (role.role_name === 'client') {
+                // If user is client, find projects matching their client_id
+                loan = await Loan.findAll({
+                    where: {
+                        client_id: req.user.id
+                    }
+                });
+            } else {
+                // For other roles, get client_id from user model
+                const user = await User.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!user) {
+                    return responseHandler.error(res, "User not found");
+            }
+
+                loan = await Loan.findAll({
+                    where: {
+                        client_id: user.client_id
+                    }
+                });
+            }
+
+            return responseHandler.success(res, "Loan fetched successfully", loan);
+
         } catch (error) {
-            return responseHandler.error(res, error.message);
+            return responseHandler.error(res, error?.message);
         }
     }
 }

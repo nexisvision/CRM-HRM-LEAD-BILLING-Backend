@@ -61,6 +61,7 @@ export default {
                 description: ticketSubject,
                 from: req.user?.username,
                 notification_type: "reminder",
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

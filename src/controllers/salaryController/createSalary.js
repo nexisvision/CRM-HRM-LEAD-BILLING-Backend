@@ -10,7 +10,7 @@ export default {
             payslipType: Joi.string().required(),
             currency: Joi.string().required(),
             netSalary: Joi.string().required(),
-            salary: Joi.number().required(),
+            salary: Joi.string().required(),
             bankAccount: Joi.string().required(),
         })
     }),
@@ -28,6 +28,7 @@ export default {
                 netSalary,
                 salary,
                 bankAccount,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
             return responseHandler.success(res, "Salary created successfully", salaryType);

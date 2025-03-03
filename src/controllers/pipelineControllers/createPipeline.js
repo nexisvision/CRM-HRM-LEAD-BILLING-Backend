@@ -17,7 +17,7 @@ export default {
                 return responseHandler.error(res, "Pipeline already exists");
             }
             const pipeline = await Pipeline.create({ pipeline_name,
-                
+                client_id: req.des?.client_id,
                 created_by: req.user?.username });
             return responseHandler.success(res, "Pipeline created successfully", pipeline);
         } catch (error) {

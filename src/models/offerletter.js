@@ -45,6 +45,10 @@ const OfferLetter = sequelize.define('OfferLetter', {
         allowNull: false,
         defaultValue: "pending"
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

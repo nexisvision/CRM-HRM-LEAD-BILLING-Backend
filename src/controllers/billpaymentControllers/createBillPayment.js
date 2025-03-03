@@ -50,6 +50,7 @@ export default {
                 account,
                 reference,
                 description,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username  
             });
 

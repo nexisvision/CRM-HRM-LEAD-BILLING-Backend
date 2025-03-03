@@ -21,7 +21,8 @@ export default {
                 return responseHandler.error(res, "Designation name already exists for the given branch and department");
             }
 
-            const designation = await Designation.create({ branch, designation_name, created_by: req.user?.username });
+            const designation = await Designation.create({ branch, designation_name,
+                 client_id: req.des?.client_id, created_by: req.user?.username });
             return responseHandler.success(res, "Designation created successfully", designation);
         } catch (error) {
             return responseHandler.error(res, error?.message);

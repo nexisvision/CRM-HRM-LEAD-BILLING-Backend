@@ -43,6 +43,10 @@ const Leave = sequelize.define('Leave', {
         allowNull: false,
         defaultValue: false
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

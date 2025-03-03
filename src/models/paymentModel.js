@@ -62,6 +62,10 @@ const Payment = sequelize.define('Payment', {
 
         allowNull: true,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         defaultValue: null,

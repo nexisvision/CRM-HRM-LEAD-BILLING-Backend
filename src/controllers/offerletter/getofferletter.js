@@ -2,6 +2,8 @@ import Joi from "joi";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
 import OfferLetter from "../../models/offerletter.js";
+import Role from "../../models/roleModel.js";
+import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -12,11 +14,44 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const offerletters = await OfferLetter.findAll();
-            if (!offerletters) {
-                return responseHandler.error(res, "No offer letters found");
+            const userRole = req.user.role;
+            let offerLetter;
+
+            // Find role in role model
+            const role = await Role.findOne({
+                where: { id: userRole }
+            });
+
+            if (!role) {
+                return responseHandler.error(res, "Role not found");
             }
-            return responseHandler.success(res, "Offer letters fetched successfully", offerletters);
+
+            if (role.role_name === 'client') {
+                // If user is client, find projects matching their client_id
+                offerLetter = await OfferLetter.findAll({
+                    where: {
+                        client_id: req.user.id
+                    }
+                });
+            } else {
+                // For other roles, get client_id from user model
+                const user = await User.findOne({
+                    where: { id: req.user.id }
+                });
+
+                if (!user) {
+                    return responseHandler.error(res, "User not found");
+                }
+
+                offerLetter = await OfferLetter.findAll({
+                    where: {
+                        client_id: user.client_id
+                    }
+                });
+            }
+
+            return responseHandler.success(res, "Offer letter fetched successfully", offerLetter);
+
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

@@ -58,6 +58,11 @@ const Bill = sequelize.define('Bill', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     craeted_by: {
         type: DataTypes.STRING,
         allowNull: true,

@@ -16,7 +16,9 @@ export default {
             if (existingPayslipType) {
                 return responseHandler.error(res, "Payslip type already exists");
             }
-            const payslipType = await PayslipType.create({ name, created_by: req.user?.username });
+            const payslipType = await PayslipType.create({ name,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             if (!payslipType) {
                 return responseHandler.error(res, "Failed to create payslip type");
             }

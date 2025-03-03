@@ -20,6 +20,10 @@ const ESignature = sequelize.define("ESignature", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     // user_id: {
     //     type: DataTypes.UUID,
     //     allowNull: false,

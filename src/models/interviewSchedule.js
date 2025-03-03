@@ -48,6 +48,10 @@ const InterviewSchedule = sequelize.define('interview_schedule', {
         allowNull: true,
         defaultValue: null
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

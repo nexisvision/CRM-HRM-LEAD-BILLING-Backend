@@ -17,7 +17,9 @@ export default {
             if (existingLeaveType) {
                 return responseHandler.error(res, "Leave type already exists");
             }
-            const leavetype = await LeaveType.create({ leaveType, daysPerYear, created_by: req.user?.username });
+            const leavetype = await LeaveType.create({ leaveType, daysPerYear,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             if (!leavetype) {
                 return responseHandler.error(res, "Failed to create leave type");
             }

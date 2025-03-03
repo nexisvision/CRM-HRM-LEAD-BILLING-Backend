@@ -71,6 +71,10 @@ const Job = sequelize.define('job', {
         allowNull: true,
         defaultValue: null
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

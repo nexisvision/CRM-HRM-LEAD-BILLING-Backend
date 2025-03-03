@@ -24,7 +24,9 @@ export default {
             if (existingSalesRevenue) {
                 return responseHandler.error(res, "SalesRevenue already exists");
             }
-            const salesRevenue = await SalesRevenue.create({ related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt, created_by: req.user?.username });
+            const salesRevenue = await SalesRevenue.create({ related_id: id, date, currency, amount, account, customer, description, category, paymentReceipt,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "SalesRevenue created successfully", salesRevenue);
         } catch (error) {
             return responseHandler.error(res, error?.message);

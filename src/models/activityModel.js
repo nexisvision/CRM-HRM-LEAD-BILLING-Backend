@@ -34,6 +34,10 @@ const Activity = sequelize.define("activity", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
 });
 
 Activity.beforeCreate(async (activity) => {

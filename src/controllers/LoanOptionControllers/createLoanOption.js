@@ -18,6 +18,7 @@ export default {
             }
             const loanOption = await LoanOption.create({
                 name,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });
             return responseHandler.success(res, "Loan option created successfully", loanOption);

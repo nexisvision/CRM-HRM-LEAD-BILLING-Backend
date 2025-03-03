@@ -35,6 +35,10 @@ const Attendance = sequelize.define('Attendance', {
         allowNull: true,
         defaultValue: false
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

@@ -23,6 +23,7 @@ export default {
             const tax = await Tax.create({
                 gstName,
                 gstPercentage,
+                client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
 

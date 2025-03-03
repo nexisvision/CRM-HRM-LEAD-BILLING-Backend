@@ -16,7 +16,9 @@ export default {
             if (existingGoalType) {
                 return responseHandler.error(res, "Goal type already exists");
             }
-            const goaltype = await GoalType.create({ name, created_by: req.user?.username });
+            const goaltype = await GoalType.create({ name, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             if (!goaltype) {
                 return responseHandler.error(res, "Failed to create Goal type");
             }

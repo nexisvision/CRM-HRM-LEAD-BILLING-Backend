@@ -12,7 +12,9 @@ export default {
     handler: async (req, res) => {
         try {
             const { name } = req.body;
-            const payroll = await Payroll.create({ name, created_by: req.user?.username });
+            const payroll = await Payroll.create({ name,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Payroll created successfully", payroll);
         } catch (error) {
             return responseHandler.error(res, error?.message);

@@ -26,7 +26,9 @@ export default {
             if (existingIndicator) {
                 return responseHandler.error(res, "Indicator already exists for the given branch, department, and designation");
             }
-            const indicator = await Indicator.create({ branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, created_by: req.user?.username });
+            const indicator = await Indicator.create({ branch, department, designation, businessProcess, oralCommunication, leadership, projectManagement, allocatingResources, overallRating, 
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             responseHandler.success(res, "Indicator created successfully", indicator);
         } catch (error) {
             responseHandler.error(res, error?.message);

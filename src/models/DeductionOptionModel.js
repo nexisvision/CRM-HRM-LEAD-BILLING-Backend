@@ -15,6 +15,10 @@ const DeductionOption = sequelize.define("DeductionOption", {
         allowNull: false,
         unique: true
     },
+    client_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     created_by: {
         type: DataTypes.STRING,
         allowNull: true,

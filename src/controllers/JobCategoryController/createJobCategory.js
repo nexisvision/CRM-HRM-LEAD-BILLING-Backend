@@ -17,7 +17,9 @@ export default {
             if (existingJobCategory) {
                 return responseHandler.error(res, "Job category already exists");
             }
-            const jobCategory = await JobCategory.create({ title, created_by: req.user?.username });
+            const jobCategory = await JobCategory.create({ title,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Job category created successfully", jobCategory);
         } catch (error) {
             return responseHandler.error(res, error?.message);

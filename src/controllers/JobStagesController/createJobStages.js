@@ -17,7 +17,9 @@ export default {
             if (existingJobStages) {
                 return responseHandler.error(res, "Job stages already exists");
             }
-            const jobStages = await JobStages.create({ title, created_by: req.user?.username });
+            const jobStages = await JobStages.create({ title,
+                client_id: req.des?.client_id,
+                created_by: req.user?.username });
             return responseHandler.success(res, "Job stages created successfully", jobStages);
         } catch (error) {
             return responseHandler.error(res, error?.message);
