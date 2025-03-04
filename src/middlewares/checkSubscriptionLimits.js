@@ -9,6 +9,8 @@ import { Op } from 'sequelize';
 
 export const getActiveSubscription = async (req, res, next) => {
     try {
+
+        console.log('req.user', req.user);
         const role = await Role.findByPk(req.user.role);
         if (!role) return responseHandler.error(res, 'Role not found');
 

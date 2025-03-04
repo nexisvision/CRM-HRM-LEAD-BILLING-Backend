@@ -15,10 +15,9 @@ export default {
             milestone_title: Joi.string().required(),
             milestone_status: Joi.string().required(),
             milestone_cost: Joi.number().required(),
-            add_cost_to_project_budget: Joi.alternatives().try(
-                Joi.boolean(),
-                Joi.string().valid('true', 'false', '1', '0')
-            ).required(),
+            add_cost_to_project_budget: Joi.string()
+                .valid('yes', 'no')
+                .optional(), 
             milestone_summary: Joi.string().required(),
             milestone_start_date: Joi.date().required(),
             milestone_end_date: Joi.date().required()

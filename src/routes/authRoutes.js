@@ -7,7 +7,7 @@ import passCompanyDetail from "../middlewares/passCompanyDetail.js";
 const router = express.Router();
 
 router.post('/signup', authenticateUser, checkRole,  getActiveSubscription, passCompanyDetail, signup.validator, signup.handler);
-router.post('/login', checkSubscriptionDates, login.validator, login.handler);
+router.post('/login', login.validator, login.handler);
 router.post("/verify-signup", authenticateUser, checkSubscriptionLimits, verifySignup.validator, verifySignup.handler);
 router.post("/resend-signup-otp", authenticateUser, resendSignupOtp.handler);
 router.post("/forgot-password", forgotPassword.validator, forgotPassword.handler);
