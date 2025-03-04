@@ -10,9 +10,10 @@ export default {
         }),
     }),
     handler: async (req, res) => {
+        
         try {
             const { branch, designation_name } = req.body;
-
+            
             const existingDesignation = await Designation.findOne({
                 where: { designation_name, branch }
             });

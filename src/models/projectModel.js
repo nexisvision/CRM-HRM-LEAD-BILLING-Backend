@@ -54,7 +54,7 @@ const Project = sequelize.define("Project", {
         allowNull: false
     },
     estimatedmonths: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
