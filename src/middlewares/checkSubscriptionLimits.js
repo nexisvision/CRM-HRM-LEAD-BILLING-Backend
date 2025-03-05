@@ -1,6 +1,7 @@
 import ClientSubscription from '../models/clientSubscriptionModel.js';
 import Role from '../models/roleModel.js';
 import SubscriptionPlan from '../models/subscriptionPlanModel.js';
+import SuperAdmin from '../models/superAdminModel.js';
 import User from '../models/userModel.js';
 import responseHandler from '../utils/responseHandler.js';
 import { Op } from 'sequelize';
@@ -49,6 +50,12 @@ export const checkSubscriptionDates = async (req, res, next) => {
         const { login } = req.body;
         const currentDate = new Date();
 
+        const isSuperAdmin = await SuperAdmin.findOne({ where: { email: login } });
+
+        if (isSuperAdmin) {
+            return next();
+        }
+
         // Find user by username, email or phone
         const user = await User.findOne({
             where: {
@@ -74,7 +81,7 @@ export const checkSubscriptionDates = async (req, res, next) => {
         if (role.role_name === 'client') {
             // If user is client, find subscription using user.id as client_id
             subscription = await ClientSubscription.findOne({
-                where: { 
+                where: {
                     client_id: user.id,
                     status: ['active', 'trial']
                 }
@@ -151,10 +158,10 @@ export const checkSubscriptionLimits = async (req, res, next) => {
             'user': { field: 'current_users_count', max: plan.max_users, message: 'Maximum number of users reached' },
             'vendors': { field: 'current_vendors_count', max: plan.max_vendors, message: 'Maximum number of vendors reached' },
             'customers': { field: 'current_customers_count', max: plan.max_customers, message: 'Maximum number of customers reached' },
-            
-            
 
-        
+
+
+
         };
 
         if (role.role_name === 'sub-client') {
@@ -173,7 +180,7 @@ export const checkSubscriptionLimits = async (req, res, next) => {
                 return responseHandler.error(res, limits['customers'].message);
             }
         }
-        
+
         req.subscription = { clientSubscription, plan };
         return next();
     } catch (error) {

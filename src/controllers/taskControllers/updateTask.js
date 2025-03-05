@@ -13,8 +13,7 @@ export default {
         }),
         body: Joi.object({
             taskName: Joi.string().required(),
-            // category: Joi.string().required(),
-            // project: Joi.string().required(),
+            task_reporter: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
             assignTo: Joi.array().required(),
@@ -27,11 +26,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
+            console.log(req.body);
             const {
                 taskName,
-                // category,
-                // project,
-                startDate,   
+                task_reporter,
+                startDate,
+                dueDate,
                 assignTo,
                 priority,
                 status,
@@ -48,8 +48,7 @@ export default {
             }
             const updatedTask = await task.update({
                 taskName,
-                // category,
-                // project,
+                task_reporter,
                 startDate,
                 dueDate,
                 assignTo,

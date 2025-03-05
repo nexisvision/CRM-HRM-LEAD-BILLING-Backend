@@ -14,9 +14,7 @@ export default {
         }),
         body: Joi.object({
             taskName: Joi.string().required(),
-            // category: Joi.string().required(),
-            // project: Joi.string().required(),
-            // lead: Joi.string().required().optional(),
+            task_reporter: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
             assignTo: Joi.any().optional(),
@@ -36,9 +34,7 @@ export default {
 
             const {
                 taskName,
-                // category,
-                // project,
-                // lead,
+                task_reporter,
                 startDate,
                 dueDate,
                 assignTo,
@@ -73,9 +69,7 @@ export default {
             const task = await Task.create({
                 related_id: id,
                 taskName,
-                // category,
-                // project,
-                // lead,
+                task_reporter,
                 startDate,
                 dueDate,
                 assignTo,
@@ -115,7 +109,7 @@ export default {
                 users: assignTo,
                 title: "New Task",
                 from: req.user?.id,
-                client_id: req.des?.client_id,  
+                client_id: req.des?.client_id,
                 message: `${req.user?.username} assigned you a task: ${taskName}`,
                 description: `Task Name: ${taskName}, start date: ${startDate}, due date: ${dueDate}`,
                 created_by: req.user?.username,

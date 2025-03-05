@@ -6,7 +6,7 @@ import passCompanyDetail from "../middlewares/passCompanyDetail.js";
 
 const router = express.Router();
 
-router.post('/signup', authenticateUser, checkRole,  getActiveSubscription, passCompanyDetail, signup.validator, signup.handler);
+router.post('/signup', authenticateUser, checkRole, getActiveSubscription, passCompanyDetail, signup.validator, signup.handler);
 router.post('/login', login.validator, login.handler);
 router.post("/verify-signup", authenticateUser, checkSubscriptionLimits, verifySignup.validator, verifySignup.handler);
 router.post("/resend-signup-otp", authenticateUser, resendSignupOtp.handler);
@@ -17,7 +17,7 @@ router.post("/reset-password", authenticateUser, resetPassword.validator, resetP
 router.post("/verify", authenticateUser, verify.validator, verify.handler);
 
 //Super-Admin 
-router.use(authenticateUser, checkUserRole(['super-admin','client']));
+router.use(authenticateUser, checkUserRole(['super-admin', 'client']));
 
 router.get('/', getAllUsers.validator, getAllUsers.handler);
 router.get('/:id', getUserById.validator, getUserById.handler);

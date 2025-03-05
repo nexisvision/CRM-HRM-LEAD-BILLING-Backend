@@ -12,7 +12,7 @@ router.put('/:id', upload.fields([
 ]), updateSubClient.validator, updateSubClient.handler);
 
 
-router.use(authenticateUser, checkUserRole(['client']));
+router.use(authenticateUser, checkUserRole(['super-admin', 'client']));
 router.post('/', getActiveSubscription, createSubClient.validator, createSubClient.handler);
 router.get('/', getAllSubClients.validator, getAllSubClients.handler);
 router.delete('/:id', deleteSubClient.validator, deleteSubClient.handler);
