@@ -21,6 +21,8 @@ const checkUserRole = (allowedRoles) => {
                 return responseHandler.error(res, "Unauthorized access");
             }
             req.role = role;
+
+            // console.log("rolefgfg", role);
             next();
         } catch (error) {
 

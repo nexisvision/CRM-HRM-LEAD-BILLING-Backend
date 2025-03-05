@@ -33,6 +33,9 @@ export default {
             const { subscription } = req;
             const { username, email, password } = req.body;
 
+
+            // console.log("subscription", subscription);
+
             const existingUsername = await User.findOne({
                 where: { username }
             });
@@ -50,29 +53,27 @@ export default {
             }
 
             const [role] = await Role.findOrCreate({
-                where: { role_name: 'sub-client', created_by: req.user?.username},
+                where: { role_name: 'sub-client'},
                 defaults: { id: generateId() }
             });
 
-
-            const creatorRole = await Role.findByPk(req.user?.role);
+            // const creatorRole = await Role.findByPk(req.user?.role);
             // console.log("dfgfdgfd",creatorRole);
-            if (!creatorRole) {
-                return responseHandler.error(res, "Invalid creator role");
-            }
-
+            // if (!creatorRole) {
+            //     return responseHandler.error(res, "Invalid creator role");
+            // }
 
             // console.log("dfgfdgfd",creatorRole);
 
-            let client_id;
-            if (creatorRole.role_name === 'client') {
-                client_id = req.user.id;
-            } else if (creatorRole.role_name === 'super-admin') {
-                client_id = req.user.id;
-            } else {
-                client_id = req.user.client_id;
-                // console.log("dfgfdgfd",client_id);
-            }
+            // let client_id;
+            // if (creatorRole.role_name === 'client') {
+            //     client_id = req.user.id;
+            // } else if (creatorRole.role_name === 'super-admin') {
+            //     client_id = req.user.id;
+            // } else {
+            //     client_id = req.user.client_id;
+            //     // console.log("dfgfdgfd",client_id);
+            // }
             // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
 
@@ -86,7 +87,7 @@ export default {
                 role_id: role.id,
                 password: hashedPassword,
                 verificationOTP: otp,
-                client_id: client_id,
+                client_id: req.user?.client_id,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
                 created_by: req.user?.username
             };

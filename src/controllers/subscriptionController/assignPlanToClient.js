@@ -39,9 +39,30 @@ export default {
             if (existingSubscription) {
                 return responseHandler.error(res, "Client already has an active subscription");
             }
+
+            // Handle start and end times
+            const currentDate = new Date();
+            let startDateTime = new Date(start_date);
+            let endDateTime = end_date ? new Date(end_date) : null;
+
+            // If start date is today, use current time
+            if (startDateTime.toDateString() === currentDate.toDateString()) {
+                startDateTime = currentDate;
+            } else {
+                // If different date, set time to 12:00 AM
+                startDateTime.setHours(0, 0, 0, 0);
+            }
+
+            // If end date exists, set its time based on start time
+            if (endDateTime) {
+                endDateTime.setHours(startDateTime.getHours(), startDateTime.getMinutes(), startDateTime.getSeconds(), startDateTime.getMilliseconds());
+            }
+
             const subscription = await ClientSubscription.create({
                 client_id,
                 plan_id,
+                start_time: startDateTime,
+                end_time: endDateTime,
                 start_date,
                 end_date,
                 status,
@@ -51,7 +72,7 @@ export default {
                 payment_status,
                 created_by: req.user?.username
             });
-// sanivar
+
             await User.update({
                 client_plan_id: subscription.id
             }, {
@@ -91,11 +112,10 @@ export default {
 
             return responseHandler.created(res, "Subscription plan assigned successfully", subscription);
         } catch (error) {
-            return responseHandler.error(res, error?.message);
+            return responseHandler.error(res, error.message);
         }
     }
 };
-
 
 
 

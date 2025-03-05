@@ -6,13 +6,15 @@ import User from '../models/userModel.js';
 import responseHandler from '../utils/responseHandler.js';
 import { Op } from 'sequelize';
 
-// sanivar
 
 export const getActiveSubscription = async (req, res, next) => {
     try {
 
-        console.log('req.user', req.user);
+        
+        
         const role = await Role.findByPk(req.user.role);
+
+        // console.log("rolefgfg", role);
         if (!role) return responseHandler.error(res, 'Role not found');
 
         let clientSubscription;
@@ -21,6 +23,7 @@ export const getActiveSubscription = async (req, res, next) => {
                 where: { client_id: req.user.id, status: ['active', 'trial', 'expired'] }
             });
         } else {
+            
             const user = await User.findByPk(req.user.id);
             if (!user?.client_plan_id) {
                 return responseHandler.error(res, 'No subscription plan found for user');
@@ -50,13 +53,25 @@ export const checkSubscriptionDates = async (req, res, next) => {
         const { login } = req.body;
         const currentDate = new Date();
 
-        const isSuperAdmin = await SuperAdmin.findOne({ where: { email: login } });
+        // First check if user is SuperAdmin
+        const superAdmin = await SuperAdmin.findOne({
+            where: {
+                [Op.or]: [
+                    login && { username: login },
+                    login && { email: login },
+                    login && { phone: login }
+                ].filter(Boolean),
+                // Assuming super-admin role ID
+            }
+        });
 
-        if (isSuperAdmin) {
-            return next();
+        // If SuperAdmin found, proceed directly
+        if (superAdmin) {
+            next();
+            return;
         }
 
-        // Find user by username, email or phone
+        // If not SuperAdmin, continue with regular user flow
         const user = await User.findOne({
             where: {
                 [Op.or]: [
@@ -71,7 +86,6 @@ export const checkSubscriptionDates = async (req, res, next) => {
             return responseHandler.error(res, 'User not found');
         }
 
-        // Get user's role
         const role = await Role.findByPk(user.role_id);
         if (!role) {
             return responseHandler.error(res, 'Role not found');
@@ -79,7 +93,6 @@ export const checkSubscriptionDates = async (req, res, next) => {
 
         let subscription;
         if (role.role_name === 'client') {
-            // If user is client, find subscription using user.id as client_id
             subscription = await ClientSubscription.findOne({
                 where: {
                     client_id: user.id,
@@ -87,7 +100,6 @@ export const checkSubscriptionDates = async (req, res, next) => {
                 }
             });
         } else {
-            // For other roles, find subscription using user.client_id
             subscription = await ClientSubscription.findOne({
                 where: {
                     client_id: user.client_id,
@@ -99,23 +111,24 @@ export const checkSubscriptionDates = async (req, res, next) => {
         if (!subscription) {
             return responseHandler.error(res, 'No active subscription found');
         }
-
-        // Check if current date is within subscription period
         const startDate = new Date(subscription.start_date);
         const endDate = subscription.end_date ? new Date(subscription.end_date) : null;
+        const startTime = subscription.start_time ? new Date(subscription.start_time) : null;
+        const endTime = subscription.end_time ? new Date(subscription.end_time) : null;
 
-        if (currentDate < startDate) {
+        if (currentDate < startDate || (startTime && currentDate < startTime)) {
             return responseHandler.error(res, 'Subscription has not started yet');
         }
 
-        if (endDate && currentDate > endDate) {
+        if ((endDate && currentDate > endDate) || (endTime && currentDate > endTime)) {
             return responseHandler.error(res, 'Subscription has expired');
         }
 
-        // Add subscription dates to request
         req.subscriptionDates = {
             start_date: subscription.start_date,
-            end_date: subscription.end_date
+            end_date: subscription.end_date,
+            start_time: subscription.start_time,
+            end_time: subscription.end_time
         };
 
         next();

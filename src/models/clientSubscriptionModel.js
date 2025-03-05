@@ -22,8 +22,18 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
         type: DataTypes.DATE,
         allowNull: false
     },
+   
     end_date: {
         type: DataTypes.DATE,
+        allowNull: true
+    },
+
+    start_time:{
+        type: DataTypes.TIME,
+        allowNull: false
+    },
+    end_time:{
+        type: DataTypes.TIME,
         allowNull: true
     },
     status: {

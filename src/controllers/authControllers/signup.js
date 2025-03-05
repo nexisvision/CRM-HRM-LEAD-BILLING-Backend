@@ -31,6 +31,9 @@ export default {
     handler: async (req, res) => {
         try {
             const { username, password, email, role_id } = req.body;
+
+            // console.log("req.body",req.body);
+
             const { subscription } = req;
 
             const existingUsername = await User.findOne({

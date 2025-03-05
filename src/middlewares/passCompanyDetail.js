@@ -6,7 +6,7 @@ import SuperAdmin from "../models/superAdminModel.js";
 const passClientId = async (req, res, next) => {
     try {
         const role = await Role.findByPk(req.user?.role);
-    
+        // console.log("rojkhjkle",role);
         if (!role) {
             return responseHandler.error(res, "Invalid role");
         }
