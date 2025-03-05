@@ -83,6 +83,8 @@ export default {
                 created_by: req.user?.username,
             });
 
+            const taskId = task.id;
+
             if (reminder_date) {
                 const reminderDate = new Date(reminder_date);
                 const today = new Date();
@@ -92,7 +94,7 @@ export default {
                         (new Date(dueDate) - reminderDate) / (1000 * 60 * 60 * 24)
                     );
                     await Notification.create({
-                        related_id: id,
+                        related_id: taskId,
                         users: assignTo,
                         title: "Task Reminder",
                         notification_type: "reminder",
@@ -106,7 +108,7 @@ export default {
             }
 
             await Notification.create({
-                related_id: id,
+                related_id: taskId,
                 users: assignTo,
                 title: "New Task",
                 from: req.user?.id,
