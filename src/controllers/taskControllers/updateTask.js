@@ -16,7 +16,7 @@ export default {
             task_reporter: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            assignTo: Joi.array().required(),
+            assignTo: Joi.object().required(),
             description: Joi.string().required(),
             priority: Joi.string().required(),
             status: Joi.string().required(),

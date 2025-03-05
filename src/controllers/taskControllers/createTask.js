@@ -17,7 +17,7 @@ export default {
             task_reporter: Joi.string().required(),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            assignTo: Joi.any().optional(),
+            assignTo: Joi.object().optional(),
             priority: Joi.string().required(),
             status: Joi.string().required(),
             reminder_date: Joi.date().optional().allow('', null),
@@ -47,6 +47,7 @@ export default {
             if (existingTask) {
                 return responseHandler.error(res, "Task already exists");
             }
+
             // const esignatureUrl = await uploadToS3(esignature, "esignatures", esignature_name, req.user?.username);
             let task_file_url = task_file;
             if (task_file) {
