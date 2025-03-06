@@ -11,7 +11,7 @@ export default {
             endDate: Joi.date().required(),
             project_category: Joi.string().required(),
             project_description: Joi.string().allow('', null).optional(),
-            department: Joi.object().allow(null).optional(),
+            project_members: Joi.object().allow(null).optional(),
             client: Joi.string().allow('', null).optional(),
             currency: Joi.string().allow('', null).optional(),
             budget: Joi.number().required(),
@@ -19,6 +19,7 @@ export default {
             estimatedhours: Joi.number().allow('', null).optional(),
             files: Joi.array().allow(null).optional(),
             status: Joi.string().allow('', null).optional(),
+            tag: Joi.string().allow('', null).optional(),
         })
     }),
     handler: async (req, res) => {
@@ -29,15 +30,16 @@ export default {
                 endDate,
                 project_category,
                 project_description,
-                department,
+                project_members,
                 client,
                 currency,
                 budget,
                 estimatedmonths,
                 estimatedhours,
+                tag,
+                status,
             } = req.body;
 
-            // const client_id = req.des?.client_id;
             const existingProject = await Project.findOne({
                 where: { project_name }
             });
@@ -52,12 +54,14 @@ export default {
                 endDate,
                 project_category,
                 project_description,
-                department,
+                project_members,
                 client,
                 currency,
                 budget,
                 estimatedmonths,
                 estimatedhours,
+                tag,
+                status,
                 client_id: req.des?.client_id,
                 created_by: req.user?.username,
             });

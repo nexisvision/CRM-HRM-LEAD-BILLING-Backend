@@ -35,11 +35,6 @@ const Project = sequelize.define("Project", {
         type: DataTypes.TEXT,
         allowNull: true
     },
-    department: {
-        type: DataTypes.JSON,
-        allowNull: true,
-        defaultValue: null
-    },
     client: {
         type: DataTypes.STRING,
         allowNull: true
@@ -65,6 +60,11 @@ const Project = sequelize.define("Project", {
     },
     files: {
         type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
+    tag: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
