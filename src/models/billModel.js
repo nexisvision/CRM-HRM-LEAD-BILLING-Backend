@@ -28,6 +28,10 @@ const Bill = sequelize.define('Bill', {
         type: DataTypes.JSON,
         allowNull: false,
     },
+    items: {
+        type: DataTypes.JSON,
+        allowNull: false
+    },
     status: {
         type: DataTypes.STRING,
         allowNull: false,

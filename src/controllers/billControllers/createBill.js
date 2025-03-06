@@ -11,10 +11,11 @@ export default {
         body: Joi.object({
             vendor: Joi.string().required(),
             billDate: Joi.date().required(),
-            discription: Joi.object().required(),
+            discription: Joi.string().required(),
             status: Joi.string().required().default('pending'),
             discount: Joi.number().optional(),
             tax: Joi.number().optional(),
+            items: Joi.array().required(),
             total: Joi.number().required(),
             note: Joi.string().optional(),
         })
@@ -22,7 +23,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { vendor, billDate, discription, status, discount, tax, total, note } = req.body;
+            const { vendor, billDate, discription, status, discount, tax, items, total, note } = req.body;
 
             // Determine bill_status based on total and updated total amounts
             const newBill = await Bill.create({ 
@@ -33,6 +34,7 @@ export default {
                 status,
                 discount,
                 tax, 
+                items,
                 total,
                 note,
                 bill_status: 'draft',

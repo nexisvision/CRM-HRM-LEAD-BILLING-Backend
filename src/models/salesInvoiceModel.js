@@ -71,8 +71,8 @@ const SalesInvoice = sequelize.define('sales_Invoice', {
 });
 
 
-
 SalesInvoice.beforeCreate(async (salesInvoice) => {
+    // Generate unique ID
     let isUnique = false;
     let newId;
     while (!isUnique) {
@@ -84,18 +84,25 @@ SalesInvoice.beforeCreate(async (salesInvoice) => {
     }
     salesInvoice.id = newId;
 
-    const lastSalesInvoice = await SalesInvoice.findOne({
-        order: [['salesInvoiceNumber', 'DESC']]
+    // Get all invoice numbers and find the highest one
+    const allInvoices = await SalesInvoice.findAll({
+        attributes: ['salesInvoiceNumber'],
+        raw: true
     });
 
-    let nextNumber = 1;
-    if (lastSalesInvoice && lastSalesInvoice.salesInvoiceNumber) {
-        const lastNumber = parseInt(lastSalesInvoice.salesInvoiceNumber.replace('S-INV#', ''));
-        nextNumber = lastNumber + 1;    
-    }
+    let highestNumber = 0;
+    allInvoices.forEach(invoice => {
+        if (invoice.salesInvoiceNumber) {
+            const numberPart = parseInt(invoice.salesInvoiceNumber.replace('S-INV#', ''));
+            if (!isNaN(numberPart) && numberPart > highestNumber) {
+                highestNumber = numberPart;
+            }
+        }
+    });
 
+    // Next number should be highest + 1
+    const nextNumber = highestNumber + 1;
     salesInvoice.salesInvoiceNumber = `S-INV#${nextNumber}`;
-
 });
 
 export default SalesInvoice;
