@@ -6,6 +6,8 @@ import responseHandler from "../../utils/responseHandler.js";
 import User from "../../models/userModel.js";
 import { getPlanBuyEmailTemplate } from "../../utils/emailTemplates.js";
 import { sendEmail } from "../../utils/emailService.js";
+import Bill from "../../models/billModel.js";
+import { CLIENT_URL } from "../../config/config.js";
 
 export default {
     validator: validator({
@@ -14,25 +16,18 @@ export default {
             client_id: Joi.string().required(),
             start_date: Joi.date().required(),
             end_date: Joi.date().required(),
-            // amount: Joi.number().required(),
             payment_status: Joi.string().valid('paid', 'unpaid').default('unpaid')
         })
     }),
     handler: async (req, res) => {
         try {
-            const { plan_id, payment_status , client_id, start_date, end_date} = req.body;
-            // const client_id = req.user.id;
+            const { plan_id, payment_status, client_id, start_date, end_date } = req.body;
 
             // Get the plan details
             const plan = await SubscriptionPlan.findByPk(plan_id);
             if (!plan) {
                 return responseHandler.notFound(res, "Subscription plan not found");
             }
-
-            // // Verify amount matches plan price
-            // if (amount !== plan.price) {
-            //     return responseHandler.error(res, "Amount does not match plan price");
-            // }
 
             // Check for existing subscription
             const existingSubscription = await ClientSubscription.findOne({
@@ -41,10 +36,28 @@ export default {
                 }
             });
 
-            // Calculate dates
-            // const start_date = new Date();
-            // const end_date = new Date(start_date);
-            // end_date.setMonth(end_date.getMonth() + plan.duration);
+            // Handle start and end times
+            const currentDate = new Date();
+            let startDateTime = new Date(start_date);
+            let endDateTime = new Date(end_date);
+
+            // If start date is today, use current time
+            if (startDateTime.toDateString() === currentDate.toDateString()) {
+                startDateTime = currentDate;
+            } else {
+                // If different date, set time to 12:00 AM
+                startDateTime.setHours(0, 0, 0, 0);
+            }
+
+            // Set end time based on start time
+            endDateTime.setHours(startDateTime.getHours(), startDateTime.getMinutes(), startDateTime.getSeconds(), startDateTime.getMilliseconds());
+
+            // Calculate trial period if new client
+            if (!existingSubscription && plan.trial_period) {
+                const trialDays = parseInt(plan.trial_period);
+                endDateTime = new Date(startDateTime);
+                endDateTime.setDate(endDateTime.getDate() + trialDays);
+            }
 
             let subscription;
             if (existingSubscription) {
@@ -53,6 +66,8 @@ export default {
                     plan_id,
                     start_date: start_date,
                     end_date: end_date,
+                    start_time: startDateTime,
+                    end_time: endDateTime,
                     status: 'active',
                     current_storage_used: 0,
                     current_users_count: 0,
@@ -68,6 +83,8 @@ export default {
                     plan_id,
                     start_date: start_date,
                     end_date: end_date,
+                    start_time: startDateTime,
+                    end_time: endDateTime,
                     status: 'active',
                     current_users_count: 0,
                     current_clients_count: 0,
@@ -80,8 +97,36 @@ export default {
 
             const client = await User.findByPk(client_id);
 
+            // Create bill
+            let bill;
+            try {
+                bill = await Bill.create({
+                    related_id: subscription.id,
+                    vendor: client_id,
+                    billDate: new Date(),
+                    discription: "Please pay bill",
+                    status: payment_status,
+                    discount: 0,
+                    tax: 0,
+                    total: parseFloat(plan.price),
+                    note: "Thank you for subscribing to our service",
+                    client_id: client_id,
+                    created_by: req.user?.username
+                });
+            } catch (billError) {
+                console.error("Bill creation error:", {
+                    error: billError.message,
+                    stack: billError.stack,
+                    validationErrors: billError.errors
+                });
+                await subscription.destroy();
+                throw new Error(`Failed to create bill: ${billError.message}`);
+            }
+
+            const billUrl = `${CLIENT_URL}/api/v1/bills/download/${bill.id}`;
+
             // Send confirmation email
-            const emailTemplate = getPlanBuyEmailTemplate(client.username, plan);
+            const emailTemplate = getPlanBuyEmailTemplate(client.username, plan, billUrl);
             await sendEmail(
                 client.email,
                 'Plan Purchase Confirmation',

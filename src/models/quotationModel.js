@@ -80,6 +80,7 @@ const Quotations = sequelize.define('quotations', {
 
 
 Quotations.beforeCreate(async (quotation) => {
+    // Generate unique ID
     let isUnique = false;
     let newId;
     while (!isUnique) {
@@ -91,19 +92,25 @@ Quotations.beforeCreate(async (quotation) => {
     }
     quotation.id = newId;
 
-    const lastQuotation = await Quotations.findOne({
-        order: [['quotationNumber', 'DESC']]
+    // Get all quotation numbers and find the highest one
+    const allQuotations = await Quotations.findAll({
+        attributes: ['quotationNumber'],
+        raw: true
     });
 
-    let nextNumber = 1;
-    if (lastQuotation && lastQuotation.quotationNumber) {
-        // Extract the number from the last invoiceNumber and increment it
-        const lastNumber = parseInt(lastQuotation.quotationNumber.replace('QUO#', ''));
-        nextNumber = lastNumber + 1;
-    }
+    let highestNumber = 0;
+    allQuotations.forEach(quotation => {
+        if (quotation.quotationNumber) {
+            const numberPart = parseInt(quotation.quotationNumber.replace('QUO#', ''));
+            if (!isNaN(numberPart) && numberPart > highestNumber) {
+                highestNumber = numberPart;
+            }
+        }
+    });
 
+    // Next number should be highest + 1
+    const nextNumber = highestNumber + 1;
     quotation.quotationNumber = `QUO#${nextNumber}`;
-
 });
 
 export default Quotations;

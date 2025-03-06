@@ -22,19 +22,19 @@ export default {
 
             // Update subscription status to inactive and remove plan_id
             await existingSubscription.update({
-                status: 'inactive',
-                plan_id: null,
+                status: 'cancelled',
+                // plan_id: null,
                 updated_by: req.user?.username
             });
 
             // Remove plan_id from user
-            await User.update({
-                client_plan_id: null
-            }, {
-                where: {
-                    id: existingSubscription.client_id
-                }
-            });
+            // await User.update({
+            //     client_plan_id: null
+            // }, {
+            //     where: {
+            //         id: existingSubscription.client_id
+            //     }
+            // });
 
             return responseHandler.success(res, "Subscription plan removed successfully");
         } catch (error) {

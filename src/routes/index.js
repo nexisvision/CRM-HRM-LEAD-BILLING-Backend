@@ -92,7 +92,7 @@ import vendorRoutes from "./vendorRoutes.js";
 import billDebitRoutes from "./billdebitRoutes.js";
 import billPaymentRoutes from "./billpayment.js";
 import emailRoutes from "./emailRoutes.js";
-import holidaysRoutes from "./holidayRoutes.js";
+import holidayRoutes from "./holidayRoutes.js";
 const router = express.Router();
 
 
@@ -104,7 +104,7 @@ router.use('/currencies', currencyRoutes);
 router.use('/countries', countriesRoutes);
 router.use('/esignatures', esignatureRoutes);
 
-router.use('/holidays', holidaysRoutes);
+router.use('/holidays', holidayRoutes);
 
 router.use('/accounts', accountRoutes);
 router.use('/vendors', vendorRoutes);

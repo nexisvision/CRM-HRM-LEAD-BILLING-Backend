@@ -77,7 +77,9 @@ const Bill = sequelize.define('Bill', {
     },
 });
 
+
 Bill.beforeCreate(async (bill) => {
+    // Generate unique ID
     let isUnique = false;
     let newId;
     while (!isUnique) {
@@ -89,19 +91,31 @@ Bill.beforeCreate(async (bill) => {
     }
     bill.id = newId;
 
-    const lastBill = await Bill.findOne({
-        order: [['billNumber', 'DESC']]
+    // Get all bill numbers and find the highest one
+    const allBills = await Bill.findAll({
+        attributes: ['billNumber'],
+        raw: true
     });
 
-    let nextNumber = 1;
-    if (lastBill && lastBill.billNumber) {
-        // Extract the number from the last invoiceNumber and increment it
-        const lastNumber = parseInt(lastBill.billNumber.replace('BILL#', ''));
-        nextNumber = lastNumber + 1;
-    }
+    // console.log("All existing bill numbers:", allBills);
 
+    let highestNumber = 0;
+    allBills.forEach(bill => {
+        if (bill.billNumber) {
+            const numberPart = parseInt(bill.billNumber.replace('BILL#', ''));
+            if (!isNaN(numberPart) && numberPart > highestNumber) {
+                highestNumber = numberPart;
+            }
+        }
+    });
+
+    // console.log("Highest bill number found:", highestNumber);
+
+    // Next number should be highest + 1
+    const nextNumber = highestNumber + 1;
     bill.billNumber = `BILL#${nextNumber}`;
 
+    // console.log("New bill number assigned:", bill.billNumber);
 });
 
 export default Bill;

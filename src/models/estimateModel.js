@@ -76,8 +76,8 @@ const Estimate = sequelize.define('estimate', {
 });
 
 
-
 Estimate.beforeCreate(async (estimate) => {
+    // Generate unique ID
     let isUnique = false;
     let newId;
     while (!isUnique) {
@@ -89,19 +89,25 @@ Estimate.beforeCreate(async (estimate) => {
     }
     estimate.id = newId;
 
-    const lastEstimate = await Estimate.findOne({
-        order: [['estimateNumber', 'DESC']]
+    // Get all estimate numbers and find the highest one
+    const allEstimates = await Estimate.findAll({
+        attributes: ['estimateNumber'],
+        raw: true
     });
 
-    let nextNumber = 1;
-    if (lastEstimate && lastEstimate.estimateNumber) {
-        // Extract the number from the last invoiceNumber and increment it
-        const lastNumber = parseInt(lastEstimate.estimateNumber.replace('EST#', ''));
-        nextNumber = lastNumber + 1;
-    }
+    let highestNumber = 0;
+    allEstimates.forEach(estimate => {
+        if (estimate.estimateNumber) {
+            const numberPart = parseInt(estimate.estimateNumber.replace('EST#', ''));
+            if (!isNaN(numberPart) && numberPart > highestNumber) {
+                highestNumber = numberPart;
+            }
+        }
+    });
 
+    // Next number should be highest + 1
+    const nextNumber = highestNumber + 1;
     estimate.estimateNumber = `EST#${nextNumber}`;
-
 });
 
 export default Estimate;

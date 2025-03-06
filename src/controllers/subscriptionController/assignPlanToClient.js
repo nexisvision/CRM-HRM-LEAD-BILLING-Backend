@@ -24,21 +24,34 @@ export default {
         try {
             const { client_id, plan_id, start_date, end_date, status, payment_status } = req.body;
 
+          
+            let bill;
+
             const plan = await SubscriptionPlan.findByPk(plan_id);
             if (!plan) {
                 return responseHandler.notFound(res, "Subscription plan not found");
             }
 
+           
+
+            // First check for existing subscription
             const existingSubscription = await ClientSubscription.findOne({
                 where: {
                     client_id,
-                    status: ['active', 'trial']
+               
                 }
             });
 
             if (existingSubscription) {
                 return responseHandler.error(res, "Client already has an active subscription");
             }
+
+            // Check for previous subscriptions (including expired ones)
+            const previousSubscription = await ClientSubscription.findOne({
+                where: { client_id }
+            });
+
+      
 
             // Handle start and end times
             const currentDate = new Date();
@@ -49,22 +62,46 @@ export default {
             if (startDateTime.toDateString() === currentDate.toDateString()) {
                 startDateTime = currentDate;
             } else {
-                // If different date, set time to 12:00 AM
                 startDateTime.setHours(0, 0, 0, 0);
             }
 
-            // If end date exists, set its time based on start time
-            if (endDateTime) {
-                endDateTime.setHours(startDateTime.getHours(), startDateTime.getMinutes(), startDateTime.getSeconds(), startDateTime.getMilliseconds());
+            // Handle end date and trial period
+            if (!previousSubscription && plan.trial_period) {
+                // New client with no previous subscriptions - apply trial period
+                const trialDays = parseInt(plan.trial_period);
+               
+                
+                if (endDateTime) {
+                    // Add trial days to provided end date
+                    endDateTime = new Date(end_date);
+                    endDateTime.setDate(endDateTime.getDate() + trialDays);
+                } else {
+                    // Create end date from start date + trial days
+                    endDateTime = new Date(startDateTime);
+                    endDateTime.setDate(endDateTime.getDate() + trialDays);
+                }
+                endDateTime.setHours(23, 59, 59, 999);
+                
+                // Force status to trial for new clients
+                // if (status !== 'trial') {
+                //     console.log("Changing status to trial for new client");
+                //     status = 'trial';
+                // }
+            } else if (endDateTime) {
+                // Existing client or no trial period - use provided end date
+                endDateTime.setHours(23, 59, 59, 999);
             }
 
+           
+
+            // Create subscription with final dates
             const subscription = await ClientSubscription.create({
                 client_id,
                 plan_id,
                 start_time: startDateTime,
                 end_time: endDateTime,
                 start_date,
-                end_date,
+                end_date: endDateTime,
                 status,
                 current_users_count: 0,
                 current_clients_count: 0,
@@ -82,27 +119,40 @@ export default {
             });
 
             const planPrice = plan.price;
+
             const client = await User.findByPk(client_id);
 
-            const bill = await Bill.create({
-                related_id: subscription.id,
-                vendor: client_id,
-                billDate: new Date(),
-                discription: {
-                    subscription
-                },
-                status: payment_status,
-                discount: 0,
-                tax: 0,
-                total: planPrice,
-                note: "Thank you for subscribing to our service",
-                created_by: req.user?.username
-            });
+           
 
-            // Generate bill download URL
+            try {
+                bill = await Bill.create({
+                    related_id: subscription.id,
+                    vendor: client_id,
+                    billDate: new Date(),
+                    discription: "pls pay bill",
+                    status: payment_status,
+                    discount: 0,
+                    tax: 0,
+                    total: parseFloat(planPrice),
+                    note: "Thank you for subscribing to our service",
+                    client_id: client_id,
+                    created_by: req.user?.username
+                });
+
+
+            } catch (billError) {
+                console.error("Bill creation error:", {
+                    error: billError.message,
+                    stack: billError.stack,
+                    validationErrors: billError.errors
+                });
+                await subscription.destroy();
+                throw new Error(`Failed to create bill: ${billError.message}`);
+            }
+
             const billUrl = `${CLIENT_URL}/api/v1/bills/download/${bill.id}`;
+        
 
-            // Send email with bill download link
             const emailTemplate = getPlanBuyEmailTemplate(client.username, plan, billUrl);
             await sendEmail(
                 client.email,
