@@ -93,6 +93,7 @@ import billDebitRoutes from "./billdebitRoutes.js";
 import billPaymentRoutes from "./billpayment.js";
 import emailRoutes from "./emailRoutes.js";
 import holidayRoutes from "./holidayRoutes.js";
+import reminderRoutes from "./reminderRoutes.js";
 const router = express.Router();
 
 
@@ -202,7 +203,7 @@ router.use('/sales-creditnote', salesCreditnoteRoutes);
 
 /** 1. Lead Setup*/
 router.use('/leads', leadRoutes);
-
+router.use('/reminders', reminderRoutes);
 /** 2. Deal Setup*/
 router.use('/deals', dealRoutes);
 

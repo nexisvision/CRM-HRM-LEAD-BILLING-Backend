@@ -5,7 +5,6 @@ import responseHandler from "../../utils/responseHandler.js";
 import { Op } from "sequelize";
 import Notification from "../../models/notificationModel.js";
 import isSameDay from "../../utils/isSameDay.js";
-import User from "../../models/userModel.js";
 
 export default {
     validator: validator({
@@ -14,7 +13,9 @@ export default {
         }),
         body: Joi.object({
             start_date: Joi.date().required(),
-            users: Joi.object().required(),
+            users: Joi.object({
+                users: Joi.array().items(Joi.string()).optional()
+            }).optional(),
             description: Joi.string().required()
         })
     }),
@@ -26,11 +27,6 @@ export default {
             const reminder = await Reminder.findByPk(id);
             if (!reminder) {
                 return responseHandler.error(res, "Reminder not found");
-            }
-
-            const foundUsers = await Promise.all(users.map(userId => User.findByPk(userId)));
-            if (foundUsers.some(user => !user)) {
-                return responseHandler.error(res, "One or more users not found");
             }
 
             const existingReminder = await Reminder.findOne({ where: { start_date, users, description, id: { [Op.not]: id } } });

@@ -131,6 +131,7 @@ export default {
                     billDate: new Date(),
                     discription: "pls pay bill",
                     status: payment_status,
+                    items: 0,
                     discount: 0,
                     tax: 0,
                     total: parseFloat(planPrice),
