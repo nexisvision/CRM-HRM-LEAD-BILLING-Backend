@@ -30,7 +30,7 @@ const SuperAdmin = sequelize.define('SuperAdmin', {
     profilePic: {
         type: DataTypes.STRING,
         allowNull: true,
-        defaultValue: null
+        defaultValue: null      
     },
     firstName: {
         type: DataTypes.STRING,

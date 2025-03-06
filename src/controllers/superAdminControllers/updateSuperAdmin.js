@@ -1,4 +1,5 @@
 import Joi from "joi";
+import bcrypt from "bcrypt";
 import SuperAdmin from "../../models/superAdminModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import validator from "../../utils/validator.js";
@@ -12,28 +13,26 @@ export default {
             id: Joi.string().required()
         }),
         body: Joi.object({
-            username: Joi.string().min(3).max(30).allow('', null),
             firstName: Joi.string().optional().allow('', null),
             lastName: Joi.string().optional().allow('', null),
             phone: Joi.string().optional().allow('', null),
-            profilePic: Joi.any().optional().allow('', null),
+            password: Joi.string().optional().allow('', null),
+            profilePic: Joi.any(),
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
             const profilePic = req.file;
-            const { username, firstName, lastName, phone } = req.body;
+            const { firstName, lastName, phone, password } = req.body;
+
+           
 
             const superAdmin = await SuperAdmin.findByPk(id);
             if (!superAdmin) {
                 return responseHandler.notFound(res, "Super admin not found");
             }
 
-            const existingSuperAdmin = await SuperAdmin.findOne({ where: { username, id: { [Op.not]: id } } });
-            if (existingSuperAdmin) {
-                return responseHandler.error(res, "Username already exists");
-            }
             let profilePicUrl = superAdmin.profilePic;
             if (profilePic) {
                 if (superAdmin.profilePic) {
@@ -46,10 +45,26 @@ export default {
                 }
                 profilePicUrl = await uploadToS3(profilePic, "super-admin", "profile-pic", superAdmin.username);
             }
-            await superAdmin.update({ username, firstName, lastName, phone, profilePic: profilePicUrl, updated_by: req.user?.username });
+
+            // Handle password update
+            let hashedPassword = superAdmin.password;
+            if (password) {
+                hashedPassword = await bcrypt.hash(password, 10);
+              
+            }
+
+            await superAdmin.update({
+                firstName,
+                lastName,
+                phone,
+                password: hashedPassword,
+                profilePic: profilePicUrl,
+                updated_by: req.user?.username
+            });
+
             return responseHandler.success(res, "Super admin updated successfully", superAdmin);
         } catch (error) {
-
+            console.error("Update error:", error);
             return responseHandler.error(res, error?.message);
         }
     }
