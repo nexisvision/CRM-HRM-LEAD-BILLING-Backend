@@ -38,7 +38,7 @@ export default {
             const clientsIds = clients.map(client => client.client_id);
 
             await Notification.create({
-                related_id: req.user?.id,
+                related_id: plan.id,
                 users: clientsIds,
                 title: "New Plan",
                 from: req.user?.id,
@@ -53,3 +53,5 @@ export default {
         }
     }
 };
+
+
