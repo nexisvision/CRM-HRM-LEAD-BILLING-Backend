@@ -52,10 +52,25 @@ export default {
                 return responseHandler.error(res, "Email already exists.");
             }
 
-            const [role] = await Role.findOrCreate({
-                where: { role_name: 'sub-client'},
-                defaults: { id: generateId() }
+            const existingRole = await Role.findOne({
+                where: { 
+                    role_name: 'sub-client',
+                    client_id: req.des.client_id,
+                    created_by: req.user.username
+                }
             });
+
+            let role;
+            if (!existingRole) {
+                role = await Role.create({
+                    id: generateId(),
+                    role_name: 'sub-client',
+                    client_id: req.des.client_id,
+                    created_by: req.user.username
+                });
+            } else {
+                role = existingRole;
+            }
 
             // const creatorRole = await Role.findByPk(req.user?.role);
             // console.log("dfgfdgfd",creatorRole);

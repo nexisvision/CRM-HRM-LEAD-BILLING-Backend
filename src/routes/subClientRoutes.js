@@ -3,10 +3,11 @@ import { authenticateUser, checkRole, checkUserRole } from "../middlewares/index
 import { createSubClient, getAllSubClients, updateSubClient, deleteSubClient } from "../controllers/subClientControllers/index.js";
 import { getActiveSubscription } from "../middlewares/checkSubscriptionLimits.js";
 import upload from "../middlewares/upload.js";
+import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
 
-router.use(authenticateUser, checkRole);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 
 router.put('/:id', upload.fields([

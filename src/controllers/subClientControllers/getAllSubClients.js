@@ -20,12 +20,15 @@ export default {
 
                 }
             });
+
+     
             const subClients = await User.findAll({
                 where: {
                     role_id: SubClientRoleID.id,
                     // created_by: req.user.username
                 }
             });
+
             return responseHandler.success(res, "SubClients fetched successfully", subClients);
         } catch (error) {
             return responseHandler.error(res, error?.message);

@@ -82,10 +82,31 @@ export default {
                 return responseHandler.error(res, "Phone number already exists.");
             }
 
-            const [role] = await Role.findOrCreate({
-                where: { role_name: 'employee', created_by: req.user?.username },
-                defaults: { id: generateId() }
+            // const [role] = await Role.findOrCreate({
+            //     where: { role_name: 'employee', created_by: req.user?.username },
+            //     defaults: { id: generateId() }
+            // });
+
+
+            const existingRole = await Role.findOne({
+                where: { 
+                    role_name: 'employee',
+                    client_id: req.des.client_id,
+                    created_by: req.user.username
+                }
             });
+
+            let role;
+            if (!existingRole) {
+                role = await Role.create({
+                    id: generateId(),
+                    role_name: 'employee',
+                    client_id: req.des.client_id,
+                    created_by: req.user.username
+                });
+            } else {
+                role = existingRole;
+            }
 
             // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
