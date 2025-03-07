@@ -26,16 +26,14 @@ export default {
             const { id } = req.params;
             const bill = req.files?.bill?.[0];
 
-            // console.log(bill);
-            
-
-
             const { item, price, currency, purchase_date, project, description } = req.body;
 
             const receiptUrl = await uploadToS3(bill, req.user?.roleName, "expenses", req.user?.username);
 
-            const expense = await Expense.create({ related_id: id, item, price, currency, purchase_date, project, bill: receiptUrl, description,
-                client_id: req.des?.client_id, created_by: req.user?.username });
+            const expense = await Expense.create({
+                related_id: id, item, price, currency, purchase_date, project, bill: receiptUrl, description,
+                client_id: req.des?.client_id, created_by: req.user?.username
+            });
             return responseHandler.success(res, "Expense created successfully", expense);
         } catch (error) {
             return responseHandler.error(res, error?.message);

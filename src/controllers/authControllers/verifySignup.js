@@ -21,8 +21,6 @@ export default {
             const { otp } = req.body;
             const user = req.user;
 
-            // console.log(user);
-
             const { subscription } = req;
 
             if (user.type !== 'signup_verification') {
@@ -37,9 +35,7 @@ export default {
                 return responseHandler.unauthorized(res, "OTP has expired");
             }
 
-            //check Role
             const role = await Role.findOne({ where: { id: user.role_id } });
-            // console.log("rolekjh",role);
             if (!role) {
                 return responseHandler.error(res, "Role not found");
             }
@@ -125,11 +121,11 @@ export default {
                 token,
                 user: newUser
             });
-        } catch (error) {   
+        } catch (error) {
             return responseHandler.internalServerError(res, error.message);
         }
     }
-}; 
+};
 
 
 

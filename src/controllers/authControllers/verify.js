@@ -21,8 +21,6 @@ export default {
             const { otp } = req.body;
             const user = req.user;
 
-            console.log(user);
-
             const { subscription } = req;
 
             if (user.type !== 'email_verification') {
@@ -39,9 +37,9 @@ export default {
 
             // Update email verification status
             await User.update(
-                { 
+                {
                     isEmailVerified: true,
-                    email: user.email 
+                    email: user.email
                 },
                 { where: { id: user.id } }
             );
@@ -57,7 +55,7 @@ export default {
             return responseHandler.success(res, "Email verification completed successfully", {
                 success: true
             });
-        } catch (error) {   
+        } catch (error) {
             return responseHandler.internalServerError(res, error.message);
         }
     }

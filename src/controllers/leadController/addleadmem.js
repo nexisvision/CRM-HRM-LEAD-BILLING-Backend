@@ -22,7 +22,6 @@ export default {
             const { id } = req.params;
             const { lead_members } = req.body;
 
-            // Safely access project_members array from the payload
             const newMemberIds = lead_members?.lead_members || [];
 
             const lead = await Lead.findByPk(id);
@@ -31,25 +30,19 @@ export default {
                 return responseHandler.notFound(res, "Lead not found");
             }
 
-            // Parse project_members if it's a string
             const currentLeadMembers = typeof lead.lead_members === 'string'
                 ? JSON.parse(lead.lead_members)
                 : lead.lead_members;
 
-            // Get current members array
             const currentMembers = currentLeadMembers?.lead_members || [];
 
-            // Check for duplicate members
             const duplicateMembers = newMemberIds.filter(id => currentMembers.includes(id));
             if (duplicateMembers.length > 0) {
-                    return responseHandler.error(res, `These members already exist in lead: ${duplicateMembers.join(', ')}`);
+                return responseHandler.error(res, `These members already exist in lead: ${duplicateMembers.join(', ')}`);
             }
 
-            // Combine existing members with new members
             const updatedMembers = [...currentMembers, ...newMemberIds];
 
-
-            // const existingProjectMembers = await Project.findOne({ where: { project_members: { project_members: updatedMembers, id: { [Op.not]: project.id } } } });
 
 
             const existingLeadMembers = await Lead.findOne({
@@ -63,7 +56,6 @@ export default {
             if (existingLeadMembers) {
                 return responseHandler.error(res, "Lead members already exist");
             }
-            // Update the project with the new members list
             await lead.update({
                 lead_members: { lead_members: updatedMembers },
                 updated_by: req.user?.username

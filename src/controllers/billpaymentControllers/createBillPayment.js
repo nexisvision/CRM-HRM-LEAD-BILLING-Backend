@@ -28,7 +28,6 @@ export default {
             });
 
             if (!accountData) {
-                console.log("Account not found", accountData);
                 return responseHandler.error(res, "Account not found");
             }
 
@@ -51,7 +50,7 @@ export default {
                 reference,
                 description,
                 client_id: req.des?.client_id,
-                created_by: req.user?.username  
+                created_by: req.user?.username
             });
 
             // Calculate updated total based on whether updated_total exists
@@ -73,11 +72,11 @@ export default {
             }
 
             // Update bill with new total and status
-            await billData.update({ 
+            await billData.update({
                 updated_total: updatedTotal,
                 bill_status: bill_status
             });
-            
+
             // Update account opening balance
             if (accountData.openingBalance < amount) {
                 return responseHandler.error(res, "Insufficient balance in account");

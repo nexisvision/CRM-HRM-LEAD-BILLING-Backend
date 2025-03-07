@@ -17,6 +17,16 @@ const Lead = sequelize.define('Lead', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    currency: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
+    leadValue: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -24,6 +34,11 @@ const Lead = sequelize.define('Lead', {
     lastName: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    phoneCode: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
     },
     telephone: {
         type: DataTypes.STRING,
@@ -35,11 +50,6 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null,
     },
-    lead_owner: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
     assigned: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -50,8 +60,8 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
-    files: {
-        type: DataTypes.JSON,
+    source: {
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
@@ -60,47 +70,22 @@ const Lead = sequelize.define('Lead', {
         allowNull: true,
         defaultValue: null
     },
+    files: {
+        type: DataTypes.JSON,
+        allowNull: true,
+        defaultValue: null
+    },
     status: {
         type: DataTypes.STRING,
         allowNull: false,
         defaultValue: 'new'
     },
-    source: {
+    tag: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
     },
     company_name: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    website: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    country: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    city: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    state: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    zipCode: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-    },
-    address: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null

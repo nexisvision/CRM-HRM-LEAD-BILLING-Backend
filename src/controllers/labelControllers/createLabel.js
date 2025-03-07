@@ -18,10 +18,8 @@ export default {
             const { id } = req.params;
             const { name, color, lableType } = req.body;
 
-            // console.log("lableType", lableType);
-
-            const existingTag = await Tag.findOne({ 
-                where: { related_id: id, name }
+            const existingTag = await Tag.findOne({
+                where: { related_id: id, name, lableType }
             });
             if (existingTag) {
                 return responseHandler.error(res, "Tag with this name already exists");

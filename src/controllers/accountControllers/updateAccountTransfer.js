@@ -20,8 +20,6 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-
-            // console.log(id);
             const { fromAccount, toAccount, amount, date, description } = req.body;
 
             // First find the transfer account
@@ -29,7 +27,7 @@ export default {
             if (!existingTransfer) {
                 return responseHandler.error(res, "Transfer account not found");
             }
-            
+
             const sourceAccount = await Account.findOne({ where: { id: fromAccount } });
             if (!sourceAccount) {
                 return responseHandler.error(res, "Source account not found");
@@ -58,7 +56,7 @@ export default {
             const transfer = await TransferAccount.update({
                 fromAccount,
                 toAccount,
-                amount, 
+                amount,
                 date,
                 description,
                 updated_by: req.user?.username

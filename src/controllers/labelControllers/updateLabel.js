@@ -11,13 +11,14 @@ export default {
         }),
         body: Joi.object({
             name: Joi.string().allow('', null),
-            color: Joi.string().allow('', null)
+            color: Joi.string().allow('', null),
+            lableType: Joi.string().allow('', null)
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { name, color } = req.body;
+            const { name, color, lableType } = req.body;
 
             const tag = await Tag.findByPk(id);
             if (!tag) {
@@ -25,7 +26,7 @@ export default {
             }
 
             const existingTag = await Tag.findOne({
-                where: { name, id: { [Op.not]: id } }
+                where: { name, id: { [Op.not]: id }, lableType }
             });
 
             if (existingTag) {
@@ -34,6 +35,7 @@ export default {
             const updatedTag = await tag.update({
                 name,
                 color,
+                lableType,
                 updated_by: req.user?.username
             });
 

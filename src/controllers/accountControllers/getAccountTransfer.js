@@ -15,15 +15,12 @@ export default {
     handler: async (req, res) => {
         try {
             const userRole = req.user.role;
-            // console.log("userRole",userRole);
             let transferAccounts;
 
             // Find role in role model
             const role = await Role.findOne({
                 where: { id: userRole }
             });
-
-            // console.log("role",role);
 
             if (!role) {
                 return responseHandler.error(res, "Role not found");
@@ -55,7 +52,7 @@ export default {
 
             return responseHandler.success(res, "Transfer accounts fetched successfully", transferAccounts);
         } catch (error) {
-      
+
             return responseHandler.error(res, error?.message);
         }
     }

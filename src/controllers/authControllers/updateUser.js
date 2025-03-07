@@ -36,8 +36,6 @@ export default {
 
             const user = await User.findByPk(id);
 
-         
-
             if (!user) {
                 return responseHandler.notFound(res, "User not found");
             }

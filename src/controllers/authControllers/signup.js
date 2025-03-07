@@ -31,9 +31,6 @@ export default {
     handler: async (req, res) => {
         try {
             const { username, password, email, role_id } = req.body;
-
-            // console.log("req.body",req.body);
-
             const { subscription } = req;
 
             const existingUsername = await User.findOne({
@@ -51,30 +48,19 @@ export default {
             if (existingEmail) {
                 return responseHandler.error(res, "Email already exists.");
             }
-
-            // Get creator's role
             const creatorRole = await Role.findByPk(req.user.role);
             if (!creatorRole) {
                 return responseHandler.error(res, "Invalid creator role");
             }
-
-
-            // console.log("dfgfdgfd",creatorRole);
-
-
-            // Determine client_id based on creator's role
             let client_id;
             let client_plan_id = subscription?.id;
-            
+
             if (creatorRole.role_name === 'client') {
                 client_id = req.user.id;
-                // Get client's subscription plan ID
                 const clientUser = await User.findByPk(req.user.id);
                 if (clientUser?.client_plan_id) {
                     client_plan_id = clientUser.client_plan_id;
                 }
-
-                // console.log("client_plan_id",client_plan_id);
             } else if (creatorRole.role_name === 'super-admin') {
                 client_id = req.user.id;
             } else {
@@ -83,26 +69,12 @@ export default {
                     return responseHandler.error(res, "User not found");
                 }
                 client_id = user.client_id;
-
-
-                // console.log("client_idsdsd",client_id);
-                // Get client's subscription plan ID from parent user
-                // const parentUser = await User.findByPk(req.user.client_id);
                 if (user?.client_plan_id) {
                     client_plan_id = user.client_plan_id;
-                    console.log("client_plan_id",client_plan_id);
                 }
             }
-
-            
-
-            // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
-
-            // Hash password
             const hashedPassword = await bcrypt.hash(password, 12);
-
-            // Create temporary user record
             const tempUser = {
                 id: req.user.id,
                 username,
@@ -114,7 +86,7 @@ export default {
                 client_id,
                 client_plan_id: client_plan_id,
                 created_by: req.user?.username
-                
+
             };
 
             // Store in session

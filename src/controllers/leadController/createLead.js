@@ -7,36 +7,35 @@ export default {
     validator: validator({
         body: Joi.object({
             leadTitle: Joi.string().required(),
-            firstName: Joi.string().required(),
             leadStage: Joi.string().required(),
+            currency: Joi.string().allow('', null),
+            leadValue: Joi.string().allow('', null),
+            source: Joi.string().allow('', null),
+            company_name: Joi.string().allow('', null),
+            firstName: Joi.string().required(),
             lastName: Joi.string().required(),
+            phoneCode: Joi.string().allow('', null),
             telephone: Joi.string().allow('', null),
             email: Joi.string().email(),
             assigned: Joi.string().allow('', null),
-            lead_owner: Joi.string().allow('', null),   
             category: Joi.string().allow('', null),
             status: Joi.string().required(),
-            source: Joi.string().allow('', null),
-            company_name: Joi.string().allow('', null),
-            website: Joi.string().allow('', null),
-            country: Joi.string().allow('', null),
-            city: Joi.string().allow('', null),
-            state: Joi.string().allow('', null),
-            zipCode: Joi.string().allow('', null),
-            address: Joi.string().allow('', null),
+            tag: Joi.string().allow('', null),
         })
     }),
 
     handler: async (req, res) => {
         try {
-            const { leadStage,leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address } = req.body;
+            const { leadStage, leadTitle, firstName, lastName, phoneCode, telephone, email, assigned, category, status, tag, source, company_name, currency, leadValue } = req.body;
             const existingLead = await Lead.findOne({ where: { email } });
             if (existingLead) {
                 return responseHandler.conflict(res, "Lead with this email already exists!");
             }
-            const lead = await Lead.create({leadStage, leadTitle, firstName, lastName, telephone, email, assigned, lead_owner, category, status, source, company_name, website, country, city, state, zipCode, address, 
+            const lead = await Lead.create({
+                leadStage, leadTitle, firstName, lastName, phoneCode, telephone, email, assigned, category, status, tag, source, company_name, currency, leadValue,
                 client_id: req.des?.client_id,
-                created_by: req.user?.username });
+                created_by: req.user?.username
+            });
             return responseHandler.success(res, "Lead created successfully!", lead);
         } catch (error) {
             return responseHandler.error(res, error?.message);
