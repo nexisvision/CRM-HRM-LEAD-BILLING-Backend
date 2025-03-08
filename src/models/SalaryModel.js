@@ -37,7 +37,8 @@ const Salary = sequelize.define('Salary', {
     },
     paymentDate: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
     },
     bankAccount: {
         type: DataTypes.STRING,

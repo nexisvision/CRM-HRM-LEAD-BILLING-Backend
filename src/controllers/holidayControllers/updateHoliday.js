@@ -13,12 +13,13 @@ export default {
             holiday_name: Joi.string().optional(),
             start_date: Joi.date().optional(),
             end_date: Joi.date().optional(),
+            leave_type: Joi.string().valid('paid', 'unpaid').optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { holiday_name, start_date, end_date } = req.body;
+            const { holiday_name, start_date, end_date, leave_type } = req.body;
 
             const holiday = await Holiday.findByPk(id);
             if (!holiday) {
@@ -34,6 +35,7 @@ export default {
                 holiday_name,
                 start_date,
                 end_date,
+                leave_type,
                 updated_by: req.user?.username
             });
 

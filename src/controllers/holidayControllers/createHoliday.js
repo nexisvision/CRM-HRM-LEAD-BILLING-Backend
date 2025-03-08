@@ -8,12 +8,13 @@ export default {
         body: Joi.object({
             holiday_name: Joi.string().required(),
             start_date: Joi.date().required(),
-            end_date: Joi.date().required()
+            end_date: Joi.date().required(),
+            leave_type: Joi.string().valid('paid', 'unpaid').required()
         })
     }),
     handler: async (req, res) => {
         try {
-            const { holiday_name, start_date, end_date } = req.body;
+            const { holiday_name, start_date, end_date, leave_type } = req.body;
             const existingHoliday = await Holiday.findOne({ where: { holiday_name } });
             if (existingHoliday) {
                 return responseHandler.error(res, 'Holiday already exists');
@@ -22,6 +23,7 @@ export default {
                 holiday_name,
                 start_date,
                 end_date,
+                leave_type,
                 client_id: req.des?.client_id,
                 created_by: req.user?.username
             });

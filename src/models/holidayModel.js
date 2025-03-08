@@ -21,7 +21,12 @@ const Holiday = sequelize.define('holiday', {
     end_date: {
         type: DataTypes.DATE,
         allowNull: false,
-    },                      
+    },         
+    leave_type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'unpaid'
+    },
     client_id: {
         type: DataTypes.STRING,
         allowNull: false

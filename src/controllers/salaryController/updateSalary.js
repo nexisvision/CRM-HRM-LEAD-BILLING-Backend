@@ -11,13 +11,13 @@ export default {
         }),
         body: Joi.object({
             status: Joi.string().required().allow('paid'),
-            paymentDate: Joi.date().required()
+            
         })
     }),
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { status, paymentDate } = req.body;
+            const { status } = req.body;
             const salaryData = await Salary.findByPk(id);
             if (!salaryData) {
                 return responseHandler.error(res, "Salary not found");
@@ -28,7 +28,7 @@ export default {
             }
             await salaryData.update({
                 status,
-                paymentDate,
+                paymentDate: status === 'paid' ? new Date() : null,
                 updated_by: req.user?.username
             });
             return responseHandler.success(res, "Salary updated successfully", salaryData);

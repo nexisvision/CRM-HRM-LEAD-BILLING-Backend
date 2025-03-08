@@ -16,7 +16,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const {employeeId, payslipType, currency, netSalary, salary, bankAccount } = req.body;
+            const {employeeId, payslipType, currency, netSalary, salary, bankAccount, status } = req.body;
             const existingSalary = await Salary.findOne({ where: { employeeId } });
             if (existingSalary) {
                 return responseHandler.error(res, "Salary already exists");
@@ -28,6 +28,8 @@ export default {
                 netSalary,
                 salary,
                 bankAccount,
+                status,
+                paymentDate: status === 'paid' ? new Date() : null,
                 client_id: req.des?.client_id,
                 created_by: req.user?.username
             });
