@@ -11,7 +11,9 @@ export default {
         }),
         body: Joi.object({
             project_name: Joi.string().required(),
-            invoice: Joi.string().required(),   
+            invoice: Joi.string().allow(null).optional(),
+            estimate: Joi.string().allow(null).optional(),
+            expense: Joi.string().allow(null).optional(),
             paidOn: Joi.date().required(),
             amount: Joi.string().required(),
             currency: Joi.string().required(),
@@ -24,17 +26,24 @@ export default {
         try {
             const receipt = req.file;
             const { id } = req.params;
-            const { project_name, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } = req.body;
-            const existingPayment = await Payment.findOne({ where: { related_id: id, project_name, invoice, paidOn, amount, currency, transactionId, paymentMethod, remark } });
+            const { project_name, invoice,expense,estimate, paidOn, amount, currency, transactionId, paymentMethod, remark } = req.body;
+
+            const existingPayment = await Payment.findOne({ where: { related_id: id, project_name, invoice,expense,estimate, paidOn, amount, currency, transactionId, paymentMethod, remark } });
             if (existingPayment) {
                 return responseHandler.error(res, "Payment already exists");
             }
 
-            const receiptUrl = await uploadToS3(receipt, req.user?.roleName, "payments", req.user?.username);
+            let receiptUrl = null;
+            if (receipt) {
+                receiptUrl = await uploadToS3(receipt, req.user?.roleName, "payments", req.user?.username);
+            }
+
             const payment = await Payment.create({
                 related_id: id,
                 project_name,
                 invoice,
+                expense,
+                estimate,
                 paidOn,
                 amount,
                 currency,
