@@ -28,6 +28,10 @@ const Bill = sequelize.define('Bill', {
         type: DataTypes.JSON,
         allowNull: false,
     },
+    subtotal:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     items: {
         type: DataTypes.JSON,
         allowNull: false

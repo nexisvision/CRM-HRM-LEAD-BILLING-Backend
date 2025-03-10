@@ -35,6 +35,10 @@ const SalesInvoice = sequelize.define('sales_Invoice', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    subtotal: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     items: {
         type: DataTypes.JSON,
         allowNull: false

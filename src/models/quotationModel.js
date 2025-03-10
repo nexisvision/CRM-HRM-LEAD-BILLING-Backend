@@ -60,6 +60,10 @@ const Quotations = sequelize.define('quotations', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    subtotal:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     client_id: {
         type: DataTypes.STRING,
         allowNull: false

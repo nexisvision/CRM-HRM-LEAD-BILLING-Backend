@@ -53,6 +53,10 @@ const Invoice = sequelize.define('invoice', {
         allowNull: true,
         defaultValue: null
     },
+    subtotal: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     total: {
         type: DataTypes.INTEGER,
         allowNull: false

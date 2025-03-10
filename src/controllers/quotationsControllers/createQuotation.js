@@ -11,7 +11,7 @@ export default {
         body: Joi.object({
             valid_till: Joi.date().required(),
             currency: Joi.string().required(),
-         
+            subtotal: Joi.number().required(),
             client: Joi.string().required(),
             // calculatedTax: Joi.number().required(),
             items: Joi.object().required(),
@@ -23,12 +23,12 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { valid_till, currency, client, items, discount, tax, total } = req.body;
-            const existingQuotation = await Quotations.findOne({ where: { related_id: id, valid_till, currency, client, items, discount, tax, total } });
+            const { valid_till, currency, client, items, discount, tax, total, subtotal } = req.body;
+            const existingQuotation = await Quotations.findOne({ where: { related_id: id, valid_till, currency, client, items, discount, tax, total, subtotal } });
             if (existingQuotation) {
                 return responseHandler.error(res, "Quotation already exists");
             }
-            const quotation = await Quotations.create({ related_id: id, valid_till, currency, client, items, discount, tax, total,
+            const quotation = await Quotations.create({ related_id: id, valid_till, currency, client, items, discount, tax, total, subtotal,
                 client_id: req.des?.client_id,
                 created_by: req.user?.username });
             return responseHandler.success(res, "Quotation created successfully", quotation);
