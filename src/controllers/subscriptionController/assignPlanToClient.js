@@ -134,6 +134,7 @@ export default {
                     items: 0,
                     discount: 0,
                     tax: 0,
+                    subtotal: parseFloat(planPrice),
                     total: parseFloat(planPrice),
                     note: "Thank you for subscribing to our service",
                     client_id: client_id,

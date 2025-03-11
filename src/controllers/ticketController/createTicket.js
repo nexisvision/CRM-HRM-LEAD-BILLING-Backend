@@ -13,6 +13,7 @@ export default {
             agent: Joi.string().allow(null),
             project: Joi.string().allow(null),
             type: Joi.string().allow(null),
+            endDate: Joi.string().allow(null),
             ticketSubject: Joi.string().required(),
             description: Joi.string().required(),
             priority: Joi.string().allow(null),
@@ -24,7 +25,7 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, priority, channelName, tag } = req.body;
+            const { requestor, assignGroup, endDate, agent, status, project, type, ticketSubject, description, priority, channelName, tag } = req.body;
             const existingTicket = await Ticket.findOne({ where: { ticketSubject } });
             if (existingTicket) {
                 return responseHandler.error(res, "Ticket already exists");
@@ -38,6 +39,7 @@ export default {
             const ticket = await Ticket.create({ 
                 requestor, 
                 assignGroup, 
+                endDate,
                 status, 
                 agent, 
                 project, 

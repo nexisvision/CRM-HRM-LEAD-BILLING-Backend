@@ -66,6 +66,11 @@ const Ticket = sequelize.define('ticket', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    endDate: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null
+    },
     tag: {
         type: DataTypes.STRING,
         allowNull: true,
