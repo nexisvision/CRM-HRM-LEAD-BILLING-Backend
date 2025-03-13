@@ -15,9 +15,11 @@ export default {
         body: Joi.object({
             taskName: Joi.string().required(),
             task_reporter: Joi.string().required(),
+            project: Joi.string().optional().allow('', null),
+            category: Joi.string().optional().allow('', null),
             startDate: Joi.date().required(),
             dueDate: Joi.date().required(),
-            assignTo: Joi.object().optional(),
+            assignTo: Joi.object().optional(),  
             priority: Joi.string().required(),
             status: Joi.string().required(),
             reminder_date: Joi.date().optional().allow('', null),
@@ -28,8 +30,7 @@ export default {
         try {
             const { id } = req.params;
 
-            const task_file = req.files?.task_file?.[0];
-
+            const task_file = req?.file;
 
 
             const {
@@ -43,6 +44,8 @@ export default {
                 status,
                 reminder_date,
             } = req.body;
+
+            
             const existingTask = await Task.findOne({ where: { taskName } });
             if (existingTask) {
                 return responseHandler.error(res, "Task already exists");

@@ -26,7 +26,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            console.log(req.body);
+            
             const {
                 taskName,
                 task_reporter,

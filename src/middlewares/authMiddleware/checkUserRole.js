@@ -22,7 +22,6 @@ const checkUserRole = (allowedRoles) => {
             }
             req.role = role;
 
-            // console.log("rolefgfg", role);
             next();
         } catch (error) {
 

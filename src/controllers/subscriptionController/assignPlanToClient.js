@@ -84,7 +84,7 @@ export default {
                 
                 // Force status to trial for new clients
                 // if (status !== 'trial') {
-                //     console.log("Changing status to trial for new client");
+              
                 //     status = 'trial';
                 // }
             } else if (endDateTime) {

@@ -8,7 +8,7 @@ const router = Router();
 
 router.use(authenticateUser, checkRole, passCompanyDetails);
 
-router.post('/:id', upload.fields([{ name: 'task_file', maxCount: 1 }]), createTask.validator, createTask.handler);
+router.post('/:id', upload.single('file'), createTask.validator, createTask.handler);
 router.get('/:id', getAllTask.validator, getAllTask.handler);
 router.put('/:id', updateTask.validator, updateTask.handler);
 router.delete('/:id', deleteTask.validator, deleteTask.handler);

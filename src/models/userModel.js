@@ -251,7 +251,7 @@ User.beforeCreate(async (user) => {
     user.id = newId;
     const Rolename = await Role.findOne({ where: { id: user.role_id } });
     if (!Rolename) {
-        console.log("role not found")
+       
     }
     if (Rolename.role_name === 'employee') {
         const lastUser = await User.findOne({

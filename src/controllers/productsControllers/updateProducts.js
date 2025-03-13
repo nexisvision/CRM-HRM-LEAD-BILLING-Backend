@@ -40,14 +40,14 @@ export default {
                 if (product.image) {
                     // Get everything after the bucket URL
                     const key = product.image.split('.amazonaws.com/').pop();
-                    console.log('Deleting S3 key:', key);
+                
                     const s3Params = {
                         Bucket: s3.config.bucketName,
                         Key: key,
                     };
                     try {
                         await s3.deleteObject(s3Params).promise();
-                        console.log('Successfully deleted old product image');
+                    
                     } catch (error) {
                         console.error('Error deleting old product image:', error);
                     }

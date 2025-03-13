@@ -25,6 +25,10 @@ const Proposal = sequelize.define("proposal", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    subtotal: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+    },
     // calculatedTax: {
     //     type: DataTypes.FLOAT,
     //     allowNull: false

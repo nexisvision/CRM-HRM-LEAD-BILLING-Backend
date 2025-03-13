@@ -23,8 +23,7 @@ export default {
             const { note_title } = req.body;
 
 
-            // console.log("sdfdsfsd",note_title);
-
+         
             // const existingNote = await Lead.findOne({ where: { note_title, related_id: id } });
             // if (existingNote) {
             //     return responseHandler.error(res, "Note already exists");

@@ -34,7 +34,7 @@ export default {
             const { username, email, password } = req.body;
 
 
-            // console.log("subscription", subscription);
+        
 
             const existingUsername = await User.findOne({
                 where: { username }
@@ -73,12 +73,12 @@ export default {
             }
 
             // const creatorRole = await Role.findByPk(req.user?.role);
-            // console.log("dfgfdgfd",creatorRole);
+          
             // if (!creatorRole) {
             //     return responseHandler.error(res, "Invalid creator role");
             // }
 
-            // console.log("dfgfdgfd",creatorRole);
+          
 
             // let client_id;
             // if (creatorRole.role_name === 'client') {
@@ -87,7 +87,7 @@ export default {
             //     client_id = req.user.id;
             // } else {
             //     client_id = req.user.client_id;
-            //     // console.log("dfgfdgfd",client_id);
+            //   
             // }
             // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);

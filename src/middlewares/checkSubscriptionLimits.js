@@ -14,7 +14,7 @@ export const getActiveSubscription = async (req, res, next) => {
         
         const role = await Role.findByPk(req.user.role);
 
-        // console.log("rolefgfg", role);
+       
         if (!role) return responseHandler.error(res, 'Role not found');
 
         let clientSubscription;
@@ -31,8 +31,7 @@ export const getActiveSubscription = async (req, res, next) => {
             clientSubscription = await ClientSubscription.findByPk(user.client_plan_id);
         }
 
-        // console.log('Subscription check for user:', req.user.id, 'Role:', role.role_name);
-
+    
         if (!clientSubscription) return responseHandler.error(res, 'Subscription is not found');
         if (clientSubscription.status === 'expired') return responseHandler.error(res, 'Subscription expired');
 
@@ -163,8 +162,7 @@ export const checkSubscriptionLimits = async (req, res, next) => {
             plan = await SubscriptionPlan.findByPk(clientSubscription.plan_id);
         }
 
-        // console.log('Checking limits for user:', req.user.id, 'Role:', role.role_name);
-
+     
         if (['super-admin', 'client'].includes(role.role_name)) {
             req.subscription = { clientSubscription, plan };
             return next();
