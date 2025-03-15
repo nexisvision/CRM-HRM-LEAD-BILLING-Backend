@@ -17,6 +17,7 @@ export default {
             agent: Joi.string().allow(null),
             project: Joi.string().allow(null),
             type: Joi.string().allow(null),
+            endDate: Joi.string().allow(null),
             ticketSubject: Joi.string().required(),
             description: Joi.string().required(),
             priority: Joi.string().allow(null),
@@ -29,7 +30,7 @@ export default {
         try {
             const file = req.file;
             const { id } = req.params;
-            const { requestor, assignGroup, agent, status, project, type, ticketSubject, description, priority, channelName, tag } = req.body;
+            const { requestor, assignGroup, agent, status, project, type, endDate, ticketSubject, description, priority, channelName, tag } = req.body;
             const ticket = await Ticket.findByPk(id);
             if (!ticket) {
                 return responseHandler.error(res, "Ticket not found");
@@ -46,11 +47,11 @@ export default {
                         Bucket: s3.config.bucketName,
                         Key: key,
                     };
-                    await s3.deleteObject(s3Params).promise();
+                    // await s3.deleteObject(s3Params).promise();
                 }
                 fileUrl = await uploadToS3(file, req.user?.roleName, "support-ticket", req.user?.username, req.user?.created_by);
             }
-            await ticket.update({ requestor, assignGroup, status, agent, project, type, ticketSubject, description, priority, channelName, tag, file: fileUrl, updated_by: req.user?.username });
+            await ticket.update({ requestor, assignGroup, status, agent, project, type, endDate, ticketSubject, description, priority, channelName, tag, file: fileUrl, updated_by: req.user?.username });
             return responseHandler.success(res, "Ticket updated successfully", ticket);
         } catch (error) {
             return responseHandler.error(res, error?.message);
