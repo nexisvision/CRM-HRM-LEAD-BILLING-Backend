@@ -4,7 +4,7 @@ import { createCalendar, getCalendar, getCalendarByID, updateCalendar, deleteCal
 import passCompanyDetails from '../middlewares/passCompanyDetail.js';
 const router = express.Router();
 
-router.use(authenticateUser, checkRole,passCompanyDetails);
+router.use(authenticateUser, checkRole, passCompanyDetails);
 
 router.post('/', createCalendar.validator, createCalendar.handler);
 router.get('/', getCalendar.validator, getCalendar.handler);
