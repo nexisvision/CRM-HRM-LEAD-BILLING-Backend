@@ -6,12 +6,12 @@ import responseHandler from "../../utils/responseHandler.js";
 export default {
     validator: validator({
         body: Joi.object({
-            employeeId: Joi.string().required(),
-            payslipType: Joi.string().required(),
-            currency: Joi.string().required(),
-            netSalary: Joi.string().required(),
-            salary: Joi.string().required(),
-            bankAccount: Joi.string().required(),
+            employeeId: Joi.string().optional(),
+            payslipType: Joi.string().optional(),
+            currency: Joi.string().optional(),
+            netSalary: Joi.string().optional(),
+            salary: Joi.number().optional(),
+            bankAccount: Joi.string().optional(),
         })
     }),
     handler: async (req, res) => {

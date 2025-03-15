@@ -16,14 +16,14 @@ const Salary = sequelize.define('Salary', {
     },
     payslipType: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     currency: {
         type: DataTypes.STRING,
         allowNull: false
     },
     salary: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     netSalary: {
