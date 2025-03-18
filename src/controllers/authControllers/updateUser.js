@@ -18,6 +18,7 @@ export default {
             joiningDate: Joi.date().allow('', null),
             leaveDate: Joi.date().allow(null),
             department: Joi.string().allow('', null),
+            role_id: Joi.string().allow('', null),
             designation: Joi.string().allow('', null),
             salary: Joi.number().allow('', null),
             accountholder: Joi.string().allow('', null),
@@ -32,7 +33,7 @@ export default {
     handler: async (req, res) => {
         try {
             const { id } = req.params;
-            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links } = req.body;
+            const { firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, role_id } = req.body;
 
             const user = await User.findByPk(id);
 
@@ -45,7 +46,7 @@ export default {
                 return responseHandler.error(res, "User already exists");
             }
 
-            await user.update({ firstName, lastName, username, phone, address, joiningDate, leaveDate, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, updated_by: req.user?.username });
+            await user.update({ firstName, lastName, username, phone, address, joiningDate, leaveDate, role_id, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, e_signatures, links, updated_by: req.user?.username });
 
             return responseHandler.success(res, "User updated successfully", user);
         } catch (error) {
