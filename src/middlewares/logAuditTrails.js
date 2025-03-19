@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // import AuditTrail from "../models/auditTrailModel.js";
 
 // const methodMappers = {
@@ -35,6 +36,8 @@
 //         next();
 //     }
 // }
+=======
+>>>>>>> Stashed changes
 
 import AuditTrail from "../models/auditTrailModel.js";
 import { s3 } from "../config/config.js";

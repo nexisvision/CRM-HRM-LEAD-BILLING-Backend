@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // import { DataTypes } from 'sequelize';
 // import sequelize from '../config/db.js';
 // import generateId from '../middlewares/generatorId.js';
@@ -60,6 +61,9 @@
 
 
 
+=======
+
+>>>>>>> Stashed changes
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 import { nanoid } from "nanoid";
@@ -100,4 +104,8 @@ const AuditTrail = sequelize.define("AuditTrail", {
     }
 });
 
+<<<<<<< Updated upstream
 export default AuditTrail;
+=======
+export default AuditTrail;
+>>>>>>> Stashed changes
