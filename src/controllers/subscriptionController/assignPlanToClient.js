@@ -38,6 +38,7 @@ export default {
             const existingSubscription = await ClientSubscription.findOne({
                 where: {
                     client_id,
+                    status: ['active', 'trial']
                
                 }
             });

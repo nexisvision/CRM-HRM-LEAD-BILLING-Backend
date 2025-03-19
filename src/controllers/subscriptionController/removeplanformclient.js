@@ -28,13 +28,13 @@ export default {
             });
 
             // Remove plan_id from user
-            // await User.update({
-            //     client_plan_id: null
-            // }, {
-            //     where: {
-            //         id: existingSubscription.client_id
-            //     }
-            // });
+            await User.update({
+                client_plan_id: null
+            }, {
+                where: {
+                    id: existingSubscription.client_id
+                }
+            });
 
             return responseHandler.success(res, "Subscription plan removed successfully");
         } catch (error) {
