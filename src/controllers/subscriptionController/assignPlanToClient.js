@@ -121,9 +121,6 @@ export default {
             const planPrice = plan.price;
 
             const client = await User.findByPk(client_id);
-
-           
-
             try {
                 bill = await Bill.create({
                     related_id: subscription.id,
@@ -134,7 +131,7 @@ export default {
                     items: 0,
                     discount: 0,
                     tax: 0,
-                    subtotal: parseFloat(planPrice),
+                    subtotal: planPrice,
                     total: parseFloat(planPrice),
                     note: "Thank you for subscribing to our service",
                     client_id: client_id,
