@@ -1,5 +1,5 @@
 import Joi from "joi";
-import BillPayment from "../../models/billPaymentModel.js";
+import BillPayment from "../../models/billpaymentModel.js";
 import Bill from "../../models/billModel.js";
 import Account from "../../models/accountModel.js";
 import responseHandler from "../../utils/responseHandler.js";

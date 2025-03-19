@@ -1,6 +1,6 @@
 import Joi from "joi";
 import validator from "../../utils/validator.js";
-import BillPayment from "../../models/billPaymentModel.js";
+import BillPayment from "../../models/billpaymentModel.js";
 import responseHandler from "../../utils/responseHandler.js";
 import Role from "../../models/roleModel.js";
 import User from "../../models/userModel.js";
