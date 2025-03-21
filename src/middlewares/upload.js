@@ -1,6 +1,7 @@
 import multer from "multer";
 import { UPLOAD_CONFIG } from "../config/config.js";
 
+// Use memory storage for now to eliminate potential disk permission issues
 const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
@@ -13,17 +14,20 @@ const fileFilter = (req, file, cb) => {
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     } else {
-        cb(new Error('Invalid file type'), false);
+        cb(null, false);
     }
 };
 
-export const chatUpload = multer({
-    storage,
-    fileFilter,
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
     limits: {
-        fileSize: UPLOAD_CONFIG.MAX_FILE_SIZE,
-        files: UPLOAD_CONFIG.MAX_FILES_PER_MESSAGE
+        fileSize: UPLOAD_CONFIG.MAX_FILE_SIZE
     }
 });
 
-export default multer({ storage }); // Keep default export for backward compatibility
+// Export simple middleware functions
+export const singleFileUpload = upload.single('file');
+export const multipleFileUpload = upload.array('files', UPLOAD_CONFIG.MAX_FILES_PER_MESSAGE);
+
+export default upload;
