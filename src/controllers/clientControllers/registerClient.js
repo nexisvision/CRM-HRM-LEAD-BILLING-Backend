@@ -1,16 +1,17 @@
 import Joi from "joi";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
+import Role from "../../models/roleModel.js";
 import validator from "../../utils/validator.js";
 import responseHandler from "../../utils/responseHandler.js";
-import Role from "../../models/roleModel.js";
 import generateId from "../../middlewares/generatorId.js";
-import User from "../../models/userModel.js";
 import { sendEmail } from '../../utils/emailService.js';
 import { generateOTP } from "../../utils/otpService.js";
 import { OTP_CONFIG } from "../../config/config.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../config/config.js";
 import { getVerificationEmailTemplate } from '../../utils/emailTemplates.js';
+import User from "../../models/userModel.js";
+import SubscriptionPlan from "../../models/subscriptionPlanModel.js";
 
 export default {
     validator: validator({
@@ -30,11 +31,8 @@ export default {
     }),
     handler: async (req, res) => {
         try {
-            const { subscription } = req;
+
             const { username, email, password } = req.body;
-
-
-        
 
             const existingUsername = await User.findOne({
                 where: { username }
@@ -52,73 +50,46 @@ export default {
                 return responseHandler.error(res, "Email already exists.");
             }
 
-            const existingRole = await Role.findOne({
-                where: { 
-                    role_name: 'sub-client',
-                    client_id: req.des.client_id,
-                    created_by: req.user.username
-                }
+            const [role] = await Role.findOrCreate({
+                where: { role_name: 'client', created_by: "superadmin" },
+                defaults: { id: generateId() }
             });
 
-            let role;
-            if (!existingRole) {
-                role = await Role.create({
-                    id: generateId(),
-                    role_name: 'sub-client',
-                    client_id: req.des.client_id,
-                    created_by: req.user.username
-                });
-            } else {
-                role = existingRole;
+            const defaultPlan = await SubscriptionPlan.findOne({
+                where: { is_default: true, status: 'active' }
+            });
+
+            if (!defaultPlan) {
+                return responseHandler.error(res, "No default subscription plan found");
             }
 
-            // const creatorRole = await Role.findByPk(req.user?.role);
-          
-            // if (!creatorRole) {
-            //     return responseHandler.error(res, "Invalid creator role");
-            // }
-
-          
-
-            // let client_id;
-            // if (creatorRole.role_name === 'client') {
-            //     client_id = req.user.id;
-            // } else if (creatorRole.role_name === 'super-admin') {
-            //     client_id = req.user.id;
-            // } else {
-            //     client_id = req.user.client_id;
-            //   
-            // }
-            // Generate OTP
             const otp = generateOTP(OTP_CONFIG.LENGTH);
 
             const hashedPassword = await bcrypt.hash(password, 12);
 
-            // Create temporary user record
             const tempUser = {
-                id: req.user.id,
+                id: "superadmin",
                 username,
                 email,
                 role_id: role.id,
                 password: hashedPassword,
                 verificationOTP: otp,
-                client_id: req.des?.client_id,
                 verificationOTPExpiry: Date.now() + OTP_CONFIG.EXPIRY.DEFAULT,
-                created_by: req.user?.username
+                client_plan_id: defaultPlan.id,
+                client_id: null,
+                created_by: "superadmin"
             };
 
-            // Store in session
             const sessionToken = jwt.sign(
                 {
                     ...tempUser,
-                    ...subscription,
+                  
                     type: 'signup_verification'
                 },
                 JWT_SECRET,
                 { expiresIn: '15m' }
             );
 
-            // Send verification email
             const emailTemplate = getVerificationEmailTemplate(username, otp);
             await sendEmail(
                 email,
@@ -126,10 +97,17 @@ export default {
                 emailTemplate
             );
 
-            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken });
+            return responseHandler.success(res, "Please verify your email to complete registration", { sessionToken })
 
         } catch (error) {
-            return responseHandler.error(res, error?.message);
+            return responseHandler.error(res, error?.message)
         }
     }
-}
+};
+
+
+
+
+
+
+

@@ -13,7 +13,9 @@ export default {
         body: Joi.object({
             note_title: Joi.string().required(),
             notetype: Joi.string().required(),
-            employees: Joi.object().optional().allow('', null),
+            employees: Joi.object({
+                employee: Joi.array().items(Joi.string()).required()
+            }).required(),
             description: Joi.string().optional().allow('', null),
         })
     }),
@@ -21,26 +23,51 @@ export default {
         try {
             const { id } = req.params;
             const { note_title, notetype, employees, description } = req.body;
+
+
+            console.log("asdasda",req.body);
+            
             const note = await Note.findByPk(id);
             if (!note) {
                 return responseHandler.error(res, "Note not found");
             }
-            const existingNote = await Note.findOne({ where: { note_title, notetype, employees, description, related_id: note.related_id, id: { [Op.not]: id } } });
+
+            const existingNote = await Note.findOne({ 
+                where: { 
+                    note_title, 
+                    notetype, 
+                    employees: JSON.stringify(employees), 
+                    description, 
+                    related_id: note.related_id, 
+                    id: { [Op.not]: id } 
+                } 
+            });
+
             if (existingNote) {
                 return responseHandler.error(res, "Note already exists");
             }
-            await note.update({ note_title, notetype, employees, description, updated_by: req.user?.username });
+
+            await note.update({ 
+                note_title, 
+                notetype, 
+                employees, 
+                description, 
+                updated_by: req.user?.username 
+            });
+
             await Activity.create({
                 related_id: note.related_id,
                 activity_from: "note",
                 activity_id: note.id,
                 action: "updated",
                 performed_by: req.user?.username,
+                client_id: req.des?.client_id,
                 activity_message: `Note ${note.note_title} updated successfully`
             });
+
             return responseHandler.success(res, "Note updated successfully", note);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }
     }
-}
+};

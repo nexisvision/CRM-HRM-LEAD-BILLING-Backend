@@ -10,23 +10,29 @@ const Setting = sequelize.define("Setting", {
     },
     companyName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null,
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null,
+
     },
     companylogo: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null,
     },
     favicon: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null,
     },
     termsandconditions: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
+        defaultValue:null,
     },
     client_id: {
         type: DataTypes.STRING,

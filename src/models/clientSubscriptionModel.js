@@ -40,6 +40,10 @@ const ClientSubscription = sequelize.define('ClientSubscription', {
         type: DataTypes.ENUM('active', 'trial', 'expired', 'inactive'),
         defaultValue: 'trial'
     },
+    trial_period: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
     current_storage_used: {
         type: DataTypes.INTEGER,
         defaultValue: 0

@@ -19,20 +19,29 @@ export default {
             max_vendors: Joi.string().optional().allow("",null),
             storage_limit: Joi.string().optional().allow("",null),
             features: Joi.object().optional().allow("",null),
+            is_default: Joi.boolean().optional().default(false),
             status: Joi.string().valid('active', 'inactive').optional()
         })
     }),
     handler: async (req, res) => {
         try {
             const { name, currency, price, duration, trial_period,
-                 max_users, max_clients, max_customers, max_vendors, storage_limit, features, status } = req.body;
+                 max_users, max_clients, max_customers, max_vendors, storage_limit, features, status, is_default } = req.body;
             const existingPlan = await SubscriptionPlan.findOne({ where: { name } });
             if (existingPlan) {
                 return responseHandler.error(res, "Plan already exists");
             }
+
+            if (is_default) {
+                await SubscriptionPlan.update(
+                    { is_default: false },
+                    { where: { is_default: true } }
+                );
+            }
+
             const plan = await SubscriptionPlan.create({ name, currency, 
                 price, duration, trial_period, max_users, max_clients, max_customers, max_vendors,
-                storage_limit, features, status, created_by: req.user?.username });
+                storage_limit, features, status, is_default, created_by: req.user?.username });
             const clients = await ClientSubscription.findAll({ where: { status: 'active' } });
 
             const clientsIds = clients.map(client => client.client_id);

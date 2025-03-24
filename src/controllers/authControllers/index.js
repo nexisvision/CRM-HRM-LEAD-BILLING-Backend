@@ -12,6 +12,7 @@ import deleteUser from "./deleteUser.js";
 import verify from "./verify.js";
 
 export {
+
     signup,
     login,
     verifySignup,

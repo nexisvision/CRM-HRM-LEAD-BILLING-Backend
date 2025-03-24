@@ -20,6 +20,11 @@ export default {
             branch: Joi.string().allow('', null),
             department: Joi.string().allow('', null),
             designation: Joi.string().allow('', null),
+            country: Joi.string().allow('', null),
+            state: Joi.string().allow('', null),
+            city: Joi.string().allow('', null),
+            zipcode: Joi.number().allow('', null),
+           
             salary: Joi.number().allow('', null),
             accountholder: Joi.string().allow('', null),
             accountnumber: Joi.number().allow('', null),
@@ -36,7 +41,8 @@ export default {
             const cv = req.files?.cv?.[0];
 
             const { id } = req.params;
-            const { firstName, lastName, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, accountnumber, bankname, ifsc, banklocation, documents, links } = req.body;
+            const { firstName, lastName, address, gender, joiningDate, leaveDate, branch, department, designation, salary, accountholder, 
+                country, state, city, zipcode, accountnumber, bankname, ifsc, documents, links } = req.body;
 
             const employee = await User.findByPk(id);
             if (!employee) {
@@ -99,7 +105,10 @@ export default {
                 accountnumber,
                 bankname,
                 ifsc,
-                banklocation,
+                country,
+                state,
+                city,
+                zipcode,
                 documents,
                 links,
                 profilePic: profilePicUrl,

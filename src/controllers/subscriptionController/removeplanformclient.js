@@ -36,7 +36,7 @@ export default {
                 }
             });
 
-            return responseHandler.success(res, "Subscription plan removed successfully");
+            return responseHandler.success(res, "Subscription plan removed successfully", existingSubscription);
         } catch (error) {
             return responseHandler.error(res, error?.message);
         }

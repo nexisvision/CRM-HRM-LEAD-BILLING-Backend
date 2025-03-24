@@ -12,7 +12,8 @@ const Policy = sequelize.define('policy', {
     },
     branch: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        defaultValue:null
     },
     title: {
         type: DataTypes.STRING,

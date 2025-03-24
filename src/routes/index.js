@@ -59,7 +59,7 @@ import loanOptionRoutes from "./loanOptionRoutes.js";
 import deductionOptionRoutes from "./deductionOptionRoutes.js";
 import goalTypeRoutes from "./goalTypeRoutes.js";
 import trainingTypeRoutes from "./trainingTypeRoutes.js";
-import awardTypeRoutes from "./awardTypeRoutes.js";
+
 import terminationTypeRoutes from "./terminationTypeRoutes.js";
 import jobCategoryRoutes from "./jobCategoryRoutes.js";
 import jobStageRoutes from "./jobStageRoutes.js";
@@ -80,7 +80,6 @@ import goalTrackingRoutes from "./goalTrackingRoutes.js";
 import offerLetterRoutes from "./offerLetterRoutes.js";
 import policyRoutes from "./policyRoutes.js";
 import documentRoutes from "./documentRoutes.js";
-import awardRoutes from "./awardRoutes.js";
 import calendarRoutes from "./calendarRoutes.js";
 import userRoutes from './userRoutes.js';
 import taxRoutes from "./taxRoutes.js";
@@ -148,7 +147,7 @@ router.use('/attendance', attendanceRoutes);
 router.use('/indicator', indicatorRoutes);
 router.use('/appraisal', appraisalRoutes);
 router.use('/goal-tracking', goalTrackingRoutes);
-router.use('/awards', awardRoutes);
+
 
 /** 5. Recruitment Setup*/
 router.use('/skills', skillRoutes);
@@ -182,7 +181,7 @@ router.use('/loan-options', loanOptionRoutes);
 router.use('/deduction-options', deductionOptionRoutes);
 router.use('/goal-types', goalTypeRoutes);
 router.use('/training-types', trainingTypeRoutes);
-router.use('/award-types', awardTypeRoutes);
+
 router.use('/termination-types', terminationTypeRoutes);
 router.use('/job-categories', jobCategoryRoutes);
 router.use('/job-stages', jobStageRoutes);

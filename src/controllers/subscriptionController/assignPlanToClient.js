@@ -32,8 +32,6 @@ export default {
                 return responseHandler.notFound(res, "Subscription plan not found");
             }
 
-           
-
             // First check for existing subscription
             const existingSubscription = await ClientSubscription.findOne({
                 where: {

@@ -3,6 +3,7 @@ import { signup, login, getAllUsers, getUserById, updateUser, deleteUser, verify
 import { authenticateUser, checkUserRole, checkRole } from "../middlewares/index.js";
 import { checkSubscriptionLimits, getActiveSubscription, checkSubscriptionDates } from "../middlewares/checkSubscriptionLimits.js";
 import passCompanyDetail from "../middlewares/passCompanyDetail.js";
+import upload from "../middlewares/upload.js";
 
 const router = express.Router();
 
@@ -21,7 +22,9 @@ router.use(authenticateUser, checkUserRole(['super-admin', 'client']));
 
 router.get('/', getAllUsers.validator, getAllUsers.handler);
 router.get('/:id', getUserById.validator, getUserById.handler);
-router.put('/:id', updateUser.validator, updateUser.handler);
+router.put('/:id', upload.fields([
+    { name: 'profilePic', maxCount: 1 }
+]), updateUser.validator, updateUser.handler);
 router.delete('/:id', deleteUser.validator, deleteUser.handler);
 
 export default router;

@@ -7,7 +7,7 @@ import uploadToS3 from "../../utils/uploadToS3.js";
 export default {
     validator: validator({
         body: Joi.object({
-            branch: Joi.string().required(),
+            branch: Joi.string().optional(),
             title: Joi.string().required(),
             description: Joi.string().optional().allow('', null),
         })
